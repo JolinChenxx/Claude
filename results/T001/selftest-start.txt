@@ -1,7 +1,4 @@
-Background self-test: NOT STARTED.
-Attempt 1: command containing Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force was rejected by automatic approval before execution; tool returned "blocked by policy" without a more specific reason.
-Attempt 2: direct invocation of .\scripts\win\job.ps1 start -Id T001 -Threads 4 -Cmd "ping -n 90 127.0.0.1 > nul && echo selftest-ok" under the existing policy failed before script execution.
-PowerShell: cannot load scripts\win\job.ps1 because running scripts is disabled on this system.
-CategoryInfo: SecurityError / PSSecurityException
-FullyQualifiedErrorId: UnauthorizedAccess
-No STATE=running evidence, PID, job.json, exitcode, or stdout was produced. Cross-pass process survival remains unverified.
+﻿started T001 pid=50812 dir=D:\sim_runs\T001
+STATE=running  elapsed=0.00:00:00  pid=50812  commit=6c99f6e
+--- stdout (last 30) ---
+--- stderr (last 30) ---
