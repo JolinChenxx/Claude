@@ -4,6 +4,7 @@ This repository is a two-agent project: **cloud-side Claude** writes the physics
 The project goal and technical route are in `docs/PLAN.md`. Read it before you start; on every later pass, rereading only the parts your current task card cites is enough.
 
 ## Workstation (measured by T001)
+- Python: `D:\sim_tools\envs\lipsim\python.exe`
 - Windows 11 (10.0.22631), PowerShell 5.1; 2× Xeon Platinum 8375C = **64 physical cores / 128 logical**, 2 NUMA nodes, 256 GB RAM. D: drive has 2.5 TB free.
 - Raw-data root: `D:\sim_runs`. Tool directories: `D:\sim_tools\` (Miniforge etc., installed by the cards).
 - Git: `%LOCALAPPDATA%\CodexTaskTools\MinGit-2.56.1\cmd` (prepend it to PATH each pass). Network goes through the local proxy `http://127.0.0.1:7897`.
