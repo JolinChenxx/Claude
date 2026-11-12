@@ -2,11 +2,11 @@
 id: T002
 title: Collect the earlier simulation work (PLUTO+Python and the other method) into the repository
 owner: codex
-status: ready
+status: running
 depends: []
 milestone: M0
 est_time: 1h
-started:
+started: 2026-11-12T11:11:47+08:00
 ---
 
 ## Background
