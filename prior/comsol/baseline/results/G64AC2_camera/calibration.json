@@ -1,0 +1,49 @@
+{
+  "time_shift_ns": 118.0,
+  "gain": 4.4200156217803074e+67,
+  "mse": 1478.852316193023,
+  "background": 2.0,
+  "calibration_frames_ns": [
+    0,
+    20,
+    30,
+    50,
+    60,
+    70,
+    80
+  ],
+  "holdout_frames_ns": [
+    150,
+    160,
+    180,
+    200,
+    250,
+    260,
+    300,
+    310,
+    330,
+    350,
+    360,
+    400,
+    420,
+    450,
+    500,
+    510,
+    530,
+    580,
+    610,
+    630,
+    730,
+    740
+  ],
+  "gate_ns": 10,
+  "PSF_FWHM_pixels": 1,
+  "passband_nm": [
+    475,
+    525
+  ],
+  "gain_method": "Global minimum of the piecewise-quadratic saturated response over g>=0, using sorted-pixel early-frame distributions. No arbitrary gain cap and no fitted spatial translation.",
+  "time_convention": "experimental_ns = numerical_ns - time_shift_ns",
+  "saturation": "One linear gain, measured common background, clip to [0,255]",
+  "reference_case": "B64A"
+}

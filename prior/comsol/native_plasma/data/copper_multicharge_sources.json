@@ -1,0 +1,50 @@
+{
+  "columns": [
+    "cu1_ion",
+    "cu1_rec",
+    "cu1_rr",
+    "cu1_mean",
+    "cu2_ion",
+    "cu2_rec",
+    "cu2_rr",
+    "cu2_mean",
+    "cu3_ion",
+    "cu3_rec",
+    "cu3_rr",
+    "cu3_mean"
+  ],
+  "checks": [
+    {
+      "parent_charge": 1,
+      "threshold_eV": 20.29239,
+      "g_parent": 1,
+      "g_daughter": 6,
+      "occupied_3d": 10,
+      "detailed_balance_max_error": 2.220446049250313e-16
+    },
+    {
+      "parent_charge": 2,
+      "threshold_eV": 36.841,
+      "g_parent": 6,
+      "g_daughter": 9,
+      "occupied_3d": 9,
+      "detailed_balance_max_error": 2.220446049250313e-16
+    },
+    {
+      "parent_charge": 3,
+      "threshold_eV": 57.38,
+      "g_parent": 9,
+      "g_daughter": 10,
+      "occupied_3d": 8,
+      "detailed_balance_max_error": 2.220446049250313e-16
+    }
+  ],
+  "energy_levels_source": "NIST ASD CuII,III,IV,V ionization tables in round2_references; bracketed CuIV/V values are estimates",
+  "rate_model": "Lotz valence3d ionization, inverse Maxwellian detailed balance; Kramers-Milne ground-state radiative recombination same approximation as inherited model",
+  "not_fitted_to_S4": true,
+  "limitations": [
+    "Ground ionic states only; excited ionic lines and dielectronic recombination omitted",
+    "Lotz and hydrogenic recombination are semiempirical, not measured charge-resolved cross sections",
+    "Cu4+ upper truncation must be checked; Cu4+ ->Cu5+ threshold79.8eV"
+  ]
+}

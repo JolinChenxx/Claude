@@ -1,0 +1,163 @@
+{
+  "date_beijing": "2026-11-10",
+  "objective": "Complete saved P212 spatial baseline and S4 29 gates; compare literature-constrained copper multiphase expansion with native Plasma",
+  "active": true,
+  "camera_zero_model_ns": 90,
+  "pdf_deadlines_beijing": [
+    "2026-11-10T11:00:00+08:00",
+    "2026-11-10T18:00:00+08:00",
+    "2026-11-10T23:00:00+08:00"
+  ],
+  "reports_completed": [
+    {
+      "beijing": "2026-11-10T08:00:00+08:00",
+      "saved_spatial_ns": 117.00639591756229,
+      "saved_material_test_ns": 38,
+      "complete_experiment_gates_ns": [
+        0,
+        20
+      ]
+    },
+    {
+      "beijing": "2026-11-10T09:00:00+08:00",
+      "saved_spatial_baseline_ns": 117.00639591756229,
+      "saved_candidate_ns": 95.03624661436878,
+      "saved_copper_ns": 147,
+      "independent_material_no_plasma_ns": 116,
+      "complete_experiment_gates_ns": [
+        0,
+        20
+      ]
+    },
+    {
+      "beijing": "2026-11-10T10:00:00+08:00",
+      "saved_spatial_candidate_ns": 123.01705637907291,
+      "saved_original_baseline_ns": 117.00639591756229,
+      "saved_material_no_plasma_ns": 180,
+      "saved_native_split_ns": 30,
+      "complete_experiment_gates_ns": [
+        0,
+        20
+      ]
+    },
+    {
+      "beijing": "2026-11-10T11:00:00+08:00",
+      "saved_spatial_ns": 123.04535325407292,
+      "complete_experiment_gates_ns": [
+        0,
+        20
+      ],
+      "saved_material_no_plasma_ns": 180,
+      "saved_native_split_ns": 104.00000000000001,
+      "pdf": "output/pdf/route1_progress_20261110_1100.pdf",
+      "native_split_progress_correction": "HC405 104ns status invalidated by transport aliasing bug; HC40496ns figures remain valid."
+    },
+    {
+      "beijing": "2026-11-10T12:00:00+08:00",
+      "saved_spatial_ns": 123.04535325407292,
+      "complete_experiment_gates_ns": [
+        0,
+        20
+      ],
+      "saved_native_ground_split_ns": 114,
+      "saved_native_thermal_split_ns": 50,
+      "blocker": "HC411 stopped during116ns reaction: dependent N2 conservative repair would involve1.385% local N nuclei. Fix algebraic species choice instead of increasing limit."
+    },
+    {
+      "beijing": "2026-11-10T13:00:00+08:00",
+      "saved_spatial_ns": 123.045353254,
+      "flat_thermal_log_accepted_ns": 87.911,
+      "saved_ground_split_ns": 128,
+      "saved_thermal_split_ns": 94,
+      "ground_complete_gates_ns": [
+        0,
+        20,
+        30
+      ],
+      "reason": "Flat spatial test also stalls; hot neutral phase supply now produces electrons near surface; first thermal gate pending."
+    },
+    {
+      "beijing": "2026-11-10T14:00:00+08:00",
+      "saved_spatial_ns": 123.045353254,
+      "front_refined_solving_ns": 77.937,
+      "saved_thermal_single_charge_ns": 94.5,
+      "saved_multicharge_fresh_ns": 10,
+      "saved_ground_ns": 144,
+      "ground_complete_gates_ns": [
+        0,
+        20,
+        30
+      ],
+      "reason": "Cu+ further-ionization times are short; native Cu0-Cu4+ local audit passed; new full trajectory recomputed from initial state"
+    },
+    {
+      "beijing": "2026-11-10T15:00:00+08:00",
+      "saved_spatial_ns": 123.045353254,
+      "saved_refined_spatial_ns": 92.05797292984639,
+      "saved_multicharge_ns": 80.0,
+      "multicharge_case": "HC425",
+      "reason": "Continued from HC423 cold initial history; parallel native air batches; five EOS pressure points repaired for monotonic common-pressure inversion, maximum correction1.94ppm. No new complete thermal exposure yet."
+    },
+    {
+      "beijing": "2026-11-10T16:00:00+08:00",
+      "saved_spatial_ns": 123.045353254,
+      "saved_multicharge_ns": 95.5,
+      "complete_multicharge_gates_ns": [
+        0
+      ],
+      "case": "HC427",
+      "photon_radius90_um": 5.5555555556,
+      "gas_copper_front_radius_um": 23.25,
+      "blocker": "Native cold-air initial solve isolated to9 original input cells; one has nearzero electron population and negative net heavy charge. Audit transport/phase/native tolerance origin."
+    },
+    {
+      "beijing": "2026-11-10T17:00:00+08:00",
+      "saved_spatial_ns": 123.045353254,
+      "saved_fresh_multicharge_ns": 8,
+      "case": "HC438",
+      "complete_fresh_gates_ns": [],
+      "reason": "Electron pressure missing from HLLC acoustic bound. Corrected material interval94-94.25ns passed; fresh initial-state recomputation underway."
+    },
+    {
+      "beijing": "2026-11-10T18:00:00+08:00",
+      "saved_spatial_ns": 123.045353254,
+      "saved_multicharge_ns": 94.75,
+      "case": "HC439",
+      "complete_multicharge_gates_ns": [],
+      "pdf": "output/pdf/route1_progress_20261110_1800.pdf",
+      "blocker": "Single cold Cu reaction input505: ne nearly zero with negative-oxygen detachment source; no first complete gate."
+    },
+    {
+      "beijing": "2026-11-10T19:00:00+08:00",
+      "saved_spatial_ns": 123.04535325407292,
+      "saved_multiphase_ns": 98.25000000000004,
+      "case": "HC451",
+      "complete_multiphase_gates_ns": [
+        0
+      ],
+      "reason": "Direct native initialization for trace-electron detachment passed conservation and same-input comparison; unchanged hot batches scheduled by measured solve duration. Electron heat transport screened and isolated operator audited, not enabled."
+    }
+  ],
+  "cases": [
+    "P221",
+    "P222",
+    "P223",
+    "P224",
+    "C215"
+  ],
+  "material_permission": "User accepted literature-constrained semiempirical EOS mechanism comparisons; do not fit S4",
+  "baseline_targets_model_ns": [
+    125,
+    175,
+    835,
+    1000
+  ],
+  "stop_at_2300": false,
+  "split_material_cases": [
+    "HC454"
+  ],
+  "pdf_completed": [
+    "2026-11-10T11:00:00+08:00",
+    "2026-11-10T18:00:00+08:00"
+  ]
+}

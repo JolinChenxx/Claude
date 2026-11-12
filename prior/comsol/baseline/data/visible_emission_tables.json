@@ -1,0 +1,54 @@
+{
+  "wavelength_nm": [
+    380,
+    780
+  ],
+  "accepted": [
+    {
+      "species": "Cu_I",
+      "transitions": 10
+    },
+    {
+      "species": "Cu_II",
+      "transitions": 192
+    },
+    {
+      "species": "N_I",
+      "transitions": 185
+    },
+    {
+      "species": "N_II",
+      "transitions": 257
+    },
+    {
+      "species": "O_I",
+      "transitions": 117
+    },
+    {
+      "species": "O_II",
+      "transitions": 260
+    }
+  ],
+  "retrieved_epoch": 1793853902.8461225,
+  "columns": [
+    "T_K",
+    "power_Cu_I",
+    "power_Cu_II",
+    "power_N_I",
+    "power_N_II",
+    "power_O_I",
+    "power_O_II",
+    "Q_Cu_0",
+    "Q_Cu_1",
+    "Q_Cu_2",
+    "Q_N_0",
+    "Q_N_1",
+    "Q_N_2",
+    "Q_O_0",
+    "Q_O_1",
+    "Q_O_2"
+  ],
+  "meaning": "Unattenuated LTE spontaneous line emission, W per atom/ion. Integral over full FE gas is an upper bound on escaping visible line energy.",
+  "partition": "Identical finite original EOS partitions; no altered thermodynamic table.",
+  "limitations": "Species with no available A are omitted; free-bound, molecular bands and higher ion stages are outside this specified radiation closure."
+}

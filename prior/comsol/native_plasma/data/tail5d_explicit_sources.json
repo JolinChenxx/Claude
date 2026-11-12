@@ -1,0 +1,41 @@
+{
+  "level": "Cu I 3d10.5d 2D5/2",
+  "upper_energy_eV": 6.8676456,
+  "parent": "CuP3",
+  "parent_energy_eV": 3.816692,
+  "g_upper": 6,
+  "g_parent": 4,
+  "ion_threshold_eV": 0.8587343999999995,
+  "parent_ion_threshold_eV": 3.9096879999999996,
+  "photon_1064_eV": 1.1652650228684234,
+  "dominant_decay_nm": 406.2638,
+  "dominant_A_s": 21000000.0,
+  "oscillator_strength": 0.07794434001494746,
+  "photo_sigma_1064_m2": 1.0036306196059126e-21,
+  "rate_columns": [
+    "up",
+    "down",
+    "ion",
+    "3rec",
+    "rr",
+    "rr_mean_eV"
+  ],
+  "level_data": "NIST ASD Cu I 200-20000 nm; transition accuracy C",
+  "excitation": "van Regemorter 1962, fixed gbar=0.2, same prescription as existing visible transitions",
+  "ionization": "Lotz valence formula; inverse from detailed balance",
+  "photoionization": "Hydrogenic Kramers approximation, identical threshold scaling to existing recombination model; not measured Cu cross section",
+  "recombination": "Milne inverse of the same photoionization cross section",
+  "reduction": "Explicit native COMSOL heavy-species state in G08 and G10; no QSS elimination",
+  "limits": [
+    "One high level, not a complete Rydberg manifold",
+    "Omitted weaker decay branches",
+    "Semiempirical collisions and hydrogenic photoionization, not measured Cu cross sections"
+  ],
+  "checks": {
+    "excitation_detailed_balance": "passed",
+    "ionization_detailed_balance": "passed",
+    "energy_random_states": 10000,
+    "energy_identity_gross_normalized_max_error": 5.838787195623814e-16
+  },
+  "implementation": "src/AddGlobalHighLevel.java"
+}

@@ -1,0 +1,80 @@
+{
+  "material": "legacy ANEOS copper nuclear/cold contribution; no equilibrium electrons; NOTENSION equilibrium branch",
+  "source": "https://github.com/isale-code/M-ANEOS/blob/master/src/ANDATA.f",
+  "rho_initial_kg_m3": 8942.230330721954,
+  "e_reference_J_kg": 116596.39975052238,
+  "critical_T_K": 9030.31715144617,
+  "normal_boiling_T_K": 2515.07898309232,
+  "reference_boiling_T_K": 2836,
+  "rejected_candidate": "Cu_ANEOS_material_calibration: at6500K and1000kg/m3 p=-143.6MPa; not used",
+  "shape": [
+    274,
+    268
+  ],
+  "invalid_states_count": 0,
+  "invalid_states_first": [],
+  "seconds": 1.4103095531463623,
+  "purpose": "mechanism comparison, not validated copper EOS or S4 fit",
+  "extension": "Same nuclear ANEOS evaluated up to1e6K; no energy extrapolation or temperature clamp; all old rows retained exactly",
+  "old_rows_identical": true,
+  "high_temperature_ionization": "Must be supplied by native kinetic species, not by this nuclear EOS",
+  "pressure_monotonicity_repair": [
+    {
+      "T_K": 1380.558889574187,
+      "rho_kg_m3": 8300.0,
+      "old_pressure_Pa": 220732982.22486088,
+      "new_pressure_Pa": 220733126.75723195,
+      "relative_change": 6.547833268040539e-07
+    },
+    {
+      "T_K": 1380.558889574187,
+      "rho_kg_m3": 8350.0,
+      "old_pressure_Pa": 220732839.4234163,
+      "new_pressure_Pa": 220733126.75723195,
+      "relative_change": 1.301724937644136e-06
+    },
+    {
+      "T_K": 1380.558889574187,
+      "rho_kg_m3": 8400.0,
+      "old_pressure_Pa": 220732698.32198903,
+      "new_pressure_Pa": 220733126.75723195,
+      "relative_change": 1.9409648620268865e-06
+    },
+    {
+      "T_K": 1659.4419857278208,
+      "rho_kg_m3": 9750.0,
+      "old_pressure_Pa": 24399273708.607834,
+      "new_pressure_Pa": 24399275508.82035,
+      "relative_change": 7.378139224395782e-08
+    },
+    {
+      "T_K": 1737.5561916357549,
+      "rho_kg_m3": 10150.0,
+      "old_pressure_Pa": 34733046925.281525,
+      "new_pressure_Pa": 34733047008.49468,
+      "relative_change": 2.3957920430492926e-09
+    }
+  ],
+  "reason": "Tiny numerical downward pressure steps create multiple common-pressure roots in trace-copper/air cells. Nondecreasing envelope restores a continuous inversion.",
+  "nonpressure_columns_unchanged": true,
+  "energy_projection_checks": [
+    {
+      "name": "rejected58",
+      "maximum_local_energy_relative_residual": 9.993245855008256e-09,
+      "maximum_relative_T_change": 3.895816471194832e-10,
+      "maximum_absolute_T_change_K": 1.0291778380633332e-06
+    },
+    {
+      "name": "saved58",
+      "maximum_local_energy_relative_residual": 9.999953447785715e-09,
+      "maximum_relative_T_change": 0.0,
+      "maximum_absolute_T_change_K": 0.0
+    },
+    {
+      "name": "saved94p5",
+      "maximum_local_energy_relative_residual": 9.999245425754696e-09,
+      "maximum_relative_T_change": 4.792962593776086e-08,
+      "maximum_absolute_T_change_K": 0.0001844584589889564
+    }
+  ]
+}

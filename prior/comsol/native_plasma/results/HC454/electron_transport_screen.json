@@ -1,0 +1,20 @@
+{
+  "case": "HC454",
+  "saved_ns": 98.75000000000004,
+  "scope": "Read-only bulk screening, not an applied heat flux. Same inherited momentum collision law. Te gradient scale uses resolved saved fields.",
+  "closure": "At zero electron particle flux, drift-diffusion energy flux reduces to q_e=-(5/2)*n_e*kB*D_e*grad(Te); D_e=kB*Te/(m_e*nu). Local classical closure requires a small mean-free-path/gradient-length ratio.",
+  "visible_weight_fraction_in_screened_cells": 0.9998745336343926,
+  "visible_weighted_10_50_90_heat_time_ns": [
+    0.7574687571607746,
+    7.4127050922714,
+    16.454236532188933
+  ],
+  "visible_weighted_10_50_90_Knudsen": [
+    0.0006354610944032709,
+    0.001469093333985979,
+    0.004762901495404903
+  ],
+  "visible_fraction_heat_time_below1ns": 0.14266460610563256,
+  "visible_fraction_heat_faster_than_expansion": 0.18110510916376743,
+  "visible_fraction_Knudsen_above0p1": 7.882466112981671e-05
+}

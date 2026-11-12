@@ -1,0 +1,13 @@
+import com.comsol.model.*;import com.comsol.model.util.*;import java.io.*;import java.util.*;
+public class ExportAxialHEM {public static void main(String[] a){try{
+ ModelUtil.initStandalone(false);Model m=ModelUtil.load("hemExport",a[0]);if(Arrays.asList(m.func().tags()).contains("mixtureEOS")&&m.func("mixtureEOS").getType().equals("External"))ModelUtil.setPreference("security.comsol.allowexternallibraries","on");String saved=ExportNative.savedSolution(m);ExportNative.dataset(m,saved);double[] times=m.sol(saved).getPVals();
+ m.component("c").cpl().create("maxAll","Maximum");m.component("c").cpl("maxAll").selection().all();m.component("c").cpl("maxAll").set("opname","maxAll");m.component("c").cpl().create("minAll","Minimum");m.component("c").cpl("minAll").selection().all();m.component("c").cpl("minAll").set("opname","minAll");m.component("c").cpl("intAll").set("opname","intAll");m.sol(saved).updateSolution();
+ String[] globals={"c.intAll(c.rhoC)","c.intAll(c.rhoA)","c.intAll(c.Etot)","c.intAll(c.Qabs)","c.intAll(c.Qreflected)","c.intAll(c.rhoVapor)","c.intAll(if(x>0,c.rhoC,0[kg/m^3]))","c.maxAll(c.T)","c.maxAll(abs(c.u))","c.minAll(c.T)","c.minAll(c.rho)","c.maxAll(c.pGas)"};
+ m.result().numerical().create("hist","EvalGlobal");m.result().numerical("hist").set("data","dset1");m.result().numerical("hist").set("expr",globals);ExportNative.csv(a[1]+"_history.csv",globals,times,m.result().numerical("hist").getReal());
+ double[] x=new double[1401];for(int i=0;i<x.length;i++)x[i]=(-20+i*120./(x.length-1))*1e-6;
+ String[] expr={"T","rhoC","rhoA","rhoVapor","rhoCond","u","pGas","Etot","xV","alphaG","light","Qabs","(rhoC*u-Dnum*d(rhoC,x))","(Etot+pGas)*u-kMix*d(T,x)-Dnum*d(Etot,x)"};
+ m.result().numerical().create("fields","Interp");m.result().numerical("fields").set("data","dset1");m.result().numerical("fields").set("coord",new double[][]{x});m.result().numerical("fields").set("expr",expr);
+ try(PrintWriter p=new PrintWriter(a[1]+"_fields.json")){p.println("{\"times_s\":"+Arrays.toString(times)+",\"x_m\":"+Arrays.toString(x)+",\"shape\":["+times.length+","+expr.length+","+x.length+"],\"dtype\":\">f4\",\"expressions\":[\""+String.join("\",\"",expr)+"\"]}");}
+ try(DataOutputStream f=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(a[1]+"_fields.bin")))){for(int i=0;i<times.length;i++){m.result().numerical("fields").set("solnum",new int[]{i+1});double[][][] d=m.result().numerical("fields").getData();for(int k=0;k<expr.length;k++)for(int j=0;j<x.length;j++)f.writeFloat((float)d[k][0][j]);}}
+ System.out.println("AXIAL HEM EXPORTED "+times[times.length-1]);System.exit(0);
+ }catch(Throwable e){e.printStackTrace();System.exit(1);}}}

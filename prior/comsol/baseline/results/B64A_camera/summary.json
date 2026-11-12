@@ -1,0 +1,112 @@
+{
+  "case": "B64A",
+  "calibration": {
+    "time_shift_ns": 118.0,
+    "gain": 4.4200156217803074e+67,
+    "mse": 1478.852316193023,
+    "background": 2.0,
+    "calibration_frames_ns": [
+      0,
+      20,
+      30,
+      50,
+      60,
+      70,
+      80
+    ],
+    "holdout_frames_ns": [
+      150,
+      160,
+      180,
+      200,
+      250,
+      260,
+      300,
+      310,
+      330,
+      350,
+      360,
+      400,
+      420,
+      450,
+      500,
+      510,
+      530,
+      580,
+      610,
+      630,
+      730,
+      740
+    ],
+    "gate_ns": 10,
+    "PSF_FWHM_pixels": 1,
+    "passband_nm": [
+      475,
+      525
+    ],
+    "gain_method": "Global minimum of the piecewise-quadratic saturated response over g>=0, using sorted-pixel early-frame distributions. No arbitrary gain cap and no fitted spatial translation.",
+    "time_convention": "experimental_ns = numerical_ns - time_shift_ns",
+    "saturation": "One linear gain, measured common background, clip to [0,255]",
+    "reference_case": "B64A"
+  },
+  "calibration_sorted_pixel_RMSE_counts": 38.45584892045712,
+  "holdout_radius_pass_count": 2,
+  "holdout_frame_count": 22,
+  "holdout_visible_experiment_frames": 20,
+  "holdout_visible_radius_pass_count": 2,
+  "holdout_peak_simulated_area_mm2": 0.8098765432098766,
+  "holdout_peak_experiment_area_mm2": 0.3030864197530864,
+  "peak_timing": {
+    "radius_um": {
+      "experiment_peak_time_ns": 180,
+      "simulated_peak_time_ns": 250,
+      "experiment_peak_value": 322.22222222222223,
+      "simulated_peak_value": 455.55555555555554,
+      "neighbor_frame_interval_ns": 20.0,
+      "time_peak_within_neighbor_interval": false
+    },
+    "area_mm2": {
+      "experiment_peak_time_ns": 260,
+      "simulated_peak_time_ns": 580,
+      "experiment_peak_value": 0.3030864197530864,
+      "simulated_peak_value": 0.8098765432098766,
+      "neighbor_frame_interval_ns": 40.0,
+      "time_peak_within_neighbor_interval": false
+    },
+    "mean_gray": {
+      "experiment_peak_time_ns": 60,
+      "simulated_peak_time_ns": 630,
+      "experiment_peak_value": 119.53828828828829,
+      "simulated_peak_value": 255.0,
+      "neighbor_frame_interval_ns": 10.0,
+      "time_peak_within_neighbor_interval": false
+    },
+    "integrated_gray": {
+      "experiment_peak_time_ns": 200,
+      "simulated_peak_time_ns": 730,
+      "experiment_peak_value": 276529.0,
+      "simulated_peak_value": 1756440.0,
+      "neighbor_frame_interval_ns": 50.0,
+      "time_peak_within_neighbor_interval": false
+    }
+  },
+  "extinction_at_observed_frames": {
+    "27": {
+      "experiment_last_visible_ns": 630,
+      "simulation_last_visible_ns": 740,
+      "scope": "Only the 29 observed S4 frame times; a continuous extinction time is not inferred."
+    },
+    "100": {
+      "experiment_last_visible_ns": 360,
+      "simulation_last_visible_ns": 740,
+      "scope": "Only the 29 observed S4 frame times; a continuous extinction time is not inferred."
+    },
+    "220": {
+      "experiment_last_visible_ns": 200,
+      "simulation_last_visible_ns": 740,
+      "scope": "Only the 29 observed S4 frame times; a continuous extinction time is not inferred."
+    }
+  },
+  "height_limitation": "Published frames have no surface mark. Experimental top/bottom use crop-bottom origin; simulated origin is the physical target plane. Absolute heights are not independently registered.",
+  "early_data_not_independent_validation": true
+}

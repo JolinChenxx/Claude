@@ -1,0 +1,11 @@
+--- stock/Src/parabolic_update.c
++++ solver/parabolic_update.c
+@@ -310,7 +310,7 @@
+ 
+ #if THERMAL_CONDUCTION
+   if (include[TC_OP]){   
+-    TOT_LOOP(k,j,i) d->Tc[k][j][i] = d->Vc[PRS][k][j][i]/d->Vc[RHO][k][j][i];
++    TOT_LOOP(k,j,i) { double vv[NVAR]; int nn; for(nn=0;nn<NVAR;nn++) vv[nn]=d->Vc[nn][k][j][i]; GetPV_Temperature(vv,&d->Tc[k][j][i]); }
+   }
+ #endif
+ 

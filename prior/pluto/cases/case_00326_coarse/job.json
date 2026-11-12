@@ -1,0 +1,55 @@
+{
+  "run_id": "case_00326_coarse",
+  "parameters": {
+    "mass_ng": 4.342779662468236,
+    "energy_uj": 180.0,
+    "waist_um": 22.0,
+    "kinetic_frac": 0.12000000000000001,
+    "tail_frac": 0.09621787696326362,
+    "tail_ns": 15.340146805138149,
+    "line_width_nm": 0.2,
+    "cooling_scale": 1.0,
+    "source_height_um": 5.5
+  },
+  "level": "coarse",
+  "ranks": 8,
+  "started_at": "2026-11-11T07:05:12.386693+00:00",
+  "status": "completed",
+  "attempt": 1,
+  "pid": 16472,
+  "finished_at": "2026-11-11T07:34:33.571208+00:00",
+  "result": {
+    "run_id": "case_00326_coarse",
+    "score": 0.04677447432492934,
+    "held_out_pixel_mse": 0.00877816704587102,
+    "median_iou_visible": 0.5502248875562219,
+    "camera": {
+      "log_gain": -5.850169836748864,
+      "surface_y_px": 60.986450729717646,
+      "psf_sigma_px": 2.9918229562506764,
+      "time_offset_ns": 19.992041178380568,
+      "horizontal_shift_px": -0.5141132417871296
+    },
+    "energy_residual": -1.999940953586095e-12,
+    "mass_residual": 0.0,
+    "parameters": {
+      "parameters": {
+        "mass_ng": 4.342779662468236,
+        "energy_uj": 180.0,
+        "waist_um": 22.0,
+        "kinetic_frac": 0.12000000000000001,
+        "tail_frac": 0.09621787696326362,
+        "tail_ns": 15.340146805138149,
+        "line_width_nm": 0.2,
+        "cooling_scale": 1.0,
+        "source_height_um": 5.5
+      },
+      "level": "coarse",
+      "tstop_ns": 1000,
+      "total_energy_budget_uj": 206.05667797480942,
+      "model_version": "cuair-frozen-species-v1"
+    },
+    "optimizer_success": true,
+    "result_level": "简化铜/铜离子-中性空气模型；实验约束的形貌复现，非完整烧蚀预测"
+  }
+}
