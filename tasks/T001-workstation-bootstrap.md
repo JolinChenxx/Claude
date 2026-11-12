@@ -2,11 +2,11 @@
 id: T001
 title: Workstation environment survey + collaboration-loop self-test
 owner: codex
-status: blocked
+status: running
 depends: []
 milestone: M0
 est_time: 20min
-started: 2026-11-12T07:42:31+08:00
+started: 2026-11-12T08:38:42+08:00
 ---
 
 ## Goal
