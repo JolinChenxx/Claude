@@ -2,7 +2,7 @@
 id: T001
 title: Workstation environment survey + collaboration-loop self-test
 owner: codex
-status: review
+status: done
 depends: []
 milestone: M0
 est_time: 20min
