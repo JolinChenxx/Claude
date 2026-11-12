@@ -1,0 +1,71 @@
+{
+  "definition": "Uniform sphere, homogeneous source, pure Doppler profile, homologous velocity gradient; frequency integrated formal transfer",
+  "used_in_COMSOL": true,
+  "not_included": [
+    "Lorentz/Stark broadening",
+    "nonuniform material",
+    "time-dependent photon propagation",
+    "general ellipsoid anisotropy"
+  ],
+  "quadrature_checks": [
+    {
+      "tau": 1e-06,
+      "speed_over_doppler": 0,
+      "beta": 1.0000003072033057,
+      "refined": 0.9999995753244574,
+      "relative_difference": 7.318791590549267e-07
+    },
+    {
+      "tau": 1,
+      "speed_over_doppler": 0,
+      "beta": 0.6373461141743855,
+      "refined": 0.6373453823726384,
+      "relative_difference": 1.1482027912901316e-06
+    },
+    {
+      "tau": 100,
+      "speed_over_doppler": 0,
+      "beta": 0.019464626045984312,
+      "refined": 0.01946427981050033,
+      "relative_difference": 1.7788250443961928e-05
+    },
+    {
+      "tau": 10000.0,
+      "speed_over_doppler": 0,
+      "beta": 0.0002667469617224636,
+      "refined": 0.00026674564539311453,
+      "relative_difference": 4.934773526032998e-06
+    },
+    {
+      "tau": 100,
+      "speed_over_doppler": 10,
+      "beta": 0.06717099893007776,
+      "refined": 0.06717065535699343,
+      "relative_difference": 5.114928274929653e-06
+    },
+    {
+      "tau": 10000.0,
+      "speed_over_doppler": 10,
+      "beta": 0.00076777835605246,
+      "refined": 0.0007677773398301283,
+      "relative_difference": 1.3235898990160422e-06
+    },
+    {
+      "tau": 100,
+      "speed_over_doppler": 1000.0,
+      "beta": 0.9164386133450044,
+      "refined": 0.9164379426590797,
+      "relative_difference": 7.318399790623431e-07
+    },
+    {
+      "tau": 100000000.0,
+      "speed_over_doppler": 1000.0,
+      "beta": 5.668872784387411e-06,
+      "refined": 5.668871076580957e-06,
+      "relative_difference": 3.012604152807796e-07
+    }
+  ],
+  "max_quadrature_difference": 1.7788250443961928e-05,
+  "seconds": 12.602022171020508,
+  "case": "G12 (fresh solve; initial function-name registration error corrected)"
+}

@@ -1,0 +1,6 @@
+CC = gcc
+CFLAGS = -c -O3 -std=c11 -Wno-implicit-function-declaration -DMSMPI_NO_SAL -include windows_compat.h -I../vendor/msmpi/include -I../vendor/msmpi/include/x64
+LDFLAGS = -lm ../vendor/msmpi/lib/msmpi.lib
+PARALLEL = TRUE
+USE_HDF5 = FALSE
+USE_PNG = FALSE

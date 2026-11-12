@@ -1,0 +1,86 @@
+{
+  "updated_at": "2026-11-12T03:25:38.479053+00:00",
+  "phase": "中等网格集中形貌优化",
+  "completed": 306,
+  "failed": 100,
+  "running": [
+    {
+      "run_id": "case_00402_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00404_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00405_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00406_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00407_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00408_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00411_medium",
+      "ranks": 8,
+      "level": "medium"
+    },
+    {
+      "run_id": "case_00412_medium",
+      "ranks": 8,
+      "level": "medium"
+    }
+  ],
+  "best": {
+    "run_id": "case_00326_coarse",
+    "score": 0.04677447432492934,
+    "held_out_pixel_mse": 0.00877816704587102,
+    "median_iou_visible": 0.5502248875562219,
+    "camera": {
+      "log_gain": -5.850169836748864,
+      "surface_y_px": 60.986450729717646,
+      "psf_sigma_px": 2.9918229562506764,
+      "time_offset_ns": 19.992041178380568,
+      "horizontal_shift_px": -0.5141132417871296
+    },
+    "energy_residual": -1.999940953586095e-12,
+    "mass_residual": 0.0,
+    "parameters": {
+      "parameters": {
+        "mass_ng": 4.342779662468236,
+        "energy_uj": 180.0,
+        "waist_um": 22.0,
+        "kinetic_frac": 0.12000000000000001,
+        "tail_frac": 0.09621787696326362,
+        "tail_ns": 15.340146805138149,
+        "line_width_nm": 0.2,
+        "cooling_scale": 1.0,
+        "source_height_um": 5.5
+      },
+      "level": "coarse",
+      "tstop_ns": 1000,
+      "total_energy_budget_uj": 206.05667797480942,
+      "model_version": "cuair-frozen-species-v1"
+    },
+    "optimizer_success": true,
+    "result_level": "简化铜/铜离子-中性空气模型；实验约束的形貌复现，非完整烧蚀预测"
+  },
+  "next_action": "围绕候选参数优化尺寸、亮核和衰减",
+  "result_level": "简化铜/铜离子-中性空气模型；实验约束的形貌复现，非完整烧蚀预测",
+  "attention": null,
+  "used_ranks": 64
+}

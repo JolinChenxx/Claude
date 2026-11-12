@@ -1,0 +1,7 @@
+The initial PowerShell 5.1 wrapper used $ErrorActionPreference=Stop and native stderr redirection.
+After conda printed 'Executing transaction: ...working... done', it emitted:
+WARNING conda.conda_pypi.main:notify_conda_pypi_tip(158):
+PowerShell promoted the native stderr warning to NativeCommandError and exited the wrapper with 1 before writing env-create-exitcode.txt.
+The native conda exit code was therefore not captured; do not infer it is 0 from the wrapper result.
+The environment was retained, not recreated. conda explicit export and the supplied import/Numba check are used to verify its actual state.
+The reusable wrapper was changed to Start-Process with independent stdout/stderr files and explicit native ExitCode capture. It was not rerun against the existing environment.

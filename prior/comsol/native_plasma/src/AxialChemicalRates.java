@@ -1,0 +1,20 @@
+import java.util.*; public class AxialChemicalRates { public static Map<String,String> rates(){Map<String,String> r=new LinkedHashMap<>();
+r.put("O2","(-plas.r_27-plas.r_28-plas.r_40-plas.r_41-plas.r_42-plas.r_43-plas.r_101+plas.r_102+plas.r_103+plas.r_105+plas.r_107+plas.r_108+2*plas.r_109+plas.r_111+plas.r_113-plas.r_120+plas.r_121-plas.r_122+plas.r_123-plas.r_124+plas.r_125)+(0[kg/(m^3*s)])/plas.M_wO2");
+r.put("N","(-plas.r_75+plas.r_76+plas.r_77+2*plas.r_99+plas.r_110+plas.r_111+2*plas.r_114-2*plas.r_115+2*plas.r_116-2*plas.r_117+2*plas.r_118-2*plas.r_119)+(0[kg/(m^3*s)])/plas.M_wN");
+r.put("O","(plas.r_27+plas.r_28+2*plas.r_40+2*plas.r_41+2*plas.r_42-plas.r_78+plas.r_79+plas.r_80+2*plas.r_100-plas.r_102+plas.r_104+plas.r_106+plas.r_108+plas.r_110+2*plas.r_112+plas.r_113+2*plas.r_120-2*plas.r_121+2*plas.r_122-2*plas.r_123+2*plas.r_124-2*plas.r_125)+(0[kg/(m^3*s)])/plas.M_wO");
+r.put("N2_1p","(plas.r_25+plas.r_26-plas.r_99-plas.r_106-plas.r_107)+(0[kg/(m^3*s)])/plas.M_wN2_1p");
+r.put("O2_1p","(plas.r_43-plas.r_100-plas.r_108-plas.r_109)+(0[kg/(m^3*s)])/plas.M_wO2_1p");
+r.put("N_1p","(plas.r_75-plas.r_76-plas.r_77-plas.r_110-plas.r_111)+(0[kg/(m^3*s)])/plas.M_wN_1p");
+r.put("O_1p","(plas.r_78-plas.r_79-plas.r_80-plas.r_112-plas.r_113)+(0[kg/(m^3*s)])/plas.M_wO_1p");
+r.put("O_1m","(plas.r_27+plas.r_28-plas.r_102-plas.r_104-plas.r_106-plas.r_108-plas.r_110-plas.r_112)+(0[kg/(m^3*s)])/plas.M_wO_1m");
+r.put("O2_1m","(plas.r_101-plas.r_103-plas.r_105-plas.r_107-plas.r_109-plas.r_111-plas.r_113)+(0[kg/(m^3*s)])/plas.M_wO2_1m");
+r.put("Cu","(-plas.r_44+plas.r_45-plas.r_46+plas.r_47-plas.r_48+plas.r_49-plas.r_50+plas.r_51-plas.r_72+plas.r_73+plas.r_52+plas.r_53+plas.r_74+plas.r_104+plas.r_105)+(0[kg/s]/Vp)/plas.M_wCu");
+r.put("CuD5","(plas.r_44-plas.r_45-plas.r_55+plas.r_56-plas.r_81+plas.r_82+plas.r_54+plas.r_83)+(0[kg/s]/Vp)/plas.M_wCuD5");
+r.put("CuD3","(plas.r_46-plas.r_47-plas.r_67+plas.r_68-plas.r_70+plas.r_71-plas.r_84+plas.r_85+plas.r_66+plas.r_69+plas.r_86)+(0[kg/s]/Vp)/plas.M_wCuD3");
+r.put("CuP1","(plas.r_48-plas.r_49-plas.r_58+plas.r_59+plas.r_70-plas.r_71-plas.r_87+plas.r_88-plas.r_53+plas.r_57-plas.r_69+plas.r_89)+(0[kg/s]/Vp)/plas.M_wCuP1");
+r.put("CuP3","((plas.r_50-plas.r_51+plas.r_55-plas.r_56-plas.r_61+plas.r_62-plas.r_64+plas.r_65+plas.r_67-plas.r_68-plas.r_90+plas.r_91-plas.r_52-plas.r_54+plas.r_60+plas.r_63-plas.r_66+plas.r_92)+(0[kg/s]/Vp)/plas.M_wCuP3)-tailNetExcitation/N_A_const");
+r.put("CuH3","(plas.r_58-plas.r_59+plas.r_64-plas.r_65-plas.r_93+plas.r_94-plas.r_57-plas.r_63+plas.r_95)+(0[kg/s]/Vp)/plas.M_wCuH3");
+r.put("CuH5","(plas.r_61-plas.r_62-plas.r_96+plas.r_97-plas.r_60+plas.r_98)+(0[kg/s]/Vp)/plas.M_wCuH5");
+r.put("Cu_1p","((plas.r_72-plas.r_73+plas.r_81-plas.r_82+plas.r_84-plas.r_85+plas.r_87-plas.r_88+plas.r_90-plas.r_91+plas.r_93-plas.r_94+plas.r_96-plas.r_97-plas.r_74-plas.r_83-plas.r_86-plas.r_89-plas.r_92-plas.r_95-plas.r_98-plas.r_104-plas.r_105)+(0[kg/s]/Vp)/plas.M_wCu_1p)+tailNetIonization/N_A_const");
+r.put("CuT5","(tailNetExcitation-tailNetIonization)/N_A_const+0[kg/s]/(Vp*Mcu)");
+return r;} }

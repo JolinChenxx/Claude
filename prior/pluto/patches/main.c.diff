@@ -1,0 +1,11 @@
+--- stock/Src/main.c
++++ solver/main.c
+@@ -56,6 +56,8 @@
+  *
+  *********************************************************************** */
+ {
++  setvbuf(stdout,NULL,_IONBF,0);
++  setvbuf(stderr,NULL,_IONBF,0);
+   int    nv, idim, err;
+   char   first_step=1, last_step = 0;
+   char   input_file[128];

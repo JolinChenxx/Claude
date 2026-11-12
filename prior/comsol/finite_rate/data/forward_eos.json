@@ -1,0 +1,24 @@
+{
+  "source": "D:\\junlin\\PlasmaPlume\\COMSOL_CuPlasma_S4_server_handoff_20261105\\project\\data\\lte_eos.npz",
+  "temperature_range_K": [
+    50.0,
+    60000.0
+  ],
+  "outputs": [
+    "eRef",
+    "pRef",
+    "neRef",
+    "z2Ref",
+    "xRef",
+    "eHeavy",
+    "pHeavy"
+  ],
+  "stored": "log10 first four outputs; Cu ion fraction linear",
+  "shape": [
+    7,
+    22,
+    32,
+    304
+  ],
+  "closure": "LTE total thermal energy minus LTE Cu internal energy and all LTE electron thermal energy, plus resolved Cu internal and electron energies; formation energy remains in original flow equation."
+}

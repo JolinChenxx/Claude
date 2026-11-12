@@ -1,0 +1,216 @@
+{
+  "case": "G264R1C5",
+  "scope": "380\u2013780 nm NIST atomic lines plus free-free closure; full finite-element gas domain, all emitted directions, no absorption, perfect collection/QE. Does not bound omitted radiation mechanisms.",
+  "gate_ns": 10,
+  "shift_scan_ns": [
+    60,
+    62,
+    64,
+    66,
+    68,
+    70,
+    72,
+    74,
+    76,
+    78,
+    80,
+    82,
+    84,
+    86,
+    88,
+    90,
+    92,
+    94,
+    96,
+    98,
+    100,
+    102,
+    104,
+    106,
+    108,
+    110,
+    112,
+    114,
+    116,
+    118,
+    120
+  ],
+  "photon_energy_lower_bound_wavelength_nm": 781,
+  "derivation": "Integrate total unattenuated visible emission over each gate and divide by hc/(781 nm), conservatively beyond the air-to-vacuum converted 780 nm endpoint. Maximize across every allowed time shift. Camera collection and absorption can only reduce this closure-specific emitted-photon bound. P(at least one collected photon) <= min(1, expected emitted photons), without a Poisson assumption.",
+  "frames": [
+    {
+      "experimental_time_ns": 0,
+      "max_emitted_visible_photons_over_allowed_shifts": 142130899.39612925,
+      "shift_at_max_ns": 120,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 20,
+      "max_emitted_visible_photons_over_allowed_shifts": 150156326.84852588,
+      "shift_at_max_ns": 106,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 30,
+      "max_emitted_visible_photons_over_allowed_shifts": 150156326.84852588,
+      "shift_at_max_ns": 96,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 50,
+      "max_emitted_visible_photons_over_allowed_shifts": 150156326.84852588,
+      "shift_at_max_ns": 76,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 60,
+      "max_emitted_visible_photons_over_allowed_shifts": 150156326.84852588,
+      "shift_at_max_ns": 66,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 70,
+      "max_emitted_visible_photons_over_allowed_shifts": 143284488.71381938,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 80,
+      "max_emitted_visible_photons_over_allowed_shifts": 94218249.1106641,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 150,
+      "max_emitted_visible_photons_over_allowed_shifts": 86.81368256863293,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 160,
+      "max_emitted_visible_photons_over_allowed_shifts": 8.65273481125005,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.0
+    },
+    {
+      "experimental_time_ns": 180,
+      "max_emitted_visible_photons_over_allowed_shifts": 0.12083364609360024,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 0.12083364609360024
+    },
+    {
+      "experimental_time_ns": 200,
+      "max_emitted_visible_photons_over_allowed_shifts": 0.0028936712054569848,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 0.0028936712054569848
+    },
+    {
+      "experimental_time_ns": 250,
+      "max_emitted_visible_photons_over_allowed_shifts": 5.6590642013855055e-05,
+      "shift_at_max_ns": 64,
+      "bound_on_probability_of_any_collected_photon": 5.6590642013855055e-05
+    },
+    {
+      "experimental_time_ns": 260,
+      "max_emitted_visible_photons_over_allowed_shifts": 5.236871861494364e-05,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 5.236871861494364e-05
+    },
+    {
+      "experimental_time_ns": 300,
+      "max_emitted_visible_photons_over_allowed_shifts": 1.4826984513636291e-06,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.4826984513636291e-06
+    },
+    {
+      "experimental_time_ns": 310,
+      "max_emitted_visible_photons_over_allowed_shifts": 4.509479798629359e-07,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 4.509479798629359e-07
+    },
+    {
+      "experimental_time_ns": 330,
+      "max_emitted_visible_photons_over_allowed_shifts": 4.1967131438016645e-08,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 4.1967131438016645e-08
+    },
+    {
+      "experimental_time_ns": 350,
+      "max_emitted_visible_photons_over_allowed_shifts": 4.212971216272366e-09,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 4.212971216272366e-09
+    },
+    {
+      "experimental_time_ns": 360,
+      "max_emitted_visible_photons_over_allowed_shifts": 1.4919805460177797e-09,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.4919805460177797e-09
+    },
+    {
+      "experimental_time_ns": 400,
+      "max_emitted_visible_photons_over_allowed_shifts": 2.868346476922964e-11,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 2.868346476922964e-11
+    },
+    {
+      "experimental_time_ns": 420,
+      "max_emitted_visible_photons_over_allowed_shifts": 2.7723728282935136e-12,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 2.7723728282935136e-12
+    },
+    {
+      "experimental_time_ns": 450,
+      "max_emitted_visible_photons_over_allowed_shifts": 1.0064592470747321e-14,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.0064592470747321e-14
+    },
+    {
+      "experimental_time_ns": 500,
+      "max_emitted_visible_photons_over_allowed_shifts": 1.3421463402958911e-17,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.3421463402958911e-17
+    },
+    {
+      "experimental_time_ns": 510,
+      "max_emitted_visible_photons_over_allowed_shifts": 4.61174519753712e-18,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 4.61174519753712e-18
+    },
+    {
+      "experimental_time_ns": 530,
+      "max_emitted_visible_photons_over_allowed_shifts": 6.268575817320375e-19,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 6.268575817320375e-19
+    },
+    {
+      "experimental_time_ns": 580,
+      "max_emitted_visible_photons_over_allowed_shifts": 7.28253745990807e-21,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 7.28253745990807e-21
+    },
+    {
+      "experimental_time_ns": 610,
+      "max_emitted_visible_photons_over_allowed_shifts": 6.466141489534374e-22,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 6.466141489534374e-22
+    },
+    {
+      "experimental_time_ns": 630,
+      "max_emitted_visible_photons_over_allowed_shifts": 1.411428707820443e-22,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.411428707820443e-22
+    },
+    {
+      "experimental_time_ns": 730,
+      "max_emitted_visible_photons_over_allowed_shifts": 1.5795580785829068e-25,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 1.5795580785829068e-25
+    },
+    {
+      "experimental_time_ns": 740,
+      "max_emitted_visible_photons_over_allowed_shifts": 8.478678320553012e-26,
+      "shift_at_max_ns": 60,
+      "bound_on_probability_of_any_collected_photon": 8.478678320553012e-26
+    }
+  ]
+}

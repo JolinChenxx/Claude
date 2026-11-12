@@ -1,0 +1,29 @@
+{
+  "shape": [
+    63,
+    238,
+    194,
+    6
+  ],
+  "coordinates": [
+    "log10(T/K)",
+    "log10(rho_total/(kg/m3))",
+    "log10(rhoCu/rhoAir)"
+  ],
+  "functions": [
+    "mixE",
+    "mixP",
+    "mixXv",
+    "mixAg",
+    "mixCs",
+    "mixAc"
+  ],
+  "finite": true,
+  "minimum_cv_along_constant_mass_densities": 179.77258430784568,
+  "nonpositive_cv_count": 0,
+  "pressure_min_Pa": 1.9515749447374328e-56,
+  "seconds": 14.897099256515503,
+  "closure": "common pressure, additive occupied volumes; nuclear copper EOS plus ideal air",
+  "native_plasma_included": false,
+  "purpose": "material closure precomputation, no experiment fitting"
+}

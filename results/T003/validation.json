@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-12T03:44:44.756511+00:00",
+  "passed": true,
+  "import_failures": {},
+  "threading_layer": "tbb",
+  "all_requested_thread_counts_run": true,
+  "wall_seconds": 193.208,
+  "throughput_Mupdates_s": {
+    "1": 70.8,
+    "8": 274.9,
+    "16": 449.3,
+    "32": 549.5,
+    "64": 800.0
+  },
+  "process_only_settings": [
+    "DLL PATH prefix",
+    "OPENBLAS_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "CONDARC",
+    "CONDA_REGISTER_ENVS=false"
+  ],
+  "source_check_script_unchanged": true
+}

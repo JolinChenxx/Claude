@@ -1,0 +1,21 @@
+{
+  "material": "legacy ANEOS copper nuclear/cold contribution; no equilibrium electrons; NOTENSION equilibrium branch",
+  "source": "https://github.com/isale-code/M-ANEOS/blob/master/src/ANDATA.f",
+  "rho_initial_kg_m3": 8942.230330721954,
+  "e_reference_J_kg": 116596.39975052238,
+  "critical_T_K": 9030.31715144617,
+  "normal_boiling_T_K": 2515.07898309232,
+  "reference_boiling_T_K": 2836,
+  "rejected_candidate": "Cu_ANEOS_material_calibration: at6500K and1000kg/m3 p=-143.6MPa; not used",
+  "shape": [
+    274,
+    268
+  ],
+  "invalid_states_count": 0,
+  "invalid_states_first": [],
+  "seconds": 1.4103095531463623,
+  "purpose": "mechanism comparison, not validated copper EOS or S4 fit",
+  "extension": "Same nuclear ANEOS evaluated up to1e6K; no energy extrapolation or temperature clamp; all old rows retained exactly",
+  "old_rows_identical": true,
+  "high_temperature_ionization": "Must be supplied by native kinetic species, not by this nuclear EOS"
+}
