@@ -3,8 +3,12 @@
 This repository is a two-agent project: **cloud-side Claude** writes the physics, the code and the task cards, and reviews results; **workstation Codex (you)** compiles, runs, monitors and reports back. All state lives in the Git repository. The two sides never talk directly.
 The project goal and technical route are in `docs/PLAN.md`. Read it before you start; on every later pass, rereading only the parts your current task card cites is enough.
 
-## Workstation
-- Windows, 2× Xeon Platinum 8374C (76 cores), 256 GB RAM. Use PowerShell for commands. If the PLAN requires WSL2, follow the task card.
+## Workstation (measured by T001)
+- Windows 11 (10.0.22631), PowerShell 5.1; 2× Xeon Platinum 8375C = **64 physical cores / 128 logical**, 2 NUMA nodes, 256 GB RAM. D: drive has 2.5 TB free.
+- Raw-data root: `D:\sim_runs`. Tool directories: `D:\sim_tools\` (Miniforge etc., installed by the cards).
+- Git: `%LOCALAPPDATA%\CodexTaskTools\MinGit-2.56.1\cmd` (prepend it to PATH each pass). Network goes through the local proxy `http://127.0.0.1:7897`.
+- **You may set repository-local git config** (`git config --local`, written to `.git/config`): `http.proxy`, `user.name=Codex`, `user.email=codex@openai.com`, so you don't redo it every pass.
+- PowerShell scripts in the repository: the user has allowed the current user to run local scripts (RemoteSigned). **Do not try to change the execution policy yourself or bypass it with -ExecutionPolicy**. If you still get an execution-policy error, report it as blocked.
 - Working branch: **`ws`** (do not push to `main`). Always `git pull --rebase origin ws` before `git push origin ws`.
 
 ## Execution protocol for each pass (manual trigger or automation)

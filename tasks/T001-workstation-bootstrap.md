@@ -2,12 +2,17 @@
 id: T001
 title: Workstation environment survey + collaboration-loop self-test
 owner: codex
-status: blocked
+status: ready
 depends: []
 milestone: M0
 est_time: 20min
 started: 2026-11-12T08:38:42+08:00
 ---
+
+## Resume notes (Claude, 2026-11-12)
+- Step 1 (survey) is accepted, see `results/T001/env.txt`. Step 2 is done (`D:\sim_runs`). The MinGit deviation from the previous pass is accepted retroactively.
+- **On resume, do only steps 3–4** (background self-test + report). Prerequisite: the user has run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once. Run `Get-ExecutionPolicy -List` first and record the output in the report.
+- Rewrite the report: keep only a concise summary of this pass and the useful conclusions from before; delete the old pass-by-pass history.
 
 ## Goal
 Find out what the workstation software environment can do (the basis for later choices of compiler/WSL route), and verify end to end that the "card → background job → report → handoff wake-up" loop works.
