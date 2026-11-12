@@ -24,7 +24,7 @@ The project goal and technical route are in `docs/PLAN.md`. Read it before you s
 7. If there are more executable cards, continue with the next one.
 
 ## Hard rules
-- Only change files inside this repository and the raw-data directory. Do not change system settings, do not install software that needs administrator rights (if it is required, write `blocked` and explain), and do not delete other people's data.
+- Only change files inside this repository, `D:\sim_runs`, and `D:\sim_tools`. The user allows installing the software a card needs **at user level** (preferably under `D:\sim_tools`). Do not change system settings, do not install software that needs administrator rights (if it is required, write `blocked` and explain), and do not delete other people's data.
 - Do not edit the physics in `docs/PLAN.md`, `src/` or `tasks/` cards. You may fix engineering details such as compilation or paths, and must list every change in the report.
 - Do not fabricate or "polish" results. Record failures as they happened.
 - Commit messages start with `[codex] <card-id>: `.

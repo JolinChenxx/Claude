@@ -1,5 +1,5 @@
 ---
-id: T002
+id: T003
 title: Install Miniforge (user-level) and create the lipsim environment
 owner: codex
 status: ready
@@ -21,14 +21,14 @@ Get a reproducible Python + Numba runtime environment on the workstation (PLAN Â
 3. Configure the conda proxy (write only to `D:\sim_tools\miniforge3\.condarc`: `proxy_servers: {http: http://127.0.0.1:7897, https: http://127.0.0.1:7897}`), then:
    `D:\sim_tools\miniforge3\Scripts\conda.exe env create -f env\environment.yml -p D:\sim_tools\envs\lipsim`
    (If conda-forge is too slow or times out, switching to the Tsinghua mirror `https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge` is allowed. Note it in the report.)
-4. Export the locked versions: `conda list -p D:\sim_tools\envs\lipsim --explicit > results\T002\conda-explicit-win.txt`
-5. Self-check: `D:\sim_tools\envs\lipsim\python.exe scripts\check_env.py --threads 1 8 16 32 64 > results\T002\check_env.json` (foreground is fine, it finishes within a minute).
+4. Export the locked versions: `conda list -p D:\sim_tools\envs\lipsim --explicit > results\T003\conda-explicit-win.txt`
+5. Self-check: `D:\sim_tools\envs\lipsim\python.exe scripts\check_env.py --threads 1 8 16 32 64 > results\T003\check_env.json` (foreground is fine, it finishes within a minute).
 6. Add one line to the "Workstation" section of `AGENTS.md`: `Python: D:\sim_tools\envs\lipsim\python.exe` (this is the only allowed change to AGENTS.md).
 7. Report, set the card to `review`, write the handoff, push.
 
 ## Outputs
-- `results/T002/conda-explicit-win.txt`, `results/T002/check_env.json`
-- `tasks/T002.report.md`
+- `results/T003/conda-explicit-win.txt`, `results/T003/check_env.json`
+- `tasks/T003.report.md`
 
 ## Acceptance criteria
 - Every library in check_env.json imports successfully (no `IMPORT FAILED`)
