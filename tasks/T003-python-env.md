@@ -2,11 +2,11 @@
 id: T003
 title: Install Miniforge (user-level) and create the lipsim environment
 owner: codex
-status: ready
+status: running
 depends: []
 milestone: M0
 est_time: 30min
-started:
+started: 2026-11-12T11:29:34+08:00
 ---
 
 ## Goal
