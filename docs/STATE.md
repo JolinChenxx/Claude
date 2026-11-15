@@ -4,14 +4,14 @@ Updated: 2026-11-15
 
 ## Cards
 - T001–T003 done (workstation environment, history archive, Python env `D:\sim_tools\envs\lipsim`).
-- T004 (forensics of historical PLUTO, read-only), T005 (unmodified PLUTO reference build): ready, waiting for Codex to run them.
+- T004 done (conclusions below). T005 (unmodified PLUTO reference build): ready. The old controller check is a `handoff/to_codex/` note.
 - T006 (user asks the authors): question list ready at `docs/QUESTIONS_FOR_AUTHORS.md`.
 - The user agreed to stop the historical PLUTO 72 h controller (probably already exited); T004 step 0 checks.
 
 ## Claude work packages
 - M0.2/M0.3 experimental dataset: **mostly done**. `data/exp/` (frames, metrics, trends.png), `docs/DATA_NOTES.md`, V11 closed-loop test passes.
   - Fig. 3d shock trajectory digitized (`data/exp/curves/fig3d_shock.csv`). To do (optional): cross-check against `prior/pluto/experiment/metrics.csv`.
-- M0.4: `data/params/registry.yaml` + `scripts/check_provenance.py` + `docs/PREREG.md` skeleton: not started.
+- M0.4: **done**. `data/params/registry.yaml` (33 entries, 6 to be checked against NIST/datasheets in M1.1), `src/lipsim/params.py` (loader; '@name' references), `scripts/check_provenance.py` (registry schema / bare numbers in configs / untagged literals in physics source), `tests/test_provenance.py`, `docs/PREREG.md` skeleton.
 - Then M1.1 (physical properties / atomic data sources → `docs/MODEL.md`).
 
 ## Key numbers

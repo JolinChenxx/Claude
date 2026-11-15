@@ -1,0 +1,58 @@
+# Parameter register (PLAN v2 §1.1). Every number that enters the physical model must be registered here.
+# Fields: value, unit, grade (A/B/C/D/E/F/N; X forbidden), source, uncertainty (range or relative),
+#         date (registration date), verified (whether checked against the original source), note (optional)
+# Grades: A physical constants | B atomic/molecular data | C material/transport properties | D experimental conditions stated in the paper
+#       | E independent measurements / author-supplied | F declared choice of closure form | N numerical parameter (decided by convergence only)
+# Changing any entry after PREREG is frozen requires an entry in the PREREG deviation log (PLAN §1.5).
+
+# ---------------------------------------------------------------- A: physical constants (CODATA 2018)
+k_B:      {value: 1.380649e-23,     unit: J/K,   grade: A, source: "CODATA 2018 (exact)", uncertainty: 0, date: 2026-11-15, verified: true}
+h:        {value: 6.62607015e-34,   unit: J s,   grade: A, source: "CODATA 2018 (exact)", uncertainty: 0, date: 2026-11-15, verified: true}
+c:        {value: 299792458.0,      unit: m/s,   grade: A, source: "CODATA 2018 (exact)", uncertainty: 0, date: 2026-11-15, verified: true}
+e:        {value: 1.602176634e-19,  unit: C,     grade: A, source: "CODATA 2018 (exact)", uncertainty: 0, date: 2026-11-15, verified: true}
+m_e:      {value: 9.1093837015e-31, unit: kg,    grade: A, source: "CODATA 2018", uncertainty: 3.0e-10, date: 2026-11-15, verified: true}
+amu:      {value: 1.66053906660e-27, unit: kg,   grade: A, source: "CODATA 2018", uncertainty: 3.0e-10, date: 2026-11-15, verified: true}
+eps0:     {value: 8.8541878128e-12, unit: F/m,   grade: A, source: "CODATA 2018", uncertainty: 1.5e-10, date: 2026-11-15, verified: true}
+sigma_SB: {value: 5.670374419e-8,   unit: W/(m2 K4), grade: A, source: "CODATA 2018 (derived from exact constants)", uncertainty: 0, date: 2026-11-15, verified: true}
+
+# ---------------------------------------------------------------- B: atomic data (to be checked one by one against NIST ASD in M1.1)
+A_Cu:     {value: 63.546, unit: g/mol, grade: B, source: "IUPAC standard atomic weight of Cu", uncertainty: 0.003, date: 2026-11-15, verified: false,
+           note: "M1.1: check against the CIAAW table"}
+IP_Cu_I:  {value: 7.72638, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu I", uncertainty: 1.0e-5, date: 2026-11-15, verified: false}
+IP_Cu_II: {value: 20.29239, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu II", uncertainty: 1.0e-4, date: 2026-11-15, verified: false}
+IP_Cu_III: {value: 36.841, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu III", uncertainty: 0.01, date: 2026-11-15, verified: false}
+IP_Cu_IV: {value: 57.38, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu IV", uncertainty: 0.1, date: 2026-11-15, verified: false}
+# Cu levels, transition probabilities and Stark widths are stored as tables in data/atomic/ (M1.1). They are registered as a whole by file hash, not entry by entry.
+
+# ---------------------------------------------------------------- C: material and transport properties (M1.1, filled from reviews/handbooks)
+# Placeholder: an empty section means "not yet registered", and the model may not use these quantities.
+
+# ---------------------------------------------------------------- D: experimental conditions stated in the paper
+E_pulse_high: {value: 0.4e-3,  unit: J,  grade: D, source: "SI Table 1 (high fluence)", uncertainty: unknown, date: 2026-11-15, verified: true,
+               note: "Whether this is the energy at the sample is asked in QUESTIONS_FOR_AUTHORS B7"}
+E_pulse_low:  {value: 0.32e-3, unit: J,  grade: D, source: "SI Table 1 (low fluence)", uncertainty: unknown, date: 2026-11-15, verified: true}
+tau_fwhm:     {value: 60.0e-9, unit: s,  grade: D, source: "SI Table 1, pulse duration 60 ns (FWHM assumed, see QUESTIONS B5)", uncertainty: unknown, date: 2026-11-15, verified: true}
+wavelength_laser: {value: 1064.0e-9, unit: m, grade: D, source: "SI Table 1", uncertainty: 0, date: 2026-11-15, verified: true}
+D_beam_high:  {value: 22.0e-6, unit: m,  grade: D, source: "SI Table 1 'beam waist radius' corrected to DIAMETER by the author (DECISIONS 2026-11-12); 1/e2 definition assumed (QUESTIONS B6)", uncertainty: unknown, date: 2026-11-15, verified: true}
+D_beam_low:   {value: 31.0e-6, unit: m,  grade: D, source: "as D_beam_high (low fluence)", uncertainty: unknown, date: 2026-11-15, verified: true}
+gate_width:   {value: 10.0e-9, unit: s,  grade: D, source: "SI S2: intensifier gating time minimum 10 ns used for plume images", uncertainty: 0, date: 2026-11-15, verified: true}
+NA_objective: {value: 0.4, unit: "1", grade: D, source: "SI S2: MY20X-824 M Plan Apo NIR 20x, NA 0.4", uncertainty: 0, date: 2026-11-15, verified: true}
+threshold_paper: {value: 27.0, unit: gray, grade: D, source: "SI S2 step 1 (luminance threshold 27)", uncertainty: 0, date: 2026-11-15, verified: true}
+target_purity: {value: 0.9999, unit: "1", grade: D, source: "Main text Experimental Section: C1100, 99.99% Cu", uncertainty: 0, date: 2026-11-15, verified: true}
+
+# ---------------------------------------------------------------- E: measurements from the paper's images (docs/DATA_NOTES.md)
+um_per_px_S4: {value: 10.72, unit: um/px, grade: E, source: "400 um scale bar on SI p.6 measured to sub-pixel (DATA_NOTES)", uncertainty: 0.15, date: 2026-11-15, verified: true}
+um_per_px_S3: {value: 9.24,  unit: um/px, grade: E, source: "400 um scale bar on SI p.5 measured to sub-pixel (DATA_NOTES)", uncertainty: 0.11, date: 2026-11-15, verified: true}
+
+# ---------------------------------------------------------------- F: declared choices (PLAN v2 §1.3; replaced if the authors provide E-grade information)
+p_ambient:    {value: 101325.0, unit: Pa, grade: F, source: "Paper: ablation in air; standard atmosphere assumed", uncertainty: "±2%", date: 2026-11-15, verified: true}
+T_ambient:    {value: 293.15, unit: K, grade: F, source: "Room temperature assumed", uncertainty: "±5 K", date: 2026-11-15, verified: true}
+t0_convention: {value: "t=0 at 10% of peak power on the pulse leading edge; frame label = gate start, gate [t, t+10 ns]", unit: "-", grade: F,
+               source: "PLAN v2 §1.3", uncertainty: "±30 ns", date: 2026-11-15, verified: true}
+pulse_shape_baseline: {value: gaussian, unit: "-", grade: F, source: "PLAN v2 §1.3; scenario: MOPA waveform from the laser datasheet", uncertainty: scenario, date: 2026-11-15, verified: true}
+M2_beam:      {value: 1.5, unit: "1", grade: F, source: "PLAN v2 §1.3 baseline (to be replaced by the IPG YLPN datasheet nominal value)", uncertainty: [1.2, 2.0], date: 2026-11-15, verified: false}
+filter_scenarios_nm: {value: {a: [515, 5], b: [510, 12], c: [500, 20]}, unit: "nm [centre, half-width]", grade: F,
+               source: "PLAN v2 §1.3: three parallel scenarios, all containing 515 nm (SI: filter shared with the 515 nm probe)", uncertainty: scenario, date: 2026-11-15, verified: true}
+defocus_um_scenarios: {value: {baseline: 250, low: 0, high: 500}, unit: um, grade: F,
+               source: "PLAN v2 §1.3: SI says focus on the camera-side front edge; 0.5 mm wide end face, spot centred", uncertainty: scenario, date: 2026-11-15, verified: true}
+t_ref_norm:   {value: 300.0e-9, unit: s, grade: F, source: "PLAN v2 §1.3/§8.4: earliest time at which the experimental frames are no longer clipped", uncertainty: 0, date: 2026-11-15, verified: true}
