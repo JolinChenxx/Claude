@@ -16,7 +16,7 @@ from lipsim.eos.saha import EV, K_B
 
 
 def mean_excitation_eV(lv, T: float, cutoff_eV: float) -> float:
-    sel = lv.energy_eV < cutoff_eV
+    sel = (lv.energy_eV < cutoff_eV) | (lv.energy_eV == lv.energy_eV.min())
     w = lv.g[sel] * np.exp(-lv.energy_eV[sel] * EV / (K_B * T))
     s = w.sum()
     return float((w * lv.energy_eV[sel]).sum() / s) if s > 0 else 0.0

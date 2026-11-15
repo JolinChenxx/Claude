@@ -27,6 +27,22 @@ IP_Cu_IV: {value: 57.38, unit: eV, grade: B, source: "NIST ASD ionization energi
 nist_asd_tables: {value: "data/atomic/nist/manifest.json", unit: "-", grade: B, source: "NIST Atomic Spectra Database (physics.nist.gov/asd), retrieved 2026-11-15 by T007", uncertainty: "per-line accuracy codes in tables", date: 2026-11-15, verified: true,
            manifest_sha256: "3e737c44327874fafd1df0e2ad16034aa021164e447c134ee626a27c20c644bd", note: "Cu I has Aki for only 37/1003 lines, Cu II 554/2557, Cu III none; the full-spectrum NEC needs a more complete line list (M1)"}
 
+atomic_weights_air: {value: {N: 14.007, O: 15.999, Ar: 39.948}, unit: g/mol, grade: B, source: "IUPAC/CIAAW standard atomic weights (conventional values)", uncertainty: 0.001, date: 2026-11-15, verified: false}
+
+# ---------------------------------------------------------------- B: diatomic molecular constants (RRHO + low electronic states)
+# Source: Huber & Herzberg, Constants of Diatomic Molecules (1979), as tabulated in the NIST Chemistry WebBook.
+# Values entered from memory: verified=false until T014 (Codex fetches the WebBook) checks them.
+mol_N2: {value: {D0_eV: 9.7594, we_cm: 2358.57, Be_cm: 1.99824, sigma: 2, elec: [[0.0, 1]]}, unit: "eV, cm-1", grade: B,
+         source: "Huber & Herzberg 1979 / NIST WebBook (N2 X1Sigma_g+; D0 = 941.64 kJ/mol)", uncertainty: "D0 ±0.001 eV", date: 2026-11-15, verified: false}
+mol_O2: {value: {D0_eV: 5.1156, we_cm: 1580.19, Be_cm: 1.44563, sigma: 2, elec: [[0.0, 3], [0.98169, 2], [1.63597, 1]]}, unit: "eV, cm-1", grade: B,
+         source: "Huber & Herzberg 1979 / NIST WebBook (O2 X3Sigma_g-, a1Delta_g, b1Sigma_g+)", uncertainty: "D0 ±0.001 eV", date: 2026-11-15, verified: false}
+mol_NO: {value: {D0_eV: 6.4968, we_cm: 1904.20, Be_cm: 1.67195, sigma: 1, elec: [[0.0, 2], [0.014856, 2]]}, unit: "eV, cm-1", grade: B,
+         source: "Huber & Herzberg 1979 / NIST WebBook (NO X2Pi_1/2, X2Pi_3/2 at 119.82 cm-1)", uncertainty: "D0 ±0.002 eV", date: 2026-11-15, verified: false}
+
+# ---------------------------------------------------------------- C/F: ambient air composition
+air_mole_fractions: {value: {N2: 0.78084, O2: 0.20946, Ar: 0.00934}, unit: "mole fraction (dry air, CO2 and trace gases neglected; renormalised in code)", grade: C,
+         source: "US Standard Atmosphere 1976, dry-air composition", uncertainty: "1e-4", date: 2026-11-15, verified: false}
+
 # ---------------------------------------------------------------- C: material and transport properties (M1.1, filled from reviews/handbooks)
 # Placeholder: an empty section means "not yet registered", and the model may not use these quantities.
 

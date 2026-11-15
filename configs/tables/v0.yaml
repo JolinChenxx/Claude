@@ -1,0 +1,8 @@
+# Property-table configuration v0 (PLAN v3 §6). The grid is a numerical parameter (grade N), decided by convergence/interpolation-error tests.
+name: v0
+eos:
+  species: [Cu, N, O, Ar]
+numerics:
+  log10_rho: {min: -5.0, max: 3.0, n: 81}       # kg/m^3
+  log10_T: {min: 2.4771, max: 5.1761, n: 136}   # 300 K .. 1.5e5 K
+  Y_cu: [0.0, 0.001, 0.01, 0.03, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 0.9, 0.97, 0.99, 1.0]

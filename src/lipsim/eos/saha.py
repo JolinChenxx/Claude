@@ -41,7 +41,10 @@ class Species:
 
 
 def partition_function(lv: Levels, T: float, cutoff_eV: float) -> float:
-    sel = lv.energy_eV < cutoff_eV
+    # The ground level is always kept: when Debye–Hückel lowering exceeds the IP (dense, strongly
+    # coupled plasma, outside this model's validity) the sum must not become empty. Such states are
+    # flagged through the stored lowering (dchi) in the tables, not silently trusted.
+    sel = (lv.energy_eV < cutoff_eV) | (lv.energy_eV == lv.energy_eV.min())
     return float(np.sum(lv.g[sel] * np.exp(-lv.energy_eV[sel] * EV / (K_B * T))))
 
 
