@@ -37,4 +37,5 @@ Note: P3/P5 become noisy in faint late frames (peak < 40) as the mask shrinks; t
 
 ## Items still to settle (waiting on author replies, see QUESTIONS_FOR_AUTHORS.md)
 - Target surface position, time-zero definition, filter bandwidth, whether gains are equal for the two series. The early-frame (0–60 ns) anomaly is per the supervisor's guidance: report only, not used in the judgement.
-- Curve digitization (Fig. 2b/2c, 3b/3d, 4a, S5–S7, S12) is not done yet. Fig. 3d (shock trajectory) is the only one needed for the main judgement (P4) and is done next.
+- Curve digitization: **Fig. 3d (shock trajectory, needed for P4) is done** → `data/exp/curves/fig3d_shock.csv` (overlay `fig3d_check.png`). Matched automatically by marker colour + template; high fluence 23 points, low fluence 22 points. About 10% of markers that overlap neighbours at early times are not recovered, which does not affect the trajectory shape. Linear fit ≥ 300 ns: high 542 m/s, low 521 m/s (paper: 550 m/s). R(500 ns) ≈ 614 / 588 µm.
+- Other curves (Fig. 2b/2c, 3b, 4a, S5–S7, S12) are only used for descriptive comparison; to be digitized later as needed.
