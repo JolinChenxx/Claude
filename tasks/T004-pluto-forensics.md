@@ -2,11 +2,11 @@
 id: T004
 title: Read-only forensics of the historical PLUTO best case
 owner: codex
-status: ready
+status: running
 depends: [T003]
 milestone: M0
 est_time: 3h
-started:
+started: 2026-11-15T17:00:27+08:00
 ---
 
 Spec copied from docs/PLAN.md §12.3 (the PLAN is authoritative). Use the Python environment from T003: `D:\sim_tools\envs\lipsim\python.exe`. Background reading: `docs/PRIOR_DIAGNOSIS.md` §3.
