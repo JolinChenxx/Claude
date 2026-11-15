@@ -109,4 +109,14 @@ def pop_fields(state: mx.State) -> dict:
             nz = state.n.get(f"{el}+{z}", 0.0)
             q = state.Q[el][z] if (state.Q is not None and el in state.Q) else 1.0
             out[f"nQ_{el}{z}"] = nz / q
+            out[f"n_{el}{z}"] = nz
+    # all ions by charge (continuum emission/absorption needs Σ z² n_z, Σ n_z(z≥1) and the recombination energy)
+    zsum = {1: 0.0, 2: 0.0, 3: 0.0}
+    for key, n in state.n.items():
+        if "+" in key:
+            z = int(key.split("+")[1])
+            if z in zsum:
+                zsum[z] += n
+    for z, v in zsum.items():
+        out[f"nion_z{z}"] = v
     return out

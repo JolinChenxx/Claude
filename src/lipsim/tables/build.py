@@ -5,7 +5,7 @@
 Outputs (little-endian LIPTAB01, documented in `write_bin`), all on (log10 ρ, log10 T, Y):
   eos.bin   e [J/kg], p [Pa], ne [m^-3], dchi_eV (IP lowering; validity flag)
   opt.bin   alpha1064 [1/m], nec_thin, nec_trap [W/m^3/sr]
-  pop.bin   nQ_<El><z> = n_z/Q_z [m^-3] for in-band level populations (imaging)
+  pop.bin   nQ_<El><z> = n_z/Q_z, n_<El><z>, nion_z<k> [m^-3] for in-band levels and continuum (imaging)
   manifest.json  config, registry hash, NIST manifest hash, code commit, per-file SHA256
 """
 from __future__ import annotations
@@ -133,7 +133,7 @@ def main(argv=None):
     r = build_eos(cfg, a.workers)
     f = r["fields"]
     groups = {"eos.bin": EOS_FIELDS, "opt.bin": OPT_FIELDS,
-              "pop.bin": [k for k in f if k.startswith("nQ_")]}
+              "pop.bin": [k for k in f if k.startswith(("nQ_", "n_", "nion_"))]}
     for fn, keys in groups.items():
         write_bin(a.out / fn, r["axes"], {k: f[k] for k in keys})
         man["files"][fn] = {"sha256": _sha(a.out / fn), "fields": keys,
