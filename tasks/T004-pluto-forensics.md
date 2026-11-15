@@ -9,6 +9,8 @@ est_time: 3h
 started: 2026-11-15T17:00:27+08:00
 ---
 
+**Step 0 (user agreed 2026-11-15, see DECISIONS):** check whether the historical PLUTO 72-hour parameter-search controller and the PLUTO/mpiexec processes it started are still running (record the check command and output in the report). The user expects it has already exited at the end of its 72-hour window. If it is still running: stop the controller and the processes it started, and record the PIDs, command lines, stop time and the affected case IDs. **Delete no data and move no files.** Wait until the case_00326_coarse output files are no longer being written before continuing.
+
 Spec copied from docs/PLAN.md §12.3 (the PLAN is authoritative). Use the Python environment from T003: `D:\sim_tools\envs\lipsim\python.exe`. Background reading: `docs/PRIOR_DIAGNOSIS.md` §3.
 
 **T004 历史 PLUTO 最佳算例只读取证**（owner: codex，depends: 无，est: 2–3 h）
