@@ -22,7 +22,7 @@ import yaml
 
 GRADES = set("ABCDEFN")
 REQUIRED = ("value", "unit", "grade", "source", "uncertainty", "date", "verified")
-PHYSICS_PKGS = ("eos", "transport", "optics", "hydro", "target", "laser", "imaging", "uq")
+PHYSICS_PKGS = ("eos", "transport", "optics", "hydro", "target", "laser", "imaging", "image", "uq")
 TRIVIAL = {"0", "1", "2", "3", "0.0", "1.0", "2.0", "3.0", "0.5", "0.25", "-1", "4", "4.0", "10", "10.0"}
 TAG = re.compile(r"#\s*(reg:([A-Za-z_][\w]*)|num\b|math\b)")
 

@@ -56,7 +56,7 @@ def band_lines(lmin_nm: float, lmax_nm: float) -> BandLines:
                 rows.append((el, z, L.wl_nm[i] * 1e-9, L.A[i], L.Ei[i], L.Ek[i], L.gi[i], L.gk[i]))  # math (nm->m)
     el = [r[0] for r in rows]
     a = np.array([r[1:] for r in rows], float)
-    return BandLines(el, a[:, 0].astype(int), a[:, 1], a[:, 2], a[:, 3], a[:, 4], a[:, 5], a[:, 6],
+    return BandLines(el, a[:, 0].astype(int), a[:, 1], a[:, 2], a[:, 3], a[:, 4], a[:, 5], a[:, 6],  # math (column indices)
                      np.array([MASS_AMU[e] * AMU for e in el]))
 
 
@@ -151,7 +151,7 @@ def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption
         if self_absorption and tot.sum() > 0:
             order = np.argsort(tot)[::-1]
             cum = np.cumsum(tot[order]) / tot.sum()
-            k = min(int(np.searchsorted(cum, 0.99)) + 1, MAX_RT_LINES)
+            k = min(int(np.searchsorted(cum, 0.99)) + 1, MAX_RT_LINES)  # num (fraction of thin band emission transferred exactly)
             rt = order[:k]
             I_l = thin_cols.sum(1) - thin_cols[:, rt].sum(1)
             for i in rt:
