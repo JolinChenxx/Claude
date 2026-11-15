@@ -67,3 +67,19 @@ def test_cu_saha_charge_neutral_and_monotonic():
         assert zbar > prev
         prev = zbar
     assert 0.0 < r.dchi_unit_eV < 1.0
+
+
+def test_thermo_limits_and_energy_monotonic():
+    from lipsim.eos import thermo
+    d = _levels_dir()
+    ie = read_ionization(d / "Cu_ionization.csv")
+    stages = ["Cu I", "Cu II", "Cu III"]
+    sp = saha.Species("Cu", [read_levels(d / f"{s.replace(' ', '_')}_levels.csv", s) for s in stages],
+                      [ie[s] for s in stages])
+    n = 1e24
+    cold = thermo.state([sp], {"Cu": n}, 1000.0)
+    # cold, neutral, ground state: ideal monatomic gas
+    assert cold["zbar"] < 1e-10
+    assert cold["u"] == pytest.approx(1.5 * n * saha.K_B * 1000.0, rel=1e-4)  # metastable 2D adds ~3e-6
+    us = [thermo.state([sp], {"Cu": n}, T)["u"] for T in np.linspace(3000, 30000, 28)]
+    assert np.all(np.diff(us) > 0)  # positive heat capacity
