@@ -2,11 +2,11 @@
 id: T008
 title: PLUTO 4.4-patch4 官方压缩包与 Windows 构建适配文件入库（供云端 Linux 编译）
 owner: codex
-status: ready
+status: running
 depends: []
 milestone: D0
 est_time: 20min
-started:
+started: 2026-11-15T22:14:18+08:00
 ---
 
 ## Goal
