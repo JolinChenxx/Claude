@@ -107,8 +107,10 @@ def solve(species: list[Species], n_el: dict[str, float], T: float, ne_guess: fl
             fr[s.name], Q[s.name] = f, q
             nz2 += n_el[s.name] * np.dot(np.arange(s.stages) ** 2, f)
         lam = debye_length(T, ne, nz2)
-        # e/(4π ε0 λ_D) is a potential in volts, i.e. numerically the lowering in eV per unit charge
-        new = E_CH / (4 * np.pi * EPS0 * lam) if lam > 0 else 0.0  # math
+        # screening length bounded below by the ion-sphere radius (same F-grade choice as mixture.py)
+        a_is = (3.0 / (4 * np.pi * max(n_tot, 1.0))) ** (1.0 / 3.0)  # math
+        # e/(4π ε0 λ) is a potential in volts, i.e. numerically the lowering in eV per unit charge
+        new = E_CH / (4 * np.pi * EPS0 * max(lam, a_is))  # math
         if abs(new - dchi) <= tol * max(new, 1e-3):  # num
             dchi = new
             break
