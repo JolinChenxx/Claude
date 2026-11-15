@@ -1,0 +1,33 @@
+{
+  "exit_code": 0,
+  "wall_s": 5.401024300000017,
+  "command": [
+    "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\mingw32-make.exe",
+    "-j",
+    "8"
+  ],
+  "compiler": "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\gcc.exe",
+  "mpi_executable": "C:\\Program Files\\Microsoft MPI\\Bin\\mpiexec.exe",
+  "official_tar_sha256": "1ba5527b76d49fdd78ae24dbfbdad085ec83393748f1e618516a9d63bd945787",
+  "upstream_differences": [
+    {
+      "file": "PLUTO/Src/HD/makefile",
+      "official_sha256": "f9eb6512c8a3c8c88b3ec64b1dac62976fa74c172a048bbd2e2b439432397230",
+      "actual_sha256": "bda5ba487571e94f5b2bf01d06ae32a2c33f779ab6940e05c6c4accfd8deeac5"
+    }
+  ],
+  "user_problem_files": {
+    "definitions.h": "1543f85a71d672ff43fc0d2d50d55cbf3610a5ce2e9011d58fd2ff6bf12e2b38",
+    "init.c": "79caa0eda5b2f26380b772685140af558b187cc690e0e913d713791877624269"
+  },
+  "adapters": {
+    "windows_compat.c": "d638c72e010fa0d4cf129de5237a685f5bb43148f0565326967bb84c04ed0d03",
+    "windows_compat.h": "ffdbaf0e7dd5a3f16cde6ce4447fd6f0c6daeb44081a70708bb43a72ba3f138d"
+  },
+  "notes": [
+    "Task-specified initial condition and budget diagnostics use official user hooks.",
+    "Only stock-tree difference is the T005 HD makefile separator adaptation.",
+    "No EOS, source, conduction, cooling, or solver patch."
+  ],
+  "executable_sha256": "189c1fffe32f1d5f99cb084c1a42c268b2a0c90edb2821b465e5ce12cc64f92e"
+}
