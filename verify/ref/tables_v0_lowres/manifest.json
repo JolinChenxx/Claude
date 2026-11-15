@@ -30,18 +30,56 @@
   }
  },
  "config_file": "configs/tables/v0_lowres.yaml",
- "registry_sha256": "61d87d682f6762f6e902a9e6c25f24af423c2c4ac4c68ab5d20aa7f3bbd99be0",
+ "registry_sha256": "a6b588f89a969fef5901aca5a5798c15967580c2f5361281b33b12bd165b0ce8",
  "nist_manifest_sha256": "3e737c44327874fafd1df0e2ad16034aa021164e447c134ee626a27c20c644bd",
- "code_commit": "a2d6520a42c17910761108f8c9c278753157251f",
+ "code_commit": "523d191d1949fcdf6cf827a16785f4d3a0df4dff",
  "files": {
   "eos.bin": {
    "sha256": "ea959f6e89bc89570eec812af9e322e209016851bc9ac095bc5485faefaaa252",
-   "seconds": 5.5,
+   "fields": [
+    "e",
+    "p",
+    "ne",
+    "dchi_eV"
+   ],
+   "shape": [
+    17,
+    28,
+    5
+   ]
+  },
+  "opt.bin": {
+   "sha256": "96193e25d81b141fcf6db38930f4c89e3a7481384dd423ffbada37c6f1e3d69d",
+   "fields": [
+    "alpha1064",
+    "nec_thin",
+    "nec_trap"
+   ],
+   "shape": [
+    17,
+    28,
+    5
+   ]
+  },
+  "pop.bin": {
+   "sha256": "e8705d0e2fab2bf001faf56ed29d1603c8709ce235d2b8419df9b1cb2a581a6f",
+   "fields": [
+    "nQ_Cu0",
+    "nQ_Cu1",
+    "nQ_Cu2",
+    "nQ_N0",
+    "nQ_N1",
+    "nQ_O0",
+    "nQ_O1",
+    "nQ_Ar0",
+    "nQ_Ar1"
+   ],
    "shape": [
     17,
     28,
     5
    ]
   }
- }
+ },
+ "seconds": 6.2
 }

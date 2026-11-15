@@ -112,3 +112,51 @@ def read_ionization(path: Path) -> dict[str, float]:
         if v is not None:
             out[r[iS].strip()] = v
     return out
+
+
+@dataclass
+class Lines:
+    spectrum: str
+    wl_nm: np.ndarray      # Ritz wavelength if available, else observed (nm)
+    in_air: np.ndarray     # bool: wavelength given in air (NIST convention 200–2000 nm)
+    A: np.ndarray          # s^-1
+    Ei: np.ndarray         # eV (lower)
+    Ek: np.ndarray         # eV (upper)
+    gi: np.ndarray
+    gk: np.ndarray
+    n_total: int
+
+
+def read_lines(path: Path, spectrum: str = "") -> Lines:
+    """NIST lines1.pl format=3 (tab, quoted). Header lines repeat when the vac/air convention switches.
+    Only lines with a numeric Aki, Ei, Ek, g_i, g_k are kept."""
+    text = Path(path).read_text(encoding="utf-8", errors="replace").splitlines()
+    rows = list(csv.reader(text, delimiter="\t"))
+    header = None
+    out = {k: [] for k in ("wl", "air", "A", "Ei", "Ek", "gi", "gk")}
+    total = 0
+    for r in rows:
+        if not r or not any(c.strip() for c in r):
+            continue
+        if r[0].startswith("obs_wl") or r[0].startswith("ritz_wl"):
+            header = [h.strip() for h in r]
+            continue
+        if header is None:
+            continue
+        total += 1
+        d = dict(zip(header, [_clean(c) for c in r]))
+        air = any(h.endswith("air(nm)") for h in header)
+        wl = None
+        for key in ("ritz_wl_air(nm)", "ritz_wl_vac(nm)", "obs_wl_air(nm)", "obs_wl_vac(nm)"):
+            if key in d:
+                wl = _float(d[key])
+                if wl is not None:
+                    break
+        vals = [_float(d.get(k, "")) for k in ("Aki(s^-1)", "Ei(eV)", "Ek(eV)", "g_i", "g_k")]
+        if wl is None or any(v is None for v in vals):
+            continue
+        for k, v in zip(("wl", "A", "Ei", "Ek", "gi", "gk"), [wl] + vals):
+            out[k].append(v)
+        out["air"].append(air)
+    return Lines(spectrum, np.array(out["wl"]), np.array(out["air"], bool), np.array(out["A"]),
+                 np.array(out["Ei"]), np.array(out["Ek"]), np.array(out["gi"]), np.array(out["gk"]), total)

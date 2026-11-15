@@ -67,6 +67,14 @@ cu_T_crit:   {value: 7800.0, unit: K, grade: C, source: "Estimated critical temp
 f_Tcap:      {value: 0.9, unit: "1", grade: F, source: "PLAN v3 §3.2: surface temperature capped at 0.9 T_c (phase-explosion onset, Miotello & Kelly 1999)", uncertainty: scenario, date: 2026-11-15, verified: true}
 knight_M1:   {value: {Tv_over_Ts: 0.669, rhov_over_rhos: 0.308}, unit: "1", grade: F, source: "Knight, AIAA J. 17, 519 (1979), sonic (M=1) Knudsen layer for monatomic vapour (gamma=5/3)", uncertainty: "model form", date: 2026-11-15, verified: false}
 
+# ---------------------------------------------------------------- F/C: optics model choices (W2)
+gaunt_ff:    {value: 1.0, unit: "1", grade: F, source: "Kramers approximation (Zel'dovich & Raizer, Physics of Shock Waves, ch. V); thermally averaged Gaunt factor ~1-1.5 in this regime", uncertainty: [1.0, 1.5], date: 2026-11-15, verified: true}
+unsold_bf:   {value: "kappa_ff+bf = K n_e n_i (exp(h nu/kT) - 1)", unit: "-", grade: F, source: "Kramers-Unsold quasi-hydrogenic photoionisation of excited levels (Zel'dovich & Raizer ch. V; Raizer, Laser-Induced Discharge Phenomena)", uncertainty: "factor ~2 (model form)", date: 2026-11-15, verified: true}
+sigma_en_Cu: {value: 1.0e-19, unit: m2, grade: C, source: "electron momentum-transfer cross-section of Cu atoms, order of magnitude (to be checked; e.g. Itikawa compilations)", uncertainty: [3.0e-20, 3.0e-19], date: 2026-11-15, verified: false}
+sigma_en_air: {value: 1.0e-19, unit: m2, grade: C, source: "electron momentum-transfer cross-section of N2/O2/N/O at ~1 eV, order of magnitude (Itikawa, J. Phys. Chem. Ref. Data 35 (2006) for N2)", uncertainty: [5.0e-20, 2.0e-19], date: 2026-11-15, verified: false}
+fb_over_ff:  {value: "P_fb = P_ff * chi_z / kT (hydrogenic recombination continuum, all levels)", unit: "-", grade: F, source: "Zel'dovich & Raizer ch. V (integrated Kramers-Unsold continuum)", uncertainty: "factor ~2", date: 2026-11-15, verified: true}
+nec_trap_rule: {value: "resonance lines (lower level = ground level of the ion) removed entirely", unit: "-", grade: F, source: "PLAN v3 §3.2: two parameter-free NEC limits (thin / resonance fully trapped)", uncertainty: scenario, date: 2026-11-15, verified: true}
+
 # ---------------------------------------------------------------- D: experimental conditions stated in the paper
 E_pulse_high: {value: 0.4e-3,  unit: J,  grade: D, source: "SI Table 1 (high fluence)", uncertainty: unknown, date: 2026-11-15, verified: true,
                note: "Whether this is the energy at the sample is asked in QUESTIONS_FOR_AUTHORS B7"}

@@ -137,6 +137,7 @@ class State:
     u: float         # internal energy density J/m^3 (reference: cold N2, O2, Cu, Ar)
     e: float         # specific internal energy J/kg
     dchi_eV: float
+    Q: dict = None   # element -> array of stage partition functions (truncated, ground-referenced)
 
 
 def equilibrium(rho: float, T: float, Y_cu: float, max_outer: int = 30) -> State:  # num
@@ -225,4 +226,4 @@ def equilibrium(rho: float, T: float, Y_cu: float, max_outer: int = 30) -> State
     u_eV += ne * 1.5 * x  # math
     p = (n_heavy + ne) * K_B * T
     u = u_eV * EV
-    return State(T, rho, Y_cu, ne, n, p, u, u / rho, dchi)
+    return State(T, rho, Y_cu, ne, n, p, u, u / rho, dchi, Q)

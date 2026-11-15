@@ -2,10 +2,11 @@
 
     python -m lipsim.tables.build --config configs/tables/v0.yaml --out <dir> --workers N [--only eos]
 
-Outputs (little-endian, documented in `write_bin`):
-  eos.bin        e(ρ,T,Y) [J/kg], p [Pa], n_e [m^-3], dchi_eV (IP lowering; validity flag) on (log10 ρ, log10 T, Y)
+Outputs (little-endian LIPTAB01, documented in `write_bin`), all on (log10 ρ, log10 T, Y):
+  eos.bin   e [J/kg], p [Pa], ne [m^-3], dchi_eV (IP lowering; validity flag)
+  opt.bin   alpha1064 [1/m], nec_thin, nec_trap [W/m^3/sr]
+  pop.bin   nQ_<El><z> = n_z/Q_z [m^-3] for in-band level populations (imaging)
   manifest.json  config, registry hash, NIST manifest hash, code commit, per-file SHA256
-Further tables (alpha1064.bin, nec_*.bin, inband.npz) are added by the optics module (W2).
 """
 from __future__ import annotations
 
@@ -23,6 +24,8 @@ import yaml
 
 from lipsim import params
 
+P_get = params.get
+
 MAGIC = b"LIPTAB01"
 
 
@@ -34,32 +37,41 @@ def grid(cfg) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     return lr, lt, Y
 
 
-def _eos_row(args):
-    """All T for one (log10 rho, Y) pair; continuation in T keeps the solver cheap."""
+EOS_FIELDS = ["e", "p", "ne", "dchi_eV"]
+OPT_FIELDS = ["alpha1064", "nec_thin", "nec_trap"]
+
+
+def _row(args):
+    """All T for one (log10 rho, Y) pair: EOS + optics + level-population fields."""
     from lipsim.eos import mixture as mx
-    lrho, Y, lts = args
+    from lipsim.optics import props as op
+    lrho, Y, lts, wl = args
     rho = 10.0 ** lrho
-    out = np.empty((len(lts), 4))
-    for j, lt in enumerate(lts):
+    rows = []
+    for lt in lts:
         s = mx.equilibrium(rho, 10.0 ** lt, float(Y))
-        out[j] = (s.e, s.p, s.ne, s.dchi_eV)
-    return out
+        d = {"e": s.e, "p": s.p, "ne": s.ne, "dchi_eV": s.dchi_eV,
+             "alpha1064": op.alpha_at(s, wl)["total"], "nec_thin": op.nec(s, "thin"), "nec_trap": op.nec(s, "trap")}
+        d.update(op.pop_fields(s))
+        rows.append(d)
+    return rows
 
 
 def build_eos(cfg, workers: int) -> dict:
     lr, lt, Y = grid(cfg)
-    jobs = [(a, y, lt) for y in Y for a in lr]
+    wl = P_get("wavelength_laser")
+    jobs = [(a, y, lt, wl) for y in Y for a in lr]
     t0 = time.time()
     if workers > 1:
         with ProcessPoolExecutor(max_workers=workers) as ex:
-            rows = list(ex.map(_eos_row, jobs, chunksize=max(1, len(jobs) // (workers * 8))))
+            rows = list(ex.map(_row, jobs, chunksize=max(1, len(jobs) // (workers * 8))))
     else:
-        rows = [_eos_row(j) for j in jobs]
-    arr = np.array(rows).reshape(len(Y), len(lr), len(lt), 4)
-    arr = np.transpose(arr, (1, 2, 0, 3))  # -> [rho, T, Y, field]
-    return {"axes": {"log10_rho": lr, "log10_T": lt, "Y_cu": Y},
-            "fields": {"e": arr[..., 0], "p": arr[..., 1], "ne": arr[..., 2], "dchi_eV": arr[..., 3]},
-            "seconds": time.time() - t0}
+        rows = [_row(j) for j in jobs]
+    names = list(rows[0][0].keys())
+    arr = np.array([[[d[k] for k in names] for d in r] for r in rows])  # [Y*rho, T, field]
+    arr = arr.reshape(len(Y), len(lr), len(lt), len(names)).transpose(1, 2, 0, 3)  # -> [rho, T, Y, field]
+    fields = {k: arr[..., i] for i, k in enumerate(names)}
+    return {"axes": {"log10_rho": lr, "log10_T": lt, "Y_cu": Y}, "fields": fields, "seconds": time.time() - t0}
 
 
 def write_bin(path: Path, axes: dict, fields: dict):
@@ -108,7 +120,6 @@ def main(argv=None):
     ap.add_argument("--config", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--workers", type=int, default=1)
-    ap.add_argument("--only", nargs="*", default=None)
     a = ap.parse_args(argv)
     cfg = yaml.safe_load(a.config.read_text(encoding="utf-8"))
     a.out.mkdir(parents=True, exist_ok=True)
@@ -119,19 +130,16 @@ def main(argv=None):
         commit = "unknown"
     man = {"config": cfg, "config_file": str(a.config), "registry_sha256": params.registry_hash(),
            "nist_manifest_sha256": _sha(repo / "data/atomic/nist/manifest.json"), "code_commit": commit, "files": {}}
-    todo = a.only or ["eos"]
-    if "eos" in todo:
-        r = build_eos(cfg, a.workers)
-        write_bin(a.out / "eos.bin", r["axes"], r["fields"])
-        man["files"]["eos.bin"] = {"sha256": _sha(a.out / "eos.bin"), "seconds": round(r["seconds"], 1),
-                                   "shape": [len(v) for v in r["axes"].values()]}
-        print(f"eos.bin: {man['files']['eos.bin']['shape']} in {r['seconds']:.1f}s")
-    # W2 hooks: alpha1064 / nec / inband are added by lipsim.optics when available
-    try:
-        from lipsim.optics import tables as optab  # noqa: F401
-        man["files"].update(optab.build_all(cfg, a.out, a.workers, todo))
-    except ImportError:
-        pass
+    r = build_eos(cfg, a.workers)
+    f = r["fields"]
+    groups = {"eos.bin": EOS_FIELDS, "opt.bin": OPT_FIELDS,
+              "pop.bin": [k for k in f if k.startswith("nQ_")]}
+    for fn, keys in groups.items():
+        write_bin(a.out / fn, r["axes"], {k: f[k] for k in keys})
+        man["files"][fn] = {"sha256": _sha(a.out / fn), "fields": keys,
+                            "shape": [len(v) for v in r["axes"].values()]}
+    man["seconds"] = round(r["seconds"], 1)
+    print(f"tables {man['files']['eos.bin']['shape']} built in {r['seconds']:.1f}s -> {list(groups)}")
     (a.out / "manifest.json").write_text(json.dumps(man, indent=1, default=str))
 
 
