@@ -2,7 +2,7 @@
 id: T004
 title: Read-only forensics of the historical PLUTO best case
 owner: codex
-status: review
+status: done
 depends: [T003]
 milestone: M0
 est_time: 3h
