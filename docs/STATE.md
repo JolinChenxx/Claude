@@ -4,7 +4,9 @@ Updated: 2026-11-15
 
 ## Cards
 - T001–T003 done (workstation environment, history archive, Python env `D:\sim_tools\envs\lipsim`).
-- T004 done (conclusions below). T005 (unmodified PLUTO reference build): ready. The old controller check is a `handoff/to_codex/` note.
+- T004 done (conclusions below). T005 done: stock PLUTO 4.4-p4 at D:\sim_tools\pluto_ref, Sod/Sedov pass in serial and MPI8 (Sedov serial/MPI L1 difference 0.25%, use as the V14 tolerance reference).
+- T007 (NIST download) ready. `handoff/to_codex/legacy_tasks.md` (disable the 3 legacy scheduled tasks) not yet done.
+- The only process found by the earlier check, mpiexec 35756, is an unrelated FDTD job (7155a2b), not touched.
 - T006 (user asks the authors): question list ready at `docs/QUESTIONS_FOR_AUTHORS.md`.
 - The user agreed to stop the historical PLUTO 72 h controller (probably already exited); T004 step 0 checks.
 

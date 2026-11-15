@@ -2,7 +2,7 @@
 id: T005
 title: Unpatched PLUTO 4.4-patch4 reference build + Sod/Sedov
 owner: codex
-status: review
+status: done
 depends: []
 milestone: M0
 est_time: 2h
