@@ -1,0 +1,158 @@
+
+   ___  __   __  ____________   
+  / _ \/ /  / / / /_  __/ __ \ 
+ / ___/ /__/ /_/ / / / / /_/ /  
+/_/  /____/\____/ /_/  \____/   
+=============================    v. 4.4-patch4 (Jun 2026)  
+
+> System:
+
+  sysconf.out file not found... 
+
+  - Basic data type size (Bytes):
+    o sizeof (char)     = 1
+    o sizeof (uchar)    = 1
+    o sizeof (uint16_t) = 2
+    o sizeof (short)    = 2
+    o sizeof (ushort)   = 2
+    o sizeof (int)      = 4
+    o sizeof (long)     = 4
+    o sizeof (*int)     = 8
+    o sizeof (float)    = 4
+    o sizeof (double)   = 8
+    o sizeof (*double)  = 8
+
+  - Structure data type (Bytes):
+    o sizeof (cmdLine)    = 64
+    o sizeof (Data)       = 272
+    o sizeof (Grid)       = 1024
+    o sizeof (Float_Vect) = 12
+    o sizeof (Image)      = 856
+    o sizeof (Output)     = 1768
+    o sizeof (RGB)        = 3
+    o sizeof (Runtime)    = 47008
+    o sizeof (Restart)    = 128
+    o sizeof (timeStep)   = 144
+    o sizeof (RBox)       = 112
+    o sizeof (State)      = 128
+    o sizeof (Sweep)      = 568
+
+> Local time:       Sun Nov 15 17:12:37 2026
+
+> Cmd line args:    
+
+> Header configuration:
+
+  PHYSICS:          HD
+  DIMENSIONS:       1
+  GEOMETRY:         Cartesian
+  BODY_FORCE:       NO
+  RECONSTRUCTION:   Linear  (Primitive lim)
+  TIME STEPPING:    Runge-Kutta II
+  TRACERS:          0
+  VARIABLES:        5
+  ENTROPY_SWITCH:   NO
+  LOADED MODULES:
+
+  ROTATION:         NO
+  EOS:              Ideal
+
+> Runtime configuration (pluto.ini):
+
+  +----------------------------------------------------------
+  | [Grid]
+  | 
+  | X1-grid   1   0.0   400   u   1.0
+  | X2-grid   1   0.0     1   u   1.0
+  | X3-grid   1   0.0     1   u   1.0
+  | 
+  | [Chombo Refinement]
+  |  
+  | Levels           4
+  | Ref_ratio        2 2 2 2 2
+  | Regrid_interval  2 2 2 2
+  | Refine_thresh    0.3
+  | Tag_buffer_size  3
+  | Block_factor     4
+  | Max_grid_size    32
+  | Fill_ratio       0.75
+  |  
+  | [Time]
+  | 
+  | CFL            0.8
+  | CFL_max_var    1.1
+  | tstop	       0.2
+  | first_dt       1.e-4
+  | 
+  | [Solver]
+  | 
+  | Solver	       roe
+  | 
+  | [Boundary]
+  | 
+  | X1-beg      outflow
+  | X1-end      outflow
+  | X2-beg      periodic
+  | X2-end      periodic
+  | X3-beg      outflow
+  | X3-end      outflow
+  |  
+  | [Static Grid Output]
+  | 
+  | uservar    0
+  | dbl       90.5  -1   single_file
+  | flt       -1.0  -1   single_file
+  | vtk       -1.0  -1   single_file
+  | tab       -1.0  -1   
+  | ppm       -1.0  -1   
+  | png       -1.0  -1   
+  | log        100
+  | analysis  -1.0  -1 
+  |  
+  | [Chombo HDF5 output]
+  |  
+  | Checkpoint_interval  -1.0  0
+  | Plot_interval         1.0  0
+  |  
+  | [Parameters]
+  | 
+  | SCRH                        0  
+  +---------------------------------------------------------
+
+> Generating grid...
+
+  Global grid:
+  X1: [   0.0000,   1.0000],    400 point(s), 2 ghosts
+
+  Local grid:
+  X1: [   0.0000,   1.0000],    400 point(s); 2 ghosts; Active zones = [2, 401]
+
+> Memory allocation
+> Assigning initial conditions (Startup) ...
+> Normalization Units:
+
+  [Density]:      1.673e-024 (gr/cm^3), 1.000e+000 (1/cm^3)
+  [Pressure]:     1.673e-014 (dyne/cm^2)
+  [Velocity]:     1.000e+005 (cm/s)
+  [Length]:       1.496e+013 (cm)
+  [Temperature]:  1.203e+002 X (p/rho*mu) (K)
+  [Time]:         1.496e+008 (sec), 4.744e+000 (yrs) 
+ 
+> Number of processors: 1
+> Proc size:            400
+> Writing file #0 (dbl) to disk...
+> Starting computation... 
+
+step:0; t = 0.0000e+000; dt = 1.0000e-004; 0.0 %
+        [Mach = 0.058977]
+step:100; t = 7.7550e-002; dt = 9.0697e-004; 38.8 %
+          [Mach = 0.934936]
+step:200; t = 1.6835e-001; dt = 9.0889e-004; 84.2 %
+          [Mach = 0.933378]
+> Writing file #1 (dbl) to disk...
+
+> Total allocated memory    1.41 Mb
+> Elapsed time              0d:0h:0m:0s
+> Average time/step        0.00e+000  (sec)  
+> Local time                Sun Nov 15 17:12:37 2026
+> Done

@@ -1,0 +1,91 @@
+{
+  "cases": [
+    {
+      "case": "Sod_serial",
+      "configuration": "01",
+      "build_exit": 0,
+      "build_seconds": 6.384185600007186,
+      "build_command": [
+        "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\mingw32-make.exe",
+        "-j",
+        "8"
+      ],
+      "build_dir": "D:\\sim_tools\\pluto_ref\\build\\Sod_serial",
+      "run_dir": "D:\\sim_runs\\T005\\Sod_serial",
+      "run_exit": 0,
+      "run_seconds": 1.2225198000087403,
+      "run_command": [
+        "D:\\sim_tools\\pluto_ref\\build\\Sod_serial\\pluto.exe"
+      ],
+      "executable_sha256": "b4b2f9b7ac2833b575ea9868a0045ced6ccc1639ab2e9a7d8f185d03f647e532"
+    },
+    {
+      "case": "Sod_mpi8",
+      "configuration": "01",
+      "build_exit": 0,
+      "build_seconds": 6.3863718000066,
+      "build_command": [
+        "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\mingw32-make.exe",
+        "-j",
+        "8"
+      ],
+      "build_dir": "D:\\sim_tools\\pluto_ref\\build\\Sod_mpi8",
+      "run_dir": "D:\\sim_runs\\T005\\Sod_mpi8",
+      "run_exit": 0,
+      "run_seconds": 1.4198066999961156,
+      "run_command": [
+        "C:\\Program Files\\Microsoft MPI\\Bin\\mpiexec.exe",
+        "-n",
+        "8",
+        "-wdir",
+        "D:\\sim_runs\\T005\\Sod_mpi8",
+        "D:\\sim_tools\\pluto_ref\\build\\Sod_mpi8\\pluto.exe"
+      ],
+      "executable_sha256": "2c02590b90f29783033f17f78dfd7582bc983cc8ddc47e2468ee2de1c1006fc6"
+    },
+    {
+      "case": "Sedov_mpi8",
+      "configuration": "03",
+      "build_exit": 0,
+      "build_seconds": 3.908801899990067,
+      "build_command": [
+        "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\mingw32-make.exe",
+        "-j",
+        "8"
+      ],
+      "build_dir": "D:\\sim_tools\\pluto_ref\\build\\Sedov_mpi8",
+      "run_dir": "D:\\sim_runs\\T005\\Sedov_mpi8",
+      "run_exit": 0,
+      "run_seconds": 3.031611600003089,
+      "run_command": [
+        "C:\\Program Files\\Microsoft MPI\\Bin\\mpiexec.exe",
+        "-n",
+        "8",
+        "-wdir",
+        "D:\\sim_runs\\T005\\Sedov_mpi8",
+        "D:\\sim_tools\\pluto_ref\\build\\Sedov_mpi8\\pluto.exe"
+      ],
+      "executable_sha256": "1b0b7ed30c5e6ec812ee1423a1009ee7d899deee76e58e9d0cfd4fb29c23410f"
+    },
+    {
+      "case": "Sedov_serial",
+      "configuration": "03",
+      "build_exit": 0,
+      "build_seconds": 2.9318332000111695,
+      "build_command": [
+        "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\mingw32-make.exe",
+        "-j",
+        "8"
+      ],
+      "build_dir": "D:\\sim_tools\\pluto_ref\\build\\Sedov_serial",
+      "run_dir": "D:\\sim_runs\\T005\\Sedov_serial",
+      "run_exit": 0,
+      "run_seconds": 4.577318900002865,
+      "run_command": [
+        "D:\\sim_tools\\pluto_ref\\build\\Sedov_serial\\pluto.exe"
+      ],
+      "executable_sha256": "0adf71732b270d5fc690e55bd5751fe860a6f502ed7c7d10000904498d0a23ef"
+    }
+  ],
+  "elapsed_s": 85.30673959999694
+}

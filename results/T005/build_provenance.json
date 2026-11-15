@@ -1,0 +1,29 @@
+{
+  "official_tar": "D:\\junlin\\PlasmaPlumeHighInfluence\\vendor\\pluto-4.4-patch4.tar.gz",
+  "official_tar_sha256": "1ba5527b76d49fdd78ae24dbfbdad085ec83393748f1e618516a9d63bd945787",
+  "compiler": "C:\\Program Files\\ANSYS Inc\\v261\\SCADE Rapid Prototyper\\contrib\\Msys64\\mingw64\\bin\\gcc.exe",
+  "compiler_version": "gcc.exe (x86_64-win32-sjlj-rev0, Built by MinGW-W64 project) 5.1.0\nCopyright (C) 2015 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "mpi_executable": "C:\\Program Files\\Microsoft MPI\\Bin\\mpiexec.exe",
+  "modified_official_files": [
+    {
+      "file": "PLUTO/Src/HD/makefile",
+      "original_sha256": "f9eb6512c8a3c8c88b3ec64b1dac62976fa74c172a048bbd2e2b439432397230",
+      "actual_sha256": "bda5ba487571e94f5b2bf01d06ae32a2c33f779ab6940e05c6c4accfd8deeac5"
+    }
+  ],
+  "added_config_files": [
+    "Config/Windows.serial.gcc.defs",
+    "Config/Windows.mpi8.gcc.defs"
+  ],
+  "compatibility_helpers": {
+    "windows_compat.c": "d638c72e010fa0d4cf129de5237a685f5bb43148f0565326967bb84c04ed0d03",
+    "windows_compat.h": "ffdbaf0e7dd5a3f16cde6ce4447fd6f0c6daeb44081a70708bb43a72ba3f138d"
+  },
+  "notes": [
+    "No project EOS, conduction, cooling, source, main, or solver patches.",
+    "Only upstream Src/HD/makefile VPATH separator adapted.",
+    "Compatibility helpers supply POSIX drand48/srand48 and missing SAL annotation; no fluid physics.",
+    "Sod official configuration01; Sedov official configuration03 (1D spherical, exponent target0.4).",
+    "Sedov dbl output interval changes0.5 to0.025 for shock trajectory only; every numerical and physical setting unchanged."
+  ]
+}
