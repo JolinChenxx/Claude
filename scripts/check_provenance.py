@@ -47,6 +47,12 @@ def check_registry(path: Path, warn_unverified: bool) -> tuple[list[str], dict]:
             errs.append(f"registry:{name}: grade X (derived from comparison data) is forbidden")
         elif g not in GRADES:
             errs.append(f"registry:{name}: unknown grade '{g}'")
+        # numeric-looking strings (e.g. YAML 1.1 parses 1e5 without exponent sign as a string)
+        leaves = []
+        _walk(e.get("value"), [], leaves)
+        for _, v in leaves:
+            if isinstance(v, str) and re.fullmatch(r"[-+]?\d*\.?\d+([eE][-+]?\d+)?", v.strip()):
+                errs.append(f"registry:{name}: value '{v}' is a string; write the exponent with a sign (e.g. 1.0e+5)")
         if not str(e.get("source", "")).strip():
             errs.append(f"registry:{name}: empty source")
         if warn_unverified and e.get("verified") is False:
