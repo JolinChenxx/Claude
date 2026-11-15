@@ -13,7 +13,7 @@ The project goal and technical route are in `docs/PLAN.md`. Read it before you s
 - Working branch: **`ws`** (do not push to `main`). Always `git pull --rebase origin ws` before `git push origin ws`.
 
 ## Execution protocol for each pass (manual trigger or automation)
-1. `git pull --rebase origin ws`.
+1. `git pull --rebase origin ws`. If `handoff/to_codex/` has any file other than `.gitkeep`, read and follow it first (these are Claude's notes for you, usually adding to a running card); delete it once followed.
 2. In `tasks/`, find the card with the lowest number where `owner: codex` and `status: ready` and whose `depends` are all `done`. If none, stop this pass and output "no executable task".
 3. Set the card's `status` to `running`, fill in `started:`, then commit and push. This is your lock, so nothing runs twice.
 4. Do the work as the card says. Follow the steps and acceptance criteria. Do not change the physical model or numerical parameters on your own.
