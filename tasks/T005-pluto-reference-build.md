@@ -2,11 +2,11 @@
 id: T005
 title: Unpatched PLUTO 4.4-patch4 reference build + Sod/Sedov
 owner: codex
-status: ready
+status: running
 depends: []
 milestone: M0
 est_time: 2h
-started:
+started: 2026-11-15T17:09:01+08:00
 ---
 
 Spec copied from docs/PLAN.md §12.3 (the PLAN is authoritative).
