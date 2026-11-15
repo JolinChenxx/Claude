@@ -2,7 +2,7 @@
 id: T007
 title: Download NIST ASD atomic data (levels, ionization energies, full-spectrum lines)
 owner: codex
-status: review
+status: done
 depends: []
 milestone: M1
 est_time: 30min

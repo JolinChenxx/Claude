@@ -18,11 +18,14 @@ sigma_SB: {value: 5.670374419e-8,   unit: W/(m2 K4), grade: A, source: "CODATA 2
 # ---------------------------------------------------------------- B: atomic data (to be checked one by one against NIST ASD in M1.1)
 A_Cu:     {value: 63.546, unit: g/mol, grade: B, source: "IUPAC standard atomic weight of Cu", uncertainty: 0.003, date: 2026-11-15, verified: false,
            note: "M1.1: check against the CIAAW table"}
-IP_Cu_I:  {value: 7.72638, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu I", uncertainty: 1.0e-5, date: 2026-11-15, verified: false}
-IP_Cu_II: {value: 20.29239, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu II", uncertainty: 1.0e-4, date: 2026-11-15, verified: false}
-IP_Cu_III: {value: 36.841, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu III", uncertainty: 0.01, date: 2026-11-15, verified: false}
-IP_Cu_IV: {value: 57.38, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu IV", uncertainty: 0.1, date: 2026-11-15, verified: false}
-# Cu levels, transition probabilities and Stark widths are stored as tables in data/atomic/ (M1.1). They are registered as a whole by file hash, not entry by entry.
+IP_Cu_I:  {value: 7.72638, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu I", uncertainty: 1.0e-5, date: 2026-11-15, verified: true}
+IP_Cu_II: {value: 20.29239, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu II", uncertainty: 1.0e-4, date: 2026-11-15, verified: true}
+IP_Cu_III: {value: 36.841, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu III", uncertainty: 0.01, date: 2026-11-15, verified: true}
+IP_Cu_IV: {value: 57.38, unit: eV, grade: B, source: "NIST ASD ionization energies, Cu IV", uncertainty: 0.1, date: 2026-11-15, verified: true}
+# Cu/N/O/Ar levels, ionization energies and line tables: NIST ASD, downloaded by T007 (2026-11-15). Registered as a whole by the manifest hash;
+# per-file SHA256 values are in data/atomic/nist/manifest.json.
+nist_asd_tables: {value: "data/atomic/nist/manifest.json", unit: "-", grade: B, source: "NIST Atomic Spectra Database (physics.nist.gov/asd), retrieved 2026-11-15 by T007", uncertainty: "per-line accuracy codes in tables", date: 2026-11-15, verified: true,
+           manifest_sha256: "3e737c44327874fafd1df0e2ad16034aa021164e447c134ee626a27c20c644bd", note: "Cu I has Aki for only 37/1003 lines, Cu II 554/2557, Cu III none; the full-spectrum NEC needs a more complete line list (M1)"}
 
 # ---------------------------------------------------------------- C: material and transport properties (M1.1, filled from reviews/handbooks)
 # Placeholder: an empty section means "not yet registered", and the model may not use these quantities.
