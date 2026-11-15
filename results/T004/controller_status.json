@@ -1,0 +1,30 @@
+﻿{
+    "checked_at":  "2026-11-15T17:07:54.1583914+08:00",
+    "matching_processes":  [
+
+                           ],
+    "scheduled_tasks":  [
+                            {
+                                "TaskName":  "S4Plume_Daily0700",
+                                "State":  3
+                            },
+                            {
+                                "TaskName":  "S4Plume_Hourly",
+                                "State":  3
+                            },
+                            {
+                                "TaskName":  "S4Plume_Watchdog",
+                                "State":  3
+                            }
+                        ],
+    "all_python_pluto_mpiexec_processes":  [
+                                               {
+                                                   "ProcessId":  35756,
+                                                   "ParentProcessId":  31644,
+                                                   "Name":  "mpiexec.exe",
+                                                   "CommandLine":  null
+                                               }
+                                           ],
+    "process_check":  "Get-CimInstance Win32_Process; inspect project command lines and all python/pythonw/pluto/mpiexec processes; none found",
+    "scheduled_task_state_3":  "Ready (not Running)"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "checked_at":  "2026-11-15T17:08:54.5432063+08:00",
+    "command":  "Get-CimInstance Win32_Process | Where-Object Name in python.exe,pythonw.exe,pluto.exe,mpiexec.exe; Get-ScheduledTask -TaskName S4Plume_*",
+    "processes":  [
+                      {
+                          "ProcessId":  35756,
+                          "ParentProcessId":  31644,
+                          "Name":  "mpiexec.exe",
+                          "CommandLine":  null
+                      }
+                  ],
+    "scheduled_tasks":  [
+                            {
+                                "TaskName":  "S4Plume_Daily0700",
+                                "State":  "Ready"
+                            },
+                            {
+                                "TaskName":  "S4Plume_Hourly",
+                                "State":  "Ready"
+                            },
+                            {
+                                "TaskName":  "S4Plume_Watchdog",
+                                "State":  "Ready"
+                            }
+                        ],
+    "pids_stopped":  [
+
+                     ],
+    "interpretation":  "No controller or solver processes present. No data modified. Stale campaign.json running flag is not evidence of a live job."
+}
