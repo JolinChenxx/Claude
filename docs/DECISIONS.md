@@ -19,3 +19,4 @@
   3. Spatter and nanoparticle dynamics are not modelled; they are listed as limitations.
   4. Historical PLUTO 72-hour parameter search controller: **user agrees to stop it** (2026-11-15). The user expects it has already exited automatically at the end of its 72-hour window. T004 step 0 checks; if it is still running, stop it. Do not delete or move data.
 - Effect on PLAN: in §8, the trend metrics of brightness/evolution (P1, P2, P6, and the shape/direction of P3, P5) are the core of the judgement; absolute-size metrics are descriptive only.
+- **User (2026-11-15):** the scheduled tasks S4Plume_Daily0700/Hourly/Watchdog were set up by an earlier Codex session, not by the user, and the user agrees to disable them as recommended (disable only, do not delete; reversible).
