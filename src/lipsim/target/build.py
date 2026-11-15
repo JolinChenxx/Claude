@@ -56,7 +56,7 @@ def main(argv=None):
     a.out.mkdir(parents=True, exist_ok=True)
     fields = {k: o[k] for k in ("mdot", "Tv", "rhov", "uv", "Ts", "A", "I_inc", "q_abs", "q_overcap")}
     np.savez_compressed(a.out / "target_source.npz", t=o["t"], r=r, trans_used=trans_used, **fields)
-    write_bin(a.out / "target_source.bin", {"t": o["t"], "r": r}, {k: fields[k] for k in ("mdot", "Tv", "rhov", "uv", "Ts")})
+    write_bin(a.out / "target_source.bin", {"t": o["t"], "r": r}, {k: fields[k] for k in ("mdot", "Tv", "rhov", "uv", "Ts", "A")})
     meta = {"case": cfg["name"], "picard_iteration": it, "shielding_from": str(a.shielding) if a.shielding else None,
             "budget_J": E, "absorbed_fraction": E["abs"] / E["inc"], "overcap_fraction_of_absorbed": E["overcap"] / E["abs"],
             "U4_triggered": E["overcap"] / E["abs"] > 0.2,  # num: PLAN v3 §3.6 threshold
