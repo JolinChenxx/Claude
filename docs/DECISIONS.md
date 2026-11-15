@@ -20,3 +20,8 @@
   4. Historical PLUTO 72-hour parameter search controller: **user agrees to stop it** (2026-11-15). The user expects it has already exited automatically at the end of its 72-hour window. T004 step 0 checks; if it is still running, stop it. Do not delete or move data.
 - Effect on PLAN: in §8, the trend metrics of brightness/evolution (P1, P2, P6, and the shape/direction of P3, P5) are the core of the judgement; absolute-size metrics are descriptive only.
 - **User (2026-11-15):** the scheduled tasks S4Plume_Daily0700/Hourly/Watchdog were set up by an earlier Codex session, not by the user, and the user agrees to disable them as recommended (disable only, do not delete; reversible).
+
+## 2026-11-15 (evening)
+- **User:** the whole job must be **finished within two weeks**; deliver **a relatively optimised first result within 24 hours**; keep Codex fully busy. Fable re-planned to PLAN v3.
+- **User:** "Once planning is done, have Codex start straight away and report the plan to me." → T008 and T009 (no new code needed) set to ready immediately.
+- PLAN v3 route: the production hydro core is the unmodified PLUTO 4.4-patch4; all physics goes in as our own reviewable user modules (table EOS, 1064 nm absorption, NEC radiation, evaporation source); lipsim handles property tables / target model / imaging / metrics. Energy and mass are still not inputs; the historical fitted values are not used. This replaces the 11-12 decision that "self-written code is the only production code". (Implemented under the user's instruction above; the items in PLAN v3 §15 are reported to the user and can be overruled at any time.)
