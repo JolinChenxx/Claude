@@ -11,3 +11,11 @@
   - Agrees with all strategies in PLAN §11 (self-written open-source code, calibration/blind-prediction logic, leaving spatter/NPs/3D out of the model).
   - The workstation may be used without limit: install what is missing, and use disk and compute freely.
   - Re-plan using the earlier PLUTO results.
+
+## 2026-11-15
+- **User:** the simulation proceeds mainly along Claude's / PLAN v2 recommendations. Specifically:
+  1. **Zero-fit logic accepted.** Agreement with the experiment should be **trend agreement first**: do not dwell on matching sizes. (Supervisor's view, reaffirmed.)
+  2. Semi-empirical branch B (PLAN §4.5): following Claude's recommendation, the self-consistent model is the main line. Branch B is enabled only if the ignition gate fails, as a parallel variant clearly labelled "semi-empirical", and does not replace the self-consistent result.
+  3. Spatter and nanoparticle dynamics are not modelled; they are listed as limitations.
+  4. Whether to stop the historical PLUTO 72-hour parameter search controller: **awaiting the user's explicit confirmation**. Until then, T004 only reads its output.
+- Effect on PLAN: in §8, the trend metrics of brightness/evolution (P1, P2, P6, and the shape/direction of P3, P5) are the core of the judgement; absolute-size metrics are descriptive only.
