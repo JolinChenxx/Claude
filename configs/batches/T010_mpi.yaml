@@ -1,0 +1,8 @@
+# T010 serial vs MPI (-dec 4 1) on the same smoke inputs
+name: T010_mpi
+pluto_exe: D:/sim_tools/pluto_lip/build/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: verify/ref/tables_v0_lowres
+root: D:/sim_runs/T010/mpi
+runs:
+  - {id: high_thin_smoke_mpi4, case: configs/cases/v0_high.yaml, grid: smoke, nec: thin, tstop_ns: 50, procs: 4, picard: 0, src_on: 1}

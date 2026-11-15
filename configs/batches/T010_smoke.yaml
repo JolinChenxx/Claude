@@ -1,0 +1,7 @@
+# T010 smoke + cross-platform check: identical inputs to the cloud Linux reference verify/ref/smoke_v0/
+name: T010_smoke
+pluto_exe: D:/sim_tools/pluto_lip/build/serial/pluto.exe
+tables: verify/ref/tables_v0_lowres
+root: D:/sim_runs/T010/smoke
+runs:
+  - {id: high_thin_smoke, case: configs/cases/v0_high.yaml, grid: smoke, nec: thin, tstop_ns: 50, procs: 1, picard: 0, src_on: 1}
