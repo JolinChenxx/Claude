@@ -2,7 +2,7 @@
 id: T011
 title: v0 quick-baseline production batch (2 fluences × 2 NEC limits × Picard it0–2 on G0, plus high fluence on G1) + imaging
 owner: codex
-status: review
+status: done
 depends: [T010]
 milestone: D0
 est_time: 0.5h operations + about 3h machine time (64 cores)
