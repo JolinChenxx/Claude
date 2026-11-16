@@ -44,3 +44,11 @@ def test_table_roundtrip():
     s = mx.equilibrium(10 ** ax["log10_rho"][i], 10 ** ax["log10_T"][j], ax["Y_cu"][k])
     assert f["e"][i, j, k] == pytest.approx(s.e, rel=1e-10)
     assert g["nec_thin"][i, j, k] == pytest.approx(op.nec(s, "thin"), rel=1e-10)
+
+
+def test_kappa_cold_air_and_monotonic_electrons():
+    from lipsim.transport.kappa import kappa
+    s = mx.equilibrium(1.176, 300.0, 0.0)
+    assert 0.015 < kappa(s)["total"] < 0.035          # air at 300 K: 0.026 W/m/K (hard-sphere approx)
+    ke = [kappa(mx.equilibrium(0.05, T, 1.0))["e"] for T in (6000.0, 10000.0, 15000.0)]
+    assert ke[0] < ke[1] < ke[2]

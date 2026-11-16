@@ -4,7 +4,7 @@
 
 Outputs (little-endian LIPTAB01, documented in `write_bin`), all on (log10 ρ, log10 T, Y):
   eos.bin   e [J/kg], p [Pa], ne [m^-3], dchi_eV (IP lowering; validity flag)
-  opt.bin   alpha1064 [1/m], nec_thin, nec_trap [W/m^3/sr]
+  opt.bin   alpha1064 [1/m], nec_thin, nec_trap [W/m^3/sr], kappa [W/m/K] (v1: electron + heavy, no reactive)
   pop.bin   nQ_<El><z> = n_z/Q_z, n_<El><z>, nion_z<k> [m^-3] for in-band levels and continuum (imaging)
   manifest.json  config, registry hash, NIST manifest hash, code commit, per-file SHA256
 """
@@ -38,20 +38,21 @@ def grid(cfg) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
 
 EOS_FIELDS = ["e", "p", "ne", "dchi_eV"]
-OPT_FIELDS = ["alpha1064", "nec_thin", "nec_trap"]
+OPT_FIELDS = ["alpha1064", "nec_thin", "nec_trap", "kappa"]
 
 
 def _row(args):
     """All T for one (log10 rho, Y) pair: EOS + optics + level-population fields."""
     from lipsim.eos import mixture as mx
     from lipsim.optics import props as op
+    from lipsim.transport.kappa import kappa
     lrho, Y, lts, wl = args
     rho = 10.0 ** lrho
     rows = []
     for lt in lts:
         s = mx.equilibrium(rho, 10.0 ** lt, float(Y))
         d = {"e": s.e, "p": s.p, "ne": s.ne, "dchi_eV": s.dchi_eV,
-             "alpha1064": op.alpha_at(s, wl)["total"], "nec_thin": op.nec(s, "thin"), "nec_trap": op.nec(s, "trap")}
+             "alpha1064": op.alpha_at(s, wl)["total"], "nec_thin": op.nec(s, "thin"), "nec_trap": op.nec(s, "trap"), "kappa": kappa(s)["total"]}
         d.update(op.pop_fields(s))
         rows.append(d)
     return rows
