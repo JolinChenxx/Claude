@@ -2,6 +2,9 @@
 
 Project: reproduce, through simulation, Fig. S4 in the supplementary material of Chen et al., Laser Photonics Rev. 2025, 19, 2400388 (plasma plume emission from high-fluence ns-laser ablation of Cu). Planning: `docs/PLAN.md`. Collaboration protocol with workstation Codex: `AGENTS.md`.
 
+## Communication
+- Always reply to the user in Chinese (用户要求，2026-11-16).
+
 ## Roles
 - Claude (cloud, ephemeral container, 4 cores): writes `src/`, verification tests and analysis scripts, issues task cards under `tasks/`, reviews `tasks/*.report.md` and `results/`, decides the next step. Do only light tests in the cloud. Heavy computation always goes to the workstation as a card.
 - Codex (Windows workstation, 76 cores / 256 GB): runs the cards with `owner: codex`.
