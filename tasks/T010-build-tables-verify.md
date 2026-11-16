@@ -2,11 +2,11 @@
 id: T010
 title: Windows build of pluto_lip, full-resolution property tables, smoke check (serial/MPI/cross-platform)
 owner: codex
-status: ready
+status: running
 depends: [T008]
 milestone: D0
 est_time: 1.5h (about 1h of it machine time)
-started:
+started: 2026-11-16T10:14:26.5211920+08:00
 ---
 
 > Revised by Claude to match the code actually delivered (commit dd1a56c or later; use the latest `ws`). The PLAN v3 V3/V5/V8b/V13 cases move to D1–D2 (recorded in STATE); this card does only what the critical path needs. **If T009 is still running in the background, do not stop it**; this card's background jobs share the cores with it (60 workers total).
