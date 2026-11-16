@@ -1,0 +1,47 @@
+﻿{
+    "checked_at":  "2026-11-17T04:48:46.4845389+08:00",
+    "commit":  "235d19c09ea0ced5c029c77972b8320397ff5803",
+    "job_id":  "T014_image_g1_05",
+    "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+    "workers":  16,
+    "sequential":  true,
+    "series_order":  [
+                         "low",
+                         "high"
+                     ],
+    "cpus":  [
+                 {
+                     "DeviceID":  "CPU0",
+                     "LoadPercentage":  2,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 },
+                 {
+                     "DeviceID":  "CPU1",
+                     "LoadPercentage":  100,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 }
+             ],
+    "solvers":  [
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+                        "Count":  32
+                    }
+                ],
+    "memory":  {
+                   "FreePhysicalMemory":  245477664,
+                   "TotalVisibleMemorySize":  268081848
+               },
+    "finished_unimaged":  [
+                              "low_thin_G1/it0",
+                              "high_thin_G1/it0"
+                          ],
+    "completed_returncodes":  [
+                                  0,
+                                  0
+                              ],
+    "total_solver_runs_completed":  14,
+    "total_image_runs_completed":  12,
+    "production_exitcode":  0
+}
