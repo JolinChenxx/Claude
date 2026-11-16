@@ -132,7 +132,10 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
           double uv = lip_src_get(&lip_src, s_uv, t_SI, r);
           double dm = mdot / dz[0] * dt_SI;
           double hv = lip_vapour_enthalpy(&lip_eos, rv, uv, Tv);
-          m += dm; mY += dm; pz += dm * uv; E += dm * hv;
+          /* v1 correction (pre-declared, PREREG_v0 §5 / STATE 11-17): inject mass and the vapour's stagnation
+             enthalpy only; no direct momentum next to the reflecting wall (the ṁu_v momentum source drove
+             E − ½ρv² negative in the first cells -> ConsToPrim repairs). The pressure accelerates the vapour. */
+          m += dm; mY += dm; E += dm * hv;
           B[6] += dm * dV; B[7] += dm * hv * dV;
         }
       }
@@ -141,9 +144,8 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       if (m > rho) {
         double Sm = (m - rho) / dt_SI;
         inv_src = MAX(inv_src, Sm / (F_M * rho));
-        double uv = (pz - rho * vz) / (m - rho);
         double cv = sqrt(lip_eos_cs2(&lip_eos, m, T, mY / m));
-        inv_src = MAX(inv_src, (fabs(uv) + cv) / dz[0]);
+        inv_src = MAX(inv_src, (fabs(vz) + cv) / dz[0]);
       }
       double vz_new = pz / m;
       double rhoe_new = E - 0.5 * m * (vr * vr + vz_new * vz_new);
