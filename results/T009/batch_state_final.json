@@ -1,0 +1,187 @@
+{
+  "started": "2026-11-15T22:26:25.738212+08:00",
+  "phase": "completed_pending_review",
+  "running": {},
+  "completed": [
+    "benchmark/default_n01",
+    "benchmark/default_n08",
+    "benchmark/default_n16",
+    "benchmark/default_n32",
+    "benchmark/default_n64",
+    "benchmark/radial_n08",
+    "benchmark/radial_n16",
+    "benchmark/radial_n32",
+    "scan/E020",
+    "scan/E030",
+    "scan/E045",
+    "scan/E065",
+    "scan/E090",
+    "scan/E130",
+    "scan/E180",
+    "scan/E250",
+    "scan/E320",
+    "convergence/G240",
+    "convergence/G960"
+  ],
+  "failures": [],
+  "executable_sha256": "189c1fffe32f1d5f99cb084c1a42c268b2a0c90edb2821b465e5ce12cc64f92e",
+  "raw_dir": "D:\\sim_runs\\T009",
+  "updated": "2026-11-15T22:58:07.236900+08:00",
+  "scan_concurrency": 8,
+  "scan_ranks_per_case": 7,
+  "scan_load_snapshot": {
+    "sampled_at": "2026-11-15T22:32:34.3500287+08:00",
+    "sample_seconds": 2.0630797,
+    "physical_cores": 64,
+    "logical_processors": 128,
+    "sampled_cpu_core_equivalents": 2.2114996332909485,
+    "free_physical_core_estimate": 61,
+    "fdtd_core_equivalents": 0,
+    "note": "CPU-time deltas estimate core equivalents, not NUMA/SMT placement. Unrelated jobs are untouched.",
+    "top10_sampled": [
+      {
+        "pid": 36932,
+        "name": "ComsolUI",
+        "cpu_seconds": 29227.265625,
+        "sampled_cores": 1.7722291581852123,
+        "fdtd": false
+      },
+      {
+        "pid": 30488,
+        "name": "powershell",
+        "cpu_seconds": 1.671875,
+        "sampled_cores": 0.43927047510573636,
+        "fdtd": false
+      },
+      {
+        "pid": 31900,
+        "name": "OneDrive",
+        "cpu_seconds": 0.359375,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 31612,
+        "name": "PhoneExperienceHost",
+        "cpu_seconds": 1.65625,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 4932,
+        "name": "powershell",
+        "cpu_seconds": 0.015625,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 27724,
+        "name": "RuntimeBroker",
+        "cpu_seconds": 0.046875,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 30228,
+        "name": "RuntimeBroker",
+        "cpu_seconds": 0,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 9736,
+        "name": "python",
+        "cpu_seconds": 0,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 16568,
+        "name": "RuntimeBroker",
+        "cpu_seconds": 0.265625,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 8476,
+        "name": "MSPCManagerService",
+        "cpu_seconds": 4.625,
+        "sampled_cores": 0,
+        "fdtd": false
+      }
+    ],
+    "top10_cumulative": [
+      {
+        "pid": 36932,
+        "name": "ComsolUI",
+        "cpu_seconds": 29227.265625,
+        "sampled_cores": 1.7722291581852123,
+        "fdtd": false
+      },
+      {
+        "pid": 36788,
+        "name": "ChatGPT",
+        "cpu_seconds": 14.703125,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 32296,
+        "name": "msedgewebview2",
+        "cpu_seconds": 5.09375,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 8476,
+        "name": "MSPCManagerService",
+        "cpu_seconds": 4.625,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 34588,
+        "name": "msedgewebview2",
+        "cpu_seconds": 3.75,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 35268,
+        "name": "GenuineService",
+        "cpu_seconds": 3.71875,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 34748,
+        "name": "ChatGPT",
+        "cpu_seconds": 3.125,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 17156,
+        "name": "SearchHost",
+        "cpu_seconds": 2.390625,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 17272,
+        "name": "explorer",
+        "cpu_seconds": 1.921875,
+        "sampled_cores": 0,
+        "fdtd": false
+      },
+      {
+        "pid": 30488,
+        "name": "powershell",
+        "cpu_seconds": 1.671875,
+        "sampled_cores": 0.43927047510573636,
+        "fdtd": false
+      }
+    ]
+  },
+  "postprocess_exit": 0
+}

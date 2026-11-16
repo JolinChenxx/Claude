@@ -2,7 +2,7 @@
 id: T009
 title: 未改动 PLUTO 的 2D 轴对称点爆炸：性能/分区基准、网格收敛、对图 3d 的能量反推
 owner: codex
-status: running
+status: review
 depends: []
 milestone: D0
 est_time: 1h 操作 + 2-3h 机时
