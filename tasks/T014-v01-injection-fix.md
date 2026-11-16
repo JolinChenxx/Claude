@@ -2,11 +2,11 @@
 id: T014
 title: v0.1 — rerun the T011 members with the vapour-injection correction (+ low-fluence G1) and image them
 owner: codex
-status: ready
+status: running
 depends: [T011]
 milestone: D1
 est_time: 0.3h operations + about 2.5h machine time
-started:
+started: 2026-11-17T01:34:20+08:00
 ---
 
 ## Background

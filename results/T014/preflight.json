@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-17T01:34:20+08:00",
+  "source_commit": "fd3d83ad312f1e285d0e6e0c94636ca4022d65d8",
+  "task": "T014",
+  "dependency_T011": "done",
+  "existing_T013a_state": "running",
+  "observed_PLUTO_processes": 32,
+  "max_cores_for_T014": 32,
+  "build_jobs": 8,
+  "build_dir": "D:\\sim_tools\\pluto_lip\\build_v01\\mpi",
+  "build_dir_preexists": false,
+  "batch_root_preexists": false,
+  "previous_executable": "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+  "previous_executable_sha256": "71e8512c7849bddd19c1f99c959f2464857a28c00cd10027c154c62fe95bd9bf",
+  "config_sha256": "b1987956fac68a47f9792e6be8506b98f3c5ff78f365e96d34a647cef90ba8c6",
+  "lip_glue_sha256": "16569794a8a588a7474acbb9e0da9b74156a30d6fea00becb16e9fb4426bb392",
+  "declared_members": [
+    "high_thin_G0",
+    "high_trap_G0",
+    "low_thin_G0",
+    "low_trap_G0",
+    "high_thin_G1",
+    "low_thin_G1"
+  ],
+  "expected_solver_runs": 14,
+  "configuration_note": "Run the supplied YAML unchanged. It replaces T011 high_trap_G1 with low_thin_G1, rather than retaining all T011 members plus a seventh member as the title/comment could suggest."
+}
