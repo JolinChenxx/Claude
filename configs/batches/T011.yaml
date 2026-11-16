@@ -1,0 +1,14 @@
+# T011 v0 production batch (declared in advance in PREREG_v0; all members reported, none selected).
+# G0 Picard chains it0 -> it1 -> it2 for {high, low} x {thin, trap}; G1 it0 for high x {thin, trap}.
+name: T011
+pluto_exe: D:/sim_tools/pluto_lip/build/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v0
+root: D:/sim_runs/T011
+runs:
+  - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8,  picard: 2, src_on: 1}
+  - {id: high_trap_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: trap, tstop_ns: 800,  procs: 8,  picard: 2, src_on: 1}
+  - {id: low_thin_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1}
+  - {id: low_trap_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1}
+  - {id: high_thin_G1, case: configs/cases/v0_high.yaml, grid: G1, nec: thin, tstop_ns: 800,  procs: 16, picard: 0, src_on: 1}
+  - {id: high_trap_G1, case: configs/cases/v0_high.yaml, grid: G1, nec: trap, tstop_ns: 800,  procs: 16, picard: 0, src_on: 1}
