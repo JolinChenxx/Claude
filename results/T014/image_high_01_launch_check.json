@@ -1,0 +1,39 @@
+﻿{
+    "checked_at":  "2026-11-17T02:19:08.8594603+08:00",
+    "job":  {
+                "id":  "T014_image_high_01",
+                "pid":  36568,
+                "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+                "threads":  1,
+                "commit":  "c12dbc2",
+                "started":  "2026-11-17T02:18:55",
+                "dir":  "D:\\sim_runs\\T014_image_high_01"
+            },
+    "wrapper":  {
+                    "ProcessId":  36568,
+                    "ParentProcessId":  38400,
+                    "Name":  "cmd.exe",
+                    "CommandLine":  "\"C:\\Windows\\system32\\cmd.exe\" /v:on /c set OMP_NUM_THREADS=1\u0026\u0026 set SIM_OUT_DIR=D:\\sim_runs\\T014_image_high_01\u0026\u0026 cd /d \"D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\" \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16 \u0026 echo !ERRORLEVEL! \u003e \"D:\\sim_runs\\T014_image_high_01\\exitcode.txt\" "
+                },
+    "children":  [
+                     {
+                         "ProcessId":  47308,
+                         "ParentProcessId":  36568,
+                         "Name":  "conhost.exe",
+                         "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                     },
+                     {
+                         "ProcessId":  44104,
+                         "ParentProcessId":  36568,
+                         "Name":  "python.exe",
+                         "CommandLine":  "D:\\sim_tools\\envs\\lipsim\\python.exe  scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16 "
+                     }
+                 ],
+    "status":  [
+                   "STATE=running  elapsed=0.00:00:13  pid=36568  commit=c12dbc2",
+                   "--- stdout (last 3) ---",
+                   "imaging D:\\sim_runs\\T014\\high_thin_G0\\it0",
+                   "--- stderr (last 3) ---"
+               ],
+    "exitcode_present":  false
+}
