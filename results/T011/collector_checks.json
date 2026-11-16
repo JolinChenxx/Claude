@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-16T23:48:35+08:00",
+  "fixture_root": "D:\\sim_runs\\T011_collect_checks\\20261116_234835",
+  "checks": [
+    {
+      "case": "mpi",
+      "pass": true,
+      "source_log": "pluto.0.log",
+      "warning_lines": 8
+    },
+    {
+      "case": "serial",
+      "pass": true,
+      "source_log": "pluto.log",
+      "warning_lines": 1
+    },
+    {
+      "case": "mpi_priority",
+      "pass": true,
+      "source_log": "pluto.0.log",
+      "warning_lines": 0
+    },
+    {
+      "case": "empty_rank_fallback",
+      "pass": true,
+      "source_log": "pluto.log",
+      "warning_lines": 1
+    },
+    {
+      "case": "missing",
+      "pass": true
+    }
+  ],
+  "collector_exitcode": 0,
+  "scope": "Engineering log-source/streaming correction only; fixtures kept outside Git."
+}

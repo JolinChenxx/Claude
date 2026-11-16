@@ -1,0 +1,16 @@
+{
+  "started": "2026-11-16T23:52:11+08:00",
+  "finished": "2026-11-16T23:52:14+08:00",
+  "command": [
+    "D:\\sim_tools\\envs\\lipsim\\python.exe",
+    "scripts/report_v0.py",
+    "results/T011",
+    "--out",
+    "results/T011/COMPARISON_v0.md"
+  ],
+  "returncode": 0,
+  "report_script_sha256": "d026d0326b648dbfd2110dce85ab42f6626c50898d8a7473deb3d27e215a1f37",
+  "prior_attempt_failure": "ImportError: Import tabulate failed during DataFrame.to_markdown; partial generated markdown was replaced by this rerun.",
+  "engineering_fix": "Installed tabulate==0.9.0 in D:/sim_tools/envs/lipsim using pip --no-cache-dir and the configured local proxy; no system settings or report criteria changed.",
+  "tabulate_version": "0.9.0"
+}
