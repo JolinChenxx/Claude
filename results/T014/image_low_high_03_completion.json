@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-11-17T03:33:09.427438+08:00",
+  "job": {
+    "id": "T014_image_low_high_03",
+    "pid": 47052,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 && D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+    "threads": 1,
+    "commit": "4f43748",
+    "started": "2026-11-17T03:03:41",
+    "dir": "D:\\sim_runs\\T014_image_low_high_03"
+  },
+  "exitcode": 0,
+  "exitcode_file_modified": "2026-11-17T03:23:00.956614+08:00",
+  "stderr_bytes": 0,
+  "run_lines": [
+    "imaging D:\\sim_runs\\T014\\low_thin_G0\\it2",
+    "rc 0 D:\\sim_runs\\T014\\low_thin_G0\\it2",
+    "imaging D:\\sim_runs\\T014\\low_trap_G0\\it2",
+    "rc 0 D:\\sim_runs\\T014\\low_trap_G0\\it2",
+    "imaging D:\\sim_runs\\T014\\high_thin_G0\\it1",
+    "rc 0 D:\\sim_runs\\T014\\high_thin_G0\\it1",
+    "imaging D:\\sim_runs\\T014\\high_trap_G0\\it1",
+    "rc 0 D:\\sim_runs\\T014\\high_trap_G0\\it1"
+  ],
+  "runs": [
+    {
+      "run": "low_thin_G0/it2",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "b80c26e1619633f22b2571257b1aa995e7169b681be05234f2ac60bf813e40f4"
+    },
+    {
+      "run": "low_trap_G0/it2",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "be3aaec413abba232446aba696ee139a70d35c2f52e312116153e6937551b43d"
+    },
+    {
+      "run": "high_thin_G0/it1",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "21657a94305a26f40cbf3b94a5a2669694e4f768927ec330b73a1149a25f6b81"
+    },
+    {
+      "run": "high_trap_G0/it1",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "397dc607dbb7d1e3269f0776bd9d97769caa595ec524a50d68162ae5133aed92"
+    }
+  ],
+  "verification_scope": "Completed job and per-run exit codes; JSON parses, expected output counts and nonempty files. Raw values retained unchanged; full scientific collection and final checks remain pending."
+}
