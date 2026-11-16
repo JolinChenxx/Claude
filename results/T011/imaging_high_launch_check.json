@@ -1,0 +1,27 @@
+﻿{
+    "checked_at":  "2026-11-16T22:50:30.4882366+08:00",
+    "job_id":  "T011img_high",
+    "wrapper_pid":  41116,
+    "wrapper_alive":  true,
+    "exitcode_present":  false,
+    "children":  [
+                     {
+                         "ProcessId":  36060,
+                         "ParentProcessId":  41116,
+                         "Name":  "conhost.exe",
+                         "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                     },
+                     {
+                         "ProcessId":  9832,
+                         "ParentProcessId":  41116,
+                         "Name":  "python.exe",
+                         "CommandLine":  "D:\\sim_tools\\envs\\lipsim\\python.exe  scripts/image_members.py D:\\sim_runs\\T011 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16 "
+                     }
+                 ],
+    "stderr_bytes":  0,
+    "threads":  1,
+    "workers":  16,
+    "concurrent_job":  "T013a",
+    "concurrent_job_action":  "left running",
+    "foreground_wait_for_completion":  false
+}
