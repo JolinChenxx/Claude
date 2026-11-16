@@ -71,8 +71,14 @@ def main():
                        "P1_ratio": tau / te if np.isfinite(tau) else np.nan, "P2_dt10_model": d10, "P2_dt10_exp": d10e,
                        "P3_turn_model": ttm, "P3_turn_exp": tte}
                 row["P1"] = grade_ratio(row["P1_ratio"], *CRIT["P1"])
-                rel = abs(d10 / d10e - 1) if np.isfinite(d10) else np.nan
-                row["P2"] = "n/a" if not np.isfinite(rel) else ("pass" if rel <= .25 else "partial" if rel <= .5 else "fail")
+                if np.isfinite(d10):
+                    rel = abs(d10 / d10e - 1)
+                    row["P2"] = "pass" if rel <= .25 else "partial" if rel <= .5 else "fail"
+                else:
+                    # 10% level not reached before the last frame: P2 > t_last - 300 ns
+                    lim = float(m.t_ns.max()) - 300.0
+                    row["P2_dt10_model"] = f"> {lim:.0f} (not reached)"
+                    row["P2"] = "fail" if lim > 1.5 * d10e else "n/a (window)"
                 rel3 = abs(ttm / tte - 1) if np.isfinite(ttm) and np.isfinite(tte) else np.nan
                 row["P3"] = "n/a" if not np.isfinite(rel3) else ("pass" if rel3 <= .3 else "partial(sign)")
                 if bud is not None:
