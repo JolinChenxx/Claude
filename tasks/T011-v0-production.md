@@ -2,11 +2,11 @@
 id: T011
 title: v0 quick-baseline production batch (2 fluences × 2 NEC limits × Picard it0–2 on G0, plus high fluence on G1) + imaging
 owner: codex
-status: ready
+status: running
 depends: [T010]
 milestone: D0
 est_time: 0.5h operations + about 3h machine time (64 cores)
-started:
+started: 2026-11-16T20:06:14+08:00
 ---
 
 > Revised by Claude on 2026-11-16 to match the code actually delivered. The batch list was declared in advance in `docs/PREREG_v0.md` and `configs/batches/T011.yaml`. Every member is run and reported: none added, removed or selected. The branch B fallback group is not run, because the self-consistent model already ignites in the cloud smoke run; this is recorded in the PREREG.
