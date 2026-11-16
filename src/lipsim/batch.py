@@ -8,9 +8,10 @@ Batch YAML:
   mpiexec: mpiexec                              # omitted -> serial
   tables: <dir with eos.bin, opt.bin>
   root: <output root>                           # run dirs: <root>/<run id>/
-  runs:
-    - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 1000,
-       procs: 8, picard: 2, src_on: 1}
+  numerics:
+    runs:
+      - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 1000,
+         procs: 8, picard: 2, src_on: 1}
 Each run: it0 target source (unshielded) -> PLUTO -> merge surftrans -> target.build --shielding -> it1 ...
 Every launched PLUTO run (complete or not) is appended to results/run_registry.csv (PLAN §1.5).
 """
@@ -160,7 +161,9 @@ def main(argv=None):
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args(argv)
     batch = yaml.safe_load(a.batch.read_text())
-    runs = batch["runs"]
+    # Scheduling/run controls belong under numerics for provenance checking.
+    # Retain compatibility with existing external batch files.
+    runs = batch["numerics"]["runs"] if "numerics" in batch else batch["runs"]
     # greedy packing: run as many cases concurrently as fit into max-cores
     slots = max(1, a.max_cores // max(int(r.get("procs", 1)) for r in runs))
     with ThreadPoolExecutor(max_workers=slots) as ex:

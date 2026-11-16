@@ -1,0 +1,55 @@
+{
+  "serial": {
+    "make_rc": 0,
+    "exact_three": true,
+    "diffs": {
+      "internal_energy.c": true,
+      "split_source.c": true,
+      "thermal_eos.c": true
+    },
+    "executable_sha256": "ece98d82152edd3f852ff580a42ec1090a804f79ea41c34ffb8ca95767ce8280"
+  },
+  "mpi": {
+    "make_rc": 0,
+    "exact_three": true,
+    "diffs": {
+      "internal_energy.c": true,
+      "split_source.c": true,
+      "thermal_eos.c": true
+    },
+    "executable_sha256": "71e8512c7849bddd19c1f99c959f2464857a28c00cd10027c154c62fe95bd9bf"
+  },
+  "lowres": {
+    "eos.bin": {
+      "shape": [
+        17,
+        29,
+        5
+      ],
+      "nonfinite_values": 0,
+      "sha256": "c34bcb24efbd4ef32afffd73d3d4e9290dea22784021851791f856ffc9b53567"
+    },
+    "opt.bin": {
+      "shape": [
+        17,
+        29,
+        5
+      ],
+      "nonfinite_values": 0,
+      "sha256": "f8292669871353fccc5890c594c1afebc231ee3efb3de732d095e3063090c6d6"
+    },
+    "pop.bin": {
+      "shape": [
+        17,
+        29,
+        5
+      ],
+      "nonfinite_values": 0,
+      "sha256": "915180641f611f4318f809bf4c89845c632b9cd2718b1f22230ad1b99be95c98"
+    }
+  },
+  "schema_values_unchanged": {
+    "T010_smoke.yaml": true,
+    "T010_mpi.yaml": true
+  }
+}
