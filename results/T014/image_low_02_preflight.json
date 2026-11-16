@@ -1,0 +1,44 @@
+﻿{
+    "checked_at":  "2026-11-17T02:33:33.4098687+08:00",
+    "commit":  "11cad2aa907352ad9ae3d43aa0c0debf6e463e0c",
+    "job_id":  "T014_image_low_02",
+    "workers":  16,
+    "cpus":  [
+                 {
+                     "DeviceID":  "CPU0",
+                     "LoadPercentage":  68,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 },
+                 {
+                     "DeviceID":  "CPU1",
+                     "LoadPercentage":  100,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 }
+             ],
+    "solvers":  [
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+                        "Count":  32
+                    },
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build_v01\\mpi\\pluto.exe",
+                        "Count":  32
+                    }
+                ],
+    "memory":  {
+                   "FreePhysicalMemory":  244477604,
+                   "TotalVisibleMemorySize":  268081848
+               },
+    "finished_unimaged":  [
+                              "low_thin_G0/it1",
+                              "low_trap_G0/it1"
+                          ],
+    "completed_returncodes":  [
+                                  0,
+                                  0
+                              ],
+    "preceding_imaging_job":  "T014_image_high_01",
+    "preceding_imaging_exitcode":  0
+}
