@@ -164,10 +164,25 @@ def main(argv=None):
     # Scheduling/run controls belong under numerics for provenance checking.
     # Retain compatibility with existing external batch files.
     runs = batch["numerics"]["runs"] if "numerics" in batch else batch["runs"]
-    # greedy packing: run as many cases concurrently as fit into max-cores
-    slots = max(1, a.max_cores // max(int(r.get("procs", 1)) for r in runs))
-    with ThreadPoolExecutor(max_workers=slots) as ex:
-        res = list(ex.map(lambda s: run_one(s, batch, a.dry_run), runs))
+    # pack by cores: a member starts as soon as its MPI ranks fit into the free cores (max_cores in total)
+    import threading
+    free = [a.max_cores]
+    cv = threading.Condition()
+
+    def gated(spec):
+        need = min(int(spec.get("procs", 1)), a.max_cores)
+        with cv:
+            cv.wait_for(lambda: free[0] >= need)
+            free[0] -= need
+        try:
+            return run_one(spec, batch, a.dry_run)
+        finally:
+            with cv:
+                free[0] += need
+                cv.notify_all()
+
+    with ThreadPoolExecutor(max_workers=len(runs)) as ex:
+        res = list(ex.map(gated, runs))
     out = Path(batch["root"]) / "batch_summary.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(res, indent=1, default=str))
