@@ -1,0 +1,56 @@
+﻿{
+    "checked_at":  "2026-11-17T03:03:39.0837250+08:00",
+    "commit":  "4f43748bf566ce52d85bfc9d613aeabfb07f0202",
+    "job_id":  "T014_image_low_high_03",
+    "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+    "workers":  16,
+    "series_order":  [
+                         "low",
+                         "high"
+                     ],
+    "sequential":  true,
+    "cpus":  [
+                 {
+                     "DeviceID":  "CPU0",
+                     "LoadPercentage":  47,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 },
+                 {
+                     "DeviceID":  "CPU1",
+                     "LoadPercentage":  100,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 }
+             ],
+    "solvers":  [
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+                        "Count":  32
+                    },
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build_v01\\mpi\\pluto.exe",
+                        "Count":  32
+                    }
+                ],
+    "memory":  {
+                   "FreePhysicalMemory":  244296360,
+                   "TotalVisibleMemorySize":  268081848
+               },
+    "finished_unimaged":  [
+                              "low_thin_G0/it2",
+                              "low_trap_G0/it2",
+                              "high_thin_G0/it1",
+                              "high_trap_G0/it1"
+                          ],
+    "completed_returncodes":  [
+                                  0,
+                                  0,
+                                  0,
+                                  0
+                              ],
+    "total_solver_runs_completed":  10,
+    "total_image_runs_completed":  6,
+    "upstream_commit":  "831e886",
+    "resource_note":  "Single 16-worker imaging job, low series then high series only if low imaging succeeds. Existing tables and solver binaries retained; no table rebuild."
+}
