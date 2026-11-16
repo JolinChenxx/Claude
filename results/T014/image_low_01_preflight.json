@@ -1,0 +1,47 @@
+﻿{
+    "checked_at":  "2026-11-17T02:03:46.4142060+08:00",
+    "commit":  "bf962046a4e9fac72ea4afcca992ac7fded2fdb2",
+    "job_id":  "T014_image_low_01",
+    "workers":  16,
+    "cpus":  [
+                 {
+                     "DeviceID":  "CPU0",
+                     "LoadPercentage":  71,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 },
+                 {
+                     "DeviceID":  "CPU1",
+                     "LoadPercentage":  100,
+                     "NumberOfCores":  32,
+                     "NumberOfLogicalProcessors":  64
+                 }
+             ],
+    "solvers":  [
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+                        "Count":  32
+                    },
+                    {
+                        "Name":  "D:\\sim_tools\\pluto_lip\\build_v01\\mpi\\pluto.exe",
+                        "Count":  32
+                    }
+                ],
+    "memory":  {
+                   "FreePhysicalMemory":  244514140,
+                   "TotalVisibleMemorySize":  268081848
+               },
+    "finished_unimaged":  [
+                              "low_thin_G0/it0",
+                              "low_trap_G0/it0"
+                          ],
+    "completed_returncodes":  [
+                                  0,
+                                  0
+                              ],
+    "production_jobs":  [
+                            "T013a",
+                            "T014"
+                        ],
+    "resource_note":  "Start one 16-worker imaging job per T014 step 3 while the two 32-rank production batches continue; no second imaging job or production concurrency change."
+}
