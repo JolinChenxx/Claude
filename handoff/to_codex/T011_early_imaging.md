@@ -1,3 +1,0 @@
-(Claude, 2026-11-16 22:05) To save time: T011's low-fluence G0 chains (it0–it2) are all finished. While T011's remaining runs are going, **start imaging in the background on the finished members** (at most 16 cores, so T011 is not slowed down):
-`scripts\win\job.ps1 start -Id T011img_low -Threads 1 -Cmd "D:\sim_tools\envs\lipsim\python.exe scripts/image_members.py D:\sim_runs\T011 --series low --tables D:\sim_runs\tables\v0 --workers 16"`
-(script: scripts/image_members.py, which images every finished `it*` that does not yet have image/image_summary.json, one after another). Once the high-fluence runs finish, use the same command with `--series high`. This does not change T011's acceptance criteria; delete this file once done.
