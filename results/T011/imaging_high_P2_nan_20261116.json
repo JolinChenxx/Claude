@@ -1,0 +1,406 @@
+{
+  "checked_at": "2026-11-16T23:03:43+08:00",
+  "member": "high_thin_G0",
+  "iteration": 0,
+  "imaging_returncode": 0,
+  "scenario_count": 18,
+  "nan_P2_count": 18,
+  "other_summary_values_all_finite": true,
+  "frames": [
+    {
+      "path": "D:\\sim_runs\\T011\\high_thin_G0\\it0\\image\\frames_a_sa.npz",
+      "arrays": [
+        {
+          "key": "t_ns",
+          "shape": [
+            29
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "radiance",
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "um_per_px",
+          "shape": [],
+          "all_finite": true
+        }
+      ]
+    },
+    {
+      "path": "D:\\sim_runs\\T011\\high_thin_G0\\it0\\image\\frames_a_thin.npz",
+      "arrays": [
+        {
+          "key": "t_ns",
+          "shape": [
+            29
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "radiance",
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "um_per_px",
+          "shape": [],
+          "all_finite": true
+        }
+      ]
+    },
+    {
+      "path": "D:\\sim_runs\\T011\\high_thin_G0\\it0\\image\\frames_b_sa.npz",
+      "arrays": [
+        {
+          "key": "t_ns",
+          "shape": [
+            29
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "radiance",
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "um_per_px",
+          "shape": [],
+          "all_finite": true
+        }
+      ]
+    },
+    {
+      "path": "D:\\sim_runs\\T011\\high_thin_G0\\it0\\image\\frames_b_thin.npz",
+      "arrays": [
+        {
+          "key": "t_ns",
+          "shape": [
+            29
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "radiance",
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "um_per_px",
+          "shape": [],
+          "all_finite": true
+        }
+      ]
+    },
+    {
+      "path": "D:\\sim_runs\\T011\\high_thin_G0\\it0\\image\\frames_c_sa.npz",
+      "arrays": [
+        {
+          "key": "t_ns",
+          "shape": [
+            29
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "radiance",
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "um_per_px",
+          "shape": [],
+          "all_finite": true
+        }
+      ]
+    },
+    {
+      "path": "D:\\sim_runs\\T011\\high_thin_G0\\it0\\image\\frames_c_thin.npz",
+      "arrays": [
+        {
+          "key": "t_ns",
+          "shape": [
+            29
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "radiance",
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "all_finite": true
+        },
+        {
+          "key": "um_per_px",
+          "shape": [],
+          "all_finite": true
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "a_sa_baseline",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 9801020.0,
+      "minimum_L_over_Lref_after_300_ns": 0.601100701763694,
+      "last_L_over_Lref": 0.601100701763694,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 870.762201947792,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "a_sa_high",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 8956840.0,
+      "minimum_L_over_Lref_after_300_ns": 0.5823013473501816,
+      "last_L_over_Lref": 0.5823013473501816,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 821.0081142476656,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "a_sa_low",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 11071200.0,
+      "minimum_L_over_Lref_after_300_ns": 0.60041187947106,
+      "last_L_over_Lref": 0.60041187947106,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 903.6895266934566,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "a_thin_baseline",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 49839300.0,
+      "minimum_L_over_Lref_after_300_ns": 0.8799481533649148,
+      "last_L_over_Lref": 0.9059758062412594,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 2788.383633722274,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "a_thin_high",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 44442200.0,
+      "minimum_L_over_Lref_after_300_ns": 0.8568230195624879,
+      "last_L_over_Lref": 0.8890018945956771,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 2288.8173700078273,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "a_thin_low",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 65421100.0,
+      "minimum_L_over_Lref_after_300_ns": 0.796259922257498,
+      "last_L_over_Lref": 0.8514515958918453,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 1535.684122612839,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "b_sa_baseline",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 63091700.0,
+      "minimum_L_over_Lref_after_300_ns": 0.3247194163416107,
+      "last_L_over_Lref": 0.3247194163416107,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 425.2055799766359,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "b_sa_high",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 57328700.0,
+      "minimum_L_over_Lref_after_300_ns": 0.32085325500142164,
+      "last_L_over_Lref": 0.32085325500142164,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 418.4789376810702,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "b_sa_low",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 71031700.0,
+      "minimum_L_over_Lref_after_300_ns": 0.32341053360682626,
+      "last_L_over_Lref": 0.32341053360682626,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 463.4583477609853,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "b_thin_baseline",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 164257000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.6629245633367223,
+      "last_L_over_Lref": 0.6629245633367223,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 935.0806252617051,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "b_thin_high",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 147604000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.6475928836616894,
+      "last_L_over_Lref": 0.6475928836616894,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 870.3532700716617,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "b_thin_low",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 206368000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.6453616839820128,
+      "last_L_over_Lref": 0.6453616839820128,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 842.3277251113332,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "c_sa_baseline",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 132995000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.2658468363472311,
+      "last_L_over_Lref": 0.2658468363472311,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 376.78663558834995,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "c_sa_high",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 120581000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.2652739652184009,
+      "last_L_over_Lref": 0.2652739652184009,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 372.4602811605929,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "c_sa_low",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 149651000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.2642474824758939,
+      "last_L_over_Lref": 0.2642474824758939,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 413.60249621674546,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "c_thin_baseline",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 212697000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.36753597841060287,
+      "last_L_over_Lref": 0.36753597841060287,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 450.1786883490044,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "c_thin_high",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 192217000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.36179838411795,
+      "last_L_over_Lref": 0.36179838411795,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 440.3069136655264,
+      "P2_dt10_ns_classification": "NaN"
+    },
+    {
+      "scenario": "c_thin_low",
+      "csv_rows": 29,
+      "time_min_ns": 0.0,
+      "time_max_ns": 740.0,
+      "t_and_L_radiance_finite": true,
+      "Lref_at_300_ns": 250123000.0,
+      "minimum_L_over_Lref_after_300_ns": 0.3716639413408603,
+      "last_L_over_Lref": 0.3716639413408603,
+      "threshold_crossing_count": 0,
+      "P1_tau_ns": 482.25808335888564,
+      "P2_dt10_ns_classification": "NaN"
+    }
+  ],
+  "code_path": "src/lipsim/pipeline/metrics.py:time_to_fraction returns NaN if no threshold crossing is found",
+  "diagnosis_scope": "No non-finite frame array or P2 time/radiance input found in this completed iteration. No experimental or physical conclusion. Await Claude disposition under AGENTS NaN rule.",
+  "background_jobs": "T011img_high and T013a left running; no retries or parameter changes"
+}
