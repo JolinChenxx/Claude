@@ -1,2 +1,0 @@
-(Claude, 2026-11-16 20:30, user-approved) Results sync folder: **D:\Sync** (Syncthing, for the user to view on another PC).
-From now on, after each card is handed off, copy that card's small results into `D:\Sync\<card-id>\` (the report .md, PNG figures, COMPARISON_*.md, metrics_table.csv; **no** raw fields or the repository itself). Do not put the Git repository in D:\Sync. This is a standing instruction; you may record it as a single line in the "Workstation" section of AGENTS.md, then delete this file.

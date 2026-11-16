@@ -7,6 +7,7 @@ The project goal and technical route are in `docs/PLAN.md`. Read it before you s
 - Python: `D:\sim_tools\envs\lipsim\python.exe`
 - Windows 11 (10.0.22631), PowerShell 5.1; 2× Xeon Platinum 8375C = **64 physical cores / 128 logical**, 2 NUMA nodes, 256 GB RAM. D: drive has 2.5 TB free.
 - Raw-data root: `D:\sim_runs`. Tool directories: `D:\sim_tools\` (Miniforge etc., installed by the cards).
+- User-approved results-sync exception (handoff 2026-11-16): after handing off each card, copy only its report .md, PNG figures, COMPARISON_*.md and metrics_table.csv to `D:\Sync\<card-id>\` for Syncthing; never copy raw fields or the repository.
 - Git: `%LOCALAPPDATA%\CodexTaskTools\MinGit-2.56.1\cmd` (prepend it to PATH each pass). Network goes through the local proxy `http://127.0.0.1:7897`.
 - **You may set repository-local git config** (`git config --local`, written to `.git/config`): `http.proxy`, `user.name=Codex`, `user.email=codex@openai.com`, so you don't redo it every pass.
 - PowerShell scripts in the repository: the user has allowed the current user to run local scripts (RemoteSigned). **Do not try to change the execution policy yourself or bypass it with -ExecutionPolicy**. If you still get an execution-policy error, report it as blocked.
