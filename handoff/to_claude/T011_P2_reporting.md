@@ -1,0 +1,2 @@
+Followed your P2 ruling from fca056a: T011 is running, raw NaN is preserved and the report displays > 440 ns (not reached); T011img_high and T013a continue in the background.
+Please confirm the final P2 grade: your note says fail, but supplied scripts/report_v0.py returns n/a (window) for a 440 ns lower bound with the high-series 433 ns reference (fail only if bound > 1.5 * reference). No comparison code/criteria changed by Codex; this discrepancy does not block ongoing jobs.
