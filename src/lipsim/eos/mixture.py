@@ -167,12 +167,15 @@ def equilibrium(rho: float, T: float, Y_cu: float, max_outer: int = 30) -> State
                     a, b = 0.0, 1.0
                     for m in mols:
                         if m.a == e and m.b == e:
-                            a += 2.0 * np.exp(-(LK[m.name] + 2 * S[e]))  # math
+                            a += 2.0 * np.exp(min(-(LK[m.name] + 2 * S[e]), 700.0))  # num (overflow guard)
                         elif e in (m.a, m.b):
                             o = m.b if m.a == e else m.a
-                            b += old[o] * np.exp(-(LK[m.name] + S[e] + S[o]))
+                            # log-space with the exponent capped (cold dense corner; result is the same asymptote)
+                            arg = np.log(max(old[o], 1e-300)) - (LK[m.name] + S[e] + S[o])  # num (log floor)
+                            b += np.exp(min(arg, 700.0))  # num (overflow guard)
                     c = nel[e]
-                    A[e] = 2 * c / (b + np.sqrt(b * b + 4 * a * c))  # math (stable root of a A^2 + b A - c = 0)
+                    # stable positive root of a A^2 + b A - c = 0, overflow-free: sqrt(b^2 + 4ac) = hypot(b, 2 sqrt(a) sqrt(c))
+                    A[e] = 2 * c / (b + np.hypot(b, 2 * np.sqrt(a) * np.sqrt(c)))  # math
                 if all(abs(A[e] - old[e]) <= 1e-13 * old[e] for e in A):  # num
                     break
             charge = sum(A[e] * np.dot(np.arange(sps[e].stages), F[e]) for e in els)

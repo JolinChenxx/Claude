@@ -2,7 +2,7 @@
 id: T010
 title: Windows build of pluto_lip, full-resolution property tables, smoke check (serial/MPI/cross-platform)
 owner: codex
-status: blocked
+status: done
 depends: [T008]
 milestone: D0
 est_time: 1.5h (about 1h of it machine time)
