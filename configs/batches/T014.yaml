@@ -1,0 +1,15 @@
+# T014 v0.1: same members as T011 (PREREG_v0) after the pre-declared vapour-injection correction (ca85775),
+# plus low-fluence G1 (low fluence now ignites in the cloud check; grid sensitivity of ignition must be shown).
+name: T014
+pluto_exe: D:/sim_tools/pluto_lip/build_v01/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v0
+root: D:/sim_runs/T014
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8,  picard: 2, src_on: 1}
+    - {id: high_trap_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: trap, tstop_ns: 800,  procs: 8,  picard: 2, src_on: 1}
+    - {id: low_thin_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1}
+    - {id: low_trap_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1}
+    - {id: high_thin_G1, case: configs/cases/v0_high.yaml, grid: G1, nec: thin, tstop_ns: 800,  procs: 16, picard: 0, src_on: 1}
+    - {id: low_thin_G1,  case: configs/cases/v0_low.yaml,  grid: G1, nec: thin, tstop_ns: 1300, procs: 16, picard: 0, src_on: 1}
