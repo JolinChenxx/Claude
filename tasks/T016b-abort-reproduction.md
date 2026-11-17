@@ -2,7 +2,7 @@
 id: T016b
 title: Reproduce the T016 low-fluence aborts from the last output with a diagnostic build (rank logs + finite guards)
 owner: codex
-status: running
+status: review
 started: 2026-11-18T02:34:57.775986+08:00
 depends: []
 milestone: D2
