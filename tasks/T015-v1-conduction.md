@@ -2,7 +2,7 @@
 id: T015
 title: v1 step 1 — heat conduction (PLUTO TC + wall exchange): full tables with kappa, v1 build, 6-member batch, imaging
 owner: codex
-status: running
+status: review
 depends: []
 started: 2026-11-17T15:07:09.7980159+08:00
 milestone: D2
