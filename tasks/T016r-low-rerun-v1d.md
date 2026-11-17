@@ -2,7 +2,8 @@
 id: T016r
 title: Rerun the three T016 low-fluence members with build v1d (kinetic flux limiter) on the free cores
 owner: codex
-status: ready
+status: running
+started: 2026-11-18T04:03:57.258491+08:00
 depends: []
 milestone: D2
 est_time: 0.1h operations + about 6–8h machine time (32 cores)
