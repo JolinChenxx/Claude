@@ -19,7 +19,7 @@ int GetEV_Temperature(double rhoe, double *v, double *T)
   lip_init();
   double rho = v[RHO] * LIP_RHO_SI;
   int s = lip_eos_T_from_e(&lip_eos, rho, rhoe * LIP_PRS_SI / rho, lip_Y(v), T);
-  return (s == 1 || *T < T_CUT_RHOE) ? 1 : 0;
+  return (s == 1 || s == 3 || *T < T_CUT_RHOE) ? 1 : 0;
 }
 
 void SoundSpeed2(const State *p, int beg, int end, int pos, Grid *grid)

@@ -17,5 +17,5 @@ int GetPV_Temperature(double *v, double *T)
   if (v[PRS] < 0.0) return 1;
   lip_init();
   int s = lip_eos_T_from_p(&lip_eos, v[RHO] * LIP_RHO_SI, v[PRS] * LIP_PRS_SI, lip_Y(v), T);
-  return (s == 1 || *T < T_CUT_RHOE) ? 1 : 0;
+  return (s == 1 || s == 3 || *T < T_CUT_RHOE) ? 1 : 0;
 }

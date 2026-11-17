@@ -40,3 +40,4 @@
 #define  CHAR_LIMITING                  NO
 #define  T_CUT_RHOE                     1.0
 #define  TC_SATURATED_FLUX              NO
+#define  MULTIPLE_LOG_FILES             YES   /* one log per MPI rank: abort messages of any rank are kept (T016) */

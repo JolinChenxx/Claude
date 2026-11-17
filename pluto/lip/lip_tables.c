@@ -109,6 +109,10 @@ double lip_eos_p(const LipEOS *eos, double rho, double T, double Y)
 static int invert_T(const LipEOS *eos, int f, double rho, double val, double Y, double *T)
 {
   const LipTable *t = &eos->tab;
+  if (!(val > 0.0) || !(rho > 0.0)) {   /* e or p <= 0 or NaN: return the table floor, flag 3 (was: table max) */
+    *T = pow(10.0, eos->tab.ax[1][0]);
+    return 3;
+  }
   double lrho = log10(rho), lv = log10(val), prev = 0.0;
   int nT = t->n[1];
   /* node values of log10 f along T at fixed (lrho, Y) */

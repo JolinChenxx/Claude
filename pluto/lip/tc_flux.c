@@ -166,6 +166,11 @@ void TC_Flux (double ***T, const Sweep *sweep,
       double dxc = grid->x[g_dir][i+1] - grid->x[g_dir][i];
       lip_diff_code(vi, &Dm, &dh);
       double FY = vi[RHO]*Dm*(vc[i+1][TRC] - vc[i][TRC])/dxc;
+      if (!isfinite(FY) || !isfinite(dh*FY) || !isfinite(Fc)) {
+        printLog("! lip tc_flux: non-finite flux dir=%d i=%d [g_i,g_j=%d,%d] rho=%g prs=%g Y=%g/%g D=%g dh=%g FY=%g Fc=%g kpar=%g\n",
+                 g_dir, i, g_i, g_j, vi[RHO], vi[PRS], vc[i][TRC], vc[i+1][TRC], Dm, dh, FY, Fc, kpar);
+        QUIT_PLUTO(1);
+      }
       sweep->tc_flux[i][TRC] = FY;
       Fc += dh*FY;
       dcoeff[i] = MAX(dcoeff[i], Dm);

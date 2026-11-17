@@ -1,5 +1,5 @@
---- upstream/Src/EOS/PVTE/internal_energy.c
-+++ pluto/lip/internal_energy.c
+--- Src/EOS/PVTE/internal_energy.c
++++ internal_energy.c
 @@ -1,436 +1,30 @@
 -/* ///////////////////////////////////////////////////////////////////// */
 -/*!
@@ -180,7 +180,7 @@
 +  lip_init();
 +  double rho = v[RHO] * LIP_RHO_SI;
 +  int s = lip_eos_T_from_e(&lip_eos, rho, rhoe * LIP_PRS_SI / rho, lip_Y(v), T);
-+  return (s == 1 || *T < T_CUT_RHOE) ? 1 : 0;
++  return (s == 1 || s == 3 || *T < T_CUT_RHOE) ? 1 : 0;
  }
  
 -
