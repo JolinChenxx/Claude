@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 04:05 (UTC+8)
+- card: T016r | action: claimed c2368d0, verified v1d executable and unchanged v1b tables, launched authorized low-fluence rerun from zero with 32 cores; execution d28b6cc.
+- running jobs: T016r PID 41680 initially running/stderr empty; T016 PID 1492 last checked running elapsed 02:58:40, three high-fluence members continue. T016c accepted done by Claude.
+- T016 progress: high_thin_G0/it0: t_ns=3.914995e+002; high_thin_G1/it0: t_ns=1.554990e+002; high_trap_G0/it0: t_ns=4.874988e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.849909e+002; low_trap_G0/it0: t_ns=3.554824e+002
+- skipped ready cards and why: none; T016r claimed and launched.
+- notes: T016r three members, seven iterations; no modifications to running T016 members. End pass after background launch.
+
 ## 2026-11-18 03:51 (UTC+8)
 - card: T016c, T016 | action: T016c collected and set review; original low_thin_G1 abort evidence published; handoffs ws 3ef217a. Reports synced with hash verification.
 - running jobs: T016 PID 1492 last checked running (02:43:41), three high-fluence members continue. T016c both stopped at authorized 2400-second limits, post-stop rc=1; last budgets thin 496.9994 ns, trap 597.9984 ns, zero ConsToPrim/E<0/other ! messages in all ranks.
