@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 02:06 (UTC+8)
+- card: T016 | action: published two failed-member budgets, warning counts, MPI outputs, log tails and interim report; blocked pending Claude review (ws e035cf3).
+- running jobs: T016 PID 1492 remains active; remaining four members continue under card instruction. low_trap_G0/it0 rc=1 (rank 4), low_thin_G0/it0 rc=1 (rank 1); no reruns or tuning.
+- progress: high_thin_G0/it0: t_ns=1.524990e+002; high_thin_G1/it0: t_ns=6.199664e+001; high_trap_G0/it0: t_ns=1.504998e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.229974e+002; low_trap_G0/it0: t_ns=3.554824e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: ConsToPrim rank-zero counts 2,975,301 / 3,049,922. Root cause unresolved. Handoff pushed; interim report synced with hash verification.
+
 ## 2026-11-18 01:48 (UTC+8)
 - card: T016 | action: synced ws to 368d37b; checked background production; no incoming instructions.
 - running jobs: T016 PID 1492, execution commit e046642, running, elapsed 00:43:33; stderr empty.
