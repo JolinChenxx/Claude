@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 03:19 (UTC+8)
+- card: T016, T016c | action: synced ws (9f6e1c2); no incoming handoff; checked both background jobs.
+- running jobs: T016c PID 40456, elapsed 00:13:21, two restart members running; T016 PID 1492, elapsed 02:13:42, four surviving members running. Both stderr empty.
+- progress: T016/high_thin_G0/it0: t_ns=3.744861e+002; T016/high_thin_G1/it0: t_ns=1.424998e+002; T016/high_trap_G0/it0: t_ns=3.774962e+002; T016/low_thin_G0/it0: t_ns=3.539873e+002; T016/low_thin_G1/it0: t_ns=1.719995e+002; T016/low_trap_G0/it0: t_ns=3.554824e+002; T016c/low_thin_G0: t_ns=4.749656e+002; T016c/low_trap_G0: t_ns=4.874976e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: T016 remains blocked for previously reported failures; existing batch continues per card. T016c has not reached its 40-minute deadline; no collection or restart needed this pass.
+
 ## 2026-11-18 03:05 (UTC+8)
 - card: T016c | action: claimed 4bfc72f, validated v1d rc=0/7 replacements and fresh hashed inputs; launched limiter restarts, PID 40456, execution commit 740876c.
 - running jobs: T016c initially running/stderr empty, two members x 8 MPI ranks, 2400-second limit each; T016 PID 1492 continues four members (last status running, elapsed 01:58:39). T016b accepted done by Claude.
