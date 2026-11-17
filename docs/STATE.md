@@ -69,3 +69,9 @@ Updated: 2026-11-15
 - Budgets: wall conduction removes 24/25 µJ (low thin/trap) and 44/47 µJ (high), i.e. 15–28% of gas absorption; radiated energy drops 20–28% vs T014; gas absorption unchanged (≤1.5%); residual ≤ 0.06%.
 - L/L(300), filter b, baseline: late decay improves in the right direction but modestly. Examples: low sa 1000 ns 0.155→0.118 (exp 0.038); high thin 500 ns 0.633→0.587 (exp 0.37); low sa 400–600 ns 0.68/0.53/0.44 vs exp 0.70/0.45/0.29.
 - Conclusion (interim): conduction is a real but not dominant missing sink; the late-time excess (×1.5–3) remains. Wait for it1/it2 + G1 before choosing the next pre-declared v1 item (candidates already in PREREG_v0: two-way coupling, Kurucz lines/Voigt; to be weighed: emission model at low T and ambient mixing).
+
+## 2026-11-17 21:15 (UTC+8) — T015 emission-source diagnostic (scripts/diag_emission.py, thin, filter b)
+- Late signal (≥500 ns) is 87–99% Cu I lines, from nearly pure Cu vapour (emission-weighted Y 0.87–0.94; air-rich cells < 5%), T_emw 9–11.5 kK, n_e ≈ 1.5–2.3e23 m^-3; continuum ≤ 3%, air lines ≈ 0. Same picture in T014 (v0.1) and T015 (v1).
+- Conduction lowers absolute power about 2.5–3× but T_emw keeps a plateau near 9 kK → L/L(300) shape changes only modestly.
+- Cloud estimate at core conditions (Y=0.92, 9.4 kK, ≈0.8 bar): radiative cooling time ρΔe/(4π NEC) ≈ 1.4 µs (thin) / 6 µs (trap); Cu I in-band e-fold needs ≈ 2000 K per ~200 ns (≈10 K/ns), radiation gives ≈ 5 K/ns. LTE holds (McWhirter ≈ 1e22 m^-3).
+- Interpretation: the Cu vapour core neither mixes with air nor radiates fast enough. Pre-declarable physics without free parameters: (a) Cu–air molecular (Chapman–Enskog) interdiffusion; (b) more complete Cu I/II radiative cooling (Kurucz lines, escape-factor NEC instead of thin/trap limits). Turbulent mixing models are excluded (free constants).
