@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 00:03 (UTC+8)
+- card: T015, T016 | action: synced ws and checked T015 production; no new handoff or ready card.
+- running jobs: T015 solver batch (running, stderr empty); imaging jobs finished. T016 tables/build verified, production waiting.
+- solver progress: high_thin_G0/it2: t_ns=6.149980e+002; high_thin_G1/it0: t_ns=7.079951e+002; high_trap_G0/it2: t_ns=5.404991e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
+- skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
+- notes: no new completed solver registry rows; no reruns or parameter changes.
+
 ## 2026-11-17 23:49 (UTC+8)
 - card: T015, T016 | action: checked production; collected and handed off T015img3 completion (rc=0, 220.098942 seconds) and low G1 imaging.
 - running jobs: T015 solver batch; imaging jobs finished. T016 tables/build verified; production waiting.
