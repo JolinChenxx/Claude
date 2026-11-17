@@ -116,8 +116,13 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
     root = Path(batch["root"])
     case_cfg = P.resolve(yaml.safe_load((REPO / spec["case"]).read_text()))
     log = []
-    prev = None
-    for it in range(int(spec.get("picard", 0)) + 1):
+    # Picard continuation (STATE 2026-11-18): start at iteration `start_it` using the finished run `prev_run`
+    # (directory of iteration start_it-1) as the shielding input; the iteration count itself is unchanged.
+    prev = Path(spec["prev_run"]) if spec.get("prev_run") else None
+    it_start = int(spec.get("start_it", 0))
+    if (it_start > 0) != (prev is not None):
+        raise ValueError(f"{spec['id']}: start_it > 0 requires prev_run and vice versa")
+    for it in range(it_start, int(spec.get("picard", 0)) + 1):
         rd = root / spec["id"] / f"it{it}"
         (rd / "lip_tables").mkdir(parents=True, exist_ok=True)
         for f in ("eos.bin", "opt.bin"):

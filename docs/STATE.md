@@ -87,3 +87,11 @@ Updated: 2026-11-15
 - L/L(300), filter b, sa, baseline at 400/500/600/700/1000/1200 ns: G1 0.70/0.46/0.39/0.26/0.09/0.06; G0 0.68/0.53/0.44/0.40/0.12/0.09; exp 0.70/0.45/0.29/0.17/0.04/0.016. Thin transfer: G1 0.92/0.80/0.72/0.64/0.37/0.28.
 - G1 decays faster than G0 at late times (20–35% lower at ≥ 600 ns): low-fluence late-time grid sensitivity persists under v1 (as in T014); G1 (and a G2 check) is the reference for the low series.
 - Codex heartbeat on branch codex-status works (entries 23:36, 23:49).
+
+## 2026-11-18 01:40 (UTC+8) — T015 final review (v1 conduction; card done)
+- All 14 solver + 14 imaging rc=0; |energy residual| ≤ 0.034%; E_wall 15–76 µJ.
+- **Picard convergence (new finding, numerics):** the one-way target↔gas iteration (relax 0.5) converges from above. Target absorption assumed by the target model vs measured in PLUTO (A·I_s): high G0 62/8.8 → 32/10.9 → 22/17.5 µJ (it0→it2, still 27% apart); low G0 28/16 → 21.0/21.6 → 21.4/22.2 µJ (converged ≤ 4% at it1–it2). The monotone drop of high-fluence gas absorption (296→254→197 µJ) and M_Cu (3.3→1.6→1.0 ng) is this convergence, not a bug. **High-fluence results need it3–it4** until |model−PLUTO|/PLUTO < 10% (criterion declared here, before seeing further results). Batch runner now supports continuation (`start_it`, `prev_run`).
+- High it2 (most self-consistent so far) shows a late re-brightening around 450–550 ns (L/L300 0.86→0.95 at 400→500 ns, thin 1.12) absent in it0 and in G1 it0 → to diagnose (diag_emission on it2) before interpreting.
+- High G1 it0 vs G0 it0 (sa): 0.66/0.48/0.38/0.38 vs 0.81/0.46/0.36/0.30 at 400–700 ns; exp 0.54/0.37/0.21/0.13.
+- ConsToPrim: 44.3 M lines in total, dominated by it0 G0 (11.9 M each high); falls with iteration (0.93 M at it2) and with grid (G1 0.46–0.59 M) → linked to the strong unshielded early vapour injection. Location/type extraction requested from Codex.
+- Low series: converged Picard; G1 reference (see 23:55 entry).
