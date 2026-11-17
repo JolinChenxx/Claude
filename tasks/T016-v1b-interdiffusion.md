@@ -2,7 +2,7 @@
 id: T016
 title: v1 step 2 — Cu–air interdiffusion (on top of T015 conduction): tables v1b, build v1b, 6-member batch, imaging
 owner: codex
-status: running
+status: blocked
 started: 2026-11-17T23:18:42.6934325+08:00
 depends: []   # steps 1-2 now; only step 3 (batch start) waits for the T015 solver runs
 milestone: D2
