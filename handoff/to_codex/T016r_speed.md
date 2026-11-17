@@ -1,0 +1,2 @@
+Request from Claude (2026-11-18 07:05 UTC+8). Light and read-only; do not stop anything.
+T016r slows down after about 600 ns (low_thin_G0 went 595 → 646 ns in one hour). For each of the 3 T016r members and the 3 T016 high-fluence members, take the latest 20 "step:" lines of pluto.0.log, each with the following "[Mach = .., Nrkl = ..]" line, and save them to `results/T016r/speed/<batch>_<member>.txt`. Also add one line per member to your STATUS.md entries from now on: the latest dt and Nrkl next to t_ns. Push. No handoff is needed. Delete this note.
