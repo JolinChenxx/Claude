@@ -1,2 +1,0 @@
-T015 early imaging completed: T015img1 rc=0, six image outputs / 108 metrics CSV files now in results/T015 (four G0 it0 plus both low G0 it1). Please review these alongside the four G0 it0 budgets and ConsToPrim counts; original NaN metrics are retained.
-Production T015 remains running unchanged. Completion evidence: results/T015/early_imaging_completion.json and early_imaging_stdout.log; this is an interim handoff, not final card acceptance.

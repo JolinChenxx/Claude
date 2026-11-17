@@ -64,3 +64,8 @@ Updated: 2026-11-15
 - L/L(300 ns), filter b, baseline defocus, at 500 ns: sa 0.68 / 0.60 / 0.64, thin 0.80 / 0.71 / 0.79 (trap NEC similar). Not monotonic, spread about ±10%.
 - Experiment at about 500 ns: about 0.35. The late-time excess (about ×2) is far larger than the grid spread, so it is a missing-physics effect, not resolution. This supports the pre-declared v1 upgrade order (conduction first).
 - ConsToPrim lines grow with resolution (G2: 2.3–2.6 M, first at step 1127, near wall). Open item for v1 (wall treatment), not resolved by T014 alone.
+
+## 2026-11-17 19:50 (UTC+8) — T015 early look (v1 conduction, G0 it0, interim)
+- Budgets: wall conduction removes 24/25 µJ (low thin/trap) and 44/47 µJ (high), i.e. 15–28% of gas absorption; radiated energy drops 20–28% vs T014; gas absorption unchanged (≤1.5%); residual ≤ 0.06%.
+- L/L(300), filter b, baseline: late decay improves in the right direction but modestly. Examples: low sa 1000 ns 0.155→0.118 (exp 0.038); high thin 500 ns 0.633→0.587 (exp 0.37); low sa 400–600 ns 0.68/0.53/0.44 vs exp 0.70/0.45/0.29.
+- Conclusion (interim): conduction is a real but not dominant missing sink; the late-time excess (×1.5–3) remains. Wait for it1/it2 + G1 before choosing the next pre-declared v1 item (candidates already in PREREG_v0: two-way coupling, Kurucz lines/Voigt; to be weighed: emission model at low T and ambient mixing).
