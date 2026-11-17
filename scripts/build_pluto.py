@@ -52,6 +52,7 @@ def main(argv=None):
     ap.add_argument("--mpi", action="store_true")
     ap.add_argument("--eos", choices=["ideal", "pvte"], default="ideal")
     ap.add_argument("--states", default="plm")
+    ap.add_argument("--tc", action="store_true", help="thermal conduction module + RKL parabolic update")
     ap.add_argument("--extra-obj", nargs="*", default=[])
     ap.add_argument("--pluto-dir", type=Path, default=None)
     ap.add_argument("--jobs", type=int, default=8)
@@ -65,7 +66,7 @@ def main(argv=None):
         if f.suffix in (".c", ".h") or f.name in ("definitions.h",):
             shutil.copy2(f, a.out / f.name)
             ups = list(src.rglob(f.name))
-            if ups and f.name not in ("init.c", "definitions.h", "userdef_output.c", "pvte_law.c"):
+            if ups and f.name not in ("init.c", "definitions.h", "userdef_output.c", "pvte_law.c", "tc_kappa.c"):
                 up = ups[0]
                 diff = "".join(difflib.unified_diff(up.read_text(errors="replace").splitlines(True),
                                                     f.read_text(errors="replace").splitlines(True),
@@ -88,7 +89,8 @@ def main(argv=None):
     t = re.sub(r"(?m)^PLUTO_DIR\s*=.*$", f"PLUTO_DIR = {pluto.resolve().as_posix()}", t)
     t = re.sub(r"(?m)^VPATH\s*=.*$", "VPATH = " + sep.join([".", "$(SRC)/New", "$(SRC)", "$(SRC)/Time_Stepping", "$(SRC)/States"]), t)
     eos_mk = "EOS/PVTE" if a.eos == "pvte" else "EOS/Ideal"
-    extra = (f"include $(SRC)/HD/makefile\ninclude $(SRC)/{eos_mk}/makefile\n"
+    tc = "include $(SRC)/Thermal_Conduction/makefile\nOBJ += rkl.o parabolic_update.o\n" if a.tc else ""
+    extra = (f"include $(SRC)/HD/makefile\ninclude $(SRC)/{eos_mk}/makefile\n{tc}"
              f"OBJ += {a.states}_states.o rk_step.o update_stage.o {' '.join(a.extra_obj)}\n")
     if a.platform == "windows":
         t = t.replace("$(SRC)/HD:$(SRC)/MHD", "$(SRC)/HD;$(SRC)/MHD")

@@ -1,0 +1,18 @@
+--- Src/parabolic_update.c
++++ parabolic_update.c
+@@ -310,7 +310,14 @@
+ 
+ #if THERMAL_CONDUCTION
+   if (include[TC_OP]){   
+-    TOT_LOOP(k,j,i) d->Tc[k][j][i] = d->Vc[PRS][k][j][i]/d->Vc[RHO][k][j][i];
++    /* lipsim v1: true LTE temperature in K from the table EOS (upstream uses p/rho, valid only for an
++       ideal gas). This is the only change to the upstream file. */
++    TOT_LOOP(k,j,i) {
++      double vtc[NVAR];
++      int nvtc;
++      NVAR_LOOP(nvtc) vtc[nvtc] = d->Vc[nvtc][k][j][i];
++      d->Tc[k][j][i] = lip_T_from_prim(vtc);
++    }
+   }
+ #endif
+ 

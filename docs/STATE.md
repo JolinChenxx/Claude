@@ -58,3 +58,9 @@ Updated: 2026-11-15
   - **High fluence**: self-consistent ignition, gas absorption 267 µJ (67%), radiation 79 µJ by 800 ns, Cu 3.3 ng; T009 independent window 106–296 µJ. L(t)/L(300) matches the experiment at 150–350 ns; after 400 ns the model flattens (0.4–0.7 at 740 ns vs experiment 0.1) → P1 τ 372–1350 ns vs 182 (partial/fail), P2 > 440 ns (n/a window), P3 turning time 530–630 vs 330 ns (partial, same sign). As expected in PREREG_v0: missing molecular transport / wall heat loss → late cooling too slow.
   - **Low fluence**: **no ignition** (gas absorption 0.0017 µJ); emission comes from hot vapour alone; τ 288–600 ns vs 218 (thin pass/partial, trap fail). Energy is ~2 orders of magnitude below the T009 shock-implied 70–240 µJ → ignition gate G1 fails at low fluence; per PREREG_v0, branch B (semi-empirical, energy from the shock inversion) must be added for low fluence.
   - Picard it0→it2: high-fluence results move by 20–35% (shielding feedback not converged; v1 two-way coupling); low fluence unchanged (no shielding).
+
+## 2026-11-17 08:10 (UTC+8) — T013a review (v0 build, high fluence, it0, G0/G1/G2)
+- Gas absorption 267 / 272 / 257 µJ, radiation 78.6 / 79.3 / 73.5 µJ (G0/G1/G2): spread ≤ 6%.
+- L/L(300 ns), filter b, baseline defocus, at 500 ns: sa 0.68 / 0.60 / 0.64, thin 0.80 / 0.71 / 0.79 (trap NEC similar). Not monotonic, spread about ±10%.
+- Experiment at about 500 ns: about 0.35. The late-time excess (about ×2) is far larger than the grid spread, so it is a missing-physics effect, not resolution. This supports the pre-declared v1 upgrade order (conduction first).
+- ConsToPrim lines grow with resolution (G2: 2.3–2.6 M, first at step 1127, near wall). Open item for v1 (wall treatment), not resolved by T014 alone.

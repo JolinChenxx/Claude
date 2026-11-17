@@ -18,11 +18,11 @@
 LipEOS      lip_eos;
 LipTable    lip_opt;
 LipSrcTable lip_src;
-static int  lip_ready = 0, i_alpha = -1, i_nec = -1;
-static int  s_mdot, s_Tv, s_rhov, s_uv, s_A;
+static int  lip_ready = 0, i_alpha = -1, i_nec = -1, i_kappa = -1;
+static int  s_mdot, s_Tv, s_rhov, s_uv, s_A, s_Ts;
 static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
 static double *trans = NULL;
-static double B[8];   /* budget: inc, gas_abs, targ_abs, esc, rad, rad_limited, mass_src, energy_src */
+static double B[9];   /* budget: inc, gas_abs, targ_abs, esc, rad, rad_limited, mass_src, energy_src, wall (gas->target) */
 
 void lip_init(void)
 {
@@ -31,10 +31,14 @@ void lip_init(void)
   if (lip_table_read("lip_tables/opt.bin", &lip_opt)) { printLog("! lip: cannot read lip_tables/opt.bin\n"); QUIT_PLUTO(1); }
   i_alpha = lip_table_field(&lip_opt, "alpha1064");
   i_nec = lip_table_field(&lip_opt, g_inputParam[NEC_LIMIT] > 0.5 ? "nec_trap" : "nec_thin");
+  i_kappa = lip_table_field(&lip_opt, "kappa");
   if (lip_src_read("lip_tables/target_source.bin", &lip_src)) { printLog("! lip: cannot read target_source.bin\n"); QUIT_PLUTO(1); }
   s_mdot = lip_src_field(&lip_src, "mdot"); s_Tv = lip_src_field(&lip_src, "Tv");
-  s_rhov = lip_src_field(&lip_src, "rhov"); s_uv = lip_src_field(&lip_src, "uv"); s_A = lip_src_field(&lip_src, "A");
+  s_rhov = lip_src_field(&lip_src, "rhov"); s_uv = lip_src_field(&lip_src, "uv"); s_A = lip_src_field(&lip_src, "A"); s_Ts = lip_src_field(&lip_src, "Ts");
   if (s_mdot < 0 || s_Tv < 0 || s_rhov < 0 || s_uv < 0 || s_A < 0) { printLog("! lip: source table fields missing\n"); QUIT_PLUTO(1); }
+#if THERMAL_CONDUCTION != NO
+  if (i_kappa < 0 || s_Ts < 0) { printLog("! lip: conduction build needs opt.bin field kappa and source field Ts (v1 tables)\n"); QUIT_PLUTO(1); }
+#endif
   memset(B, 0, sizeof(B));
   lip_ready = 1;
 }
@@ -51,6 +55,22 @@ double lip_T_from_prim(double *v)
   lip_init();
   lip_eos_T_from_p(&lip_eos, v[RHO] * LIP_RHO_SI, v[PRS] * LIP_PRS_SI, lip_Y(v), &T);
   return T;
+}
+
+double lip_kappa_SI(double *v)
+{
+  lip_init();
+  if (i_kappa < 0) return 0.0;
+  double T = lip_T_from_prim(v);
+  return lip_interp(&lip_opt, i_kappa, log10(v[RHO] * LIP_RHO_SI), log10(T), lip_Y(v), 1);
+}
+
+double lip_cv_code(double *v)
+{
+  double T = lip_T_from_prim(v), rho = v[RHO] * LIP_RHO_SI, Y = lip_Y(v);
+  double h = 1.0e-3;
+  double cv = (lip_eos_e(&lip_eos, rho, T * (1 + h), Y) - lip_eos_e(&lip_eos, rho, T * (1 - h), Y)) / (2 * h * T);
+  return cv / (LIP_VEL_SI * LIP_VEL_SI);   /* J/kg/K -> code energy per mass per K */
 }
 
 static double laser_I(double r, double t)
@@ -125,6 +145,21 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       q_las[j][i] = ql; q_rad[j][i] = dE_rad / dt_SI;
       double m = rho, mY = rho * Y, pz = rho * vz;
       double E = rhoe + 0.5 * rho * (vr * vr + vz * vz) + (ql * dt_SI - dE_rad);
+#if THERMAL_CONDUCTION != NO
+      /* v1: conductive exchange between the first gas cell and the target surface at T_s(t,r) (one-way):
+         q = kappa (T_s - T_1) / (dz/2); energy enters/leaves the gas, booked as B[8] (positive = gas -> target) */
+      if (j == JBEG && grid->lbound[JDIR] != 0 && s_Ts >= 0) {
+        double Ts = lip_src_get(&lip_src, s_Ts, t_SI, r);
+        if (Ts < g_inputParam[T_AMB]) Ts = g_inputParam[T_AMB];
+        double kap = lip_interp(&lip_opt, i_kappa, log10(rho), log10(T), Y, 1);
+        double qw = kap * (Ts - T) / (0.5 * dz[0]);          /* W/m^2 into the gas */
+        double dEw = qw / dz[0] * dt_SI;                      /* J/m^3 */
+        if (rhoe + dEw < rhoe_floor) dEw = rhoe_floor - rhoe; /* cannot cool below T_floor */
+        E += dEw;
+        B[8] -= dEw * dV;
+        if (rhoe > 0.0) inv_src = MAX(inv_src, fabs(dEw / dt_SI) / (F_E * rhoe));
+      }
+#endif
       if (j == JBEG && g_inputParam[SRC_ON] > 0.5 && grid->lbound[JDIR] != 0) {
         double mdot = lip_src_get(&lip_src, s_mdot, t_SI, r);
         if (mdot > 0.0) {
@@ -177,7 +212,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[8];
+  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[9];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -193,16 +228,16 @@ void lip_analysis(const Data *d, Grid *grid)
   }
 #ifdef PARALLEL
   MPI_Allreduce(tot, glob, 4, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
-  MPI_Allreduce(B, Bg, 8, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(B, Bg, 9, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 #else
   memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B));
 #endif
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8]);
     fclose(fp);
   }
   if (trans != NULL && grid->lbound[JDIR] != 0) {

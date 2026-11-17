@@ -2,7 +2,7 @@
 id: T013a
 title: High-fluence G2 grid-convergence members (uses about 32 cores left idle by T011)
 owner: codex
-status: review
+status: done
 depends: [T010]
 milestone: D0
 est_time: 0.2h operations + an estimated 4–8h machine time (32 cores)

@@ -1,0 +1,31 @@
+--- Src/Thermal_Conduction/tc_flux.c
++++ tc_flux.c
+@@ -40,6 +40,7 @@
+ */
+ /* ///////////////////////////////////////////////////////////////////// */
+ #include "pluto.h"
++#include "lip_glue.h"
+ 
+ #ifndef TC_SATURATED_FLUX
+ /*! When set to YES (default), include saturation effects when
+@@ -67,7 +68,7 @@
+ {
+   int  i, j, k, nv;
+   double bgradT, Bmag, Fc_mag, dT_mag;
+-  double Fc, Fsat, g1 = g_gamma - 1.0;
++  double Fc, Fsat, g1 = 0.0;  /* lipsim: g_gamma does not exist with PVTE; unused below */
+   double x1, x2, x3;
+   double dvp, dvm, dvl;
+   double alpha, uL, uR, bn;
+@@ -150,7 +151,10 @@
+ 
+     Fc        = kpar*gradT[i][g_dir];  /* Classical thermal conduction flux */
+     Fc_mag    = kpar*dT_mag;          /* Flux magnitude (include all dirs) */
+-    dcoeff[i] = fabs(kpar/vi[RHO])*g1; /* Diffusion coefficient */
++    /* lipsim v1: diffusion coefficient kappa/(rho c_v) with the table heat capacity (T in K); upstream
++       uses (gamma-1) kappa/rho, valid only for an ideal gas with T = p/rho. Only change to the file. */
++    dcoeff[i] = fabs(kpar/(vi[RHO]*lip_cv_code(vi)));
++    (void)g1;
+ 
+ #elif PHYSICS == MHD
+ 

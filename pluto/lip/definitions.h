@@ -16,7 +16,7 @@
 #define  DUST_FLUID                     NO
 #define  EOS                            PVTE_LAW
 #define  ENTROPY_SWITCH                 NO
-#define  THERMAL_CONDUCTION             NO
+#define  THERMAL_CONDUCTION             RK_LEGENDRE   /* v1 */
 #define  VISCOSITY                      NO
 #define  ROTATING_FRAME                 NO
 
@@ -39,3 +39,4 @@
 #define  SHOCK_FLATTENING               MULTID
 #define  CHAR_LIMITING                  NO
 #define  T_CUT_RHOE                     1.0
+#define  TC_SATURATED_FLUX              NO
