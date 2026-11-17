@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 01:23 (UTC+8)
+- card: T015, T016 | action: completed T015 collection, comparison, validation and review handoff (ws b949412); synced approved deliverables with hash verification.
+- running jobs: T016 production; all T015 solver/imaging jobs finished rc=0.
+- T016 progress: high_thin_G0/it0: t_ns=5.699978e+001; high_thin_G1/it0: t_ns=3.999874e+001; high_trap_G0/it0: t_ns=5.599832e+001; low_thin_G0/it0: t_ns=1.084996e+002; low_thin_G1/it0: t_ns=7.749895e+001; low_trap_G0/it0: t_ns=1.094967e+002
+- skipped ready cards and why: none.
+- notes: T015 14 solver + 14 image successes, 252 scenarios; 44,293,192 warnings, 40 negative P1, 222 no-crossing P2; max absolute residual 0.0344352%; package 15.03 MB. Scientific review pending; no tuning/reruns.
+
 ## 2026-11-18 01:05 (UTC+8)
 - card: T015, T016 | action: verified all 14 T015 solver completions rc=0; published imaging4 results; launched T016 production and final T015 imaging.
 - running jobs: T016 PID 1492, 64-core batch, started 01:05, initial status running/stderr empty; T015img5 PID 27116, 16 imaging workers, initial status running/stderr empty.
