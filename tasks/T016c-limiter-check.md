@@ -2,7 +2,8 @@
 id: T016c
 title: Check the kinetic flux limiter (build v1d) past the T016 abort point from the same restarts
 owner: codex
-status: ready
+status: running
+started: 2026-11-18T03:03:56.934543+08:00
 depends: []
 milestone: D2
 est_time: 0.2h operations + about 1h machine time (16 cores)
