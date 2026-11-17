@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 01:05 (UTC+8)
+- card: T015, T016 | action: verified all 14 T015 solver completions rc=0; published imaging4 results; launched T016 production and final T015 imaging.
+- running jobs: T016 PID 1492, 64-core batch, started 01:05, initial status running/stderr empty; T015img5 PID 27116, 16 imaging workers, initial status running/stderr empty.
+- progress: T015 solver finished (G0/G1 high 800 ns, low 1300 ns), 13/14 images published; high_trap_G0 it2 pending imaging. T016 just launched with verified v1b tables/build.
+- skipped ready cards and why: none.
+- notes: launch records pushed on ws (9044806). Next pass complete T015 collection/report/handoff after imaging5, and check T016.
+
 ## 2026-11-18 00:49 (UTC+8)
 - card: T015, T016 | action: preserved two rc=0 solver completions (high thin G0 it2 and G1 it0); launched T015img4 with 16 imaging workers.
 - running jobs: T015 solver batch; T015img4 PID 37776. T016 tables/build verified, production waiting.
