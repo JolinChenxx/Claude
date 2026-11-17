@@ -33,7 +33,7 @@ def run(member, restart):
             record.update(state='finished', timed_out=False, returncode=code)
         except subprocess.TimeoutExpired:
             killed = subprocess.run(['taskkill.exe', '/PID', str(process.pid), '/T', '/F'],
-                                    capture_output=True, text=True)
+                                    capture_output=True, text=True, encoding="mbcs", errors="replace")
             record.update(state='time_limit', timed_out=True,
                           taskkill_returncode=killed.returncode,
                           taskkill_stdout=killed.stdout, taskkill_stderr=killed.stderr)
