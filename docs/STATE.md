@@ -82,3 +82,8 @@ Updated: 2026-11-15
 - Cloud smoke (high, smoke grid, 0–60 ns): 0 ConsToPrim, residual −0.17%, M_Cu = M_src, mixed-cell Cu 31% → 34%.
 - Declared limitation: ions as hard spheres (no polarisation/ambipolar), no thermal diffusion; uncertainty factor ~2–3 on D.
 - Card T016 (after T015 solver runs).
+
+## 2026-11-17 23:55 (UTC+8) — T015 low_thin_G1 it0 (interim)
+- L/L(300), filter b, sa, baseline at 400/500/600/700/1000/1200 ns: G1 0.70/0.46/0.39/0.26/0.09/0.06; G0 0.68/0.53/0.44/0.40/0.12/0.09; exp 0.70/0.45/0.29/0.17/0.04/0.016. Thin transfer: G1 0.92/0.80/0.72/0.64/0.37/0.28.
+- G1 decays faster than G0 at late times (20–35% lower at ≥ 600 ns): low-fluence late-time grid sensitivity persists under v1 (as in T014); G1 (and a G2 check) is the reference for the low series.
+- Codex heartbeat on branch codex-status works (entries 23:36, 23:49).

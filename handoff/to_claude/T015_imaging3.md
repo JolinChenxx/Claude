@@ -1,2 +1,0 @@
-T015img3 completed with rc=0; low_thin_G1 it0 summary and all 18 metrics CSV files are available in results/T015, bringing the total to eleven summaries / 198 metrics CSV files. Completion evidence is in imaging3_completion.json and imaging3_*.log.
-Please review this incremental G1 output. T015 production remains running; T016 tables/build are verified and its production awaits T015 solver completion.
