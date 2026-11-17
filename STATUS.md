@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 07:48 (UTC+8)
+- card: T016, T016r | action: synced ws (c2f8b29), no incoming handoff, checked both background jobs.
+- running jobs: T016r PID 41680 elapsed 03:43:43; T016 PID 1492 elapsed 06:43:40. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
+- T016/high_thin_G0/it0: t_ns=4.459994e+002; latest logged dt=5.8771e-004, Nrkl=17 (step 87000, log_t_ns=4.4550e+002).
+- T016/high_trap_G0/it0: t_ns=6.814911e+002; latest logged dt=1.9466e-002, Nrkl=15 (step 86000, log_t_ns=6.7807e+002).
+- T016/high_thin_G1/it0: t_ns=1.924975e+002; latest logged dt=2.6400e-003, Nrkl=20 (step 49000, log_t_ns=1.9204e+002).
+- T016r/low_thin_G0/it0: t_ns=7.099992e+002; latest logged dt=3.1027e-002, Nrkl=10 (step 50000, log_t_ns=6.9307e+002).
+- T016r/low_trap_G0/it0: t_ns=6.844983e+002; latest logged dt=2.1324e-003, Nrkl=20 (step 51000, log_t_ns=6.8473e+002).
+- T016r/low_thin_G1/it0: t_ns=2.394997e+002; latest logged dt=1.6725e-003, Nrkl=3 (step 43000, log_t_ns=2.3898e+002).
+- skipped ready cards and why: none; no ready cards.
+- notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
+
 ## 2026-11-18 07:34 (UTC+8)
 - card: T016, T016r | action: synced ws (c2f8b29), no incoming handoff, checked both background jobs.
 - running jobs: T016r PID 41680 elapsed 03:28:46; T016 PID 1492 elapsed 06:28:43. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
@@ -224,11 +236,4 @@
 - solver progress: high_thin_G0/it2: t_ns=6.684997e+002; high_thin_G1/it0: t_ns=7.479800e+002; high_trap_G0/it2: t_ns=5.924977e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
 - skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
 - notes: solver progress continues; no new completed solver registry rows, reruns or parameter changes.
-
-## 2026-11-18 00:03 (UTC+8)
-- card: T015, T016 | action: synced ws and checked T015 production; no new handoff or ready card.
-- running jobs: T015 solver batch (running, stderr empty); imaging jobs finished. T016 tables/build verified, production waiting.
-- solver progress: high_thin_G0/it2: t_ns=6.149980e+002; high_thin_G1/it0: t_ns=7.079951e+002; high_trap_G0/it2: t_ns=5.404991e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
-- skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
-- notes: no new completed solver registry rows; no reruns or parameter changes.
 
