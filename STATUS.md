@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 07:19 (UTC+8)
+- card: T016, T016r | action: synced ws (c2f8b29), no incoming handoff, checked both background jobs.
+- running jobs: T016r PID 41680 elapsed 03:13:43; T016 PID 1492 elapsed 06:13:40. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
+- T016/high_thin_G0/it0: t_ns=4.394993e+002; latest logged dt=1.8916e-003, Nrkl=20 (step 83000, log_t_ns=4.3911e+002).
+- T016/high_trap_G0/it0: t_ns=5.789975e+002; latest logged dt=2.6144e-003, Nrkl=20 (step 80000, log_t_ns=5.7161e+002).
+- T016/high_thin_G1/it0: t_ns=1.884992e+002; latest logged dt=2.0394e-003, Nrkl=20 (step 47000, log_t_ns=1.8846e+002).
+- T016r/low_thin_G0/it0: t_ns=6.674979e+002; latest logged dt=2.1568e-003, Nrkl=20 (step 46000, log_t_ns=6.6606e+002).
+- T016r/low_trap_G0/it0: t_ns=6.419934e+002; latest logged dt=2.3979e-003, Nrkl=20 (step 46000, log_t_ns=6.1899e+002).
+- T016r/low_thin_G1/it0: t_ns=2.074962e+002; latest logged dt=9.8669e-003, Nrkl=8 (step 37000, log_t_ns=1.9912e+002).
+- skipped ready cards and why: none; no ready cards.
+- notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
+
 ## 2026-11-18 07:05 (UTC+8)
 - card: T016, T016r | action: fulfilled T016r_speed note; verified/pushed six extracts with latest 20 step/Mach pairs (ws c2f8b29); note removed, no handoff requested.
 - running jobs: T016r PID 41680 elapsed 02:58:48; T016 PID 1492 elapsed 05:58:45 at check, both running/stderr empty. Three high and three low members continue.
@@ -214,11 +226,4 @@
 - solver progress: high_thin_G0/it2: t_ns=5.709978e+002; high_thin_G1/it0: t_ns=6.744922e+002; high_trap_G0/it2: t_ns=4.894955e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
 - skipped ready cards and why: none. T016 production waits for T015 solver completion as required by its card; solver progress continues.
 - notes: eleven image summaries / 198 metrics CSV files published on ws (a4a7e7f); no new incoming instructions.
-
-## 2026-11-17 23:36 (UTC+8)
-- card: T015, T016 | action: validated T016 tables and isolated MPI build; started T015img3 (16 imaging workers); established status worktree.
-- running jobs: T015 solver batch; T015img3 PID 32292. T016tab finished rc=0 (805.747013 s); T016 build rc=0, 7 replacements verified.
-- solver progress: high_thin_G0/it2: t_ns=5.259963e+002; high_thin_G1/it0: t_ns=6.429953e+002; high_trap_G0/it2: t_ns=4.374937e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
-- skipped ready cards and why: none; T016 is running, but its production launch waits for T015 solver completion.
-- notes: all v1b fields finite, shape [81,145,14], D_cuair/dh_dY present; old tables/build unchanged.
 
