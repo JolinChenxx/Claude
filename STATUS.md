@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 01:37 (UTC+8)
+- card: T015 follow-up, T016 | action: processed incoming diagnostics; published both emission CSVs/logs and streaming warning counts, 40 contextual samples and index histograms (ws ac94e73).
+- running jobs: T016 production, initial pass check running/stderr empty. T015 accepted done by Claude.
+- progress: high_thin_G0/it0: t_ns=8.049828e+001; high_thin_G1/it0: t_ns=4.799892e+001; high_trap_G0/it0: t_ns=7.649970e+001; low_thin_G0/it0: t_ns=1.394982e+002; low_thin_G1/it0: t_ns=9.249814e+001; low_trap_G0/it0: t_ns=1.414984e+002
+- skipped ready cards and why: none.
+- notes: high it0 11,853,003 warnings, one normalized type, first/last steps 19037/31425; all located. Both emission diagnostics rc=0 and seven finite rows. Updated report synced with checksum verification; no solver changes.
+
 ## 2026-11-18 01:23 (UTC+8)
 - card: T015, T016 | action: completed T015 collection, comparison, validation and review handoff (ws b949412); synced approved deliverables with hash verification.
 - running jobs: T016 production; all T015 solver/imaging jobs finished rc=0.
