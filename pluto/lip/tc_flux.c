@@ -165,7 +165,19 @@ void TC_Flux (double ***T, const Sweep *sweep,
       double Dm, dh;
       double dxc = grid->x[g_dir][i+1] - grid->x[g_dir][i];
       lip_diff_code(vi, &Dm, &dh);
-      double FY = vi[RHO]*Dm*(vc[i+1][TRC] - vc[i][TRC])/dxc;
+      double FY = vi[RHO]*Dm*(vc[i+1][TRC] - vc[i][TRC])/dxc;   /* Fick (continuum) */
+      /* Kinetic limit (registry diff_cuair_limiter): the net Cu mass flux cannot exceed the one-way
+         Maxwellian flux of the Cu on the upwind side, rho Y v_th/4 with v_th = sqrt(8kT/(pi m_Cu)).
+         Harmonic limiting J = J_F/(1+|J_F|/J_max): Fick where the mean free path is short, free streaming
+         in rarefied cells (T016 aborts: rho ~ 7e-4 kg/m^3 next to the target, lambda ~ 0.4 mm >> dz). */
+      {
+        int up = (FY > 0.0) ? i+1 : i;   /* F > 0: Y increases with x, Cu moves towards -x from cell i+1 */
+        double Yup = vc[up][TRC] < 0.0 ? 0.0 : (vc[up][TRC] > 1.0 ? 1.0 : vc[up][TRC]);
+        double Jmax = 0.25*vc[up][RHO]*Yup*lip_cu_vth_code(vc[up]);
+        double lim = (Jmax > 0.0) ? 1.0/(1.0 + fabs(FY)/Jmax) : 0.0;
+        FY *= lim;
+        Dm *= lim;                        /* effective coefficient for the RKL stage count */
+      }
       if (!isfinite(FY) || !isfinite(dh*FY) || !isfinite(Fc)) {
         printLog("! lip tc_flux: non-finite flux dir=%d i=%d [g_i,g_j=%d,%d] rho=%g prs=%g Y=%g/%g D=%g dh=%g FY=%g Fc=%g kpar=%g\n",
                  g_dir, i, g_i, g_j, vi[RHO], vi[PRS], vc[i][TRC], vc[i+1][TRC], Dm, dh, FY, Fc, kpar);

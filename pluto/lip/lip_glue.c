@@ -83,6 +83,14 @@ void lip_diff_code(double *v, double *D, double *dh)
   *dh = lip_interp(&lip_opt, i_dh, lr, log10(T), Y, 0) / (LIP_VEL_SI * LIP_VEL_SI);
 }
 
+double lip_cu_vth_code(double *v)
+{
+  /* mean thermal speed of Cu atoms sqrt(8 k T / (pi m_Cu)) in code velocity units */
+  const double kB = 1.380649e-23, mCu = 63.546 * 1.66053906660e-27;   /* registry k_B, A_Cu, amu */
+  double T = lip_T_from_prim(v);
+  return sqrt(8.0 * kB * T / (CONST_PI * mCu)) / LIP_VEL_SI;
+}
+
 static double laser_I(double r, double t)
 {
   double w = 0.5 * g_inputParam[D_BEAM];
