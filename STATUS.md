@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 07:05 (UTC+8)
+- card: T016, T016r | action: fulfilled T016r_speed note; verified/pushed six extracts with latest 20 step/Mach pairs (ws c2f8b29); note removed, no handoff requested.
+- running jobs: T016r PID 41680 elapsed 02:58:48; T016 PID 1492 elapsed 05:58:45 at check, both running/stderr empty. Three high and three low members continue.
+- T016/high_thin_G0/it0: t_ns=4.349996e+002; latest logged dt=1.7659e-003, Nrkl=20 (step 81000, log_t_ns=4.3491e+002).
+- T016/high_trap_G0/it0: t_ns=5.679988e+002; latest logged dt=8.3746e-004, Nrkl=17 (step 78000, log_t_ns=5.6652e+002).
+- T016/high_thin_G1/it0: t_ns=1.864997e+002; latest logged dt=2.0031e-003, Nrkl=20 (step 46000, log_t_ns=1.8640e+002).
+- T016r/low_thin_G0/it0: t_ns=6.634988e+002; latest logged dt=2.1785e-003, Nrkl=20 (step 44000, log_t_ns=6.6168e+002).
+- T016r/low_trap_G0/it0: t_ns=6.159990e+002; latest logged dt=3.1012e-003, Nrkl=20 (step 44000, log_t_ns=6.1358e+002).
+- T016r/low_thin_G1/it0: t_ns=1.904914e+002; latest logged dt=9.9782e-003, Nrkl=5 (step 36000, log_t_ns=1.9003e+002).
+- skipped ready cards and why: none; no ready cards.
+- notes: from this pass onward include one line per active member with t_ns plus latest logged dt and Nrkl. The bounded backward reader in results/T016r/speed/collect_speed.py can be reused; no physics/parameter changes or solver restarts.
+
 ## 2026-11-18 06:49 (UTC+8)
 - card: T016, T016r | action: synced ws (49169c4), no incoming handoff, checked both background jobs.
 - running jobs: T016r PID 41680 elapsed 02:43:51; T016 PID 1492 elapsed 05:43:48. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
@@ -210,5 +222,3 @@
 - skipped ready cards and why: none; T016 is running, but its production launch waits for T015 solver completion.
 - notes: all v1b fields finite, shape [81,145,14], D_cuair/dh_dY present; old tables/build unchanged.
 
-## 2026-11-17 23:15 (UTC+8) — branch created by Claude
-- card: none | action: branch initialised; Codex writes the next entry.
