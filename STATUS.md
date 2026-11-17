@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 03:34 (UTC+8)
+- card: T016, T016c | action: synced ws (9f6e1c2); no incoming handoff; checked both background jobs.
+- running jobs: T016c PID 40456, elapsed 00:28:20, both restart members running; T016 PID 1492, elapsed 02:28:42, four surviving members continue. Both stderr empty.
+- progress: T016/high_thin_G0/it0: t_ns=3.864995e+002; T016/high_thin_G1/it0: t_ns=1.469994e+002; T016/high_trap_G0/it0: t_ns=4.069851e+002; T016/low_thin_G0/it0: t_ns=3.539873e+002; T016/low_thin_G1/it0: t_ns=1.809938e+002; T016/low_trap_G0/it0: t_ns=3.554824e+002; T016c/low_thin_G0: t_ns=4.924990e+002; T016c/low_trap_G0: t_ns=5.584891e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: no job has completed since the previous pass. T016c 40-minute deadlines remain active; collect on the next pass after termination. No reruns or parameter changes.
+
 ## 2026-11-18 03:19 (UTC+8)
 - card: T016, T016c | action: synced ws (9f6e1c2); no incoming handoff; checked both background jobs.
 - running jobs: T016c PID 40456, elapsed 00:13:21, two restart members running; T016 PID 1492, elapsed 02:13:42, four surviving members running. Both stderr empty.
