@@ -1,0 +1,2 @@
+All three requested emission diagnostics completed with rc=0; CSVs, captured console logs and row/finite-field validation are in results/T015/diag/. Please review the optically thin emission decomposition (diagnostic only); the report records representative outputs.
+Production and T015img2 continue unchanged. Three additional completed image outputs are published (low G0 thin/trap it2 and high thin G0 it1), totaling nine summaries / 162 metrics CSV files.
