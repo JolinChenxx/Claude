@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 03:51 (UTC+8)
+- card: T016c, T016 | action: T016c collected and set review; original low_thin_G1 abort evidence published; handoffs ws 3ef217a. Reports synced with hash verification.
+- running jobs: T016 PID 1492 last checked running (02:43:41), three high-fluence members continue. T016c both stopped at authorized 2400-second limits, post-stop rc=1; last budgets thin 496.9994 ns, trap 597.9984 ns, zero ConsToPrim/E<0/other ! messages in all ranks.
+- T016 progress: high_thin_G0/it0: t_ns=3.894995e+002; high_thin_G1/it0: t_ns=1.514998e+002; high_trap_G0/it0: t_ns=4.644995e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.849909e+002; low_trap_G0/it0: t_ns=3.554824e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: original low_thin_G1 rc=1 on rank 5 at 184.9909 ns, 535,312 rank-zero ConsToPrim lines. T016c taskkill stdout decoding errors preserved; result JSON and stop completed, wrapper encoding fixed without rerun.
+
 ## 2026-11-18 03:34 (UTC+8)
 - card: T016, T016c | action: synced ws (9f6e1c2); no incoming handoff; checked both background jobs.
 - running jobs: T016c PID 40456, elapsed 00:28:20, both restart members running; T016 PID 1492, elapsed 02:28:42, four surviving members continue. Both stderr empty.
