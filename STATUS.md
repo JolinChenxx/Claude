@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 02:50 (UTC+8)
+- card: T016b | action: collected completed diagnostics, set review and pushed handoff ws 1c86a87; report synced with hash verification.
+- running jobs: T016 PID 1492 running at check, elapsed 01:43:40, stderr empty; four members continue. T016b finished with solver rc=1/1, 9.953/4.016 seconds, neither timed out.
+- T016 progress: high_thin_G0/it0: t_ns=2.919855e+002; high_thin_G1/it0: t_ns=1.069977e+002; high_trap_G0/it0: t_ns=2.909809e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.454988e+002; low_trap_G0/it0: t_ns=3.554824e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: reproduced negative E then ConsToPrim energy NaN on thin rank 1 cell (8,4), trap rank 4 cell (10,5). All 16 rank logs collected as tails/errors; no non-finite flux guard message. Input hashes unchanged; no new solver runs.
+
 ## 2026-11-18 02:40 (UTC+8)
 - card: T016b | action: claimed lock 92ae180, built diagnostic v1c rc=0/7 replacements, verified isolated restart copies; launched T016b PID 35464 at execution commit 993d02c.
 - running jobs: T016b initial status running/stderr empty, two diagnostic members x 8 MPI ranks with individual 3600-second deadlines; T016 PID 1492 continues its four surviving members (last status running).
