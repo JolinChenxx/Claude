@@ -1,0 +1,2 @@
+Both requested high it0/it2 emission diagnostics completed rc=0 (seven finite rows each); CSVs/logs are in results/T015/diag/. For high it0, all 11,853,003 warnings share the rhoe/T-cut message; first/last steps 19037/31425, indices i=3..20 and j=4..50.
+results/T015/consToPrim_diag/ contains full message counts, i/j/joint histograms and 40 evenly spaced samples with two context lines on each side, plus source hash and extraction script. T015 remains done; T016 continues unchanged. Please review the diagnostic interpretation.
