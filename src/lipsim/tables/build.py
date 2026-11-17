@@ -4,7 +4,8 @@
 
 Outputs (little-endian LIPTAB01, documented in `write_bin`), all on (log10 ρ, log10 T, Y):
   eos.bin   e [J/kg], p [Pa], ne [m^-3], dchi_eV (IP lowering; validity flag)
-  opt.bin   alpha1064 [1/m], nec_thin, nec_trap [W/m^3/sr], kappa [W/m/K] (v1: electron + heavy, no reactive)
+  opt.bin   alpha1064 [1/m], nec_thin, nec_trap [W/m^3/sr], kappa [W/m/K] (v1: electron + heavy, no reactive),
+          D_cuair [m^2/s] (Cu–air binary diffusion), dh_dY = h_Cu − h_air [J/kg] (v1 step 2)
   pop.bin   nQ_<El><z> = n_z/Q_z, n_<El><z>, nion_z<k> [m^-3] for in-band levels and continuum (imaging)
   manifest.json  config, registry hash, NIST manifest hash, code commit, per-file SHA256
 """
@@ -38,7 +39,7 @@ def grid(cfg) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
 
 EOS_FIELDS = ["e", "p", "ne", "dchi_eV"]
-OPT_FIELDS = ["alpha1064", "nec_thin", "nec_trap", "kappa"]
+OPT_FIELDS = ["alpha1064", "nec_thin", "nec_trap", "kappa", "D_cuair", "dh_dY"]
 
 
 def _row(args):
@@ -46,13 +47,15 @@ def _row(args):
     from lipsim.eos import mixture as mx
     from lipsim.optics import props as op
     from lipsim.transport.kappa import kappa
+    from lipsim.transport.diffusion import D_binary, dh_dY
     lrho, Y, lts, wl = args
     rho = 10.0 ** lrho
     rows = []
     for lt in lts:
         s = mx.equilibrium(rho, 10.0 ** lt, float(Y))
         d = {"e": s.e, "p": s.p, "ne": s.ne, "dchi_eV": s.dchi_eV,
-             "alpha1064": op.alpha_at(s, wl)["total"], "nec_thin": op.nec(s, "thin"), "nec_trap": op.nec(s, "trap"), "kappa": kappa(s)["total"]}
+             "alpha1064": op.alpha_at(s, wl)["total"], "nec_thin": op.nec(s, "thin"), "nec_trap": op.nec(s, "trap"), "kappa": kappa(s)["total"],
+             "D_cuair": D_binary(s), "dh_dY": dh_dY(rho, 10.0 ** lt, float(Y))}
         d.update(op.pop_fields(s))
         rows.append(d)
     return rows

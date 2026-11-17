@@ -80,6 +80,8 @@ kappa_e_model: {value: "kappa_e = 3.16 n_e k^2 T / (m_e (nu_ei + nu_en)); nu_ei 
              source: "Braginskii (1965) Z=1 coefficient 3.16; NRL Plasma Formulary (2019) collision rate and Coulomb logarithm", uncertainty: "factor ~1.5 (partially ionised Lorentz-gas transition)", date: 2026-11-17, verified: false}
 kappa_h_model: {value: "kappa_h = (75/64) k_B / d^2 * sqrt(k_B T / (pi m)) per species (hard spheres), mole-fraction mixing", unit: "-", grade: F,
              source: "Chapman & Cowling, first Chapman-Enskog approximation for hard spheres", uncertainty: "factor ~1.5 (no reactive conductivity, no Lennard-Jones collision integrals)", date: 2026-11-17, verified: false}
+diff_cuair_model: {value: "J_Cu = -rho D grad(Y); D = 3/(8 n d12^2) sqrt(kT/(2 pi mu)), Cu (atoms+ions) vs air (mole-fraction mean), d12=(d_Cu+d_air)/2; energy flux (h_Cu - h_air) J_Cu with h_Cu - h_air = dh/dY at fixed p,T", unit: "-", grade: F,
+             source: "Chapman & Cowling, first Chapman-Enskog approximation for hard spheres (binary); Hirschfelder, Curtiss & Bird 1954 for the interdiffusion enthalpy flux", uncertainty: "factor ~2-3 (ions as hard spheres: no polarisation cross-section or ambipolar field; no thermal diffusion)", date: 2026-11-17, verified: false}
 hs_diameter: {value: {Cu: 2.6e-10, N2: 3.7e-10, O2: 3.5e-10, NO: 3.5e-10, N: 3.0e-10, O: 2.9e-10, Ar: 3.4e-10}, unit: m, grade: C,
              source: "Hard-sphere / Lennard-Jones sigma values (Hirschfelder, Curtiss & Bird 1954 tables; Cu: metallic diameter estimate)", uncertainty: "±15%", date: 2026-11-17, verified: false}
 

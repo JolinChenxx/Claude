@@ -155,6 +155,22 @@ void TC_Flux (double ***T, const Sweep *sweep,
        uses (gamma-1) kappa/rho, valid only for an ideal gas with T = p/rho. Only change to the file. */
     dcoeff[i] = fabs(kpar/(vi[RHO]*lip_cv_code(vi)));
     (void)g1;
+#if NTRACER > 0
+    /* lipsim v1 step 2: Cu–air binary interdiffusion carried by the same parabolic (RKL) update.
+       Flux convention of this file (F = coefficient x gradient, rhs += div F): mass flux of Cu
+       F_Y = rho D dY/dx on the conserved tracer rho*Y, plus the interdiffusion enthalpy flux
+       (h_Cu - h_air) F_Y on the energy. D and h_Cu - h_air are table fields (registry diff_cuair_model).
+       The RKL stage count uses max(kappa/(rho c_v), D). */
+    {
+      double Dm, dh;
+      double dxc = grid->x[g_dir][i+1] - grid->x[g_dir][i];
+      lip_diff_code(vi, &Dm, &dh);
+      double FY = vi[RHO]*Dm*(vc[i+1][TRC] - vc[i][TRC])/dxc;
+      sweep->tc_flux[i][TRC] = FY;
+      Fc += dh*FY;
+      dcoeff[i] = MAX(dcoeff[i], Dm);
+    }
+#endif
 
 #elif PHYSICS == MHD
 

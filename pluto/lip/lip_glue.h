@@ -23,5 +23,6 @@ void   LipSource(Data *d, double dt, timeStep *Dts, Grid *grid);
 void   lip_analysis(const Data *d, Grid *grid);
 double lip_uservar(const char *name, int k, int j, int i);
 double lip_kappa_SI(double *v);                         /* W/m/K from opt.bin "kappa" */
-double lip_cv_code(double *v);                          /* d e / d T [code energy per mass per K] */
+double lip_cv_code(double *v);
+void   lip_diff_code(double *v, double *D, double *dh); /* Cu–air diffusion (opt.bin D_cuair, dh_dY) */                          /* d e / d T [code energy per mass per K] */
 #endif

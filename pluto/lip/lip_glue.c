@@ -18,7 +18,7 @@
 LipEOS      lip_eos;
 LipTable    lip_opt;
 LipSrcTable lip_src;
-static int  lip_ready = 0, i_alpha = -1, i_nec = -1, i_kappa = -1;
+static int  lip_ready = 0, i_alpha = -1, i_nec = -1, i_kappa = -1, i_D = -1, i_dh = -1;
 static int  s_mdot, s_Tv, s_rhov, s_uv, s_A, s_Ts;
 static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
 static double *trans = NULL;
@@ -32,12 +32,13 @@ void lip_init(void)
   i_alpha = lip_table_field(&lip_opt, "alpha1064");
   i_nec = lip_table_field(&lip_opt, g_inputParam[NEC_LIMIT] > 0.5 ? "nec_trap" : "nec_thin");
   i_kappa = lip_table_field(&lip_opt, "kappa");
+  i_D = lip_table_field(&lip_opt, "D_cuair"); i_dh = lip_table_field(&lip_opt, "dh_dY");
   if (lip_src_read("lip_tables/target_source.bin", &lip_src)) { printLog("! lip: cannot read target_source.bin\n"); QUIT_PLUTO(1); }
   s_mdot = lip_src_field(&lip_src, "mdot"); s_Tv = lip_src_field(&lip_src, "Tv");
   s_rhov = lip_src_field(&lip_src, "rhov"); s_uv = lip_src_field(&lip_src, "uv"); s_A = lip_src_field(&lip_src, "A"); s_Ts = lip_src_field(&lip_src, "Ts");
   if (s_mdot < 0 || s_Tv < 0 || s_rhov < 0 || s_uv < 0 || s_A < 0) { printLog("! lip: source table fields missing\n"); QUIT_PLUTO(1); }
 #if THERMAL_CONDUCTION != NO
-  if (i_kappa < 0 || s_Ts < 0) { printLog("! lip: conduction build needs opt.bin field kappa and source field Ts (v1 tables)\n"); QUIT_PLUTO(1); }
+  if (i_kappa < 0 || s_Ts < 0 || i_D < 0 || i_dh < 0) { printLog("! lip: conduction build needs opt.bin fields kappa, D_cuair, dh_dY and source field Ts (v1 step-2 tables)\n"); QUIT_PLUTO(1); }
 #endif
   memset(B, 0, sizeof(B));
   lip_ready = 1;
@@ -71,6 +72,15 @@ double lip_cv_code(double *v)
   double h = 1.0e-3;
   double cv = (lip_eos_e(&lip_eos, rho, T * (1 + h), Y) - lip_eos_e(&lip_eos, rho, T * (1 - h), Y)) / (2 * h * T);
   return cv / (LIP_VEL_SI * LIP_VEL_SI);   /* J/kg/K -> code energy per mass per K */
+}
+
+void lip_diff_code(double *v, double *D, double *dh)
+{
+  /* Cu–air binary diffusion coefficient [code length^2/time] and h_Cu - h_air [code energy/mass] */
+  lip_init();
+  double T = lip_T_from_prim(v), lr = log10(v[RHO] * LIP_RHO_SI), Y = lip_Y(v);
+  *D  = lip_interp(&lip_opt, i_D,  lr, log10(T), Y, 1) / (LIP_LEN_SI * LIP_VEL_SI);
+  *dh = lip_interp(&lip_opt, i_dh, lr, log10(T), Y, 0) / (LIP_VEL_SI * LIP_VEL_SI);
 }
 
 static double laser_I(double r, double t)
