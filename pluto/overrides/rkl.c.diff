@@ -1,0 +1,13 @@
+--- Src/rkl.c
++++ rkl.c
+@@ -138,6 +138,10 @@
+    
+   var_list[i++] = ENG;
+   #endif
++  /* lipsim v1 step 2: the parabolic update also diffuses the Cu tracer (Cu–air interdiffusion, tc_flux.c) */
++  #if (THERMAL_CONDUCTION == RK_LEGENDRE) && (NTRACER > 0)
++  var_list[i++] = TRC;
++  #endif
+   nvar_rkl = i;
+ 
+ /* --------------------------------------------------------

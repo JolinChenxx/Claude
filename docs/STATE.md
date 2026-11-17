@@ -75,3 +75,10 @@ Updated: 2026-11-15
 - Conduction lowers absolute power about 2.5–3× but T_emw keeps a plateau near 9 kK → L/L(300) shape changes only modestly.
 - Cloud estimate at core conditions (Y=0.92, 9.4 kK, ≈0.8 bar): radiative cooling time ρΔe/(4π NEC) ≈ 1.4 µs (thin) / 6 µs (trap); Cu I in-band e-fold needs ≈ 2000 K per ~200 ns (≈10 K/ns), radiation gives ≈ 5 K/ns. LTE holds (McWhirter ≈ 1e22 m^-3).
 - Interpretation: the Cu vapour core neither mixes with air nor radiates fast enough. Pre-declarable physics without free parameters: (a) Cu–air molecular (Chapman–Enskog) interdiffusion; (b) more complete Cu I/II radiative cooling (Kurucz lines, escape-factor NEC instead of thin/trap limits). Turbulent mixing models are excluded (free constants).
+
+## 2026-11-17 21:25 (UTC+8) — v1 step 2 implemented: Cu–air interdiffusion (user approved)
+- Model: Fick J = −ρD∇Y, hard-sphere Chapman–Enskog binary D (registry diff_cuair_model, hs_diameter), with interdiffusion enthalpy flux (h_Cu − h_air)J, h_Cu − h_air = ∂h/∂Y|p,T from the LTE mixture. Tables: opt.bin D_cuair, dh_dY. PLUTO: carried by the RKL parabolic update (tc_flux.c flux, tc_rhs.c applies to TRC, rkl.c var list). Tests: tests/test_diffusion.py (cold-air closed form, 1/ρ scaling, ideal-gas ∂h/∂Y).
+- Values: D ≈ 2e-5 m²/s (300 K, 1 bar); ≈ 1e-2 m²/s at core conditions (9.4 kK, 0.8 bar) → √(2Dt) ≈ 150 µm in 1 µs.
+- Cloud smoke (high, smoke grid, 0–60 ns): 0 ConsToPrim, residual −0.17%, M_Cu = M_src, mixed-cell Cu 31% → 34%.
+- Declared limitation: ions as hard spheres (no polarisation/ambipolar), no thermal diffusion; uncertainty factor ~2–3 on D.
+- Card T016 (after T015 solver runs).
