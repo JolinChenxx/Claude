@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 04:49 (UTC+8)
+- card: T016, T016r | action: synced ws (49169c4), no incoming handoff, checked both background jobs.
+- running jobs: T016r PID 41680 elapsed 00:43:45; T016 PID 1492 elapsed 03:43:42. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
+- progress: T016/high_thin_G0/it0: t_ns=3.964995e+002; T016/high_thin_G1/it0: t_ns=1.644993e+002; T016/high_trap_G0/it0: t_ns=4.969996e+002; T016/low_thin_G0/it0: t_ns=3.539873e+002; T016/low_thin_G1/it0: t_ns=1.849909e+002; T016/low_trap_G0/it0: t_ns=3.554824e+002; T016r/low_thin_G0/it0: t_ns=2.014893e+002; T016r/low_thin_G1/it0: t_ns=1.019959e+002; T016r/low_trap_G0/it0: t_ns=2.034855e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. No reruns or parameter changes this pass.
+
 ## 2026-11-18 04:34 (UTC+8)
 - card: T016, T016r | action: synced ws (49169c4), no incoming handoff, checked both background jobs.
 - running jobs: T016r PID 41680 elapsed 00:29:08; T016 PID 1492 elapsed 03:29:05. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
