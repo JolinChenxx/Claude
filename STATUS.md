@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 02:21 (UTC+8)
+- card: T016 | action: processed abort-log request; published directory/output inventories and source evidence for absent rank 4/rank 1 logs; handoff ws 775da44.
+- running jobs: T016 PID 1492 running at check, elapsed 01:13:37, stderr empty; four surviving members continue. Card blocked pending scientific review of the two previously reported aborts.
+- progress: high_thin_G0/it0: t_ns=1.789990e+002; high_thin_G1/it0: t_ns=7.149621e+001; high_trap_G0/it0: t_ns=1.724997e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.334991e+002; low_trap_G0/it0: t_ns=3.554824e+002
+- skipped ready cards and why: none; no ready cards.
+- notes: MULTIPLE_LOG_FILES defaults NO; nonzero-rank log writes suppressed. Latest retained outputs trap data.0142.dbl, thin data.0141.dbl, both restart.out. Root cause unresolved; no reruns or parameter changes. Report synced with hash verification.
+
 ## 2026-11-18 02:06 (UTC+8)
 - card: T016 | action: published two failed-member budgets, warning counts, MPI outputs, log tails and interim report; blocked pending Claude review (ws e035cf3).
 - running jobs: T016 PID 1492 remains active; remaining four members continue under card instruction. low_trap_G0/it0 rc=1 (rank 4), low_thin_G0/it0 rc=1 (rank 1); no reruns or tuning.
