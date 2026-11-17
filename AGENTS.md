@@ -24,6 +24,12 @@ The project goal and technical route are in `docs/PLAN.md`. Read it before you s
 5. Write the report to `tasks/<card-id>.report.md`, following the template in `tasks/TEMPLATE.report.md`. Put small output files (png/csv/json/logs, total ≤ 20 MB) in `results/<card-id>/`. Do not commit large raw data. It goes in `D:\sim_runs\` (or the path the card specifies).
 6. Set the card's `status` to `review` (or `blocked`), create `handoff/to_claude/<card-id>.md` (one or two lines saying what needs review), then commit and push. That push automatically wakes Claude.
 7. If there are more executable cards, continue with the next one.
+8. **Heartbeat, every pass, including passes with nothing to do.** Update `STATUS.md` on the separate branch `codex-status`, not on `ws`. That branch is not part of the PR, so it does not wake Claude; Claude reads it at each hourly report.
+   - Use a worktree that is set up once: `git worktree add D:\sim_tools\codex-status codex-status`.
+   - In it: `git pull --rebase`, rewrite `STATUS.md`, commit as `[codex] status <time>`, then push.
+   - Keep the latest entry at the top and the last 30 entries below it; drop older ones, since git history keeps them.
+   - Each entry: local time (UTC+8); the card you worked on, or "none"; what you started, checked or finished; running jobs and their progress (for example the latest `t_ns` in each running member's `budget.csv`); and **why** any `ready` card was not started.
+9. **Do not idle on ambiguity.** If a `ready` card is not started because a dependency or instruction is unclear, or a card has made no progress for 2 consecutive passes for a reason you cannot resolve, write `handoff/to_claude/question-<card-id>.md` with the question and push. That wakes Claude.
 
 ## Hard rules
 - Only change files inside this repository, `D:\sim_runs`, and `D:\sim_tools`. The user allows installing the software a card needs **at user level** (preferably under `D:\sim_tools`). Do not change system settings, do not install software that needs administrator rights (if it is required, write `blocked` and explain), and do not delete other people's data.
