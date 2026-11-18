@@ -110,3 +110,10 @@ Updated: 2026-11-15
 - Executed the user-approved T016_stop_v1b instruction: wrapper PID 1492 and all 24 remaining v1b solver ranks stopped; verified at 08:34:28. Reason: v1b superseded after four member aborts.
 - Final budgets: high_thin_G0 449.4998 ns (10,762,237 rank-zero ConsToPrim lines); high_thin_G1 203.9977 ns (359,341 lines). Evidence and exact stop timestamps: results/T016/stopped/. All raw data retained.
 - T016 marked done as superseded, not as a successful production run. T016r and T016s process trees remained running; high-fluence v1d reruns await a new card after T016s.
+
+## 2026-11-18 09:00 (UTC+8) — T016s: rmax_par 1000 adopted; T016h issued
+- A/B from T016r low_trap_G0 it0 at 690 ns, 40 min each: A (100) reached 734 ns, B (1000) reached 784 ns, so B is **2.15× faster**. Zero ConsToPrim, E<0 or other warnings on all 16 ranks.
+- Differences: budget increments ≤ 2e-4 relative (E_wall 2e-3 in the first ns); at data.0293, L1 relative ρ 4e-5, p 3e-4, T 3e-3, v ≈ 1e-2 (includes a 7 ps time offset); mass-weighted |ΔY| 2e-5.
+- Open item: 35 rarefied near-wall cells (ρ ≈ 4e-3 kg/m³, z ≈ 1 µm, mass fraction 1e-7) differ strongly in T. One reaches the table maximum of 150 kK in B, against 35 kK in A. Check later whether such cells add to the in-band emission (diag_emission T > 30 kK bin).
+- Decision (numerics, grade N): rmax_par = 1000 for new runs. T016r continues with 100; the difference is far below the physics uncertainties.
+- T016h: high G0 thin/trap it0–it4 and high G1 thin it0, built with v1d, on the 32 freed cores.

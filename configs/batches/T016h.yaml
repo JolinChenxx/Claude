@@ -1,0 +1,13 @@
+# T016h: high-fluence members with build v1d (conduction + Cu-air interdiffusion with kinetic limit), tables v1b.
+# rmax_par 1000 (numerics, grade N): accepted by the T016s A/B check (STATE 2026-11-18 09:00).
+# Picard: G0 members run it0..it4 (high fluence needs it3-it4 to meet |model-PLUTO|/PLUTO < 10%, STATE 2026-11-18 01:40).
+name: T016h
+pluto_exe: D:/sim_tools/pluto_lip/build_v1d/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1b
+root: D:/sim_runs/T016h
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8,  picard: 4, src_on: 1, rmax_par: 1000}
+    - {id: high_trap_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: trap, tstop_ns: 800, procs: 8,  picard: 4, src_on: 1, rmax_par: 1000}
+    - {id: high_thin_G1, case: configs/cases/v0_high.yaml, grid: G1, nec: thin, tstop_ns: 800, procs: 16, picard: 0, src_on: 1, rmax_par: 1000}
