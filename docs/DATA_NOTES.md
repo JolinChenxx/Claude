@@ -39,3 +39,20 @@ Note: P3/P5 become noisy in faint late frames (peak < 40) as the mask shrinks; t
 - Target surface position, time-zero definition, filter bandwidth, whether gains are equal for the two series. The early-frame (0–60 ns) anomaly is per the supervisor's guidance: report only, not used in the judgement.
 - Curve digitization: **Fig. 3d (shock trajectory, needed for P4) is done** → `data/exp/curves/fig3d_shock.csv` (overlay `fig3d_check.png`). Matched automatically by marker colour + template; high fluence 23 points, low fluence 22 points. About 10% of markers that overlap neighbours at early times are not recovered, which does not affect the trajectory shape. Linear fit ≥ 300 ns: high 542 m/s, low 521 m/s (paper: 550 m/s). R(500 ns) ≈ 614 / 588 µm.
 - Other curves (Fig. 2b/2c, 3b, 4a, S5–S7, S12) are only used for descriptive comparison; to be digitized later as needed.
+
+
+## Stark widths Cu I
+
+T017a verification, 2026-11-19. Source: Popov et al., arXiv:1907.02920, 16-page manuscript; local PDF/hash: `results/T017a/source_verification.json`. Page numbers below are printed manuscript pages.
+
+| Wavelength (nm) | FWHM (pm) | Reported uncertainty (pm; relative) |
+|---|---:|---:|
+| 510.554 | 17 | +/-0.7; 4.1% |
+| 515.324 | 152 | +/-9; 5.9% |
+| 521.820 | 180 | +/-30; 16.7% |
+
+Section 3.3, p.12/Fig.6 gives experimental FWHM-versus-density slopes, denoted 2w_e. Short quotations: "2w_e = 17+/-0.7 pm" (mathematical symbols transcribed); "All values were scaled to"; "6850 K". Normalization: N_e=10^17 cm^-3=10^23 m^-3; 6850 K is the adopted mean temperature, not 10000 K. Fig.4 (p.11) lists measured conditions spanning 5800-7700 K and 5.05e16-2.85e17 cm^-3.
+
+Widths are FWHM, not HWHM. These central values/convention/density agree with the registry; its approximate uncertainty should be replaced only by Claude after review. No explicit confidence level for these width errors was found.
+
+No fitted experimental temperature law or numerical Cu ion-broadening parameter is supplied. Fig.7 (p.13) compares literature temperature curves. Equation 3 (p.6) concerns Mg/Al diagnostic lines; its neglect of ion effects is not a Cu-specific bound. Table 6 (p.11) contains theoretical apparent-width coefficients, not the measured triplet. Sections 3.2/4 warn that hyperfine/isotope structure affects 510.554-nm widths. Registry and model unchanged; extrapolation remains a sensitivity assumption.
