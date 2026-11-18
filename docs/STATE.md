@@ -174,3 +174,4 @@ Updated: 2026-11-15
 - P1 τ_L (b): sa 304 ns, thin 316 ns (experiment 182; T015 400–600).
 - **With the corrected (Coulomb/polarisation) D, about half of the earlier improvement remains.** 400–500 ns is unchanged from T015; 600–700 ns is 20–30% lower than T015. Part of the large gain seen with the hard-sphere D came from the overestimated D in the ionised core. This is reported as is.
 - The late-time excess is now about ×1.8–2.2 at 600–700 ns (it0, Picard not converged). Next: low-fluence v1e it0, then the Picard iterations.
+- T016e high_thin_G0 it0 (v1e), filter b, sa at 400/500/600/700 ns: 0.91/0.43/0.34/0.26 (T015: 0.81/0.46/0.36/0.30); thin: 0.79/0.46/0.37/0.30 (T015: 0.81/0.59/0.45/0.39). P1 sa 261 ns, thin 287 ns. Diagnostic: Y_emw 0.70 at 700 ns (T015 0.83), so mixing is real but moderate; T_emw 10.7 kK (T015 10.3 kK). The core does not cool faster, and the light curve gains come mainly in the thin transfer. The thin and trap members agree.

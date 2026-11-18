@@ -1,1 +1,0 @@
-high_thin_G0/it0 diagnostic and v1c imaging finished rc=0; 18 scenario metrics, six finite arrays and four finite diagnostic rows archived/hash-verified. Baseline b P1 thin/sa=286.6636/260.9469 ns; Cu I fraction 0.883773 at ~700 ns. Review report and results/T016e/high_thin_G0/it0/image plus diag/high_thin_G0_it0.csv; Picard convergence pending.
