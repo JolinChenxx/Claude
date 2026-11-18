@@ -88,9 +88,10 @@ polarizability: {value: {Cu: 6.89e-30, N2: 1.74e-30, O2: 1.58e-30, NO: 1.70e-30,
              source: "static dipole polarizability volumes (CRC Handbook 'Atomic and molecular polarizabilities'; Cu: Schwerdtfeger & Nagle 2018 table, 46.5 a.u.)", uncertainty: "±15%", date: 2026-11-18, verified: false}
 diff_cuair_model_v2: {value: "1/D = sum_ij x_i x_j / D_ij over Cu species i (all stages) and air species j; neutral-neutral hard sphere (diff_cuair_model); ion-neutral max(hard sphere, polarisation: D = kT/(mu n 1.105 k_L), k_L = 2 pi sqrt(alpha e^2 z^2/(4 pi eps0 mu))); ion-ion Coulomb, first Chapman-Enskog: D = 3 (4 pi eps0)^2 (kT)^(5/2) / (4 sqrt(2 pi mu) n Z_i^2 Z_j^2 e^4 lnLambda), lnLambda as kappa_e_model", unit: "-", grade: F,
              source: "Chapman & Cowling; Langevin polarisation (McDaniel & Mason 1973, momentum-transfer factor 1.105); Spitzer/NRL Coulomb collisions", uncertainty: "factor ~2 (no ambipolar field, no thermal diffusion, Blanc-type mixture rule)", date: 2026-11-18, verified: false}
-stark_cu1_lines: {value: {wl_nm: [510.554, 515.324, 521.820], w_fwhm_pm: [17.0, 152.0, 180.0], ne_ref_m3: 1.0e+23}, unit: "pm FWHM at ne_ref", grade: C,
-             source: "Popov et al. 2019 (arXiv:1907.02920), Stark widths of the blue-green Cu I lines; normalisation and FWHM/HWHM convention to be confirmed from the paper (T017a)", uncertainty: "±5–20% (paper); older data differ by up to ×10 for 515.3 nm", date: 2026-11-19, verified: false,
-             note: "Lorentzian width scaled linearly with ne (T dependence neglected). Lines not listed: Doppler only (declared). Not used until verified: true."}
+stark_cu1_lines: {value: {wl_nm: [510.554, 515.324, 521.820], w_fwhm_pm: [17.0, 152.0, 180.0], ne_ref_m3: 1.0e+23}, unit: "pm FWHM at ne_ref", grade: B,
+             source: "Popov et al. 2019 (arXiv:1907.02920), Sect. 3.3 / Fig. 6: experimental FWHM (2w_e) scaled to N_e = 1e17 cm^-3 at a mean T of 6850 K (measured 5800-7700 K, 5e16-2.9e17 cm^-3); verified from the paper in T017a (docs/DATA_NOTES.md)",
+             uncertainty: "±0.7 / ±9 / ±30 pm (4% / 6% / 17%); T dependence not given (used at 9-25 kK: extrapolation, sensitivity); no ion-broadening parameter; hyperfine structure affects 510.55 nm", date: 2026-11-19, verified: true,
+             note: "Lorentzian width scaled linearly with ne. Lines not listed: Doppler only (declared)."}
 hs_diameter: {value: {Cu: 2.6e-10, N2: 3.7e-10, O2: 3.5e-10, NO: 3.5e-10, N: 3.0e-10, O: 2.9e-10, Ar: 3.4e-10}, unit: m, grade: C,
              source: "Hard-sphere / Lennard-Jones sigma values (Hirschfelder, Curtiss & Bird 1954 tables; Cu: metallic diameter estimate)", uncertainty: "±15%", date: 2026-11-17, verified: false}
 

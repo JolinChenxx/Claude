@@ -20,7 +20,7 @@ The imaging profile is Doppler only. At n_e ≈ 1e23 m⁻³ the Stark widths of 
    - the stated uncertainty;
    - any temperature-dependence or ion-broadening parameter given.
    If the values or the convention differ from the registry entry, **do not edit the registry**. Report the differences in the handoff.
-2. In parallel, as a sensitivity set marked "Stark widths unverified", run in the background, after T016i and with 16 workers:
+2. In parallel, as the reference set (widths verified 2026-11-19; the T dependence above 7.7 kK is an extrapolation and is treated as a sensitivity), run in the background, after T016i and with 16 workers:
    `scripts/image_members.py D:\sim_runs\T016e --series high|low --tables D:\sim_runs\tables\v1c --scenarios configs/imaging/v2.yaml --outname image_v2`
    Run it for the finished T016e iterations. Commit the metrics and summaries as in T016i.
 3. Write a handoff once step 1 is done, and another once the T016e image_v2 set is done.
