@@ -124,3 +124,7 @@ Updated: 2026-11-15
 
 ## 2026-11-18 09:10 (UTC+8) — T016r stopped (rmax_par 100, throttled); T016r2 started
 - All-rank ConsToPrim counts over the stopped t=0 runs (v1d): low thin G0 4.4 M, trap G0 4.3 M, G1 19.1 M. All are "rhoe < 0 or T < T_CUT_RHOE": the known RKL-stage overshoot in the dense near-target layer (STATE 02:00), now counted over all ranks rather than rank 0 only. No E<0 or NaN occurred, and the later restart intervals (T016c, T016s) are warning-free. The numerical-defect item remains open (positivity of RKL stages).
+
+## 2026-11-18 14:40 (UTC+8) — T016h high_trap_G0 it0 (v1d, first finished iteration)
+- rc=0 at 800 ns. Gas absorption 295.8 µJ (= T015), radiation 69.3 µJ (T015 64.8), E_wall 44.7 µJ (46.6), M_Cu = M_src = 3.292 ng (exact). The energy residual is −0.38% (T015 −0.05%): still < 1%, but larger. The likely origin is the floor repairs of the RKL-stage overshoots (23.4 M all-rank ConsToPrim lines, the known defect). Watch this over the iterations.
+- Picard it0: target-model absorption 62.2 µJ vs PLUTO 8.8 µJ (as in T015 it0); it1–it4 continue.
