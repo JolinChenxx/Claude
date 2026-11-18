@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 08:51 (UTC+8)
+- card: T016s, T016r | action: checked background jobs; completed T016s collection, report and review handoff, pushed ws 289e509. Report synced to D:/Sync/T016s with SHA256 verification.
+- T016s completed the authorized 2400 s per-member limit at 08:48:23.654274; taskkill rc=0 for both. Wrapper/member rc=1 is the planned timed stop, not a spontaneous abort. Both mpiexec PIDs and wrapper were absent at collection.
+- T016s/A: last budget t_ns=733.9982; simulation advance=43.999080 ns; last logged dt=2.0386e-003, Nrkl=20 (step 59000, log_t_ns=733.55). All eight rank logs: 0 ConsToPrim, 0 E<0, 0 other !.
+- T016s/B: last budget t_ns=784.4803; simulation advance=94.481180 ns; last logged dt=2.0608e-002, Nrkl=63 (step 56000, log_t_ns=761.07). All eight rank logs: 0 ConsToPrim, 0 E<0, 0 other !.
+- Collected common data.0293.dbl for A/B (2,116,800 bytes each, all finite); times differ by 0.0070 ns. Only 6/3 new step/Nrkl pairs exist at unchanged log interval; all supplied. Numerical cap choice remains with Claude; no production parameters changed.
+- running job: T016r PID 41680, elapsed 04:43:42 at initial check; stderr empty. T016 remains done as superseded, stopped in prior pass.
+- T016r/low_thin_G0/it0: t_ns=7.539997e+002; latest logged dt=3.0014e-002, Nrkl=9 (step 59000, log_t_ns=7.4592e+002).
+- T016r/low_trap_G0/it0: t_ns=7.354987e+002; latest logged dt=2.0509e-003, Nrkl=20 (step 60000, log_t_ns=7.3561e+002).
+- T016r/low_thin_G1/it0: t_ns=2.889990e+002; latest logged dt=1.0392e-003, Nrkl=20 (step 51000, log_t_ns=2.8873e+002).
+- skipped ready cards and why: none; no ready cards or incoming handoff. T016r members continue progressing; no new completion or failure there.
+
 ## 2026-11-18 08:36 (UTC+8)
 - card: T016, T016r, T016s | action: synced ws c8f7a9f and followed T016_stop_v1b.md; stopped only T016, archived instruction, recorded evidence, and marked T016 done as superseded.
 - stopped: T016 wrapper PID 1492 and all 24 remaining v1b ranks; verified 2026-11-18T08:34:28.8744713+08:00. Last budgets: high_thin_G0=449.4998 ns; high_thin_G1=203.9977 ns. Rank-zero ConsToPrim counts: 10,762,237 and 359,341. Four members previously aborted, two stopped at user request; no raw data deleted.
@@ -247,10 +259,3 @@
 - T016 progress: high_thin_G0/it0: t_ns=5.699978e+001; high_thin_G1/it0: t_ns=3.999874e+001; high_trap_G0/it0: t_ns=5.599832e+001; low_thin_G0/it0: t_ns=1.084996e+002; low_thin_G1/it0: t_ns=7.749895e+001; low_trap_G0/it0: t_ns=1.094967e+002
 - skipped ready cards and why: none.
 - notes: T015 14 solver + 14 image successes, 252 scenarios; 44,293,192 warnings, 40 negative P1, 222 no-crossing P2; max absolute residual 0.0344352%; package 15.03 MB. Scientific review pending; no tuning/reruns.
-
-## 2026-11-18 01:05 (UTC+8)
-- card: T015, T016 | action: verified all 14 T015 solver completions rc=0; published imaging4 results; launched T016 production and final T015 imaging.
-- running jobs: T016 PID 1492, 64-core batch, started 01:05, initial status running/stderr empty; T015img5 PID 27116, 16 imaging workers, initial status running/stderr empty.
-- progress: T015 solver finished (G0/G1 high 800 ns, low 1300 ns), 13/14 images published; high_trap_G0 it2 pending imaging. T016 just launched with verified v1b tables/build.
-- skipped ready cards and why: none.
-- notes: launch records pushed on ws (9044806). Next pass complete T015 collection/report/handoff after imaging5, and check T016.
