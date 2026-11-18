@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 00:34 (UTC+8)
+- card: T016e | action: ws already current at 6efe740. Checked existing shock_track.md: five completed runs already processed/pushed; remaining low G0 it0 runs still running, so note retained. No new completion or ready card.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 07:10:19 at job.ps1 status check; wrapper stderr empty. Two previously archived completed it0 iterations; known ConsToPrim warnings recorded.
+- Progress snapshot 2026-11-19T00:34:18.718170+08:00; budget and latest logged times recorded separately.
+- T016e/high_thin_G0/it1: t_ns=3.819995e+002; latest logged dt=1.8489e-002, Nrkl=6 (step 53000, log_t_ns=3.7027e+002).
+- T016e/high_thin_G1/it0: t_ns=2.604992e+002; latest logged dt=1.0533e-002, Nrkl=38 (step 50000, log_t_ns=2.5270e+002).
+- T016e/high_trap_G0/it1: t_ns=4.249991e+002; latest logged dt=1.6373e-002, Nrkl=7 (step 58000, log_t_ns=4.1688e+002).
+- T016e/low_thin_G0/it0: t_ns=1.188998e+003; latest logged dt=2.6071e-002, Nrkl=51 (step 54000, log_t_ns=1.1696e+003).
+- T016e/low_thin_G1/it0: t_ns=4.014982e+002; latest logged dt=7.3587e-003, Nrkl=55 (step 61000, log_t_ns=4.0134e+002).
+- T016e/low_trap_G0/it0: t_ns=1.187980e+003; latest logged dt=2.2303e-002, Nrkl=45 (step 54000, log_t_ns=1.1876e+003).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: collect newly completed iterations, v1c imaging, thin diagnostics, low-fluence shock tracks and first low-fluence it0 handoff. No parameter changes or foreground waiting.
+
 ## 2026-11-19 00:19 (UTC+8)
 - card: T016e | action: pulled ws, retried publication successfully; 6efe740 with all five completed shock-track CSVs and console logs is now on origin/ws. Previous HTTP 403 push failure cleared.
 - incoming shock_track.md retained: five completed runs processed/validated; remaining T016e low_thin_G0/it0 and low_trap_G0/it0 are still running. No new completion or ready card.
@@ -407,19 +420,4 @@
 - skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
 - running tables: T016e_tables PID 25856, execution commit 2e2b099, elapsed 00:12:48; stdout/stderr empty at check. Table manifest not yet present; build still running.
 - next: validate v1c tables after completion; stop T016h/T016r2 after low_trap_G0/it0 completes or 18:30 UTC+8, whichever comes first. Stop condition not reached; T016e production awaits table validation and confirmed shutdown. No foreground waiting or parameter changes.
-
-## 2026-11-18 16:51 (UTC+8)
-- card: T016e, T016r2, T016h | action: pulled fe73ef6; no incoming handoff. Collected completed low_thin_G0/it0 postprocessing and handed off in 6b10618. Claimed T016e in 2e2b099 and published table launch 616a21b.
-- running jobs: T016h PID 39808 elapsed 07:27:46; T016r2 PID 38008 elapsed 07:41:32 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; two previously reported completed it0 rows; no batch summary.
-- Progress snapshot: 2026-11-18T16:51:54.362351+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=6.624984e+002; latest logged dt=2.5335e-002, Nrkl=14 (step 66000, log_t_ns=6.4031e+002).
-- T016h/high_trap_G0/it1: t_ns=4.154943e+002; latest logged dt=2.1379e-002, Nrkl=16 (step 47000, log_t_ns=4.0088e+002).
-- T016h/high_thin_G1/it0: t_ns=2.294922e+002; latest logged dt=8.8111e-003, Nrkl=35 (step 46000, log_t_ns=2.1401e+002).
-- T016r2/low_thin_G0/it1: t_ns=1.249943e+002; latest logged dt=2.5628e-003, Nrkl=2 (step 12000, log_t_ns=1.0101e+002).
-- T016r2/low_trap_G0/it0: t_ns=1.257990e+003; latest logged dt=1.9798e-002, Nrkl=63 (step 59000, log_t_ns=1.2536e+003).
-- T016r2/low_thin_G1/it0: t_ns=3.694952e+002; latest logged dt=1.4722e-002, Nrkl=12 (step 56000, log_t_ns=3.6427e+002).
-- skipped ready cards and why: none; T016e was the only ready card and is now running (table build). All six production members advanced. T016e production awaits validated v1c tables and the prescribed stop condition.
-- completed postprocessing: T016r2_post_low_01 rc=0 for diagnostic and imaging; 18 scenario CSVs, six finite (30,58,113) arrays and six finite diagnostic rows archived/hash-verified. Report synced to D:/Sync/T016r2 with verified hash. Baseline b P1 thin/sa=543.38/441.07 ns; about 700 ns Cu I fraction=0.9499.
-- running table build: T016e_tables PID 25856, started 16:51:00 UTC+8, execution commit 2e2b099; 32 workers, new D:/sim_runs/tables/v1c. Initial job status running, stderr empty. Validate rc, diff_model=v2, [81,145,14] and finite D_cuair/dh_dY after completion.
-- next: stop named T016h/T016r2 batches after low_trap_G0/it0 finishes or 18:30 UTC+8, whichever comes first, per T016e card; preserve raw data and stop evidence. Launch T016e production only after stop and table acceptance. Ended this pass after background table launch; no foreground wait.
 
