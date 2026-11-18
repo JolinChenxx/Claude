@@ -1,5 +1,19 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 14:52 (UTC+8)
+- card: T016h, T016r2 | action: pulled 861ce25 (Claude interim review); no incoming handoff. Checked three jobs, validated/archived completed high_trap_G0/it0 imaging, updated report and handed off in ws 9207459.
+- running jobs: T016h PID 39808 elapsed 05:27:45; T016r2 PID 38008 elapsed 05:41:31 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only the previously reported high_trap_G0/it0 completion; batch summaries absent.
+- Progress snapshot: 2026-11-18T14:52:11.475463+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=5.704937e+002; latest logged dt=6.2593e-003, Nrkl=50 (step 60000, log_t_ns=5.6971e+002).
+- T016h/high_trap_G0/it1: t_ns=6.549777e+001; latest logged dt=4.2306e-003, Nrkl=6 (step 10000, log_t_ns=6.1990e+001).
+- T016h/high_thin_G1/it0: t_ns=1.824990e+002; latest logged dt=4.4324e-003, Nrkl=24 (step 41000, log_t_ns=1.7932e+002).
+- T016r2/low_thin_G0/it0: t_ns=1.107991e+003; latest logged dt=1.9319e-002, Nrkl=63 (step 53000, log_t_ns=1.1059e+003).
+- T016r2/low_trap_G0/it0: t_ns=1.076987e+003; latest logged dt=1.9582e-002, Nrkl=63 (step 51000, log_t_ns=1.0727e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.359942e+002; latest logged dt=6.7285e-003, Nrkl=62 (step 52000, log_t_ns=3.3013e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- completed imaging: T016h_image_high_01 PID 12012 finished rc=0, stderr empty. Archived 18 scenario CSVs, summary, six finite (29,81,84) radiance arrays, job logs and hash validation. P2 unavailable throughout; geometric NaNs verified against empty-signal/threshold semantics, preserved unchanged. Report synced to D:/Sync/T016h with hash verification.
+- next: monitor energy residual per Claude STATE 14:40; collect next completed iterations and high_thin_G0 diagnostic when eligible. No ready card, parameter changes or solver reruns.
+
 ## 2026-11-18 14:37 (UTC+8)
 - card: T016h, T016r2 | action: committed unchanged completed registry row to unblock pull; no incoming handoff. Collected high_trap_G0/it0 and pushed evidence/handoff 132e12d; imaging launch published aef1a88.
 - running jobs: T016h PID 39808 elapsed 05:12:52; T016r2 PID 38008 elapsed 05:26:38 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; one completed iteration (high_trap_G0/it0, rc=0); batch summaries absent.
@@ -388,15 +402,3 @@
 - T016r/low_thin_G1/it0: t_ns=2.074962e+002; latest logged dt=9.8669e-003, Nrkl=8 (step 37000, log_t_ns=1.9912e+002).
 - skipped ready cards and why: none; no ready cards.
 - notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
-
-## 2026-11-18 07:05 (UTC+8)
-- card: T016, T016r | action: fulfilled T016r_speed note; verified/pushed six extracts with latest 20 step/Mach pairs (ws c2f8b29); note removed, no handoff requested.
-- running jobs: T016r PID 41680 elapsed 02:58:48; T016 PID 1492 elapsed 05:58:45 at check, both running/stderr empty. Three high and three low members continue.
-- T016/high_thin_G0/it0: t_ns=4.349996e+002; latest logged dt=1.7659e-003, Nrkl=20 (step 81000, log_t_ns=4.3491e+002).
-- T016/high_trap_G0/it0: t_ns=5.679988e+002; latest logged dt=8.3746e-004, Nrkl=17 (step 78000, log_t_ns=5.6652e+002).
-- T016/high_thin_G1/it0: t_ns=1.864997e+002; latest logged dt=2.0031e-003, Nrkl=20 (step 46000, log_t_ns=1.8640e+002).
-- T016r/low_thin_G0/it0: t_ns=6.634988e+002; latest logged dt=2.1785e-003, Nrkl=20 (step 44000, log_t_ns=6.6168e+002).
-- T016r/low_trap_G0/it0: t_ns=6.159990e+002; latest logged dt=3.1012e-003, Nrkl=20 (step 44000, log_t_ns=6.1358e+002).
-- T016r/low_thin_G1/it0: t_ns=1.904914e+002; latest logged dt=9.9782e-003, Nrkl=5 (step 36000, log_t_ns=1.9003e+002).
-- skipped ready cards and why: none; no ready cards.
-- notes: from this pass onward include one line per active member with t_ns plus latest logged dt and Nrkl. The bounded backward reader in results/T016r/speed/collect_speed.py can be reused; no physics/parameter changes or solver restarts.
