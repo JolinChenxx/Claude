@@ -1,5 +1,20 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 22:21 (UTC+8)
+- card: T016e | action: preserved auto-appended registry row in 88a36d7 to unblock pull; no incoming handoff. Collected first high-fluence it0 and pushed interim handoff/evidence d139cc7.
+- high_trap_G0/it0: rc=0, 800 ns, 17112.6 s. All-rank ConsToPrim=23,234,655; M_Cu=M_src=3.2918074192e-12 kg; target-model/PLUTO absorption=62.23180071027/8.7777316714 microjoules. Known numerical warnings preserved; this is unconverged it0, not acceptance. Actual it0/it1 tables match v1c and rmax_par=1000.
+- new imaging job: T016e_image_high_01 PID 44216, started 2026-11-18T22:20:47, commit d139cc7; exact high_trap_G0/it0, high series, v1c tables, 8 workers. Initial status running, stderr empty. Check next pass; no foreground wait.
+- running production: T016e PID 42332, execution commit bc79e7d, elapsed 04:55:10 at initial status check; wrapper stderr empty. Batch continued to high_trap_G0/it1.
+- Production snapshot 2026-11-18T22:21:27.477344+08:00; budget and latest logged times recorded separately.
+- T016e/high_thin_G0/it0: t_ns=7.889835e+002; latest logged dt=1.9178e-002, Nrkl=53 (step 76000, log_t_ns=7.8028e+002).
+- T016e/high_thin_G1/it0: t_ns=1.799979e+002; latest logged dt=1.0218e-002, Nrkl=20 (step 40000, log_t_ns=1.7488e+002).
+- T016e/high_trap_G0/it1: t_ns=4.899860e+001; latest logged dt=3.7224e-003, Nrkl=4 (step 6000, log_t_ns=4.7006e+001).
+- T016e/low_thin_G0/it0: t_ns=1.027489e+003; latest logged dt=2.1338e-002, Nrkl=63 (step 47000, log_t_ns=1.0104e+003).
+- T016e/low_thin_G1/it0: t_ns=3.434999e+002; latest logged dt=1.6177e-002, Nrkl=10 (step 53000, log_t_ns=3.4042e+002).
+- T016e/low_trap_G0/it0: t_ns=1.020981e+003; latest logged dt=2.2175e-002, Nrkl=62 (step 46000, log_t_ns=9.9822e+002).
+- skipped ready cards and why: none; no ready cards.
+- report synced to D:/Sync/T016e with verified SHA256. Next: archive imaging after completion; collect subsequent finished iterations, thin emission diagnostics and first low-fluence it0 handoff. No physics/numerics changes.
+
 ## 2026-11-18 22:04 (UTC+8)
 - card: T016e | action: pulled ws (already current at b2f9aa4); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 04:40:15 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code. Rank-log ConsToPrim warnings were acknowledged by Claude in b2f9aa4 as the known RKL-stage overshoot; full all-rank counts follow completion.
@@ -405,19 +420,4 @@
 - skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
 - completed imaging: T016h_image_high_01 PID 12012 finished rc=0, stderr empty. Archived 18 scenario CSVs, summary, six finite (29,81,84) radiance arrays, job logs and hash validation. P2 unavailable throughout; geometric NaNs verified against empty-signal/threshold semantics, preserved unchanged. Report synced to D:/Sync/T016h with hash verification.
 - next: monitor energy residual per Claude STATE 14:40; collect next completed iterations and high_thin_G0 diagnostic when eligible. No ready card, parameter changes or solver reruns.
-
-## 2026-11-18 14:37 (UTC+8)
-- card: T016h, T016r2 | action: committed unchanged completed registry row to unblock pull; no incoming handoff. Collected high_trap_G0/it0 and pushed evidence/handoff 132e12d; imaging launch published aef1a88.
-- running jobs: T016h PID 39808 elapsed 05:12:52; T016r2 PID 38008 elapsed 05:26:38 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; one completed iteration (high_trap_G0/it0, rc=0); batch summaries absent.
-- Progress snapshot: 2026-11-18T14:37:22.336290+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=5.659980e+002; latest logged dt=4.9493e-003, Nrkl=45 (step 59000, log_t_ns=5.6432e+002).
-- T016h/high_trap_G0/it1: t_ns=4.599934e+001; latest logged dt=3.6464e-003, Nrkl=3 (step 5000, log_t_ns=4.3467e+001).
-- T016h/high_thin_G1/it0: t_ns=1.789998e+002; latest logged dt=4.4324e-003, Nrkl=24 (step 41000, log_t_ns=1.7932e+002).
-- T016r2/low_thin_G0/it0: t_ns=1.089492e+003; latest logged dt=2.6297e-002, Nrkl=8 (step 52000, log_t_ns=1.0823e+003).
-- T016r2/low_trap_G0/it0: t_ns=1.057495e+003; latest logged dt=3.6078e-002, Nrkl=9 (step 50000, log_t_ns=1.0472e+003).
-- T016r2/low_thin_G1/it0: t_ns=3.334996e+002; latest logged dt=6.7285e-003, Nrkl=62 (step 52000, log_t_ns=3.3013e+002).
-- skipped ready cards and why: none; no ready cards. Five members advanced within it0; high_trap_G0 completed it0 and automatically continued to it1.
-- completed: high_trap_G0/it0 rc=0 at 800 ns; all-rank ConsToPrim=23,430,469. Budget/source_meta/counts/hashes/samples handed off for Claude review; raw data preserved. Target model/PLUTO absorption=62.2318/8.77754 microjoules (it0); M_Cu=M_src=3.2918093911e-12 kg.
-- running imaging: T016h_image_high_01 PID 12012, started 14:36:24, execution commit 132e12d, 16 workers and v1b tables. Initial job.ps1 status running, stderr empty; imaging high_trap_G0/it0. Launch metadata committed; report synced to D:/Sync/T016h and hash verified.
-- next: check all three jobs; collect imaging results and next completed iterations. high_thin_G0 emission diagnostic awaits a completed iteration. No model or parameter changes; ending after background imaging launch.
 
