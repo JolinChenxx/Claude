@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 19:04 (UTC+8)
+- card: T016e | action: pulled b2f9aa4 (upstream removed the running-warning handoff); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 01:40:14 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code. Previously reported rank-log ConsToPrim warnings remain under review; empty wrapper logs do not imply warning-free solver logs.
+- Progress snapshot: 2026-11-18T19:04:26.659079+08:00; budget time and latest logged time are recorded separately. Nrkl paired with preceding step across intervening warning lines.
+- T016e/high_thin_G0/it0: t_ns=2.124961e+002; latest logged dt=5.4533e-003, Nrkl=6 (step 35000, log_t_ns=2.0810e+002).
+- T016e/high_thin_G1/it0: t_ns=8.199918e+001; latest logged dt=5.2971e-003, Nrkl=6 (step 17000, log_t_ns=8.1554e+001).
+- T016e/high_trap_G0/it0: t_ns=1.944991e+002; latest logged dt=6.9730e-003, Nrkl=7 (step 32000, log_t_ns=1.8802e+002).
+- T016e/low_thin_G0/it0: t_ns=7.849951e+002; latest logged dt=4.6677e-002, Nrkl=13 (step 37000, log_t_ns=7.7470e+002).
+- T016e/low_thin_G1/it0: t_ns=1.399998e+002; latest logged dt=1.1318e-003, Nrkl=2 (step 25000, log_t_ns=1.3996e+002).
+- T016e/low_trap_G0/it0: t_ns=7.319737e+002; latest logged dt=4.5414e-002, Nrkl=9 (step 36000, log_t_ns=7.2807e+002).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: continue background monitoring; on completion collect all-rank warnings/budget/source, image with v1c and run thin emission diagnostics. First completed it0 per fluence requires interim handoff. No parameter changes or foreground waiting.
+
 ## 2026-11-18 18:49 (UTC+8)
 - card: T016e | action: pulled ws (already current at 33416b6); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 01:25:07 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code.
@@ -405,19 +418,6 @@
 - T016r2/low_thin_G0/it0: t_ns=7.519986e+002; latest logged dt=2.0317e-002, Nrkl=63 (step 38000, log_t_ns=7.4900e+002).
 - T016r2/low_trap_G0/it0: t_ns=7.249859e+002; latest logged dt=2.0534e-002, Nrkl=51 (step 37000, log_t_ns=7.2257e+002).
 - T016r2/low_thin_G1/it0: t_ns=1.789904e+002; latest logged dt=1.2206e-002, Nrkl=38 (step 33000, log_t_ns=1.7267e+002).
-- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
-- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
-
-## 2026-11-18 11:18 (UTC+8)
-- card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
-- running jobs: T016h PID 39808 elapsed 01:57:36; T016r2 PID 38008 elapsed 02:11:22 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
-- Progress snapshot: 2026-11-18T11:18:57.574002+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=2.844978e+002; latest logged dt=1.3777e-002, Nrkl=11 (step 40000, log_t_ns=2.7753e+002).
-- T016h/high_trap_G0/it0: t_ns=3.029966e+002; latest logged dt=1.8269e-002, Nrkl=11 (step 41000, log_t_ns=2.9379e+002).
-- T016h/high_thin_G1/it0: t_ns=1.089910e+002; latest logged dt=1.1223e-002, Nrkl=8 (step 20000, log_t_ns=1.0393e+002).
-- T016r2/low_thin_G0/it0: t_ns=7.214832e+002; latest logged dt=3.0141e-002, Nrkl=5 (step 36000, log_t_ns=6.9778e+002).
-- T016r2/low_trap_G0/it0: t_ns=6.844836e+002; latest logged dt=5.0102e-002, Nrkl=6 (step 35000, log_t_ns=6.6025e+002).
-- T016r2/low_thin_G1/it0: t_ns=1.649940e+002; latest logged dt=1.0196e-002, Nrkl=7 (step 32000, log_t_ns=1.6146e+002).
 - skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
 - next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
 
