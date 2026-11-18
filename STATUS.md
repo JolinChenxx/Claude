@@ -1,5 +1,19 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 08:08 (UTC+8)
+- card: T016, T016r, T016s | action: published high_trap_G0 abort evidence/report and handoff (48124b7); Claude acknowledged (f9c5e35). T016 report synced to D:/Sync/T016 with SHA256 verification.
+- T016 remains blocked: high_trap_G0/it0 rc=1, rank 2, t_ns=694.9875; 10,765,339 rank-zero ConsToPrim lines; cause unresolved from available logs.
+- running jobs: T016 PID 1492 and T016r PID 41680 continue; T016s PID 39392 launched at 08:08:23, execution commit acdc0ce. A and B each 8 ranks, restart 276 at 689.9991199983814 ns; each limited to 2400 s. No foreground waiting.
+- T016/high_thin_G0/it0: t_ns=4.474998e+002; latest logged dt=5.5993e-004, Nrkl=19 (step 90000, log_t_ns=4.4727e+002).
+- T016/high_thin_G1/it0: t_ns=1.974999e+002; latest logged dt=2.8773e-003, Nrkl=19 (step 50000, log_t_ns=1.9502e+002).
+- T016r/low_thin_G0/it0: t_ns=7.159991e+002; latest logged dt=2.1527e-003, Nrkl=20 (step 53000, log_t_ns=7.1470e+002).
+- T016r/low_trap_G0/it0: t_ns=6.904992e+002; latest logged dt=2.1313e-003, Nrkl=20 (step 53000, log_t_ns=6.8899e+002).
+- T016r/low_thin_G1/it0: t_ns=2.634931e+002; latest logged dt=1.1735e-002, Nrkl=7 (step 47000, log_t_ns=2.5385e+002).
+- T016s/A: t_ns=not written yet; latest logged dt/Nrkl not yet available at launch; restart t=689.9991199983814 ns, step 53470.
+- T016s/B: t_ns=not written yet; latest logged dt/Nrkl not yet available at launch; restart t=689.9991199983814 ns, step 53470.
+- skipped ready cards and why: none; T016s claimed and launched. No other ready card.
+- next: check job.ps1 status on next pass; after T016s stops, collect budget rows, latest 30 step/Nrkl pairs, all-rank warning counts, and latest common dbl outputs; report/review/handoff.
+
 ## 2026-11-18 07:48 (UTC+8)
 - card: T016, T016r | action: synced ws (c2f8b29), no incoming handoff, checked both background jobs.
 - running jobs: T016r PID 41680 elapsed 03:43:43; T016 PID 1492 elapsed 06:43:40. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
@@ -229,11 +243,3 @@
 - solver progress: high_thin_G0/it2: t_ns=7.559992e+002; high_thin_G1/it0: t_ns=7.939970e+002; high_trap_G0/it2: t_ns=6.624961e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
 - skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
 - notes: solver progress continues; no new completed solver registry rows, reruns or parameter changes.
-
-## 2026-11-18 00:18 (UTC+8)
-- card: T015, T016 | action: synced ws and checked T015 production; no new handoff or ready card.
-- running jobs: T015 solver batch (running, stderr empty); imaging jobs finished. T016 tables/build verified, production waiting.
-- solver progress: high_thin_G0/it2: t_ns=6.684997e+002; high_thin_G1/it0: t_ns=7.479800e+002; high_trap_G0/it2: t_ns=5.924977e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
-- skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
-- notes: solver progress continues; no new completed solver registry rows, reruns or parameter changes.
-
