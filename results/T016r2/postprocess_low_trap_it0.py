@@ -5,10 +5,15 @@ import json
 import subprocess
 import sys
 import ctypes
+from ctypes import wintypes
 
 # Keep this supplementary analysis below production priority; children inherit it.
-if not ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(), 0x4000):
-    raise OSError('Unable to set BelowNormal priority')
+kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
+kernel32.GetCurrentProcess.restype = wintypes.HANDLE
+kernel32.SetPriorityClass.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+kernel32.SetPriorityClass.restype = wintypes.BOOL
+if not kernel32.SetPriorityClass(kernel32.GetCurrentProcess(), 0x4000):
+    raise ctypes.WinError(ctypes.get_last_error())
 
 REPO = Path(__file__).resolve().parents[2]
 RUN = Path('D:/sim_runs/T016r2/low_trap_G0/it0')
