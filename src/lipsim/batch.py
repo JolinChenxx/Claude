@@ -61,7 +61,7 @@ def grid_lines(level: str) -> list[str]:
     return out
 
 
-def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int) -> str:
+def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int, rmax_par: float | None = None) -> str:
     """pluto.ini with every physical number taken from the registry via the resolved case config."""
     num = yaml.safe_load((REPO / "configs/grids/levels.yaml").read_text())["numerics"]
     from lipsim.target.model import Laser
@@ -72,6 +72,7 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int)
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",
+         *([f"rmax_par {rmax_par}"] if rmax_par else []),
          "first_dt 1.e-5", "", "[Solver]", "", "Solver hllc", "", "[Boundary]", "", "X1-beg axisymmetric",
          "X1-end outflow", "X2-beg reflective", "X2-end outflow", "X3-beg outflow", "X3-end outflow", "",
          "[Static Grid Output]", "", "uservar 3 T qlas qrad", f"dbl {num['output_dt_ns']} -1 single_file",
@@ -134,7 +135,8 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
         if not dry:
             subprocess.run(cmd, check=True, cwd=REPO, env={**__import__("os").environ, "PYTHONPATH": str(REPO / "src")})
             shutil.copy2(src_out / "target_source.bin", rd / "lip_tables/target_source.bin")
-        (rd / "pluto.ini").write_text(make_ini(case_cfg, spec["grid"], spec["nec"], spec["tstop_ns"], spec.get("src_on", 1)))
+        (rd / "pluto.ini").write_text(make_ini(case_cfg, spec["grid"], spec["nec"], spec["tstop_ns"], spec.get("src_on", 1),
+                                                spec.get("rmax_par")))
         procs = int(spec.get("procs", 1))
         exe = str(Path(batch["pluto_exe"]).resolve())
         pcmd = ([batch["mpiexec"], "-n", str(procs), exe, "-dec", str(procs), "1"] if procs > 1 and batch.get("mpiexec")
