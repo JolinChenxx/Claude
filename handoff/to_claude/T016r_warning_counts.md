@@ -1,2 +1,0 @@
-T016r was stopped and marked done as instructed. Full-run all-rank ConsToPrim counts: low_thin_G0 4,376,132; low_trap_G0 4,256,016; low_thin_G1 19,062,903. See tasks/T016r.report.md and results/T016r/stopped/ (per-rank hashes/counts, tails, first_warning_excerpt.log).
-Please review these historical t=0-run warnings (rhoe < 0 OR T < T_CUT_RHOE); they do not contradict zero warnings in the later T016s restart interval. T016r2 is claimed per your handoff, with the exact prescribed rmax_par=1000 config.
