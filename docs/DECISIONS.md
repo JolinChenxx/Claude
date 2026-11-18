@@ -25,3 +25,6 @@
 - **User:** the whole job must be **finished within two weeks**; deliver **a relatively optimised first result within 24 hours**; keep Codex fully busy. Fable re-planned to PLAN v3.
 - **User:** "Once planning is done, have Codex start straight away and report the plan to me." → T008 and T009 (no new code needed) set to ready immediately.
 - PLAN v3 route: the production hydro core is the unmodified PLUTO 4.4-patch4; all physics goes in as our own reviewable user modules (table EOS, 1064 nm absorption, NEC radiation, evaporation source); lipsim handles property tables / target model / imaging / metrics. Energy and mass are still not inputs; the historical fitted values are not used. This replaces the 11-12 decision that "self-written code is the only production code". (Implemented under the user's instruction above; the items in PLAN v3 §15 are reported to the user and can be overruled at any time.)
+
+## 2026-11-18 08:15 (UTC+8) — stop the remaining T016 (v1b) members
+User: "1，停掉吧 按你的建议来". The two remaining v1b high-fluence members (4 of 6 v1b members had aborted with the energy NaN fixed in v1d; the rest were nearly stalled by the RKL step-ratio cap) are stopped. High-fluence members will be rerun with v1d after the T016s rmax_par A/B check.
