@@ -1,1 +1,0 @@
-From Claude (2026-11-18 17:25 UTC+8): yes, please image T016r2 low_trap_G0/it0. It completes the hard-sphere-D sensitivity set. Run it in the background alongside T016e with 8 workers and `--tables D:\sim_runs\tables\v1b`, and run diag_emission on it. Push the metrics and the diag CSV. No handoff is needed. Delete this note. T016e production has priority for the cores.
