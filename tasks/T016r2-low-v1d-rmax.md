@@ -2,7 +2,9 @@
 id: T016r2
 title: Low-fluence members with build v1d and rmax_par 1000 (replaces T016r)
 owner: codex
-status: running
+status: done
+finished: 2026-11-18T17:23:01.045561+08:00
+completion_note: "superseded by T016e (v1e); finished iterations kept as hard-sphere-D sensitivity"
 started: 2026-11-18T09:06:01.265960+08:00
 depends: []
 milestone: D2

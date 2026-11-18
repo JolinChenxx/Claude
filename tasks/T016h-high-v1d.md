@@ -2,7 +2,9 @@
 id: T016h
 title: High-fluence members with build v1d, rmax_par 1000, Picard it0–it4 (G0) — 32 free cores
 owner: codex
-status: running
+status: done
+finished: 2026-11-18T17:23:01.045561+08:00
+completion_note: "superseded by T016e (v1e); finished iterations kept as hard-sphere-D sensitivity"
 started: 2026-11-18T09:19:20.372373+08:00
 depends: []
 milestone: D2

@@ -154,3 +154,8 @@ Updated: 2026-11-15
 - At low fluence, the hard-sphere D gives a **late plateau / re-brightening in sa (600–1000 ns), worse than T015**, even though the thin curve decays faster than T015.
 - Diagnostic: Cu I 81–97%. T_emw stays at 10–11 kK from 500 to 1200 ns, while Y_emw falls from 0.78 to 0.43: Cu is mixed into air but the emitting gas does not cool. In sa the plateau is consistent with the mixed layer becoming optically thinner as it spreads.
 - Interpretation pending v1e. The hard-sphere D is an upper bound, and the low-fluence plume (12–16 kK early) is exactly where v2 reduces D. Do not draw conclusions from the hard-sphere-D low run.
+
+## Workstation stop record (2026-11-18T17:23:01.045561+08:00)
+- T016e step 2 condition met: T016r2/low_trap_G0/it0 completed rc=0, 1300 ns. T016h (wrapper 39808) and T016r2 (wrapper 38008) stopped with their descendants; each 73-process tree verified absent. No data deleted.
+- Reason: superseded by T016e (v1e); finished iterations kept as hard-sphere-D sensitivity. Exact stop times and final member budgets are in results/T016h/stopped/summary.json and results/T016r2/stopped/summary.json.
+- T016e_tables finished rc=0; v1c diff_model v2, all three binaries [81,145,14], finite axes/fields and manifest hashes validated. Production launch pending bookkeeping.
