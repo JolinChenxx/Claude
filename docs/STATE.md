@@ -144,3 +144,13 @@ Updated: 2026-11-15
 - Cloud smoke test (low-res v1c, v1d exe): 0 ConsToPrim, residual −0.22%, M_Cu = M_src, energies within 0.5% of hard-sphere D, runtime −26%.
 - T016e: all 6 members (v1e = v1d + tables v1c), rmax_par 1000, 64 cores. T016h and T016r2 are stopped once low_trap_G0 it0 has finished. Their finished iterations are kept as the hard-sphere-D (upper bound) sensitivity: high trap G0 it0, low thin G0 it0, low trap G0 it0.
 - T016r2 low_thin_G0 it0 (hard-sphere D): rc=0, M_Cu = M_src, target-model/PLUTO absorption 28.4/15.9 µJ (it0).
+
+## 2026-11-18 16:55 (UTC+8) — T016r2 low_thin_G0 it0 (hard-sphere D) imaging + diagnostic
+- L/L(300), filter b, baseline, at 400/500/600/700/800/1000/1200 ns:
+  - sa: 0.61/0.46/0.42/0.42/0.43/0.47/0.22
+  - thin: 0.76/0.63/0.53/0.46/0.42/0.38/0.17
+  - T015 sa: 0.68/0.53/0.44/0.40/0.19/0.12/0.09
+  - experiment: 0.70/0.45/0.29/0.17/0.13/0.04/0.016
+- At low fluence, the hard-sphere D gives a **late plateau / re-brightening in sa (600–1000 ns), worse than T015**, even though the thin curve decays faster than T015.
+- Diagnostic: Cu I 81–97%. T_emw stays at 10–11 kK from 500 to 1200 ns, while Y_emw falls from 0.78 to 0.43: Cu is mixed into air but the emitting gas does not cool. In sa the plateau is consistent with the mixed layer becoming optically thinner as it spreads.
+- Interpretation pending v1e. The hard-sphere D is an upper bound, and the low-fluence plume (12–16 kK early) is exactly where v2 reduces D. Do not draw conclusions from the hard-sphere-D low run.

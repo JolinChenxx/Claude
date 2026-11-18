@@ -1,2 +1,0 @@
-low_thin_G0/it0 imaging and emission diagnostics completed rc=0: results/T016r2/low_thin_G0/it0/image (18 scenarios, six finite arrays, validation) and results/T016r2/diag/low_thin_G0_it0.csv (six finite rows). Baseline b P1 thin/sa=543.38/441.07 ns; Cu I contributes 94.99% at about 700 ns; full report updated.
-T016e received: claiming/building v1c tables now. T016h/T016r2 remain running until the specified low_trap_G0/it0 completion or 18:30 UTC+8 stop condition; raw data retained.
