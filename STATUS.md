@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 09:07 (UTC+8)
+- card: T016r, T016r2 | action: followed priority T016r_stop.md from ws 9fe05d5; stopped old batch, archived evidence, closed T016r as superseded, claimed and launched T016r2.
+- T016r stop verified 2026-11-18T09:04:33.5388017+08:00: wrapper 41680 and all 32 solver ranks exited; raw data retained. Last t_ns: low_thin_G0=764.9923, low_trap_G0=750.4993, low_thin_G1=294.4895.
+- Cumulative full-run all-rank ConsToPrim: 4,376,132 / 4,256,016 / 19,062,903 respectively. Counts, hashes and warning samples handed off in 978e094; distinct from zero-warning T016s restart interval. T016r report synced with verified hash.
+- running job: T016r2 PID 38008, started 2026-11-18T09:07:14, execution commit 978e094; prescribed v1d/v1b, 32 ranks (8/8/16), rmax_par 1000.
+- Runtime ini verification: all three match previews and contain rmax_par 1000.
+- T016r2/low_thin_G0/it0: t_ns=1.377961e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
+- T016r2/low_trap_G0/it0: t_ns=1.377961e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
+- T016r2/low_thin_G1/it0: t_ns=0.000000e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
+- skipped ready card: T016h remains ready. Incoming handoff explicitly prioritizes stopping T016r then claiming/starting T016r2; heartbeat requires ending the pass after launching long work. Claim T016h next pass; no dependency ambiguity.
+- next: check T016r2 status; continue iteration evidence/imaging/diagnostics as completed; claim T016h per next-pass priority.
+
 ## 2026-11-18 08:51 (UTC+8)
 - card: T016s, T016r | action: checked background jobs; completed T016s collection, report and review handoff, pushed ws 289e509. Report synced to D:/Sync/T016s with SHA256 verification.
 - T016s completed the authorized 2400 s per-member limit at 08:48:23.654274; taskkill rc=0 for both. Wrapper/member rc=1 is the planned timed stop, not a spontaneous abort. Both mpiexec PIDs and wrapper were absent at collection.
@@ -252,10 +264,3 @@
 - progress: high_thin_G0/it0: t_ns=8.049828e+001; high_thin_G1/it0: t_ns=4.799892e+001; high_trap_G0/it0: t_ns=7.649970e+001; low_thin_G0/it0: t_ns=1.394982e+002; low_thin_G1/it0: t_ns=9.249814e+001; low_trap_G0/it0: t_ns=1.414984e+002
 - skipped ready cards and why: none.
 - notes: high it0 11,853,003 warnings, one normalized type, first/last steps 19037/31425; all located. Both emission diagnostics rc=0 and seven finite rows. Updated report synced with checksum verification; no solver changes.
-
-## 2026-11-18 01:23 (UTC+8)
-- card: T015, T016 | action: completed T015 collection, comparison, validation and review handoff (ws b949412); synced approved deliverables with hash verification.
-- running jobs: T016 production; all T015 solver/imaging jobs finished rc=0.
-- T016 progress: high_thin_G0/it0: t_ns=5.699978e+001; high_thin_G1/it0: t_ns=3.999874e+001; high_trap_G0/it0: t_ns=5.599832e+001; low_thin_G0/it0: t_ns=1.084996e+002; low_thin_G1/it0: t_ns=7.749895e+001; low_trap_G0/it0: t_ns=1.094967e+002
-- skipped ready cards and why: none.
-- notes: T015 14 solver + 14 image successes, 252 scenarios; 44,293,192 warnings, 40 negative P1, 222 no-crossing P2; max absolute residual 0.0344352%; package 15.03 MB. Scientific review pending; no tuning/reruns.
