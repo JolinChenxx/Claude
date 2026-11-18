@@ -1,0 +1,191 @@
+
+   ___  __   __  ____________   
+  / _ \/ /  / / / /_  __/ __ \ 
+ / ___/ /__/ /_/ / / / / /_/ /  
+/_/  /____/\____/ /_/  \____/   
+=============================    v. 4.4-patch4 (Jun 2026)  
+
+> System:
+
+  sysconf.out file not found... 
+
+  - Basic data type size (Bytes):
+    o sizeof (char)     = 1
+    o sizeof (uchar)    = 1
+    o sizeof (uint16_t) = 2
+    o sizeof (short)    = 2
+    o sizeof (ushort)   = 2
+    o sizeof (int)      = 4
+    o sizeof (long)     = 4
+    o sizeof (*int)     = 8
+    o sizeof (float)    = 4
+    o sizeof (double)   = 8
+    o sizeof (*double)  = 8
+
+  - Structure data type (Bytes):
+    o sizeof (cmdLine)    = 64
+    o sizeof (Data)       = 272
+    o sizeof (Grid)       = 1024
+    o sizeof (Float_Vect) = 12
+    o sizeof (Image)      = 856
+    o sizeof (Output)     = 1768
+    o sizeof (RGB)        = 3
+    o sizeof (Runtime)    = 47008
+    o sizeof (Restart)    = 128
+    o sizeof (timeStep)   = 144
+    o sizeof (RBox)       = 112
+    o sizeof (State)      = 128
+    o sizeof (Sweep)      = 568
+
+> Local time:       Wed Nov 18 08:08:23 2026
+
+> Cmd line args:    -restart 276 -dec 8 1 
+
+> Header configuration:
+
+  PHYSICS:          HD
+  DIMENSIONS:       2
+  GEOMETRY:         Cylindrical
+  BODY_FORCE:       NO
+  RECONSTRUCTION:   Linear  (Primitive lim)
+  TIME STEPPING:    Runge-Kutta II
+  TRACERS:          1
+  VARIABLES:        6
+  ENTROPY_SWITCH:   NO
+  LOADED MODULES:
+
+  ROTATION:         NO
+  EOS:              PVTE_LAW
+  DIFFUSION TERMS:  Thermal Conduction [RKL]
+
+> Runtime configuration (pluto.ini):
+
+  +----------------------------------------------------------
+  | [Grid]
+  | 
+  | X1-grid    2  0.0  60  u  150.0  80  s  1200.0
+  | X2-grid    2  0.0  100  u  100.0  110  s  1500.0
+  | X3-grid    1  0.0  1  u  1.0
+  | 
+  | [Chombo Refinement]
+  | 
+  | Levels 4
+  | Ref_ratio 2 2 2 2 2
+  | Regrid_interval 2 2 2 2
+  | Refine_thresh 0.3
+  | Tag_buffer_size 3
+  | Block_factor 8
+  | Max_grid_size 64
+  | Fill_ratio 0.75
+  | 
+  | [Time]
+  | 
+  | CFL 0.3
+  | CFL_max_var 1.1
+  | tstop 1300
+  | first_dt 1.e-5
+  | 
+  | [Solver]
+  | 
+  | Solver hllc
+  | 
+  | [Boundary]
+  | 
+  | X1-beg axisymmetric
+  | X1-end outflow
+  | X2-beg reflective
+  | X2-end outflow
+  | X3-beg outflow
+  | X3-end outflow
+  | 
+  | [Static Grid Output]
+  | 
+  | uservar 3 T qlas qrad
+  | dbl 2.5 -1 single_file
+  | flt -1.0 -1 single_file
+  | vtk -1.0 -1 single_file
+  | tab -1.0 -1
+  | ppm -1.0 -1
+  | png -1.0 -1
+  | log 1000
+  | analysis 0.5 -1
+  | 
+  | [Particles]
+  | 
+  | Nparticles 0 -1
+  | particles_dbl 1.0 -1
+  | particles_flt -1.0 -1
+  | particles_vtk -1.0 -1
+  | particles_tab -1.0 -1
+  | 
+  | [Parameters]
+  | 
+  | E_PULSE      0.00032
+  | D_BEAM       3.1e-05
+  | FWHM         6e-08
+  | T_PEAK       5.467847186e-08
+  | NEC_LIMIT    1
+  | P_AMB        101325
+  | T_AMB        293.15
+  | SRC_ON       1
+  | T_FLOOR      293.15
+  +---------------------------------------------------------
+
+> Generating grid...
+
+     - Stretched grid on dim 0 (ratio: 1.034403)
+     - Stretched grid on dim 1 (ratio: 1.036182)
+  Global grid:
+  X1: [   0.0000, 1200.0000],    140 point(s), 3 ghosts
+  X2: [   0.0000, 1500.0000],    210 point(s), 3 ghosts
+
+  Local grid:
+  X1: [  90.0000, 135.0000],     18 point(s); 3 ghosts; Active zones = [3, 20]
+  X2: [   0.0000, 1500.0000],    210 point(s); 3 ghosts; Active zones = [3, 212]
+
+> Memory allocation
+> Assigning initial conditions (Startup) ...
+> Normalization Units:
+
+  [Density]:      1.000e-003 (gr/cm^3), 5.979e+020 (1/cm^3)
+  [Pressure]:     1.000e+007 (dyne/cm^2)
+  [Velocity]:     1.000e+005 (cm/s)
+  [Length]:       1.000e-004 (cm)
+  [Temperature]:  1.203e+002 X (p/rho*mu) (K)
+  [Time]:         1.000e-009 (sec), 3.171e-017 (yrs) 
+ 
+> Number of processors: 8
+> Proc size:            18 X 210
+> Parallel Directions:  X1/X2
+> Restarting from file #276 (dbl)
+> Starting computation... 
+
+step:54000; t = 6.9113e+002; dt = 2.1176e-003; 53.2 %
+            [Mach = 2.690926, Nrkl = 20]
+> Writing file #277 (dbl) to disk...
+> Writing file #278 (dbl) to disk...
+> Writing file #279 (dbl) to disk...
+> Writing file #280 (dbl) to disk...
+> Writing file #281 (dbl) to disk...
+> Writing file #282 (dbl) to disk...
+> Writing file #283 (dbl) to disk...
+step:55000; t = 7.0795e+002; dt = 2.8355e-002; 54.5 %
+            [Mach = 2.660994, Nrkl = 8]
+> Writing file #284 (dbl) to disk...
+> Writing file #285 (dbl) to disk...
+> Writing file #286 (dbl) to disk...
+> Writing file #287 (dbl) to disk...
+> Writing file #288 (dbl) to disk...
+> Writing file #289 (dbl) to disk...
+> Writing file #290 (dbl) to disk...
+step:56000; t = 7.2532e+002; dt = 1.7881e-002; 55.8 %
+            [Mach = 2.638274, Nrkl = 20]
+> Writing file #291 (dbl) to disk...
+step:57000; t = 7.2927e+002; dt = 2.1127e-003; 56.1 %
+            [Mach = 2.630369, Nrkl = 19]
+> Writing file #292 (dbl) to disk...
+step:58000; t = 7.3143e+002; dt = 2.1335e-003; 56.3 %
+            [Mach = 2.625464, Nrkl = 20]
+> Writing file #293 (dbl) to disk...
+step:59000; t = 7.3355e+002; dt = 2.0386e-003; 56.4 %
+            [Mach = 2.620378, Nrkl = 20]

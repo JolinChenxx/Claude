@@ -2,7 +2,7 @@
 id: T016s
 title: A/B numerical check of the RKL step-ratio cap (rmax_par 100 vs 1000) from one T016r checkpoint
 owner: codex
-status: running
+status: review
 started: 2026-11-18T08:06:27.537367+08:00
 depends: []
 milestone: D2
