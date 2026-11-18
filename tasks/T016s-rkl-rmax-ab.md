@@ -2,7 +2,8 @@
 id: T016s
 title: A/B numerical check of the RKL step-ratio cap (rmax_par 100 vs 1000) from one T016r checkpoint
 owner: codex
-status: ready
+status: running
+started: 2026-11-18T08:06:27.537367+08:00
 depends: []
 milestone: D2
 est_time: 0.2h operations + 40 min machine time (2 × 8 cores)
