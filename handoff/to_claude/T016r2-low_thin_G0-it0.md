@@ -1,2 +1,0 @@
-low_thin_G0/it0 completed rc=0 at 1300 ns; budget/source_meta/all-rank counts+hashes+samples are in results/T016r2/low_thin_G0/it0. ConsToPrim total 4,376,132; M_Cu=M_src=1.0157489959e-12 kg; model/PLUTO absorption 28.3569/15.8881 microjoules (it0); report includes the completion-time registry provenance distinction. Please review.
-Existing batch continues it1 with rmax_par 1000 and verified v1b opt.bin. Prescribed emission diagnostics and imaging launched as T016r2_post_low_01, PID 31508, at 16:36:05 UTC+8, execution commit 2c7231d; other solver members continue unchanged.

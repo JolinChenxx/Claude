@@ -137,3 +137,10 @@ Updated: 2026-11-15
   - experiment: 0.54/0.37/0.21/0.13
 - P1 τ_L (300–630 ns e-fold): sa b 256 ns / c 225 ns; thin b 292 ns; experiment 182 ns (v1: 400–600 ns).
 - Interpretation (it0 only, Picard not converged): the pre-declared, parameter-free Cu–air interdiffusion moves the late decay most of the way to the experiment. A residual excess of about ×1.4–1.8 at 600–700 ns remains. Wait for it1–it4 (convergence) and low fluence before drawing conclusions.
+
+## 2026-11-18 16:40 (UTC+8) — Cu–air diffusion v2 (Coulomb/polarisation); T016e issued
+- The stiffness in rarefied Cu-rich cells came from D (2–5× χ). The hard-sphere D treated ions as hard spheres, so it was overestimated by 50–250× in the ionised plasma above about 15 kK (the registry listed only a 2–3× uncertainty — an error of judgement, corrected here).
+- v2 (registry diff_cuair_model_v2, polarizability; tests/test_diffusion.py): neutral–neutral hard spheres; ion–neutral max(hard sphere, Langevin); ion–ion Chapman–Enskog Coulomb; Blanc-type mixture rule. New/old D is 1.00 in neutral gas, 0.97 at 9.4 kK (the late Cu core), and 0.02–0.004 at 20–40 kK.
+- Cloud smoke test (low-res v1c, v1d exe): 0 ConsToPrim, residual −0.22%, M_Cu = M_src, energies within 0.5% of hard-sphere D, runtime −26%.
+- T016e: all 6 members (v1e = v1d + tables v1c), rmax_par 1000, 64 cores. T016h and T016r2 are stopped once low_trap_G0 it0 has finished. Their finished iterations are kept as the hard-sphere-D (upper bound) sensitivity: high trap G0 it0, low thin G0 it0, low trap G0 it0.
+- T016r2 low_thin_G0 it0 (hard-sphere D): rc=0, M_Cu = M_src, target-model/PLUTO absorption 28.4/15.9 µJ (it0).
