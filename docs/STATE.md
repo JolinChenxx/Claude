@@ -182,3 +182,8 @@ Updated: 2026-11-15
   - **Picard it2 (T015): 231/375/461/590/713 µm; at 500/700 ns this is within 3–4% of experiment (≈ 614/720); v_late 583 m/s.**
   - The converged energy deposition is therefore consistent with an observable that does not depend on the emission. The late-time overbrightness at high fluence is **not** caused by excess absorbed energy; it points to cooling/emission (energy partition inside the plume, radiative losses).
 - Low fluence (T016r2 it0, hard-sphere D): 172/317/398/521/628 µm at 100/200/300/500/700 ns; experiment ≈ 300/400/490/560/680. The model is **slower early** (−40% at 100 ns, −20% at 200–300 ns) and within about 8% late; v_late 470 m/s (experiment ≈ 521). The early energy deposition at low fluence is too low or comes too late (ignition timing). T015 Picard it1–it2 lowered the low-fluence gas absorption to ≈ 44 µJ, so the converged low-fluence shock would be slower still. This is the open item for the low series, independent of the late-time emission.
+
+## 2026-11-19 01:55 (UTC+8) — T016e low G0 it0 and high_trap it1 budgets
+- low thin/trap G0 it0 (v1e): gas absorption 87.5/87.7 µJ, radiation 22.7/21.1 µJ, wall 23.4/23.8 µJ, M_Cu = M_src = 1.016 ng, residual −0.64/−0.59% (still < 1%, larger than at high fluence). Target model vs PLUTO absorption 28.4/15.9 µJ (as in T015 it0). Shock track identical to the hard-sphere-D run (172/317/398/521/628 µm): diffusion does not affect P4.
+- high_trap_G0 it1: gas absorption 254.3 µJ, radiation 52.3, wall 63.0, M_Cu = 1.613 ng, residual −0.11%; target model vs PLUTO 32.3/10.9 µJ (converging as in T015).
+- Imaging of the low it0 runs is in progress.

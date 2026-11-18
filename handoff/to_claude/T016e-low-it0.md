@@ -1,2 +1,0 @@
-First low-fluence it0 complete: low_trap_G0 and low_thin_G0 rc=0 at 1300 ns; high_trap_G0/it1 also rc=0 at 800 ns. Budgets/source, all-rank warning counts, v1c input validation and both low shock tracks archived; see tasks/T016e.report.md.
-Please review these unconverged iterations with known warnings. All seven shock requests complete; production continues and serial v1c imaging plus low-thin emission diagnostic starts in background.
