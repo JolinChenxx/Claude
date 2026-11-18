@@ -35,3 +35,12 @@ def test_dh_dY_cold_ideal_gas():
     ref = (2.5 * K_B / _mass("Cu") - 3.5 * K_B / m_air) * 300.0
     assert abs(dh_dY(1.2, 300.0, 0.5) / ref - 1) < 0.03
     del s
+
+
+def test_v2_limits():
+    """v2 equals hard spheres for neutral gas and is far smaller in a fully ionised plasma (Coulomb collisions)."""
+    from lipsim.transport.diffusion import D_binary_v2
+    s = mx.equilibrium(1.2, 300.0, 0.5)
+    assert abs(D_binary_v2(s) / D_binary(s) - 1) < 0.01
+    s = mx.equilibrium(1e-3, 4.0e4, 0.5)
+    assert D_binary_v2(s) < 0.05 * D_binary(s)

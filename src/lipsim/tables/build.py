@@ -39,6 +39,7 @@ def grid(cfg) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
 
 EOS_FIELDS = ["e", "p", "ne", "dchi_eV"]
+DIFF_MODEL = "v2"  # diffusion model for D_cuair: "v2" (Coulomb/polarisation, v1e tables) or "hs" (v1b tables)
 OPT_FIELDS = ["alpha1064", "nec_thin", "nec_trap", "kappa", "D_cuair", "dh_dY"]
 
 
@@ -47,7 +48,7 @@ def _row(args):
     from lipsim.eos import mixture as mx
     from lipsim.optics import props as op
     from lipsim.transport.kappa import kappa
-    from lipsim.transport.diffusion import D_binary, dh_dY
+    from lipsim.transport.diffusion import D_binary, D_binary_v2, dh_dY
     lrho, Y, lts, wl = args
     rho = 10.0 ** lrho
     rows = []
@@ -55,7 +56,7 @@ def _row(args):
         s = mx.equilibrium(rho, 10.0 ** lt, float(Y))
         d = {"e": s.e, "p": s.p, "ne": s.ne, "dchi_eV": s.dchi_eV,
              "alpha1064": op.alpha_at(s, wl)["total"], "nec_thin": op.nec(s, "thin"), "nec_trap": op.nec(s, "trap"), "kappa": kappa(s)["total"],
-             "D_cuair": D_binary(s), "dh_dY": dh_dY(rho, 10.0 ** lt, float(Y))}
+             "D_cuair": D_binary_v2(s) if DIFF_MODEL == "v2" else D_binary(s), "dh_dY": dh_dY(rho, 10.0 ** lt, float(Y))}
         d.update(op.pop_fields(s))
         rows.append(d)
     return rows
@@ -143,6 +144,7 @@ def main(argv=None):
         man["files"][fn] = {"sha256": _sha(a.out / fn), "fields": keys,
                             "shape": [len(v) for v in r["axes"].values()]}
     man["seconds"] = round(r["seconds"], 1)
+    man["diff_model"] = DIFF_MODEL
     print(f"tables {man['files']['eos.bin']['shape']} built in {r['seconds']:.1f}s -> {list(groups)}")
     (a.out / "manifest.json").write_text(json.dumps(man, indent=1, default=str))
 

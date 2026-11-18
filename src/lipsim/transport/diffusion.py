@@ -81,3 +81,52 @@ def dh_dY(rho: float, T: float, Y: float, dY: float = 0.01) -> float:  # num (fi
         r, s = _rho_at_p(p, T, y, rho)
         out.append(s.e + p / r)
     return (out[1] - out[0]) / (hi - lo)
+
+
+# ---------------------------------------------------------------- v2 (registry diff_cuair_model_v2)
+EPS0 = P.get("eps0")
+E_CH = P.get("e")
+
+
+def _pair_D_v2(spi: str, zi: int, spj: str, zj: int, n: float, T: float, lnL: float) -> float:
+    """Binary diffusion coefficient of one Cu species (stage zi) against one air species (stage zj) [m^2/s]."""
+    d, alpha = P.get("hs_diameter"), P.get("polarizability")
+    mi, mj = _mass(spi), _mass(spj)
+    mu = mi * mj / (mi + mj)
+    d12 = 0.5 * (d[spi] + d[spj])  # math
+    D_hs = 3.0 / (8.0 * n * d12 ** 2) * np.sqrt(K_B * T / (2.0 * np.pi * mu))  # reg:diff_cuair_model
+    if zi == 0 and zj == 0:
+        return D_hs
+    if zi > 0 and zj > 0:  # Coulomb
+        return (3.0 * (4.0 * np.pi * EPS0) ** 2 * (K_B * T) ** 2.5  # reg:diff_cuair_model_v2
+                / (4.0 * np.sqrt(2.0 * np.pi * mu) * n * zi ** 2 * zj ** 2 * E_CH ** 4 * lnL))  # reg:diff_cuair_model_v2
+    # ion-neutral: polarisation of the neutral partner by the ion charge
+    neutral, z = (spj, zi) if zj == 0 else (spi, zj)
+    kL = 2.0 * np.pi * np.sqrt(alpha[neutral] * (z * E_CH) ** 2 / (4.0 * np.pi * EPS0 * mu))  # reg:diff_cuair_model_v2
+    D_pol = K_B * T / (mu * n * 1.105 * kL)  # reg:diff_cuair_model_v2 (momentum-transfer factor)
+    return min(D_hs, D_pol)
+
+
+def D_binary_v2(state: mx.State) -> float:
+    """Cu–air diffusion coefficient with Coulomb and polarisation collisions (Blanc-type mixture rule)."""
+    from lipsim.transport.kappa import coulomb_log
+    d = P.get("hs_diameter")
+    cu, air = [], []
+    for key, nk in state.n.items():
+        sp = key.split("+")[0]
+        if nk <= 0 or sp not in d:
+            continue
+        z = int(key.split("+")[1]) if "+" in key else 0
+        (cu if sp == "Cu" else air if sp in AIR else []).append((sp, z, nk))
+    n = sum(x[2] for x in cu) + sum(x[2] for x in air)
+    if n <= 0 or not cu:
+        return 0.0
+    if not air:
+        air = [("N2", 0, 1.0)]
+    lnL = coulomb_log(state.ne, state.T)
+    ncu, nair = sum(x[2] for x in cu), sum(x[2] for x in air)
+    inv = 0.0
+    for spi, zi, ni in cu:
+        for spj, zj, nj in air:
+            inv += (ni / ncu) * (nj / nair) / _pair_D_v2(spi, zi, spj, zj, n, state.T, lnL)
+    return 1.0 / inv
