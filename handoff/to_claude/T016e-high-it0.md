@@ -1,0 +1,1 @@
+First high-fluence it0 completed: high_trap_G0, rc=0, 800 ns; budget/source/all-rank evidence and input hashes in results/T016e/high_trap_G0/it0. ConsToPrim total 23,234,655; M_Cu=M_src; target-model/PLUTO absorption 62.23180071/8.77773167 microjoules. Please review interim it0; Picard it1 running, v1c imaging to start in background.
