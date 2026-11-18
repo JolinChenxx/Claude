@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 08:36 (UTC+8)
+- card: T016, T016r, T016s | action: synced ws c8f7a9f and followed T016_stop_v1b.md; stopped only T016, archived instruction, recorded evidence, and marked T016 done as superseded.
+- stopped: T016 wrapper PID 1492 and all 24 remaining v1b ranks; verified 2026-11-18T08:34:28.8744713+08:00. Last budgets: high_thin_G0=449.4998 ns; high_thin_G1=203.9977 ns. Rank-zero ConsToPrim counts: 10,762,237 and 359,341. Four members previously aborted, two stopped at user request; no raw data deleted.
+- process verification: all targeted processes gone; all protected T016r/T016s descendants remained present. T016r PID 41680 and T016s PID 39392 continue, stderr empty. T016s is still inside its 40-minute limit.
+- T016r/low_thin_G0/it0: t_ns=7.414985e+002; latest logged dt=2.0657e-003, Nrkl=20 (step 57000, log_t_ns=7.4064e+002).
+- T016r/low_trap_G0/it0: t_ns=7.309996e+002; latest logged dt=2.1127e-003, Nrkl=19 (step 57000, log_t_ns=7.2927e+002).
+- T016r/low_thin_G1/it0: t_ns=2.879991e+002; latest logged dt=1.0546e-003, Nrkl=19 (step 50000, log_t_ns=2.8767e+002).
+- T016s/A: t_ns=7.299982e+002; latest logged dt=2.1127e-003, Nrkl=19 (step 57000, log_t_ns=7.2927e+002).
+- T016s/B: t_ns=7.584953e+002; latest logged dt=2.0562e-002, Nrkl=63 (step 55000, log_t_ns=7.3587e+002).
+- skipped ready cards and why: none; no ready cards. High-fluence v1d reruns await a new card after T016s.
+- next: check T016r and T016s on the next pass; collect A/B outputs after the timed runs finish. No foreground wait.
+
 ## 2026-11-18 08:18 (UTC+8)
 - card: T016, T016r, T016s | action: synced ws (2ed4a35), no incoming handoff, checked all three background jobs and seven active members.
 - running jobs: T016 PID 1492 elapsed 07:13:36; T016r PID 41680 elapsed 04:13:39; T016s PID 39392 elapsed 00:10:13. All running, stderr empty. A/B member records remain running; the 40-minute limits have not been reached.
@@ -242,10 +254,3 @@
 - progress: T015 solver finished (G0/G1 high 800 ns, low 1300 ns), 13/14 images published; high_trap_G0 it2 pending imaging. T016 just launched with verified v1b tables/build.
 - skipped ready cards and why: none.
 - notes: launch records pushed on ws (9044806). Next pass complete T015 collection/report/handoff after imaging5, and check T016.
-
-## 2026-11-18 00:49 (UTC+8)
-- card: T015, T016 | action: preserved two rc=0 solver completions (high thin G0 it2 and G1 it0); launched T015img4 with 16 imaging workers.
-- running jobs: T015 solver batch; T015img4 PID 37776. T016 tables/build verified, production waiting.
-- solver progress: high_thin_G0/it2: t_ns=8.000000e+002; high_thin_G1/it0: t_ns=8.000000e+002; high_trap_G0/it2: t_ns=7.474939e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
-- skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
-- notes: launch record pushed on ws (2968636); no new handoff, no solver reruns or parameter changes.
