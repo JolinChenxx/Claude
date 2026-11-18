@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 09:34 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
+- running jobs: T016h PID 39808 elapsed 00:12:50; T016r2 PID 38008 elapsed 00:26:36 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
+- Progress snapshot: 2026-11-18T09:34:37.161179+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=5.099844e+001; latest logged dt=3.6964e-003, Nrkl=5 (step 6000, log_t_ns=4.9989e+001).
+- T016h/high_trap_G0/it0: t_ns=5.099879e+001; latest logged dt=3.6985e-003, Nrkl=5 (step 6000, log_t_ns=4.9989e+001).
+- T016h/high_thin_G1/it0: t_ns=3.699741e+001; latest logged dt=3.7908e-003, Nrkl=3 (step 3000, log_t_ns=3.3844e+001).
+- T016r2/low_thin_G0/it0: t_ns=1.299966e+002; latest logged dt=6.4385e-003, Nrkl=3 (step 9000, log_t_ns=1.0760e+002).
+- T016r2/low_trap_G0/it0: t_ns=1.289983e+002; latest logged dt=6.2348e-003, Nrkl=3 (step 9000, log_t_ns=1.0737e+002).
+- T016r2/low_thin_G1/it0: t_ns=8.749622e+001; latest logged dt=4.3841e-003, Nrkl=4 (step 7000, log_t_ns=8.6932e+001).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 09:22 (UTC+8)
 - card: T016h, T016r2 | action: pulled ws, no incoming handoff; checked T016r2, claimed and launched T016h. Claim a8c6f84 and verified launch evidence 3b96e72 pushed to ws.
 - running job: T016h PID 39808, started 2026-11-18T09:21:00, execution commit a8c6f84; 32 ranks (8/8/16), high-fluence G0 it0-it4 and G1 it0, tstop 800 ns.
@@ -265,10 +278,3 @@
 - progress: high_thin_G0/it0: t_ns=1.524990e+002; high_thin_G1/it0: t_ns=6.199664e+001; high_trap_G0/it0: t_ns=1.504998e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.229974e+002; low_trap_G0/it0: t_ns=3.554824e+002
 - skipped ready cards and why: none; no ready cards.
 - notes: ConsToPrim rank-zero counts 2,975,301 / 3,049,922. Root cause unresolved. Handoff pushed; interim report synced with hash verification.
-
-## 2026-11-18 01:48 (UTC+8)
-- card: T016 | action: synced ws to 368d37b; checked background production; no incoming instructions.
-- running jobs: T016 PID 1492, execution commit e046642, running, elapsed 00:43:33; stderr empty.
-- progress: high_thin_G0/it0: t_ns=1.354912e+002; high_thin_G1/it0: t_ns=5.399870e+001; high_trap_G0/it0: t_ns=1.169982e+002; low_thin_G0/it0: t_ns=2.194886e+002; low_thin_G1/it0: t_ns=1.074996e+002; low_trap_G0/it0: t_ns=2.289939e+002
-- skipped ready cards and why: none; no ready cards.
-- notes: T015 follow-up consumed by Claude. T016 members still running; no completed results to hand off.
