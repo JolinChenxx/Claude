@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 23:34 (UTC+8)
+- card: T016e | action: ws already current at 1dda059; no incoming handoff. Checked production; two previously archived completed it0 iterations, no new completions or ready cards.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 06:10:19 at job.ps1 status check; wrapper stderr empty. Previously acknowledged rank-log ConsToPrim warnings remain recorded; completed imaging/diagnostics archived.
+- Progress snapshot 2026-11-18T23:34:18.628120+08:00; budget and latest logged times recorded separately.
+- T016e/high_thin_G0/it1: t_ns=1.339997e+002; latest logged dt=5.2912e-003, Nrkl=6 (step 32000, log_t_ns=1.3364e+002).
+- T016e/high_thin_G1/it0: t_ns=2.354941e+002; latest logged dt=9.6679e-003, Nrkl=20 (step 48000, log_t_ns=2.3454e+002).
+- T016e/high_trap_G0/it1: t_ns=1.854892e+002; latest logged dt=1.6374e-002, Nrkl=6 (step 36000, log_t_ns=1.7708e+002).
+- T016e/low_thin_G0/it0: t_ns=1.108986e+003; latest logged dt=2.1717e-002, Nrkl=63 (step 51000, log_t_ns=1.0982e+003).
+- T016e/low_thin_G1/it0: t_ns=3.884988e+002; latest logged dt=6.4406e-003, Nrkl=21 (step 59000, log_t_ns=3.8738e+002).
+- T016e/low_trap_G0/it0: t_ns=1.105982e+003; latest logged dt=2.2697e-002, Nrkl=62 (step 50000, log_t_ns=1.0922e+003).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: collect newly completed iterations, image with v1c, run latest thin diagnostics and first low-fluence it0 handoff. No parameter changes or foreground waiting.
+
 ## 2026-11-18 23:19 (UTC+8)
 - card: T016e | action: ws already current at 1dda059; no incoming handoff. Checked production; two previously archived completed it0 iterations, no new completions or ready cards.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 05:55:18 at job.ps1 status check; wrapper stderr empty. Previously acknowledged rank-log ConsToPrim warnings remain recorded; completed imaging/diagnostics archived.
@@ -408,19 +421,6 @@
 - T016r2/low_thin_G0/it0: t_ns=1.251487e+003; latest logged dt=2.0520e-002, Nrkl=54 (step 59000, log_t_ns=1.2514e+003).
 - T016r2/low_trap_G0/it0: t_ns=1.197499e+003; latest logged dt=2.2264e-002, Nrkl=30 (step 56000, log_t_ns=1.1891e+003).
 - T016r2/low_thin_G1/it0: t_ns=3.544943e+002; latest logged dt=7.6828e-003, Nrkl=62 (step 55000, log_t_ns=3.5477e+002).
-- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
-- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
-
-## 2026-11-18 15:48 (UTC+8)
-- card: T016h, T016r2 | action: synced ws 812610e (Claude imaging review acknowledged); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
-- running jobs: T016h PID 39808 elapsed 06:27:43; T016r2 PID 38008 elapsed 06:41:29 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
-- Progress snapshot: 2026-11-18T15:48:55.794108+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=6.014952e+002; latest logged dt=1.0169e-002, Nrkl=62 (step 62000, log_t_ns=5.9004e+002).
-- T016h/high_trap_G0/it1: t_ns=1.629982e+002; latest logged dt=1.5118e-002, Nrkl=10 (step 34000, log_t_ns=1.6190e+002).
-- T016h/high_thin_G1/it0: t_ns=2.014932e+002; latest logged dt=8.9273e-003, Nrkl=29 (step 44000, log_t_ns=1.9847e+002).
-- T016r2/low_thin_G0/it0: t_ns=1.214481e+003; latest logged dt=1.9551e-002, Nrkl=63 (step 57000, log_t_ns=1.1966e+003).
-- T016r2/low_trap_G0/it0: t_ns=1.177991e+003; latest logged dt=2.2241e-002, Nrkl=12 (step 55000, log_t_ns=1.1676e+003).
-- T016r2/low_thin_G1/it0: t_ns=3.494992e+002; latest logged dt=7.2062e-003, Nrkl=63 (step 54000, log_t_ns=3.4557e+002).
 - skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
 - next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
 
