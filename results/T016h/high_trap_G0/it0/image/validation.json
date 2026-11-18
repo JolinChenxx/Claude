@@ -1,0 +1,729 @@
+{
+  "collected": "2026-11-18T14:50:44.710327+08:00",
+  "returncode": 0,
+  "scenario_count": 18,
+  "files": [
+    {
+      "file": "frames_a_sa.npz",
+      "bytes": 528151,
+      "sha256": "dadaf30bdbd185afc91c2412fb6b6dbd6ed890b3b22a754135c326313774ba26",
+      "shape": [
+        29,
+        81,
+        84
+      ],
+      "finite_frames": 29,
+      "missing_times_ns": []
+    },
+    {
+      "file": "frames_a_thin.npz",
+      "bytes": 519149,
+      "sha256": "0690a41ba447cad9d15cd3cbc304c325703132929d6054abe2c0271d0ca4be61",
+      "shape": [
+        29,
+        81,
+        84
+      ],
+      "finite_frames": 29,
+      "missing_times_ns": []
+    },
+    {
+      "file": "frames_b_sa.npz",
+      "bytes": 528214,
+      "sha256": "4a99ec5cfb32e8b7cf12dad3968fde36d2fdeacb9877fab73e66d5ff41771cc1",
+      "shape": [
+        29,
+        81,
+        84
+      ],
+      "finite_frames": 29,
+      "missing_times_ns": []
+    },
+    {
+      "file": "frames_b_thin.npz",
+      "bytes": 520216,
+      "sha256": "d676a2121b4875eeaa1c264b96926de530906cff4df3abf4909c50286928276d",
+      "shape": [
+        29,
+        81,
+        84
+      ],
+      "finite_frames": 29,
+      "missing_times_ns": []
+    },
+    {
+      "file": "frames_c_sa.npz",
+      "bytes": 528863,
+      "sha256": "e64fb0335e91942ccdc922f67b5dae8df5ece419f3c7f3283ff156582a5c5bb0",
+      "shape": [
+        29,
+        81,
+        84
+      ],
+      "finite_frames": 29,
+      "missing_times_ns": []
+    },
+    {
+      "file": "frames_c_thin.npz",
+      "bytes": 519254,
+      "sha256": "8b810780aff580b7f1243b3eadb4d6a3b54f86bf70c97c0b0705d2a4ab8a8018",
+      "shape": [
+        29,
+        81,
+        84
+      ],
+      "finite_frames": 29,
+      "missing_times_ns": []
+    },
+    {
+      "file": "image_summary.json",
+      "bytes": 2544,
+      "sha256": "f9e28ccf76ed5b1856db4b3a4e74a2b9673731f148878564111c26fbed55f7e9"
+    },
+    {
+      "file": "metrics_a_sa_baseline.csv",
+      "bytes": 3857,
+      "sha256": "520261fc0c651e9cfa91b38ea903491b662cd7b2f3f4d4a849330182825805f7",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0
+        ],
+        "thr_top_um": [
+          0
+        ],
+        "thr_bottom_um": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "metrics_a_sa_high.csv",
+      "bytes": 3889,
+      "sha256": "6aeeb019509596d8eb848f988d7fb43c6c5101147f666e33b9a386401eaef78d",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0
+        ],
+        "thr_top_um": [
+          0
+        ],
+        "thr_bottom_um": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "metrics_a_sa_low.csv",
+      "bytes": 3779,
+      "sha256": "46aa33ed84b0ca1df7f8fec27e78750d5700e22858af4e4341ee56994bba3a01",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0,
+          20
+        ],
+        "zc_um": [
+          0,
+          20
+        ],
+        "sigma_x2_um2": [
+          0,
+          20
+        ],
+        "sigma_z2_um2": [
+          0,
+          20
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_a_thin_baseline.csv",
+      "bytes": 3824,
+      "sha256": "5ec34375d1f3d2ae1b919436740bc56b5d8c38c84c2b711d8d0a2aca623730f1",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_a_thin_high.csv",
+      "bytes": 3856,
+      "sha256": "d0194947288a7f6501970968c80eb50b65df935d97eb0eb6c9466209dc27025d",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_a_thin_low.csv",
+      "bytes": 3799,
+      "sha256": "27fd43a9a992eb8c7f8d7003c4c5f18cdf15fe9390349fbaae3a690137ea3d94",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0,
+          20
+        ],
+        "zc_um": [
+          0,
+          20
+        ],
+        "sigma_x2_um2": [
+          0,
+          20
+        ],
+        "sigma_z2_um2": [
+          0,
+          20
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_b_sa_baseline.csv",
+      "bytes": 3860,
+      "sha256": "38336b5f67527ee61cbf9c7c0fd6dc192e678ad21dd69d11c54e24846ada91de",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0
+        ],
+        "thr_top_um": [
+          0
+        ],
+        "thr_bottom_um": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "metrics_b_sa_high.csv",
+      "bytes": 3872,
+      "sha256": "862fc8c96f2e174b1f60c378817aa1ff4fcdf53c190414a0e361721c67107114",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_b_sa_low.csv",
+      "bytes": 3785,
+      "sha256": "30f5b5b767c6f2eaf30b6048217ef7c706da7fa41b94281e7dc2e4eb897c0777",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0,
+          20
+        ],
+        "zc_um": [
+          0,
+          20
+        ],
+        "sigma_x2_um2": [
+          0,
+          20
+        ],
+        "sigma_z2_um2": [
+          0,
+          20
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_b_thin_baseline.csv",
+      "bytes": 3865,
+      "sha256": "bb2e1a2b786058e0bb9e812af1d7dc03169e9e9482ba044b362100e41c97e53c",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0
+        ],
+        "thr_top_um": [
+          0
+        ],
+        "thr_bottom_um": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "metrics_b_thin_high.csv",
+      "bytes": 3879,
+      "sha256": "14523d2589ddaf7e94f71f32b52640aae37872b6f95f910c7985c95669c6b03e",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_b_thin_low.csv",
+      "bytes": 3787,
+      "sha256": "f7de619b40805deed7a481c6c191b69907e27a5d31f54623d0d138d5a8ca8721",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0,
+          20
+        ],
+        "zc_um": [
+          0,
+          20
+        ],
+        "sigma_x2_um2": [
+          0,
+          20
+        ],
+        "sigma_z2_um2": [
+          0,
+          20
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_c_sa_baseline.csv",
+      "bytes": 3858,
+      "sha256": "c90e1174293a8b79e50255c4a9c3ccdc3aa379531154b4ed1b5a3a3c4e1da203",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0
+        ],
+        "thr_top_um": [
+          0
+        ],
+        "thr_bottom_um": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "metrics_c_sa_high.csv",
+      "bytes": 3743,
+      "sha256": "40c7c9142bfea3c39623c9c9cdc822aa9ad0614a55db9a19c8c134f0fbf0b90a",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0,
+          20,
+          730,
+          740
+        ],
+        "thr_top_um": [
+          0,
+          20,
+          730,
+          740
+        ],
+        "thr_bottom_um": [
+          0,
+          20,
+          730,
+          740
+        ]
+      }
+    },
+    {
+      "file": "metrics_c_sa_low.csv",
+      "bytes": 3783,
+      "sha256": "a98258dff3eec4d260066855b71578073a191cb5b86b0aeb20381b4380efce07",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0,
+          20
+        ],
+        "zc_um": [
+          0,
+          20
+        ],
+        "sigma_x2_um2": [
+          0,
+          20
+        ],
+        "sigma_z2_um2": [
+          0,
+          20
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_c_thin_baseline.csv",
+      "bytes": 3857,
+      "sha256": "abe5df644abfe69fcd709919ff02b8390c8289fc4cef5fad037af1dc70c4bb9f",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0
+        ],
+        "thr_top_um": [
+          0
+        ],
+        "thr_bottom_um": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "metrics_c_thin_high.csv",
+      "bytes": 3885,
+      "sha256": "8fce425a84dbfe9a544d19fc77b4dd201b566e1f505b90954a862209995bb946",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0
+        ],
+        "zc_um": [
+          0
+        ],
+        "sigma_x2_um2": [
+          0
+        ],
+        "sigma_z2_um2": [
+          0
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "file": "metrics_c_thin_low.csv",
+      "bytes": 3777,
+      "sha256": "9f5453be32dc8fc14e07b4a50f00aa40119d9d4836a0c1efdbc347281f4a0581",
+      "rows": 29,
+      "first_t_ns": 0.0,
+      "last_t_ns": 740.0,
+      "undefined_for_empty_signal_or_region": {
+        "xc_um": [
+          0,
+          20
+        ],
+        "zc_um": [
+          0,
+          20
+        ],
+        "sigma_x2_um2": [
+          0,
+          20
+        ],
+        "sigma_z2_um2": [
+          0,
+          20
+        ],
+        "thr_mean_gray": [
+          0,
+          20
+        ],
+        "thr_top_um": [
+          0,
+          20
+        ],
+        "thr_bottom_um": [
+          0,
+          20
+        ]
+      }
+    }
+  ],
+  "P2_unavailable": [
+    "a_thin_baseline",
+    "a_thin_low",
+    "a_thin_high",
+    "a_sa_baseline",
+    "a_sa_low",
+    "a_sa_high",
+    "b_thin_baseline",
+    "b_thin_low",
+    "b_thin_high",
+    "b_sa_baseline",
+    "b_sa_low",
+    "b_sa_high",
+    "c_thin_baseline",
+    "c_thin_low",
+    "c_thin_high",
+    "c_sa_baseline",
+    "c_sa_low",
+    "c_sa_high"
+  ],
+  "validation_note": "Initial checks assuming finite geometry or missing geometry only at t=0 were overly strict. Final validation uses frame_metrics semantics: undefined moments require zero L, undefined threshold geometry requires empty threshold area. All radiance arrays finite; output NaNs preserved."
+}
