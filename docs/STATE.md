@@ -221,3 +221,19 @@ Updated: 2026-11-15
 - **With native transfer the 800–1000 ns re-brightening disappears, so it was an artefact of the rebinning.** For 400–800 ns, low fluence sa now agrees with experiment within ±10–25%. P1 τ_L: sa 260 ns (thin member) / 291 ns (trap member) vs 218 ns in experiment. At 1000–1200 ns the model is still too bright, by ×3–6.
 - The thin transfer decays more slowly (P1 621–721 ns). The sa scenario is the physically consistent one; thin is an upper bound and is kept for reference only.
 - Status: low fluence (it0, Picard not yet converged; T015 converged at it1) reproduces the trend to 800 ns. At high fluence (it1) the late excess is still ×2–3.
+
+## 2026-11-19 07:55 (UTC+8) — image_v2 (Voigt/Stark, verified widths), high_thin_G0 it0/it1
+- With Stark broadening the in-band Cu I lines become **almost optically thin**: sa ≈ thin within 1–6% after 200 ns.
+- L/L(300) at 100/200/400/500/600/700 ns:
+  - it0: v2 sa 2.64/1.57/0.66/0.48/0.39/0.32; v1 sa 4.26/2.18/0.63/0.47/0.37/0.28
+  - it1: v2 sa 3.59/1.37/0.92/0.81/0.66/0.56; v1 sa 4.35/1.97/0.72/0.56/0.43/0.37
+  - experiment: 1.27/1.40/0.54/0.37/0.21/0.13
+- P1 (it1, b): sa 700 ns, thin 713 ns.
+- Consequences:
+  - The early overshoot is reduced, which is better at 100–200 ns.
+  - The late decay now follows the thin emissivity and is **slower**: ×4 at 700 ns for it1. The "sa decays faster than thin" behaviour that helped in v1 came from neglecting the Stark width (Doppler-only cores saturate), so it was an artefact of the line-profile model.
+  - With verified physics the conclusion is sharper. **The emitting Cu itself stays hot and dense too long.** The discrepancy sits in the plume energetics and evolution (energy loss, expansion, mixing), not in radiative transfer.
+- Next physics candidates, to be evaluated quantitatively before any implementation:
+  (1) radiative loss: thin NEC with complete Cu I/II line lists (Kurucz) plus continuum, against the present NIST-only NEC; is the core cooling rate low by ×2?
+  (2) 2D-axisymmetric limitations: 3D instabilities and turbulent mixing at the contact surface. This cannot be added without free parameters, so it is a declared limitation and a sensitivity.
+  (3) the target-gas coupling: late vapour supply, and the condensation/recondensation sink of Cu at the cold target (currently one-way, no back-flux to the target).
