@@ -2,7 +2,8 @@
 id: T016h
 title: High-fluence members with build v1d, rmax_par 1000, Picard it0–it4 (G0) — 32 free cores
 owner: codex
-status: ready
+status: running
+started: 2026-11-18T09:19:20.372373+08:00
 depends: []
 milestone: D2
 est_time: 0.1h operations + about 10–20h machine time
