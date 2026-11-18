@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 18:34 (UTC+8)
+- card: T016e | action: pulled ws (already current at 33416b6); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 01:10:08 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code.
+- Progress snapshot: 2026-11-18T18:34:23.602190+08:00; budget time and latest logged time are recorded separately.
+- T016e/high_thin_G0/it0: t_ns=1.609986e+002; latest logged dt=2.8151e-002, Nrkl=7 (step 19000, log_t_ns=1.1984e+002).
+- T016e/high_thin_G1/it0: t_ns=6.349906e+001; latest logged dt=3.8634e-003, Nrkl=9 (step 12000, log_t_ns=6.1608e+001).
+- T016e/high_trap_G0/it0: t_ns=1.529973e+002; latest logged dt=3.4193e-002, Nrkl=7 (step 19000, log_t_ns=1.2028e+002).
+- T016e/low_thin_G0/it0: t_ns=4.919702e+002; latest logged dt=4.2260e-002, Nrkl=8 (step 30000, log_t_ns=4.8593e+002).
+- T016e/low_thin_G1/it0: t_ns=1.284984e+002; latest logged dt=3.6756e-003, Nrkl=3 (step 16000, log_t_ns=1.2652e+002).
+- T016e/low_trap_G0/it0: t_ns=4.329873e+002; latest logged dt=3.5151e-002, Nrkl=7 (step 28000, log_t_ns=4.0837e+002).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: continue background monitoring; on completion collect all-rank warnings/budget/source, image with v1c and run thin emission diagnostics. First completed it0 per fluence requires interim handoff. No foreground waiting.
+
 ## 2026-11-18 18:19 (UTC+8)
 - card: T016e | action: pulled ws (already current at 33416b6); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 00:55:07 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code.
@@ -403,19 +416,6 @@
 - T016r2/low_thin_G0/it0: t_ns=6.819864e+002; latest logged dt=3.3397e-002, Nrkl=8 (step 35000, log_t_ns=6.7054e+002).
 - T016r2/low_trap_G0/it0: t_ns=6.239817e+002; latest logged dt=2.4399e-002, Nrkl=45 (step 34000, log_t_ns=6.2172e+002).
 - T016r2/low_thin_G1/it0: t_ns=1.469990e+002; latest logged dt=2.4052e-003, Nrkl=3 (step 29000, log_t_ns=1.4606e+002).
-- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
-- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
-
-## 2026-11-18 10:48 (UTC+8)
-- card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
-- running jobs: T016h PID 39808 elapsed 01:27:36; T016r2 PID 38008 elapsed 01:41:22 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
-- Progress snapshot: 2026-11-18T10:48:56.448012+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=1.869977e+002; latest logged dt=7.7298e-003, Nrkl=7 (step 31000, log_t_ns=1.8385e+002).
-- T016h/high_trap_G0/it0: t_ns=1.884942e+002; latest logged dt=7.9191e-003, Nrkl=7 (step 31000, log_t_ns=1.8358e+002).
-- T016h/high_thin_G1/it0: t_ns=7.599893e+001; latest logged dt=4.2892e-003, Nrkl=7 (step 15000, log_t_ns=7.3285e+001).
-- T016r2/low_thin_G0/it0: t_ns=6.269830e+002; latest logged dt=2.5950e-002, Nrkl=43 (step 33000, log_t_ns=6.1396e+002).
-- T016r2/low_trap_G0/it0: t_ns=5.984817e+002; latest logged dt=2.6246e-002, Nrkl=60 (step 33000, log_t_ns=5.9413e+002).
-- T016r2/low_thin_G1/it0: t_ns=1.404994e+002; latest logged dt=1.6232e-003, Nrkl=3 (step 25000, log_t_ns=1.3984e+002).
 - skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
 - next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
 
