@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 00:49 (UTC+8)
+- card: T016e | action: ws already current at 6efe740. Checked existing shock_track.md: five completed runs already processed/pushed; remaining low G0 it0 runs still running, so note retained. No new completion or ready card.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 07:25:21 at job.ps1 status check; wrapper stderr empty. Two previously archived completed it0 iterations; known ConsToPrim warnings recorded.
+- Progress snapshot 2026-11-19T00:49:21.691347+08:00; budget and latest logged times recorded separately.
+- T016e/high_thin_G0/it1: t_ns=4.679903e+002; latest logged dt=1.8567e-002, Nrkl=7 (step 58000, log_t_ns=4.6534e+002).
+- T016e/high_thin_G1/it0: t_ns=2.674916e+002; latest logged dt=1.0130e-002, Nrkl=27 (step 51000, log_t_ns=2.6283e+002).
+- T016e/high_trap_G0/it1: t_ns=5.139949e+002; latest logged dt=2.5838e-002, Nrkl=9 (step 62000, log_t_ns=4.9245e+002).
+- T016e/low_thin_G0/it0: t_ns=1.217982e+003; latest logged dt=2.2006e-002, Nrkl=62 (step 55000, log_t_ns=1.1934e+003).
+- T016e/low_thin_G1/it0: t_ns=4.049962e+002; latest logged dt=7.3587e-003, Nrkl=55 (step 61000, log_t_ns=4.0134e+002).
+- T016e/low_trap_G0/it0: t_ns=1.210481e+003; latest logged dt=2.2303e-002, Nrkl=45 (step 54000, log_t_ns=1.1876e+003).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: collect newly completed iterations, v1c imaging, thin diagnostics, low-fluence shock tracks and first low-fluence it0 handoff. No parameter changes or foreground waiting.
+
 ## 2026-11-19 00:34 (UTC+8)
 - card: T016e | action: ws already current at 6efe740. Checked existing shock_track.md: five completed runs already processed/pushed; remaining low G0 it0 runs still running, so note retained. No new completion or ready card.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 07:10:19 at job.ps1 status check; wrapper stderr empty. Two previously archived completed it0 iterations; known ConsToPrim warnings recorded.
@@ -406,18 +419,4 @@
 - T016e/low_thin_G1/it0: t_ns=0.000000e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
 - skipped ready cards and why: none; no ready cards. T016e is running. Reports synced to approved D:/Sync card directories with verified hashes.
 - next: check production via job.ps1 status next pass; collect completed iterations, image with v1c and run thin emission diagnostics. Ended after background launch bookkeeping; no foreground wait.
-
-## 2026-11-18 17:04 (UTC+8)
-- card: T016e, T016h, T016r2 | action: synced ws b774cf4 (Claude low_thin_G0 it0 review); no incoming handoff. Checked table build, two production jobs and all six production members.
-- running jobs: T016h PID 39808 elapsed 07:42:48; T016r2 PID 38008 elapsed 07:56:34 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only two previously collected it0 records; batch summaries absent.
-- Progress snapshot: 2026-11-18T17:04:11.711131+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=6.754946e+002; latest logged dt=2.7886e-002, Nrkl=47 (step 67000, log_t_ns=6.6628e+002).
-- T016h/high_trap_G0/it1: t_ns=4.199973e+002; latest logged dt=1.1992e-002, Nrkl=62 (step 48000, log_t_ns=4.1791e+002).
-- T016h/high_thin_G1/it0: t_ns=2.324924e+002; latest logged dt=8.8111e-003, Nrkl=35 (step 46000, log_t_ns=2.1401e+002).
-- T016r2/low_thin_G0/it1: t_ns=1.624955e+002; latest logged dt=1.3478e-002, Nrkl=11 (step 18000, log_t_ns=1.5362e+002).
-- T016r2/low_trap_G0/it0: t_ns=1.277489e+003; latest logged dt=2.0383e-002, Nrkl=63 (step 60000, log_t_ns=1.2763e+003).
-- T016r2/low_thin_G1/it0: t_ns=3.714901e+002; latest logged dt=1.4722e-002, Nrkl=12 (step 56000, log_t_ns=3.6427e+002).
-- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
-- running tables: T016e_tables PID 25856, execution commit 2e2b099, elapsed 00:12:48; stdout/stderr empty at check. Table manifest not yet present; build still running.
-- next: validate v1c tables after completion; stop T016h/T016r2 after low_trap_G0/it0 completes or 18:30 UTC+8, whichever comes first. Stop condition not reached; T016e production awaits table validation and confirmed shutdown. No foreground waiting or parameter changes.
 
