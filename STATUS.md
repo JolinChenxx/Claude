@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 11:04 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
+- running jobs: T016h PID 39808 elapsed 01:42:39; T016r2 PID 38008 elapsed 01:56:26 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
+- Progress snapshot: 2026-11-18T11:04:01.086571+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=2.234872e+002; latest logged dt=1.7168e-002, Nrkl=6 (step 36000, log_t_ns=2.2102e+002).
+- T016h/high_trap_G0/it0: t_ns=2.399997e+002; latest logged dt=1.6960e-002, Nrkl=5 (step 36000, log_t_ns=2.2577e+002).
+- T016h/high_thin_G1/it0: t_ns=8.949747e+001; latest logged dt=6.7819e-003, Nrkl=6 (step 18000, log_t_ns=8.7814e+001).
+- T016r2/low_thin_G0/it0: t_ns=6.819864e+002; latest logged dt=3.3397e-002, Nrkl=8 (step 35000, log_t_ns=6.7054e+002).
+- T016r2/low_trap_G0/it0: t_ns=6.239817e+002; latest logged dt=2.4399e-002, Nrkl=45 (step 34000, log_t_ns=6.2172e+002).
+- T016r2/low_thin_G1/it0: t_ns=1.469990e+002; latest logged dt=2.4052e-003, Nrkl=3 (step 29000, log_t_ns=1.4606e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 10:48 (UTC+8)
 - card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
 - running jobs: T016h PID 39808 elapsed 01:27:36; T016r2 PID 38008 elapsed 01:41:22 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
@@ -301,10 +314,3 @@
 - progress: T016/high_thin_G0/it0: t_ns=3.864995e+002; T016/high_thin_G1/it0: t_ns=1.469994e+002; T016/high_trap_G0/it0: t_ns=4.069851e+002; T016/low_thin_G0/it0: t_ns=3.539873e+002; T016/low_thin_G1/it0: t_ns=1.809938e+002; T016/low_trap_G0/it0: t_ns=3.554824e+002; T016c/low_thin_G0: t_ns=4.924990e+002; T016c/low_trap_G0: t_ns=5.584891e+002
 - skipped ready cards and why: none; no ready cards.
 - notes: no job has completed since the previous pass. T016c 40-minute deadlines remain active; collect on the next pass after termination. No reruns or parameter changes.
-
-## 2026-11-18 03:19 (UTC+8)
-- card: T016, T016c | action: synced ws (9f6e1c2); no incoming handoff; checked both background jobs.
-- running jobs: T016c PID 40456, elapsed 00:13:21, two restart members running; T016 PID 1492, elapsed 02:13:42, four surviving members running. Both stderr empty.
-- progress: T016/high_thin_G0/it0: t_ns=3.744861e+002; T016/high_thin_G1/it0: t_ns=1.424998e+002; T016/high_trap_G0/it0: t_ns=3.774962e+002; T016/low_thin_G0/it0: t_ns=3.539873e+002; T016/low_thin_G1/it0: t_ns=1.719995e+002; T016/low_trap_G0/it0: t_ns=3.554824e+002; T016c/low_thin_G0: t_ns=4.749656e+002; T016c/low_trap_G0: t_ns=4.874976e+002
-- skipped ready cards and why: none; no ready cards.
-- notes: T016 remains blocked for previously reported failures; existing batch continues per card. T016c has not reached its 40-minute deadline; no collection or restart needed this pass.
