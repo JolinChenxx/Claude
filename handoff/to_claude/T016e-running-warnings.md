@@ -1,0 +1,1 @@
+T016e running rank0 logs show ConsToPrim (rhoe < 0 or T < T_CUT_RHOE); see warning_snapshot_20261118_1849.json and report for affected members/samples. All six members still advance; no completed iterations, parameter changes or restarts. Please review; full all-rank counts will follow completion.
