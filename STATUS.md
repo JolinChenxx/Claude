@@ -1,5 +1,21 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 16:37 (UTC+8)
+- card: T016h, T016r2 | action: preserved completed registry row bff5232 to unblock pull; no incoming handoff. Published low_thin_G0/it0 evidence/handoff 2c7231d and background postprocessing launch b1c3011.
+- running jobs: T016h PID 39808 elapsed 07:13:00; T016r2 PID 38008 elapsed 07:26:46 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; two completed it0 records (high_trap_G0 and low_thin_G0), both rc=0; batch summaries absent.
+- Progress snapshot: 2026-11-18T16:37:07.797073+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=6.304779e+002; latest logged dt=5.0773e-003, Nrkl=46 (step 65000, log_t_ns=6.2248e+002).
+- T016h/high_trap_G0/it1: t_ns=3.979840e+002; latest logged dt=2.1319e-002, Nrkl=14 (step 46000, log_t_ns=3.8034e+002).
+- T016h/high_thin_G1/it0: t_ns=2.224991e+002; latest logged dt=8.8111e-003, Nrkl=35 (step 46000, log_t_ns=2.1401e+002).
+- T016r2/low_thin_G0/it1: t_ns=9.149933e+001; latest logged dt=4.3570e-003, Nrkl=2 (step 8000, log_t_ns=8.7713e+001).
+- T016r2/low_trap_G0/it0: t_ns=1.239488e+003; latest logged dt=2.1662e-002, Nrkl=32 (step 58000, log_t_ns=1.2314e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.664973e+002; latest logged dt=1.4722e-002, Nrkl=12 (step 56000, log_t_ns=3.6427e+002).
+- skipped ready cards and why: none; no ready cards. Five members advanced within their current iterations; low_thin_G0 completed it0 and automatically continued to it1.
+- completed: T016r2/low_thin_G0/it0 rc=0 at 1300 ns (16:21:06 UTC+8). All-rank ConsToPrim=4,376,132; M_Cu=M_src=1.0157489959e-12 kg; model/PLUTO absorption=28.3569/15.8881 microjoules. Evidence/hashes/samples handed off; report synced to D:/Sync/T016r2 with hash verification.
+- running postprocessing: T016r2_post_low_01 PID 31508, started 16:36:05, execution commit 2c7231d. Prescribed six-time emission diagnostic returned 0; imaging low_thin_G0/it0 with v1b tables and 16 workers is running, stderr empty at initial check.
+- provenance: completion registry row uses current commit/hash after upstream v2 additions; execution began at 978e094. it0/it1 opt.bin hashes verified as original v1b. No table rebuild/substitution, solver rerun or parameter edits.
+- next: check all three jobs and collect diagnostic/imaging artifacts when postprocessing ends; monitor next iteration completions. End this pass after background launch bookkeeping.
+
 ## 2026-11-18 16:18 (UTC+8)
 - card: T016h, T016r2 | action: synced ws 2ef7256 (upstream diffusion-v2 code/table-builder additions; no new task card or handoff); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
 - running jobs: T016h PID 39808 elapsed 06:57:48; T016r2 PID 38008 elapsed 07:11:34 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
@@ -393,15 +409,3 @@
 - T016r2/low_thin_G1/it0: t_ns=0.000000e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
 - skipped ready card: T016h remains ready. Incoming handoff explicitly prioritizes stopping T016r then claiming/starting T016r2; heartbeat requires ending the pass after launching long work. Claim T016h next pass; no dependency ambiguity.
 - next: check T016r2 status; continue iteration evidence/imaging/diagnostics as completed; claim T016h per next-pass priority.
-
-## 2026-11-18 08:51 (UTC+8)
-- card: T016s, T016r | action: checked background jobs; completed T016s collection, report and review handoff, pushed ws 289e509. Report synced to D:/Sync/T016s with SHA256 verification.
-- T016s completed the authorized 2400 s per-member limit at 08:48:23.654274; taskkill rc=0 for both. Wrapper/member rc=1 is the planned timed stop, not a spontaneous abort. Both mpiexec PIDs and wrapper were absent at collection.
-- T016s/A: last budget t_ns=733.9982; simulation advance=43.999080 ns; last logged dt=2.0386e-003, Nrkl=20 (step 59000, log_t_ns=733.55). All eight rank logs: 0 ConsToPrim, 0 E<0, 0 other !.
-- T016s/B: last budget t_ns=784.4803; simulation advance=94.481180 ns; last logged dt=2.0608e-002, Nrkl=63 (step 56000, log_t_ns=761.07). All eight rank logs: 0 ConsToPrim, 0 E<0, 0 other !.
-- Collected common data.0293.dbl for A/B (2,116,800 bytes each, all finite); times differ by 0.0070 ns. Only 6/3 new step/Nrkl pairs exist at unchanged log interval; all supplied. Numerical cap choice remains with Claude; no production parameters changed.
-- running job: T016r PID 41680, elapsed 04:43:42 at initial check; stderr empty. T016 remains done as superseded, stopped in prior pass.
-- T016r/low_thin_G0/it0: t_ns=7.539997e+002; latest logged dt=3.0014e-002, Nrkl=9 (step 59000, log_t_ns=7.4592e+002).
-- T016r/low_trap_G0/it0: t_ns=7.354987e+002; latest logged dt=2.0509e-003, Nrkl=20 (step 60000, log_t_ns=7.3561e+002).
-- T016r/low_thin_G1/it0: t_ns=2.889990e+002; latest logged dt=1.0392e-003, Nrkl=20 (step 51000, log_t_ns=2.8873e+002).
-- skipped ready cards and why: none; no ready cards or incoming handoff. T016r members continue progressing; no new completion or failure there.
