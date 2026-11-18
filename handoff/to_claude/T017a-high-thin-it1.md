@@ -1,0 +1,2 @@
+T016e/high_thin_G0/it1 image_v2 reference milestone ready:18 metrics+summary+validation,29 times0-740ns,six finite raw frame archives retained locally; see tasks/T017a.report.md and results/T016e/high_thin_G0/it1/image_v2. Baseline b P1 thin/sa=713.1731/700.0339ns; all18 P2 unavailable retained; unconverged solver warnings remain.
+Job continues high_trap_G0/it0; high-trap it1 and low G0 it0 handoffs still pending. Please review this thin-member it1 milestone.
