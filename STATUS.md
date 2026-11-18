@@ -1,5 +1,20 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 06:19 (UTC+8)
+- cards: T016e,T016i,T017a | action: ws current at a7fffbf; no incoming note or ready card. No new completed imaging or production iteration. Nine native runs and six production iterations archived.
+- T017a_image_v2_01 PID12624, execution963dd49, elapsed00:13:33: high_thin_G0/it0 running; stderr empty. Image PID40452 has16 workers, cumulative CPU790.9-796.8 s each. stage.json running. Handoffs due after low G0 it0 and high G0 it1 images.
+- T016i_native_01 PID38032, executionf897ccd, elapsed03:56:11: T015/high_thin_G1/it0 running; stderr empty. Image PID27032 has16 workers, cumulative CPU3201.7-3208.7 s each, consistent with ongoing computation; full T015 handoff pending.
+- T016e PID42332, executionbc79e7d, elapsed12:55:31; stderr empty. Known numerical warnings retained.
+- Progress snapshot 2026-11-19T06:19:50.171586+08:00; budget and log times recorded separately.
+- T016e/high_thin_G0/it2: t_ns=4.884961e+002; latest logged dt=8.5351e-003, Nrkl=5 (step 83000, log_t_ns=4.8698e+002).
+- T016e/high_thin_G1/it0: t_ns=5.779919e+002; latest logged dt=1.2166e-002, Nrkl=26 (step 78000, log_t_ns=5.7703e+002).
+- T016e/high_trap_G0/it2: t_ns=5.004967e+002; latest logged dt=1.3355e-002, Nrkl=6 (step 80000, log_t_ns=4.9038e+002).
+- T016e/low_thin_G0/it1: t_ns=7.564839e+002; latest logged dt=2.3215e-002, Nrkl=44 (step 45000, log_t_ns=7.4779e+002).
+- T016e/low_thin_G1/it0: t_ns=4.744936e+002; latest logged dt=6.8261e-003, Nrkl=61 (step 69000, log_t_ns=4.7207e+002).
+- T016e/low_trap_G0/it1: t_ns=7.649982e+002; latest logged dt=2.2598e-002, Nrkl=63 (step 46000, log_t_ns=7.6048e+002).
+- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
+- next: job.ps1 status for all three jobs; collect native and reference metrics at completion and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
+
 ## 2026-11-19 06:06 (UTC+8)
 - cards: T016e,T016i,T017a | action: pulled3f5e08b and followed T017a_now: immediate parallel v2 authorized. Removed old queue hook/directive, prepared963dd49, launched independent job.ps1 job T017a_image_v2_01 with16 workers and BelowNormal priority. Note consumed; report synced/hash verified.
 - T017a_image_v2_01 PID12624, execution963dd49, started 2026-11-19T06:05:35 UTC+8: running high_thin_G0/it0, stderr empty at initial check. v1c tables,v2 config,image_v2. Push metrics per run; handoffs due after low G0 it0 and high G0 it1 images. No foreground wait.
@@ -414,20 +429,4 @@
 - T016e/low_trap_G0/it0: t_ns=1.050480e+003; latest logged dt=2.1540e-002, Nrkl=45 (step 48000, log_t_ns=1.0451e+003).
 - skipped ready cards and why: none; no ready cards. All six members advanced. Report sync hash verified; results total about 7.38 MB.
 - next: collect newly completed production iterations and first low-fluence it0 handoff; all currently completed postprocessing archived. No parameter changes or foreground wait.
-
-## 2026-11-18 22:36 (UTC+8)
-- card: T016e | action: preserved high_thin_G0/it0 auto-appended registry row in 0aa757d before pull; no incoming handoff. Published completion evidence, high-trap imaging and update handoff in b6131bf.
-- high_thin_G0/it0 rc=0, 800 ns, 17987.8 s, all-rank ConsToPrim=23,557,559. M_Cu=M_src=3.2918067956e-12 kg; target-model/PLUTO absorption 62.23180071027/8.8077321683 microjoules. Actual it0/it1 rmax_par and v1c hashes verified. Batch continued to it1.
-- high_trap_G0/it0 imaging finished rc=0, empty stderr; 18 metric CSVs and six finite (29,81,84) arrays hash-verified/archived. All P2 unavailable, preserved. Baseline b P1 thin/sa=315.6918/303.6747 ns. Total results about 4.14 MB. Numerical acceptance still pending.
-- new postprocessing: T016e_post_high_thin_01 PID 35076, started 2026-11-18T22:36:06, commit b6131bf; diag at 200/300/500/700 ns, high-series v1c imaging, 8 workers, BelowNormal priority; initial status running, stderr empty.
-- production: T016e PID 42332, execution commit bc79e7d, elapsed 05:10:11 at initial job.ps1 status check, wrapper stderr empty.
-- Snapshot 2026-11-18T22:36:44.595195+08:00; budget and latest logged times recorded separately.
-- T016e/high_thin_G0/it1: t_ns=4.899848e+001; latest logged dt=3.7206e-003, Nrkl=4 (step 6000, log_t_ns=4.7018e+001).
-- T016e/high_thin_G1/it0: t_ns=1.869964e+002; latest logged dt=6.6872e-003, Nrkl=15 (step 41000, log_t_ns=1.8264e+002).
-- T016e/high_trap_G0/it1: t_ns=7.099579e+001; latest logged dt=4.7679e-003, Nrkl=4 (step 12000, log_t_ns=7.0507e+001).
-- T016e/low_thin_G0/it0: t_ns=1.043991e+003; latest logged dt=2.1815e-002, Nrkl=62 (step 48000, log_t_ns=1.0327e+003).
-- T016e/low_thin_G1/it0: t_ns=3.614925e+002; latest logged dt=8.4082e-003, Nrkl=8 (step 55000, log_t_ns=3.6182e+002).
-- T016e/low_trap_G0/it0: t_ns=1.036487e+003; latest logged dt=2.2015e-002, Nrkl=63 (step 47000, log_t_ns=1.0228e+003).
-- skipped ready cards and why: none; no ready cards. Report synced to D:/Sync/T016e with hash verification.
-- next: check postprocessing completion, archive metrics/diagnostic; collect newly finished iterations and first low-fluence it0 handoff. Ended after background launch; no parameter changes or foreground wait.
 
