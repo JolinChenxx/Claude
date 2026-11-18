@@ -1,5 +1,20 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 16:51 (UTC+8)
+- card: T016e, T016r2, T016h | action: pulled fe73ef6; no incoming handoff. Collected completed low_thin_G0/it0 postprocessing and handed off in 6b10618. Claimed T016e in 2e2b099 and published table launch 616a21b.
+- running jobs: T016h PID 39808 elapsed 07:27:46; T016r2 PID 38008 elapsed 07:41:32 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; two previously reported completed it0 rows; no batch summary.
+- Progress snapshot: 2026-11-18T16:51:54.362351+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=6.624984e+002; latest logged dt=2.5335e-002, Nrkl=14 (step 66000, log_t_ns=6.4031e+002).
+- T016h/high_trap_G0/it1: t_ns=4.154943e+002; latest logged dt=2.1379e-002, Nrkl=16 (step 47000, log_t_ns=4.0088e+002).
+- T016h/high_thin_G1/it0: t_ns=2.294922e+002; latest logged dt=8.8111e-003, Nrkl=35 (step 46000, log_t_ns=2.1401e+002).
+- T016r2/low_thin_G0/it1: t_ns=1.249943e+002; latest logged dt=2.5628e-003, Nrkl=2 (step 12000, log_t_ns=1.0101e+002).
+- T016r2/low_trap_G0/it0: t_ns=1.257990e+003; latest logged dt=1.9798e-002, Nrkl=63 (step 59000, log_t_ns=1.2536e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.694952e+002; latest logged dt=1.4722e-002, Nrkl=12 (step 56000, log_t_ns=3.6427e+002).
+- skipped ready cards and why: none; T016e was the only ready card and is now running (table build). All six production members advanced. T016e production awaits validated v1c tables and the prescribed stop condition.
+- completed postprocessing: T016r2_post_low_01 rc=0 for diagnostic and imaging; 18 scenario CSVs, six finite (30,58,113) arrays and six finite diagnostic rows archived/hash-verified. Report synced to D:/Sync/T016r2 with verified hash. Baseline b P1 thin/sa=543.38/441.07 ns; about 700 ns Cu I fraction=0.9499.
+- running table build: T016e_tables PID 25856, started 16:51:00 UTC+8, execution commit 2e2b099; 32 workers, new D:/sim_runs/tables/v1c. Initial job status running, stderr empty. Validate rc, diff_model=v2, [81,145,14] and finite D_cuair/dh_dY after completion.
+- next: stop named T016h/T016r2 batches after low_trap_G0/it0 finishes or 18:30 UTC+8, whichever comes first, per T016e card; preserve raw data and stop evidence. Launch T016e production only after stop and table acceptance. Ended this pass after background table launch; no foreground wait.
+
 ## 2026-11-18 16:37 (UTC+8)
 - card: T016h, T016r2 | action: preserved completed registry row bff5232 to unblock pull; no incoming handoff. Published low_thin_G0/it0 evidence/handoff 2c7231d and background postprocessing launch b1c3011.
 - running jobs: T016h PID 39808 elapsed 07:13:00; T016r2 PID 38008 elapsed 07:26:46 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; two completed it0 records (high_trap_G0 and low_thin_G0), both rc=0; batch summaries absent.
@@ -397,15 +412,3 @@
 - T016r2/low_thin_G1/it0: t_ns=7.399557e+001; latest logged dt=6.6963e-003, Nrkl=5 (step 4000, log_t_ns=7.2215e+001).
 - skipped ready cards and why: none; T016h was the only ready card and is now running.
 - next: check both jobs next pass, publish each completed iteration budget/all-rank ConsToPrim/source_meta, then prescribed imaging and diagnostics. End this pass after launch bookkeeping; no foreground wait.
-
-## 2026-11-18 09:07 (UTC+8)
-- card: T016r, T016r2 | action: followed priority T016r_stop.md from ws 9fe05d5; stopped old batch, archived evidence, closed T016r as superseded, claimed and launched T016r2.
-- T016r stop verified 2026-11-18T09:04:33.5388017+08:00: wrapper 41680 and all 32 solver ranks exited; raw data retained. Last t_ns: low_thin_G0=764.9923, low_trap_G0=750.4993, low_thin_G1=294.4895.
-- Cumulative full-run all-rank ConsToPrim: 4,376,132 / 4,256,016 / 19,062,903 respectively. Counts, hashes and warning samples handed off in 978e094; distinct from zero-warning T016s restart interval. T016r report synced with verified hash.
-- running job: T016r2 PID 38008, started 2026-11-18T09:07:14, execution commit 978e094; prescribed v1d/v1b, 32 ranks (8/8/16), rmax_par 1000.
-- Runtime ini verification: all three match previews and contain rmax_par 1000.
-- T016r2/low_thin_G0/it0: t_ns=1.377961e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
-- T016r2/low_trap_G0/it0: t_ns=1.377961e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
-- T016r2/low_thin_G1/it0: t_ns=0.000000e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
-- skipped ready card: T016h remains ready. Incoming handoff explicitly prioritizes stopping T016r then claiming/starting T016r2; heartbeat requires ending the pass after launching long work. Claim T016h next pass; no dependency ambiguity.
-- next: check T016r2 status; continue iteration evidence/imaging/diagnostics as completed; claim T016h per next-pass priority.
