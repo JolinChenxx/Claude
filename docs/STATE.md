@@ -199,3 +199,11 @@ Updated: 2026-11-15
   (b) There is no Stark/van der Waals broadening: at late times, with ne ≈ 1e23 m⁻³ and n_air large, collisional broadening of Cu I 510–522 nm can exceed Doppler. That changes the optical depth of the de-trapping layer (Voigt is on the v1 list).
   (c) The cold outer Cu vapour (T < 5 kK) absorbs in the lower-level lines (Cu I 510.6 nm, lower level 3d⁹4s² ²D5/2 at 1.39 eV); its population depends on the mixing.
 - Next: test (a) and (b) in the imaging code alone, without new hydro. This is diagnostic, and it is a declared v1 item (Voigt), so no tuning is involved.
+
+## 2026-11-19 03:05 (UTC+8) — first native-grid image (T016e high_thin_G0 it0)
+- L/L(300), filter b, baseline, at 100/200/400/500/600/700 ns:
+  - native sa: 4.26/2.18/0.63/0.47/0.37/0.28; v0 sa: 5.01/2.10/0.91/0.43/0.34/0.26
+  - native thin: 2.80/1.63/0.67/0.49/0.39/0.33; v0 thin: 4.64/1.55/0.79/0.46/0.37/0.30
+  - experiment: 1.27/1.40/0.54/0.37/0.21/0.13
+- P1 τ_L native: sa 319 ns, thin 334 ns (v0: 261/287 ns).
+- The rebinning artefact mainly affected the early and 400 ns frames, where steep gradients sit (the spurious 0.91 bump at 400 ns disappears). Late frames are about 10% **brighter** with native transfer. The high-fluence late excess is therefore not an imaging artefact. All earlier light-curve comparisons are to be repeated with image_v1 (T016i running).
