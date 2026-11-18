@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 10:03 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
+- running jobs: T016h PID 39808 elapsed 00:42:36; T016r2 PID 38008 elapsed 00:56:22 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
+- Progress snapshot: 2026-11-18T10:03:59.193199+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=1.079977e+002; latest logged dt=9.9761e-003, Nrkl=4 (step 17000, log_t_ns=9.7628e+001).
+- T016h/high_trap_G0/it0: t_ns=1.094942e+002; latest logged dt=1.1365e-002, Nrkl=5 (step 18000, log_t_ns=1.0872e+002).
+- T016h/high_thin_G1/it0: t_ns=5.249689e+001; latest logged dt=3.1046e-003, Nrkl=9 (step 9000, log_t_ns=5.2175e+001).
+- T016r2/low_thin_G0/it0: t_ns=3.334767e+002; latest logged dt=3.8470e-002, Nrkl=5 (step 26000, log_t_ns=3.2560e+002).
+- T016r2/low_trap_G0/it0: t_ns=3.059667e+002; latest logged dt=3.9365e-002, Nrkl=7 (step 25000, log_t_ns=2.7761e+002).
+- T016r2/low_thin_G1/it0: t_ns=1.184971e+002; latest logged dt=5.5575e-003, Nrkl=4 (step 11000, log_t_ns=1.0522e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 09:48 (UTC+8)
 - card: T016h, T016r2 | action: synced ws 3b96e72; no incoming handoff; checked both background jobs and all six members.
 - running jobs: T016h PID 39808 elapsed 00:27:35; T016r2 PID 38008 elapsed 00:41:21 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; no completed/failed iteration rows or batch_summary.json.
@@ -277,10 +290,3 @@
 - T016 progress: high_thin_G0/it0: t_ns=2.409941e+002; high_thin_G1/it0: t_ns=9.099682e+001; high_trap_G0/it0: t_ns=2.309912e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.404991e+002; low_trap_G0/it0: t_ns=3.554824e+002
 - skipped ready cards and why: none; T016b ready card claimed and launched.
 - notes: no modifications to original T016 data/parameters; diagnostic restarts thin output 141 and trap output 142 authorized by card. End pass after launch; next pass collect per-rank diagnostics.
-
-## 2026-11-18 02:21 (UTC+8)
-- card: T016 | action: processed abort-log request; published directory/output inventories and source evidence for absent rank 4/rank 1 logs; handoff ws 775da44.
-- running jobs: T016 PID 1492 running at check, elapsed 01:13:37, stderr empty; four surviving members continue. Card blocked pending scientific review of the two previously reported aborts.
-- progress: high_thin_G0/it0: t_ns=1.789990e+002; high_thin_G1/it0: t_ns=7.149621e+001; high_trap_G0/it0: t_ns=1.724997e+002; low_thin_G0/it0: t_ns=3.539873e+002; low_thin_G1/it0: t_ns=1.334991e+002; low_trap_G0/it0: t_ns=3.554824e+002
-- skipped ready cards and why: none; no ready cards.
-- notes: MULTIPLE_LOG_FILES defaults NO; nonzero-rank log writes suppressed. Latest retained outputs trap data.0142.dbl, thin data.0141.dbl, both restart.out. Root cause unresolved; no reruns or parameter changes. Report synced with hash verification.
