@@ -4,14 +4,16 @@
 - card: T016e | action: pulled ws (already current at 33416b6); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 01:25:07 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code.
 - Progress snapshot: 2026-11-18T18:49:19.467944+08:00; budget time and latest logged time are recorded separately.
-- T016e/high_thin_G0/it0: t_ns=1.839984e+002; latest logged dt=None, Nrkl=None (step None, log_t_ns=None).
+- T016e/high_thin_G0/it0: t_ns=1.839984e+002; latest logged dt=4.1512e-003, Nrkl=6 (step 31000, log_t_ns=1.8166e+002).
 - T016e/high_thin_G1/it0: t_ns=7.149743e+001; latest logged dt=4.1274e-003, Nrkl=7 (step 14000, log_t_ns=6.8887e+001).
-- T016e/high_trap_G0/it0: t_ns=1.729976e+002; latest logged dt=3.4193e-002, Nrkl=7 (step 19000, log_t_ns=1.2028e+002).
-- T016e/low_thin_G0/it0: t_ns=6.534677e+002; latest logged dt=4.4466e-002, Nrkl=9 (step 33000, log_t_ns=6.1550e+002).
-- T016e/low_thin_G1/it0: t_ns=1.349995e+002; latest logged dt=9.4043e-004, Nrkl=2 (step 20000, log_t_ns=1.3438e+002).
+- T016e/high_trap_G0/it0: t_ns=1.729976e+002; latest logged dt=3.1791e-003, Nrkl=5 (step 29000, log_t_ns=1.7317e+002).
+- T016e/low_thin_G0/it0: t_ns=6.534677e+002; latest logged dt=4.0041e-002, Nrkl=8 (step 34000, log_t_ns=6.5515e+002).
+- T016e/low_thin_G1/it0: t_ns=1.349995e+002; latest logged dt=9.4241e-004, Nrkl=2 (step 21000, log_t_ns=1.3540e+002).
 - T016e/low_trap_G0/it0: t_ns=5.829675e+002; latest logged dt=4.5273e-002, Nrkl=9 (step 32000, log_t_ns=5.6431e+002).
 - skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
 - next: continue background monitoring; on completion collect all-rank warnings/budget/source, image with v1c and run thin emission diagnostics. First completed it0 per fluence requires interim handoff. No foreground waiting.
+
+- Rank0 ConsToPrim warnings observed: high_thin_G0, high_thin_G1, high_trap_G0, low_thin_G0, low_thin_G1, low_trap_G0. Evidence/report and review handoff published; no parameter changes. Corrected step/Nrkl pairing across intervening warning lines.
 
 ## 2026-11-18 18:34 (UTC+8)
 - card: T016e | action: pulled ws (already current at 33416b6); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
