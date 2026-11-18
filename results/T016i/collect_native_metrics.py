@@ -14,17 +14,23 @@ ap.add_argument('batch')
 ap.add_argument('member')
 ap.add_argument('iteration')
 ap.add_argument('job')
+ap.add_argument('--outname', choices=('image_v1', 'image_v2'), default='image_v1')
 a = ap.parse_args()
 repo = Path(__file__).resolve().parents[2]
 run = Path('D:/sim_runs') / a.batch / a.member / a.iteration
-source = run / 'image_v1'
+source = run / a.outname
 job = Path('D:/sim_runs') / a.job
 log = (job / 'stdout.log').read_text(encoding='utf-8-sig')
 evidence = 'rc 0 ' + str(run)
 assert evidence in log.splitlines(), evidence
 metadata = json.loads((job / 'job.json').read_text(encoding='utf-8-sig'))
-assert 'run_native_imaging.py' in metadata['cmd']
-out = repo / 'results' / a.batch / a.member / a.iteration / 'image_v1'
+expected_runner = 'run_native_imaging.py' if a.outname == 'image_v1' else 'run_reference_imaging.py'
+assert expected_runner in metadata['cmd']
+if a.outname == 'image_v2':
+    stage = json.loads((job / 'stage.json').read_text())
+    assert stage['job'] == a.job and stage['label'] == 'reference imaging v2'
+    assert stage['commit'].startswith(metadata['commit'])
+out = repo / 'results' / a.batch / a.member / a.iteration / a.outname
 out.mkdir(parents=True, exist_ok=True)
 expected = {f'{f}_{mode}_{scenario}' for f in 'abc'
             for mode in ('thin', 'sa') for scenario in ('baseline', 'low', 'high')}
@@ -74,6 +80,8 @@ result = dict(collected=datetime.datetime.now().astimezone().isoformat(),
               completion_evidence=evidence, job=metadata, files=records,
               frame_policy='Validated frame arrays retained in sim_runs to respect 20 MB/card limit',
               P2_unavailable=[k for k,v in summary.items() if not math.isfinite(v['P2_dt10_ns'])])
+if a.outname == 'image_v2':
+    result['reference_stage'] = stage
 (out / 'validation.json').write_text(json.dumps(result,indent=2)+'\n')
 size = sum(p.stat().st_size for p in (repo / 'results' / a.batch).rglob('*') if p.is_file())
 assert size <= 20*1024*1024, size
