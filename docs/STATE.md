@@ -159,3 +159,4 @@ Updated: 2026-11-15
 - T016e step 2 condition met: T016r2/low_trap_G0/it0 completed rc=0, 1300 ns. T016h (wrapper 39808) and T016r2 (wrapper 38008) stopped with their descendants; each 73-process tree verified absent. No data deleted.
 - Reason: superseded by T016e (v1e); finished iterations kept as hard-sphere-D sensitivity. Exact stop times and final member budgets are in results/T016h/stopped/summary.json and results/T016r2/stopped/summary.json.
 - T016e_tables finished rc=0; v1c diff_model v2, all three binaries [81,145,14], finite axes/fields and manifest hashes validated. Production launch pending bookkeeping.
+- Transition completed: T016e production started 2026-11-18T17:23:37 UTC+8, PID 42332, commit bc79e7d, 64 configured ranks. All six actual initial inis and v1c table hashes verified; six initial budgets present.
