@@ -1,5 +1,19 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 04:05 (UTC+8)
+- cards: T016e,T016i | action: pulled 577d474 (Claude high native it0/it1 review). Archived native low_thin_G0/it0 and pushed 4aa96fe. 18 metrics,30 times 10-1230 ns,six finite frame archives retained locally with hashes. Baseline b P1 thin/sa=620.7663/259.5846 ns; b_sa P2=899.8805 ns,9 scenarios P2 unavailable. Five native runs archived.
+- T016i_native_01 PID 38032, execution commit f897ccd, elapsed 01:41:17 at check: low-thin it0 rc=0, now low_trap_G0/it0; stderr empty. Initial T016e set handoff awaits low-trap completion; T015 queued.
+- production: T016e PID 42332, execution commit bc79e7d, elapsed 10:40:37 at initial check; stderr empty. Six completed iterations archived, no new completion; known numerical warnings retained.
+- Progress snapshot 2026-11-19T04:05:46.841215+08:00; budget and logged times recorded separately.
+- T016e/high_thin_G0/it2: t_ns=1.634866e+002; latest logged dt=2.0146e-002, Nrkl=13 (step 49000, log_t_ns=1.6264e+002).
+- T016e/high_thin_G1/it0: t_ns=4.424898e+002; latest logged dt=1.1868e-002, Nrkl=11 (step 67000, log_t_ns=4.3512e+002).
+- T016e/high_trap_G0/it2: t_ns=1.719825e+002; latest logged dt=2.1277e-002, Nrkl=14 (step 49000, log_t_ns=1.6703e+002).
+- T016e/low_thin_G0/it1: t_ns=5.474768e+002; latest logged dt=2.5396e-002, Nrkl=37 (step 37000, log_t_ns=5.3297e+002).
+- T016e/low_thin_G1/it0: t_ns=4.454958e+002; latest logged dt=7.4081e-003, Nrkl=63 (step 66000, log_t_ns=4.4359e+002).
+- T016e/low_trap_G0/it1: t_ns=5.299974e+002; latest logged dt=2.6066e-002, Nrkl=9 (step 37000, log_t_ns=5.0881e+002).
+- skipped ready cards and why: none; no ready cards or incoming note. All six production members advanced.
+- next: archive native metrics and requested T016e/T015 set handoffs; repeat T016e native imaging as new iterations finish. Continue production collection; no parameter changes or foreground waiting.
+
 ## 2026-11-19 03:50 (UTC+8)
 - cards: T016e,T016i | action: archived native high_trap_G0/it1 and completed initial high-series command, pushed 2092dbf. Four native high G0 it0/it1 runs archived; latest has 18 metrics,29 times,six finite frame archives retained locally. Baseline b P1 thin/sa=584.5812/395.7928 ns; P2 unavailable preserved.
 - T016i_native_01 PID 38032, execution commit f897ccd, elapsed 01:26:14 at check: T016e high series rc=0 at 03:48:11, now low_thin_G0/it0; stderr empty. Full T016e/T015 set handoffs still pending.
@@ -407,19 +421,6 @@
 - T016e/low_thin_G0/it0: t_ns=8.919995e+002; latest logged dt=2.0745e-002, Nrkl=58 (step 42000, log_t_ns=8.9145e+002).
 - T016e/low_thin_G1/it0: t_ns=2.079966e+002; latest logged dt=7.1364e-003, Nrkl=5 (step 38000, log_t_ns=2.0673e+002).
 - T016e/low_trap_G0/it0: t_ns=8.994953e+002; latest logged dt=2.5928e-002, Nrkl=15 (step 41000, log_t_ns=8.8376e+002).
-- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
-- next: continue background monitoring; on completion collect all-rank warnings/budget/source, image with v1c and run thin emission diagnostics. First completed it0 per fluence requires interim handoff. No parameter changes or foreground waiting.
-
-## 2026-11-18 20:19 (UTC+8)
-- card: T016e | action: pulled ws (already current at b2f9aa4); no incoming handoff. Checked background production and all six members; no newly completed iterations or ready cards.
-- running job: T016e PID 42332, execution commit bc79e7d, elapsed 02:55:10 at job.ps1 status check. Wrapper stderr and all six member combined stdout/stderr empty; no completed registry rows or wrapper exit code. Rank-log ConsToPrim warnings were acknowledged by Claude in b2f9aa4 as the known RKL-stage overshoot; full all-rank counts follow completion.
-- Progress snapshot: 2026-11-18T20:19:21.941500+08:00; budget time and latest logged time are recorded separately. Nrkl paired with preceding step across intervening warning lines.
-- T016e/high_thin_G0/it0: t_ns=4.454956e+002; latest logged dt=1.0814e-002, Nrkl=15 (step 58000, log_t_ns=4.4291e+002).
-- T016e/high_thin_G1/it0: t_ns=1.464990e+002; latest logged dt=1.9394e-003, Nrkl=8 (step 25000, log_t_ns=1.4602e+002).
-- T016e/high_trap_G0/it0: t_ns=4.854978e+002; latest logged dt=1.0930e-002, Nrkl=5 (step 52000, log_t_ns=4.7952e+002).
-- T016e/low_thin_G0/it0: t_ns=8.724984e+002; latest logged dt=2.0553e-002, Nrkl=61 (step 41000, log_t_ns=8.6824e+002).
-- T016e/low_thin_G1/it0: t_ns=2.004957e+002; latest logged dt=7.6865e-003, Nrkl=20 (step 37000, log_t_ns=1.9927e+002).
-- T016e/low_trap_G0/it0: t_ns=8.799812e+002; latest logged dt=2.1704e-002, Nrkl=62 (step 40000, log_t_ns=8.6071e+002).
 - skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
 - next: continue background monitoring; on completion collect all-rank warnings/budget/source, image with v1c and run thin emission diagnostics. First completed it0 per fluence requires interim handoff. No parameter changes or foreground waiting.
 
