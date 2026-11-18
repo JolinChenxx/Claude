@@ -1,0 +1,387 @@
+﻿[
+    {
+        "ProcessId":  1492,
+        "ParentProcessId":  34960,
+        "Name":  "cmd.exe",
+        "CommandLine":  "\"C:\\Windows\\system32\\cmd.exe\" /v:on /c set OMP_NUM_THREADS=1\u0026\u0026 set SIM_OUT_DIR=D:\\sim_runs\\T016\u0026\u0026 cd /d \"D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\" \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T016.yaml --max-cores 64 \u0026 echo !ERRORLEVEL! \u003e \"D:\\sim_runs\\T016\\exitcode.txt\" ",
+        "CreationDate":  "\/Date(1794935100272)\/"
+    },
+    {
+        "ProcessId":  44576,
+        "ParentProcessId":  1492,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935100296)\/"
+    },
+    {
+        "ProcessId":  1276,
+        "ParentProcessId":  1492,
+        "Name":  "python.exe",
+        "CommandLine":  "D:\\sim_tools\\envs\\lipsim\\python.exe  -m lipsim.batch configs/batches/T016.yaml --max-cores 64 ",
+        "CreationDate":  "\/Date(1794935100332)\/"
+    },
+    {
+        "ProcessId":  5216,
+        "ParentProcessId":  1276,
+        "Name":  "mpiexec.exe",
+        "CommandLine":  "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 8 D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935128954)\/"
+    },
+    {
+        "ProcessId":  33216,
+        "ParentProcessId":  5216,
+        "Name":  "smpd.exe",
+        "CommandLine":  "\"C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe\" -p 8677 -d 0 -mgr 360 \"job\" -localonly",
+        "CreationDate":  "\/Date(1794935128967)\/"
+    },
+    {
+        "ProcessId":  43756,
+        "ParentProcessId":  1276,
+        "Name":  "mpiexec.exe",
+        "CommandLine":  "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935128982)\/"
+    },
+    {
+        "ProcessId":  41828,
+        "ParentProcessId":  43756,
+        "Name":  "smpd.exe",
+        "CommandLine":  "\"C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe\" -p 8677 -d 0 -mgr 372 \"job\" -localonly",
+        "CreationDate":  "\/Date(1794935128993)\/"
+    },
+    {
+        "ProcessId":  30820,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935129851)\/"
+    },
+    {
+        "ProcessId":  32608,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935129851)\/"
+    },
+    {
+        "ProcessId":  23368,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935129987)\/"
+    },
+    {
+        "ProcessId":  41328,
+        "ParentProcessId":  30820,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935129991)\/"
+    },
+    {
+        "ProcessId":  38864,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935129993)\/"
+    },
+    {
+        "ProcessId":  36408,
+        "ParentProcessId":  23368,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935129997)\/"
+    },
+    {
+        "ProcessId":  44076,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935129999)\/"
+    },
+    {
+        "ProcessId":  44924,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935130001)\/"
+    },
+    {
+        "ProcessId":  44620,
+        "ParentProcessId":  32608,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130003)\/"
+    },
+    {
+        "ProcessId":  30776,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130005)\/"
+    },
+    {
+        "ProcessId":  44616,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935130008)\/"
+    },
+    {
+        "ProcessId":  22736,
+        "ParentProcessId":  44076,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130011)\/"
+    },
+    {
+        "ProcessId":  13248,
+        "ParentProcessId":  38864,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130012)\/"
+    },
+    {
+        "ProcessId":  44188,
+        "ParentProcessId":  44924,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130012)\/"
+    },
+    {
+        "ProcessId":  36272,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130012)\/"
+    },
+    {
+        "ProcessId":  15876,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935130012)\/"
+    },
+    {
+        "ProcessId":  42052,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130018)\/"
+    },
+    {
+        "ProcessId":  20188,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935130018)\/"
+    },
+    {
+        "ProcessId":  23196,
+        "ParentProcessId":  44616,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130019)\/"
+    },
+    {
+        "ProcessId":  12856,
+        "ParentProcessId":  36272,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130020)\/"
+    },
+    {
+        "ProcessId":  42628,
+        "ParentProcessId":  30776,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130021)\/"
+    },
+    {
+        "ProcessId":  28348,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130022)\/"
+    },
+    {
+        "ProcessId":  44592,
+        "ParentProcessId":  33216,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 8 1",
+        "CreationDate":  "\/Date(1794935130023)\/"
+    },
+    {
+        "ProcessId":  9488,
+        "ParentProcessId":  15876,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130024)\/"
+    },
+    {
+        "ProcessId":  16160,
+        "ParentProcessId":  42052,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130027)\/"
+    },
+    {
+        "ProcessId":  21916,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130028)\/"
+    },
+    {
+        "ProcessId":  13324,
+        "ParentProcessId":  20188,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130031)\/"
+    },
+    {
+        "ProcessId":  41640,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130033)\/"
+    },
+    {
+        "ProcessId":  22428,
+        "ParentProcessId":  28348,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130034)\/"
+    },
+    {
+        "ProcessId":  33136,
+        "ParentProcessId":  44592,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130034)\/"
+    },
+    {
+        "ProcessId":  41492,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130039)\/"
+    },
+    {
+        "ProcessId":  12992,
+        "ParentProcessId":  21916,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130041)\/"
+    },
+    {
+        "ProcessId":  40820,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130044)\/"
+    },
+    {
+        "ProcessId":  9032,
+        "ParentProcessId":  41640,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130045)\/"
+    },
+    {
+        "ProcessId":  32472,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130050)\/"
+    },
+    {
+        "ProcessId":  38584,
+        "ParentProcessId":  41492,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130051)\/"
+    },
+    {
+        "ProcessId":  32440,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130056)\/"
+    },
+    {
+        "ProcessId":  23164,
+        "ParentProcessId":  40820,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130056)\/"
+    },
+    {
+        "ProcessId":  12508,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130062)\/"
+    },
+    {
+        "ProcessId":  32532,
+        "ParentProcessId":  32472,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130063)\/"
+    },
+    {
+        "ProcessId":  40376,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130067)\/"
+    },
+    {
+        "ProcessId":  43908,
+        "ParentProcessId":  32440,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130069)\/"
+    },
+    {
+        "ProcessId":  7396,
+        "ParentProcessId":  12508,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130074)\/"
+    },
+    {
+        "ProcessId":  43812,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130075)\/"
+    },
+    {
+        "ProcessId":  28296,
+        "ParentProcessId":  41828,
+        "Name":  "pluto.exe",
+        "CommandLine":  "D:\\sim_tools\\pluto_lip\\build_v1b\\mpi\\pluto.exe -dec 16 1",
+        "CreationDate":  "\/Date(1794935130081)\/"
+    },
+    {
+        "ProcessId":  10360,
+        "ParentProcessId":  40376,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130083)\/"
+    },
+    {
+        "ProcessId":  41008,
+        "ParentProcessId":  43812,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130089)\/"
+    },
+    {
+        "ProcessId":  32500,
+        "ParentProcessId":  28296,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate":  "\/Date(1794935130096)\/"
+    }
+]

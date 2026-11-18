@@ -105,3 +105,8 @@ Updated: 2026-11-15
 - Fix v1d: J = J_F/(1+|J_F|/J_max), with J_max = ρY v_th/4 on the upwind side (registry diff_cuair_limiter; no free coefficient). Also: rank logs on; finite guard; table T-inversion returns the floor (flagged as failed) for p or e ≤ 0/NaN instead of silently returning T_max. Smoke test: limiter inactive in the dense phase (energies within 6e-4 of v1b).
 - T016c: both low G0 cases restarted from the abort point ran to 497/598 ns with zero ConsToPrim, E<0 or other warnings on all ranks (40-min limit).
 - T016r: low members rerun from t=0 with v1d on the free 32 cores. The three running v1b high members are left alone pending the user's decision (stop and rerun with v1d is recommended).
+
+## 2026-11-18 08:34 (UTC+8) - Codex execution record: authorized T016 stop
+- Executed the user-approved T016_stop_v1b instruction: wrapper PID 1492 and all 24 remaining v1b solver ranks stopped; verified at 08:34:28. Reason: v1b superseded after four member aborts.
+- Final budgets: high_thin_G0 449.4998 ns (10,762,237 rank-zero ConsToPrim lines); high_thin_G1 203.9977 ns (359,341 lines). Evidence and exact stop timestamps: results/T016/stopped/. All raw data retained.
+- T016 marked done as superseded, not as a successful production run. T016r and T016s process trees remained running; high-fluence v1d reruns await a new card after T016s.
