@@ -160,3 +160,7 @@ Updated: 2026-11-15
 - Reason: superseded by T016e (v1e); finished iterations kept as hard-sphere-D sensitivity. Exact stop times and final member budgets are in results/T016h/stopped/summary.json and results/T016r2/stopped/summary.json.
 - T016e_tables finished rc=0; v1c diff_model v2, all three binaries [81,145,14], finite axes/fields and manifest hashes validated. Production launch pending bookkeeping.
 - Transition completed: T016e production started 2026-11-18T17:23:37 UTC+8, PID 42332, commit bc79e7d, 64 configured ranks. All six actual initial inis and v1c table hashes verified; six initial budgets present.
+
+## 2026-11-18 22:25 (UTC+8) — T016e high_trap_G0 it0 (v1e) budget
+- rc=0. Gas absorption 295.8 µJ, radiation 64.7 µJ, E_wall 46.3 µJ, M_Cu = M_src = 3.292 ng, residual −0.10%. For comparison: hard-sphere-D v1d 69.3/44.7 µJ with residual −0.38%; T015 64.8/46.6 µJ with residual −0.05%. ConsToPrim (all ranks) 23.2 M, the known RKL-stage defect.
+- With the v2 D the energy budget is almost identical to conduction-only. The larger residual seen with the hard-sphere D was therefore tied to the overestimated D. The imaging (pending) will show whether the late-decay improvement survives.
