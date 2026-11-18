@@ -212,3 +212,12 @@ Updated: 2026-11-15
 - sa at 400/500/600/700 ns: thin member it0 0.63/0.47/0.37/0.28, it1 0.72/0.56/0.43/0.37; trap member it0 0.63/0.51/0.38/0.29, it1 0.72/0.57/0.45/0.39. Experiment 0.54/0.37/0.21/0.13.
 - As expected from T015, **the decay becomes slower** as the Picard iteration converges (less Cu, same gas energy, hotter core). At it1 the late excess is ×2–3. it2–it4 are running; the converged answer will likely be at least as slow.
 - Taken together with P4 (energy deposition consistent at convergence), the remaining high-fluence discrepancy sits in how the absorbed energy leaves the emitting Cu core: radiation, 3D/turbulent mixing, or the emission model at 10–25 kK (Cu II lines, Stark broadening). This is the main open physics question for the paper.
+
+## 2026-11-19 04:40 (UTC+8) — low fluence native images (T016e it0, v1e): late re-brightening was an imaging artefact
+- sa, filter b, baseline, at 400/500/600/700/800/1000/1200 ns:
+  - thin member: native 0.62/0.42/0.30/0.20/0.16/0.12/0.10; v0 0.63/0.44/0.32/0.24/0.32/0.28/0.20
+  - trap member: native 0.64/0.45/0.33/0.24/0.19/0.14/0.12
+  - experiment: 0.70/0.45/0.29/0.17/0.13/0.04/0.016
+- **With native transfer the 800–1000 ns re-brightening disappears, so it was an artefact of the rebinning.** For 400–800 ns, low fluence sa now agrees with experiment within ±10–25%. P1 τ_L: sa 260 ns (thin member) / 291 ns (trap member) vs 218 ns in experiment. At 1000–1200 ns the model is still too bright, by ×3–6.
+- The thin transfer decays more slowly (P1 621–721 ns). The sa scenario is the physically consistent one; thin is an upper bound and is kept for reference only.
+- Status: low fluence (it0, Picard not yet converged; T015 converged at it1) reproduces the trend to 800 ns. At high fluence (it1) the late excess is still ×2–3.

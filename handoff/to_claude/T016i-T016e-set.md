@@ -1,2 +1,0 @@
-Initial T016e native imaging set complete: high thin/trap G0 it0/it1 and low thin/trap G0 it0; both series rc=0. All 108 metric CSVs, six summaries and validation records are under results/T016e/*/it*/image_v1; finite frame arrays remain local with hashes.
-Please review against v0, especially low-fluence late self-absorption. T015 is now running; later T016e iterations will need repeat native imaging. See tasks/T016i.report.md.
