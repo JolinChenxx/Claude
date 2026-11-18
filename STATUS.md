@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 08:18 (UTC+8)
+- card: T016, T016r, T016s | action: synced ws (2ed4a35), no incoming handoff, checked all three background jobs and seven active members.
+- running jobs: T016 PID 1492 elapsed 07:13:36; T016r PID 41680 elapsed 04:13:39; T016s PID 39392 elapsed 00:10:13. All running, stderr empty. A/B member records remain running; the 40-minute limits have not been reached.
+- T016/high_thin_G0/it0: t_ns=4.484995e+002; latest logged dt=5.5467e-004, Nrkl=20 (step 92000, log_t_ns=4.4841e+002).
+- T016/high_thin_G1/it0: t_ns=1.999983e+002; latest logged dt=3.4161e-003, Nrkl=19 (step 51000, log_t_ns=1.9834e+002).
+- T016r/low_thin_G0/it0: t_ns=7.294985e+002; latest logged dt=2.8871e-002, Nrkl=10 (step 55000, log_t_ns=7.2589e+002).
+- T016r/low_trap_G0/it0: t_ns=7.159980e+002; latest logged dt=2.8355e-002, Nrkl=8 (step 55000, log_t_ns=7.0795e+002).
+- T016r/low_thin_G1/it0: t_ns=2.794989e+002; latest logged dt=1.4177e-002, Nrkl=17 (step 49000, log_t_ns=2.7932e+002).
+- T016s/A: t_ns=7.124859e+002; latest logged dt=2.8355e-002, Nrkl=8 (step 55000, log_t_ns=7.0795e+002).
+- T016s/B: t_ns=7.309804e+002; latest logged dt=2.8336e-002, Nrkl=8 (step 54000, log_t_ns=7.0775e+002).
+- skipped ready cards and why: none; no ready cards.
+- notes: no new completion or failure; all active members advanced. T016 remains blocked for previously handed-off failures. No foreground waiting, new run, or parameter changes.
+
 ## 2026-11-18 08:08 (UTC+8)
 - card: T016, T016r, T016s | action: published high_trap_G0 abort evidence/report and handoff (48124b7); Claude acknowledged (f9c5e35). T016 report synced to D:/Sync/T016 with SHA256 verification.
 - T016 remains blocked: high_trap_G0/it0 rc=1, rank 2, t_ns=694.9875; 10,765,339 rank-zero ConsToPrim lines; cause unresolved from available logs.
@@ -236,10 +249,3 @@
 - solver progress: high_thin_G0/it2: t_ns=8.000000e+002; high_thin_G1/it0: t_ns=8.000000e+002; high_trap_G0/it2: t_ns=7.474939e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
 - skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
 - notes: launch record pushed on ws (2968636); no new handoff, no solver reruns or parameter changes.
-
-## 2026-11-18 00:33 (UTC+8)
-- card: T015, T016 | action: synced ws and checked T015 production; no new handoff or ready card.
-- running jobs: T015 solver batch (running, stderr empty); imaging jobs finished. T016 tables/build verified, production waiting.
-- solver progress: high_thin_G0/it2: t_ns=7.559992e+002; high_thin_G1/it0: t_ns=7.939970e+002; high_trap_G0/it2: t_ns=6.624961e+002; low_thin_G0/it2: t_ns=1.300000e+003; low_thin_G1/it0: t_ns=1.300000e+003; low_trap_G0/it2: t_ns=1.300000e+003
-- skipped ready cards and why: none; T016 production awaits T015 solver completion per task step 3.
-- notes: solver progress continues; no new completed solver registry rows, reruns or parameter changes.
