@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 01:19 (UTC+8)
+- card: T016e | action: ws already current at 36f98b5. Existing shock_track.md: five completed runs already processed/pushed; remaining low G0 it0 runs still running, so note retained. No new completion or ready card.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 07:55:20 at job.ps1 status check; wrapper stderr empty. Two previously archived completed it0 iterations; known ConsToPrim warnings recorded.
+- Progress snapshot 2026-11-19T01:19:19.638924+08:00; budget and latest logged times recorded separately.
+- T016e/high_thin_G0/it1: t_ns=6.369734e+002; latest logged dt=2.6644e-002, Nrkl=9 (step 66000, log_t_ns=6.3641e+002).
+- T016e/high_thin_G1/it0: t_ns=2.839957e+002; latest logged dt=1.2458e-002, Nrkl=30 (step 52000, log_t_ns=2.7355e+002).
+- T016e/high_trap_G0/it1: t_ns=6.704963e+002; latest logged dt=1.9367e-002, Nrkl=8 (step 70000, log_t_ns=6.5532e+002).
+- T016e/low_thin_G0/it0: t_ns=1.258479e+003; latest logged dt=2.5102e-002, Nrkl=51 (step 57000, log_t_ns=1.2463e+003).
+- T016e/low_thin_G1/it0: t_ns=4.109930e+002; latest logged dt=7.0727e-003, Nrkl=58 (step 62000, log_t_ns=4.0939e+002).
+- T016e/low_trap_G0/it0: t_ns=1.259494e+003; latest logged dt=2.2375e-002, Nrkl=63 (step 56000, log_t_ns=1.2380e+003).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: collect newly completed iterations, v1c imaging, thin diagnostics, low-fluence shock tracks and first low-fluence it0 handoff. No parameter changes or foreground waiting.
+
 ## 2026-11-19 01:04 (UTC+8)
 - card: T016e | action: pulled 36f98b5 (Claude P4 shock trajectory review in STATE). Existing shock_track.md: five completed runs already processed/pushed; remaining low G0 it0 runs still running, so note retained. No new completion or ready card.
 - running job: T016e PID 42332, execution commit bc79e7d, elapsed 07:40:36 at job.ps1 status check; wrapper stderr empty. Two previously archived completed it0 iterations; known ConsToPrim warnings recorded.
@@ -400,18 +413,4 @@
 - T016e/low_trap_G0/it0: t_ns=1.244986e+002; latest logged dt=6.2181e-003, Nrkl=3 (step 9000, log_t_ns=1.0683e+002).
 - skipped ready cards and why: none; no ready cards. All six T016e members advanced since the previous pass; no foreground waiting.
 - next: check T016e via job.ps1 status; archive completed iteration budgets/source/all-rank counts, image with v1c, run thin diagnostics; first completed it0 per fluence requires interim handoff.
-
-## 2026-11-18 17:36 (UTC+8)
-- card: T016r2, T016e | action: pulled dbe746f; followed low_trap_G0/it0 sensitivity imaging/diagnostic request. No ready cards. T016e remains running with no completed registry rows; wrapper stderr empty at check.
-- supplemental job: T016r2_post_trap_01 PID 31380, started 2026-11-18T17:36:05 UTC+8, commit e08c8e7; original v1b tables, low series, 8 workers, BelowNormal process priority, BLAS/OpenMP threads=1. Diagnostic then imaging; no foreground waiting.
-- First supplementary launch failed rc=1 before computation due to ctypes HANDLE declaration; evidence archived. Explicit Windows signatures verified and job restarted. No production inputs changed.
-- production: T016e PID 42332, execution commit bc79e7d, configured/max 64 ranks. Snapshot 2026-11-18T17:36:05.684866+08:00:
-- T016e/high_thin_G0/it0: t_ns=4.999771e+001; latest logged dt=3.6952e-003, Nrkl=5 (step 6000, log_t_ns=4.9991e+001).
-- T016e/high_thin_G1/it0: t_ns=3.549733e+001; latest logged dt=3.7909e-003, Nrkl=4 (step 3000, log_t_ns=3.3843e+001).
-- T016e/high_trap_G0/it0: t_ns=4.949901e+001; latest logged dt=4.3784e-003, Nrkl=5 (step 5000, log_t_ns=4.6174e+001).
-- T016e/low_thin_G0/it0: t_ns=9.249632e+001; latest logged dt=6.6043e-003, Nrkl=3 (step 6000, log_t_ns=8.9254e+001).
-- T016e/low_thin_G1/it0: t_ns=6.949837e+001; latest logged dt=6.4231e-003, Nrkl=3 (step 3000, log_t_ns=6.6061e+001).
-- T016e/low_trap_G0/it0: t_ns=8.999607e+001; latest logged dt=6.3397e-003, Nrkl=3 (step 6000, log_t_ns=8.9089e+001).
-- skipped ready cards and why: none; no ready cards. T016h/T016r2 production remains stopped by authorized supersession.
-- next: check supplemental job and production via job.ps1 status; validate/push trap metrics and diag CSV when complete (no handoff requested). For finished T016e iterations collect evidence and postprocess using v1c; first it0 per fluence needs interim handoff.
 
