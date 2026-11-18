@@ -164,3 +164,13 @@ Updated: 2026-11-15
 ## 2026-11-18 22:25 (UTC+8) — T016e high_trap_G0 it0 (v1e) budget
 - rc=0. Gas absorption 295.8 µJ, radiation 64.7 µJ, E_wall 46.3 µJ, M_Cu = M_src = 3.292 ng, residual −0.10%. For comparison: hard-sphere-D v1d 69.3/44.7 µJ with residual −0.38%; T015 64.8/46.6 µJ with residual −0.05%. ConsToPrim (all ranks) 23.2 M, the known RKL-stage defect.
 - With the v2 D the energy budget is almost identical to conduction-only. The larger residual seen with the hard-sphere D was therefore tied to the overestimated D. The imaging (pending) will show whether the late-decay improvement survives.
+
+## 2026-11-18 22:40 (UTC+8) — T016e high_trap_G0 it0 imaging (v1e)
+- L/L(300), filter b, baseline, at 400/500/600/700 ns:
+  - v1e sa: 0.75/0.53/0.38/0.28; thin: 0.70/0.49/0.40/0.34
+  - hard-sphere D: sa 0.60/0.39/0.30/0.23
+  - T015 (no diffusion): sa 0.76/0.55/0.46/0.39
+  - experiment: 0.54/0.37/0.21/0.13
+- P1 τ_L (b): sa 304 ns, thin 316 ns (experiment 182; T015 400–600).
+- **With the corrected (Coulomb/polarisation) D, about half of the earlier improvement remains.** 400–500 ns is unchanged from T015; 600–700 ns is 20–30% lower than T015. Part of the large gain seen with the hard-sphere D came from the overestimated D in the ionised core. This is reported as is.
+- The late-time excess is now about ×1.8–2.2 at 600–700 ns (it0, Picard not converged). Next: low-fluence v1e it0, then the Picard iterations.

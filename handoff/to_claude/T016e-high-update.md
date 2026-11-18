@@ -1,1 +1,0 @@
-high_thin_G0/it0 completed rc=0 at 800 ns; all-rank ConsToPrim=23,557,559, M_Cu=M_src, budget/source/log evidence archived. high_trap_G0/it0 imaging rc=0: 18 metric CSVs, six finite arrays; baseline b P1 thin/sa=315.6918/303.6747 ns. Review report/results; high-thin diagnostic and v1c imaging will run in background.
