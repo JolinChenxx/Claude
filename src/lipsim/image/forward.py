@@ -114,7 +114,21 @@ def _formal(kap: np.ndarray, S: np.ndarray, ds: np.ndarray) -> np.ndarray:
     return I_near + I_far
 
 
-def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption=True):
+NF_V = 161         # num: frequency points for Stark-broadened (Voigt) lines
+WING_HWHM = 25.0   # num: Voigt grid half-span in Lorentz HWHM (wings beyond hold < 3% of the area)
+
+
+def stark_fwhm_m(lam0: float, ne: np.ndarray) -> np.ndarray:
+    """Lorentzian Stark FWHM [m] for registry lines (linear in ne), zeros for other lines."""
+    st = P.get("stark_cu1_lines")
+    wl = np.asarray(st["wl_nm"]) * 1e-9  # math (nm -> m)
+    k = int(np.argmin(np.abs(wl - lam0)))
+    if abs(wl[k] - lam0) > 0.05e-9:  # num (line identification tolerance)
+        return np.zeros_like(ne)
+    return st["w_fwhm_pm"][k] * 1e-12 * ne / st["ne_ref_m3"]  # math (pm -> m)
+
+
+def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption=True, stark=False):
     """Band-integrated radiance [W/m^2/sr] on (z_c rows) × (x columns) for one snapshot.
     rho, T, Y: [nz, nr] on shells r_edges; filt = (centre_nm, halfwidth_nm), rectangular transmission."""
     lmin, lmax = (filt[0] - filt[1]), (filt[0] + filt[1])
@@ -157,10 +171,17 @@ def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption
             for i in rt:
                 lam0 = bl.wl[i]
                 dl_ref = lam0 * np.sqrt(8 * K_B * T_REF_W * np.log(2) / (bl.mass[i] * C ** 2))  # math
-                lg = lam0 + np.linspace(-3.5, 3.5, NF) * dl_ref / (2 * np.sqrt(2 * np.log(2)))  # math
                 Ti = T[iz]
                 sig = lam0 * np.sqrt(K_B * Ti / (bl.mass[i] * C ** 2))                    # Gaussian σ_λ
-                phi = np.exp(-0.5 * ((lg[None] - lam0) / sig[:, None]) ** 2) / (np.sqrt(2 * np.pi) * sig[:, None])  # math
+                gam = 0.5 * stark_fwhm_m(lam0, ne[iz]) if stark else np.zeros_like(Ti)  # math (Lorentz HWHM)
+                if gam.max() > 0.1 * sig.min():  # num (Voigt needed)
+                    from scipy.special import voigt_profile
+                    half = 3.5 * dl_ref / (2 * np.sqrt(2 * np.log(2))) + WING_HWHM * gam.max()  # math
+                    lg = lam0 + np.linspace(-1.0, 1.0, NF_V) * half  # math
+                    phi = voigt_profile(lg[None] - lam0, sig[:, None], gam[:, None])
+                else:
+                    lg = lam0 + np.linspace(-3.5, 3.5, NF) * dl_ref / (2 * np.sqrt(2 * np.log(2)))  # math
+                    phi = np.exp(-0.5 * ((lg[None] - lam0) / sig[:, None]) ** 2) / (np.sqrt(2 * np.pi) * sig[:, None])  # math
                 nq = nQ[(bl.el[i], bl.z[i])][iz]
                 n_l = nq * bl.gl[i] * np.exp(-bl.El[i] * P.get("e") / kT[iz])
                 kint = lam0 ** 4 / (8 * np.pi * C) * bl.A[i] * bl.gu[i] / bl.gl[i] * n_l * (-np.expm1(-H * C / (lam0 * kT[iz])))  # math
