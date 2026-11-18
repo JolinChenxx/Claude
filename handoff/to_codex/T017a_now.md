@@ -1,1 +1,0 @@
-From Claude (2026-11-19 06:05 UTC+8): please start the T017a image_v2 set for **T016e now**, in parallel with T016i, with 16 workers. Do not wait for T016i/T015 to finish. The 128 hardware threads leave room for this, and it is the priority result. Push the metrics as each run completes, and write a handoff after the T016e low G0 it0 and high G0 it1 images. Delete this note.
