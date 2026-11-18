@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 15:18 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 812610e (Claude imaging review acknowledged); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
+- running jobs: T016h PID 39808 elapsed 05:57:45; T016r2 PID 38008 elapsed 06:11:31 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
+- Progress snapshot: 2026-11-18T15:18:58.845791+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=5.855000e+002; latest logged dt=5.9892e-003, Nrkl=49 (step 61000, log_t_ns=5.8126e+002).
+- T016h/high_trap_G0/it1: t_ns=1.115000e+002; latest logged dt=6.7122e-004, Nrkl=2 (step 23000, log_t_ns=1.1189e+002).
+- T016h/high_thin_G1/it0: t_ns=1.899944e+002; latest logged dt=7.4943e-003, Nrkl=44 (step 43000, log_t_ns=1.8997e+002).
+- T016r2/low_thin_G0/it0: t_ns=1.157493e+003; latest logged dt=3.6989e-002, Nrkl=10 (step 55000, log_t_ns=1.1530e+003).
+- T016r2/low_trap_G0/it0: t_ns=1.136998e+003; latest logged dt=2.2057e-002, Nrkl=6 (step 53000, log_t_ns=1.1218e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.414973e+002; latest logged dt=6.6334e-003, Nrkl=63 (step 53000, log_t_ns=3.3720e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 15:04 (UTC+8)
 - card: T016h, T016r2 | action: synced ws 812610e (Claude imaging review acknowledged); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
 - running jobs: T016h PID 39808 elapsed 05:42:45; T016r2 PID 38008 elapsed 05:56:31 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
@@ -389,17 +402,5 @@
 - T016r/low_thin_G0/it0: t_ns=7.099992e+002; latest logged dt=3.1027e-002, Nrkl=10 (step 50000, log_t_ns=6.9307e+002).
 - T016r/low_trap_G0/it0: t_ns=6.844983e+002; latest logged dt=2.1324e-003, Nrkl=20 (step 51000, log_t_ns=6.8473e+002).
 - T016r/low_thin_G1/it0: t_ns=2.394997e+002; latest logged dt=1.6725e-003, Nrkl=3 (step 43000, log_t_ns=2.3898e+002).
-- skipped ready cards and why: none; no ready cards.
-- notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
-
-## 2026-11-18 07:34 (UTC+8)
-- card: T016, T016r | action: synced ws (c2f8b29), no incoming handoff, checked both background jobs.
-- running jobs: T016r PID 41680 elapsed 03:28:46; T016 PID 1492 elapsed 06:28:43. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
-- T016/high_thin_G0/it0: t_ns=4.444993e+002; latest logged dt=1.1141e-003, Nrkl=18 (step 85000, log_t_ns=4.4399e+002).
-- T016/high_trap_G0/it0: t_ns=6.344923e+002; latest logged dt=2.0288e-002, Nrkl=11 (step 83000, log_t_ns=6.2921e+002).
-- T016/high_thin_G1/it0: t_ns=1.904993e+002; latest logged dt=1.6018e-003, Nrkl=20 (step 48000, log_t_ns=1.9027e+002).
-- T016r/low_thin_G0/it0: t_ns=6.754882e+002; latest logged dt=2.1548e-003, Nrkl=20 (step 48000, log_t_ns=6.7039e+002).
-- T016r/low_trap_G0/it0: t_ns=6.804996e+002; latest logged dt=2.1452e-003, Nrkl=20 (step 49000, log_t_ns=6.8045e+002).
-- T016r/low_thin_G1/it0: t_ns=2.279969e+002; latest logged dt=7.1923e-003, Nrkl=5 (step 40000, log_t_ns=2.2513e+002).
 - skipped ready cards and why: none; no ready cards.
 - notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
