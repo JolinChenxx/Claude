@@ -2,7 +2,8 @@
 id: T017a
 title: Verify the Cu I Stark widths (Popov et al. 2019) and image with Voigt/Stark (imaging v2) as a sensitivity set
 owner: codex
-status: ready
+status: running
+started: 2026-11-19T05:04:25+08:00
 depends: []
 milestone: D2
 est_time: 0.5h (reading the paper) + background imaging
