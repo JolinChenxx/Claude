@@ -1,5 +1,19 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 00:19 (UTC+8)
+- card: T016e | action: pulled ws, retried publication successfully; 6efe740 with all five completed shock-track CSVs and console logs is now on origin/ws. Previous HTTP 403 push failure cleared.
+- incoming shock_track.md retained: five completed runs processed/validated; remaining T016e low_thin_G0/it0 and low_trap_G0/it0 are still running. No new completion or ready card.
+- running job: T016e PID 42332, execution commit bc79e7d, elapsed 06:55:21 at job.ps1 status check; wrapper stderr empty. Two previously archived completed it0 iterations; known ConsToPrim warnings recorded.
+- Progress snapshot 2026-11-19T00:19:24.397111+08:00; budget and latest logged times recorded separately.
+- T016e/high_thin_G0/it1: t_ns=3.074960e+002; latest logged dt=6.5481e-003, Nrkl=4 (step 48000, log_t_ns=3.0525e+002).
+- T016e/high_thin_G1/it0: t_ns=2.539944e+002; latest logged dt=1.0533e-002, Nrkl=38 (step 50000, log_t_ns=2.5270e+002).
+- T016e/high_trap_G0/it1: t_ns=3.624873e+002; latest logged dt=1.5791e-002, Nrkl=6 (step 54000, log_t_ns=3.5423e+002).
+- T016e/low_thin_G0/it0: t_ns=1.167993e+003; latest logged dt=4.4375e-002, Nrkl=11 (step 53000, log_t_ns=1.1452e+003).
+- T016e/low_thin_G1/it0: t_ns=3.984983e+002; latest logged dt=7.1272e-003, Nrkl=50 (step 60000, log_t_ns=3.9386e+002).
+- T016e/low_trap_G0/it0: t_ns=1.166495e+003; latest logged dt=2.2300e-002, Nrkl=45 (step 53000, log_t_ns=1.1629e+003).
+- skipped ready cards and why: none; no ready cards. All six members advanced since the previous pass.
+- next: collect newly completed iterations, v1c imaging, thin diagnostics, low-fluence shock tracks and first low-fluence it0 handoff. No parameter changes or foreground waiting.
+
 ## 2026-11-19 00:05 (UTC+8)
 - card: T016e | action: pulled 6d27064 and followed shock_track.md for five completed runs, sequentially. CSVs and console logs committed locally in 6efe740; ws push failed twice with HTTP 403, fetch/pull still succeeds. Retry publishing that commit on the next pass.
 - shock tracks: T016e high_trap/high_thin G0 it0; T015 high_trap G0 it0/it2; T016r2 low_thin G0 it0. All rc=0; CSV row counts/times exactly match dbl.out (321 rows each high, 521 low); no infinities. No-front NaNs preserved (6 rows high, 11 low). Incoming note retained until both T016e low G0 it0 runs finish and their tracks are collected. No handoff requested.
@@ -408,20 +422,4 @@
 - completed postprocessing: T016r2_post_low_01 rc=0 for diagnostic and imaging; 18 scenario CSVs, six finite (30,58,113) arrays and six finite diagnostic rows archived/hash-verified. Report synced to D:/Sync/T016r2 with verified hash. Baseline b P1 thin/sa=543.38/441.07 ns; about 700 ns Cu I fraction=0.9499.
 - running table build: T016e_tables PID 25856, started 16:51:00 UTC+8, execution commit 2e2b099; 32 workers, new D:/sim_runs/tables/v1c. Initial job status running, stderr empty. Validate rc, diff_model=v2, [81,145,14] and finite D_cuair/dh_dY after completion.
 - next: stop named T016h/T016r2 batches after low_trap_G0/it0 finishes or 18:30 UTC+8, whichever comes first, per T016e card; preserve raw data and stop evidence. Launch T016e production only after stop and table acceptance. Ended this pass after background table launch; no foreground wait.
-
-## 2026-11-18 16:37 (UTC+8)
-- card: T016h, T016r2 | action: preserved completed registry row bff5232 to unblock pull; no incoming handoff. Published low_thin_G0/it0 evidence/handoff 2c7231d and background postprocessing launch b1c3011.
-- running jobs: T016h PID 39808 elapsed 07:13:00; T016r2 PID 38008 elapsed 07:26:46 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; two completed it0 records (high_trap_G0 and low_thin_G0), both rc=0; batch summaries absent.
-- Progress snapshot: 2026-11-18T16:37:07.797073+08:00; budget t_ns and latest logged time are reported separately.
-- T016h/high_thin_G0/it0: t_ns=6.304779e+002; latest logged dt=5.0773e-003, Nrkl=46 (step 65000, log_t_ns=6.2248e+002).
-- T016h/high_trap_G0/it1: t_ns=3.979840e+002; latest logged dt=2.1319e-002, Nrkl=14 (step 46000, log_t_ns=3.8034e+002).
-- T016h/high_thin_G1/it0: t_ns=2.224991e+002; latest logged dt=8.8111e-003, Nrkl=35 (step 46000, log_t_ns=2.1401e+002).
-- T016r2/low_thin_G0/it1: t_ns=9.149933e+001; latest logged dt=4.3570e-003, Nrkl=2 (step 8000, log_t_ns=8.7713e+001).
-- T016r2/low_trap_G0/it0: t_ns=1.239488e+003; latest logged dt=2.1662e-002, Nrkl=32 (step 58000, log_t_ns=1.2314e+003).
-- T016r2/low_thin_G1/it0: t_ns=3.664973e+002; latest logged dt=1.4722e-002, Nrkl=12 (step 56000, log_t_ns=3.6427e+002).
-- skipped ready cards and why: none; no ready cards. Five members advanced within their current iterations; low_thin_G0 completed it0 and automatically continued to it1.
-- completed: T016r2/low_thin_G0/it0 rc=0 at 1300 ns (16:21:06 UTC+8). All-rank ConsToPrim=4,376,132; M_Cu=M_src=1.0157489959e-12 kg; model/PLUTO absorption=28.3569/15.8881 microjoules. Evidence/hashes/samples handed off; report synced to D:/Sync/T016r2 with hash verification.
-- running postprocessing: T016r2_post_low_01 PID 31508, started 16:36:05, execution commit 2c7231d. Prescribed six-time emission diagnostic returned 0; imaging low_thin_G0/it0 with v1b tables and 16 workers is running, stderr empty at initial check.
-- provenance: completion registry row uses current commit/hash after upstream v2 additions; execution began at 978e094. it0/it1 opt.bin hashes verified as original v1b. No table rebuild/substitution, solver rerun or parameter edits.
-- next: check all three jobs and collect diagnostic/imaging artifacts when postprocessing ends; monitor next iteration completions. End this pass after background launch bookkeeping.
 
