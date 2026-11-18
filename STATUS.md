@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 15:48 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 812610e (Claude imaging review acknowledged); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
+- running jobs: T016h PID 39808 elapsed 06:27:43; T016r2 PID 38008 elapsed 06:41:29 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
+- Progress snapshot: 2026-11-18T15:48:55.794108+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=6.014952e+002; latest logged dt=1.0169e-002, Nrkl=62 (step 62000, log_t_ns=5.9004e+002).
+- T016h/high_trap_G0/it1: t_ns=1.629982e+002; latest logged dt=1.5118e-002, Nrkl=10 (step 34000, log_t_ns=1.6190e+002).
+- T016h/high_thin_G1/it0: t_ns=2.014932e+002; latest logged dt=8.9273e-003, Nrkl=29 (step 44000, log_t_ns=1.9847e+002).
+- T016r2/low_thin_G0/it0: t_ns=1.214481e+003; latest logged dt=1.9551e-002, Nrkl=63 (step 57000, log_t_ns=1.1966e+003).
+- T016r2/low_trap_G0/it0: t_ns=1.177991e+003; latest logged dt=2.2241e-002, Nrkl=12 (step 55000, log_t_ns=1.1676e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.494992e+002; latest logged dt=7.2062e-003, Nrkl=63 (step 54000, log_t_ns=3.4557e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 15:33 (UTC+8)
 - card: T016h, T016r2 | action: synced ws 812610e (Claude imaging review acknowledged); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
 - running jobs: T016h PID 39808 elapsed 06:12:46; T016r2 PID 38008 elapsed 06:26:32 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
@@ -391,17 +404,3 @@
 - T016s/B: t_ns=7.309804e+002; latest logged dt=2.8336e-002, Nrkl=8 (step 54000, log_t_ns=7.0775e+002).
 - skipped ready cards and why: none; no ready cards.
 - notes: no new completion or failure; all active members advanced. T016 remains blocked for previously handed-off failures. No foreground waiting, new run, or parameter changes.
-
-## 2026-11-18 08:08 (UTC+8)
-- card: T016, T016r, T016s | action: published high_trap_G0 abort evidence/report and handoff (48124b7); Claude acknowledged (f9c5e35). T016 report synced to D:/Sync/T016 with SHA256 verification.
-- T016 remains blocked: high_trap_G0/it0 rc=1, rank 2, t_ns=694.9875; 10,765,339 rank-zero ConsToPrim lines; cause unresolved from available logs.
-- running jobs: T016 PID 1492 and T016r PID 41680 continue; T016s PID 39392 launched at 08:08:23, execution commit acdc0ce. A and B each 8 ranks, restart 276 at 689.9991199983814 ns; each limited to 2400 s. No foreground waiting.
-- T016/high_thin_G0/it0: t_ns=4.474998e+002; latest logged dt=5.5993e-004, Nrkl=19 (step 90000, log_t_ns=4.4727e+002).
-- T016/high_thin_G1/it0: t_ns=1.974999e+002; latest logged dt=2.8773e-003, Nrkl=19 (step 50000, log_t_ns=1.9502e+002).
-- T016r/low_thin_G0/it0: t_ns=7.159991e+002; latest logged dt=2.1527e-003, Nrkl=20 (step 53000, log_t_ns=7.1470e+002).
-- T016r/low_trap_G0/it0: t_ns=6.904992e+002; latest logged dt=2.1313e-003, Nrkl=20 (step 53000, log_t_ns=6.8899e+002).
-- T016r/low_thin_G1/it0: t_ns=2.634931e+002; latest logged dt=1.1735e-002, Nrkl=7 (step 47000, log_t_ns=2.5385e+002).
-- T016s/A: t_ns=not written yet; latest logged dt/Nrkl not yet available at launch; restart t=689.9991199983814 ns, step 53470.
-- T016s/B: t_ns=not written yet; latest logged dt/Nrkl not yet available at launch; restart t=689.9991199983814 ns, step 53470.
-- skipped ready cards and why: none; T016s claimed and launched. No other ready card.
-- next: check job.ps1 status on next pass; after T016s stops, collect budget rows, latest 30 step/Nrkl pairs, all-rank warning counts, and latest common dbl outputs; report/review/handoff.
