@@ -1,5 +1,20 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 09:22 (UTC+8)
+- card: T016h, T016r2 | action: pulled ws, no incoming handoff; checked T016r2, claimed and launched T016h. Claim a8c6f84 and verified launch evidence 3b96e72 pushed to ws.
+- running job: T016h PID 39808, started 2026-11-18T09:21:00, execution commit a8c6f84; 32 ranks (8/8/16), high-fluence G0 it0-it4 and G1 it0, tstop 800 ns.
+- Runtime ini verification: all three actual it0 inputs match preview hashes and contain rmax_par 1000 in Time; executable and table hashes verified. No model or numerical changes.
+- running job: T016r2 PID 38008, started 2026-11-18T09:07:14, execution commit 978e094; separate 32 ranks. Both wrapper stderr files empty at the check.
+- Progress snapshot: 2026-11-18T09:21:30.574292+08:00; budget t_ns is distinct from the associated logged dt/Nrkl time.
+- T016h/high_thin_G0/it0: t_ns=0.000000e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
+- T016h/high_trap_G0/it0: t_ns=0.000000e+000; complete dt/Nrkl pair not yet written at launch snapshot.
+- T016h/high_thin_G1/it0: t_ns=0.000000e+000; latest logged dt=1.0000e-005, Nrkl=2 (step 0, log_t_ns=0.0000e+000).
+- T016r2/low_thin_G0/it0: t_ns=9.999687e+001; latest logged dt=6.5714e-003, Nrkl=2 (step 7000, log_t_ns=9.5381e+001).
+- T016r2/low_trap_G0/it0: t_ns=9.949548e+001; latest logged dt=6.0689e-003, Nrkl=2 (step 7000, log_t_ns=9.5201e+001).
+- T016r2/low_thin_G1/it0: t_ns=7.399557e+001; latest logged dt=6.6963e-003, Nrkl=5 (step 4000, log_t_ns=7.2215e+001).
+- skipped ready cards and why: none; T016h was the only ready card and is now running.
+- next: check both jobs next pass, publish each completed iteration budget/all-rank ConsToPrim/source_meta, then prescribed imaging and diagnostics. End this pass after launch bookkeeping; no foreground wait.
+
 ## 2026-11-18 09:07 (UTC+8)
 - card: T016r, T016r2 | action: followed priority T016r_stop.md from ws 9fe05d5; stopped old batch, archived evidence, closed T016r as superseded, claimed and launched T016r2.
 - T016r stop verified 2026-11-18T09:04:33.5388017+08:00: wrapper 41680 and all 32 solver ranks exited; raw data retained. Last t_ns: low_thin_G0=764.9923, low_trap_G0=750.4993, low_thin_G1=294.4895.
@@ -257,10 +272,3 @@
 - progress: high_thin_G0/it0: t_ns=1.354912e+002; high_thin_G1/it0: t_ns=5.399870e+001; high_trap_G0/it0: t_ns=1.169982e+002; low_thin_G0/it0: t_ns=2.194886e+002; low_thin_G1/it0: t_ns=1.074996e+002; low_trap_G0/it0: t_ns=2.289939e+002
 - skipped ready cards and why: none; no ready cards.
 - notes: T015 follow-up consumed by Claude. T016 members still running; no completed results to hand off.
-
-## 2026-11-18 01:37 (UTC+8)
-- card: T015 follow-up, T016 | action: processed incoming diagnostics; published both emission CSVs/logs and streaming warning counts, 40 contextual samples and index histograms (ws ac94e73).
-- running jobs: T016 production, initial pass check running/stderr empty. T015 accepted done by Claude.
-- progress: high_thin_G0/it0: t_ns=8.049828e+001; high_thin_G1/it0: t_ns=4.799892e+001; high_trap_G0/it0: t_ns=7.649970e+001; low_thin_G0/it0: t_ns=1.394982e+002; low_thin_G1/it0: t_ns=9.249814e+001; low_trap_G0/it0: t_ns=1.414984e+002
-- skipped ready cards and why: none.
-- notes: high it0 11,853,003 warnings, one normalized type, first/last steps 19037/31425; all located. Both emission diagnostics rc=0 and seven finite rows. Updated report synced with checksum verification; no solver changes.
