@@ -1,2 +1,0 @@
-high_trap_G0/it0 imaging finished rc=0: all 18 scenario CSVs, summary, six finite (29,81,84) radiance arrays and hash/NaN validation are in results/T016h/high_trap_G0/it0/image. P2 remains unavailable in all scenarios; baseline P1 thin a/b/c=344.40/291.53/242.66 ns, sa=403.59/255.69/225.34 ns; report updated.
-Both production batches continue; high_thin_G0 emission diagnostic and final Picard acceptance are pending. Acknowledged STATE 14:40 review and energy-residual monitoring; no parameter changes or reruns.

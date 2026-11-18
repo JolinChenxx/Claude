@@ -128,3 +128,12 @@ Updated: 2026-11-15
 ## 2026-11-18 14:40 (UTC+8) — T016h high_trap_G0 it0 (v1d, first finished iteration)
 - rc=0 at 800 ns. Gas absorption 295.8 µJ (= T015), radiation 69.3 µJ (T015 64.8), E_wall 44.7 µJ (46.6), M_Cu = M_src = 3.292 ng (exact). The energy residual is −0.38% (T015 −0.05%): still < 1%, but larger. The likely origin is the floor repairs of the RKL-stage overshoots (23.4 M all-rank ConsToPrim lines, the known defect). Watch this over the iterations.
 - Picard it0: target-model absorption 62.2 µJ vs PLUTO 8.8 µJ (as in T015 it0); it1–it4 continue.
+
+## 2026-11-18 14:55 (UTC+8) — T016h high_trap_G0 it0 imaging: interdiffusion closes most of the late-time gap
+- L/L(300), filter b, baseline, at 400/500/600/700 ns:
+  - v1d (T016h): sa 0.60/0.39/0.30/0.23; thin 0.64/0.44/0.37/0.28
+  - v1 (T015): sa 0.76/0.55/0.46/0.39; thin 0.78/0.58/0.50/0.43
+  - v0.1 (T014): sa 0.67/0.55/0.46/0.34
+  - experiment: 0.54/0.37/0.21/0.13
+- P1 τ_L (300–630 ns e-fold): sa b 256 ns / c 225 ns; thin b 292 ns; experiment 182 ns (v1: 400–600 ns).
+- Interpretation (it0 only, Picard not converged): the pre-declared, parameter-free Cu–air interdiffusion moves the late decay most of the way to the experiment. A residual excess of about ×1.4–1.8 at 600–700 ns remains. Wait for it1–it4 (convergence) and low fluence before drawing conclusions.
