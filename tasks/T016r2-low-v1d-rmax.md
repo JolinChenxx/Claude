@@ -2,7 +2,8 @@
 id: T016r2
 title: Low-fluence members with build v1d and rmax_par 1000 (replaces T016r)
 owner: codex
-status: ready
+status: running
+started: 2026-11-18T09:06:01.265960+08:00
 depends: []
 milestone: D2
 est_time: 0.1h operations + about 8–12h machine time (32 cores)

@@ -117,3 +117,7 @@ Updated: 2026-11-15
 - Open item: 35 rarefied near-wall cells (ρ ≈ 4e-3 kg/m³, z ≈ 1 µm, mass fraction 1e-7) differ strongly in T. One reaches the table maximum of 150 kK in B, against 35 kK in A. Check later whether such cells add to the in-band emission (diag_emission T > 30 kK bin).
 - Decision (numerics, grade N): rmax_par = 1000 for new runs. T016r continues with 100; the difference is far below the physics uncertainties.
 - T016h: high G0 thin/trap it0–it4 and high G1 thin it0, built with v1d, on the 32 freed cores.
+
+## 2026-11-18 09:04 (UTC+8) - Codex execution record: authorized T016r stop
+- Followed T016r_stop.md: stopped wrapper PID 41680 and its 32 solver ranks; verified 2026-11-18T09:04:33.5388017+08:00. Reason: superseded by T016r2 (rmax_par 1000). Raw data retained; T016h not started or touched.
+- Last budget t_ns: low_thin_G0=7.649923e+002, low_trap_G0=7.504993e+002, low_thin_G1=2.944895e+002. Evidence: results/T016r/stopped/; report: tasks/T016r.report.md. T016r marked done as superseded.

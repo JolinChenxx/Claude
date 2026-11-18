@@ -2,7 +2,7 @@
 id: T016r
 title: Rerun the three T016 low-fluence members with build v1d (kinetic flux limiter) on the free cores
 owner: codex
-status: running
+status: done
 started: 2026-11-18T04:03:57.258491+08:00
 depends: []
 milestone: D2
