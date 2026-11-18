@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 16:18 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 2ef7256 (upstream diffusion-v2 code/table-builder additions; no new task card or handoff); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
+- running jobs: T016h PID 39808 elapsed 06:57:48; T016r2 PID 38008 elapsed 07:11:34 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
+- Progress snapshot: 2026-11-18T16:18:59.161589+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=6.194936e+002; latest logged dt=8.9491e-003, Nrkl=61 (step 64000, log_t_ns=6.1581e+002).
+- T016h/high_trap_G0/it1: t_ns=3.239771e+002; latest logged dt=2.4398e-002, Nrkl=8 (step 43000, log_t_ns=3.1740e+002).
+- T016h/high_thin_G1/it0: t_ns=2.149953e+002; latest logged dt=8.8111e-003, Nrkl=35 (step 46000, log_t_ns=2.1401e+002).
+- T016r2/low_thin_G0/it0: t_ns=1.284484e+003; latest logged dt=2.2191e-002, Nrkl=28 (step 60000, log_t_ns=1.2751e+003).
+- T016r2/low_trap_G0/it0: t_ns=1.212996e+003; latest logged dt=2.0188e-002, Nrkl=54 (step 57000, log_t_ns=1.2095e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.579987e+002; latest logged dt=7.6828e-003, Nrkl=62 (step 55000, log_t_ns=3.5477e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 16:04 (UTC+8)
 - card: T016h, T016r2 | action: synced ws 2ef7256 (upstream diffusion-v2 code/table-builder additions; no new task card or handoff); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
 - running jobs: T016h PID 39808 elapsed 06:42:48; T016r2 PID 38008 elapsed 06:56:34 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
@@ -392,15 +405,3 @@
 - T016r/low_trap_G0/it0: t_ns=7.354987e+002; latest logged dt=2.0509e-003, Nrkl=20 (step 60000, log_t_ns=7.3561e+002).
 - T016r/low_thin_G1/it0: t_ns=2.889990e+002; latest logged dt=1.0392e-003, Nrkl=20 (step 51000, log_t_ns=2.8873e+002).
 - skipped ready cards and why: none; no ready cards or incoming handoff. T016r members continue progressing; no new completion or failure there.
-
-## 2026-11-18 08:36 (UTC+8)
-- card: T016, T016r, T016s | action: synced ws c8f7a9f and followed T016_stop_v1b.md; stopped only T016, archived instruction, recorded evidence, and marked T016 done as superseded.
-- stopped: T016 wrapper PID 1492 and all 24 remaining v1b ranks; verified 2026-11-18T08:34:28.8744713+08:00. Last budgets: high_thin_G0=449.4998 ns; high_thin_G1=203.9977 ns. Rank-zero ConsToPrim counts: 10,762,237 and 359,341. Four members previously aborted, two stopped at user request; no raw data deleted.
-- process verification: all targeted processes gone; all protected T016r/T016s descendants remained present. T016r PID 41680 and T016s PID 39392 continue, stderr empty. T016s is still inside its 40-minute limit.
-- T016r/low_thin_G0/it0: t_ns=7.414985e+002; latest logged dt=2.0657e-003, Nrkl=20 (step 57000, log_t_ns=7.4064e+002).
-- T016r/low_trap_G0/it0: t_ns=7.309996e+002; latest logged dt=2.1127e-003, Nrkl=19 (step 57000, log_t_ns=7.2927e+002).
-- T016r/low_thin_G1/it0: t_ns=2.879991e+002; latest logged dt=1.0546e-003, Nrkl=19 (step 50000, log_t_ns=2.8767e+002).
-- T016s/A: t_ns=7.299982e+002; latest logged dt=2.1127e-003, Nrkl=19 (step 57000, log_t_ns=7.2927e+002).
-- T016s/B: t_ns=7.584953e+002; latest logged dt=2.0562e-002, Nrkl=63 (step 55000, log_t_ns=7.3587e+002).
-- skipped ready cards and why: none; no ready cards. High-fluence v1d reruns await a new card after T016s.
-- next: check T016r and T016s on the next pass; collect A/B outputs after the timed runs finish. No foreground wait.
