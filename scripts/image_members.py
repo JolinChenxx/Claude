@@ -16,6 +16,11 @@ ap.add_argument("--outname", default="image")
 a = ap.parse_args()
 repo = Path(__file__).resolve().parents[1]
 
+# Future invocations in an already-running queue can observe a reviewed priority
+# change without interrupting the current batch or modifying physical settings.
+from imaging_priority import run_before
+run_before(a.root, a.outname, repo)
+
 
 def solver_finished(run_dir):
     # Windows MPI writes PLUTO's rank-zero log separately from captured stdout.
