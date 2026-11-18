@@ -2,7 +2,8 @@
 id: T016i
 title: Re-image all finished runs with native-grid radiative transfer (imaging v1)
 owner: codex
-status: ready
+status: running
+started: 2026-11-19T02:21:34.537384+08:00
 depends: []
 milestone: D2
 est_time: 0.1h operations + a few hours of background imaging (16 workers, sequential)
