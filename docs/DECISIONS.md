@@ -28,3 +28,7 @@
 
 ## 2026-11-18 08:15 (UTC+8) — stop the remaining T016 (v1b) members
 User: "1，停掉吧 按你的建议来". The two remaining v1b high-fluence members (4 of 6 v1b members had aborted with the energy NaN fixed in v1d; the rest were nearly stalled by the RKL step-ratio cap) are stopped. High-fluence members will be rerun with v1d after the T016s rmax_par A/B check.
+
+## 2026-11-18 08:20 (UTC+8) — standing authorization to stop failing or stalled computations
+User: "对于类似这种某些计算跑不下去需要停掉的情况，我授予你完全权限，你可以自己确定他是否需要停止，我只需要你能给我好的计算结果就行".
+Claude may decide on its own to stop workstation runs that are failing, stalled or superseded, and relays the stop to Codex in a handoff note that cites this entry. Conditions: data is never deleted; the reason, last state and stop time are recorded in results/ and STATE.md; the user is told at the next hourly report.

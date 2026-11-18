@@ -10,6 +10,9 @@ Project: reproduce, through simulation, Fig. S4 in the supplementary material of
 - Codex (Windows workstation, 76 cores / 256 GB): runs the cards with `owner: codex`.
 - User: makes decisions at milestones. Keep their involvement to a minimum.
 
+## Standing authorizations
+- Stopping workstation runs that are failing, stalled or superseded is Claude's decision (user, 2026-11-18, docs/DECISIONS.md). Never delete data; record the reason; tell the user at the next report.
+
 ## Workflow
 - Working branch `ws`. The long-lived PR `ws → main` is the event channel: when Codex writes `handoff/to_claude/*`, the push triggers the `handoff` workflow, and the CI result wakes this session through the PR subscription.
 - After being woken: `git pull`, read the handoff file and the matching report, review against the card's acceptance criteria, then (a) mark the card `done` and issue/unlock the next card, or (b) fix the code and reissue, or (c) go to the user for decisions that need them. Delete handled handoff files.

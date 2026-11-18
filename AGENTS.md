@@ -32,6 +32,7 @@ The project goal and technical route are in `docs/PLAN.md`. Read it before you s
 9. **Do not idle on ambiguity.** If a `ready` card is not started because a dependency or instruction is unclear, or a card has made no progress for 2 consecutive passes for a reason you cannot resolve, write `handoff/to_claude/question-<card-id>.md` with the question and push. That wakes Claude.
 
 ## Hard rules
+- Stopping a running job is allowed only when a `handoff/to_codex/` note from Claude asks for it (the user delegated that decision to Claude, docs/DECISIONS.md 2026-11-18). Stop exactly the named job/PIDs and never delete data.
 - Only change files inside this repository, `D:\sim_runs`, and `D:\sim_tools`. The user allows installing the software a card needs **at user level** (preferably under `D:\sim_tools`). Do not change system settings, do not install software that needs administrator rights (if it is required, write `blocked` and explain), and do not delete other people's data.
 - Do not edit the physics in `docs/PLAN.md`, `src/` or `tasks/` cards. You may fix engineering details such as compilation or paths, and must list every change in the report.
 - Do not fabricate or "polish" results. Record failures as they happened.
