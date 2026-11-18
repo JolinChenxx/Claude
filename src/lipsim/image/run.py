@@ -87,6 +87,8 @@ def _snapshot_images(args):
     px = um * 1e-6  # math
     row_edges = np.arange(h + 1) * px                     # pixel rows above the target (bottom row = 0..px)
     z_edges = grid.x2_edges * 1e-6  # math
+    if num.get("transfer_grid", "rebinned") == "native":
+        return n, _native_images(grid, rho, T, Y, filters, sa_opts, num, px, row_edges, w)
     (rho, cov), (T, _), (Y, _) = (rebin_z(z_edges, f, row_edges) for f in (rho, T, Y))
     # pixel rows above the computational domain: cold ambient air (no emission), radiance zeroed below
     rho[~cov], T[~cov], Y[~cov] = 1.0, P.get("T_ambient"), 0.0
@@ -108,6 +110,32 @@ def _snapshot_images(args):
             img[~cov] = 0.0
             out[(fname, sa)] = img[::-1]                  # image row 0 = top of frame
     return n, out
+
+
+def _native_images(grid, rho, T, Y, filters, sa_opts, num, px, row_edges, w):
+    """Transfer on the native PLUTO cells (no averaging of ρ, T, Y before the non-linear emission/absorption).
+
+    Rays are at the pixel-centre impact parameters x. Each native z row is transferred on its own, and the
+    emergent intensities are averaged over the pixel rows with overlap weights, which is what a detector pixel
+    integrates. Rows above the domain are dark (zero), as in the rebinned path."""
+    z_edges = grid.x2_edges * 1e-6  # math (um -> m)
+    r_edges = grid.x1_edges * 1e-6  # math
+    rmax = num["r_max_um"] * 1e-6  # math
+    nr = int(np.searchsorted(r_edges, rmax + 1e-12, "right")) - 1  # num
+    nr = max(min(nr, len(r_edges) - 1), 1)
+    re = r_edges[:nr + 1]
+    zc = 0.5 * (z_edges[1:] + z_edges[:-1])
+    x = (np.arange(w) - (w - 1) / 2) * px
+    Tn = np.maximum(T[:, :nr], 1.0)
+    out = {}
+    for fname, (c, hwid) in filters.items():
+        for sa in sa_opts:
+            img_n = forward.band_image(re, zc, rho[:, :nr], Tn, np.clip(Y[:, :nr], 0.0, 1.0), _W["tab"], (c, hwid), x,
+                                       self_absorption=sa)
+            img, cov = rebin_z(z_edges, img_n, row_edges)
+            img[~cov] = 0.0
+            out[(fname, sa)] = img[::-1]
+    return out
 
 
 def main(argv=None):
