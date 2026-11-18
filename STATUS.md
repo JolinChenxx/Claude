@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-18 15:04 (UTC+8)
+- card: T016h, T016r2 | action: synced ws 812610e (Claude imaging review acknowledged); no incoming handoff; checked both production jobs and all six members. Completed imaging was already collected and handed off in 9207459.
+- running jobs: T016h PID 39808 elapsed 05:42:45; T016r2 PID 38008 elapsed 05:56:31 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only previously collected high_trap_G0/it0 completion; batch summaries absent.
+- Progress snapshot: 2026-11-18T15:04:08.279528+08:00; budget t_ns and latest logged time are reported separately.
+- T016h/high_thin_G0/it0: t_ns=5.789959e+002; latest logged dt=6.2593e-003, Nrkl=50 (step 60000, log_t_ns=5.6971e+002).
+- T016h/high_trap_G0/it1: t_ns=8.949547e+001; latest logged dt=5.5960e-003, Nrkl=3 (step 15000, log_t_ns=8.5474e+001).
+- T016h/high_thin_G1/it0: t_ns=1.859981e+002; latest logged dt=5.3742e-003, Nrkl=27 (step 42000, log_t_ns=1.8375e+002).
+- T016r2/low_thin_G0/it0: t_ns=1.125982e+003; latest logged dt=1.9319e-002, Nrkl=63 (step 53000, log_t_ns=1.1059e+003).
+- T016r2/low_trap_G0/it0: t_ns=1.097490e+003; latest logged dt=1.9825e-002, Nrkl=63 (step 52000, log_t_ns=1.0964e+003).
+- T016r2/low_thin_G1/it0: t_ns=3.379986e+002; latest logged dt=6.6334e-003, Nrkl=63 (step 53000, log_t_ns=3.3720e+002).
+- skipped ready cards and why: none; no ready cards. All six members have advanced since the prior pass.
+- next: check background status next pass; publish iteration evidence and run prescribed diagnostics when iterations finish. No new completion or failure; no foreground waiting or parameter changes.
+
 ## 2026-11-18 14:52 (UTC+8)
 - card: T016h, T016r2 | action: pulled 861ce25 (Claude interim review); no incoming handoff. Checked three jobs, validated/archived completed high_trap_G0/it0 imaging, updated report and handed off in ws 9207459.
 - running jobs: T016h PID 39808 elapsed 05:27:45; T016r2 PID 38008 elapsed 05:41:31 at job.ps1 status check. Wrapper stderr and member combined stdout/stderr empty; only the previously reported high_trap_G0/it0 completion; batch summaries absent.
@@ -388,17 +401,5 @@
 - T016r/low_thin_G0/it0: t_ns=6.754882e+002; latest logged dt=2.1548e-003, Nrkl=20 (step 48000, log_t_ns=6.7039e+002).
 - T016r/low_trap_G0/it0: t_ns=6.804996e+002; latest logged dt=2.1452e-003, Nrkl=20 (step 49000, log_t_ns=6.8045e+002).
 - T016r/low_thin_G1/it0: t_ns=2.279969e+002; latest logged dt=7.1923e-003, Nrkl=5 (step 40000, log_t_ns=2.2513e+002).
-- skipped ready cards and why: none; no ready cards.
-- notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
-
-## 2026-11-18 07:19 (UTC+8)
-- card: T016, T016r | action: synced ws (c2f8b29), no incoming handoff, checked both background jobs.
-- running jobs: T016r PID 41680 elapsed 03:13:43; T016 PID 1492 elapsed 06:13:40. Both running, stderr empty; three original high-fluence and three v1d low-fluence members continue.
-- T016/high_thin_G0/it0: t_ns=4.394993e+002; latest logged dt=1.8916e-003, Nrkl=20 (step 83000, log_t_ns=4.3911e+002).
-- T016/high_trap_G0/it0: t_ns=5.789975e+002; latest logged dt=2.6144e-003, Nrkl=20 (step 80000, log_t_ns=5.7161e+002).
-- T016/high_thin_G1/it0: t_ns=1.884992e+002; latest logged dt=2.0394e-003, Nrkl=20 (step 47000, log_t_ns=1.8846e+002).
-- T016r/low_thin_G0/it0: t_ns=6.674979e+002; latest logged dt=2.1568e-003, Nrkl=20 (step 46000, log_t_ns=6.6606e+002).
-- T016r/low_trap_G0/it0: t_ns=6.419934e+002; latest logged dt=2.3979e-003, Nrkl=20 (step 46000, log_t_ns=6.1899e+002).
-- T016r/low_thin_G1/it0: t_ns=2.074962e+002; latest logged dt=9.8669e-003, Nrkl=8 (step 37000, log_t_ns=1.9912e+002).
 - skipped ready cards and why: none; no ready cards.
 - notes: no new completion or failure; T016 remains blocked for previously handed-off low-fluence failures. Continue reporting per-member dt and Nrkl alongside budget t_ns; no reruns or parameter changes.
