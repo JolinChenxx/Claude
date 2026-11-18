@@ -1,0 +1,12 @@
+# T016r2: low-fluence members with build v1d and rmax_par 1000 (T016s). Replaces T016r (rmax_par 100, stalled by the
+# RKL step-ratio cap; stopped under the standing authorization, DECISIONS 2026-11-18 08:20).
+name: T016r2
+pluto_exe: D:/sim_tools/pluto_lip/build_v1d/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1b
+root: D:/sim_runs/T016r2
+numerics:
+  runs:
+    - {id: low_thin_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_trap_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G1,  case: configs/cases/v0_low.yaml,  grid: G1, nec: thin, tstop_ns: 1300, procs: 16, picard: 0, src_on: 1, rmax_par: 1000}
