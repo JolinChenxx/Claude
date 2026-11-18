@@ -207,3 +207,8 @@ Updated: 2026-11-15
   - experiment: 1.27/1.40/0.54/0.37/0.21/0.13
 - P1 τ_L native: sa 319 ns, thin 334 ns (v0: 261/287 ns).
 - The rebinning artefact mainly affected the early and 400 ns frames, where steep gradients sit (the spurious 0.91 bump at 400 ns disappears). Late frames are about 10% **brighter** with native transfer. The high-fluence late excess is therefore not an imaging artefact. All earlier light-curve comparisons are to be repeated with image_v1 (T016i running).
+
+## 2026-11-19 04:05 (UTC+8) — native images, high fluence it0 → it1 (v1e)
+- sa at 400/500/600/700 ns: thin member it0 0.63/0.47/0.37/0.28, it1 0.72/0.56/0.43/0.37; trap member it0 0.63/0.51/0.38/0.29, it1 0.72/0.57/0.45/0.39. Experiment 0.54/0.37/0.21/0.13.
+- As expected from T015, **the decay becomes slower** as the Picard iteration converges (less Cu, same gas energy, hotter core). At it1 the late excess is ×2–3. it2–it4 are running; the converged answer will likely be at least as slow.
+- Taken together with P4 (energy deposition consistent at convergence), the remaining high-fluence discrepancy sits in how the absorbed energy leaves the emitting Cu core: radiation, 3D/turbulent mixing, or the emission model at 10–25 kK (Cu II lines, Stark broadening). This is the main open physics question for the paper.
