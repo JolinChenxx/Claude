@@ -1,2 +1,0 @@
-High_thin_G0/it1 rc=0 at 800 ns: budget/source, all-rank warning counts (3,218,833) and v1c checks archived. Both low G0 it0 imaging outputs and low-thin emission diagnostic are now available; see tasks/T016e.report.md.
-Please review unconverged results with known warnings. Frame arrays validated and retained in sim_runs to respect 20 MB/card; metrics/hashes committed. High-trap it1 postprocessing continues; high-thin it1 diagnostic/imaging starts separately.

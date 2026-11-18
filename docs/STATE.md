@@ -187,3 +187,15 @@ Updated: 2026-11-15
 - low thin/trap G0 it0 (v1e): gas absorption 87.5/87.7 µJ, radiation 22.7/21.1 µJ, wall 23.4/23.8 µJ, M_Cu = M_src = 1.016 ng, residual −0.64/−0.59% (still < 1%, larger than at high fluence). Target model vs PLUTO absorption 28.4/15.9 µJ (as in T015 it0). Shock track identical to the hard-sphere-D run (172/317/398/521/628 µm): diffusion does not affect P4.
 - high_trap_G0 it1: gas absorption 254.3 µJ, radiation 52.3, wall 63.0, M_Cu = 1.613 ng, residual −0.11%; target model vs PLUTO 32.3/10.9 µJ (converging as in T015).
 - Imaging of the low it0 runs is in progress.
+
+## 2026-11-19 02:15 (UTC+8) — T016e low G0 it0 imaging (v1e)
+- L/L(300), filter b, baseline, at 400/500/600/700/800/1000/1200 ns:
+  - thin member: sa 0.63/0.44/0.32/0.24/0.32/0.28/0.20; thin 0.90/0.76/0.64/0.51/0.45/0.29/0.18
+  - trap member: sa 0.65/0.46/0.35/0.27/0.32/0.40/0.25
+  - experiment: 0.70/0.45/0.29/0.17/0.13/0.04/0.016
+  - T015 sa (thin member): 0.68/0.53/0.44/0.40/0.19/0.12/0.09
+- **400–700 ns sa is now close to the experiment (within 10–40%)**, better than T015 and the hard-sphere D. From 800 ns a **re-brightening appears in sa only**: the thin curve decays monotonically to 0.18 at 1200 ns, while sa rises from 0.24 to 0.32–0.40. Over the same interval the diagnostic shows Y_emw 0.85 → 0.69 and T_emw 10.0 → 9.2 kK. The Cu is diluted by interdiffusion, the self-absorption (trapping) drops faster than the emissivity, and the line emission "de-traps". This is physically possible in the model, but it is absent in the experiment and in T015. Possible causes:
+  (a) The sa transfer uses the r-rebinned, z-rebinned fields; volume averaging of mixed Cu/air cells may under-estimate the line opacity of the residual cold Cu shell. Check with the native-grid transfer.
+  (b) There is no Stark/van der Waals broadening: at late times, with ne ≈ 1e23 m⁻³ and n_air large, collisional broadening of Cu I 510–522 nm can exceed Doppler. That changes the optical depth of the de-trapping layer (Voigt is on the v1 list).
+  (c) The cold outer Cu vapour (T < 5 kK) absorbs in the lower-level lines (Cu I 510.6 nm, lower level 3d⁹4s² ²D5/2 at 1.39 eV); its population depends on the mixing.
+- Next: test (a) and (b) in the imaging code alone, without new hydro. This is diagnostic, and it is a declared v1 item (Voigt), so no tuning is involved.
