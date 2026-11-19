@@ -1,0 +1,2 @@
+T018c high_thin_G0/it0 image_v2 rc0 archived:18metrics,29times0-740ns,six finite local frame archives/hash-verified copies; all18 unavailable P2 preserved. Baseline bP1 thin/sa=723.5225298/682.9536611ns; see tasks/T018c.report.md and results/T018c/high_thin_G0/it0/image_v2/.
+Original queue now8/10complete with trapv1 active; trapv2 continues in delegated owner T018c_post_it0_trap_v2_01. Full highit0 images and highit1/it2 remain pending; card stays running.
