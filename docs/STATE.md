@@ -344,3 +344,7 @@ Updated: 2026-11-15
 - E_wall 20 vs 50 µJ: partly a build difference (v1i implicit vs explicit wall), so it is not attributed to PE.
 - ConsToPrim: 17.9M / 17.5M lines (thin/trap).
 - Picard: target model 0.158 × 396.7 = 62.6 µJ against PLUTO 12.0 µJ, which is it0 with no shielding. it1 is running.
+- T018c high it0 diagnostics (thin; trap similar):
+  - Cu core (Y > 0.5) at t_ref = 300 ns: M_Cu 6.33 ng, specific internal energy 10.8 MJ/kg, T_mw 5.6 kK. PE off (T016e high it2): ≈ 44 MJ/kg, 16.5 kK. This is the **PREREG expectation "lower core specific energy at t_ref": met** (it0; to be confirmed at it2).
+  - The core cools 5.6 → 4.2 kK and its radiated power falls 73 → 18.5 W from 300 to 800 ns, a factor 4. With PE off the 510 nm emission stayed flat (Cu II → Cu I recombination). This points to a faster late decay, the second expectation; the declared metric is image_v2 P1/L(t), pending.
+  - Shock vs Fig. 3d: +5…+14% over 90–760 ns (too fast), 0% at 937 ns. it0 has no shielding (gas absorption 276 µJ). PE off at it2 was within 3–4% at 500–700 ns. Judge at it2.
