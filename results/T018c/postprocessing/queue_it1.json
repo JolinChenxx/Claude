@@ -97,7 +97,7 @@
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap_v2.py",
       "runner_sha256": "bc6f3415f5a4fe305166a5bb03ded4b0177de8380292b5fe8aa0b9de7505fe85",
       "workers": 16,
-      "state": "running",
+      "state": "completed",
       "commands": [
         {
           "name": "high_trap_G0_image_v2",
@@ -122,14 +122,20 @@
       "launched": "2026-11-20T01:25:44",
       "pid": 52000,
       "launch_commit": "9b5a698",
-      "launch_evidence": "launch_it1_trap_v2.json"
+      "launch_evidence": "launch_it1_trap_v2.json",
+      "completed": "2026-11-20T03:14:49.159169+08:00",
+      "completed_commands": [
+        "high_trap_G0_image_v2"
+      ],
+      "progress_checked": "2026-11-20T03:22:26+08:00",
+      "image_collected": "results/T018c/high_trap_G0/it1/image_v2/validation.json"
     },
     {
       "job_id": "T018c_post_it1_thin_01",
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin.py",
       "runner_sha256": "73cac25ac7a31a40161d244c3a94126f142e17b3972ad2fe4bec6a321ac778c1",
       "workers": 16,
-      "state": "running",
+      "state": "completed",
       "commands": [
         {
           "name": "high_thin_G0_emission",
@@ -346,10 +352,12 @@
       "completed_commands": [
         "high_thin_G0_emission",
         "high_thin_G0_core_energy",
-        "high_thin_G0_shock_track"
+        "high_thin_G0_shock_track",
+        "high_thin_G0_image_v1"
       ],
-      "active_command": "high_thin_G0_image_v1",
-      "progress_checked": "2026-11-20T02:36:55.566385+08:00"
+      "progress_checked": "2026-11-20T03:22:26+08:00",
+      "completed": "2026-11-20T03:18:18.638618+08:00",
+      "image_collected": "results/T018c/high_thin_G0/it1/image_v1/validation.json"
     },
     {
       "job_id": "T018c_post_it1_thin_v2_01",
@@ -708,11 +716,12 @@
     "including_own_reservation": 64
   },
   "scope_update": {
-    "at": "2026-11-20T03:11:49+08:00",
-    "authority": "23929ba; handoff/to_codex/T018c-stop-it2.md",
+    "at": "2026-11-20T03:22:26+08:00",
+    "authority": "c5c469f; handoff/to_codex/T018c-it1-postprocessing.md",
     "withdrawal": "PE results withdrawn: STATE 2026-11-20 03:00",
-    "allowed": "Finish only already queued it1 postprocessing; retained for records only. No new T018c work.",
+    "allowed": "Only already running items may finish. Start no further T018c it1 images, thin v2 included. Freed cores go to T019.",
     "solver_card_status": "done",
-    "postprocessing_complete": false
+    "postprocessing_complete": false,
+    "thin_v2_existing_launch": "2026-11-20T03:12:25; wrapper51676; launch1bb6bcb; already running before this note was received on the03:20pass"
   }
 }
