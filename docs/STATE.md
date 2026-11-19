@@ -357,3 +357,8 @@ Updated: 2026-11-15
   | experiment | 0.54 | 0.37 | 0.21 | 0.13 | |
 
   PREREG "faster late decay" holds in direction but is small: the gap to the experiment closes by only ~10–15%. Phase explosion does not explain the slow high-fluence decay. The model still decays 3–4× too slowly at 600–700 ns. To be confirmed at it2. The leading remaining suspects are outside the vapour mass: emission physics (Cu I upper-level populations, Stark/IP lowering) or plume cooling (3-D mixing and radiation transport beyond the NEC approximation). Nothing is tuned.
+
+## 2026-11-20 02:00 — T018c high it1 (PE on, shielding from it0)
+- Target absorption, model vs PLUTO: 34.6 vs 14.1 µJ (thin; trap 14.3), so |Δ| = 145%. Not converged; it0 was 422%.
+- With shielding the vaporised mass drops 8.08 → 3.40 ng (PE part 4.88 → 1.76 ng). Gas absorption 262 µJ (it0 276), radiation 53 µJ (64), PLUTO M_Cu 3.86 ng. At it1 the PE vapour mass is therefore close to the PE-off it0 value (3.29 ng). Whether the plume still differs from PE off depends on the converged iterate.
+- it2 is running (started ~01:45). If it2 is still > 10%, extend to it3–it4 on v1i. The it3 stall of T016d was on the older build; check whether it recurs.
