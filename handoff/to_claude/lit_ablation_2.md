@@ -1,2 +1,0 @@
-Fetched and visually checked Vladoiu 2008 full PDF; Cu 1064nm marker readings and uncertainty are in docs/DATA_NOTES.md. Conditions are 4.5ns/20 pulses per crater/air/mm-scale spot, approximately6-26 J/cm2: usable as a qualified multipulse comparison, not a matched single-pulse mass benchmark; cited related Cu data still require verification.
-Original broader literature note remains pending; full PDF/hash and verification record are retained. No fitting/extrapolation/model changes.
