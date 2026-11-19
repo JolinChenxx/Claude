@@ -237,3 +237,15 @@ Updated: 2026-11-15
   (1) radiative loss: thin NEC with complete Cu I/II line lists (Kurucz) plus continuum, against the present NIST-only NEC; is the core cooling rate low by ×2?
   (2) 2D-axisymmetric limitations: 3D instabilities and turbulent mixing at the contact surface. This cannot be added without free parameters, so it is a declared limitation and a sensitivity.
   (3) the target-gas coupling: late vapour supply, and the condensation/recondensation sink of Cu at the cold target (currently one-way, no back-flux to the target).
+
+## 2026-11-19 08:35 (UTC+8) — Cu-core energy budget (scripts/core_energy.py, Y > 0.5)
+- High fluence, T016e it1 (thin/trap members similar), at 300/500/700 ns:
+  - M_Cu,core 1.01/0.83/0.66 ng; E_int 45/29/19 µJ; Cu-mass-weighted T 16.5/12.0/9.4 kK
+  - P_rad 70/30/18 W; "other" (dE/dt + P_rad) −60/−15/−29 W
+- Low fluence, it0, at 300/500/700/1100 ns: T 10.5/8.8/7.2/5.6 kK; P_rad 24/10/4/0.7 W; "other" −6/−5/0/−5 W.
+- **The core is not heated by its surroundings.** "Other" is negative: expansion work, conduction and interdiffusion take energy out. Radiation is 35–60% of the losses.
+- **The core does cool strongly: 16.5 → 9.4 kK between 300 and 700 ns at high fluence.** Yet the 510 nm emission falls slowly, because the Cu I fraction rises steeply as T falls (Cu II → Cu I recombination) and offsets the falling Boltzmann factor.
+- The decisive difference is the **temperature at the normalisation time**. At 300 ns the high-fluence core is at about 16.5 kK and mostly Cu II, where cooling *raises* the Cu I in-band emissivity. The low-fluence core is at about 10.5 kK and mostly Cu I; there cooling lowers the emission, and the low series indeed agrees with experiment to 800 ns.
+- The high-fluence core is too hot: its specific energy is E_int/M_Cu ≈ 44 MJ/kg at 300 ns, against ≈ 20 MJ/kg at low fluence. The converged high-fluence Picard state has little Cu (≈ 0.8 ng; plasma shielding cuts target absorption to about 20 µJ) and the same gas energy, so less ablated Cu carries the same energy. Hypotheses to test, each parameter-free:
+  (a) **The ablated mass is too small.** The target model (surface evaporation with a 0.9 T_c cap, one-way coupled) has no phase explosion / volumetric boiling. The over-cap energy is only 2.8 µJ at it2, so the cap alone does not explain it. Check against literature crater/ablated-mass data at about 200 J/cm² (data, not fitting).
+  (b) The emission vs T relation (Cu I/Cu II balance) depends on the Debye–Hückel IP lowering and on the partition-function truncation. These are model choices with known alternatives (Stewart–Pyatt); run a sensitivity check on the same fields with imaging only.
