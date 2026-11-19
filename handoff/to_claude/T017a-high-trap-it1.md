@@ -1,0 +1,2 @@
+High-trap G0 it1 reference image_v2 finished rc0;18 metrics and validation archived under results/T016e/high_trap_G0/it1/image_v2. Baseline P1 thin/sa(ns): a1053.3500/985.0565,b584.5812/616.0064,c330.1999/379.1756; all18 P2 unavailable preserved.
+Four reference images archived; queue now automatically picked up high_trap it2 (completion checked when each existing path is reached). High-thin it2 needs later repeat; low it0 milestones pending. See T017a report.
