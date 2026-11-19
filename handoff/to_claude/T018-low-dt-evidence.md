@@ -1,1 +1,0 @@
-All16 rank extracts verified and pushed under results/T018/inflight_dt/: last6 matches per pattern (ranks3-7 have no dt-limit records), last5 rank0 step/dt lines, offsets/hashes. At step29000 actual low thin/trap dt8.3429e-4/8.3233e-4ns; rank1 kind1[4,3] dt_src8.418e-12/8.399e-12s. No stop or parameter changes.
