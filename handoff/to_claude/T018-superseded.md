@@ -1,2 +1,0 @@
-T018 fully superseded by T018b/T018c: named batch8480 stopped16:50:47; high thin/trap last budgets199.9899/252.9527ns, raw data retained, STOPPED evidence and reconstructed registry provenance pushed824614e. Forced whole-batch stop yields unknown solver return codes, recorded empty rather than invented.
-T018c launched16:53:11 via job.ps1, PID19644,16cores, v1i; generated input checks pending next pass. Total allocation64 physical cores, native imaging remains held. Next handoffs after highit0/it2; literature closure acknowledged.
