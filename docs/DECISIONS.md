@@ -42,3 +42,6 @@ At 200 ns T018 low ran at dt ≈ 8e-4 ns (~34 ns/h; ~60 h for it0–it1). The li
 ## 2026-11-19 17:00 (UTC+8) — v1i accepted; T018 high members stopped and rerun as T018c (standing authorization)
 T018b at G0 (low thin, 100/150/200 ns) agrees with v1h within 0.03% on E_internal, E_kinetic, M_Cu and E_src, within 1.4% on E_gas_abs and within 1.6% on E_wall. dt at 200 ns is 7.5e-2 ns against 8e-4 ns on v1h. The T018 high members (v1h, ~80 ns/h, trap wall-limited) are superseded: they are stopped and rerun on v1i (T018c), so that all phase-explosion results share one build. Data is kept.
 Literature lookup (ablation mass): closed as a documented partial result (DATA_NOTES: Gojani 2008, Semerok); no further sources are needed to proceed.
+
+## 2026-11-19 18:05 (UTC+8) — stop T016e low G0 it2 (standing authorization)
+it2 was a convergence confirmation of it1 (target absorption 21.0/21.6 µJ). The target absorption is final after ~300 ns, and both members were at ~870 ns, running ~40 ns/h (~11 h left). They are stopped, the data is kept, and the partial budgets are used for the convergence check. The 16 cores go to imaging and diagnostics.
