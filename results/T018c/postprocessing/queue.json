@@ -1,6 +1,6 @@
 {
   "prepared": "2026-11-19T20:57:49.101312+08:00",
-  "state": "delegated_pending",
+  "state": "completed",
   "job_id": "T018c_post_it0_01",
   "workers": 16,
   "capacity_last_checked": {
@@ -268,11 +268,11 @@
   "initial_status": "running",
   "initial_stderr_empty": true,
   "initial_summary_state": "running",
-  "last_collected": "2026-11-19T23:33:04.941685+08:00",
+  "last_collected": "2026-11-19T23:37:28.565645+08:00",
   "diagnostics_it0": "archived; all six commands rc0",
   "diagnostics_evidence": "results/T018c/postprocessing/diagnostics_it0_completed/summary.json",
-  "images": "thin image_v1/v2 and trap image_v1 archived; only trap image_v2 remains active in delegated owner T018c_post_it0_trap_v2_01",
-  "completed_commands_at_collection": 9,
+  "images": "all four high it0 image_v1/v2 sets archived;24 finite local frame archives,72metrics",
+  "completed_commands_at_collection": 10,
   "parallel_dispatch_policy": "Whenever 16 physical cores are available, delegate the next queued T018c item to a separate job before T016i. Never compute the same target in both jobs.",
   "delegation_manifest": "results/T018c/postprocessing/delegations.json",
   "parallel_job_metadata": {
@@ -286,5 +286,10 @@
   },
   "parallel_launch_evidence": "results/T018c/postprocessing/launch_it0_trap_v2.json",
   "original_job_exitcode": 75,
-  "delegation_deferral_evidence": "results/T018c/postprocessing/delegation_deferred_it0.json"
+  "delegation_deferral_evidence": "results/T018c/postprocessing/delegation_deferred_it0.json",
+  "completion_scope": "it0 work across original and delegated owner; original process exit75 unchanged",
+  "delegated_owner_exitcode": 0,
+  "completed_original_commands": 9,
+  "completed_delegated_commands": 1,
+  "completion_evidence": "results/T018c/postprocessing/it0_completion.json"
 }
