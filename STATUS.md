@@ -1,5 +1,19 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 09:35 (UTC+8)
+- cards: T016e,T016i,T017a | action: pull current e46bdf5; no incoming note/ready card. Archived high_trap_G0/it1 reference image and submitted milestone handoff; reports synced/hash verified. Four reference images archived; all18 P2 unavailable preserved. Baseline b P1 thin/sa584.5812/616.0064ns.
+- T017a_image_v2_01 PID12624: high_trap_G0/it2 now running. Corrected queue assumption: paths captured at series start, completion checked on reaching each path; trap it2 picked up automatically. High-thin it2 needs later repeat; no duplicate trap it2. Low it0 milestones pending.
+- T016e_post_high_thin_03 PID32216: emission diagnostic rc0 archived (4 times,finite,fractions normalized); v0 image still running. T016i_native_01 PID38032: T015/low_thin_G1/it0 running,sixteen native images archived; full T015 handoff pending. Native repeats for newer T016e it2 still needed.
+- T016e PID42332 running; eight solver completions archived,known warnings retained. T016e_r_low_G1_01 PID12720 running. All5 status checks running,stderr tails empty.
+- T016e/high_thin_G0/it3: budget_t_ns=5.699836e+001; dt=3.3674e-003,Nrkl=5 (step9000,log_t_ns=5.4547e+001).
+- T016e/high_thin_G1/it0: budget_t_ns=6.339889e+002; dt=1.2722e-002,Nrkl=39 (step83000,log_t_ns=6.3355e+002).
+- T016e/high_trap_G0/it3: budget_t_ns=8.249906e+001; dt=4.0146e-005,Nrkl=2 (step21000,log_t_ns=8.2798e+001).
+- T016e/low_thin_G0/it1: budget_t_ns=9.714904e+002; dt=2.2692e-002,Nrkl=61 (step54000,log_t_ns=9.6704e+002).
+- T016e/low_thin_G1/it0 [intentionally stopped]: budget_t_ns=4.980000e+002; dt=6.3659e-003,Nrkl=63 (step72000,log_t_ns=4.9418e+002).
+- T016e/low_trap_G0/it1: budget_t_ns=9.734937e+002; dt=2.2753e-002,Nrkl=63 (step54000,log_t_ns=9.5063e+002).
+- T016e_r/low_thin_G1/it0: budget_t_ns=5.019880e+002; no fresh dt/Nrkl; inherited pre-restart sample excluded.
+- skipped ready cards and why: none; no ready cards. Active solver members advanced; next check5 jobs and requested milestone handoffs.
+
 ## 2026-11-19 09:20 (UTC+8)
 - cards: T016e,T016i,T017a | action: initial pull blocked by live registry append; committed exact high_thin_G0/it2 completion then rebased onto dd742ff (Claude restart acknowledgment). No incoming note or ready card. Archived eighth solver completion and sixteenth native image.
 - high_thin_G0/it2 rc0,26064.2s,800ns,ConsToPrim1,002,826(all8 ranks counted/hashed). M_Cu=M_src9.9950257144e-13kg; target-model/PLUTO absorption22.3066691/17.5377437uJ. v1c hashes/rmax1000 checked it2/it3; it3 running. Known warnings preserved.
@@ -433,19 +447,4 @@
 - T016e/low_trap_G0/it1: t_ns=9.799873e+001; latest logged dt=4.2472e-003, Nrkl=2 (step 10000, log_t_ns=9.5562e+001).
 - skipped ready cards and why: none; no ready cards or incoming handoff. Report sync hash verified; results about 9.81 MB.
 - next: check both postprocessing jobs, archive remaining outputs and high-thin it1 diagnostic; collect new production completions. Ended after launch bookkeeping, no parameter changes or foreground waiting.
-
-## 2026-11-19 01:52 (UTC+8)
-- card: T016e | action: archived low_trap_G0/it0, low_thin_G0/it0 and high_trap_G0/it1 (all rc=0); first low-fluence handoff and evidence pushed in 328bf1e. Registry rows preserved unchanged. Both low shock tracks validated, all seven requested tracks done and incoming note removed.
-- completion: low trap/thin it0 at 1300 ns, ConsToPrim 4,461,878/4,559,784; high trap it1 at 800 ns, ConsToPrim 3,094,260. M_Cu=M_src for each. Full hashes/tails and source/budget retained; actual completed/next iteration rmax and v1c hashes verified. Known warnings remain; numerical acceptance/Picard convergence pending.
-- new background job: T016e_post_02 PID 28720, started 2026-11-19T01:52:27, execution commit 328bf1e. Serial low-thin diagnostic then three imaging commands with v1c, 8 workers, BelowNormal priority. Initial status running, stderr empty.
-- running production: T016e PID 42332, execution commit bc79e7d, elapsed 08:25:38 at initial check; wrapper stderr empty.
-- Progress snapshot 2026-11-19T01:52:57.312804+08:00; budget and latest logged times recorded separately.
-- T016e/high_thin_G0/it1: t_ns=7.964923e+002; latest logged dt=3.1994e-002, Nrkl=19 (step 72000, log_t_ns=7.8184e+002).
-- T016e/high_thin_G1/it0: t_ns=3.124903e+002; latest logged dt=1.2017e-002, Nrkl=10 (step 55000, log_t_ns=3.0937e+002).
-- T016e/high_trap_G0/it2: t_ns=3.099758e+001; latest logged dt=5.0993e-003, Nrkl=2 (step 1000, log_t_ns=2.9021e+001).
-- T016e/low_thin_G0/it1: t_ns=5.749535e+001; latest logged dt=1.5304e-003, Nrkl=2 (step 1000, log_t_ns=5.4667e+001).
-- T016e/low_thin_G1/it0: t_ns=4.184944e+002; latest logged dt=7.1948e-003, Nrkl=63 (step 63000, log_t_ns=4.1741e+002).
-- T016e/low_trap_G0/it1: t_ns=6.249912e+001; latest logged dt=5.9273e-003, Nrkl=2 (step 2000, log_t_ns=5.9695e+001).
-- skipped ready cards and why: none; no ready cards. Report synced/hash-verified. Ended after background launch bookkeeping.
-- next: check T016e_post_02, archive outputs and latest thin diagnostic; collect newly completed production iterations. No parameter changes or foreground waiting.
 
