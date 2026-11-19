@@ -2,7 +2,8 @@
 id: T016d
 title: Stop the stalled high_trap_G0 it3 and diagnose its time-step limiter with the instrumented build v1f
 owner: codex
-status: ready
+status: running
+started: 2026-11-19T10:19:39+08:00
 depends: []
 milestone: D2
 est_time: 0.2h operations + 20 min machine time (8 cores)
