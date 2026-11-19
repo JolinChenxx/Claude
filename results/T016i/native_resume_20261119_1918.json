@@ -1,0 +1,165 @@
+{
+  "checked": "2026-11-19T19:22:47.812865+08:00",
+  "authority": "8314809 T018-capacity.md step3; T018c steps3-4 replacement priority",
+  "native_dispatcher": {
+    "pid": 39740,
+    "created": 1795063781.6827476,
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+      "D:/sim_runs/T014",
+      "--series",
+      "high",
+      "--tables",
+      "D:/sim_runs/tables/v0",
+      "--workers",
+      "16",
+      "--scenarios",
+      "configs/imaging/v1.yaml",
+      "--outname",
+      "image_v1"
+    ]
+  },
+  "wrapper": {
+    "id": "T016i_native_01",
+    "pid": 38032,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe results\\T016i\\run_native_imaging.py",
+    "threads": 1,
+    "commit": "f897ccd",
+    "started": "2026-11-19T02:22:57",
+    "dir": "D:\\sim_runs\\T016i_native_01"
+  },
+  "solvers": [
+    {
+      "pid": 12012,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.2984977
+    },
+    {
+      "pid": 18288,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.2941113
+    },
+    {
+      "pid": 20080,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.177254
+    },
+    {
+      "pid": 20576,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.1874852
+    },
+    {
+      "pid": 24660,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.3168783
+    },
+    {
+      "pid": 36760,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.1738389
+    },
+    {
+      "pid": 40392,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.1835694
+    },
+    {
+      "pid": 41340,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.1683896
+    },
+    {
+      "pid": 41728,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.3024662
+    },
+    {
+      "pid": 42796,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.1804051
+    },
+    {
+      "pid": 45204,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.190358
+    },
+    {
+      "pid": 48776,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.3069732
+    },
+    {
+      "pid": 50948,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.2788694
+    },
+    {
+      "pid": 51116,
+      "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+      "created": 1795078427.1929116
+    },
+    {
+      "pid": 51376,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.2894907
+    },
+    {
+      "pid": 53852,
+      "cwd": "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "created": 1795078433.3121324
+    }
+  ],
+  "active_images": [
+    {
+      "pid": 22404,
+      "created": 1795086355.4157531,
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018b\\low_trap_G0\\it1",
+        "--series",
+        "low",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018b\\low_trap_G0\\it1\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "workers": 16
+    },
+    {
+      "pid": 29452,
+      "created": 1795086533.433481,
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+        "--series",
+        "low",
+        "--tables",
+        "D:/sim_runs/tables/v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "workers": 16
+    }
+  ],
+  "capacity_before": 48,
+  "native_requested": 16,
+  "capacity_after": 64,
+  "replacement_priority": "T018b it0 postprocessing completed; it1 final command in flight, no subsequent capacity() boundary; T018c it0 solvers unfinished, no unassigned completed-iteration diagnostics.",
+  "state": "dispatcher_resumed",
+  "resumed": "2026-11-19T19:22:47.814852+08:00",
+  "observed_status": "running"
+}

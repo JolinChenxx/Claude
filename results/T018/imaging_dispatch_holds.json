@@ -22,10 +22,12 @@
       "--scenarios",
       "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
     ],
-    "state": "dispatcher_suspended",
+    "state": "dispatcher_resumed",
     "time": "2026-11-19T14:05:02.255856+08:00",
     "authority": "handoff/to_codex/T018-capacity.md",
-    "resume_condition": "T018 running and 16 physical cores unreserved; resume at most permitted queues"
+    "resume_condition": "T018 running and 16 physical cores unreserved; resume at most permitted queues",
+    "resumed": "2026-11-19T19:22:47.814852+08:00",
+    "resume_reason": "T018b it0 postprocessing completed; it1 final command in flight, no subsequent capacity() boundary; T018c it0 solvers unfinished, no unassigned completed-iteration diagnostics. Existing background queue resumes in spare16-core slot; no new job."
   },
   {
     "job": "T017a_image_v2_02",

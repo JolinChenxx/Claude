@@ -1,6 +1,6 @@
 {
   "prepared": "2026-11-19T17:12:05+08:00",
-  "state": "started_in_background",
+  "state": "completed",
   "job_id": "T018b_post_it0_01",
   "launcher": "scripts/win/job.ps1 start -Id T018b_post_it0_01 -Threads 1 -Cmd \"D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018b\\postprocessing\\run_it0.py\"",
   "workers": 16,
@@ -188,5 +188,7 @@
     "dir": "D:\\sim_runs\\T018b_post_it0_01"
   },
   "initial_status": "running",
-  "initial_stderr_empty": true
+  "initial_stderr_empty": true,
+  "completed": "2026-11-19T19:10:20.644114+08:00",
+  "completion_evidence": "results/T018b/postprocessing/it0_completed/validation.json"
 }
