@@ -4,6 +4,7 @@ import datetime
 import json
 import subprocess
 import sys
+import os
 import ctypes
 from ctypes import wintypes
 
@@ -18,8 +19,12 @@ if not kernel32.SetPriorityClass(kernel32.GetCurrentProcess(), 0x4000):
 REPO = Path(__file__).resolve().parents[2]
 RUN = Path('D:/sim_runs/T016e/low_thin_G0/it1')
 TABLES = 'D:/sim_runs/tables/v1c'
-OUT = Path('D:/sim_runs/T016e_post_low_thin_02')
+OUT = Path('D:/sim_runs/T016e_post_low_thin_02_retry1')
 OUT.mkdir(parents=True, exist_ok=True)
+# Supply the source package to both script and module child commands.
+env = os.environ.copy()
+env['PYTHONPATH'] = str(REPO / 'src') + os.pathsep + env.get('PYTHONPATH', '')
+env.update(OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1')
 commands = [
     [sys.executable, str(REPO / 'scripts/diag_emission.py'), str(RUN),
      '--tables', TABLES, '--times', '300', '500', '700', '1000',
@@ -31,7 +36,7 @@ records = []
 for command in commands:
     print('Running:', command, flush=True)
     started = datetime.datetime.now().astimezone().isoformat()
-    result = subprocess.run(command, cwd=REPO)
+    result = subprocess.run(command, cwd=REPO, env=env)
     records.append(dict(command=command, started=started, returncode=result.returncode,
                         finished=datetime.datetime.now().astimezone().isoformat()))
     (OUT / 'postprocess_summary.json').write_text(json.dumps(records, indent=2)+'\n')
