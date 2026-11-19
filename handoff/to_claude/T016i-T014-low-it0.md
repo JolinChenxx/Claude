@@ -1,0 +1,2 @@
+T016i: T014 low_thin_G0/it0 native image_v1 returned 0; 18 metric sets and six finite local frame archives validated. Review tasks/T016i.report.md and results/T014/low_thin_G0/it0/image_v1/: 15 P2 unavailable retained; c_sa baseline P2=578.2248469 ns; no parameter changes.
+31 native sets archived overall. Existing queue is on T014 low_thin_G0/it1; full T014 low series and later T016e catch-up remain pending, so T016i stays running.
