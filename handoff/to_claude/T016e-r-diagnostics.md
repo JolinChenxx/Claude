@@ -1,2 +1,0 @@
-Stopped low G1: shock and thin/v1c core diagnostics both returned 0. See results/T016e_r/low_thin_G1/it0/diagnostics/; the 400-500 ns comparison window contains 40 shock and 10 core samples. This is partial solver output; image_v2 remains queued behind T018.
-Literature follow-up: docs/DATA_NOTES.md identifies Semerok et al. (SPIE 4423), Fig. 7 as a single-shot Cu depth-versus-fluence measurement. No depth inferred from their reported volume/energy ratio.

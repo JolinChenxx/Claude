@@ -284,3 +284,7 @@ Updated: 2026-11-15
 - P1 sa 344 ns, against 218 ns in experiment (it0: 653 ns).
 - **At low fluence the converged Picard state decays much faster than it0.** Gas absorption halves (88 → 44 µJ) while M_Cu halves (1.0 → 0.52 ng): the core is cooler and starts nearer the Cu I regime. From 400 to 800 ns the model is ×1.2–1.9 the experiment; the excess grows to ×4–6 at 1000–1200 ns. The early overshoot at 100 ns (×4) remains.
 - At high fluence (it2, not converged) the trend is the opposite: slower with iteration. Both behaviours fit the core-energy picture: the specific energy of the emitting Cu at t_ref sets the decay.
+
+## 2026-11-19 14:30 — low-fluence G1 (stopped at ~557 ns): shock and core
+- Shock on the axis vs Fig. 3d, low fluence: −45% at 100 ns, −25% at 200 ns, −20% at 300 ns, −14% at 430–480 ns. The G0 result had the same pattern ("early shock 40% too slow"), so the deficit does not depend on the grid. It points to too little early energy or momentum delivered to the gas (vapour mass and launch), which T018 (phase explosion) tests.
+- Cu core: M_Cu 7.4e-13 kg at 100 ns, falling to 4.9e-13 kg at 400 ns as Cu moves to Y < 0.5; T_mw 21.6 → 9.6 kK.
