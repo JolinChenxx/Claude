@@ -17,14 +17,21 @@ for p in psutil.process_iter(['pid', 'name']):
         assert Path(p.cwd()) != run, 'Solver still active'
 out.mkdir(parents=True, exist_ok=True)
 archive = run.parent/('archive_' + a.phase)
-archive.mkdir(exist_ok=False)
+archive.mkdir(exist_ok=True)
 summary = dict(collected=datetime.datetime.now().astimezone().isoformat(), run=record, ranks=[])
 logs = sorted(run.glob('pluto.*.log'))
 assert len(logs) == 8
 for p in logs:
-    data = p.read_bytes()
-    shutil.copy2(p, archive/p.name)
-    assert hashlib.sha256((archive/p.name).read_bytes()).digest() == hashlib.sha256(data).digest()
+    raw = p.read_bytes()
+    if not (archive/p.name).exists():
+        shutil.copy2(p, archive/p.name)
+    assert (archive/p.name).read_bytes() == raw, 'Existing archive must be unchanged'
+    prefix_bytes = 0
+    if a.phase == 'vmax':
+        previous = (run.parent/'archive_v1f'/p.name).read_bytes()
+        assert raw.startswith(previous), 'Expected the verified v1f log prefix'
+        prefix_bytes = len(previous)
+    data = raw[prefix_bytes:]
     lines = data.decode(errors='replace').splitlines()
     steps = [i for i,x in enumerate(lines) if x.startswith('step:')][-20:]
     pairs = []
@@ -37,6 +44,7 @@ for p in logs:
     for label, selected in [('dt_limit',dt),('vmax',vmax),('step_nrkl',pairs),('other_warnings',other)]:
         (out/(p.stem+'.'+label+'.log')).write_text('\n'.join(selected)+ ('\n' if selected else ''))
     summary['ranks'].append(dict(rank_log=p.name, bytes=len(data), sha256=hashlib.sha256(data).hexdigest(),
+        combined_bytes=len(raw), combined_sha256=hashlib.sha256(raw).hexdigest(), excluded_prefix_bytes=prefix_bytes,
         dt_limit_count=len(dt), vmax_count=len(vmax), steps_collected=len(steps),
         last_step=lines[steps[-1]] if steps else None, ConsToPrim=sum('ConsToPrim' in x for x in lines),
         other_count=len(other), raw_archive=str(archive/p.name)))
