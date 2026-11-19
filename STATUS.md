@@ -1,5 +1,14 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T23:51:11.483772+08:00 (UTC+8)
+- Work card:none (monitoring only). Pulled ws to8de7e79; Claude consumed full highit0 and prior native/trapv1 handoffs. Incoming to_codex empty; no owner:codex/status:ready cards. No new claim,launch,collection or ws edit; unrelated output/ preserved.
+- job.ps1 status checked active jobs T018c and T016i_native_01: running,stderr tails empty. T018c both highit1 solvers advance; registry still contains only the two previously archived it0 completions. Logical it0 deliverables already complete across original/delegated jobs; historical original exit75 is closed administratively with actual owner rc0,not rerun. Native remains T014 high_trap_G0/it2/v1. No new image/solver iteration to collect.
+- Capacity sample2026-11-19T23:50:38.135704+08:00: 16solver ranks+native16worker image=32/64physicalcores reserved,32free. No eligible additional T018c work:all completed it0 outputs archived,both it1 runs unfinished. Native task prescribes sequential16worker batch roots,so no parallel native batch added. Next completed T018c iteration gets priority. No stop,suspend or resume.
+- ImagePID26028 outputD:\sim_runs\T014\high_trap_G0\it2\image_v1:16workers,worker CPU28055.672s,increase13851.750s since previous sample.
+- Sample2026-11-19T23:50:38.135704+08:00: T018c/high_thin_G0/it1 budget_t_ns=402.9881; step:27000; t = 3.7497e+002; dt = 3.0801e-002; 46.9 %; [Mach = 3.923468, Nrkl = 27]. Available older-step source diagnostic in bounded tail:! lip dt-limit: step 24000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=1.181e+000 T=3.476e+003 rhoe=8.994e+005 q=1.107e+009 dt_src=5.331e-010 s; dt_src is not actual step dt.
+- Sample2026-11-19T23:50:38.135704+08:00: T018c/high_trap_G0/it1 budget_t_ns=410.9869; step:29000; t = 4.0466e+002; dt = 3.6022e-002; 50.6 %; [Mach = 2.911133, Nrkl = 16]. Available older-step source diagnostic in bounded tail:! lip dt-limit: step 25000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=1.164e+000 T=3.434e+003 rhoe=8.718e+005 q=1.063e+009 dt_src=5.477e-010 s; dt_src is not actual step dt.
+- Disk free2251.287GB decimal; active T018c log growth0.000078510GB/h over889.3s; T018/T018b logs unchanged. Log-only rate excludes fields/images/other writers/future rates/duration,not a completion forecast. No threshold action,deletion or truncation. Evidence:D:/sim_runs/T018/pass_20261119_2350_monitor.json.
+
 ## 2026-11-19T23:38:35.798958+08:00 (UTC+8)
 - Work card:T018c,full highit0 deliverable package completed. Initial ws pull current at500c8c7; no new to_codex note or owner:codex/status:ready card. No new claim or job launch; unrelated output/ preserved.
 - Actual owner T018c_post_it0_trap_v2_01 finishedrc0: trap image_v2 command ended23:34:36.180868,summary completed23:34:36.380173. Exact command/job/exit0/all25 raw file hashes verified; archived18metrics,summary,validation at29common times0-740ns. Six frame archives verified finite and retained locally,copy hashes/readback checked. Baseline bP1thin/sa735.444221/715.012739ns; all18P2 unavailable preserved,all18P1 finite/positive.
@@ -353,15 +362,3 @@
 - T018/high_trap_G0/it0: budget_t_ns=1.889978e+002; step:24000; t = 1.8769e+002; dt = 1.0697e-002; 23.5 %; [Mach = 8.525559, Nrkl = 8]
 - T016e/low_thin_G0/it2: budget_t_ns=8.104883e+002; step:40000; t = 7.9564e+002; dt = 2.0787e-002; 61.2 %; [Mach = 1.759570, Nrkl = 62]
 - T016e/low_trap_G0/it2: budget_t_ns=7.929924e+002; step:40000; t = 7.7265e+002; dt = 2.1075e-002; 59.4 %; [Mach = 1.786628, Nrkl = 58]
-
-## 2026-11-19T16:06:23+08:00 (UTC+8)
-- T018-low-dt-diagnostic followed and incoming note consumed: delivered all16 rank files under results/T018/inflight_dt with byte-offset verification/hashes. Each rank has6vmax; ranks0-2 have6dt-limit, ranks3-7 none in captured logs. Both rank0 last5step/dt lines verified. At step29000 rank1 kind1[4,3] dt_src8.418e-12/8.399e-12s; actual thin/trap dt8.3429e-4/8.3233e-4ns. Handoff pushed; no causal inference/tuning/stop.
-- T018 remains running per disposition. Four job.ps1 checks running, stderr empty, no new completion/readycard. Low field after250ns still pending (now~203.5ns). Native dispatcher held; reference dispatcher resumed in its existing16core slot;48solver+16image allocation.
-- Disk sample 2026-11-19T16:05:45+08:00: D free2269.87GB. Low thin/trap rank0 growth2.39/2.42GB/h; all T018 rank logs14.98GB/h. Constant log-only horizon to150GB free141.5h, excluding snapshots/otherwriters and uncertain future iterationduration. No immediate threshold alert; preserve logs. Rates baseline: D:/sim_runs/T018/disk_guard_state.json.
-- Report synced/hashverified. Literature request remains unresolved; no new verified data this pass.
-- T018/high_thin_G0/it0: budget_t_ns=1.379970e+002; step:18000; t = 1.3584e+002; dt = 2.8668e-002; 17.0 %; [Mach = 11.598709, Nrkl = 14]
-- T018/high_trap_G0/it0: budget_t_ns=1.689977e+002; step:20000; t = 1.6863e+002; dt = 4.2355e-003; 21.1 %; [Mach = 11.001421, Nrkl = 6]
-- T018/low_thin_G0/it0: budget_t_ns=2.034996e+002; step:30000; t = 2.0349e+002; dt = 9.3242e-004; 15.7 %; [Mach = 8.579550, Nrkl = 2]
-- T018/low_trap_G0/it0: budget_t_ns=2.034995e+002; step:30000; t = 2.0346e+002; dt = 9.4013e-004; 15.7 %; [Mach = 8.573471, Nrkl = 2]
-- T016e/low_thin_G0/it2: budget_t_ns=7.964798e+002; step:40000; t = 7.9564e+002; dt = 2.0787e-002; 61.2 %; [Mach = 1.759570, Nrkl = 62]
-- T016e/low_trap_G0/it2: budget_t_ns=7.664757e+002; step:39000; t = 7.4331e+002; dt = 2.6512e-002; 57.2 %; [Mach = 1.847272, Nrkl = 59]
