@@ -249,3 +249,6 @@ Updated: 2026-11-15
 - The high-fluence core is too hot: its specific energy is E_int/M_Cu ≈ 44 MJ/kg at 300 ns, against ≈ 20 MJ/kg at low fluence. The converged high-fluence Picard state has little Cu (≈ 0.8 ng; plasma shielding cuts target absorption to about 20 µJ) and the same gas energy, so less ablated Cu carries the same energy. Hypotheses to test, each parameter-free:
   (a) **The ablated mass is too small.** The target model (surface evaporation with a 0.9 T_c cap, one-way coupled) has no phase explosion / volumetric boiling. The over-cap energy is only 2.8 µJ at it2, so the cap alone does not explain it. Check against literature crater/ablated-mass data at about 200 J/cm² (data, not fitting).
   (b) The emission vs T relation (Cu I/Cu II balance) depends on the Debye–Hückel IP lowering and on the partition-function truncation. These are model choices with known alternatives (Stewart–Pyatt); run a sensitivity check on the same fields with imaging only.
+
+## 2026-11-19 09:05 (UTC+8) — stop/restart under standing authorization
+- T016e/low_thin_G1/it0 is stalled at about 7 ns/h (496/1300 ns, Nrkl at the 63 cap). The member is stopped and restarted from its last output with rmax_par 4000, a numerics change of the same class as T016s, documented as a mid-run change. The data of the stopped run is kept.
