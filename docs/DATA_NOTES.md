@@ -56,3 +56,37 @@ Section 3.3, p.12/Fig.6 gives experimental FWHM-versus-density slopes, denoted 2
 Widths are FWHM, not HWHM. These central values/convention/density agree with the registry; its approximate uncertainty should be replaced only by Claude after review. No explicit confidence level for these width errors was found.
 
 No fitted experimental temperature law or numerical Cu ion-broadening parameter is supplied. Fig.7 (p.13) compares literature temperature curves. Equation 3 (p.6) concerns Mg/Al diagnostic lines; its neglect of ion effects is not a Cu-specific bound. Table 6 (p.11) contains theoretical apparent-width coefficients, not the measured triplet. Sections 3.2/4 warn that hyperfine/isotope structure affects 510.554-nm widths. Registry and model unchanged; extrapolation remains a sensitivity assumption.
+
+## Cu ns ablation mass (literature)
+
+2026-11-19 lookup for measured single-pulse Cu removal, 5-100 ns, 532/1064 nm, air, approximately 50-500 J/cm2. **Incomplete source verification: these are three literature leads, not three accepted quantitative benchmarks.** Full papers/figure captions could not be reliably obtained; DOI metadata, primary abstracts and one publisher figure were accessible. No model parameter was changed, and no mass conversion, fitting or extrapolation was performed. Earlier tentative numerical readings were withdrawn before committing this note.
+
+### Semerok et al. (2002)
+
+A. Semerok, B. Salle, J.-F. Wagner and G. Petite, *Femtosecond, picosecond, and nanosecond laser microablation: Laser plasma and crater investigation*, Laser and Particle Beams **20**, 67-72. DOI: https://doi.org/10.1017/S0263034602201093 .
+
+- Primary publisher abstract establishes approximately 10 um waist diameter, pulse durations spanning 60 fs to 6 ns, and atmospheric air. Quote (abstract, p.67): "with metals in air at atmospheric pressure".
+- Full experimental wavelength, ns-only fluence definition, pulse count, Cu depth/volume points, measurement method and droplet observations remain **unverified**. Do not substitute the abstract's full fs-to-ns range for a specific Cu ns dataset. No quantitative removal value is accepted here.
+- Publisher: https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0263034602201093 . Its PDF link returned HTML rather than a PDF; the ResearchGate PDF endpoint returned a security challenge. Crossref confirms authors, title, pages and DOI.
+
+### Gojani, Yoh and Yoo (2008)
+
+A.B. Gojani, J.J. Yoh and J.H. Yoo, *Extended measurement of crater depths for aluminum and copper at high irradiances by nanosecond visible laser pulses*, Applied Surface Science **255**, 2777-2781. DOI: https://doi.org/10.1016/j.apsusc.2008.08.031 .
+
+- Primary abstract states confocal crater-depth analysis and shadowgraph observations of material expulsion/plume/shock formation. Quote (abstract): "Confocal microscopy is used for crater depth analysis".
+- Publisher Fig.4 is accessible and was visually inspected: panel (b) plots c1-c4 curves/markers, depth in um against irradiance in GW/cm2. Its black c1 markers near irradiance 7, 10 and 15 GW/cm2 read roughly 4.5, 3.2 and 5 um (coarse visual precision about 0.5 um; neither fitted values nor experimental error bars).
+- **Do not use these as single-pulse Cu benchmarks yet:** the figure caption is missing from the retrieved evidence, so material/series identification, pulse count, duration, wavelength, spot, atmosphere and conversion from irradiance to fluence remain unverified. The marker readings are recorded solely to identify the figure for follow-up. Melt/droplet partition is unverified.
+- Figure: https://ars.els-cdn.com/content/image/1-s2.0-S0169433208018369-gr4.jpg . Local copy: `D:/sim_runs/lit_ablation_mass/gojani2008_fig4.jpg`. Primary abstract copy: https://www.academia.edu/12961102/Extended_measurement_of_crater_depths_for_aluminum_and_copper_at_high_irradiances_by_nanosecond_visible_laser_pulses . Academia generated Q&A was not used as paper evidence.
+
+### Cao and Shin (2015)
+
+Y. Cao and Y.C. Shin, *Multi-scale modeling of phase explosion in high fluence nanosecond laser ablation and clarification of ablation depth prediction criterion*, Applied Surface Science **357**, 74-85. DOI: https://doi.org/10.1016/j.apsusc.2015.08.251 .
+
+- Primary abstract describes aluminum experiments and modeling, and a depth-prediction criterion assessed for aluminum and copper. Quote (abstract): "for both aluminum and copper".
+- **This does not establish an independent measured Cu dataset.** Cu pulse width/wavelength/spot/fluence, air environment, single-pulse count, measurement method and numerical removal values require the experimental section and figure captions. None is accepted here.
+- Melt ejection during phase explosion is discussed in the abstract, but its experimental validation concerns the aluminum work described there; do not relabel simulated droplets or aluminum measurements as Cu mass.
+- Abstract copy: https://www.academia.edu/80679547/Multi_scale_Modeling_of_Phase_Explosion_in_High_Fluence_Nanosecond_Laser_Ablation_and_Clarification_of_Ablation_Depth_Prediction_Criterion . Crossref confirms authors/title/DOI/pages. Full-text publisher access was restricted.
+
+### Evidence and unresolved need
+
+Local retrieval evidence is under `D:/sim_runs/lit_ablation_mass/`: publisher metadata/HTML, public abstract copies and the figure above. The search did not supply a validated quantitative match for the requested conditions, especially 60 ns and 22-31 um spots. Claude should obtain the experimental sections/captions or provide accessible PDFs before these leads are used to evaluate the ablated-mass hypothesis. Crater depth alone would still not establish vapor mass or a measured droplet/vapor split. This lookup's limitation is source access and verification, not an absence-of-measurements claim.
