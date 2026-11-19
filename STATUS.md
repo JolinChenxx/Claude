@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T22:36:58.219053+08:00 (UTC+8)
+- Work card:T016i. Pulled ws,current at8060e8e; incoming to_codex empty. No owner:codex/status:ready cards; only T018c/T016i running. No new claim or job launch. Unrelated output/ preserved.
+- T014 high_trap_G0/it0 image_v1 completed rc0; existing native queue advanced to it1. Archived18metrics,image_summary and validation;29common times0-740ns,six finite local frame archives and all copied hashes verified,validation read back. Baseline bP1thin/sa586.428842/363.297969ns; all18P2 unavailable preserved,all18P1 finite/positive. No new physical acceptance claim. Native inventory28sets:T016e6,T01514,T016r2 2,T016h1,T0145. FullT014/laterT016e catch-up pending; card stays running.
+- Report and interim handoff pushed ws3f7a343. T014 results15,113,067bytes,below20MiB. Existing collector used unchanged; no code/model/numerical/filter/gain/settings changes. Allowlisted report copied to D:/Sync/T016i/T016i.report.md with SHA256 verification; receipt D:/sim_runs/T018/pass_20261119_2234_sync.json. Raw arrays remain local.
+- job.ps1 status checked T018c,T018c_post_it0_01,T018c_post_it0_trap_v2_01,T016i_native_01: all running,stderr tails empty. T018c solverit1 ongoing; original postprocessor7/10 commands complete,thin it0v2 active,trapv1 pending. Delegated trap it0v2 running under owner T018c_post_it0_trap_v2_01. No new T018c image/solver completion this pass.
+- Capacity sample2026-11-19T22:34:33.991549+08:00: 16solver ranks+three16worker imaging jobs=64/64physicalcores reserved,0free. Future16core slots prioritize next queued T018c item before T016i,using explicit delegation; no duplicate target execution. No process stop,suspend or resume.
+- ImagePID12896 D:\sim_runs\T018c\high_thin_G0\it0:16workers,worker CPU47643.922s,increase10545.484s since previous sample.
+- ImagePID31816 D:\sim_runs\T014\high_trap_G0\it1:16workers,worker CPU2979.938s,first CPU baseline for this process identity.
+- ImagePID33180 D:\sim_runs\T018c\high_trap_G0\it0:16workers,worker CPU18986.734s,increase13328.172s since previous sample.
+- Sample2026-11-19T22:34:33.991549+08:00: T018c/high_thin_G0/it1 budget_t_ns=163.4945; step:22000; t = 1.4963e+002; dt = 3.5514e-002; 18.7 %; [Mach = 9.454541, Nrkl = 17]. No source-limit line present in current bounded tail; do not substitute an older line as current.
+- Sample2026-11-19T22:34:33.991549+08:00: T018c/high_trap_G0/it1 budget_t_ns=165.4813; step:23000; t = 1.5561e+002; dt = 3.8882e-002; 19.5 %; [Mach = 8.933910, Nrkl = 17]. No source-limit line present in current bounded tail; do not substitute an older line as current.
+- Disk free2251.722GB decimal; active T018c log growth3.820937GB/h over895.0s; T018/T018b logs unchanged. Rate excludes fields/images/other writers/future rates/duration,not a completion forecast. No threshold action,deletion or truncation. Evidence:D:/sim_runs/T018/pass_20261119_2234_monitor.json.
+
 ## 2026-11-19T22:20:57.482510+08:00 (UTC+8)
 - Work card:none (monitoring only). Pulled ws to8060e8e; Claude consumed the parallel-trap-v2 handoff. Incoming to_codex empty. Only running Codex cards T018c/T016i; no owner:codex/status:ready cards. No new claim,launch,collection or ws edits; unrelated output/ preserved.
 - job.ps1 status checked T018c,T018c_post_it0_01,T018c_post_it0_trap_v2_01,T016i_native_01: all running,stderr tails empty. T018c solverit1 continues. Original postprocessor7/10 complete,thin it0v2 active,trapv1 remains queued; delegated trap it0v2 active under owner T018c_post_it0_trap_v2_01. Native T014 high_trap_G0/it0/v1 active. No newly completed image/iteration to archive.
@@ -343,12 +356,3 @@
 - T018/low_trap_G0/it0 budget_t_ns=1.614968e+002;  
 - T016e/low_thin_G0/it2 budget_t_ns=7.299891e+002; step:37000; t = 7.1670e+002; dt = 2.4796e-002; 55.1 %             [Mach = 1.886389, Nrkl = 29]
 - T016e/low_trap_G0/it2 budget_t_ns=6.539889e+002; step:35000; t = 6.3311e+002; dt = 2.1100e-002; 48.7 %             [Mach = 2.036742, Nrkl = 62]
-
-## 2026-11-19T14:51:27+08:00 (UTC+8)
-- T018 claimed and pushed on ws before start. Launched at 2026-11-19T14:51:00 local time via job.ps1, PID 8480, commit fb8bbbc, --max-cores 32 / OMP=1. Initial status running. Allocation: T018 32 + T016e solvers 16 + active T017a reference 16 = 64 physical cores reserved. No free slot for another imaging member. Check dt/Nrkl and generated inputs next pass.
-- T018/high_thin_G0/it0 phase_explosion=pending; ini: pending
-- T018/high_trap_G0/it0 phase_explosion=pending; ini: pending
-- T018/low_thin_G0/it0 phase_explosion=pending; ini: pending
-- T018/low_trap_G0/it0 phase_explosion=pending; ini: pending
-- T016i: T014/high_thin_G0/it2 worker exited 0 (GetExitCodeProcess matched recorded PID and creation time). Archived 18 metric sets, 29 times and six finite frame archives; all 18 P2 unavailable. Dispatchers stay held; reference current member high_thin_G1/it0 still active at capacity check. Stopped low G1 v2 remains queued within the capacity policy.
-- T016e G0 it2 budget t_ns: low_thin_G0=7.134877e+002, low_trap_G0=6.424798e+002. Literature request still open. End pass after long-job launch.
