@@ -2,7 +2,7 @@
 id: T019
 title: Diagnostic split of the synthetic band signal into continuum and lines (reported members, image_v2)
 owner: codex
-status: review
+status: done
 started: 2026-11-20T03:22:26+08:00
 depends: []
 milestone: D2
