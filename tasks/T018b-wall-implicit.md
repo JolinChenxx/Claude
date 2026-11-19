@@ -2,7 +2,7 @@
 id: T018b
 title: Build v1i (backward-Euler wall exchange); stop T018 low members; rerun low G0 it0–it1 with v1i (16 cores)
 owner: codex
-status: review
+status: done
 started: 2026-11-19T16:20:29+08:00
 depends: []
 milestone: D2
