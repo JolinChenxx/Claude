@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T17:37:54+08:00 (UTC+8)
+- Cards: T018b, T018c, T016e, T016i, T017a. Initial pull blocked by legitimate automatic registry append; inspected and committed thin it1 row9b543ef, then pulled/rebased. Collected trap row with evidence in928df27 and pushed ws. No incoming instructions or ready Codex cards. Untracked output/ untouched.
+- T018b solver batch FINISHED, exit0, stdout rc[0,0] for each member. Low thin/trap it1 reached1300ns at17:34:02/17:35:02, wall2046.3/2035.6s. All16 stable completed logs streamed/hashchecked once: ConsToPrim totals6,777,425/6,771,026; rank0=4,628,224/4,619,941 and rank1=2,149,201/2,151,085, ranks2-7zero. Full finite budgets/source metadata/input checks/tails archived and handed to Claude. rc0 is not numerical acceptance; no tuning.
+- Final low it1 thin/trap M_Cu1.6547205890e-12/1.6547213818e-12kg, E_gas_abs1.7095018870e-8/1.7181973241e-8J. Original batch launch eaa401f; registry completion HEAD20eb6a0/9b543ef does not indicate a rebuild. Card remains running pending prescribed postprocessing.
+- Launched T018b_post_it0_01 at17:37:15 via job.ps1,PID13064,commit928df27; initial running/empty stderr. Both it0 members receive emission/core/shock then image_v1/v2, v1c tables,16imageworkers, explicit runtime/PYTHONPATH, OMP/BLAS1, BelowNormal. Script hash unchanged, job metadata archived, queue updated. Both it1 members queued after it0. End pass after background launch; no foreground computation wait.
+- Capacity before launch:32PLUTO ranks+16referenceimage=48 reserved; T018b completion freed16. Postprocessing reserves that16, total64. T016e/T018c and reference image continue; native/reference dispatchers39740/41556 remain held. Existing job.ps1 statuses running except now-finished T018b. No unauthorized stop/resume.
+- Disk sample 2026-11-19T17:37:03+08:00: free2259.012GB decimal. Interval T018b log growth0.000774GB/h is historical because batch finished; active T018c logs0.1078GB/h. Active-log-only horizon to150GB19570.3h excludes fields, imaging, other writers and future changes; not a batch-end forecast. No immediate alert and no deletion/truncation.
+- Report copied/hashverified to D:/Sync/T018b; result directory3.28MB, below20MB. Prepared reusable completed-iteration evidence collector only; physics and numerical inputs unchanged.
+- Sample 2026-11-19T17:37:03+08:00: T018c/high_thin_G0/it0 budget_t_ns=84.99795; step:13000; t = 8.4817e+001; dt = 6.1710e-003; 10.6 % [Mach = 12.705744, Nrkl = 4]
+- Sample 2026-11-19T17:37:03+08:00: T018c/high_trap_G0/it0 budget_t_ns=80.99703; step:12000; t = 7.8690e+001; dt = 6.2343e-003; 9.8 % [Mach = 13.174753, Nrkl = 4]
+- Sample 2026-11-19T17:37:03+08:00: T016e/low_thin_G0/it2 budget_t_ns=860.4878; step:43000; t = 8.5946e+002; dt = 2.0639e-002; 66.1 % [Mach = 1.648680, Nrkl = 63]
+- Sample 2026-11-19T17:37:03+08:00: T016e/low_trap_G0/it2 budget_t_ns=871.4972; step:43000; t = 8.4585e+002; dt = 2.4829e-002; 65.1 % [Mach = 1.684815, Nrkl = 39]
+
 ## 2026-11-19T17:21:02+08:00 (UTC+8)
 - Cards checked: T018b, T018c, T016e, T016i, T017a. Pulled ws 20eb6a0: Claude reviewed the completed T018b low it0 evidence in STATE and consumed its handoff; high-fluence test continues. No incoming instructions, no ready Codex card, no new solver/image completion or job launch this pass. Existing completed it0 evidence/counts were not duplicated. Untracked output/ untouched.
 - All five job.ps1 status checks return running: T018b39900, T018c19644, T016e42332, T016i_native_01/38032, T017a_image_v2_02/46228; wrapper stderr tails empty. Registry last rows remain the two previously collected T018b it0 completions. All six current solver rank0 tails lack a Done marker and their budgets advanced.
@@ -332,17 +345,3 @@
 - T016e/low_trap_G0/it1: budget_t_ns=9.909845e+002; dt=2.7352e-002,Nrkl=32 (step55000,log_t_ns=9.7906e+002).
 - T016e_r/low_thin_G1/it0: budget_t_ns=5.044870e+002; dt=1.3941e-002,Nrkl=95 (step73000,log_t_ns=5.0397e+002).
 - skipped ready cards and why: none; no ready cards. Next check4 active jobs and new completions.
-
-## 2026-11-19 09:35 (UTC+8)
-- cards: T016e,T016i,T017a | action: pull current e46bdf5; no incoming note/ready card. Archived high_trap_G0/it1 reference image and submitted milestone handoff; reports synced/hash verified. Four reference images archived; all18 P2 unavailable preserved. Baseline b P1 thin/sa584.5812/616.0064ns.
-- T017a_image_v2_01 PID12624: high_trap_G0/it2 now running. Corrected queue assumption: paths captured at series start, completion checked on reaching each path; trap it2 picked up automatically. High-thin it2 needs later repeat; no duplicate trap it2. Low it0 milestones pending.
-- T016e_post_high_thin_03 PID32216: emission diagnostic rc0 archived (4 times,finite,fractions normalized); v0 image still running. T016i_native_01 PID38032: T015/low_thin_G1/it0 running,sixteen native images archived; full T015 handoff pending. Native repeats for newer T016e it2 still needed.
-- T016e PID42332 running; eight solver completions archived,known warnings retained. T016e_r_low_G1_01 PID12720 running. All5 status checks running,stderr tails empty.
-- T016e/high_thin_G0/it3: budget_t_ns=5.699836e+001; dt=3.3674e-003,Nrkl=5 (step9000,log_t_ns=5.4547e+001).
-- T016e/high_thin_G1/it0: budget_t_ns=6.339889e+002; dt=1.2722e-002,Nrkl=39 (step83000,log_t_ns=6.3355e+002).
-- T016e/high_trap_G0/it3: budget_t_ns=8.249906e+001; dt=4.0146e-005,Nrkl=2 (step21000,log_t_ns=8.2798e+001).
-- T016e/low_thin_G0/it1: budget_t_ns=9.714904e+002; dt=2.2692e-002,Nrkl=61 (step54000,log_t_ns=9.6704e+002).
-- T016e/low_thin_G1/it0 [intentionally stopped]: budget_t_ns=4.980000e+002; dt=6.3659e-003,Nrkl=63 (step72000,log_t_ns=4.9418e+002).
-- T016e/low_trap_G0/it1: budget_t_ns=9.734937e+002; dt=2.2753e-002,Nrkl=63 (step54000,log_t_ns=9.5063e+002).
-- T016e_r/low_thin_G1/it0: budget_t_ns=5.019880e+002; no fresh dt/Nrkl; inherited pre-restart sample excluded.
-- skipped ready cards and why: none; no ready cards. Active solver members advanced; next check5 jobs and requested milestone handoffs.
