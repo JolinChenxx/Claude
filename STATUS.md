@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T19:24:35.230442+08:00 (UTC+8)
+- Cards worked: T018b/T016i; monitored T018c/T017a. Pulled ws to 1615729; incoming handoff/to_codex empty. No owner: codex/status: ready cards, so no new claim or job launch. Unrelated output/ preserved.
+- Checked all five jobs with job.ps1 status: T018b_post_it0_01 finished; it1, T018c, native and reference wrappers running; stderr tails empty. it0 completed at 19:10:20.644114 with all 10 commands rc0 and wrapper exit0. Archived command summary, metadata, logs and exit code with SHA256 verification; queue marked completed.
+- Collected final it0 low_trap_G0/image_v2: 18 metric sets, 30 times 10-1230 ns, six finite local frame archives with hashes/shapes, verified metric/summary copies. All 18 unavailable P2 values retained. Baseline filter-b P1 thin/sa=974.542403/775.668295 ns. Existing negative fits and solver warnings remain documented. T018b result package 4.057 MB, below 20 MiB; it1 final trap v2 remains in flight (9/10 commands complete).
+- Resumed exact native dispatcher 39740 (creation 1795063781.6827476) at 19:22:47.814852 within existing job T016i_native_01 after identity and capacity checks. Immediate job.ps1 output confirms rc0 for already-collected T014/high_thin_G0/it2 and starts T014/high_thin_G1/it0; no duplicate collection. Authority: T018-capacity step3 and T018c steps3-4. No eligible replacement diagnostics awaited work; it1 final command has no further capacity() boundary.
+- Capacity before resume: 16 T018c solver ranks + 16 T018b trap it1/v2 workers + 16 reference T016e lowthin it1/v2 workers = 48 physical cores. Native adds 16, total 64. Current reference image PID29452, dispatcher47860; old image24040/dispatcher41556 are not current capacity. Both old queues now resumed. Further priority decisions must inspect current descendants and reserve replacement diagnostics first. No new job, stop or numerical change; end pass after resume bookkeeping, no foreground computation wait.
+- Sample 2026-11-19T19:20:06.961932+08:00: T018c/high_thin_G0/it0 budget_t_ns=438.4955; step:24000; t = 4.0684e+002; dt = 5.4284e-002; 50.9 %; [Mach = 3.154163, Nrkl = 13]. Latest dt-limit: ! lip dt-limit: step 22000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=3.356e-001 T=3.108e+003 rhoe=2.199e+005 q=2.695e+008 dt_src=6.226e-010 s; source limit is not actual solver dt.
+- Sample 2026-11-19T19:20:06.961932+08:00: T018c/high_trap_G0/it0 budget_t_ns=516.9929; step:25000; t = 5.1054e+002; dt = 5.9526e-002; 63.8 %; [Mach = 2.663886, Nrkl = 13]. No dt-limit line in bounded 8 MB tail.
+- Disk sample 2026-11-19T19:20:06.961932+08:00: free 2254.066 GB decimal; active T018c log growth 0.000143965 GB/h over 799.1s. Stopped T018/completed T018b logs unchanged. Near-zero log growth is not useful for a long-range forecast; excludes fields, images, other writers, future rates/duration. No threshold action or deletion/truncation.
+- Results, reports and handoffs pushed to ws 4a06929 after pull/rebase. T018b/T016i reports synced to D:/Sync with SHA256 verification; no new PNG/COMPARISON/metrics_table files. Receipt: D:/sim_runs/T018/pass_20261119_1918_sync.json. T018b and T016i remain running for outstanding outputs.
+
 ## 2026-11-19T19:11:43.371847+08:00 (UTC+8)
 - Cards worked: T018b/T017a; monitored T018c/T016i. Initial ws pull current at7d5e821; incoming handoff/to_codex empty and no owner:codex/status:ready cards. No new claim or job launch. Preserved unrelated output/.
 - Archived three completed image sets: T018b low_thin_G0/it1/image_v2(rc0 at18:56:40), T018b low_trap_G0/it1/image_v1(rc0 at19:05:55), and reference T016e high_thin_G1/it0/image_v2. Each18metricsets/6finite rawframe archives; source/copy hashes verified. Raw frames retained locally. Thin/trap each30times10-1230ns; reference29times0-740ns.
@@ -322,15 +333,3 @@
 - T016e/low_trap_G0/it1: budget_t_ns=1.256495e+003; step:66000; t = 1.2547e+003; dt = 2.2232e-002; 96.5 % | [Mach = 1.124650, Nrkl = 53]
 - T016e_r/low_thin_G1/it0: budget_t_ns=5.284920e+002; step:74000; t = 5.1830e+002; dt = 2.0841e-002; 39.9 % | [Mach = 3.067066, Nrkl = 17]
 - readycards=[]; T016f claimed thispass; no remainingeligiblecard.
-
-## 2026-11-19T11:26:13+08:00 (UTC+8)
-- cards:T016d,T016e,T016i,T017a. Pulled/rebased c96ee2a; diagnostic review and two imaging milestones pushed a307e50. Fulfilled vmax note consumed; literature note remains pending previously reported source verification.
-- v1g complete603.094s, authorized timeout solverrc15/wrapperrc0;32new vmax,16dt-limit,94rank0ConsToPrim,4new step records/rank. Peak sampled23.53km/s; global CFL cause unresolved. Corrected collection for appended v1f prefix; full raw archives preserved. grid onlygenerated-time comment changed; remaining inputs unchanged. T016d review.
-- low_thin_G0/it1 solver rc0,1300ns,33989.1s,1,141,611ConsToPrim;9production iterations completed. Tables/rmax1000 verified. Launched T016e_post_low_thin_02 PID45612,8imageworkers/OMP1,BelowNormal,executiona307e50;endpass without waiting.
-- Native38032 nowT015/low_trap_G0/it2:19images archived,13of14T015. Reference12624 nowlow_trap_G0/it0:6images archived;firstlow reference it0 handedoff. NegativeP1 andunavailableP2 retained;rawframe copies finite/hashverified.
-- Production42332 andlowG1continuation12720 remainrunning;stderr empty atstatuschecks. highG0it3 originals remain intentionallystopped awaitingClaude fixcard. Reports synced/hashverified.
-- T016e/high_thin_G1/it0: budget firstcolumn t_ns=7.119971e+002; step:91000; t = 7.0905e+002; dt = 8.5319e-003; 88.6 % | [Mach = 4.262679, Nrkl = 11]
-- T016e/low_thin_G0/it2: budget firstcolumn t_ns=6.849924e+001; step:4000; t = 6.7403e+001; dt = 4.3424e-003; 5.2 % | [Mach = 11.687020, Nrkl = 3]
-- T016e/low_trap_G0/it1: budget firstcolumn t_ns=1.242489e+003; step:65000; t = 1.2313e+003; dt = 2.9160e-002; 94.7 % | [Mach = 1.141610, Nrkl = 9]
-- T016e_r/low_thin_G1/it0: budget firstcolumn t_ns=5.254905e+002; step:74000; t = 5.1830e+002; dt = 2.0841e-002; 39.9 % | [Mach = 3.067066, Nrkl = 17]
-- readycards=[]; no additional card eligible. No foreground waiting.
