@@ -1,0 +1,40 @@
+{
+  "checked": "2026-11-20T01:25:44.968122+08:00",
+  "job": {
+    "id": "T018c_post_it1_trap_01",
+    "pid": 49800,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap.py",
+    "threads": 1,
+    "commit": "9b5a698",
+    "started": "2026-11-20T01:25:44",
+    "dir": "D:\\sim_runs\\T018c_post_it1_trap_01"
+  },
+  "wrapper_created": 1795109143.93311,
+  "wrapper_alive": true,
+  "children": [
+    {
+      "pid": 25936,
+      "created": 1795109144.0033937,
+      "name": "conhost.exe",
+      "command": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "state": "running"
+    },
+    {
+      "pid": 43332,
+      "created": 1795109144.0712996,
+      "name": "python.exe",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap.py"
+      ],
+      "state": "running"
+    }
+  ],
+  "summary": null,
+  "stderr_bytes": 0,
+  "runner_sha256": "9c26fd7bc27b619ad3eb26320f515c86306fab20fad20e74624a74fbb5157dc2",
+  "note": "Startup verification only; computation remains in background and no completion wait or output collection performed."
+}

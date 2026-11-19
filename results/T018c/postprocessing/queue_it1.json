@@ -1,6 +1,6 @@
 {
   "prepared": "2026-11-20T01:23:11.492309+08:00",
-  "state": "planned",
+  "state": "running",
   "iteration": "it1",
   "members": [
     "high_trap_G0"
@@ -13,7 +13,7 @@
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap.py",
       "runner_sha256": "9c26fd7bc27b619ad3eb26320f515c86306fab20fad20e74624a74fbb5157dc2",
       "workers": 16,
-      "state": "planned",
+      "state": "running",
       "commands": [
         {
           "name": "high_trap_G0_emission",
@@ -75,14 +75,18 @@
             "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
           ]
         }
-      ]
+      ],
+      "launched": "2026-11-20T01:25:44",
+      "pid": 49800,
+      "launch_commit": "9b5a698",
+      "launch_evidence": "launch_it1_trap.json"
     },
     {
       "job_id": "T018c_post_it1_trap_v2_01",
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap_v2.py",
       "runner_sha256": "bc6f3415f5a4fe305166a5bb03ded4b0177de8380292b5fe8aa0b9de7505fe85",
       "workers": 16,
-      "state": "planned",
+      "state": "running",
       "commands": [
         {
           "name": "high_trap_G0_image_v2",
@@ -103,9 +107,115 @@
             "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
           ]
         }
-      ]
+      ],
+      "launched": "2026-11-20T01:25:44",
+      "pid": 52000,
+      "launch_commit": "9b5a698",
+      "launch_evidence": "launch_it1_trap_v2.json"
     }
   ],
   "deduplication": "Five distinct outputs with no existing output or job directory; active-output guard runs at preflight and before each command. Do not run an overlapping whole-it1 queue.",
-  "pending": "high_thin_G0/it1 solver and its own prescribed postprocessing remain pending; handoff after both high it1 packages."
+  "pending": "high_thin_G0/it1 solver and its own prescribed postprocessing remain pending; handoff after both high it1 packages.",
+  "startup_checked": "2026-11-20T01:25:44.968122+08:00",
+  "capacity_after_launch": {
+    "checked": "2026-11-20T01:25:52.127422+08:00",
+    "reservations": {
+      "T016i_native_01": 16,
+      "T018c": 16,
+      "T018c_post_it1_trap_v2_01": 16
+    },
+    "wrapper_identities": [
+      {
+        "job": "T016i_native_01",
+        "pid": 38032,
+        "created": 1795026177.8378432,
+        "children": [
+          46020,
+          10720,
+          20504,
+          9456,
+          45256,
+          29512,
+          39664,
+          14296,
+          38372,
+          53040,
+          31876,
+          48496,
+          8604,
+          54144,
+          52088,
+          9072,
+          4820,
+          33424,
+          50200,
+          39776
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c",
+        "pid": 19644,
+        "created": 1795078391.7728488,
+        "children": [
+          40572,
+          40888,
+          26104,
+          50372,
+          41184,
+          12528,
+          43844,
+          26224,
+          16112,
+          52340,
+          39816,
+          19396,
+          12504,
+          48552,
+          24000,
+          49236,
+          25332,
+          27984,
+          42420,
+          20144,
+          44636,
+          31828,
+          21828,
+          44700,
+          44808,
+          23696,
+          39048,
+          49328,
+          52264,
+          53056,
+          25896,
+          5376,
+          32436,
+          51752,
+          45440,
+          35116,
+          43240,
+          45908
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c_post_it1_trap_v2_01",
+        "pid": 52000,
+        "created": 1795109144.4057622,
+        "children": [
+          19816,
+          53696
+        ],
+        "cores": 16
+      }
+    ],
+    "pluto_ranks": 16,
+    "reserved_physical_cores": 48,
+    "free_physical_cores": 16,
+    "requested_cores": 16,
+    "can_start": true,
+    "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics.",
+    "including_own_reservation": 64
+  }
 }
