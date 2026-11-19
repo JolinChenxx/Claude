@@ -149,6 +149,16 @@ double lip_eos_cs2(const LipEOS *eos, double rho, double T, double Y)
   double dp_drho = (lip_eos_p(eos, rho * (1 + h), T, Y) - lip_eos_p(eos, rho * (1 - h), T, Y)) / (2 * h * rho);
   double dp_dT = (lip_eos_p(eos, rho, T * (1 + h), Y) - lip_eos_p(eos, rho, T * (1 - h), Y)) / (2 * h * T);
   double de_dT = (lip_eos_e(eos, rho, T * (1 + h), Y) - lip_eos_e(eos, rho, T * (1 - h), Y)) / (2 * h * T);
-  double c2 = dp_drho + T * dp_dT * dp_dT / (rho * rho * de_dT);
+  double c2 = (de_dT > 0.0) ? dp_drho + T * dp_dT * dp_dT / (rho * rho * de_dT) : dp_drho;
+  /* Thermodynamic bound (T016d): for an ideal-gas mixture in chemical/ionisation equilibrium the adiabatic index
+     Gamma1 = rho c^2 / p lies in [1, 5/3]. Outside the table (T above its maximum, where e(T) is flat and de/dT -> 0)
+     the finite-difference c^2 diverges and froze the time step (dt 4e-14 s). Clip Gamma1 to [1, 5/3]. */
+  double p = lip_eos_p(eos, rho, T, Y);
+  if (p > 0.0) {
+    double g1 = c2 * rho / p;
+    if (!(g1 >= 1.0)) g1 = 1.0;
+    if (g1 > 5.0 / 3.0) g1 = 5.0 / 3.0;
+    c2 = g1 * p / rho;
+  }
   return c2 > 0 ? c2 : dp_drho;
 }
