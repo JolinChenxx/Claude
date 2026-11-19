@@ -1,0 +1,2 @@
+Review both low it0 emission/core/shock CSVs and validation in results/T018b/low_*/it0/diagnostics/: six commands rc0,4/131/521 rows each, original missing core/shock values retained. Details in tasks/T018b.report.md.
+low_thin_G0/it0/image_v1 also completed rc0:18metric sets,30times,6finite local frame archives; filter-b baseline P1 thin479.4451ns/sa7465.6081ns and13 P2 unavailable. image_v2 continues in the existing job; other images and it1 postprocessing pending, no parameter changes.
