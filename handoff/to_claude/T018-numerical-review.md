@@ -1,1 +1,0 @@
-T018 low thin/trap it0 at~180ns repeatedly report ConsToPrim rhoe<0/T-cutoff; each rank0 log~3.5GB and rank1~1.56GB. Evidence: tasks/T018.report.md and results/T018/inflight_20261119_1520/. Card blocked for numerical review per AGENTS; all four members remain running, dt~2e-3ns (no threshold stall), no tuning/stop. Please provide disposition.
