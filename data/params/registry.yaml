@@ -64,6 +64,8 @@ cu_A1064_RT: {value: 0.021, unit: "1", grade: C, source: "Normal-incidence absor
              note: "polished surface; surface roughness/oxide raise A (sensitivity range)"}
 cu_free_electron_density: {value: 8.47e+28, unit: m-3, grade: C, source: "Kittel, Introduction to Solid State Physics (1 conduction electron per atom)", uncertainty: "±2%", date: 2026-11-15, verified: true}
 cu_T_crit:   {value: 7800.0, unit: K, grade: C, source: "Estimated critical temperature of Cu (literature estimates 5000–8500 K; e.g. Hess 1998)", uncertainty: [5000, 8500], date: 2026-11-15, verified: false}
+phase_explosion_model: {value: "energy-limited explosive boiling: the enthalpy flux that would raise T_s above f_Tcap*T_c vaporises m_pe = q_over/L_v at T_cap (Knight state at T_cap); droplet fraction neglected (vapour upper bound)", unit: "-", grade: F,
+             source: "Miotello & Kelly 1999 (phase explosion near 0.9 T_c); energy conservation of the over-cap flux that v0 discarded", uncertainty: "vapour fraction of the ejecta 0-1 (droplets not modelled): bracketed by pe off/on", date: 2026-11-19, verified: false}
 f_Tcap:      {value: 0.9, unit: "1", grade: F, source: "PLAN v3 §3.2: surface temperature capped at 0.9 T_c (phase-explosion onset, Miotello & Kelly 1999)", uncertainty: scenario, date: 2026-11-15, verified: true}
 knight_M1:   {value: {Tv_over_Ts: 0.669, rhov_over_rhos: 0.308}, unit: "1", grade: F, source: "Knight, AIAA J. 17, 519 (1979), sonic (M=1) Knudsen layer for monatomic vapour (gamma=5/3)", uncertainty: "model form", date: 2026-11-15, verified: false}
 

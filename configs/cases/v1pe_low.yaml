@@ -1,0 +1,15 @@
+# v0 case: low fluence (PLAN v3 §3.2). Physical inputs only by registry reference; numerics are grade N.
+name: v1pe_low
+laser:
+  energy: '@E_pulse_low'
+  diameter_1e2: '@D_beam_low'
+  fwhm: '@tau_fwhm'
+target:
+  model: knight_sonic_v0
+  phase_explosion: true
+numerics:
+  rings: 24
+  r_max_over_w: 2.5
+  t_end_ns: 400
+  dt_ns: 0.05
+  picard_relax: 0.5

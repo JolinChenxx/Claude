@@ -146,7 +146,7 @@ def depth_grid(dz0=10e-9, growth=1.03, depth=40e-6):  # num
 
 
 def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, shielding=None,  # num
-        T0=None, n_inner=3):  # num
+        T0=None, n_inner=3, phase_explosion=False):  # num
     """Integrate all rings. shielding: callable (r, t) -> transmission in [0,1] (Picard input) or None."""
     T0 = P.get("T_ambient") if T0 is None else T0
     dz = depth_grid()
@@ -157,7 +157,7 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
     H = np.zeros((nr, nz))  # volumetric enthalpy rho*(h - h(T0)), J/m^3
     nt = int(round(t_end / dt))
     out = {k: np.zeros((nt + 1, nr)) for k in ("Ts", "mdot", "Tv", "rhov", "uv", "I_inc", "q_abs", "q_overcap", "A")}
-    E = {k: np.zeros(nr) for k in ("inc", "abs", "vap_latent", "overcap", "mass")}
+    E = {k: np.zeros(nr) for k in ("inc", "abs", "vap_latent", "overcap", "mass", "pe_mass")}
     rho = mat.rho
     times = np.arange(nt + 1) * dt
 
@@ -203,12 +203,26 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
             H[over, 0] = Hcap
             Tn[over, 0] = mat.T_cap
         T = Tn
+        mpe = np.zeros(nr)
+        if phase_explosion and over.any():
+            # registry phase_explosion_model: the over-cap enthalpy flux is not discarded. It drives explosive
+            # boiling of the superheated surface layer and vaporises mass at T_cap, m_pe = q_over / L_v
+            # (energy-limited; the liquid-droplet fraction is neglected, so this is the vapour upper bound).
+            # The vapour leaves with the Knight state at T_cap.
+            mpe = qo / mat.Lv
+            mdot = mdot + mpe
+            Tv_c, rv_c, uv_c = mat.knight(np.full(nr, mat.T_cap))[1:]
+            sel = mpe > 0
+            Tv, rv, uv = np.where(sel, Tv_c, Tv), np.where(sel, rv_c, rv), np.where(sel, uv_c, uv)
+            E["pe_mass"] += mpe * dt
+            E["vap_latent"] += qo * dt
+            qo = np.zeros(nr)
         # book exactly the fluxes used in the last implicit solve (A, mdot from the last inner iterate);
         # the vapour state reported to the gas phase is the same one
         record(n, T[:, 0], I, tau, A, mdot, Tv, rv, uv, qo)
         E["inc"] += I * dt
         E["abs"] += A * tau * I * dt
-        E["vap_latent"] += mdot * mat.Lv * dt
+        E["vap_latent"] += (mdot - mpe) * mat.Lv * dt   # Knight evaporation; the phase-explosion part is booked above
         E["overcap"] += qo * dt
         E["mass"] += mdot * dt
     # stored energy per unit area (sensible + latent of fusion) for the conservation check

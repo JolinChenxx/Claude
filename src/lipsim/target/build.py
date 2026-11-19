@@ -48,7 +48,8 @@ def main(argv=None):
         interp = RegularGridInterpolator((tg, rg), tau_grid, bounds_error=False, fill_value=1.0)
         shield = lambda rr, tt: interp(np.stack([np.full_like(rr, tt), rr], -1))  # noqa: E731
     mat = tm.Material()
-    o = tm.run(las, mat, r, t_end=num["t_end_ns"] * 1e-9, dt=num["dt_ns"] * 1e-9, shielding=shield)  # math (ns -> s)
+    pe = bool(cfg.get("target", {}).get("phase_explosion", False))
+    o = tm.run(las, mat, r, t_end=num["t_end_ns"] * 1e-9, dt=num["dt_ns"] * 1e-9, shielding=shield, phase_explosion=pe)  # math (ns -> s)
     trans_used = np.ones_like(o["mdot"]) if shield is None else np.array([shield(r, t) for t in o["t"]])
     A = tm.ring_area(r)
     E = {k: float((v * A).sum()) for k, v in o["E_area"].items()}
@@ -60,7 +61,7 @@ def main(argv=None):
     meta = {"case": cfg["name"], "picard_iteration": it, "shielding_from": str(a.shielding) if a.shielding else None,
             "budget_J": E, "absorbed_fraction": E["abs"] / E["inc"], "overcap_fraction_of_absorbed": E["overcap"] / E["abs"],
             "U4_triggered": E["overcap"] / E["abs"] > 0.2,  # num: PLAN v3 §3.6 threshold
-            "vaporised_mass_kg": E["mass"], "registry_sha256": P.registry_hash(),
+            "vaporised_mass_kg": E["mass"], "phase_explosion": pe, "pe_mass_kg": E.get("pe_mass", 0.0), "registry_sha256": P.registry_hash(),
             "bin_sha256": hashlib.sha256((a.out / "target_source.bin").read_bytes()).hexdigest()}
     (a.out / "source_meta.json").write_text(json.dumps(meta, indent=1))
     print(json.dumps({k: meta[k] for k in ("case", "picard_iteration", "absorbed_fraction", "vaporised_mass_kg", "U4_triggered")}))
