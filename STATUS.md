@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T14:08:35+08:00 (UTC+8)
+- T016e_r: authorized stop confirmed, last budget 557.4858 ns; 224 indexed snapshots preserved. Shock/core diagnostics started as T016e_r_stopped_diag_01 (PID 49040, 1 worker); check status and collect next pass. Stopped-run image_v2 remains pending until T018 starts.
+- T017a: T016e high_thin_G0/it2 reference collected, 29 times and 18 metric sets verified; all P2 unavailable. Results and stop handoff pushed 6f0334d. Native and reference current images continue (T014 high_thin_G0/it2 and T016e high_thin_G1/it0). Only their dispatchers are suspended to prevent new members. PID/creation-time records: results/T018/imaging_dispatch_holds.json. Check active image child PIDs, not wrappers, for released cores. Resume dispatchers after T018 starts only within the remaining allocation.
+- T018 ready; 16 solver ranks plus 32 image workers, plus the single diagnostic worker at launch, leave fewer than 32 unreserved physical cores. T016e low thin/trap G0 it2 budgets 652.9899 / 568.9795 ns. Literature note stays open; capacity and stop notes retained for outstanding actions. No foreground wait.
+
 ## 2026-11-19T13:51:08+08:00 (UTC+8)
 - cards:T016e,T016i,T017a,T018. Pulled ws already current c581593. Literature request remains incomplete; verified portions and limitations previously handed off, note retained.
 - Collected high_thin_G1/it0 v0 image rc0:18metric sets,29times0-740ns,sixfinite rawframes;all18P2unavailable retained. Baseline bP1thin/sa451.5194393/518.4252831ns. Completion logs/report/handoff prepared; no numerical-acceptance claim.
@@ -389,19 +394,4 @@
 - T016e/low_trap_G0/it1: t_ns=7.649982e+002; latest logged dt=2.2598e-002, Nrkl=63 (step 46000, log_t_ns=7.6048e+002).
 - skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
 - next: job.ps1 status for all three jobs; collect native and reference metrics at completion and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
-
-## 2026-11-19 06:06 (UTC+8)
-- cards: T016e,T016i,T017a | action: pulled3f5e08b and followed T017a_now: immediate parallel v2 authorized. Removed old queue hook/directive, prepared963dd49, launched independent job.ps1 job T017a_image_v2_01 with16 workers and BelowNormal priority. Note consumed; report synced/hash verified.
-- T017a_image_v2_01 PID12624, execution963dd49, started 2026-11-19T06:05:35 UTC+8: running high_thin_G0/it0, stderr empty at initial check. v1c tables,v2 config,image_v2. Push metrics per run; handoffs due after low G0 it0 and high G0 it1 images. No foreground wait.
-- T016i_native_01 PID38032, executionf897ccd, elapsed03:41:24 at check: T015/high_thin_G1/it0 running, stderr empty. Nine native runs archived; no new native completion. Original queue order restored; no process stopped.
-- T016e PID42332, executionbc79e7d, elapsed12:40:44 at check; stderr empty. Six production iterations archived; known numerical warnings retained.
-- Progress snapshot 2026-11-19T06:06:22.918788+08:00; budget and log times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=4.649912e+002; latest logged dt=1.0135e-002, Nrkl=6 (step 80000, log_t_ns=4.6151e+002).
-- T016e/high_thin_G1/it0: t_ns=5.684939e+002; latest logged dt=1.2951e-002, Nrkl=23 (step 77000, log_t_ns=5.6520e+002).
-- T016e/high_trap_G0/it2: t_ns=4.644914e+002; latest logged dt=1.5648e-002, Nrkl=8 (step 78000, log_t_ns=4.6160e+002).
-- T016e/low_thin_G0/it1: t_ns=7.424920e+002; latest logged dt=2.2708e-002, Nrkl=63 (step 44000, log_t_ns=7.2501e+002).
-- T016e/low_thin_G1/it0: t_ns=4.724962e+002; latest logged dt=6.8261e-003, Nrkl=61 (step 69000, log_t_ns=4.7207e+002).
-- T016e/low_trap_G0/it1: t_ns=7.539911e+002; latest logged dt=2.0612e-002, Nrkl=54 (step 45000, log_t_ns=7.3779e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
-- next: job.ps1 status for all three jobs; collect native and reference metrics at completion and send requested handoffs; continue production collection.
 
