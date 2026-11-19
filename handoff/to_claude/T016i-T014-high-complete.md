@@ -1,2 +1,0 @@
-T016i:all7 T014 high-series image_v1 sets complete/archived;126metrics,42validated finite local frame archives. Final trapit2 has18unavailableP2 and3negative a_thin P1 preserved; baseline a_thin=-5017.4602604ns,bthin/sa4841.9316174/1885.6554443ns. See tasks/T016i.report.md and results/T016i/T014_high_completion.json.
-30native sets total; queue advanced to T014 low_thin_G0/it0. Full T014/later T016e catch-up remain pending; card stays running.
