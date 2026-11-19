@@ -1,0 +1,2 @@
+Followed low_G1_restart.md: original low G1 stopped at budget498ns; restarted checked frame199 (497.496814ns) in T016e_r with rmax_par4000,16 ranks,build_v1d,job T016e_r_low_G1_01. Original data and other members preserved.
+See T016e report/stopped/restart evidence; copied budget history overlaps the restart time and cumulative diagnostics may reset. v0 high_trap it2 image also archived; final restarted-member images/handoff pending.
