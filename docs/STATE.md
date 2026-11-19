@@ -258,3 +258,9 @@ Updated: 2026-11-15
 
 ## Workstation stop record ? 2026-11-19 11:06 UTC+8
 - Claude T016d_vmax.md/standingauthorization: stopped only T016e/high_thin_G0/it3,MPI6744+8ranks,for dt stall near83ns. Lastbudget83.49996ns,lastcheckpoint33 at82.49686ns.52othersolver/MPI processes and batch preserved;data retained. v1f20minute diagnostic finished;v1g10minute follow-up prepared.
+
+## 2026-11-19 11:40 (UTC+8) — T016d resolved; low fluence with image_v2
+- Stall cause: diverging **table sound speed**, not velocity (|v|max 23.5 km/s; dt 4e-14 s; PLUTO Mach 26). Above the table T maximum, ∂e/∂T → 0. Fix v1h: Γ1 clipped to [1, 5/3] (thermodynamic bound). Smoke test bit-identical to v1d. T016f checks it on the stalled checkpoint and then continues high it3–it4.
+- Low thin G0 it0 with image_v2 (Stark), sa at 100/200/400/600/800/1000/1200 ns: 3.06/1.13/0.94/0.62/0.31/0.19/0.13. image_v1: 6.23/1.94/0.62/0.30/0.16/0.12/0.10. Experiment: 0.76/0.93/0.70/0.29/0.13/0.04/0.016.
+- **With the verified Stark widths the low-fluence late decay is slower too** (P1 sa 548 ns, against 260 ns with v1 and 218 ns in experiment). The good v1 agreement at 400–800 ns relied partly on Doppler-only line saturation. The early overshoot (100–200 ns) is much reduced (3.1/1.1 vs 6.2/1.9).
+- Overall conclusion with the most complete physics so far (conduction + Coulomb/polarisation interdiffusion + native transfer + Voigt/Stark): both fluences reproduce the 200–400 ns normalised level better than before. Both decay too slowly after 400 ns (τ_L ≈ 550 ns low, > 1 µs high at Picard it2, against 182–218 ns in experiment). The common cause is that the emitting Cu stays hot and Cu I-rich for too long. This points to the plume energetics: too little ablated mass (high), missing 3D mixing/cooling, or the Cu I/II balance via IP lowering. Each needs an independent check, not tuning.
