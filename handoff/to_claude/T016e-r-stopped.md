@@ -1,1 +1,0 @@
-Authorized lowG1 continuation stopped at 2026-11-19T14:07:10+08:00; last budget 5.574858e+002ns, data preserved. See results/T016e_r/low_thin_G1/it0/STOPPED.md; shock/core diagnostics prepared, v2 deferred until T018. Both image dispatchers held while current members finish; remaining allocation16solver+32image, so T018 awaits16more cores.
