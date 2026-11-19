@@ -2,7 +2,8 @@
 id: T018c
 title: Stop T018 high members; rerun high G0 it0–it2 with build v1i (16 cores)
 owner: codex
-status: ready
+status: running
+started: 2026-11-19T16:49:43+08:00
 depends: []
 milestone: D2
 est_time: 0.1h operations + machine time
