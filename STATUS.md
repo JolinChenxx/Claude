@@ -1,5 +1,20 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T16:39:18+08:00 (UTC+8)
+- T018b low thin passed200ns. Verified both generated phase_explosion=true/rmax_par1000 and MPI39112/48700 each8 ranks using build_v1i. Pushed input copies, both budget captures, comparisonCSV/MD, byte-offset-verified logs and report/handoff eb0c436; report and COMPARISON synced/hashverified to D:/Sync/T018b.
+- 200ns checkpoint captured16:37:40 at low thin239.4524ns. Step3000 at200.40ns:dt0.075452ns,Nrkl10; latest rank0 dt-limit kind3,mass,dt_src7.622e-10s. Throughput1394.44ns/h since MPI start includes early transient, not a remaining-runtime forecast. Logging every1000steps means exact100/150ns Nrkl unavailable; nearest actual step and snapshot dt evidence supplied, no invented values.
+- Linear-interpolated100/150/200ns budgets: abs relative E_internal/E_kinetic/M_Cu/E_src all<0.031%; E_gas_abs about1.43%; signed E_wall -1.63268/+0.24072/+0.20223% (maxabs denominator). All absolute values and columns delivered; no acceptance verdict or parameter changes. Card remains running; next deliverables after completed iterations/lowit1.
+- All5 job.ps1 checks running; T016i wrapper alive with dispatcher held, reference queue continues. No newly finished iteration or ready Codex card.64 physical cores reserved: T018 high16+T016e low16+T018b16+reference imaging16; native queue has no spare16core slot. No new job started this pass.
+- Disk sampled2026-11-19T16:35:39+08:00: D free2265.31GB. Stopped original T018 low rank0 logs unchanged,0GB/h each; T018 aggregate interval growth0.613GB/h. New T018b rank0 baselines thin0.529741GB/trap0.522924GB; growth rate not yet available, measure next pass. Existing-T018-only horizon3449.3h excludes new logs, fields and other writers, so cannot predict batch-end free space; no data/log deletion.
+- Sampled T018 high rank0 actual dt thin0.004394/trap0.0062484ns, both above2e-3ns. Trap latest kind1 dt_src6.345e-11s; thin no diagnostic in bounded8MBtail. No threshold violation established by this limited sample; monitor only, do not intervene.
+- Literature lookup still lacks3-5 verified matching single-shot datasets; no usable new public source content retrieved this pass. Pushed question-lit-ablation-mass.md requesting accessible original sections/captions or partial-result disposition; retained incoming note. Existing20step/Nrkl evidence remains delivered. Simulations unaffected.
+- Sample16:35:39 T018b/low_thin_G0/it0: budget_t_ns=205.4436; step:3000; t = 2.0040e+002; dt = 7.5452e-002; 15.4 %; [Mach = 8.590506, Nrkl = 10]
+- Sample16:35:39 T018b/low_trap_G0/it0: budget_t_ns=202.9643; step:3000; t = 2.0037e+002; dt = 7.5450e-002; 15.4 %; [Mach = 8.565998, Nrkl = 10]
+- Sample16:35:39 T018/high_thin_G0/it0: budget_t_ns=181.9964; step:22000; t = 1.7782e+002; dt = 4.3940e-003; 22.2 %; [Mach = 10.670258, Nrkl = 6]
+- Sample16:35:39 T018/high_trap_G0/it0: budget_t_ns=204.9917; step:26000; t = 2.0440e+002; dt = 6.2484e-003; 25.6 %; [Mach = 7.214769, Nrkl = 6]
+- Sample16:35:39 T016e/low_thin_G0/it2: budget_t_ns=817.9794; step:41000; t = 8.1733e+002; dt = 2.0699e-002; 62.9 %; [Mach = 1.708240, Nrkl = 63]
+- Sample16:35:39 T016e/low_trap_G0/it2: budget_t_ns=800.9925; step:41000; t = 7.9860e+002; dt = 2.0824e-002; 61.4 %; [Mach = 1.760931, Nrkl = 63]
+
 ## 2026-11-19T16:27:21+08:00 (UTC+8)
 - T018b claimed92858c2; v1i build completed16:20:55 rc0,7 upstream replacements, executable SHA256487decf2ef2383fd2442252ea6fcb0c9ae4d0a8106c849c5edfafcb8205f0169. Build/stop evidence pushed eaa401f. No Codex physics/numerics changes.
 - Per T018b step2, stopped only original T018 low_thin_G0/it0 MPI8788 at16:22:00 and low_trap_G0/it0 MPI26548 at16:22:01; verified identities/ranks before stop and others alive after. Raw data retained. Last budgets209.4997/209.4991ns; last step36000 dt8.2749e-4/8.3944e-4ns Nrkl2. Nonzero registry returns are intentional stops. Old post250ns extract superseded below250ns, documented in report and followup_disposition.json;189.9989ns extract retained.
@@ -331,20 +346,4 @@
 - T016e/low_trap_G0/it1: t_ns=9.149968e+002; dt=2.2915e-002, Nrkl=62 (step 52000, log_t_ns=9.0258e+002).
 - skipped ready cards and why: none; no ready cards. All6 solver members advanced from08:36; no stagnation escalation needed.
 - next: check4 active jobs; archive new v0/native/reference completions; native/v2 imaging of new it2 pending after current queues. No foreground waiting.
-
-## 2026-11-19 08:36 (UTC+8)
-- cards: T016e,T016i,T017a | action: initial pull blocked by one live registry append; committed it and rebased onto241c39d (Claude core-energy review). Archived high_trap_G0/it2 completion plus high_trap_G0/it0 reference image in e6c1b88. Seven solver completions,13 native images,3 reference images archived. No note/ready card.
-- New production completion: high_trap_G0/it2 rc0,23713.4s,800ns,ConsToPrim993043 across8 ranks; M_Cu=M_src9.994079691e-13kg; model/PLUTO target absorption22.3068/17.5385uJ. v1c hashes/rmax1000 verified for it2/it3. it3 running; warnings retained.
-- Launched T016e_post_high_trap_03 PID27240,executione6c1b88,started 2026-11-19T08:36:17 UTC+8: supplementary v0 it2 image,8 workers,BelowNormal. Native/v2 repeat for new it2 pending after current queues; no foreground waiting.
-- T017a_image_v2_01 PID12624,execution963dd49,elapsed02:29:07 at check: high_trap_G0/it0 rc0,now it1. Archived18 metrics,29 times,finite raw frames kept local; all18 P2 unavailable. Baseline b P1 thin/sa370.0846/349.8894ns. High-trap it1/low it0 handoffs pending.
-- T016i_native_01 PID38032,executionf897ccd,elapsed06:11:45 at check: T015/low_thin_G0/it0 running,stderr empty. T016e PID42332,executionbc79e7d,elapsed15:11:05,stderr empty.
-- Progress snapshot 2026-11-19T08:36:51.868036+08:00; budget/log times separate.
-- T016e/high_thin_G0/it2: t_ns=7.279929e+002; latest logged dt=1.5597e-002, Nrkl=7 (step 107000, log_t_ns=7.1672e+002).
-- T016e/high_thin_G1/it0: t_ns=6.194909e+002; latest logged dt=1.1931e-002, Nrkl=53 (step 81000, log_t_ns=6.1074e+002).
-- T016e/high_trap_G0/it3: t_ns=4.149888e+001; latest logged dt=3.3727e-003, Nrkl=3 (step 4000, log_t_ns=3.9140e+001).
-- T016e/low_thin_G0/it1: t_ns=8.984895e+002; latest logged dt=2.4584e-002, Nrkl=8 (step 51000, log_t_ns=8.8691e+002).
-- T016e/low_thin_G1/it0: t_ns=4.949981e+002; latest logged dt=6.3659e-003, Nrkl=63 (step 72000, log_t_ns=4.9418e+002).
-- T016e/low_trap_G0/it1: t_ns=9.024872e+002; latest logged dt=2.2915e-002, Nrkl=62 (step 52000, log_t_ns=9.0258e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced or entered next iteration: 6/6.
-- next: job.ps1 status for4 active jobs; archive supplementary v0 metrics and continue requested native/reference handoffs.
 
