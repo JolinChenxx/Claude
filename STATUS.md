@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T19:35:47.143723+08:00 (UTC+8)
+- Work card: none (monitoring only). Pulled ws to 217340b; previous T018b/T016i handoffs consumed upstream. Incoming handoff/to_codex empty and no owner: codex/status: ready cards. No newly completed command or iteration to archive; no claim, launch, stop, resume or ws commit. Unrelated output/ retained.
+- job.ps1 status checked T018b_post_it1_01, T018c, T016i_native_01 and T017a_image_v2_02: all wrappers running; stderr tails empty. T018b it1 remains on its final low_trap_G0/image_v2 command, with 9/10 completed. it0 completion/outputs already handed off, not counted twice. Native remains T014 high_thin_G1/it0/v1; reference remains T016e low_thin_G0/it1/v2.
+- Process sample 2026-11-19T19:35:03.301535+08:00: verified 16 PLUTO ranks, all under T018c, plus three active 16-worker image pools = 64 physical cores reserved. Native dispatcher39740 and reference dispatcher47860 running. No spare slot or unassigned completed replacement diagnostic; replacement priority retained for future iteration completions.
+- Image PID20320 (D:\sim_runs\T014\high_thin_G1\it0): worker accumulated CPU seconds 10684.766 across 16 workers. First recorded CPU baseline for this member.
+- Image PID22404 (D:\sim_runs\T018b\low_trap_G0\it1): worker accumulated CPU seconds 26479.062 across 16 workers. Increase 12971.812s since prior pass; no stalled-progress evidence.
+- Image PID29452 (D:\sim_runs\T016e\low_thin_G0\it1): worker accumulated CPU seconds 23333.328 across 16 workers. Increase 12660.391s since prior pass; no stalled-progress evidence.
+- Sample 2026-11-19T19:35:03.301535+08:00: T018c/high_thin_G0/it0 budget_t_ns=516.9513; step:26000; t = 5.1344e+002; dt = 5.7086e-002; 64.2 %; [Mach = 2.612379, Nrkl = 13]. Latest bounded-tail source limit: ! lip dt-limit: step 22000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=3.356e-001 T=3.108e+003 rhoe=2.199e+005 q=2.695e+008 dt_src=6.226e-010 s; dt_src is not actual step dt.
+- Sample 2026-11-19T19:35:03.301535+08:00: T018c/high_trap_G0/it0 budget_t_ns=587.997; step:26000; t = 5.6557e+002; dt = 4.9006e-002; 70.7 %; [Mach = 2.640229, Nrkl = 17]. No dt-limit line in bounded 8 MB tail.
+- Disk free 2253.945 GB decimal; active T018c log growth 0.000103609 GB/h over 896.3s. T018/T018b logs unchanged. Near-zero short-interval log growth is not useful for a long-range forecast; log-only estimates exclude fields, images, other writers, future rates and remaining duration. No 150 GB threshold action or deletion/truncation. Evidence: D:/sim_runs/T018/pass_20261119_1933_monitor.json.
+
 ## 2026-11-19T19:24:35.230442+08:00 (UTC+8)
 - Cards worked: T018b/T016i; monitored T018c/T017a. Pulled ws to 1615729; incoming handoff/to_codex empty. No owner: codex/status: ready cards, so no new claim or job launch. Unrelated output/ preserved.
 - Checked all five jobs with job.ps1 status: T018b_post_it0_01 finished; it1, T018c, native and reference wrappers running; stderr tails empty. it0 completed at 19:10:20.644114 with all 10 commands rc0 and wrapper exit0. Archived command summary, metadata, logs and exit code with SHA256 verification; queue marked completed.
@@ -321,15 +332,3 @@
 - T016e/low_thin_G0/it2:budget_t_ns=1.184972e+002;no step in tail
 - T016e/low_trap_G0/it1:budget_t_ns=1.296494e+003;step:67000; t = 1.2828e+003; dt = 3.5252e-002; 98.7 % | [Mach = 1.096162, Nrkl = 7]
 - T016e_r/low_thin_G1/it0:budget_t_ns=5.324972e+002;step:74000; t = 5.1830e+002; dt = 2.0841e-002; 39.9 % | [Mach = 3.067066, Nrkl = 17]
-
-## 2026-11-19T11:37:47+08:00 (UTC+8)
-- cards:T016f,T016e,T016i,T017a. Pulled65d04aa; claimedT016f e2eac5a; prepared/pushed662be0e. Incoming literature note remains pending previously reported source verification; no new instructions there.
-- T016f v1h buildrc0,7replacements,source/exe hashesverified. Initialmissingmake WinError2 retained; fixed processPATH only. SameT016d checkpoint33 at82.499055505873ns copied/hashverified into isolatedD:/sim_runs/T016f/check. LaunchedT016f_check_01 wrapper41892,MPI32472,11:37:16.838,8ranks,OMP1,BelowNormal,1200secondcap. Nextpass collectstep/Nrkl/budget; continuation remains gated on acceptance.
-- T016e_post_low_thin_02 failedexit1:missingPYTHONPATH,neithercommand importedlipsim. Failurelogs preserved; explicit childenvironment fixed and importsverified. RetryT016e_post_low_thin_02_retry1 PID32096,8imageworkers/OMP1,started11:37,initialrunning/empty stderr. No solver rerun.
-- T015 native14of14 complete;20nativeimages archivedtotal. Collectedlow_trap_G0/it2:18metricsets/30times/sixfiniteframearchives/hashverified,15P2unavailable retained. FullT015handoff pushed. Native38032 nowT016r2 low_thin_G0/it0(v1b);reference12624 remainsT016e low_trap_G0/it0. Production42332/lowG1continuation12720 running;initialstderr empty.
-- Reports synced/hashverified. Endpass afterbackgroundlaunch; no foreground waiting.
-- T016e/high_thin_G1/it0: budget_t_ns=7.199922e+002; step:92000; t = 7.1715e+002; dt = 8.6452e-003; 89.6 % | [Mach = 4.276049, Nrkl = 17]
-- T016e/low_thin_G0/it2: budget_t_ns=9.399800e+001; step:9000; t = 9.1339e+001; dt = 5.1515e-003; 7.0 % | [Mach = 18.315859, Nrkl = 2]
-- T016e/low_trap_G0/it1: budget_t_ns=1.256495e+003; step:66000; t = 1.2547e+003; dt = 2.2232e-002; 96.5 % | [Mach = 1.124650, Nrkl = 53]
-- T016e_r/low_thin_G1/it0: budget_t_ns=5.284920e+002; step:74000; t = 5.1830e+002; dt = 2.0841e-002; 39.9 % | [Mach = 3.067066, Nrkl = 17]
-- readycards=[]; T016f claimed thispass; no remainingeligiblecard.
