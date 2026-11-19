@@ -1,2 +1,0 @@
-T016i: T014 high_trap_G0/it0 image_v1 rc0 archived and validated (18metrics,29times0-740ns,six finite local frame archives,verified hashes); all18 unavailable P2 preserved. See tasks/T016i.report.md and results/T014/high_trap_G0/it0/image_v1/validation.json.
-28native sets now archived; existing queue advanced to T014 high_trap_G0/it1. Full T014/later T016e catch-up remain pending; card stays running.
