@@ -1,2 +1,0 @@
-T018 restored to running per disposition. First low_thin_G0/it0 patch at189.9989ns pushed in results/T018/extract/ with current budget and source metadata; six51x31 fields finite, T minimum200.000002, source/file hashes recorded. No parameter changes; next extraction at the first snapshot after250ns remains pending.
-D: free2276.34GB; low thin/trap rank0 logs grow5.02/5.03GB/h (T018 all-rank total11.88GB/h). Constant log-only estimate reaches150GB free in179h; no deletion/truncation, monitor every pass.
