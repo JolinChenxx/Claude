@@ -113,3 +113,11 @@ Additional reading uncertainty approximately +/-0.5 J/cm2 and +/-0.1 um/pulse, s
 Related reference [22]: Semerok et al., Applied Surface Science **138-139**, 311 (1999); quantitative Cu data remain unverified. Other cited sources require material-specific checking.
 
 Retrieval evidence: `results/T016e/literature/vladoiu2008_verification.json`; full PDF/render remain under `D:/sim_runs/lit_ablation_mass/`. This follow-up supersedes the blanket access limitation for this source only.
+
+### Gojani 2008 follow-up (2026-11-19 12:18 UTC+8)
+
+The paper text, including experiment and Fig.4 caption, is now accessible in the Academia copy linked above. It establishes **7 ns, 532 nm, room-temperature atmospheric air** (pp.2777?2779). Confocal microscopy measured crater depths. Fig.4(b), p.2780 identifies Cu; c1/c2/c3/c4 mean one/two/three/four successive irradiations. Quote: "numbers 1, 2, 3, and 4 correspond to the number of successive irradiations".
+
+The publisher figure was re-inspected: a c1 marker near20 GW/cm2 is approximately5.1 um deep (manual reading uncertainty about0.3 um and20% horizontally; not authors' error bars). Irradiance is retained as plotted; no fluence conversion, fit, mass conversion or extrapolation. Earlier tentative readings near7?15 GW/cm2 remain withdrawn.
+
+The text extract reports two spot diameters numerically70/600 but corrupts the unit to 'mm'; verify original typography before using either spot size. Surrounding redeposited material is described (p.2779); no quantitative Cu droplet/vapour partition is given. This supersedes the earlier caption/pulse-count access limitation only; the remaining leads and exact-condition matching are unresolved.
