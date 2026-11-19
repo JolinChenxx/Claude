@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T12:21:40+08:00 (UTC+8)
+- cards:T016e,T016i,T017a;pulled249608b. Claude acknowledged/closedT016f afterfailedv1h check;STATE selects highit2/lowit1 references. No stopnote supplied;existingjobs preserved.
+- Collectedlow_trap_G0/it1 v0image rc0:18metricsets,30times10?1230ns,sixfiniteframes retainedlocally,copiedmetrics hashesverified;9P2unavailable retained. BaselinebP1thin/sa564.8856747/452.1765772ns. Completionlogs and handoffpushed1275031;reportsynced/hashverified.
+- Literaturefollowup: located accessible Gojani2008 experimentaltext/caption; docs/DATA_NOTES andevidence updated, limitations retained. Broadrequest remainsincomplete;handoffsent,note retained.
+- Fourjob.ps1statuses running,stderr empty:production42332,native38032(T016r2lowtrap it0),reference12624(T016elowtrap it1),lowG1continuation12720. No newsolvercompletion;no newbackgroundlaunch.
+- T016e/high_thin_G1/it0:budget_t_ns=7.644985e+002;step:96000; t = 7.6160e+002; dt = 1.1533e-002; 95.2 % | [Mach = 4.111339, Nrkl = 10]
+- T016e/low_thin_G0/it2:budget_t_ns=2.349834e+002;step:23000; t = 2.1702e+002; dt = 2.4864e-003; 16.7 % | [Mach = 3.230863, Nrkl = 2]
+- T016e/low_trap_G0/it2:budget_t_ns=1.034990e+002;step:11000; t = 1.0052e+002; dt = 4.7254e-003; 7.7 % | [Mach = 18.732989, Nrkl = 3]
+- T016e_r/low_thin_G1/it0:budget_t_ns=5.384882e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
+- readycards=[];no eligiblecard.
+
 ## 2026-11-19T12:08:40+08:00 (UTC+8)
 - cards:T016f,T016e,T016i,T017a. Initialpull blocked by two live registry appends; inspected/committed exact lowtrapit1 completion and boundedcheck timeout rows, then pulled. Results/handoffs pushed a2c973f. No newincominginstructions; literature note remains pending previously reported verification.
 - T016f step2FAILED: boundedv1h check finished11:57:20.800,1203.969s,solverrc15intentional/wrapperrc0. Laststep25000,t82.963ns,dt3.8661e-5ns,Nrkl2;maxlogdt4.1512e-5ns.94rank0ConsToPrim;all8ranklogs immutablearchived;no freshbudget/checkpoint. Inputs unchanged exceptgridtimestampcomment. Cardblocked;handoffsent;T016e_hc NOTstarted.
@@ -410,19 +421,5 @@
 - T016e/low_thin_G1/it0: t_ns=4.544959e+002; latest logged dt=7.4886e-003, Nrkl=63 (step 67000, log_t_ns=4.5263e+002).
 - T016e/low_trap_G0/it1: t_ns=6.374918e+002; latest logged dt=3.8196e-002, Nrkl=8 (step 41000, log_t_ns=6.2370e+002).
 - skipped ready cards and why: none; no ready cards or incoming note. Production members advanced: 6/6.
-- next: archive native T015 outputs and hand off its complete set; collect new production iterations and repeat T016e native imaging. No parameter changes or foreground waiting.
-
-## 2026-11-19 04:35 (UTC+8)
-- cards: T016e,T016i | action: archived native low_trap_G0/it0 and handed off initial six-run T016e set in c9b3174. 108 metric CSVs,six summaries,finite frame validation/hashes; arrays kept local. Latest low-trap b P1 thin/sa=721.1744/290.7101 ns,c P2 thin/sa=873.4410/457.7817 ns;12 scenarios P2 unavailable preserved. T016i report synced/hash verified.
-- T016i_native_01 PID 38032, execution commit f897ccd, elapsed 02:11:13 at check: T016e high/low commands rc=0 (low completed 04:19:37), now T015/high_thin_G0/it0; stderr empty. T015 set handoff and remaining roots pending; new T016e completions need repeat imaging.
-- production: T016e PID 42332, execution commit bc79e7d, elapsed 11:10:33 at initial check; stderr empty. Six completed iterations archived, no new completion; known numerical warnings retained.
-- Progress snapshot 2026-11-19T04:35:26.350540+08:00; budget and logged times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=2.379976e+002; latest logged dt=1.7182e-002, Nrkl=9 (step 54000, log_t_ns=2.2624e+002).
-- T016e/high_thin_G1/it0: t_ns=4.729973e+002; latest logged dt=1.2744e-002, Nrkl=12 (step 70000, log_t_ns=4.7127e+002).
-- T016e/high_trap_G0/it2: t_ns=2.444882e+002; latest logged dt=1.7662e-002, Nrkl=10 (step 54000, log_t_ns=2.3017e+002).
-- T016e/low_thin_G0/it1: t_ns=6.089978e+002; latest logged dt=3.4015e-002, Nrkl=15 (step 39000, log_t_ns=5.9130e+002).
-- T016e/low_thin_G1/it0: t_ns=4.519993e+002; latest logged dt=7.4081e-003, Nrkl=63 (step 66000, log_t_ns=4.4359e+002).
-- T016e/low_trap_G0/it1: t_ns=6.034792e+002; latest logged dt=3.6363e-002, Nrkl=9 (step 40000, log_t_ns=5.9441e+002).
-- skipped ready cards and why: none; no ready cards or incoming note. All six production members advanced.
 - next: archive native T015 outputs and hand off its complete set; collect new production iterations and repeat T016e native imaging. No parameter changes or foreground waiting.
 
