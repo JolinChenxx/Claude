@@ -1,5 +1,14 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T14:51:27+08:00 (UTC+8)
+- T018 claimed and pushed on ws before start. Launched at 2026-11-19T14:51:00 local time via job.ps1, PID 8480, commit fb8bbbc, --max-cores 32 / OMP=1. Initial status running. Allocation: T018 32 + T016e solvers 16 + active T017a reference 16 = 64 physical cores reserved. No free slot for another imaging member. Check dt/Nrkl and generated inputs next pass.
+- T018/high_thin_G0/it0 phase_explosion=pending; ini: pending
+- T018/high_trap_G0/it0 phase_explosion=pending; ini: pending
+- T018/low_thin_G0/it0 phase_explosion=pending; ini: pending
+- T018/low_trap_G0/it0 phase_explosion=pending; ini: pending
+- T016i: T014/high_thin_G0/it2 worker exited 0 (GetExitCodeProcess matched recorded PID and creation time). Archived 18 metric sets, 29 times and six finite frame archives; all 18 P2 unavailable. Dispatchers stay held; reference current member high_thin_G1/it0 still active at capacity check. Stopped low G1 v2 remains queued within the capacity policy.
+- T016e G0 it2 budget t_ns: low_thin_G0=7.134877e+002, low_trap_G0=6.424798e+002. Literature request still open. End pass after long-job launch.
+
 ## 2026-11-19T14:35:26+08:00 (UTC+8)
 - Pulled ws fc2ae4e; Claude incorporated stopped G1 diagnostics. No new incoming instructions. Literature search did not verify another eligible single-shot depth; requested 20 step records are already present. Literature note remains open.
 - T016e, T016i and T017a return running, no new member completion. Both current image PIDs matched recorded creation times and each still has 16 workers. Dispatchers held. 16 live solver ranks + 32 image workers reserve 48 of 64 physical cores. T018 is the only ready card; 16 free cores do not meet its 32-core requirement. No job started or stopped.
@@ -362,19 +371,4 @@
 - T016e/low_trap_G0/it1: t_ns=8.034866e+002; latest logged dt=2.2195e-002, Nrkl=62 (step 47000, log_t_ns=7.8282e+002).
 - skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
 - next: job.ps1 status for all three jobs; collect native/reference metrics per completed run and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
-
-## 2026-11-19 06:49 (UTC+8)
-- cards: T016e,T016i,T017a | action: ws current at a7fffbf; no incoming note or ready card. No new completed imaging or production iteration. Nine native runs and six production iterations archived.
-- T017a_image_v2_01 PID12624, execution963dd49, elapsed00:43:35: high_thin_G0/it0 running; stderr empty. Image PID40452 has16 workers, cumulative CPU2502.8-2537.5 s each (previous1660.3-1671.1), confirming progress. Handoffs due after low G0 it0 and high G0 it1 images.
-- T016i_native_01 PID38032, executionf897ccd, elapsed04:26:13: T015/high_thin_G1/it0 running; stderr empty. Image PID27032 has16 workers, cumulative CPU4529.0-4947.7 s each (previous4071.4-4084.4), confirming progress. Full T015 handoff pending.
-- T016e PID42332, executionbc79e7d, elapsed13:25:33; stderr empty. Known numerical warnings retained.
-- Progress snapshot 2026-11-19T06:49:49.992272+08:00; budget and log times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=5.419973e+002; latest logged dt=7.9695e-003, Nrkl=5 (step 90000, log_t_ns=5.3905e+002).
-- T016e/high_thin_G1/it0: t_ns=5.869905e+002; latest logged dt=1.2166e-002, Nrkl=26 (step 78000, log_t_ns=5.7703e+002).
-- T016e/high_trap_G0/it2: t_ns=5.684903e+002; latest logged dt=1.0097e-002, Nrkl=6 (step 87000, log_t_ns=5.6350e+002).
-- T016e/low_thin_G0/it1: t_ns=7.819831e+002; latest logged dt=2.2159e-002, Nrkl=63 (step 46000, log_t_ns=7.7021e+002).
-- T016e/low_thin_G1/it0: t_ns=4.814998e+002; latest logged dt=6.9927e-003, Nrkl=60 (step 70000, log_t_ns=4.8093e+002).
-- T016e/low_trap_G0/it1: t_ns=7.884904e+002; latest logged dt=2.2195e-002, Nrkl=62 (step 47000, log_t_ns=7.8282e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
-- next: job.ps1 status for all three jobs; collect native and reference metrics at completion and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
 
