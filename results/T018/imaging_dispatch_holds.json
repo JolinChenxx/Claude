@@ -50,9 +50,11 @@
       "--scenarios",
       "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
     ],
-    "state": "dispatcher_suspended",
+    "state": "dispatcher_resumed",
     "time": "2026-11-19T14:05:02.386163+08:00",
     "authority": "handoff/to_codex/T018-capacity.md",
-    "resume_condition": "T018 running and 16 physical cores unreserved; resume at most permitted queues"
+    "resume_condition": "T018 running and 16 physical cores unreserved; resume at most permitted queues",
+    "resumed": "2026-11-19T15:49:57+08:00",
+    "resume_reason": "T018 running with32cores, existing T016e16cores, reference retains its existing16core slot; native queue remains held"
   }
 ]
