@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T18:10:02+08:00 (UTC+8)
+- Pulled14b736e and followed explicit stop-T016e-lowG0-it2.md/DECISIONS18:05 first. Verified exact MPI20656(lowthin)/4488(lowtrap) identities,cwd,8ranks each; taskkill only those trees at18:05:37.9106/18:05:39.7966. Targets gone,18 unrelated solver/MPI identities retained. No data deleted/tuning; authority archived and incoming note consumed.
+- T016e low it2 final budgets879.4857/892.4809ns; latest thinstep43000,t859.46,dt0.020639,Nrkl63; trapstep44000,t871.83,dt0.020841,Nrkl56. Partial snapshots352to877.4975ns/358to892.4809ns, uniform binary sizes. STOPPED/budget/source/ini/index/tail evidence pushed445d083. Shock calls rc0,352/358 rows match every indexed time, finite present values,11missing radii per axis retained. Both reports synced/hashverified.
+- Registry intentional member rc1 rows preserved (wall24492.5/22268.4s,completion HEAD14b736e); original launchbc79e7d. T016e wrapper subsequently exited0; job.ps1 says finished but printed summary retains member failures/stops, so wrapper0 is not solver success. No restart. Final comparison/report consolidation pending; T016e card remains running for that deliverable.
+- Claimed no new card: none ready. Prepared T018b it1 runner from existing10-command it0 pipeline with unchanged inputs/defaults, separate outputs/logs; capacity guard includes existingit0 job and rejects unexpected solver ranks. Command order/paths, AST and16free-core check passed. collect_image.py now validates exact runner per iteration. No physics/imaging parameter changes.
+- Launched T018b_post_it1_01 at18:09:19 via job.ps1,PID31224,commit445d083,initialrunning/empty stderr. Sixdiagnostics then fourimages,16workers,OMP/BLAS1,BelowNormal. Metadata/queue updated. End pass after long-job launch and bookkeeping, no foreground wait.
+- Capacity now T018c16 + referenceimage16 + existingT018b it0post16 + newit1post16 =64physicalcores. Old native/reference dispatchers remain held. T018b it0 pipeline latest checked still lowthin image_v2; reference remains highthinG1it0. No new image completion collected this pass; no extra old-queue launch.
+- Disk sample2026-11-19T18:09:19+08:00: free2254.780GB decimal; activeT018c log growth11.374GB/h, stoppedT018/finishedT018b logsunchanged. Constant active-log-only horizon to150GB185.0h excludes fields/imaging/otherwriters/futurerates/remainingduration, not a batch-end prediction; no immediate threshold alert. Preserve logs.
+- Sample 2026-11-19T18:09:19+08:00: T018c/high_thin_G0/it0 budget_t_ns=174.9786; current step/dt/Nrkl not present in bounded8MB tail (not zero or a stall claim). Last verified at17:50:21: step16000,t105.22ns,dt0.0061821ns,Nrkl3.
+- Sample 2026-11-19T18:09:19+08:00: T018c/high_trap_G0/it0 budget_t_ns=164.9953; current step/dt/Nrkl not present in bounded8MB tail (not zero or a stall claim). Last verified at17:50:21: step15000,t98.781ns,dt0.0082104ns,Nrkl4.
+
 ## 2026-11-19T17:52:18+08:00 (UTC+8)
 - Cards:T018b,T018c,T016e,T016i,T017a. Pulled ws already current0dd49dd; no incoming instructions or ready Codex cards. All five checked job.ps1 wrappers running, stderr tails empty. No new solver completion, launch, stop/resume or parameter change.
 - Collected all6 completed T018b it0 diagnostics commands(rc0): each member4emission/131core/521shock rows, matching snapshot indices. Present values finite, emission fractions normalized, copies/hash/JSON verified. Each core has4initial no-core rows/5missing derivatives; shock has69axis/63surface missing positions per threshold1.2. Blanks retained. Last valid axis thin/trap1154.979/1154.917ns; surface1169.965/1169.909ns.
@@ -331,15 +342,3 @@
 - T016e/low_trap_G0/it1: latest budget t_ns=1.066485e+003.
 - T016e_r/low_thin_G1/it0: latest budget t_ns=5.104961e+002.
 - No ready cards remain. Next: stop-relay resolution, then20min background diagnostic; check ongoing jobs.
-
-## 2026-11-19 10:16 (UTC+8)
-- cards: T016e,T016i,T017a; incoming literature lookup. Added 20 step/Nrkl pairs; latest extracted high_trap_G0/it3 step32000,83.241ns,dt3.7299e-5ns,Nrkl2. No solver change.
-- Literature: three bibliographic leads/primary abstracts and one inspected publisher figure recorded in DATA_NOTES; full experimental conditions/captions not verified because full-text retrieval was restricted. No accepted quantitative benchmark; sent limitation handoff. Incoming note retained pending full verification.
-- Four job.ps1 checks at10:13 running,stderr empty: T016e PID42332; T016e_r_low_G1_01 PID12720; T016i_native_01 PID38032 still T015/low_thin_G1/it0; T017a_image_v2_01 PID12624 still high_trap_G0/it2. No new imaging completion.
-- T016e/high_thin_G0/it3: latest budget row begins 8.249686e+001,1.8114606314e-003.
-- T016e/high_thin_G1/it0: latest budget row begins 6.609966e+002,1.8857304153e-003.
-- T016e/high_trap_G0/it3: latest budget row begins 8.299997e+001,1.8121478520e-003.
-- T016e/low_thin_G0/it1: latest budget row begins 1.023982e+003,1.7312191459e-003.
-- T016e/low_trap_G0/it1: latest budget row begins 1.054496e+003,1.7314450890e-003.
-- T016e_r/low_thin_G1/it0: latest budget row begins 5.094995e+002,1.7532806417e-003.
-- skipped ready cards and why: none; no ready cards. Next pass inspect jobs/new milestones; literature needs accessible full experimental texts.
