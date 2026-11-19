@@ -1,13 +1,21 @@
 {
   "prepared": "2026-11-19T17:12:05+08:00",
-  "state": "waiting_for_16_physical_cores_not_started",
+  "state": "capacity_available_launch_pending",
   "job_id": "T018b_post_it0_01",
   "launcher": "scripts/win/job.ps1 start -Id T018b_post_it0_01 -Threads 1 -Cmd \"D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018b\\postprocessing\\run_it0.py\"",
   "workers": 16,
   "capacity_last_checked": {
-    "solver_ranks": 48,
-    "active_reference_workers": 16,
-    "free_physical_cores": 0
+    "checked": "2026-11-19T17:36:35+08:00",
+    "reservations": {
+      "T016e": 16,
+      "T018b": 0,
+      "T018c": 16,
+      "active_reference_image": 16
+    },
+    "pluto_ranks": 32,
+    "free_physical_cores": 16,
+    "requested_cores": 16,
+    "can_start": true
   },
   "script_sha256": "fa876c82dc3b9698f561980a94d72f3c60b7f091abc84c3d5c02228edf875985",
   "commands": [

@@ -1,0 +1,2 @@
+Both T018b low it1 members reached1300ns,rc0; solver batch finished. Budgets/source inputs and all-rank stable-log counts are in results/T018b/low_*/it1/: thin6,777,425 and trap6,771,026 ConsToPrim lines; no tuning or numerical-acceptance claim.
+Review the final solver evidence and tasks/T018b.report.md. The freed16-core slot is assigned to prepared it0 diagnostics/image_v1/v2 next; it1 postprocessing remains queued, so card is still running.
