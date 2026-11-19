@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T17:52:18+08:00 (UTC+8)
+- Cards:T018b,T018c,T016e,T016i,T017a. Pulled ws already current0dd49dd; no incoming instructions or ready Codex cards. All five checked job.ps1 wrappers running, stderr tails empty. No new solver completion, launch, stop/resume or parameter change.
+- Collected all6 completed T018b it0 diagnostics commands(rc0): each member4emission/131core/521shock rows, matching snapshot indices. Present values finite, emission fractions normalized, copies/hash/JSON verified. Each core has4initial no-core rows/5missing derivatives; shock has69axis/63surface missing positions per threshold1.2. Blanks retained. Last valid axis thin/trap1154.979/1154.917ns; surface1169.965/1169.909ns.
+- T018b low_thin_G0/it0 image_v1 finished17:50:19.6625,rc0. Archived18metric sets/30times10-1230ns, validated6finite raw NPZs locally. Filter-b baseline P1thin479.4451ns/sa7465.6081ns;13P2unavailable preserved. New collector adapts existing native validation to per-command completion evidence only. Report/handoff prepared; report synced/hashverified; results3.462MB below20MB.
+- Existing T018b_post_it0_01 automatically advanced to low thin image_v2(PID48712,create-time1795081819.9959557), no extra launch. T016e16+T018c16+referenceimage16+replacementimage16=64 reserved physicalcores. Image_v2 was initializing at process sample; reservation retained. Old native/reference dispatchers39740/41556 identity-verified held; referenceimage24040 identity-verified live with16workers. Remaining it0 and both it1 imaging/diagnostics stay queued; no free16-core slot.
+- Disk sample2026-11-19T17:50:21+08:00: D free2258.511GB decimal. Stopped/completed T018/T018b logs unchanged; active T018c logs interval2.0015GB/h. Constant active-log-only horizon to150GB1053.5h excludes fields, imaging, other writers/future rates/remaining duration; no batch-end prediction or immediate threshold alert. No deletion/truncation.
+- Sample 2026-11-19T17:50:21+08:00: T018c/high_thin_G0/it0 budget_t_ns=109.4905; step:16000; t = 1.0522e+002; dt = 6.1821e-003; 13.2 % [Mach = 13.934745, Nrkl = 3]
+- Sample 2026-11-19T17:50:21+08:00: T018c/high_trap_G0/it0 budget_t_ns=104.4959; step:15000; t = 9.8781e+001; dt = 8.2104e-003; 12.3 % [Mach = 13.702082, Nrkl = 4]
+- Sample 2026-11-19T17:50:21+08:00: T016e/low_thin_G0/it2 budget_t_ns=869.4865; step:43000; t = 8.5946e+002; dt = 2.0639e-002; 66.1 % [Mach = 1.648680, Nrkl = 63]
+- Sample 2026-11-19T17:50:21+08:00: T016e/low_trap_G0/it2 budget_t_ns=881.4825; step:44000; t = 8.7183e+002; dt = 2.0841e-002; 67.1 % [Mach = 1.637813, Nrkl = 56]
+
 ## 2026-11-19T17:37:54+08:00 (UTC+8)
 - Cards: T018b, T018c, T016e, T016i, T017a. Initial pull blocked by legitimate automatic registry append; inspected and committed thin it1 row9b543ef, then pulled/rebased. Collected trap row with evidence in928df27 and pushed ws. No incoming instructions or ready Codex cards. Untracked output/ untouched.
 - T018b solver batch FINISHED, exit0, stdout rc[0,0] for each member. Low thin/trap it1 reached1300ns at17:34:02/17:35:02, wall2046.3/2035.6s. All16 stable completed logs streamed/hashchecked once: ConsToPrim totals6,777,425/6,771,026; rank0=4,628,224/4,619,941 and rank1=2,149,201/2,151,085, ranks2-7zero. Full finite budgets/source metadata/input checks/tails archived and handed to Claude. rc0 is not numerical acceptance; no tuning.
@@ -332,16 +343,3 @@
 - T016e/low_trap_G0/it1: latest budget row begins 1.054496e+003,1.7314450890e-003.
 - T016e_r/low_thin_G1/it0: latest budget row begins 5.094995e+002,1.7532806417e-003.
 - skipped ready cards and why: none; no ready cards. Next pass inspect jobs/new milestones; literature needs accessible full experimental texts.
-
-## 2026-11-19 09:49 (UTC+8)
-- cards: T016e,T016i,T017a | action: pulled46972b4 (Claude consumed high-trap it1 handoff); no incoming note/ready card. T016e_post_high_thin_03 finished rc0,emission and image commands both rc0; image18 metrics/29 times and six finite local arrays validated,all18 P2 unavailable preserved; archived logs/summary. Eight solver iterations have v0 images.
-- Four active jobs: T016e PID42332 production; T016e_r_low_G1_01 PID12720 continuation; T016i_native_01 PID38032 T015/low_thin_G1/it0; T017a_image_v2_01 PID12624 high_trap_G0/it2. All stderr tails empty. Sixteen native images/four reference images archived. Full T015 and low-reference handoffs pending.
-- Pending repeats: native images for newer T016e it2; v2 high_thin_G0/it2 (high_trap it2 already running). No duplicate launch.
-- T016e/high_thin_G0/it3: budget_t_ns=6.949785e+001; dt=3.3370e-003,Nrkl=5 (step13000,log_t_ns=6.7409e+001).
-- T016e/high_thin_G1/it0: budget_t_ns=6.389947e+002; dt=1.2722e-002,Nrkl=39 (step83000,log_t_ns=6.3355e+002).
-- T016e/high_trap_G0/it3: budget_t_ns=8.299997e+001; dt=3.8110e-005,Nrkl=2 (step27000,log_t_ns=8.3044e+001).
-- T016e/low_thin_G0/it1: budget_t_ns=9.834963e+002; dt=2.2692e-002,Nrkl=61 (step54000,log_t_ns=9.6704e+002).
-- T016e/low_thin_G1/it0 [intentionally stopped]: budget_t_ns=4.980000e+002; dt=6.3659e-003,Nrkl=63 (step72000,log_t_ns=4.9418e+002).
-- T016e/low_trap_G0/it1: budget_t_ns=9.909845e+002; dt=2.7352e-002,Nrkl=32 (step55000,log_t_ns=9.7906e+002).
-- T016e_r/low_thin_G1/it0: budget_t_ns=5.044870e+002; dt=1.3941e-002,Nrkl=95 (step73000,log_t_ns=5.0397e+002).
-- skipped ready cards and why: none; no ready cards. Next check4 active jobs and new completions.
