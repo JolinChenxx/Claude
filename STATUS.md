@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T16:06:23+08:00 (UTC+8)
+- T018-low-dt-diagnostic followed and incoming note consumed: delivered all16 rank files under results/T018/inflight_dt with byte-offset verification/hashes. Each rank has6vmax; ranks0-2 have6dt-limit, ranks3-7 none in captured logs. Both rank0 last5step/dt lines verified. At step29000 rank1 kind1[4,3] dt_src8.418e-12/8.399e-12s; actual thin/trap dt8.3429e-4/8.3233e-4ns. Handoff pushed; no causal inference/tuning/stop.
+- T018 remains running per disposition. Four job.ps1 checks running, stderr empty, no new completion/readycard. Low field after250ns still pending (now~203.5ns). Native dispatcher held; reference dispatcher resumed in its existing16core slot;48solver+16image allocation.
+- Disk sample 2026-11-19T16:05:45+08:00: D free2269.87GB. Low thin/trap rank0 growth2.39/2.42GB/h; all T018 rank logs14.98GB/h. Constant log-only horizon to150GB free141.5h, excluding snapshots/otherwriters and uncertain future iterationduration. No immediate threshold alert; preserve logs. Rates baseline: D:/sim_runs/T018/disk_guard_state.json.
+- Report synced/hashverified. Literature request remains unresolved; no new verified data this pass.
+- T018/high_thin_G0/it0: budget_t_ns=1.379970e+002; step:18000; t = 1.3584e+002; dt = 2.8668e-002; 17.0 %; [Mach = 11.598709, Nrkl = 14]
+- T018/high_trap_G0/it0: budget_t_ns=1.689977e+002; step:20000; t = 1.6863e+002; dt = 4.2355e-003; 21.1 %; [Mach = 11.001421, Nrkl = 6]
+- T018/low_thin_G0/it0: budget_t_ns=2.034996e+002; step:30000; t = 2.0349e+002; dt = 9.3242e-004; 15.7 %; [Mach = 8.579550, Nrkl = 2]
+- T018/low_trap_G0/it0: budget_t_ns=2.034995e+002; step:30000; t = 2.0346e+002; dt = 9.4013e-004; 15.7 %; [Mach = 8.573471, Nrkl = 2]
+- T016e/low_thin_G0/it2: budget_t_ns=7.964798e+002; step:40000; t = 7.9564e+002; dt = 2.0787e-002; 61.2 %; [Mach = 1.759570, Nrkl = 62]
+- T016e/low_trap_G0/it2: budget_t_ns=7.664757e+002; step:39000; t = 7.4331e+002; dt = 2.6512e-002; 57.2 %; [Mach = 1.847272, Nrkl = 59]
+
 ## 2026-11-19T15:50:50+08:00 (UTC+8)
 - Pulled7efc2e1: Claude reviewed190ns field in STATE and requests continued unchanged runs plus post250ns check. No new finished iteration, no ready card. Low thin remains~197ns; second extract not due. Literature request remains open.
 - Disk guard 2026-11-19T15:49:57+08:00: D free2273.95GB, low thin/trap rank0 growth3.49/3.54GB/h; T018 all-rank log growth9.53GB/h. Constant log-only horizon to150GB free222.9h; excludes snapshots/other writers and uncertain remaining duration. No immediate threshold concern; no truncation/deletion.
@@ -338,20 +350,4 @@
 - T016e/low_trap_G0/it1: t_ns=8.844845e+002; latest logged dt=2.5350e-002, Nrkl=32 (step 51000, log_t_ns=8.7798e+002).
 - skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
 - next: job.ps1 status for three active jobs; collect native/reference metrics and new solver completions; core diagnostic request complete.
-
-## 2026-11-19 08:05 (UTC+8)
-- cards: T016e,T016i,T017a; core energy request | action: pulled9a3ea07 (Claude accepted high-thin it1 reference handoff). Prepared9159021 and launched core_energy_01 PID44992,one worker/thread,sequential five requested runs. Incoming core_energy note retained until outputs validated and handed off. No foreground wait.
-- core_energy_01 started 2026-11-19T08:05:06 UTC+8, execution9159021. Outputs/logs in results/core; T016e high thin/trap it1,low thin/trap it0 usev1c; T015 high trap it2 usesv1. --every4,default Ycut0.5. Next pass check job and archive/validate results; send handoff/delete note on completion.
-- T017a_image_v2_01 PID12624, execution963dd49, elapsed01:58:43 at check: high_trap_G0/it0 running,stderr empty. Two v2 images archived; high-trap it1 and low G0 it0 handoffs pending.
-- T016i_native_01 PID38032, executionf897ccd, elapsed05:41:21 at check: T015/high_trap_G0/it2 running,stderr empty. Twelve native images archived; full T015 handoff pending.
-- T016e PID42332, executionbc79e7d, elapsed14:40:41; stderr empty. Six completed iterations archived; known numerical warnings retained.
-- Progress snapshot 2026-11-19T08:05:36.763355+08:00; budget/log times separate.
-- T016e/high_thin_G0/it2: t_ns=7.014990e+002; latest logged dt=8.6588e-003, Nrkl=11 (step 105000, log_t_ns=6.9720e+002).
-- T016e/high_thin_G1/it0: t_ns=6.124907e+002; latest logged dt=1.1931e-002, Nrkl=53 (step 81000, log_t_ns=6.1074e+002).
-- T016e/high_trap_G0/it2: t_ns=7.454897e+002; latest logged dt=1.2944e-002, Nrkl=7 (step 103000, log_t_ns=7.3454e+002).
-- T016e/low_thin_G0/it1: t_ns=8.619837e+002; latest logged dt=2.5522e-002, Nrkl=32 (step 49000, log_t_ns=8.4036e+002).
-- T016e/low_thin_G1/it0: t_ns=4.909944e+002; latest logged dt=6.3954e-003, Nrkl=59 (step 71000, log_t_ns=4.8767e+002).
-- T016e/low_trap_G0/it1: t_ns=8.659836e+002; latest logged dt=2.2066e-002, Nrkl=54 (step 50000, log_t_ns=8.5499e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
-- next: job.ps1 status for four jobs; finish core energy handoff,collect native/reference metrics and new solver completions.
 
