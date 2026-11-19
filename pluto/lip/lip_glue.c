@@ -107,6 +107,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
   double inv_src = 0.0;   /* source-term time-step constraint (1/s), N-grade stability limits */
   /* diagnostic (T016e high_trap it3 stall): which cell and which source term sets inv_src */
   int lim_kind = 0, lim_i = -1, lim_j = -1; double lim_rho = 0, lim_T = 0, lim_rhoe = 0, lim_q = 0;
+  double vmax = 0.0, vmax_rho = 0, vmax_T = 0, vmax_vr = 0, vmax_vz = 0; int vmax_i = -1, vmax_j = -1;
 #define LIP_LIM(kind, val, q_) do { double _v = (val); if (_v > inv_src) { inv_src = _v; lim_kind = (kind); lim_i = i; lim_j = j; \
       lim_rho = rho; lim_T = T; lim_rhoe = rhoe; lim_q = (q_); } } while (0)
   const double F_E = 0.2, F_M = 0.5;
@@ -152,6 +153,8 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       double rho = v[RHO] * LIP_RHO_SI, Y = lip_Y(v), T = T_cell[j][i];
       double vr = v[VX1] * LIP_VEL_SI, vz = v[VX2] * LIP_VEL_SI;
       double rhoe = rho * lip_eos_e(&lip_eos, rho, T, Y);
+      { double sp = sqrt(vr * vr + vz * vz);
+        if (sp > vmax) { vmax = sp; vmax_i = i; vmax_j = j; vmax_rho = rho; vmax_T = T; vmax_vr = vr; vmax_vz = vz; } }
       double dV = ring * dz[j - JBEG];
       double ql = q[j - JBEG];
       double Q = 4.0 * CONST_PI * lip_interp(&lip_opt, i_nec, log10(rho), log10(T), Y, 1);
@@ -218,6 +221,9 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
   }
   FreeArray1D(dz); FreeArray1D(al); FreeArray1D(q);
   /* PLUTO computes dt_next = cfl / invDt_hyp (code time units); fold the source constraint in */
+  if (g_stepNumber % 1000 == 0)
+    printLog("! lip vmax: step %ld [i,j=%d,%d] |v|=%.3e m/s vr=%.3e vz=%.3e rho=%.3e T=%.3e\n",
+             g_stepNumber, vmax_i, vmax_j, vmax, vmax_vr, vmax_vz, vmax_rho, vmax_T);
   if (g_stepNumber % 1000 == 0 && inv_src * LIP_TIME_SI / RuntimeGet()->cfl > Dts->invDt_hyp)
     printLog("! lip dt-limit: step %ld kind %d (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=%d,%d] rho=%.3e T=%.3e rhoe=%.3e q=%.3e dt_src=%.3e s\n",
              g_stepNumber, lim_kind, lim_i, lim_j, lim_rho, lim_T, lim_rhoe, lim_q, 1.0 / inv_src);

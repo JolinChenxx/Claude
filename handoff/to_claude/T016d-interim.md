@@ -1,2 +1,0 @@
-Partial diagnostic evidence while T016d_diag_01 still running is in results/T016d/interim/ (all8rank log snapshots,dt-limit/stepNrkl/other!); full20minute collection remains pending. Please check units/global reduction before identifying the binding cell from per-rank lines. No changes/stops.
-New symptom: T016e/high_thin_G0/it3 also reaches dt3.7333e-5ns at step34000,t83.325ns,Nrkl2; latest20pairs in results/T016e/high_thin_G0/it3_dt_check.txt. Thin production remains running; please review alongside trap diagnostic.
