@@ -325,3 +325,22 @@ Updated: 2026-11-15
 - Disposition: this is a documented deviation from §4.2. It is accepted for v1e results because it is < 0.35% and develops late, and T016e is closed (done). Open check, low priority: recompute E_internal with PLUTO's own e for one late snapshot to confirm the origin.
 - ConsToPrim: 123.1M lines over the completed T016e runs, the known RKL-stage overshoot defect (still open), already documented.
 - T018b closed (done): 4 iterations, 20 postprocessing commands, 8 image sets. The P1 fits that are negative or missing, and the P2 values that are unavailable, follow from the absent emission (no breakdown) and are not imaging defects. 27.1M ConsToPrim lines, mostly in ranks 0–1 near the axis/wall: the rarefaction-cavity floor hits (STATE 15:45).
+
+## 2026-11-19 21:00 — T018c high it0 (v1i, PE on): breakdown occurs, delayed
+- Budget at 800 ns, PE on vs T016e high it0 (PE off; older build with the explicit wall), thin:
+
+  | term | PE on | PE off |
+  |---|---|---|
+  | gas absorption | 276 µJ | 296 µJ (−7%) |
+  | radiated | 64 µJ | 71 µJ |
+  | escaped laser | 109 µJ | 92 µJ |
+  | target absorption, PLUTO | 12.0 µJ | 8.8 µJ |
+  | M_Cu | 8.30 ng | 3.29 ng (2.5×) |
+  | E_src | 18.8 µJ | 10.3 µJ |
+
+  Trap gives the same numbers.
+- Breakdown is delayed: gas absorption at 30 ns is 0.004 µJ against 4.3 µJ, and at 40 ns 15 against 38 µJ. From 50 ns on it catches up. At high fluence the laser intensity overcomes the dilution that suppressed breakdown at low fluence.
+- Rough plume specific energy, (E_gas_abs + E_src)/M_Cu (an upper bound, since air shares it): 35 MJ/kg with PE on, 93 MJ/kg with PE off. This points in the direction PREREG declared (lower core specific energy), but the declared test is the core_energy diagnostic at t_ref plus the late decay in image_v2. Those are pending (T018c_post_it0_01) and are judged when they arrive.
+- E_wall 20 vs 50 µJ: partly a build difference (v1i implicit vs explicit wall), so it is not attributed to PE.
+- ConsToPrim: 17.9M / 17.5M lines (thin/trap).
+- Picard: target model 0.158 × 396.7 = 62.6 µJ against PLUTO 12.0 µJ, which is it0 with no shielding. it1 is running.
