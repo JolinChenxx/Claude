@@ -11,3 +11,5 @@ Background job: `core_energy_01`, managed by `scripts/win/job.ps1`.
 After completion, validate rows/finite values (preserve missing-core NaNs),
 commit results, send `handoff/to_claude/core_energy.md`, and remove the incoming
 note. Launch is recorded before work; this file does not assert completion.
+
+Completed and validated; see report.md and validation.json. Incoming request fulfilled and handoff submitted.
