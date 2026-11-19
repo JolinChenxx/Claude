@@ -2,7 +2,8 @@
 id: T018b
 title: Build v1i (backward-Euler wall exchange); stop T018 low members; rerun low G0 it0–it1 with v1i (16 cores)
 owner: codex
-status: ready
+status: running
+started: 2026-11-19T16:20:29+08:00
 depends: []
 milestone: D2
 est_time: 0.3h operations + machine time (measure it; v1h ran at ~34 ns/h)
