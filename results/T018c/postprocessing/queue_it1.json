@@ -341,7 +341,15 @@
       "pid": 44364,
       "launch_commit": "5b660fb",
       "launch_evidence": "launch_it1_thin.json",
-      "startup_checked": "2026-11-20T02:24:09.399268+08:00"
+      "startup_checked": "2026-11-20T02:24:09.399268+08:00",
+      "diagnostics_collected": "results/T018c/high_thin_G0/it1/diagnostics/validation.json",
+      "completed_commands": [
+        "high_thin_G0_emission",
+        "high_thin_G0_core_energy",
+        "high_thin_G0_shock_track"
+      ],
+      "active_command": "high_thin_G0_image_v1",
+      "progress_checked": "2026-11-20T02:36:55.566385+08:00"
     },
     {
       "job_id": "T018c_post_it1_thin_v2_01",
@@ -518,7 +526,7 @@
     }
   ],
   "deduplication": "Ten distinct prescribed outputs preassigned to four member/version owners. No overlapping whole-it1 queue. Active-output guards run at preflight and before each command.",
-  "pending": "Trap it1 v2 and thin main queue running at latest checks; thin v2 awaits a free 16-core slot. Full it1 handoff awaits all ten commands and collected evidence.",
+  "pending": "Both members it1 diagnostics and trap v1 archived; thin v1 and trap v2 running, thin v2 awaiting capacity. Full high it1 handoff awaits all ten commands and collected evidence.",
   "startup_checked": "2026-11-20T01:25:44.968122+08:00",
   "capacity_after_launch": {
     "checked": "2026-11-20T01:25:52.127422+08:00",
