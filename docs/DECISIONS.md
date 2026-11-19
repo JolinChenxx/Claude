@@ -45,3 +45,6 @@ Literature lookup (ablation mass): closed as a documented partial result (DATA_N
 
 ## 2026-11-19 18:05 (UTC+8) — stop T016e low G0 it2 (standing authorization)
 it2 was a convergence confirmation of it1 (target absorption 21.0/21.6 µJ). The target absorption is final after ~300 ns, and both members were at ~870 ns, running ~40 ns/h (~11 h left). They are stopped, the data is kept, and the partial budgets are used for the convergence check. The 16 cores go to imaging and diagnostics.
+
+## 2026-11-20 02:30 (UTC+8) — time box on T018c high_trap_G0/it2 (standing authorization)
+From 63.4 to 63.6 ns, dt fell from 4e-3 to 1.6e-4 ns, with Mach 521 and Nrkl 33. The ConsToPrim repairs sit at the wall, z = 2.5 µm, at RKL stages 33–37: the known RKL-stage overshoot defect. Codex stops trap it2 alone if t advances < 1 ns in 60 min, and thin it2 becomes the reported member (thin and trap agree within 1–5% at it0 and it1). Data is kept.

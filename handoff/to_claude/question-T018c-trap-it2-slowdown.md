@@ -1,2 +1,0 @@
-T018c high_trap_G0/it2 slowdown for review: logged time 63.402 -> 63.645 ns over the 02:06/02:20 UTC+8 samples, dt 4.1868e-4 -> 1.6400e-4 ns and Mach 316.586 -> 521.231; budget remains 63.49997 ns but steps advance. Latest five budget rows are finite; known ConsToPrim warnings persist. See tasks/T018c.report.md and results/T018c/monitoring/20261120_0220_trap_it2.json.
-Please assess whether action is needed. This is not a confirmed stall/failure; no tuning or stopping performed, and the existing batch continues. Trap it1/v1 is archived; the full it1 package is still pending.
