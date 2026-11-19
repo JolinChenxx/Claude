@@ -172,17 +172,32 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       double E = rhoe + 0.5 * rho * (vr * vr + vz * vz) + (ql * dt_SI - dE_rad);
 #if THERMAL_CONDUCTION != NO
       /* v1: conductive exchange between the first gas cell and the target surface at T_s(t,r) (one-way):
-         q = kappa (T_s - T_1) / (dz/2); energy enters/leaves the gas, booked as B[8] (positive = gas -> target) */
+         q = kappa (T_s - T_1) / (dz/2); energy enters/leaves the gas, booked as B[8] (positive = gas -> target).
+         v1i: backward Euler in T with kappa frozen. Solve rho [e(T_n) - e(T)] = a (T_s - T_n), with
+         a = kappa dt / (dz/2 · dz), by bisection on [min(T,T_s), max(T,T_s)]. The left side rises with T_n and the
+         right side falls, so the root is unique and T_n stays between T and T_s: no overshoot, no explicit
+         stability limit. As a·dt → 0 it reduces to the explicit flux. Same physics as v1h, but the rarefied cold
+         cell next to the wall (rho ~ 1e-3 kg/m^3 after the plume leaves) no longer caps dt at ~1e-12 s. */
       if (j == JBEG && grid->lbound[JDIR] != 0 && s_Ts >= 0) {
         double Ts = lip_src_get(&lip_src, s_Ts, t_SI, r);
         if (Ts < g_inputParam[T_AMB]) Ts = g_inputParam[T_AMB];
         double kap = lip_interp(&lip_opt, i_kappa, log10(rho), log10(T), Y, 1);
-        double qw = kap * (Ts - T) / (0.5 * dz[0]);          /* W/m^2 into the gas */
-        double dEw = qw / dz[0] * dt_SI;                      /* J/m^3 */
+        double a = kap * dt_SI / (0.5 * dz[0] * dz[0]);       /* J/m^3/K */
+        double lo = T < Ts ? T : Ts, hi = T < Ts ? Ts : T, Tn = T;
+        double e0 = lip_eos_e(&lip_eos, rho, T, Y);
+        if (a > 0.0 && hi > lo) {
+          int it;
+          for (it = 0; it < 60 && hi - lo > 1e-9 * hi; it++) {
+            Tn = 0.5 * (lo + hi);
+            double f = rho * (lip_eos_e(&lip_eos, rho, Tn, Y) - e0) - a * (Ts - Tn);
+            if (f > 0.0) hi = Tn; else lo = Tn;
+          }
+          Tn = 0.5 * (lo + hi);
+        }
+        double dEw = a * (Ts - Tn);                           /* J/m^3 (= flux at T_n times dt / dz) */
         if (rhoe + dEw < rhoe_floor) dEw = rhoe_floor - rhoe; /* cannot cool below T_floor */
         E += dEw;
         B[8] -= dEw * dV;
-        if (rhoe > 0.0) LIP_LIM(1, fabs(dEw / dt_SI) / (F_E * rhoe), dEw / dt_SI);
       }
 #endif
       if (j == JBEG && g_inputParam[SRC_ON] > 0.5 && grid->lbound[JDIR] != 0) {

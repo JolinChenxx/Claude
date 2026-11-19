@@ -35,3 +35,6 @@ Claude may decide on its own to stop workstation runs that are failing, stalled 
 
 ## 2026-11-19 14:05 (UTC+8) — stop T016e_r low_thin_G1/it0 (standing authorization)
 Slow progress: ~13 ns of simulated time per hour at 515–555 ns, so ~18 h more to 800 ns. Its 16 cores are needed for T018 (phase explosion, the leading hypothesis for the high-fluence mismatch). The output up to ~555 ns is kept and used for the low-fluence grid comparison over 400–500 ns. Nothing is deleted.
+
+## 2026-11-19 16:40 (UTC+8) — stop T018 low members, rerun with build v1i (standing authorization)
+At 200 ns T018 low ran at dt ≈ 8e-4 ns (~34 ns/h; ~60 h for it0–it1). The limit was the explicit wall-exchange stability bound in the rarefied first gas cell. Build v1i integrates the same flux by backward Euler (no new parameter, same physics). The cloud A/B agrees within 0.6% on all budget terms and is 3.5× faster. The two low members are superseded and stopped. Their data (0–~210 ns) is kept as the v1h reference for the A/B at G0. High members are unaffected and continue on v1h.
