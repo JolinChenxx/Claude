@@ -1,0 +1,111 @@
+{
+  "prepared": "2026-11-20T01:23:11.492309+08:00",
+  "state": "planned",
+  "iteration": "it1",
+  "members": [
+    "high_trap_G0"
+  ],
+  "solver_completion": "rc0 and 800ns; warnings retained, no independent numerical/physical acceptance verdict",
+  "authority": "T018c steps 3-4 and standing free-core priority from 2473d51; disjoint plans prepared before launch",
+  "jobs": [
+    {
+      "job_id": "T018c_post_it1_trap_01",
+      "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap.py",
+      "runner_sha256": "9c26fd7bc27b619ad3eb26320f515c86306fab20fad20e74624a74fbb5157dc2",
+      "workers": 16,
+      "state": "planned",
+      "commands": [
+        {
+          "name": "high_trap_G0_emission",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--times",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\diagnostics\\diag_emission.csv"
+          ]
+        },
+        {
+          "name": "high_trap_G0_core_energy",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--nec",
+            "trap",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\diagnostics\\core_energy.csv"
+          ]
+        },
+        {
+          "name": "high_trap_G0_shock_track",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\diagnostics\\shock_track.csv"
+          ]
+        },
+        {
+          "name": "high_trap_G0_image_v1",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "-m",
+            "lipsim.image",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--series",
+            "high",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\image_v1",
+            "--workers",
+            "16",
+            "--scenarios",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "job_id": "T018c_post_it1_trap_v2_01",
+      "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap_v2.py",
+      "runner_sha256": "bc6f3415f5a4fe305166a5bb03ded4b0177de8380292b5fe8aa0b9de7505fe85",
+      "workers": 16,
+      "state": "planned",
+      "commands": [
+        {
+          "name": "high_trap_G0_image_v2",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "-m",
+            "lipsim.image",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--series",
+            "high",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\image_v2",
+            "--workers",
+            "16",
+            "--scenarios",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+          ]
+        }
+      ]
+    }
+  ],
+  "deduplication": "Five distinct outputs with no existing output or job directory; active-output guard runs at preflight and before each command. Do not run an overlapping whole-it1 queue.",
+  "pending": "high_thin_G0/it1 solver and its own prescribed postprocessing remain pending; handoff after both high it1 packages."
+}
