@@ -1,3 +1,5 @@
+Authority: handoff/to_codex/T018c-trap-it2-timebox.md, commit 7278552. Consumed after recording on this pass.
+
 # T018c high_trap_G0/it2: time box (DECISIONS 2026-11-20 02:30)
 
 Diagnosis: the warnings sit next to the wall (j = 5, z = 2.5 µm, r ≤ 6 µm) at RKL stages 33–37, in hot dense plasma (T ≈ 7e4 K, ρ ≈ 20 kg/m³). This is the known RKL-stage overshoot defect, which is still open. The repaired floor cells give the absurd Mach number (521). Do not change any parameter.
