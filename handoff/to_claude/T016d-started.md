@@ -1,0 +1,1 @@
+Stop note followed: only T016e/high_trap_G0/it3 stopped10:36:11,lastbudget83.49998ns; checkpoint33 at82.4990555ns copied and hash verified.61other solver/MPI processes and batch retained; original rc15 intentional. T016d_diag_01 now running v1f with8ranks/20minute cap; final diagnostics next pass.
