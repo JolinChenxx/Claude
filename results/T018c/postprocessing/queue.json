@@ -1,0 +1,257 @@
+{
+  "prepared": "2026-11-19T20:57:49.101312+08:00",
+  "state": "prepared",
+  "job_id": "T018c_post_it0_01",
+  "workers": 16,
+  "capacity_last_checked": {
+    "checked": "2026-11-19T20:57:49.101312+08:00",
+    "reservations": {
+      "T016i_native_01": 16,
+      "T018c": 16
+    },
+    "wrapper_identities": [
+      {
+        "job": "T016i_native_01",
+        "pid": 38032,
+        "created": 1795026177.8378432,
+        "children": [
+          46020,
+          10720,
+          39740,
+          20320,
+          38052,
+          6104,
+          53684,
+          52788,
+          54020,
+          19360,
+          22608,
+          19268,
+          13060,
+          4928,
+          17716,
+          40420,
+          11064,
+          50500,
+          4372,
+          32500
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c",
+        "pid": 19644,
+        "created": 1795078391.7728488,
+        "children": [
+          40572,
+          40888,
+          46148,
+          26104,
+          31828,
+          21828,
+          44700,
+          44808,
+          23696,
+          39048,
+          49328,
+          52264,
+          53056,
+          25896,
+          5376,
+          32436,
+          51752,
+          45440,
+          35116,
+          43240,
+          45908,
+          49344,
+          52540,
+          41764,
+          17396,
+          18368,
+          23168,
+          42060,
+          9376,
+          24944,
+          28304,
+          42256,
+          4900,
+          52988,
+          49008,
+          15400,
+          28560,
+          53788
+        ],
+        "cores": 16
+      }
+    ],
+    "pluto_ranks": 16,
+    "reserved_physical_cores": 32,
+    "free_physical_cores": 32,
+    "requested_cores": 16,
+    "can_start": true,
+    "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics."
+  },
+  "script_sha256": "da137b15ef4f4234fbed176a9e68ec7d85c95119ff110e2bc45d55bfc4848d00",
+  "commands": [
+    {
+      "id": "high_thin_G0_emission",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "300",
+        "500",
+        "700",
+        "1000",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\diag_emission.csv"
+      ]
+    },
+    {
+      "id": "high_thin_G0_core_energy",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\core_energy.csv"
+      ]
+    },
+    {
+      "id": "high_thin_G0_shock_track",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\shock_track.csv"
+      ]
+    },
+    {
+      "id": "high_trap_G0_emission",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "300",
+        "500",
+        "700",
+        "1000",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\diag_emission.csv"
+      ]
+    },
+    {
+      "id": "high_trap_G0_core_energy",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "trap",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\core_energy.csv"
+      ]
+    },
+    {
+      "id": "high_trap_G0_shock_track",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\shock_track.csv"
+      ]
+    },
+    {
+      "id": "high_thin_G0_image_v1",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\image_v1",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+      ]
+    },
+    {
+      "id": "high_thin_G0_image_v2",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ]
+    },
+    {
+      "id": "high_trap_G0_image_v1",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v1",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+      ]
+    },
+    {
+      "id": "high_trap_G0_image_v2",
+      "argv": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ]
+    }
+  ],
+  "notes": "Six sequential diagnostics then four16-worker image commands. Default emission requests300,500,700,1000ns retained;1000ns selects nearest available snapshot from800ns run."
+}
