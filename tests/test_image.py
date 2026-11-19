@@ -54,3 +54,20 @@ def test_line_frequency_grid_converged_when_thick():
     finally:
         fw.NF = old
     assert np.allclose(a, b, rtol=0.03)
+
+
+def test_component_split_is_additive_when_thin():
+    """Diagnostic split (components=continuum/lines): without self-absorption the two parts add up to the total."""
+    tab = fw.Tables(ROOT / "verify" / "ref" / "tables_v0_lowres")
+    r_edges = np.linspace(0, 300e-6, 61)
+    rc = 0.5 * (r_edges[1:] + r_edges[:-1])
+    T = (6000 + 9000 * np.exp(-(rc / 100e-6) ** 2))[None]
+    rho = np.full_like(T, 1e-2)
+    Y = np.full_like(T, 0.5)
+    x = np.linspace(-250e-6, 250e-6, 11)
+    kw = dict(self_absorption=False, stark=True)
+    tot = fw.band_image(r_edges, [0], rho, T, Y, tab, (510.0, 12.0), x, **kw)
+    c = fw.band_image(r_edges, [0], rho, T, Y, tab, (510.0, 12.0), x, components="continuum", **kw)
+    li = fw.band_image(r_edges, [0], rho, T, Y, tab, (510.0, 12.0), x, components="lines", **kw)
+    assert np.allclose(c + li, tot, rtol=1e-10)
+    assert (c > 0).all() and (li > 0).all()

@@ -128,9 +128,13 @@ def stark_fwhm_m(lam0: float, ne: np.ndarray) -> np.ndarray:
     return st["w_fwhm_pm"][k] * 1e-12 * ne / st["ne_ref_m3"]  # math (pm -> m)
 
 
-def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption=True, stark=False):
+def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption=True, stark=False, components="all"):
     """Band-integrated radiance [W/m^2/sr] on (z_c rows) × (x columns) for one snapshot.
-    rho, T, Y: [nz, nr] on shells r_edges; filt = (centre_nm, halfwidth_nm), rectangular transmission."""
+    rho, T, Y: [nz, nr] on shells r_edges; filt = (centre_nm, halfwidth_nm), rectangular transmission.
+    components: "all" (default), or "continuum" / "lines" for a diagnostic split. Each part is transferred on
+    its own, so lines are not absorbed by the continuum and vice versa; the split is not additive under self-absorption."""
+    if components not in ("all", "continuum", "lines"):
+        raise ValueError(components)
     lmin, lmax = (filt[0] - filt[1]), (filt[0] + filt[1])
     bl = band_lines(float(lmin), float(lmax))
     ds = chord_matrix(r_edges, x)                        # [nx, nr]
@@ -191,5 +195,5 @@ def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption
                 I_l += np.trapezoid(Iv, lg, axis=1)
         else:
             I_l = thin_cols.sum(1)
-        img[iz] = I_c + I_l
+        img[iz] = (I_c if components != "lines" else 0.0) + (I_l if components != "continuum" else 0.0)
     return img

@@ -131,7 +131,8 @@ def _native_images(grid, rho, T, Y, filters, sa_opts, num, px, row_edges, w):
     for fname, (c, hwid) in filters.items():
         for sa in sa_opts:
             img_n = forward.band_image(re, zc, rho[:, :nr], Tn, np.clip(Y[:, :nr], 0.0, 1.0), _W["tab"], (c, hwid), x,
-                                       self_absorption=sa, stark=bool(num.get("stark", False)))
+                                       self_absorption=sa, stark=bool(num.get("stark", False)),
+                                       components=num.get("components", "all"))
             img, cov = rebin_z(z_edges, img_n, row_edges)
             img[~cov] = 0.0
             out[(fname, sa)] = img[::-1]
