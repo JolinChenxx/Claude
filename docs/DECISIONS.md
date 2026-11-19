@@ -32,3 +32,6 @@ User: "1，停掉吧 按你的建议来". The two remaining v1b high-fluence mem
 ## 2026-11-18 08:20 (UTC+8) — standing authorization to stop failing or stalled computations
 User: "对于类似这种某些计算跑不下去需要停掉的情况，我授予你完全权限，你可以自己确定他是否需要停止，我只需要你能给我好的计算结果就行".
 Claude may decide on its own to stop workstation runs that are failing, stalled or superseded, and relays the stop to Codex in a handoff note that cites this entry. Conditions: data is never deleted; the reason, last state and stop time are recorded in results/ and STATE.md; the user is told at the next hourly report.
+
+## 2026-11-19 14:05 (UTC+8) — stop T016e_r low_thin_G1/it0 (standing authorization)
+Slow progress: ~13 ns of simulated time per hour at 515–555 ns, so ~18 h more to 800 ns. Its 16 cores are needed for T018 (phase explosion, the leading hypothesis for the high-fluence mismatch). The output up to ~555 ns is kept and used for the low-fluence grid comparison over 400–500 ns. Nothing is deleted.
