@@ -1,5 +1,19 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T22:50:57.146319+08:00 (UTC+8)
+- Work card:T018c. Pulled ws tof4bd241; prior native handoff consumed,incoming to_codex empty. No owner:codex/status:ready cards; T018c/T016i remain running. No new claim or job launch; unrelated output/ preserved.
+- high_thin_G0/it0/image_v2 finishedrc0 at22:41:25.388562. Archived18metrics,image_summary and validation;29common times0-740ns,six finite local frame archives and artifact hashes verified,validation read back. Baseline bP1thin/sa723.522530/682.953661ns; all18P2 unavailable preserved,all18P1 finite/positive. Exact high/16workers/tablesv1c/v2/run/output provenance checked. Existing collector unchanged; no physical acceptance conclusion or model/numerical/gain/filter/settings changes.
+- Original T018c_post_it0_01 now8/10complete and running trap it0image_v1. Independent T018c_post_it0_trap_v2_01 runs trap it0image_v2; collect only actual owner evidence,not the eventual administrative queue skip. Both trap images and solverit1/it2 remain pending; card stays running. Thin it0v1/v2 both archived; full highit0 image package awaits trap.
+- Report,updated queue and interim handoff pushed ws3484101. T018c results about1.29MB,below20MiB. Allowlisted report copied to D:/Sync/T018c/T018c.report.md with SHA256 verification; receipt D:/sim_runs/T018/pass_20261119_2249_sync.json. Raw arrays remain local.
+- job.ps1 status checked T018c,T018c_post_it0_01,T018c_post_it0_trap_v2_01,T016i_native_01: all running,stderr tails empty. Native queue remains T014 high_trap_G0/it1/v1; no new native completion this pass.
+- Capacity sample2026-11-19T22:49:37.276023+08:00: 16solver ranks+three16worker imaging jobs=64/64physicalcores reserved,0free. Future16core slots prioritize next queued T018c item before T016i,using explicit delegation; no duplicate target execution. No process stop,suspend or resume.
+- ImagePID17904 outputD:\sim_runs\T018c\high_trap_G0\it0\image_v1:16workers,worker CPU7202.875s,first CPU baseline for this process identity.
+- ImagePID31816 outputD:\sim_runs\T014\high_trap_G0\it1\image_v1:16workers,worker CPU16136.797s,increase13156.859s since previous sample.
+- ImagePID33180 outputD:\sim_runs\T018c\high_trap_G0\it0\image_v2:16workers,worker CPU32413.891s,increase13427.156s since previous sample.
+- Sample2026-11-19T22:49:37.276023+08:00: T018c/high_thin_G0/it1 budget_t_ns=213.9559; step:23000; t = 1.9321e+002; dt = 4.8431e-002; 24.2 %; [Mach = 6.856997, Nrkl = 18]. Source diagnostic:! lip dt-limit: step 23000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=3.692e+000 T=3.782e+003 rhoe=3.167e+006 q=3.415e+009 dt_src=5.405e-010 s; dt_src is not actual step dt.
+- Sample2026-11-19T22:49:37.276023+08:00: T018c/high_trap_G0/it1 budget_t_ns=223.9577; step:24000; t = 1.9466e+002; dt = 4.1872e-002; 24.3 %; [Mach = 5.426979, Nrkl = 14]. No source-limit line in current bounded tail; older lines not substituted as current.
+- Disk free2251.625GB decimal; active T018c log growth0.000078868GB/h over903.3s; T018/T018b logs unchanged. Rate excludes fields/images/other writers/future rates/duration,not a completion forecast. No threshold action,deletion or truncation. Evidence:D:/sim_runs/T018/pass_20261119_2249_monitor.json.
+
 ## 2026-11-19T22:36:58.219053+08:00 (UTC+8)
 - Work card:T016i. Pulled ws,current at8060e8e; incoming to_codex empty. No owner:codex/status:ready cards; only T018c/T016i running. No new claim or job launch. Unrelated output/ preserved.
 - T014 high_trap_G0/it0 image_v1 completed rc0; existing native queue advanced to it1. Archived18metrics,image_summary and validation;29common times0-740ns,six finite local frame archives and all copied hashes verified,validation read back. Baseline bP1thin/sa586.428842/363.297969ns; all18P2 unavailable preserved,all18P1 finite/positive. No new physical acceptance claim. Native inventory28sets:T016e6,T01514,T016r2 2,T016h1,T0145. FullT014/laterT016e catch-up pending; card stays running.
@@ -346,13 +360,3 @@
 - T018/low_trap_G0/it0 budget_t_ns=1.794986e+002; step:11000; t = 1.7949e+002; dt = 2.0637e-003; 13.8 %; [Mach = 8.457588, Nrkl = 2]
 - T016e/low_thin_G0/it2 budget_t_ns=7.504909e+002; step:38000; t = 7.4525e+002; dt = 2.0908e-002; 57.3 %; [Mach = 1.839017, Nrkl = 49]
 - T016e/low_trap_G0/it2 budget_t_ns=6.779909e+002; step:36000; t = 6.5499e+002; dt = 3.7095e-002; 50.4 %; [Mach = 1.977926, Nrkl = 6]
-
-## 2026-11-19T15:05:25+08:00 (UTC+8)
-- T018: all four it0 source/source_meta.json files contain boolean phase_explosion=true and all four generated pluto.ini files specify rmax_par 1000. Source mass 8.0814790618e-12 kg (high), 1.6211164969e-12 kg (low); these are inputs, not finished solver results.
-- T018 and T016e production plus both imaging wrappers report running. 48 PLUTO ranks and 16 reference image workers use the 64 physical cores. No capacity for another imaging member. Native dispatcher remains held. No ready cards, new completions or new incoming instructions. Literature lookup remains open; no additional verified measurement this pass.
-- T018/high_thin_G0/it0 budget_t_ns=4.599938e+001; step:4000; t = 4.4369e+001; dt = 3.9458e-003; 5.5 %            [Mach = 4.661221, Nrkl = 4]
-- T018/high_trap_G0/it0 budget_t_ns=4.749745e+001; step:5000; t = 4.7561e+001; dt = 3.3379e-003; 5.9 %            [Mach = 5.013932, Nrkl = 3]
-- T018/low_thin_G0/it0 budget_t_ns=1.614983e+002;  
-- T018/low_trap_G0/it0 budget_t_ns=1.614968e+002;  
-- T016e/low_thin_G0/it2 budget_t_ns=7.299891e+002; step:37000; t = 7.1670e+002; dt = 2.4796e-002; 55.1 %             [Mach = 1.886389, Nrkl = 29]
-- T016e/low_trap_G0/it2 budget_t_ns=6.539889e+002; step:35000; t = 6.3311e+002; dt = 2.1100e-002; 48.7 %             [Mach = 2.036742, Nrkl = 62]
