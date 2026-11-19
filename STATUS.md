@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-19 10:38 (UTC+8)
+- cards:T016d,T016e,T016i,T017a. Stop authorization ac1d79d resolved block; resumedaf90cc6. Exacthigh_trap_G0/it3 MPI14908+8ranks stopped10:36:11;61other solver/MPI processes and batch42332 preserved. Lastbudget83.49998ns,checkpoint33 at82.499055505873ns,step17576. Originalrc15 intentional. Data preserved.
+- Launched T016d_diag_01 wrapper23668,MPI7108,executionf621dfb,started2026-11-19T10:37:26.833054+08:00;8ranks,-dec8 1,1200secondcap,v1f rc0/seven replacements/source/exe hashes rechecked; copied checkpoint/ini/tables unchanged. Endpass after launch; collect all-rank dt-limit/last20stepNrkl/other! next pass.
+- Archived T015low_thin_G1/it0 native rc0 (17total;11of14T015),12P2unavailable preserved. Nativejob38032 nowlow_trap_G0/it0. Archived high_trap_G0/it2 reference rc0 (5total),alla-baseline negativeP1/all18P2unavailable preserved; handedoff. Referencejob12624 nowlow_thin_G0/it0. Sourceframes finite/copyhashes verified.
+- Productionjob42332 and lowG1restart12720 continue; initial4job stderr tails empty. Broad literature note still pending full verification; no new literature assertions.
+- T016e/high_thin_G0/it3: budget t_ns=8.299998e+001.
+- T016e/high_thin_G1/it0: budget t_ns=6.769915e+002.
+- T016e/low_thin_G0/it1: budget t_ns=1.055492e+003.
+- T016e/low_trap_G0/it1: budget t_ns=1.124491e+003.
+- T016e_r/low_thin_G1/it0: budget t_ns=5.134893e+002.
+- skipped ready cards: none. CurrentT016d running. Pendingnative newerit2/v2highthin it2 repeats after queues; no duplicate launch.
+
 ## 2026-11-19 10:23 (UTC+8)
 - cards:T016d,T016e,T016i,T017a. Pulledb0f1ac6 then85b1c57; claimedT016d at4e6b23b. v1f build rc0,seven replacements; source/exe hashes checked. Card blocked because AGENTS Hard rules requires stop relay under handoff/to_codex, but card is the only stop instruction. Question sent to Claude; all jobs preserved.
 - Target identification only: high_trap_G0/it3 MPI14908 plus8 ranks; latest budget83.49998ns,lastdbl33 at82.49906ns. No stop or restart performed.
@@ -427,18 +439,4 @@
 - T016e/low_trap_G0/it1: t_ns=2.859922e+002; latest logged dt=1.6579e-002, Nrkl=5 (step 28000, log_t_ns=2.8456e+002).
 - skipped ready cards and why: none; no ready cards. All six production members advanced.
 - next: archive completed native metrics and requested T016e/T015 set handoffs; repeat T016e native imaging as new iterations finish. Continue production collection; no parameter changes or foreground waiting.
-
-## 2026-11-19 02:50 (UTC+8)
-- cards: T016e,T016i | action: archived first native image T016e/high_thin_G0/it0 and pushed 0830446. 18 metrics,29 times 0-740 ns,six finite (29,81,84) radiance arrays kept locally with hashes; all P2 unavailable preserved. Baseline b P1 thin/sa=333.6438/318.6807 ns. T016e/T015 set-level handoffs remain pending.
-- T016i_native_01 PID 38032, execution commit f897ccd, elapsed 00:26:15 at check: first native run rc=0, advanced to high_thin_G0/it1; stderr empty. No full series/batch summary yet.
-- production: T016e PID 42332, execution commit bc79e7d, elapsed 09:25:35 at initial check; stderr empty. Six completed iterations previously archived, no new completion; known numerical warnings retained.
-- Progress snapshot 2026-11-19T02:50:23.748039+08:00; budget and logged times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=9.449808e+001; latest logged dt=2.9397e-003, Nrkl=3 (step 22000, log_t_ns=9.2783e+001).
-- T016e/high_thin_G1/it0: t_ns=3.664936e+002; latest logged dt=9.0684e-003, Nrkl=8 (step 60000, log_t_ns=3.6259e+002).
-- T016e/high_trap_G0/it2: t_ns=1.004986e+002; latest logged dt=3.0124e-003, Nrkl=3 (step 24000, log_t_ns=9.8401e+001).
-- T016e/low_thin_G0/it1: t_ns=2.559979e+002; latest logged dt=1.6190e-002, Nrkl=14 (step 26000, log_t_ns=2.5458e+002).
-- T016e/low_thin_G1/it0: t_ns=4.314940e+002; latest logged dt=1.6651e-002, Nrkl=21 (step 64000, log_t_ns=4.2630e+002).
-- T016e/low_trap_G0/it1: t_ns=2.614986e+002; latest logged dt=1.7060e-002, Nrkl=5 (step 26000, log_t_ns=2.5274e+002).
-- skipped ready cards and why: none; no ready cards or incoming note. All six production members advanced.
-- next: archive completed native metrics, send requested T016e/T015 set handoffs; repeat native T016e as new iterations finish. Continue production collection, no parameter changes or foreground waiting.
 
