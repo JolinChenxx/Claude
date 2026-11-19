@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T22:20:57.482510+08:00 (UTC+8)
+- Work card:none (monitoring only). Pulled ws to8060e8e; Claude consumed the parallel-trap-v2 handoff. Incoming to_codex empty. Only running Codex cards T018c/T016i; no owner:codex/status:ready cards. No new claim,launch,collection or ws edits; unrelated output/ preserved.
+- job.ps1 status checked T018c,T018c_post_it0_01,T018c_post_it0_trap_v2_01,T016i_native_01: all running,stderr tails empty. T018c solverit1 continues. Original postprocessor7/10 complete,thin it0v2 active,trapv1 remains queued; delegated trap it0v2 active under owner T018c_post_it0_trap_v2_01. Native T014 high_trap_G0/it0/v1 active. No newly completed image/iteration to archive.
+- Capacity at2026-11-19T22:19:39.024453+08:00: 16solver ranks plus three16-worker image jobs=64/64physical cores reserved,0free. No additional16-core slot; when one opens,the next queued T018c item has priority over T016i. Retain exact-output delegation and collect trapv2 only from actual owner; do not treat pending/deferred75 as physics failure. No stop,suspend or resume.
+- ImagePID12896 D:\sim_runs\T018c\high_thin_G0\it0: 16workers,accumulated worker CPU37098.438s,increase12754.953s since previous sample.
+- ImagePID33180 D:\sim_runs\T018c\high_trap_G0\it0: 16workers,accumulated worker CPU5658.562s,first monitor CPU baseline for this image identity.
+- ImagePID47860 D:\sim_runs\T014\high_trap_G0\it0: 16workers,accumulated worker CPU28244.797s,increase12556.172s since previous sample.
+- Sample2026-11-19T22:19:39.024453+08:00: T018c/high_thin_G0/it1 budget_t_ns=122.9786; step:21000; t = 1.2068e+002; dt = 2.6916e-002; 15.1 %; [Mach = 15.575619, Nrkl = 15]. Latest bounded-tail source diagnostic:! lip dt-limit: step 20000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,6] rho=2.328e+001 T=2.073e+004 rhoe=4.041e+008 q=1.264e+018 dt_src=6.392e-011 s; dt_src is not actual step dt.
+- Sample2026-11-19T22:19:39.024453+08:00: T018c/high_trap_G0/it1 budget_t_ns=124.9802; step:21000; t = 1.0803e+002; dt = 6.8709e-003; 13.5 %; [Mach = 13.762176, Nrkl = 4]. Latest bounded-tail source diagnostic:! lip dt-limit: step 21000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,6] rho=3.368e+001 T=1.934e+004 rhoe=4.974e+008 q=1.432e+018 dt_src=6.946e-011 s; dt_src is not actual step dt.
+- Disk free2252.744GB decimal; active T018c log growth1.573009GB/h over855.3s; T018/T018b logs unchanged. Log-only estimate excludes fields/images/other writers/future rates/duration,not a completion forecast. No threshold action,deletion or truncation. Evidence:D:/sim_runs/T018/pass_20261119_2219_monitor.json.
+
 ## 2026-11-19T22:15:30.643978+08:00 (UTC+8)
 - Work card:T018c. Pulled ws to2473d51 and followed priority handoff T018c-use-free-cores. No owner:codex/status:ready cards; no new claim. Incoming instruction consumed after verified launch. Unrelated output/ preserved.
 - Started T018c_post_it0_trap_v2_01 at2026-11-19T22:13:04, wrapper42732, launch commita3b7a6f, high_trap_G0/it0/image_v2,16workers,high series,tablesv1c,configs/imaging/v2.yaml. Startup verified2026-11-19T22:13:40.181954+08:00: imagePID33180,16workers,BelowNormal,summary running,stderr empty. Added16core reservation to existing48=64/64. No foreground wait; end pass after launch bookkeeping.
@@ -341,9 +352,3 @@
 - T018/low_trap_G0/it0 phase_explosion=pending; ini: pending
 - T016i: T014/high_thin_G0/it2 worker exited 0 (GetExitCodeProcess matched recorded PID and creation time). Archived 18 metric sets, 29 times and six finite frame archives; all 18 P2 unavailable. Dispatchers stay held; reference current member high_thin_G1/it0 still active at capacity check. Stopped low G1 v2 remains queued within the capacity policy.
 - T016e G0 it2 budget t_ns: low_thin_G0=7.134877e+002, low_trap_G0=6.424798e+002. Literature request still open. End pass after long-job launch.
-
-## 2026-11-19T14:35:26+08:00 (UTC+8)
-- Pulled ws fc2ae4e; Claude incorporated stopped G1 diagnostics. No new incoming instructions. Literature search did not verify another eligible single-shot depth; requested 20 step records are already present. Literature note remains open.
-- T016e, T016i and T017a return running, no new member completion. Both current image PIDs matched recorded creation times and each still has 16 workers. Dispatchers held. 16 live solver ranks + 32 image workers reserve 48 of 64 physical cores. T018 is the only ready card; 16 free cores do not meet its 32-core requirement. No job started or stopped.
-- T016e/low_thin_G0/it2 budget t_ns=6.844996e+002; step:35000; t = 6.6161e+002; dt = 4.0130e-002; 50.9 % [Mach = 1.976395, Nrkl = 13]
-- T016e/low_trap_G0/it2 budget t_ns=6.259865e+002; step:34000; t = 6.0615e+002; dt = 3.5768e-002; 46.6 % [Mach = 2.081480, Nrkl = 9]
