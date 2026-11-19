@@ -1,6 +1,6 @@
 {
   "prepared": "2026-11-20T01:23:11.492309+08:00",
-  "state": "running",
+  "state": "completed",
   "iteration": "it1",
   "members": [
     "high_trap_G0",
@@ -364,7 +364,7 @@
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin_v2.py",
       "runner_sha256": "6885168cfcf22b53e03621439d08594b1f852a7ed52664154e64098963178671",
       "workers": 16,
-      "state": "running",
+      "state": "completed",
       "commands": [
         {
           "name": "high_thin_G0_image_v2",
@@ -489,11 +489,17 @@
       "pid": 51676,
       "launch_commit": "1bb6bcb",
       "launch_evidence": "launch_it1_thin_v2.json",
-      "startup_checked": "2026-11-20T03:12:49+08:00"
+      "startup_checked": "2026-11-20T03:12:49+08:00",
+      "completed": "2026-11-20T05:01:04.790392+08:00",
+      "completed_commands": [
+        "high_thin_G0_image_v2"
+      ],
+      "progress_checked": "2026-11-20T05:06:53.073446+08:00",
+      "image_collected": "results/T018c/high_thin_G0/it1/image_v2/validation.json"
     }
   ],
   "deduplication": "Ten distinct prescribed outputs preassigned to four member/version owners. No overlapping whole-it1 queue. Active-output guards run at preflight and before each command.",
-  "pending": "Both members it1 diagnostics and trap v1 archived; thin v1 and trap v2 running, thin v2 awaiting capacity. Full high it1 handoff awaits all ten commands and collected evidence.",
+  "pending": "None. All ten it1 commands and archived validations complete; PE results remain withdrawn.",
   "startup_checked": "2026-11-20T01:25:44.968122+08:00",
   "capacity_after_launch": {
     "checked": "2026-11-20T01:25:52.127422+08:00",
@@ -721,7 +727,10 @@
     "withdrawal": "PE results withdrawn: STATE 2026-11-20 03:00",
     "allowed": "Only already running items may finish. Start no further T018c it1 images, thin v2 included. Freed cores go to T019.",
     "solver_card_status": "done",
-    "postprocessing_complete": false,
-    "thin_v2_existing_launch": "2026-11-20T03:12:25; wrapper51676; launch1bb6bcb; already running before this note was received on the03:20pass"
-  }
+    "postprocessing_complete": true,
+    "thin_v2_existing_launch": "2026-11-20T03:12:25; wrapper51676; launch1bb6bcb; already running before this note was received on the03:20pass",
+    "completion_checked": "2026-11-20T05:06:53.073446+08:00"
+  },
+  "completed": "2026-11-20T05:01:04.790392+08:00",
+  "completion_evidence": "results/T018c/postprocessing/it1_complete_withdrawn.json"
 }
