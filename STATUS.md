@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T19:53:55.393632+08:00 (UTC+8)
+- Card worked: T018b, now review. Initial ws pull current at 217340b; no incoming notes or owner: codex/status: ready cards. No next card to claim, no new computation or process intervention. Preserved unrelated output/.
+- job.ps1 status checked T018b_post_it1_01 (finished rc0), T018c, T016i_native_01 and T017a_image_v2_02 (running; stderr tails empty). it1 final low_trap_G0/image_v2 ended 19:42:41.868323; wrapper completed 19:42:41.871305. All 10 it1 commands returned0. Archived final18 metric sets/summary/validation and full job completion evidence; queue marked complete.
+- Final T018b inventory verified four solver iterations at1300ns/rc0, 20 postprocessing commands, 12 diagnostic CSVs, eight image sets/144 metric CSVs, 48 finite raw frame archives retained locally. Source/copy hashes checked, original solver log sizes/mtimes unchanged. Each run has4 emission,131 core,521 shock rows. All source_meta phase_explosion=true and rmax_par1000 inputs verified; raw source_meta lives under source/, correcting an initial validation-path lookup failure without changing source data.
+- Retained 27,088,674 all-rank ConsToPrim warnings,106 unavailable P2 values and18 negative P1 fits (trap v1 sa). Last trap it1/v2 b-baseline P1 thin/sa=964.721758/767.333052 ns; all18 P2 unavailable. No metric tuning, missing-data replacement or independent physical-pass claim. Final report has complete solver and compact image summary tables; final_inventory.json supersedes historical pending flags.
+- T018b marked review and final handoff/results pushed to ws eeda156 after pull/rebase. Results package4.157 MB, below20 MiB. Synced 2 allowed report/COMPARISON/PNG/metrics_table files to D:/Sync/T018b with SHA256 checks; no raw fields,frames or repository copy. Receipt: D:/sim_runs/T018/pass_20261119_1948_sync.json.
+- Capacity sample 2026-11-19T19:50:39.265930+08:00:16 T018c solver ranks +16 native T014 high_thin_G1/it0 workers +16 reference T016e low_thin_G0/it1 workers =48 physical cores reserved,16 free. Both dispatchers running; no finished T018c iteration awaits diagnostics. Existing native card requires sequential batch roots; no duplicate concurrent catch-up launch. Spare slot remains available for priority replacement diagnostics.
+- Sample 2026-11-19T19:50:39.265930+08:00: T018c/high_thin_G0/it0 budget_t_ns=570.9968; step:27000; t = 5.6286e+002; dt = 3.1702e-002; 70.4 %; [Mach = 2.588339, Nrkl = 36]. Latest bounded-tail source limit: ! lip dt-limit: step 22000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=3.356e-001 T=3.108e+003 rhoe=2.199e+005 q=2.695e+008 dt_src=6.226e-010 s; not actual step dt.
+- Sample 2026-11-19T19:50:39.265930+08:00: T018c/high_trap_G0/it0 budget_t_ns=623.9892; step:27000; t = 6.0651e+002; dt = 3.3967e-002; 75.8 %; [Mach = 2.526973, Nrkl = 14]. No dt-limit line in bounded8 MB tail.
+- Disk free 2253.863 GB decimal; active T018c log growth 0.000057110 GB/h over 936.0s; T018/T018b logs unchanged. Near-zero log growth gives no useful long-range forecast; log-only estimate excludes fields/images/other writers/future rates and duration. No threshold action or deletion/truncation.
+
 ## 2026-11-19T19:35:47.143723+08:00 (UTC+8)
 - Work card: none (monitoring only). Pulled ws to 217340b; previous T018b/T016i handoffs consumed upstream. Incoming handoff/to_codex empty and no owner: codex/status: ready cards. No newly completed command or iteration to archive; no claim, launch, stop, resume or ws commit. Unrelated output/ retained.
 - job.ps1 status checked T018b_post_it1_01, T018c, T016i_native_01 and T017a_image_v2_02: all wrappers running; stderr tails empty. T018b it1 remains on its final low_trap_G0/image_v2 command, with 9/10 completed. it0 completion/outputs already handed off, not counted twice. Native remains T014 high_thin_G1/it0/v1; reference remains T016e low_thin_G0/it1/v2.
@@ -322,13 +333,3 @@
 - T016e/low_trap_G0/it2:budget_t_ns=7.849755e+001;step:6000; t = 7.6268e+001; dt = 5.1635e-003; 5.9 % | [Mach = 15.374132, Nrkl = 2]
 - T016e_r/low_thin_G1/it0:budget_t_ns=5.359859e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
 - readycards=[];no eligiblecard.T016f awaitingClaude investigation.
-
-## 2026-11-19T11:52:16+08:00 (UTC+8)
-- cards:T016e,T016f,T016i,T017a. Pulled90287e6, no new incoming notes; literature source-verification request remains pending, previously handed off. No ready cards.
-- T016f_check_01 wrapper41892/MPI32472 running before20min cap. Interim all8rank step/Nrkl evidence pushed:step21000,t82.798ns,dt4.0146e-5ns,Nrkl2,no budget yet. Recovery threshold not observed;interim handoff sent. Await final scheduled stop; no continuation/no numerical tuning.
-- T016e retry1 emissionrc0:4finite rows300/500/700/1000ns archived. Imagingrc1 BrokenProcessPool;4Windows pythoncrashes0xc06d007f retained with logs. Added explicitcondaruntimePATH;single-snapshot actualspawnworker probe passed6finiteimages. Started image-onlyretry2 PID43264,executionb4ee89d,8workers/OMP1,BelowNormal. Successful emission not rerun.
-- Production42332,native38032(T016r2 low_thin_G0/it0),reference12624(T016e low_trap_G0/it0),lowG1continuation12720 remainrunning;initialstderr empty. No new solver/native/reference completions. Reports synced/hashverified. Endpass afterretrylaunch;no foregroundwait.
-- T016e/high_thin_G1/it0:budget_t_ns=7.334977e+002;step:93000; t = 7.2596e+002; dt = 1.0248e-002; 90.7 % | [Mach = 4.228883, Nrkl = 9]
-- T016e/low_thin_G0/it2:budget_t_ns=1.184972e+002;no step in tail
-- T016e/low_trap_G0/it1:budget_t_ns=1.296494e+003;step:67000; t = 1.2828e+003; dt = 3.5252e-002; 98.7 % | [Mach = 1.096162, Nrkl = 7]
-- T016e_r/low_thin_G1/it0:budget_t_ns=5.324972e+002;step:74000; t = 5.1830e+002; dt = 2.0841e-002; 39.9 % | [Mach = 3.067066, Nrkl = 17]
