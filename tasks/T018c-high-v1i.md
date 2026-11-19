@@ -2,7 +2,8 @@
 id: T018c
 title: Stop T018 high members; rerun high G0 it0–it2 with build v1i (16 cores)
 owner: codex
-status: running
+status: done
+completed: 2026-11-20T03:11:49+08:00
 started: 2026-11-19T16:49:43+08:00
 depends: []
 milestone: D2
@@ -22,3 +23,8 @@ The T018 high members on v1h run at ~80 ns/h, dt 4–6e-3 ns, with the trap memb
 3. For every finished iteration, as in T018 step 2: budgets, source_meta, ConsToPrim count, image_v1 and image_v2, diag_emission, core_energy (thin/trap, tables v1c) and shock_track. Give T018b and T018c images/diagnostics priority over T016i and T017a. Write a handoff after high it0 and high it2.
 4. Use the 16 cores freed by T018 for the T018b/T018c imaging and diagnostics first, then for T016i and T017a.
 Report `tasks/T018c.report.md`.
+
+## Closure (DECISIONS / STATE 2026-11-20 03:00)
+PE results withdrawn: STATE 2026-11-20 03:00
+
+Both it2 member MPI trees were stopped on Claude's explicit instruction; all raw data is retained. This done status closes the withdrawn solver batch. Only the it1 postprocessing already queued in results/T018c/postprocessing/queue_it1.json remains authorized and is still pending; no new T018c work or further iterations.
