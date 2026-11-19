@@ -86,18 +86,18 @@ def dispatch(argv=None, environ=None, manifest=MANIFEST):
     entry = matches[0]
     if [norm(x) for x in argv] != [norm(x) for x in entry['argv']]:
         print('DELEGATED_DEFERRED: exact imaging arguments do not match', flush=True)
-        return 75
+        return 75  # num (EX_TEMPFAIL exit code)
     caller = environ.get('SIM_OUT_DIR', '').strip()
     if norm(caller) == norm(entry['owner_job_dir']):
         return None
     if norm(caller) != norm(entry['original_job_dir']):
         print('DELEGATED_DEFERRED: this output belongs to ' + entry['owner_job_dir'], flush=True)
-        return 75
+        return 75  # num (EX_TEMPFAIL exit code)
     try:
         evidence = completed_evidence(entry)
     except (OSError, ValueError, KeyError, RuntimeError) as error:
         print('DELEGATED_DEFERRED: ' + str(error), flush=True)
-        return 75
+        return 75  # num (EX_TEMPFAIL exit code)
     receipt = dict(action='verified_delegation_skip', checked=dt.datetime.now().astimezone().isoformat(),
                    original_job_dir=caller, output=entry['output'], owner=evidence)
     (Path(caller) / f"delegated_{entry['name']}.json").write_text(
