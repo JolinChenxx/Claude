@@ -1,6 +1,7 @@
 """Archive completed image metrics; validate and retain frame arrays in sim_runs."""
 from pathlib import Path
 import argparse
+import ast
 import csv
 import datetime
 import hashlib
@@ -18,7 +19,15 @@ repo = Path(__file__).resolve().parents[2]
 run = Path('D:/sim_runs/T016e') / a.member / a.iteration
 source = run / 'image'
 job = Path('D:/sim_runs') / a.job
-commands = json.loads((job / 'postprocess_summary.json').read_text())
+if (job / 'postprocess_summary.json').exists():
+    commands = json.loads((job / 'postprocess_summary.json').read_text())
+else:
+    # Single-image wrappers record the exact command and per-run return code.
+    lines = (job / 'stdout.log').read_text(encoding='utf-8-sig').splitlines()
+    assert (job / 'exitcode.txt').read_text().strip() == '0'
+    assert 'rc 0 ' + str(run) in lines
+    commands = [dict(command=ast.literal_eval(line.removeprefix('Running: ')), returncode=0)
+                for line in lines if line.startswith('Running: ')]
 matches = [r for r in commands if 'lipsim.image' in r['command']
            and Path(r['command'][r['command'].index('lipsim.image') + 1]) == run]
 assert len(matches) == 1 and matches[0]['returncode'] == 0
