@@ -299,3 +299,18 @@ Updated: 2026-11-15
 - v1i: backward Euler in T for the same flux κ(T_s − T)/(dz/2), with κ frozen, solved by bisection, so T_n lies between T and T_s. The explicit limit LIP_LIM(1) is removed.
 - Cloud A/B (smoke grid, v1pe_low, 300 ns): all budget terms within 0.6% (E_wall within 2% at 50 ns, then < 0.2%); 3.5× faster; ConsToPrim 160k → 103k. Card T018b.
 - Open question: the high-fluence it3 stall (T016d/T016f, dt ~4e-14 s) could share this cause or not. Check after T018b (is `lip dt-limit kind 1` there?).
+
+## 2026-11-19 17:30 — T018b low it0 (v1i, phase explosion on): no breakdown
+- Budget at 1300 ns, compared with T016e low it0 (v1e, PE off, the same Picard iteration and tables):
+
+  | term | PE on | PE off |
+  |---|---|---|
+  | gas absorption | 0.017 µJ | 87.5 µJ |
+  | radiated | 0.019 µJ | 22.7 µJ |
+  | escaped laser | 287 µJ | 212 µJ |
+  | M_Cu | 1.65 ng | 1.02 ng |
+  | E_src | 3.6 µJ | 2.3 µJ |
+
+  The laser passes through, and the plume never becomes a plasma.
+- Cloud check, same v1i build on the smoke grid: v0_low breaks down at 55–70 ns (gas absorption 48 µJ by 70 ns, axis T 40–65 kK), while v1pe_low does not (0.12 µJ). The cause is therefore the phase-explosion source, not the build or the grid. With PE on, the first gas cell holds dense vapour (ρ ≈ 130–165 kg/m³ against 20–28 kg/m³) at only 6.3–6.7 kK. The laser energy absorbed there is shared by ~6× more mass, so the inverse-bremsstrahlung runaway does not start.
+- Reading against PREREG (v1 extension, 13:30): the declared expectation (lower core specific energy, faster late decay at high fluence) cannot be tested at low fluence, because there is no emitting core. The all-vapour upper bound is **inconsistent with the experiment at low fluence**: the measured plume is bright. Breakdown is therefore strongly non-linear in the vapour mass near the wall. Physically, much of the explosive-boiling ejecta are droplets, which neither absorb nor dilute like vapour, and that is exactly what the upper bound leaves out. The true vapour fraction lies between the two bounds. Nothing is tuned toward it. The high-fluence test (T018c) continues as declared.
