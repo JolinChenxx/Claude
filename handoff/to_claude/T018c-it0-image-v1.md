@@ -1,0 +1,2 @@
+First high it0 native image completed: high_thin_G0/image_v1 rc0,18metrics/29times0-740ns,six finite local frames; copy hashes verified. Baseline b P1 thin/sa723.522530/288.524519ns; all18 P2 unavailable retained. See tasks/T018c.report.md and results/T018c/high_thin_G0/it0/image_v1/.
+Thin reference image_v2 now running; trap images and solverit1/it2 still pending,so no final physical verdict. Also archived T014 high_thin_G1/it0 native image for T016i; its queue advanced to high_trap_G0/it0. No new job or parameter change.
