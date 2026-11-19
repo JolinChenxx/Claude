@@ -19,16 +19,15 @@ if not kernel32.SetPriorityClass(kernel32.GetCurrentProcess(), 0x4000):
 REPO = Path(__file__).resolve().parents[2]
 RUN = Path('D:/sim_runs/T016e/low_thin_G0/it1')
 TABLES = 'D:/sim_runs/tables/v1c'
-OUT = Path('D:/sim_runs/T016e_post_low_thin_02_retry1')
+OUT = Path('D:/sim_runs/T016e_post_low_thin_02_retry2')
 OUT.mkdir(parents=True, exist_ok=True)
 # Supply the source package to both script and module child commands.
 env = os.environ.copy()
+prefix = str(Path(sys.executable).parent)
+env['PATH'] = os.pathsep.join([prefix, str(Path(prefix)/'Library/bin'), str(Path(prefix)/'Scripts'), env.get('PATH', '')])
 env['PYTHONPATH'] = str(REPO / 'src') + os.pathsep + env.get('PYTHONPATH', '')
 env.update(OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1')
 commands = [
-    [sys.executable, str(REPO / 'scripts/diag_emission.py'), str(RUN),
-     '--tables', TABLES, '--times', '300', '500', '700', '1000',
-     '--filter', '510', '12', '--out', str(OUT / 'low_thin_G0_it1_emission.csv')],
     [sys.executable, '-m', 'lipsim.image', str(RUN), '--series', 'low',
      '--tables', TABLES, '--out', str(RUN / 'image'), '--workers', '8'],
 ]
