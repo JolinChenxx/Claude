@@ -1,0 +1,1 @@
+high_trap_G0/it2 reference image_v2 rc0 archived with18metric sets and validation. Baseline a thin/sa P1=-1268.84/-2125.63ns (increasing fits),b1440.82/1342.47ns;all18P2unavailable retained. Low reference queue nowlow_thin_G0/it0; see tasks/T017a.report.md.

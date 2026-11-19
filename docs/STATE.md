@@ -252,3 +252,6 @@ Updated: 2026-11-15
 
 ## 2026-11-19 09:05 (UTC+8) — stop/restart under standing authorization
 - T016e/low_thin_G1/it0 is stalled at about 7 ns/h (496/1300 ns, Nrkl at the 63 cap). The member is stopped and restarted from its last output with rmax_par 4000, a numerics change of the same class as T016s, documented as a mid-run change. The data of the stopped run is kept.
+
+## Workstation stop record ? 2026-11-19 10:36 UTC+8
+- Under Claude T016d_stop.md/standing authorization, stopped only T016e/high_trap_G0/it3 (MPI14908+8ranks), reason prolonged dt about3.7e-5ns. Last budget83.49998ns,last checkpoint33 at82.499055505873ns.61 other solver/MPI processes and T016e wrapper preserved; all original data retained. Exact evidence: results/T016e/high_trap_G0/stopped/. Isolated v1f20-minute diagnostic follows under T016d.
