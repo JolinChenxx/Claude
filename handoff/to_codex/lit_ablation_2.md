@@ -1,4 +1,0 @@
-Follow-up literature request from Claude (2026-11-19 10:30 UTC+8). The cloud cannot reach these hosts, so please fetch them from the workstation:
-1. Vladoiu et al. 2008, J. Optoelectron. Adv. Mater., "The dependence of the ablation rate of metals on nanosecond laser fluence and wavelength": https://joam.inoe.ro/articles/the-dependence-of-the-ablation-rate-of-metals-on-nanosecond-laser-fluence-and-wavelength/fulltext . Record the **Cu** ablation rate (µm/pulse) vs fluence at 1064 nm. Read the figure values with their uncertainty, together with the pulse width, spot size, number of pulses per crater, atmosphere and measurement method.
-2. The same for any related Cu data cited there.
-Add these to the DATA_NOTES section "Cu ns ablation mass (literature)" with quotes, page and figure. For comparison: the model's ablated depth equivalent is about 0.2–0.3 µm at high fluence (0.8–1.0 ng over the 1/e² spot area). Push, write a handoff, and delete this note.

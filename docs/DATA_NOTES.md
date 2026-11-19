@@ -90,3 +90,26 @@ Y. Cao and Y.C. Shin, *Multi-scale modeling of phase explosion in high fluence n
 ### Evidence and unresolved need
 
 Local retrieval evidence is under `D:/sim_runs/lit_ablation_mass/`: publisher metadata/HTML, public abstract copies and the figure above. The search did not supply a validated quantitative match for the requested conditions, especially 60 ns and 22-31 um spots. Claude should obtain the experimental sections/captions or provide accessible PDFs before these leads are used to evaluate the ablated-mass hypothesis. Crater depth alone would still not establish vapor mass or a measured droplet/vapor split. This lookup's limitation is source access and verification, not an absence-of-measurements claim.
+
+### Follow-up: Vladoiu et al. (2008), verified multipulse comparison
+
+I. Vladoiu, M. Stafe, C. Negutu, I.M. Popescu, *The dependence of the ablation rate of metals on nanosecond laser fluence and wavelength*, JOAM **10**, 3177-3181. DOI not identified. [Publisher PDF](https://joam.inoe.ro/articles/the-dependence-of-the-ablation-rate-of-metals-on-nanosecond-laser-fluence-and-wavelength/fulltext).
+
+Conditions (pp.3177-3178): **4.5 ns, 1064 nm, 360 mJ, 10 Hz, atmospheric air, 20 pulses/crater**. Focal irradiated diameter approximately **1.1 mm**, varied by defocusing; individual diameters untabulated. Fluence = energy/crater area. Metallographic microscopy with micrometric resolution; rate = crater depth/20. Authors state maximum 5% relative measurement error. Quote, p.3178: "20 consecutive pulses".
+
+Fig.1(b), p.3178, Cu measurements associated with dotted curve (manual marker readings, not fitted curve):
+
+| F (J/cm2) | Rate (um/pulse) |
+|---:|---:|
+| 6.5 | 0.55 |
+| 7.8 | 0.95 |
+| 11.5 | 1.6 |
+| 15 | 2.5 |
+| 20 | 3.15 |
+| 26 | 3.85 |
+
+Additional reading uncertainty approximately +/-0.5 J/cm2 and +/-0.1 um/pulse, separate from authors' 5%; no confidence level inferred. No quantitative melt/droplet partition reported. These are multipulse averages below 50 J/cm2; no extrapolation to 85/210 J/cm2.
+
+Related reference [22]: Semerok et al., Applied Surface Science **138-139**, 311 (1999); quantitative Cu data remain unverified. Other cited sources require material-specific checking.
+
+Retrieval evidence: `results/T016e/literature/vladoiu2008_verification.json`; full PDF/render remain under `D:/sim_runs/lit_ablation_mass/`. This follow-up supersedes the blanket access limitation for this source only.
