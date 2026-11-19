@@ -2,7 +2,8 @@
 id: T019
 title: Diagnostic split of the synthetic band signal into continuum and lines (reported members, image_v2)
 owner: codex
-status: ready
+status: running
+started: 2026-11-20T03:22:26+08:00
 depends: []
 milestone: D2
 est_time: 0.1h operations + ~1–2h machine time (48 free cores)
