@@ -1,0 +1,387 @@
+{
+  "collected": "2026-11-19T12:49:28.341220+08:00",
+  "completion_evidence": "rc 0 D:\\sim_runs\\T016e\\low_trap_G0\\it1",
+  "job": {
+    "id": "T017a_image_v2_01",
+    "pid": 12624,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -u results\\T017a\\run_reference_imaging.py",
+    "threads": 1,
+    "commit": "963dd49",
+    "started": "2026-11-19T06:05:35",
+    "dir": "D:\\sim_runs\\T017a_image_v2_01"
+  },
+  "files": [
+    {
+      "file": "frames_a_sa.npz",
+      "bytes": 586587,
+      "sha256": "0cec2524f5bf20a0fb965426a8e6623350e10bd2bc9faf41caaddce3e4d39097",
+      "raw_path": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v2\\frames_a_sa.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_a_thin.npz",
+      "bytes": 573218,
+      "sha256": "8e81dc24b446f2017c12a1539c37dd349cbdd544e93721c6368861ab50e185e7",
+      "raw_path": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v2\\frames_a_thin.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_b_sa.npz",
+      "bytes": 584258,
+      "sha256": "b522a1df878dfe3f6c387b0382b27af759bd5a073366412a51a640814424adfd",
+      "raw_path": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v2\\frames_b_sa.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_b_thin.npz",
+      "bytes": 574980,
+      "sha256": "076fa9a74a76cd4d128d8bcf81cf9ce2ac2a38d179a9ae91d7b33eee3171d717",
+      "raw_path": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v2\\frames_b_thin.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_c_sa.npz",
+      "bytes": 586609,
+      "sha256": "1d50e539eca8128cc8dfa0c720475818b1a50f28b7adac29f1e6f95faa9f218d",
+      "raw_path": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v2\\frames_c_sa.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_c_thin.npz",
+      "bytes": 573222,
+      "sha256": "078233b011cac7169900cdafe68969b4996ab404f0efda7424c75fdacee1caad",
+      "raw_path": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v2\\frames_c_thin.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "image_summary.json",
+      "bytes": 2689,
+      "sha256": "13b802306ca573de8ab734b04ae0af57dbb61197ef4beb15583941b62b35409a"
+    },
+    {
+      "file": "metrics_a_sa_baseline.csv",
+      "bytes": 3722,
+      "sha256": "4574aa53f2dbd235d5eb4fd4086ab15c7d14458ca96fbc30169d74f9f89ba74b",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_sa_high.csv",
+      "bytes": 3642,
+      "sha256": "b1fb622e82e820e74c5afb9ce08b68ec613726eb38e084f2420effb594566b9d",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_sa_low.csv",
+      "bytes": 3741,
+      "sha256": "b9203f1b84883b412462923d6388fe84710f7def0a8e3f259e944f1753941c54",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_thin_baseline.csv",
+      "bytes": 3720,
+      "sha256": "9cec1894eb771ffa69d100a04a0f2e6c935a64829ee9cf35a5b94736412025d0",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_thin_high.csv",
+      "bytes": 3685,
+      "sha256": "7a789ac5ef1f15bdf24951e558cc8cb532d63df509b4ff8f3c1bdb4fb4d2347a",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_thin_low.csv",
+      "bytes": 3743,
+      "sha256": "4e8aaaef6bfed6cf2d1470484d3d5b58e4e48e16eda46780e1f67d033a6e52dd",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_sa_baseline.csv",
+      "bytes": 3735,
+      "sha256": "f17f60525f54e9169152c6422272318d66cb7854e8c71d5232c649a2816723d8",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_sa_high.csv",
+      "bytes": 3614,
+      "sha256": "b8aafb216e6fc7f9a0e053e62bf134c98a37a6582ca6705edc5135a898f34c4b",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_sa_low.csv",
+      "bytes": 3733,
+      "sha256": "0148d7b06396505b2dfd2e1c6485e9b56b47c53494a164ad07ee5826b8a2287b",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_thin_baseline.csv",
+      "bytes": 3731,
+      "sha256": "fa1399903fbabd3da6999b212f8857a249d8662e3e0435303d99f3c76f54024e",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_thin_high.csv",
+      "bytes": 3625,
+      "sha256": "0b875e66d2a940d8a0cf2c77e7491df7116c9520fbf10f7627ad4b89f509cc31",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_thin_low.csv",
+      "bytes": 3736,
+      "sha256": "aed010920d6b63c0f24a1916adbc81140ca0922db260154b8e2ed15743e92547",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_sa_baseline.csv",
+      "bytes": 3655,
+      "sha256": "bc2c2ee553938281f4c604b1edaa5254278a43dfbf12af1c637905b4fb2e959c",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_sa_high.csv",
+      "bytes": 3348,
+      "sha256": "e31f751eb40f26bfaa415124c0befbe65bb919d0073a1a0092b2648458552e93",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_sa_low.csv",
+      "bytes": 3720,
+      "sha256": "236b4021f9da37346832848c6727d036cda142b10a8c67598dc9e8cf9646077e",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_thin_baseline.csv",
+      "bytes": 3670,
+      "sha256": "076d75c4b845c458f12f51f554f4e6297ec20b574ade11be20d178844b147c16",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_thin_high.csv",
+      "bytes": 3341,
+      "sha256": "4b4f69aa65193682e62582ac627185d8d99528cdfe0f558f498045ea0eedf7e7",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_thin_low.csv",
+      "bytes": 3726,
+      "sha256": "e4684456472f14ef8d34b7950f618f04640801ab458b01171e0c4f6438e55b7c",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    }
+  ],
+  "frame_policy": "Validated frame arrays retained in sim_runs to respect 20 MB/card limit",
+  "P2_unavailable": [
+    "a_thin_baseline",
+    "a_thin_low",
+    "a_thin_high",
+    "a_sa_baseline",
+    "a_sa_low",
+    "a_sa_high"
+  ],
+  "reference_stage": {
+    "state": "finished",
+    "started": "2026-11-19T06:05:35.611448+08:00",
+    "label": "reference imaging v2",
+    "authority": "3f5e08b / T017a_now.md",
+    "job": "T017a_image_v2_01",
+    "commit": "963dd49c2361d0b6e9487fe4eb3690ccfb1353c9",
+    "inputs": {
+      "configs/imaging/v2.yaml": "24a63bdd39f3a50cdf86d96e634faf5c5113e5ca72de2236fe53ce50662b89c6",
+      "data/params/registry.yaml": "34e7b0d3c4ca3e431a4fd1bdf3f83480451a6b971e7aec443a217f7ff7ba45f7",
+      "src/lipsim/image/forward.py": "06aa02c43c5ab711a058ff2ddd5a4c7c56fc9a4ea2a60bca26580ac47653a6a7"
+    },
+    "commands": [
+      {
+        "series": "high",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+          "D:/sim_runs/T016e",
+          "--series",
+          "high",
+          "--tables",
+          "D:/sim_runs/tables/v1c",
+          "--workers",
+          "16",
+          "--scenarios",
+          "configs/imaging/v2.yaml",
+          "--outname",
+          "image_v2"
+        ],
+        "started": "2026-11-19T06:05:35.668850+08:00",
+        "finished": "2026-11-19T10:24:31.820663+08:00",
+        "returncode": 0
+      },
+      {
+        "series": "low",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+          "D:/sim_runs/T016e",
+          "--series",
+          "low",
+          "--tables",
+          "D:/sim_runs/tables/v1c",
+          "--workers",
+          "16",
+          "--scenarios",
+          "configs/imaging/v2.yaml",
+          "--outname",
+          "image_v2"
+        ],
+        "started": "2026-11-19T10:24:31.821658+08:00",
+        "finished": "2026-11-19T12:43:58.500440+08:00",
+        "returncode": 0
+      }
+    ],
+    "finished": "2026-11-19T12:43:58.501436+08:00"
+  }
+}

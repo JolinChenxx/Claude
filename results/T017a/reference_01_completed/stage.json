@@ -1,0 +1,58 @@
+{
+  "state": "finished",
+  "started": "2026-11-19T06:05:35.611448+08:00",
+  "label": "reference imaging v2",
+  "authority": "3f5e08b / T017a_now.md",
+  "job": "T017a_image_v2_01",
+  "commit": "963dd49c2361d0b6e9487fe4eb3690ccfb1353c9",
+  "inputs": {
+    "configs/imaging/v2.yaml": "24a63bdd39f3a50cdf86d96e634faf5c5113e5ca72de2236fe53ce50662b89c6",
+    "data/params/registry.yaml": "34e7b0d3c4ca3e431a4fd1bdf3f83480451a6b971e7aec443a217f7ff7ba45f7",
+    "src/lipsim/image/forward.py": "06aa02c43c5ab711a058ff2ddd5a4c7c56fc9a4ea2a60bca26580ac47653a6a7"
+  },
+  "commands": [
+    {
+      "series": "high",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+        "D:/sim_runs/T016e",
+        "--series",
+        "high",
+        "--tables",
+        "D:/sim_runs/tables/v1c",
+        "--workers",
+        "16",
+        "--scenarios",
+        "configs/imaging/v2.yaml",
+        "--outname",
+        "image_v2"
+      ],
+      "started": "2026-11-19T06:05:35.668850+08:00",
+      "finished": "2026-11-19T10:24:31.820663+08:00",
+      "returncode": 0
+    },
+    {
+      "series": "low",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+        "D:/sim_runs/T016e",
+        "--series",
+        "low",
+        "--tables",
+        "D:/sim_runs/tables/v1c",
+        "--workers",
+        "16",
+        "--scenarios",
+        "configs/imaging/v2.yaml",
+        "--outname",
+        "image_v2"
+      ],
+      "started": "2026-11-19T10:24:31.821658+08:00",
+      "finished": "2026-11-19T12:43:58.500440+08:00",
+      "returncode": 0
+    }
+  ],
+  "finished": "2026-11-19T12:43:58.501436+08:00"
+}

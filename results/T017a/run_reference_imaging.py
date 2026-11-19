@@ -7,6 +7,7 @@ import hashlib
 import json
 import subprocess
 import sys
+import os
 
 kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
 kernel32.GetCurrentProcess.restype = wintypes.HANDLE
@@ -16,8 +17,14 @@ if not kernel32.SetPriorityClass(kernel32.GetCurrentProcess(), 0x4000):
     raise ctypes.WinError(ctypes.get_last_error())
 
 repo = Path(__file__).resolve().parents[2]
-out = Path('D:/sim_runs/T017a_image_v2_01')
+out = Path('D:/sim_runs/T017a_image_v2_02')
 out.mkdir(parents=True, exist_ok=True)
+# Process-local package and runtime paths; children inherit these.
+env = os.environ.copy()
+prefix = Path(sys.executable).parent
+env['PATH'] = os.pathsep.join([str(prefix), str(prefix/'Library/bin'), str(prefix/'Scripts'), env.get('PATH', '')])
+env['PYTHONPATH'] = str(repo/'src')
+env.update(OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1')
 state = out / 'stage.json'
 if state.exists():
     previous = json.loads(state.read_text())
@@ -31,7 +38,7 @@ def now():
 
 record = dict(state='running', started=now(), label='reference imaging v2',
               authority='3f5e08b / T017a_now.md',
-              job='T017a_image_v2_01',
+              job='T017a_image_v2_02',
               commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=repo, text=True).strip(),
               inputs={name:hashlib.sha256((repo/name).read_bytes()).hexdigest()
                       for name in ('configs/imaging/v2.yaml', 'data/params/registry.yaml',
@@ -45,7 +52,7 @@ try:
                    '--scenarios', 'configs/imaging/v2.yaml', '--outname', 'image_v2']
         entry = dict(series=series, command=command, started=now())
         print('T017a reference', series, flush=True)
-        result = subprocess.run(command, cwd=repo)
+        result = subprocess.run(command, cwd=repo, env=env)
         entry.update(finished=now(), returncode=result.returncode)
         record['commands'].append(entry)
         state.write_text(json.dumps(record, indent=2)+'\n')
