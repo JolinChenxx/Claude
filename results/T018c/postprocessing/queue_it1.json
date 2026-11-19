@@ -14,7 +14,7 @@
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap.py",
       "runner_sha256": "9c26fd7bc27b619ad3eb26320f515c86306fab20fad20e74624a74fbb5157dc2",
       "workers": 16,
-      "state": "running",
+      "state": "completed",
       "commands": [
         {
           "name": "high_trap_G0_emission",
@@ -85,10 +85,12 @@
       "completed_commands": [
         "high_trap_G0_emission",
         "high_trap_G0_core_energy",
-        "high_trap_G0_shock_track"
+        "high_trap_G0_shock_track",
+        "high_trap_G0_image_v1"
       ],
-      "active_command": "high_trap_G0_image_v1",
-      "progress_checked": "2026-11-20T01:36:20.673535+08:00"
+      "progress_checked": "2026-11-20T02:23:03.657877+08:00",
+      "completed": "2026-11-20T02:15:37.151684+08:00",
+      "image_collected": "results/T018c/high_trap_G0/it1/image_v1/validation.json"
     },
     {
       "job_id": "T018c_post_it1_trap_v2_01",
@@ -511,7 +513,7 @@
     }
   ],
   "deduplication": "Ten distinct prescribed outputs preassigned to four member/version owners. No overlapping whole-it1 queue. Active-output guards run at preflight and before each command.",
-  "pending": "Trap it1 images running; thin it1 diagnostics/v1 then v2 await their own 16-core slots. Use job.ps1 start only after capacity check. Full it1 handoff awaits all ten commands and collected evidence.",
+  "pending": "Trap it1 v2 still running at this pass check; thin main queue has the next free 16-core slot. Thin v2 awaits capacity. Full it1 handoff awaits all ten commands and collected evidence.",
   "startup_checked": "2026-11-20T01:25:44.968122+08:00",
   "capacity_after_launch": {
     "checked": "2026-11-20T01:25:52.127422+08:00",

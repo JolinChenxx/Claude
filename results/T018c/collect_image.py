@@ -26,15 +26,30 @@ sys.path.insert(0, str(repo / 'src'))
 from lipsim.image.dispatch import MANIFEST, completed_evidence
 delegations = json.loads(MANIFEST.read_text())['delegations'] if MANIFEST.exists() else []
 delegated = [e for e in delegations if Path(e['output']) == source]
+assigned = None
+queue_path = repo / 'results/T018c/postprocessing' / f'queue_{a.iteration}.json'
 if delegated:
     entry, = delegated
     assert Path(entry['owner_job_dir']) == job, 'Collect actual delegated owner, never the administrative skip'
     completed_evidence(entry)
+elif queue_path.exists():
+    queue = json.loads(queue_path.read_text(encoding='utf-8'))
+    assigned, = [j for j in queue['jobs'] if j['job_id'] == a.job]
+    runner = Path(assigned['runner'])
+    assert metadata['id'] == a.job and Path(metadata['dir']) == job
+    expected_job_command = f"{Path('D:/sim_tools/envs/lipsim/python.exe')} {runner}"
+    assert metadata['cmd'].replace(chr(92), '/') == expected_job_command.replace(chr(92), '/')
+    assert hashlib.sha256(runner.read_bytes()).hexdigest() == assigned['runner_sha256']
 else:
     assert f'/results/T018c/postprocessing/run_{a.iteration}.py' in metadata['cmd'].replace(chr(92), '/')
 summary = json.loads((job / 'postprocess_summary.json').read_text(encoding='utf-8'))
 evidence, = [r for r in summary['commands'] if r['name'] == f'{a.member}_{a.outname}' and r.get('returncode') == 0]
 cmd = evidence['command']
+if assigned is not None:
+    planned, = [r for r in assigned['commands'] if r['name'] == evidence['name']]
+    assert cmd == planned['command'], 'Completed command must match its assigned owner plan'
+    assert summary['job_id'] == a.job
+    assert summary['runner_sha256'] == assigned['runner_sha256']
 assert cmd[cmd.index('--series') + 1] == 'high'
 assert cmd[cmd.index('--workers') + 1] == '16'
 assert Path(cmd[cmd.index('lipsim.image') + 1]) == run
@@ -92,6 +107,10 @@ result = dict(collected=datetime.datetime.now().astimezone().isoformat(),
               completion_evidence=evidence, job=metadata, files=records,
               frame_policy='Validated frame arrays retained in sim_runs to respect 20 MB/card limit',
               P2_unavailable=[k for k,v in summary.items() if not math.isfinite(v['P2_dt10_ns'])])
+if assigned is not None:
+    result['assigned_owner'] = dict(job_id=a.job, queue=str(queue_path),
+                                    runner=assigned['runner'],
+                                    runner_sha256=assigned['runner_sha256'])
 (out / 'validation.json').write_text(json.dumps(result,indent=2)+'\n')
 size = sum(p.stat().st_size for p in (repo / 'results' / a.batch).rglob('*') if p.is_file())
 assert size <= 20*1024*1024, size
