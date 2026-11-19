@@ -2,7 +2,8 @@
 id: T018
 title: v1e + energy-limited phase explosion (v1pe cases): high G0 it0–it2, low G0 it0–it1, 32 cores
 owner: codex
-status: running
+status: superseded
+superseded_by: [T018b, T018c]
 started: 2026-11-19T14:50:24+08:00
 depends: []
 milestone: D2
