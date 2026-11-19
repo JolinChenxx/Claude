@@ -318,3 +318,9 @@ Updated: 2026-11-15
 
 ## 2026-11-19 18:15 — low fluence Picard convergence confirmed (T016e it2, stopped at ~880 ns)
 - Target absorption, model vs PLUTO: it1 21.0/21.6 µJ (2.6%); it2 21.45/22.15 µJ (3.2%), thin and trap alike. From it1 to it2 the PLUTO target absorption changes by +2.7% and the gas absorption by −4% (44.0 → 42.1 µJ). The low-fluence PE-off result at it1 is converged, and it1 stays the reported member.
+
+## 2026-11-19 18:35 — T016e inventory residual review (PLAN §4.2 asks for < 0.1%)
+- Low it1 thin, residual against time: 0.000% at 100 ns, 0.003% at 200 ns, −0.044% at 400 ns, −0.25% at 800 ns, −0.31% at 1300 ns. The other low members are similar; high thin it0 reaches −0.15%. The residual only builds up once the plume is cooling (> 400 ns). By then the laser absorption, the source and the shock energetics are fixed, so it does not touch the Picard criterion or the shock metric. It is negative (missing energy) and smooth.
+- Likely origin, not yet proven: the budget measures internal energy through the table e(ρ,T,Y), while PLUTO carries ρe through its own PVTE inversion. In a slowly cooling plume, interpolation differences between the two accumulate. A boundary outflow is unlikely, because the shock (~800 µm at 1300 ns) is still inside the 1200 × 1500 µm domain.
+- Disposition: this is a documented deviation from §4.2. It is accepted for v1e results because it is < 0.35% and develops late, and T016e is closed (done). Open check, low priority: recompute E_internal with PLUTO's own e for one late snapshot to confirm the origin.
+- ConsToPrim: 123.1M lines over the completed T016e runs, the known RKL-stage overshoot defect (still open), already documented.

@@ -2,7 +2,7 @@
 id: T016e
 title: v1e production — tables v1c (Coulomb/polarisation Cu–air diffusion) with build v1d, all 6 members, 64 cores
 owner: codex
-status: blocked
+status: done
 started: 2026-11-18T16:50:33.297592+08:00
 depends: []
 milestone: D2
