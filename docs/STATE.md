@@ -255,3 +255,6 @@ Updated: 2026-11-15
 
 ## Workstation stop record ? 2026-11-19 10:36 UTC+8
 - Under Claude T016d_stop.md/standing authorization, stopped only T016e/high_trap_G0/it3 (MPI14908+8ranks), reason prolonged dt about3.7e-5ns. Last budget83.49998ns,last checkpoint33 at82.499055505873ns.61 other solver/MPI processes and T016e wrapper preserved; all original data retained. Exact evidence: results/T016e/high_trap_G0/stopped/. Isolated v1f20-minute diagnostic follows under T016d.
+
+## Workstation stop record ? 2026-11-19 11:06 UTC+8
+- Claude T016d_vmax.md/standingauthorization: stopped only T016e/high_thin_G0/it3,MPI6744+8ranks,for dt stall near83ns. Lastbudget83.49996ns,lastcheckpoint33 at82.49686ns.52othersolver/MPI processes and batch preserved;data retained. v1f20minute diagnostic finished;v1g10minute follow-up prepared.
