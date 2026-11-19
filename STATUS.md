@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T13:21:50+08:00 (UTC+8)
+- cards:T016e,T016i,T017a. Initialpull blocked by livehighG1completion registryappend;inspected/committed exactrow,rebaseda650b18. No newincomingnotes;literature request remains incomplete,verifiedportions/limitations previouslyhandedoff.
+- high_thin_G1/it0 rc0,800ns,71248s,16MPI;11productioniterationscompleted. All16logs streamed/hash/stabilitychecked,56,723,606ConsToPrim preserved. M_Cu=M_src3.2182709582e-12kg;targetmodel/PLUTOabs62.2318/8.71477uJ (+614.10%). Picardit0only;warnedClaude against treatingrc0 as numericalacceptance. Evidence/handoff pushed86a46a8;raw6.74GB logs retained.
+- Launched T016e_post_high_G1_01 PID49748,execution86a46a8,8workers/OMP1,BelowNormal,initialrunning/empty stderr. rmax1000/v1ctablehashesverified. NativeG1 deferredtorepeat;referenceG1 eligibleforactivecatch-upsweep. No solverrerun/tuning.
+- T014 high_thin_G0/it0 native collected:24native sets archivedoverall;18metricsets/29times/sixfinite hashverifiedrawframearchives,all18P2unavailable retained. Native38032 nowT014highthin it1;fullT014handoff pending.
+- Production42332/reference46228(highthinG0it2)/native38032/lowG1continuation12720 running;initialstderr empty. Reports synced/hashverified. Endpassafterlongjoblaunch;no foregroundwait.
+- T016e/low_thin_G0/it2:budget_t_ns=5.929741e+002;step:32000; t = 5.6842e+002; dt = 4.6236e-002; 43.7 % | [Mach = 2.148460, Nrkl = 9]
+- T016e/low_trap_G0/it2:budget_t_ns=3.424871e+002;step:27000; t = 3.3618e+002; dt = 3.6727e-002; 25.9 % | [Mach = 2.665741, Nrkl = 8]
+- T016e_r/low_thin_G1/it0:budget_t_ns=5.509944e+002;step:76000; t = 5.4676e+002; dt = 1.5368e-002; 42.1 % | [Mach = 2.994156, Nrkl = 66]
+- readycards=['T018-phase-explosion.md'] (owner codex, no dependencies). Newly pulled T018 is deferred because this pass already launched the long G1 imaging job and must end per heartbeat protocol. Next pass claim T018 and assess its explicit 32-free-core condition alongside production/imaging jobs.
+
 ## 2026-11-19T13:04:51+08:00 (UTC+8)
 - cards:T016i,T016e,T017a;pulledws alreadycurrent e36b24a. No newincomingnotes. Broadliterature request remains incomplete;verified portions andremaininglimitations alreadyhandedoff,note retained.
 - Collected T016h high_trap_G0/it0 native rc0:18metricsets/29times0-740ns/sixfinite hashverifiedlocalframearchives;all18P2unavailable retained. BaselinebP1thin/sa311.9185046/263.7617771ns.23native sets archivedoverall;handoffwritten;reportsynced/hashverified. Native38032 nowT014 high_thin_G0/it0(v0).
@@ -395,20 +406,6 @@
 - T016e/low_thin_G0/it1: t_ns=7.239951e+002; latest logged dt=2.0793e-002, Nrkl=60 (step 43000, log_t_ns=7.0288e+002).
 - T016e/low_thin_G1/it0: t_ns=4.699974e+002; latest logged dt=1.4906e-002, Nrkl=31 (step 68000, log_t_ns=4.6177e+002).
 - T016e/low_trap_G0/it1: t_ns=7.379993e+002; latest logged dt=2.0612e-002, Nrkl=54 (step 45000, log_t_ns=7.3779e+002).
-- skipped ready cards and why: none; no ready cards. T017a waits for T015 per updated priority. Production members advanced: 6/6.
-- next: archive T015 native outputs/full-set handoff; monitor reference stage through parent job and stage.json; continue production collection. No parameter changes or foreground waiting.
-
-## 2026-11-19 05:35 (UTC+8)
-- cards: T016e,T016i,T017a | action: ws current at b63313d; no incoming note or ready card. Archived T015/high_thin_G0/it2 native metrics in de25f6d: 18 CSVs,29 times 0-740 ns,six finite raw frame archives retained locally with hashes; all18 unavailable P2 preserved. Baseline b P1 thin/sa=816.2477/789.7423 ns. Nine native runs archived total; T015 result size15,361,200 bytes.
-- T016i_native_01 PID 38032, execution commit f897ccd, elapsed 03:11:07 at check: T015/high_thin_G0/it2 rc=0, now high_thin_G1/it0; stderr empty. Full T015 handoff pending. T017a reference v2 queued after T015 and before remaining native roots; stage.json not yet present.
-- production: T016e PID 42332, execution commit bc79e7d, elapsed 12:10:27 at check; stderr empty. Six completed production iterations already archived; known numerical warnings retained.
-- Progress snapshot 2026-11-19T05:35:12.039683+08:00; budget and logged times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=3.664920e+002; latest logged dt=8.4633e-003, Nrkl=6 (step 73000, log_t_ns=3.6564e+002).
-- T016e/high_thin_G1/it0: t_ns=5.364877e+002; latest logged dt=1.5576e-002, Nrkl=14 (step 75000, log_t_ns=5.3662e+002).
-- T016e/high_trap_G0/it2: t_ns=3.834972e+002; latest logged dt=9.6044e-003, Nrkl=6 (step 70000, log_t_ns=3.7670e+002).
-- T016e/low_thin_G0/it1: t_ns=7.094861e+002; latest logged dt=2.0793e-002, Nrkl=60 (step 43000, log_t_ns=7.0288e+002).
-- T016e/low_thin_G1/it0: t_ns=4.655000e+002; latest logged dt=1.4906e-002, Nrkl=31 (step 68000, log_t_ns=4.6177e+002).
-- T016e/low_trap_G0/it1: t_ns=7.239966e+002; latest logged dt=3.0221e-002, Nrkl=40 (step 44000, log_t_ns=7.1468e+002).
 - skipped ready cards and why: none; no ready cards. T017a waits for T015 per updated priority. Production members advanced: 6/6.
 - next: archive T015 native outputs/full-set handoff; monitor reference stage through parent job and stage.json; continue production collection. No parameter changes or foreground waiting.
 
