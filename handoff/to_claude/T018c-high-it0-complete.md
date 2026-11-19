@@ -1,2 +1,0 @@
-T018c highit0 package complete:both800ns/rc0 solver records,6diagnostics,4imagev1/v2 sets,72metrics and24finite local frame archives. Actual-owner trapv2 rc0; baseline bP1thin/sa735.4442209/715.0127391ns. See tasks/T018c.report.md and results/T018c/postprocessing/it0_completion.json.
-72unavailableP2 and original35,328,535 ConsToPrim warnings retained for review. Closure uses nine original actual successes plus delegated owner success; original exit75 unchanged. it1/it2 and full-card acceptance remain pending; card stays running.
