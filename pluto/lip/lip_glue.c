@@ -105,6 +105,10 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
   double ***V = (double ***)d->Vc[0];
   double t_SI = g_time * LIP_TIME_SI, dt_SI = dt * LIP_TIME_SI;
   double inv_src = 0.0;   /* source-term time-step constraint (1/s), N-grade stability limits */
+  /* diagnostic (T016e high_trap it3 stall): which cell and which source term sets inv_src */
+  int lim_kind = 0, lim_i = -1, lim_j = -1; double lim_rho = 0, lim_T = 0, lim_rhoe = 0, lim_q = 0;
+#define LIP_LIM(kind, val, q_) do { double _v = (val); if (_v > inv_src) { inv_src = _v; lim_kind = (kind); lim_i = i; lim_j = j; \
+      lim_rho = rho; lim_T = T; lim_rhoe = rhoe; lim_q = (q_); } } while (0)
   const double F_E = 0.2, F_M = 0.5;
   (void)V;
   lip_init();
@@ -175,7 +179,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
         if (rhoe + dEw < rhoe_floor) dEw = rhoe_floor - rhoe; /* cannot cool below T_floor */
         E += dEw;
         B[8] -= dEw * dV;
-        if (rhoe > 0.0) inv_src = MAX(inv_src, fabs(dEw / dt_SI) / (F_E * rhoe));
+        if (rhoe > 0.0) LIP_LIM(1, fabs(dEw / dt_SI) / (F_E * rhoe), dEw / dt_SI);
       }
 #endif
       if (j == JBEG && g_inputParam[SRC_ON] > 0.5 && grid->lbound[JDIR] != 0) {
@@ -193,12 +197,12 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
         }
       }
       /* stability limits for the next step: |Δ(rhoe)| ≤ F_E·rhoe, injected mass ≤ F_M·ρ, vapour signal speed */
-      if (rhoe > 0.0) inv_src = MAX(inv_src, fabs(ql - dE_rad / dt_SI) / (F_E * rhoe));
+      if (rhoe > 0.0) LIP_LIM(2, fabs(ql - dE_rad / dt_SI) / (F_E * rhoe), ql - dE_rad / dt_SI);
       if (m > rho) {
         double Sm = (m - rho) / dt_SI;
-        inv_src = MAX(inv_src, Sm / (F_M * rho));
+        LIP_LIM(3, Sm / (F_M * rho), Sm);
         double cv = sqrt(lip_eos_cs2(&lip_eos, m, T, mY / m));
-        inv_src = MAX(inv_src, (fabs(vz) + cv) / dz[0]);
+        LIP_LIM(4, (fabs(vz) + cv) / dz[0], cv);
       }
       double vz_new = pz / m;
       double rhoe_new = E - 0.5 * m * (vr * vr + vz_new * vz_new);
@@ -214,6 +218,9 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
   }
   FreeArray1D(dz); FreeArray1D(al); FreeArray1D(q);
   /* PLUTO computes dt_next = cfl / invDt_hyp (code time units); fold the source constraint in */
+  if (g_stepNumber % 1000 == 0 && inv_src * LIP_TIME_SI / RuntimeGet()->cfl > Dts->invDt_hyp)
+    printLog("! lip dt-limit: step %ld kind %d (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=%d,%d] rho=%.3e T=%.3e rhoe=%.3e q=%.3e dt_src=%.3e s\n",
+             g_stepNumber, lim_kind, lim_i, lim_j, lim_rho, lim_T, lim_rhoe, lim_q, 1.0 / inv_src);
   Dts->invDt_hyp = MAX(Dts->invDt_hyp, inv_src * LIP_TIME_SI / RuntimeGet()->cfl);
 }
 
