@@ -22,7 +22,32 @@ source = run / a.outname
 job = Path('D:/sim_runs') / a.job
 log = (job / 'stdout.log').read_text(encoding='utf-8-sig')
 evidence = 'rc 0 ' + str(run)
-assert evidence in log.splitlines(), evidence
+if evidence not in log.splitlines():
+    # A suspended dispatcher cannot print rc until it resumes. Read the
+    # exited child's Windows process object, which it still holds open.
+    import ctypes as ct
+    from ctypes import wintypes as wt
+    holds = json.loads((Path('D:/sim_runs/T018') / 'imaging_dispatch_holds.json').read_text())
+    hold, = [h for h in holds if h['job'] == a.job]
+    cmd = hold['active_command']
+    assert Path(cmd[cmd.index('lipsim.image') + 1]) == run
+    assert Path(cmd[cmd.index('--out') + 1]) == source
+    k = ct.WinDLL('kernel32', use_last_error=True)
+    k.OpenProcess.restype = wt.HANDLE
+    handle = wt.HANDLE(k.OpenProcess(0x1000, False, hold['active_image_pid']))
+    if not handle:
+        raise ct.WinError(ct.get_last_error())
+    try:
+        times = [wt.FILETIME() for _ in range(4)]
+        rc = wt.DWORD()
+        assert k.GetProcessTimes(handle, *(ct.byref(t) for t in times))
+        created = ((times[0].dwHighDateTime << 32) | times[0].dwLowDateTime) / 1e7 - 11644473600
+        assert abs(created - hold['active_image_created']) < 0.00001
+        assert k.GetExitCodeProcess(handle, ct.byref(rc)) and rc.value == 0
+        evidence = dict(method='GetExitCodeProcess', pid=hold['active_image_pid'],
+                        created=created, command=cmd, exit_code=rc.value)
+    finally:
+        k.CloseHandle(handle)
 metadata = json.loads((job / 'job.json').read_text(encoding='utf-8-sig'))
 expected_runner = 'run_native_imaging.py' if a.outname == 'image_v1' else 'run_reference_imaging.py'
 assert expected_runner in metadata['cmd']
