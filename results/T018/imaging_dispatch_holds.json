@@ -50,11 +50,13 @@
       "--scenarios",
       "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
     ],
-    "state": "dispatcher_resumed",
+    "state": "dispatcher_suspended",
     "time": "2026-11-19T14:05:02.386163+08:00",
     "authority": "handoff/to_codex/T018-capacity.md",
-    "resume_condition": "T018 running and 16 physical cores unreserved; resume at most permitted queues",
+    "resume_condition": "Only after replacement diagnostics backlog has no eligible work and16 physical cores unreserved; verify PID creation before resume",
     "resumed": "2026-11-19T15:49:57+08:00",
-    "resume_reason": "T018 running with32cores, existing T016e16cores, reference retains its existing16core slot; native queue remains held"
+    "resume_reason": "T018 running with32cores, existing T016e16cores, reference retains its existing16core slot; native queue remains held",
+    "held_again": "2026-11-19T17:07:05+08:00",
+    "hold_reason": "T018b/T018c completed-iteration diagnostics/image priority per T018c step3; allow current image24040 to finish normally and prevent next old queue member"
   }
 ]
