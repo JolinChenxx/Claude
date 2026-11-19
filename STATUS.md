@@ -1,5 +1,20 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T17:15:21+08:00 (UTC+8)
+- Cards: T018b, T018c; checked T016e and imaging jobs. Pulled Claude's T018 CI correction: status done with superseded_by T018b/T018c (30305dc/1fd6434). Incoming handoff directory empty; no ready Codex cards. Preserved/rebased the two legitimate completed registry rows in 92a805c before pull; unrelated output/ remains untouched.
+- T018b low_thin_G0/it0 and low_trap_G0/it0 both completed 1300 ns, rc0, at 16:59:19/17:00:28; registry wall times 1917.6/1987.0 s. Both automatically advanced to it1. Streamed all 16 stable completed logs once: ConsToPrim totals 6,766,969 / 6,773,254 (rank0 4,620,117 / 4,624,393; rank1 2,146,852 / 2,148,861; ranks2-7 zero). Archived budget, input metadata, completion JSON, per-rank hashes/Done markers and tails. rc0 is not numerical acceptance; warnings handed to Claude without tuning.
+- Final low thin/trap M_Cu=1.6549321302e-12/1.6549320131e-12 kg; E_gas_abs=1.7095911446e-8/1.7182855510e-8 J; E_wall=1.7396036692e-7/1.7468061237e-7 J. Registry completion commit 3cda2d0 differs from original launch eaa401f; no new build. Evidence, reports and handoff pushed on ws in 58ac1e0; both reports copied/hashverified to D:/Sync/T018b and D:/Sync/T018c.
+- T018c: both high it0 inputs verified phase_explosion=true and rmax_par1000; copied metadata/ini and input_verification.json. Numerical acceptance pending. T018b and T018c remain running; no new solver launch this pass.
+- At 17:07:05, per T018c step3 priority, held only reference dispatcher41556 after command/create-time verification. Current reference image24040 and its 16 workers remained alive and unsuspended. Native dispatcher39740 remains held. Durable hold records saved. Reservations at 17:08:54: T016e16 + T018b16 + T018c16 + active reference image16 = all64 physical cores. T016e wrapper42332 reports stopped but has live solver descendants; no intervention.
+- Prepared results/T018b/postprocessing/run_it0.py and queue records for T018b_post_it0_01: six emission/core/shock commands first, then four image_v1/v2 commands, existing diagnostic defaults and 16 image workers. AST/command ordering and read-only capacity check passed; free physical cores=0. Postprocessing NOT launched; wait for a 16-core slot, keep old dispatchers held, then use job.ps1 start and end that pass.
+- Disk sample 17:08:54: D free2261.12774144 GB (decimal). Old T018 fully stopped. Completed T018b it0 interval log rates about0.000043 GB/h each are historical only. All active T018b it1 and T018c logs now have NEW baselines; growth rates unavailable until next sample. Rank0 baseline bytes: low thin534549931, low trap485472345, high thin2392450, high trap2383370. hours_to_150_GB_log_only=null due incomplete rate coverage; zero aggregates do not establish zero growth. No log deletion/truncation.
+- Progress sample 17:08:54, T018b low_thin_G0/it1: budget207.4771 ns; step3000, t200.40 ns, dt0.075456 ns, Nrkl10.
+- Progress sample 17:08:54, T018b low_trap_G0/it1: budget192.9798 ns; step2000, t129.43 ns, dt0.073270 ns, Nrkl2.
+- Progress sample 17:08:54, T018c high_thin_G0/it0: budget50.49688 ns; step5000, t49.660 ns, dt0.0039816 ns, Nrkl3.
+- Progress sample 17:08:54, T018c high_trap_G0/it0: budget49.99789 ns; step5000, t49.650 ns, dt0.0036012 ns, Nrkl3.
+- Progress sample 17:08:54, T016e low_thin_G0/it2: budget841.4835 ns; step42000, t838.86 ns, dt0.020664 ns, Nrkl63.
+- Progress sample 17:08:54, T016e low_trap_G0/it2: budget826.4991 ns; step42000, t819.56 ns, dt0.020781 ns, Nrkl63.
+
 ## 2026-11-19T16:53:49+08:00 (UTC+8)
 - Pulled2b30ea4; Claude accepted v1i and issuedT018c, closing literature lookup as documented partial DATA_NOTES result. No further source lookup required. ClaimedT018c b2b9e1e and pushed before operations.
 - T018c step1: verified exact wrapper8480 command/create-time and two high cwd/MPI trees/16PLUTO ranks; job.ps1 stop at16:50:47,rc0. Targets gone;103 recorded unrelated processes retained original identities. High thin last budget199.9899ns,step25000 t199.35ns/dt0.009769ns/Nrkl9; trap252.9527ns,step28000 t244.92ns/dt0.050992ns/Nrkl18. No data deletion/truncation. T018 status superseded byT018b/T018c. Evidence/registry provenance pushed824614e; old notes consumed and monitoring requirements retained.
@@ -333,18 +348,3 @@
 - T016e/low_trap_G0/it1: budget_t_ns=9.484838e+002; dt=2.5222e-002,Nrkl=36 (step53000,log_t_ns=9.2650e+002).
 - T016e_r/low_thin_G1/it0: budget_t_ns=4.994922e+002; no fresh dt/Nrkl; inherited pre-restart dt0.0063659,Nrkl63 excluded.
 - skipped ready cards and why: none; no ready cards. Active solver members advanced/entered next iteration; no stagnation escalation. Next check5 active jobs.
-
-## 2026-11-19 09:08 (UTC+8)
-- cards: T016e,T016i,T017a | action: followed366ff22 low_G1 restart note; stopped only cwd-verified MPI31220/16 ranks; all53 other solver/MPI processes and batch wrapper preserved. Full original data retained; copied all200 frames for future imaging. Source stopped budget498ns,checkpoint199 at497.496814ns. Restart copy changes only rmax_par1000->4000; v1c/executable/checkpoint hashes verified.
-- Launched T016e_r_low_G1_01 PID12720,MPI43356,execution7e5b5bb,started2026-11-19T09:07:44,16 ranks,-dec16 1,build_v1d. Running in T016e_r/low_thin_G1/it0. Original low G1 intentionally terminated; other T016e members continue. Restart boundary overlap/cumulative reset caveat in report. Note consumed; interim handoff/report sync done.
-- T016e_post_high_trap_03 finished rc0; high_trap_G0/it2 v0 image archived:18 metrics,29 times,six finite local arrays,all18 P2 unavailable. Single-image wrapper collector fallback added and validated. Native/v2 repeat it2 pending.
-- T016i_native_01 running T015/low_thin_G0/it2; it1 rc0 archived,15 native images total;15 P2 unavailable and negative a_thin fit preserved. T017a_image_v2_01 running high_trap_G0/it1 at initial check; three reference images archived. Full T015/high-trap reference handoffs pending.
-- T016e/high_thin_G0/it2: budget_t_ns=7.984855e+002; dt=1.4521e-002,Nrkl=8 (step111000,log_t_ns=7.8545e+002).
-- T016e/high_thin_G1/it0: budget_t_ns=6.264966e+002; dt=1.1364e-002,Nrkl=55 (step82000,log_t_ns=6.2192e+002).
-- T016e/high_trap_G0/it3: budget_t_ns=6.949905e+001; dt=3.3365e-003,Nrkl=5 (step13000,log_t_ns=6.7410e+001).
-- T016e/low_thin_G0/it1: budget_t_ns=9.294976e+002; dt=2.4499e-002,Nrkl=56 (step52000,log_t_ns=9.1114e+002).
-- T016e/low_thin_G1/it0 [intentionally stopped]: budget_t_ns=4.980000e+002; dt=6.3659e-003,Nrkl=63 (step72000,log_t_ns=4.9418e+002).
-- T016e/low_trap_G0/it1: budget_t_ns=9.374896e+002; dt=2.5222e-002,Nrkl=36 (step53000,log_t_ns=9.2650e+002).
-- T016e_r/low_thin_G1/it0: copied budget498ns and inherited pre-restart log dt0.0063659ns,Nrkl63 (step72000,494.18ns); no fresh restart diagnostic at this snapshot. Restart checkpoint497.496814ns,dt0.0063618971ns; next pass measure fresh progress.
-- skipped ready cards and why: none; no ready cards. End pass after background launch; next check4 active jobs and collect restart progress/completions.
-
