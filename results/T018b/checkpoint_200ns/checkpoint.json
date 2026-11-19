@@ -1,0 +1,111 @@
+{
+  "captured": "2026-11-19T16:37:40+08:00",
+  "source_log": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\pluto.0.log",
+  "captured_log_bytes": 546872528,
+  "last_budget_t_ns": 239.4524,
+  "mpi_pid": 48700,
+  "mpi_created": 1795076842.0309167,
+  "mpi_elapsed_seconds": 618.188107252121,
+  "ns_per_wall_hour_since_mpi_start": 1394.4439077480206,
+  "batch_elapsed_seconds": 653.219024,
+  "ns_per_wall_hour_since_batch_start": 1319.662484294089,
+  "steps": [
+    {
+      "offset": 4038,
+      "line": "step:0; t = 0.0000e+000; dt = 1.0000e-005; 0.0 %",
+      "t_ns": 0.0,
+      "dt_ns": 1e-05,
+      "mach_offset": 4203,
+      "mach": "[Mach = 0.000000, Nrkl = 2]"
+    },
+    {
+      "offset": 466776,
+      "line": "step:1000; t = 6.6847e+001; dt = 5.7414e-002; 5.1 %",
+      "t_ns": 66.847,
+      "dt_ns": 0.057414,
+      "mach_offset": 470621,
+      "mach": "[Mach = 11.666763, Nrkl = 2]"
+    },
+    {
+      "offset": 79141536,
+      "line": "step:2000; t = 1.2945e+002; dt = 7.3271e-002; 10.0 %",
+      "t_ns": 129.45,
+      "dt_ns": 0.073271,
+      "mach_offset": 79405697,
+      "mach": "[Mach = 10.330936, Nrkl = 2]"
+    },
+    {
+      "offset": 513560873,
+      "line": "step:3000; t = 2.0040e+002; dt = 7.5452e-002; 15.4 %",
+      "t_ns": 200.4,
+      "dt_ns": 0.075452,
+      "mach_offset": 513853627,
+      "mach": "[Mach = 8.590506, Nrkl = 10]"
+    }
+  ],
+  "nearest_logged_steps": {
+    "100": {
+      "offset": 79141536,
+      "line": "step:2000; t = 1.2945e+002; dt = 7.3271e-002; 10.0 %",
+      "t_ns": 129.45,
+      "dt_ns": 0.073271,
+      "mach_offset": 79405697,
+      "mach": "[Mach = 10.330936, Nrkl = 2]"
+    },
+    "150": {
+      "offset": 79141536,
+      "line": "step:2000; t = 1.2945e+002; dt = 7.3271e-002; 10.0 %",
+      "t_ns": 129.45,
+      "dt_ns": 0.073271,
+      "mach_offset": 79405697,
+      "mach": "[Mach = 10.330936, Nrkl = 2]"
+    },
+    "200": {
+      "offset": 513560873,
+      "line": "step:3000; t = 2.0040e+002; dt = 7.5452e-002; 15.4 %",
+      "t_ns": 200.4,
+      "dt_ns": 0.075452,
+      "mach_offset": 513853627,
+      "mach": "[Mach = 8.590506, Nrkl = 10]"
+    }
+  },
+  "nearest_snapshots": {
+    "100": {
+      "nfile": 40,
+      "t_ns": 99.97414,
+      "dt_ns": 0.05849946,
+      "step": 1559
+    },
+    "150": {
+      "nfile": 60,
+      "t_ns": 149.9377,
+      "dt_ns": 0.06724266,
+      "step": 2291
+    },
+    "200": {
+      "nfile": 80,
+      "t_ns": 199.9631,
+      "dt_ns": 0.07543264,
+      "step": 2994
+    }
+  },
+  "latest_dt_limits": [
+    {
+      "offset": 513624015,
+      "line": "! lip dt-limit: step 3000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=4.525e-001 T=3.096e+003 rhoe=2.951e+005 q=2.968e+008 dt_src=7.622e-010 s"
+    },
+    {
+      "offset": 79309368,
+      "line": "! lip dt-limit: step 2000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=1.110e+001 T=4.017e+003 rhoe=1.040e+007 q=7.498e+009 dt_src=7.402e-010 s"
+    },
+    {
+      "offset": 469281,
+      "line": "! lip dt-limit: step 1000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=4.051e+002 T=5.834e+003 rhoe=6.601e+008 q=3.490e+011 dt_src=5.803e-010 s"
+    }
+  ],
+  "budget_hashes": {
+    "budget_v1h.csv": "407027e3ec78d7ff606341828a99147d3b307a0312cf740dccccad6131dffcef",
+    "budget_v1i.csv": "07a9aaa5d55db64e463b6c913ea4acc745b807b778f775d05ca810dfcf1b275e"
+  },
+  "comparison_method": "Linear interpolation at exactly100/150/200ns; signed percent =100*(v1i-v1h)/max(abs(v1i),abs(v1h),1e-30). Values in raw budget units. No acceptance tolerance imposed."
+}
