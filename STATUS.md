@@ -1,5 +1,17 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T16:27:21+08:00 (UTC+8)
+- T018b claimed92858c2; v1i build completed16:20:55 rc0,7 upstream replacements, executable SHA256487decf2ef2383fd2442252ea6fcb0c9ae4d0a8106c849c5edfafcb8205f0169. Build/stop evidence pushed eaa401f. No Codex physics/numerics changes.
+- Per T018b step2, stopped only original T018 low_thin_G0/it0 MPI8788 at16:22:00 and low_trap_G0/it0 MPI26548 at16:22:01; verified identities/ranks before stop and others alive after. Raw data retained. Last budgets209.4997/209.4991ns; last step36000 dt8.2749e-4/8.3944e-4ns Nrkl2. Nonzero registry returns are intentional stops. Old post250ns extract superseded below250ns, documented in report and followup_disposition.json;189.9989ns extract retained.
+- Started T018b via job.ps1 at16:26:47, wrapper39900, commit eaa401f, max-cores16; initial state running. Generated input checks: [{"member":"low_thin_G0","source_meta_exists":false,"pluto_ini_exists":false},{"member":"low_trap_G0","source_meta_exists":false,"pluto_ini_exists":false}]. No calculation wait; next checkpoint low thin200ns, then compare100/150/200ns budgets to stopped v1h and report dt/Nrkl/throughput.
+- Rechecked four existing jobs via job.ps1: T018,T016e,T017a_image_v2_02 running; T016i_native_01 wrapper alive with native dispatcher39740 still suspended. Capacity64: T018 high16 + T016e low16 + reference image16 + T018b16. Reference dispatcher41556 and current image24040 continue; no native slot. No other ready cards. Literature request remains unresolved.
+- Disk at2026-11-19T16:24:59+08:00: D free2267.45GB; original low thin/trap rank0 interval growth1.29/1.30GB/h includes time before stop (now stopped). All T018 logs7.08GB/h; constant log-only horizon to150GB 299.2h, excludes fields/other writers/uncertain duration. No immediate threshold warning from this estimate. Next pass include T018b logs and start their new baseline. No deletion/truncation.
+- Latest sampled high actual dt4.5129e-3/1.0697e-2ns; trap latest rank0 kind1 dt_src1.075e-10s. High thin had no diagnostic in bounded tail. No high threshold violation established by this sample; continue monitoring per T018b step6.
+- T018/high_thin_G0/it0: budget_t_ns=1.729993e+002; step:20000; t = 1.6905e+002; dt = 4.5129e-003; 21.1 %; [Mach = 11.203815, Nrkl = 6]
+- T018/high_trap_G0/it0: budget_t_ns=1.889978e+002; step:24000; t = 1.8769e+002; dt = 1.0697e-002; 23.5 %; [Mach = 8.525559, Nrkl = 8]
+- T016e/low_thin_G0/it2: budget_t_ns=8.104883e+002; step:40000; t = 7.9564e+002; dt = 2.0787e-002; 61.2 %; [Mach = 1.759570, Nrkl = 62]
+- T016e/low_trap_G0/it2: budget_t_ns=7.929924e+002; step:40000; t = 7.7265e+002; dt = 2.1075e-002; 59.4 %; [Mach = 1.786628, Nrkl = 58]
+
 ## 2026-11-19T16:06:23+08:00 (UTC+8)
 - T018-low-dt-diagnostic followed and incoming note consumed: delivered all16 rank files under results/T018/inflight_dt with byte-offset verification/hashes. Each rank has6vmax; ranks0-2 have6dt-limit, ranks3-7 none in captured logs. Both rank0 last5step/dt lines verified. At step29000 rank1 kind1[4,3] dt_src8.418e-12/8.399e-12s; actual thin/trap dt8.3429e-4/8.3233e-4ns. Handoff pushed; no causal inference/tuning/stop.
 - T018 remains running per disposition. Four job.ps1 checks running, stderr empty, no new completion/readycard. Low field after250ns still pending (now~203.5ns). Native dispatcher held; reference dispatcher resumed in its existing16core slot;48solver+16image allocation.
@@ -335,19 +347,4 @@
 - T016e/low_trap_G0/it1: t_ns=9.024872e+002; latest logged dt=2.2915e-002, Nrkl=62 (step 52000, log_t_ns=9.0258e+002).
 - skipped ready cards and why: none; no ready cards. Production members advanced or entered next iteration: 6/6.
 - next: job.ps1 status for4 active jobs; archive supplementary v0 metrics and continue requested native/reference handoffs.
-
-## 2026-11-19 08:21 (UTC+8)
-- cards: T016e,T016i,T017a; core energy | action: core_energy_01 finished rc0(all5 cases),validated and handed off in b82e2bb; incoming note deleted. High81 rows,low131 rows exactly every4 snapshots; nonempty-core fields finite; empty-core/adjacent derivative NaNs preserved. Logs/CSVs/provenance committed; reports synced/hash verified. Actual compute about24s (finished08:05:30).
-- T016i_native_01 PID38032, executionf897ccd, elapsed05:56:16: high_trap_G0/it2 rc0 and T015 high command completed; now low_thin_G0/it0. Archived latest18 metrics,29 times,six finite local frame archives; all18 P2 unavailable preserved. Thirteen native images archived(six T016e,seven T015); full T015 handoff waits low series.
-- T017a_image_v2_01 PID12624, execution963dd49, elapsed02:13:38: high_trap_G0/it0 running,stderr empty. Two reference images archived; high-trap it1 and low G0 it0 handoffs pending.
-- T016e PID42332, executionbc79e7d, elapsed14:55:36; stderr empty. Six completed iterations archived; known numerical warnings retained.
-- Progress snapshot 2026-11-19T08:21:01.376178+08:00; budget/log times separate.
-- T016e/high_thin_G0/it2: t_ns=7.109937e+002; latest logged dt=9.3048e-003, Nrkl=28 (step 106000, log_t_ns=7.0567e+002).
-- T016e/high_thin_G1/it0: t_ns=6.159997e+002; latest logged dt=1.1931e-002, Nrkl=53 (step 81000, log_t_ns=6.1074e+002).
-- T016e/high_trap_G0/it2: t_ns=7.854875e+002; latest logged dt=1.6429e-002, Nrkl=8 (step 106000, log_t_ns=7.7900e+002).
-- T016e/low_thin_G0/it1: t_ns=8.744880e+002; latest logged dt=2.2040e-002, Nrkl=62 (step 50000, log_t_ns=8.6420e+002).
-- T016e/low_thin_G1/it0: t_ns=4.929954e+002; latest logged dt=6.3954e-003, Nrkl=59 (step 71000, log_t_ns=4.8767e+002).
-- T016e/low_trap_G0/it1: t_ns=8.844845e+002; latest logged dt=2.5350e-002, Nrkl=32 (step 51000, log_t_ns=8.7798e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
-- next: job.ps1 status for three active jobs; collect native/reference metrics and new solver completions; core diagnostic request complete.
 
