@@ -10,13 +10,16 @@ from pathlib import Path
 
 ap = argparse.ArgumentParser()
 ap.add_argument('iteration', choices=['it0', 'it1', 'it2'])
+ap.add_argument('--member', choices=['high_thin_G0', 'high_trap_G0'])
 a = ap.parse_args()
 repo = Path(__file__).resolve().parents[2]
-job = f'T018c_post_{a.iteration}_01'
+members = [a.member] if a.member else ['high_thin_G0', 'high_trap_G0']
+owner_suffix = '_' + a.member.split('_')[1] if a.member else ''
+job = f'T018c_post_{a.iteration}{owner_suffix}_01'
 jobdir = Path('D:/sim_runs') / job
 summary = json.loads((jobdir / 'postprocess_summary.json').read_text(encoding='utf-8-sig'))
 metadata = json.loads((jobdir / 'job.json').read_text(encoding='utf-8-sig'))
-assert f'/results/T018c/postprocessing/run_{a.iteration}.py' in metadata['cmd'].replace('\\', '/')
+assert f'/results/T018c/postprocessing/run_{a.iteration}{owner_suffix}.py' in metadata['cmd'].replace('\\', '/')
 now = datetime.now().astimezone().isoformat()
 completed = []
 def digest(p):
@@ -27,7 +30,7 @@ def copy(p, dst):
     assert before == digest(dst) == digest(p)
     return before
 
-for member in ['high_thin_G0', 'high_trap_G0']:
+for member in members:
     run = Path('D:/sim_runs/T018c') / member / a.iteration
     dst = repo / 'results/T018c' / member / a.iteration / 'diagnostics'
     dst.mkdir(parents=True, exist_ok=True)
@@ -91,6 +94,6 @@ for member in ['high_thin_G0', 'high_trap_G0']:
     p.write_text(json.dumps(out, indent=2, allow_nan=False) + '\n', encoding='utf-8')
     assert json.loads(p.read_text()) == out
     print(json.dumps({'member':member,'files':{k:{'rows':v['rows'],'missing':{x:y for x,y in v['blank_counts'].items() if y}} for k,v in out['files'].items()}}))
-snap = repo / 'results/T018c/postprocessing' / f'diagnostics_{a.iteration}_completed'
+snap = repo / 'results/T018c/postprocessing' / f'diagnostics_{a.iteration}{owner_suffix}_completed'
 snap.mkdir(exist_ok=True)
 (snap / 'summary.json').write_text(json.dumps({'collected':now,'commands':completed}, indent=2) + '\n', encoding='utf-8')
