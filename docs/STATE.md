@@ -275,3 +275,12 @@ Updated: 2026-11-15
 - Our case: peak intensity ≈ 210 J/cm² / 60 ns ≈ 3.5 GW/cm², 1064 nm, 60 ns. This is not a matched condition (pulse width, wavelength, intensity all differ), so no number is transferred.
 - Order-of-magnitude check: the model's ablated vapour (0.8–1 ng at high fluence) corresponds to about 0.25 µm over the 1/e² spot. A crater of several µm (if confirmed at our conditions) implies removed mass of order 10 ng, but most of it may be melt displacement/ejection rather than vapour. This **supports, but does not prove**, that the surface-evaporation target model under-predicts the vapour mass (phase explosion / volumetric boiling missing).
 - Status: candidate (a) remains the leading hypothesis for the high-fluence over-heated core. A parameter-free test is possible: a phase-explosion criterion (T_s → ~0.9 T_c with explosive boiling of the superheated layer, energy-limited). It would be pre-declared as a v1 model extension with its own uncertainty, and its effect checked first on the target model alone (mass and energy budget), before any hydro run.
+
+## 2026-11-19 12:55 (UTC+8) — low fluence converged (it1), reference imaging v2
+- low_trap_G0 it1 (converged Picard), image_v2 (native + Stark), filter b baseline, sa at 100/200/400/500/600/800/1000/1200 ns:
+  - it1: 3.18/1.27/0.84/0.65/0.46/0.24/0.15/0.09
+  - it0: 3.08/1.14/0.96/0.81/0.67/0.37/0.23/0.16
+  - experiment: 0.76/0.93/0.70/0.45/0.29/0.13/0.04/0.016
+- P1 sa 344 ns, against 218 ns in experiment (it0: 653 ns).
+- **At low fluence the converged Picard state decays much faster than it0.** Gas absorption halves (88 → 44 µJ) while M_Cu halves (1.0 → 0.52 ng): the core is cooler and starts nearer the Cu I regime. From 400 to 800 ns the model is ×1.2–1.9 the experiment; the excess grows to ×4–6 at 1000–1200 ns. The early overshoot at 100 ns (×4) remains.
+- At high fluence (it2, not converged) the trend is the opposite: slower with iteration. Both behaviours fit the core-energy picture: the specific energy of the emitting Cu at t_ref sets the decay.
