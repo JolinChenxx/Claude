@@ -1,2 +1,0 @@
-Follow-up to the it0 handoff consumed in f0711be: T018c_post_it0_01 launched20:59:03 UTC+8 via job.ps1,PID41356,commit6fb0c2b. Startup running/empty stderr;48of64 cores reserved; see results/T018c/postprocessing/launch_it0.json.
-Six diagnostic commands had returned0 in the startup snapshot, but their outputs are not yet collected or validated; v1/v2 imaging and it1 continue in background. Next pass will collect; no foreground wait.
