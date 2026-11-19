@@ -1,5 +1,15 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T15:05:25+08:00 (UTC+8)
+- T018: all four it0 source/source_meta.json files contain boolean phase_explosion=true and all four generated pluto.ini files specify rmax_par 1000. Source mass 8.0814790618e-12 kg (high), 1.6211164969e-12 kg (low); these are inputs, not finished solver results.
+- T018 and T016e production plus both imaging wrappers report running. 48 PLUTO ranks and 16 reference image workers use the 64 physical cores. No capacity for another imaging member. Native dispatcher remains held. No ready cards, new completions or new incoming instructions. Literature lookup remains open; no additional verified measurement this pass.
+- T018/high_thin_G0/it0 budget_t_ns=4.599938e+001; step:4000; t = 4.4369e+001; dt = 3.9458e-003; 5.5 %            [Mach = 4.661221, Nrkl = 4]
+- T018/high_trap_G0/it0 budget_t_ns=4.749745e+001; step:5000; t = 4.7561e+001; dt = 3.3379e-003; 5.9 %            [Mach = 5.013932, Nrkl = 3]
+- T018/low_thin_G0/it0 budget_t_ns=1.614983e+002;  
+- T018/low_trap_G0/it0 budget_t_ns=1.614968e+002;  
+- T016e/low_thin_G0/it2 budget_t_ns=7.299891e+002; step:37000; t = 7.1670e+002; dt = 2.4796e-002; 55.1 %             [Mach = 1.886389, Nrkl = 29]
+- T016e/low_trap_G0/it2 budget_t_ns=6.539889e+002; step:35000; t = 6.3311e+002; dt = 2.1100e-002; 48.7 %             [Mach = 2.036742, Nrkl = 62]
+
 ## 2026-11-19T14:51:27+08:00 (UTC+8)
 - T018 claimed and pushed on ws before start. Launched at 2026-11-19T14:51:00 local time via job.ps1, PID 8480, commit fb8bbbc, --max-cores 32 / OMP=1. Initial status running. Allocation: T018 32 + T016e solvers 16 + active T017a reference 16 = 64 physical cores reserved. No free slot for another imaging member. Check dt/Nrkl and generated inputs next pass.
 - T018/high_thin_G0/it0 phase_explosion=pending; ini: pending
@@ -354,21 +364,6 @@
 - T016e/low_thin_G0/it1: t_ns=8.114782e+002; latest logged dt=2.2135e-002, Nrkl=63 (step 47000, log_t_ns=7.9234e+002).
 - T016e/low_thin_G1/it0: t_ns=4.854999e+002; latest logged dt=6.9927e-003, Nrkl=60 (step 70000, log_t_ns=4.8093e+002).
 - T016e/low_trap_G0/it1: t_ns=8.164875e+002; latest logged dt=2.2489e-002, Nrkl=55 (step 48000, log_t_ns=8.0478e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
-- next: job.ps1 status for all three jobs; collect native/reference metrics per completed run and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
-
-## 2026-11-19 07:06 (UTC+8)
-- cards: T016e,T016i,T017a | action: pulled ws (already current); no note or ready card. Archived first v2 T016e/high_thin_G0/it0 and native T015/high_thin_G1/it0 in af000bd. Each18 metrics,29 times0-740ns,six finite frame archives retained locally with hashes. All18 P2 unavailable in each preserved. Ten native images and one reference image archived; six production completions.
-- T017a_image_v2_01 PID12624, execution963dd49, elapsed00:58:47 at check: high_thin_G0/it0 rc=0,now it1; stderr empty. Baseline b P1 thin/sa=333.6438/324.4461 ns. Per-run metrics pushed; high G0 it1 and low G0 it0 milestone handoffs pending.
-- T016i_native_01 PID38032, executionf897ccd, elapsed04:41:25 at check: T015/high_thin_G1/it0 rc=0,now high_trap_G0/it0; stderr empty. Latest baseline b P1 thin/sa=715.2466/298.1345 ns. Full T015 handoff pending.
-- T016e PID42332, executionbc79e7d, elapsed13:40:45; stderr empty. Known numerical warnings retained.
-- Progress snapshot 2026-11-19T07:06:09.390108+08:00; budget and log times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=5.759918e+002; latest logged dt=1.0336e-002, Nrkl=6 (step 94000, log_t_ns=5.7483e+002).
-- T016e/high_thin_G1/it0: t_ns=5.909956e+002; latest logged dt=1.1124e-002, Nrkl=49 (step 79000, log_t_ns=5.8814e+002).
-- T016e/high_trap_G0/it2: t_ns=6.114905e+002; latest logged dt=1.0302e-002, Nrkl=4 (step 91000, log_t_ns=6.0292e+002).
-- T016e/low_thin_G0/it1: t_ns=7.954943e+002; latest logged dt=2.2135e-002, Nrkl=63 (step 47000, log_t_ns=7.9234e+002).
-- T016e/low_thin_G1/it0: t_ns=4.834987e+002; latest logged dt=6.9927e-003, Nrkl=60 (step 70000, log_t_ns=4.8093e+002).
-- T016e/low_trap_G0/it1: t_ns=8.034866e+002; latest logged dt=2.2195e-002, Nrkl=62 (step 47000, log_t_ns=7.8282e+002).
 - skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
 - next: job.ps1 status for all three jobs; collect native/reference metrics per completed run and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
 
