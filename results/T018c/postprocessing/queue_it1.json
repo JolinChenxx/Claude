@@ -356,7 +356,7 @@
       "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin_v2.py",
       "runner_sha256": "6885168cfcf22b53e03621439d08594b1f852a7ed52664154e64098963178671",
       "workers": 16,
-      "state": "ready_to_start",
+      "state": "running",
       "commands": [
         {
           "name": "high_thin_G0_image_v2",
@@ -476,7 +476,12 @@
         "can_start": true,
         "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics."
       },
-      "continuation_authority": "23929ba: finish already queued it1 postprocessing; original plan prepared 2026-11-20 01:55"
+      "continuation_authority": "23929ba: finish already queued it1 postprocessing; original plan prepared 2026-11-20 01:55",
+      "launched": "2026-11-20T03:12:25",
+      "pid": 51676,
+      "launch_commit": "1bb6bcb",
+      "launch_evidence": "launch_it1_thin_v2.json",
+      "startup_checked": "2026-11-20T03:12:49+08:00"
     }
   ],
   "deduplication": "Ten distinct prescribed outputs preassigned to four member/version owners. No overlapping whole-it1 queue. Active-output guards run at preflight and before each command.",
