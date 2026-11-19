@@ -1,0 +1,169 @@
+{
+  "verified": "2026-11-20T04:55:43.189642+08:00",
+  "job": {
+    "job_id": "T016i_catchup_01",
+    "metadata": {
+      "id": "T016i_catchup_01",
+      "pid": 27348,
+      "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016i\\catchup\\run_native_imaging.py",
+      "threads": 1,
+      "commit": "7ff09dc",
+      "started": "2026-11-20T04:54:22",
+      "dir": "D:\\sim_runs\\T016i_catchup_01"
+    },
+    "exitcode": null,
+    "created": 1795121661.850494,
+    "wrapper_identity_matches": true,
+    "children": [
+      46540,
+      47892,
+      10436,
+      38180,
+      29192,
+      39304,
+      44212,
+      51968,
+      42016,
+      19956,
+      14312,
+      23976,
+      45648,
+      26756,
+      53632,
+      22448,
+      25196,
+      20504,
+      26752,
+      36204
+    ],
+    "execution": {
+      "job_id": "T016i_catchup_01",
+      "started": "2026-11-20T04:54:32.671932+08:00",
+      "runner_sha256": "34aae8c3890104c0e346ffc4c6ddf384d575da477d37e128ecd4dbf6de66909d",
+      "plan_sha256": "e13d2fb51c328567a9eff5ef76b29fec580abc6c7b1f7edeb5cb31b59544ffc8",
+      "capacity": {
+        "checked": "2026-11-20T04:54:32.664327+08:00",
+        "reservations": {
+          "T018c_post_it1_thin_v2_01": 16,
+          "T019_split_01": 32
+        },
+        "wrapper_identities": [
+          {
+            "job": "T018c_post_it1_thin_v2_01",
+            "pid": 51676,
+            "created": 1795115545.0127707,
+            "children": [
+              16008,
+              44872,
+              13004,
+              29332,
+              34960,
+              3868,
+              53784,
+              8864,
+              42840,
+              44216,
+              46152,
+              41624,
+              43932,
+              31420,
+              40196,
+              10152,
+              43852,
+              10860,
+              3524
+            ],
+            "cores": 16
+          },
+          {
+            "job": "T019_split_01",
+            "pid": 53740,
+            "created": 1795116398.0373397,
+            "children": [
+              25920,
+              46136,
+              42352,
+              9044,
+              46996,
+              49420,
+              43672,
+              15596,
+              53768,
+              48528,
+              23900,
+              45248,
+              6552,
+              25344,
+              44004,
+              25512,
+              51216,
+              15660,
+              52964,
+              48680,
+              25168,
+              33184,
+              16756,
+              41052,
+              36788,
+              14356,
+              31552,
+              23272,
+              27404,
+              37848,
+              42796,
+              32992,
+              15632,
+              41808,
+              27736,
+              29104
+            ],
+            "cores": 32
+          }
+        ],
+        "pluto_ranks": 0,
+        "reserved_other_cores": 48,
+        "requested_cores": 16,
+        "including_own_reservation": 64,
+        "free_before": 16,
+        "can_start": true
+      }
+    },
+    "stderr_tail": ""
+  },
+  "runner": {
+    "pid": 47892,
+    "created": 1795121662.0171247,
+    "priority": 16384,
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "initial_image": {
+    "job": "T016i_catchup_01",
+    "pid": 38180,
+    "created": 1795121673.452534,
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "-m",
+      "lipsim.image",
+      "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+      "--series",
+      "high",
+      "--tables",
+      "D:/sim_runs/tables/v1c",
+      "--out",
+      "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v1",
+      "--workers",
+      "16",
+      "--scenarios",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+    ],
+    "output": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v1",
+    "workers": 16,
+    "priority": 16384,
+    "worker_cpu_seconds": 98.75
+  },
+  "note": "Startup verification only. No foreground computation wait or completion collection after launch."
+}
