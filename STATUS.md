@@ -1,5 +1,15 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T20:35:35.625996+08:00 (UTC+8)
+- Work card: none (monitoring only). Pulled ws, current at7b9d85d. Incoming handoff/to_codex empty and no owner: codex/status: ready cards. No newly completed command or iteration to collect; no claim, launch, stop, resume or ws commit. Unrelated output/ preserved.
+- job.ps1 status checked T018c, T016i_native_01 and T017a_image_v2_02: all wrappers running, stderr tails empty. Native remains T014 high_thin_G1/it0/v1; reference remains T016e low_thin_G0/it1/v2. Both dispatchers running. T018b remains done under Claude's prior disposition.
+- At 2026-11-19T20:34:46.458214+08:00,16 actual T018c PLUTO ranks + two16-worker image pools =48 physical cores reserved,16 free. No completed T018c iteration awaits diagnostics; native card's sequential batch-root order retained. No additional job to start; spare slot available for priority replacement postprocessing.
+- Image PID20320: 16 workers; accumulated worker CPU 64869.078s, increase 13432.578s since prior pass. No stalled-progress evidence.
+- Image PID29452: 16 workers; accumulated worker CPU 74963.000s, increase 10851.719s since prior pass. No stalled-progress evidence.
+- Sample 2026-11-19T20:34:46.458214+08:00: T018c/high_thin_G0/it0 budget_t_ns=713.4808; step:31000; t = 7.0256e+002; dt = 5.2217e-002; 87.8 %; [Mach = 4.513347, Nrkl = 13]. Latest bounded-tail source limit: ! lip dt-limit: step 22000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=3.356e-001 T=3.108e+003 rhoe=2.199e+005 q=2.695e+008 dt_src=6.226e-010 s; dt_src is not actual step dt.
+- Sample 2026-11-19T20:34:46.458214+08:00: T018c/high_trap_G0/it0 budget_t_ns=731.9939; step:30000; t = 7.0214e+002; dt = 3.2321e-002; 87.8 %; [Mach = 4.141258, Nrkl = 10]. No dt-limit line in bounded8 MB tail.
+- Disk free 2253.647 GB decimal; active T018c log growth 0.000096618 GB/h over 879.5s. T018/T018b logs unchanged. Near-zero short-interval log growth is not useful as a long-range forecast; log-only estimates exclude fields, images, other writers, future rates and remaining duration. No threshold action or deletion/truncation. Evidence: D:/sim_runs/T018/pass_20261119_2033_monitor.json.
+
 ## 2026-11-19T20:22:44.070964+08:00 (UTC+8)
 - Work card: none (monitoring only). Pulled ws, already current at7b9d85d. Incoming handoff/to_codex empty and no owner: codex/status: ready cards. No newly completed command or iteration to collect; no claim, launch, stop, resume or ws commit. Unrelated output/ preserved.
 - job.ps1 status checked T018c, T016i_native_01 and T017a_image_v2_02: all wrappers running, stderr tails empty. Native remains T014 high_thin_G1/it0/v1; reference remains T016e low_thin_G0/it1/v2. Both image dispatchers running. T018b remains done under Claude's prior disposition.
@@ -319,14 +329,4 @@
 - T016e/low_thin_G0/it2:budget_t_ns=3.734837e+002;step:27000; t = 3.4680e+002; dt = 2.6091e-002; 26.7 % | [Mach = 2.636546, Nrkl = 58]
 - T016e/low_trap_G0/it2:budget_t_ns=2.039912e+002;step:21000; t = 1.8710e+002; dt = 1.6767e-002; 14.4 % | [Mach = 3.404372, Nrkl = 4]
 - T016e_r/low_thin_G1/it0:budget_t_ns=5.444896e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
-- readycards=[];no eligiblecard.
-
-## 2026-11-19T12:34:58+08:00 (UTC+8)
-- cards:T016i,T016e,T017a;pulleddd7a616. Claude consumed previousimage/literaturehandoffs;no newincomingnotes. Broadliterature verification remains incomplete with limitations already handedoff;note retained.
-- T016r2low_trap_G0/it0 native rc0,collected18metricsets/30times/sixfinite hashverifiedlocalframe archives;12P2unavailable retained. BothT016r2G0it0 sets complete;22nativeimages archivedtotal. Handoff/manifest prepared;reportsynced/hashverified. Native38032 nowT016h high_trap_G0/it0(v1b).
-- Fourjob.ps1 statuses running,stderr empty:production42332,native38032,reference12624(T016elowtrap it1),lowG1continuation12720. No newsolver/referencecompletion. No parameterchange,stop or newlaunch.
-- T016e/high_thin_G1/it0:budget_t_ns=7.759918e+002;step:97000; t = 7.7154e+002; dt = 9.2716e-003; 96.4 % | [Mach = 4.104409, Nrkl = 9]
-- T016e/low_thin_G0/it2:budget_t_ns=3.124917e+002;step:25000; t = 2.7998e+002; dt = 4.2617e-002; 21.5 % | [Mach = 2.779513, Nrkl = 8]
-- T016e/low_trap_G0/it2:budget_t_ns=1.279980e+002;no step in tail
-- T016e_r/low_thin_G1/it0:budget_t_ns=5.409973e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
 - readycards=[];no eligiblecard.
