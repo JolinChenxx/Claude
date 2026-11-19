@@ -1,0 +1,407 @@
+{
+  "verified": "2026-11-20T06:36:52.754565+08:00",
+  "job": {
+    "id": "T019_split_01",
+    "pid": 53740,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\run_split.py",
+    "threads": 1,
+    "commit": "533c8be",
+    "started": "2026-11-20T03:26:38",
+    "dir": "D:\\sim_runs\\T019_split_01"
+  },
+  "wrapper_exitcode": 0,
+  "owner_summary": {
+    "job_id": "T019_split_01",
+    "started": "2026-11-20T03:26:48.883444+08:00",
+    "state": "completed",
+    "runner_sha256": "e3a6165c85b77328a5b79af1fe9cc0a4afdf1918078ac31b5bbdbc62e6509a67",
+    "plan_sha256": "c54ec290f66f665e781662e7a3fb95b6792b07fe25578fbc5454a7373183326c",
+    "initial_capacity": {
+      "checked": "2026-11-20T03:26:48.874886+08:00",
+      "reservations": {
+        "T016i_native_01": 16,
+        "T018c_post_it1_thin_v2_01": 16
+      },
+      "wrapper_identities": [
+        {
+          "job": "T016i_native_01",
+          "pid": 38032,
+          "created": 1795026177.8378432,
+          "children": [
+            46020,
+            10720,
+            20504,
+            24172,
+            9012,
+            4636,
+            52692,
+            42972,
+            31392,
+            32640,
+            32428,
+            43432,
+            49788,
+            14288,
+            52636,
+            33116,
+            46956,
+            45756,
+            22788,
+            49672
+          ],
+          "cores": 16
+        },
+        {
+          "job": "T018c_post_it1_thin_v2_01",
+          "pid": 51676,
+          "created": 1795115545.0127707,
+          "children": [
+            16008,
+            44872,
+            13004,
+            29332,
+            34960,
+            3868,
+            53784,
+            8864,
+            42840,
+            44216,
+            46152,
+            41624,
+            43932,
+            31420,
+            40196,
+            10152,
+            43852,
+            10860,
+            3524
+          ],
+          "cores": 16
+        }
+      ],
+      "pluto_ranks": 0,
+      "reserved_other_cores": 32,
+      "requested_cores": 32,
+      "including_own_reservation": 64,
+      "free_before": 32,
+      "can_start": true
+    },
+    "reserved_cores": 32,
+    "parallel_slots": 2,
+    "commands": [
+      {
+        "name": "high_thin_G0_it2_continuum",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+          "--series",
+          "high",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_continuum",
+          "--workers",
+          "16"
+        ],
+        "started": "2026-11-20T03:26:49.213258+08:00",
+        "log": "D:\\sim_runs\\T019_split_01\\high_thin_G0_it2_continuum.log",
+        "execution": "computed_by_owner",
+        "returncode": 0,
+        "ended": "2026-11-20T05:14:19.599513+08:00"
+      },
+      {
+        "name": "high_thin_G0_it2_lines",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+          "--series",
+          "high",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_lines",
+          "--workers",
+          "16"
+        ],
+        "started": "2026-11-20T03:26:49.735401+08:00",
+        "log": "D:\\sim_runs\\T019_split_01\\high_thin_G0_it2_lines.log",
+        "execution": "computed_by_owner",
+        "returncode": 0,
+        "ended": "2026-11-20T05:13:12.930339+08:00"
+      },
+      {
+        "name": "low_thin_G0_it1_continuum",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+          "--series",
+          "low",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2_continuum",
+          "--workers",
+          "16"
+        ],
+        "started": "2026-11-20T05:13:13.825249+08:00",
+        "log": "D:\\sim_runs\\T019_split_01\\low_thin_G0_it1_continuum.log",
+        "execution": "computed_by_owner",
+        "returncode": 0,
+        "ended": "2026-11-20T06:33:08.659268+08:00"
+      },
+      {
+        "name": "low_thin_G0_it1_lines",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+          "--series",
+          "low",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2_lines",
+          "--workers",
+          "16"
+        ],
+        "started": "2026-11-20T05:14:20.001202+08:00",
+        "log": "D:\\sim_runs\\T019_split_01\\low_thin_G0_it1_lines.log",
+        "execution": "computed_by_owner",
+        "returncode": 0,
+        "ended": "2026-11-20T06:34:20.825437+08:00"
+      }
+    ],
+    "pending_commands": [],
+    "ended": "2026-11-20T06:34:20.833913+08:00"
+  },
+  "owner_summary_sha256": "5a5c241980ceeb7a32b16dcdfefa48daf5a06ee93f5a3b8515812ca14cf4ca17",
+  "diagnostic_only": true,
+  "self_absorbed_additivity_required": false,
+  "metrics_csvs": 72,
+  "image_summaries": 4,
+  "validated_local_frame_archives": 24,
+  "archives": [
+    {
+      "member": "high_thin_G0",
+      "component": "continuum",
+      "validation": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\high_thin_G0\\image_v2_continuum\\validation.json",
+      "validation_sha256": "cc030b9808f7856d9a8602b00bb2fce3e0266df574689831a1e0855e95bf9d82",
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "b_baseline_P1_ns": {
+        "thin": 287.82181009074185,
+        "sa": 287.82616209839387
+      }
+    },
+    {
+      "member": "high_thin_G0",
+      "component": "lines",
+      "validation": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\high_thin_G0\\image_v2_lines\\validation.json",
+      "validation_sha256": "648c7b4da5c64308083e094a15f2ca54f111a05656d7eb718bf6f12426196027",
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "negative_P1": {
+        "a_thin_baseline": -482.34557271627904,
+        "a_thin_low": -519.4396667781039,
+        "a_thin_high": -514.2769435519111,
+        "a_sa_baseline": -591.094866964806,
+        "a_sa_low": -631.685409679273,
+        "a_sa_high": -636.1221747028999
+      },
+      "nonfinite_P1": [],
+      "b_baseline_P1_ns": {
+        "thin": 1406.3135435747997,
+        "sa": 1407.3910647176833
+      }
+    },
+    {
+      "member": "low_thin_G0",
+      "component": "continuum",
+      "validation": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\low_thin_G0\\image_v2_continuum\\validation.json",
+      "validation_sha256": "39b6ec44c2e2ef81c4e4e9fe0f095d9e2a2594fd460cf4e23f48dcb57db167ae",
+      "P2_unavailable": [],
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "b_baseline_P1_ns": {
+        "thin": 194.0029415489168,
+        "sa": 194.00755666035533
+      }
+    },
+    {
+      "member": "low_thin_G0",
+      "component": "lines",
+      "validation": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\low_thin_G0\\image_v2_lines\\validation.json",
+      "validation_sha256": "1d1a18f89597b3651797979544df43e284d6e34471016a584e5b1bc4f1720418",
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_low",
+        "a_sa_high"
+      ],
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "b_baseline_P1_ns": {
+        "thin": 334.8647848783444,
+        "sa": 317.8589976260833
+      }
+    }
+  ],
+  "sources": [
+    {
+      "member": "high_thin_G0",
+      "mode": "thin",
+      "component": "all",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_thin_baseline.csv",
+      "sha256": "b876b6d0fdcc69bc48945f564b8ea85c1f61787b2fae978c63b6527b8301bfe6",
+      "rows": 29
+    },
+    {
+      "member": "high_thin_G0",
+      "mode": "thin",
+      "component": "continuum",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\high_thin_G0\\image_v2_continuum\\metrics_b_thin_baseline.csv",
+      "sha256": "77f4b5880691e5e6e506ba93eef4844d9f48087505c3f267a0f323a39a70b5b3",
+      "rows": 29
+    },
+    {
+      "member": "high_thin_G0",
+      "mode": "thin",
+      "component": "lines",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\high_thin_G0\\image_v2_lines\\metrics_b_thin_baseline.csv",
+      "sha256": "1f67b9c155536f1a4d124ce979160ed548e2734ad0c92148ed140593d962f251",
+      "rows": 29
+    },
+    {
+      "member": "high_thin_G0",
+      "mode": "sa",
+      "component": "all",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_sa_baseline.csv",
+      "sha256": "03c20f617d35e7302c0a1068abbe922d44f2f9e5c3bb721c2606d8e3acb1498a",
+      "rows": 29
+    },
+    {
+      "member": "high_thin_G0",
+      "mode": "sa",
+      "component": "continuum",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\high_thin_G0\\image_v2_continuum\\metrics_b_sa_baseline.csv",
+      "sha256": "c10c86542946dddf21868bc232b84e701c82616a515f317a8ac337cf255e6dd8",
+      "rows": 29
+    },
+    {
+      "member": "high_thin_G0",
+      "mode": "sa",
+      "component": "lines",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\high_thin_G0\\image_v2_lines\\metrics_b_sa_baseline.csv",
+      "sha256": "3de238f1b227d238addd5cbf0f19ce238e68f608b0ba95a5a430a90471fca695",
+      "rows": 29
+    },
+    {
+      "member": "low_thin_G0",
+      "mode": "thin",
+      "component": "all",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_thin_baseline.csv",
+      "sha256": "1eb71d0085fc2d66dc0fc9f3d668bd9c68accdb909ad41f77ffec4c8b3a00bb7",
+      "rows": 30
+    },
+    {
+      "member": "low_thin_G0",
+      "mode": "thin",
+      "component": "continuum",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\low_thin_G0\\image_v2_continuum\\metrics_b_thin_baseline.csv",
+      "sha256": "47aa2e432c13f54f30f49c8ea69966b9fe9b76927073dbd069504cdf8cd77ee2",
+      "rows": 30
+    },
+    {
+      "member": "low_thin_G0",
+      "mode": "thin",
+      "component": "lines",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\low_thin_G0\\image_v2_lines\\metrics_b_thin_baseline.csv",
+      "sha256": "0ce157321a8f9b7ae64ff803edf3c1034940beeffd83a62bb8dc385269010c58",
+      "rows": 30
+    },
+    {
+      "member": "low_thin_G0",
+      "mode": "sa",
+      "component": "all",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_sa_baseline.csv",
+      "sha256": "4d15a69d95ec9580a03742d6654b2bb13f630a603587c3f4f803e847c6a2ccd0",
+      "rows": 30
+    },
+    {
+      "member": "low_thin_G0",
+      "mode": "sa",
+      "component": "continuum",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\low_thin_G0\\image_v2_continuum\\metrics_b_sa_baseline.csv",
+      "sha256": "73968cc59752a673ba1831fe7d5e4aa85f7dce247b0184529d67a3a98ddb9d1c",
+      "rows": 30
+    },
+    {
+      "member": "low_thin_G0",
+      "mode": "sa",
+      "component": "lines",
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\low_thin_G0\\image_v2_lines\\metrics_b_sa_baseline.csv",
+      "sha256": "08107098e1dd60e746e559f50986bd172bc079fd8fe5cfccff9e6a4882481973",
+      "rows": 30
+    }
+  ],
+  "split_table_rows": 118,
+  "split_table_sha256": "ee8a8d861bc775f4a14c626cd60e8b3a526205fe17bf6eadfc8858e0129411a0",
+  "generator_sha256": "f874cffec7dff9e38bf05b5872b170ab0e3b2b4616ed154e595af350a5d6e9f1",
+  "value_policy": "Exact source CSV strings; no interpolation, renormalisation or rounding.",
+  "snapshot_policy": "Frozen size/mtime fingerprints; no full raw-field rehash.",
+  "job_wall_seconds": 11251.950469
+}
