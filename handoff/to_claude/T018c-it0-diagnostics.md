@@ -1,0 +1,2 @@
+Both high it0 members: all six emission/core-energy/shock commands rc0; archived six CSVs/logs/validation. Per member4/81/321 rows;1000ns emission request actually uses800ns. Near300ns core E_int thin/trap68.4093774/71.3212187uJ,M_Cu6.32980734/6.35353218ng,T_mw5604.59/5680.24K; see tasks/T018c.report.md and diagnostics CSVs.
+Missing no-core/derivative/shock values preserved; original35,328,535 ConsToPrim warnings remain. Image_v1/v2 queue and solverit1 continue in background; physical review and final highit2 handoff pending. No new job, stop or parameter change.
