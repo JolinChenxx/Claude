@@ -1,0 +1,2 @@
+high_thin_G1/it0 reached800ns,rc0,71248s;56,723,606ConsToPrim across16ranklogs (hashes/counts/tails archived). M_Cu=M_src3.21827e-12kg;target-model/PLUTO absorption62.2318/8.71477uJ (+614.10%). Configured Picardit0 only; please review warnings/budget before grid-comparison use.
+See tasks/T016e.report.md and results/T016e/high_thin_G1/it0/. v0 imaging prepared; native/reference follow prescribed queues; no numerical tuning or solver rerun.
