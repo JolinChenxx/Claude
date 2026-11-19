@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T17:21:02+08:00 (UTC+8)
+- Cards checked: T018b, T018c, T016e, T016i, T017a. Pulled ws 20eb6a0: Claude reviewed the completed T018b low it0 evidence in STATE and consumed its handoff; high-fluence test continues. No incoming instructions, no ready Codex card, no new solver/image completion or job launch this pass. Existing completed it0 evidence/counts were not duplicated. Untracked output/ untouched.
+- All five job.ps1 status checks return running: T018b39900, T018c19644, T016e42332, T016i_native_01/38032, T017a_image_v2_02/46228; wrapper stderr tails empty. Registry last rows remain the two previously collected T018b it0 completions. All six current solver rank0 tails lack a Done marker and their budgets advanced.
+- Capacity check: 48 PLUTO ranks (T016e16 + T018b16 + T018c16) + active reference image16 = 64 physical cores reserved, free0. Verified original PID/create-time for native dispatcher39740 (held), reference dispatcher41556 (held), and reference image24040 (running with16 children). No process state changed. T018b it0 postprocessing remains prepared but NOT launched; wait for the first16-core slot and retain replacement diagnostics priority.
+- Disk sample 2026-11-19T17:20:29+08:00: D free 2260.281 GB decimal. Interval log growth T018=0.0000, T018b=0.3934, T018c=0.0037 GB/h; all sampled logs have preceding baselines. Active rank0 rates low thin/trap0.0688/0.3178 and high thin/trap0.00182/0.00179 GB/h. Constant log-only horizon to150GB is 5314.3h; excludes fields, other writers, future rate changes and unknown remaining runtime, so not a batch-end forecast. No immediate threshold alert; logs preserved.
+- T018c latest sampled rank0 source limit kind2 (heat/radiation), dt_src3.501e-11/3.503e-11 s; actual logged dt0.0034653/0.0034676 ns. No sampled stall threshold met; no tuning/intervention.
+- Sample 2026-11-19T17:20:29+08:00: T018b/low_thin_G0/it1 budget_t_ns=642.9551; step:6000; t = 5.4891e+002; dt = 1.4131e-001; 42.2 % [Mach = 1.031901, Nrkl = 3]
+- Sample 2026-11-19T17:20:29+08:00: T018b/low_trap_G0/it1 budget_t_ns=599.9054; step:6000; t = 5.4898e+002; dt = 1.4132e-001; 42.2 % [Mach = 1.034832, Nrkl = 3]
+- Sample 2026-11-19T17:20:29+08:00: T018c/high_thin_G0/it0 budget_t_ns=61.99782; step:8000; t = 6.0022e+001; dt = 3.4653e-003; 7.5 % [Mach = 9.301302, Nrkl = 4]
+- Sample 2026-11-19T17:20:29+08:00: T018c/high_trap_G0/it0 budget_t_ns=60.49726; step:8000; t = 5.9968e+001; dt = 3.4676e-003; 7.5 % [Mach = 9.398617, Nrkl = 4]
+- Sample 2026-11-19T17:20:29+08:00: T016e/low_thin_G0/it2 budget_t_ns=849.4902; step:42000; t = 8.3886e+002; dt = 2.0664e-002; 64.5 % [Mach = 1.684592, Nrkl = 63]
+- Sample 2026-11-19T17:20:29+08:00: T016e/low_trap_G0/it2 budget_t_ns=846.9851; step:43000; t = 8.4585e+002; dt = 2.4829e-002; 65.1 % [Mach = 1.684815, Nrkl = 39]
+
 ## 2026-11-19T17:15:21+08:00 (UTC+8)
 - Cards: T018b, T018c; checked T016e and imaging jobs. Pulled Claude's T018 CI correction: status done with superseded_by T018b/T018c (30305dc/1fd6434). Incoming handoff directory empty; no ready Codex cards. Preserved/rebased the two legitimate completed registry rows in 92a805c before pull; unrelated output/ remains untouched.
 - T018b low_thin_G0/it0 and low_trap_G0/it0 both completed 1300 ns, rc0, at 16:59:19/17:00:28; registry wall times 1917.6/1987.0 s. Both automatically advanced to it1. Streamed all 16 stable completed logs once: ConsToPrim totals 6,766,969 / 6,773,254 (rank0 4,620,117 / 4,624,393; rank1 2,146,852 / 2,148,861; ranks2-7 zero). Archived budget, input metadata, completion JSON, per-rank hashes/Done markers and tails. rc0 is not numerical acceptance; warnings handed to Claude without tuning.
@@ -333,18 +346,3 @@
 - T016e/low_trap_G0/it1: budget_t_ns=9.734937e+002; dt=2.2753e-002,Nrkl=63 (step54000,log_t_ns=9.5063e+002).
 - T016e_r/low_thin_G1/it0: budget_t_ns=5.019880e+002; no fresh dt/Nrkl; inherited pre-restart sample excluded.
 - skipped ready cards and why: none; no ready cards. Active solver members advanced; next check5 jobs and requested milestone handoffs.
-
-## 2026-11-19 09:20 (UTC+8)
-- cards: T016e,T016i,T017a | action: initial pull blocked by live registry append; committed exact high_thin_G0/it2 completion then rebased onto dd742ff (Claude restart acknowledgment). No incoming note or ready card. Archived eighth solver completion and sixteenth native image.
-- high_thin_G0/it2 rc0,26064.2s,800ns,ConsToPrim1,002,826(all8 ranks counted/hashed). M_Cu=M_src9.9950257144e-13kg; target-model/PLUTO absorption22.3066691/17.5377437uJ. v1c hashes/rmax1000 checked it2/it3; it3 running. Known warnings preserved.
-- Launched T016e_post_high_thin_03 PID32216,executionc7bbed7,started2026-11-19T09:20:21: diag_emission plus v0 imaging,8 workers,BelowNormal. Native/v2 high G0it2 repeats pending. End after launch bookkeeping.
-- T016i_native_01 PID38032: low_thin_G0/it2 rc0 archived,now T015/low_thin_G1/it0;15 unavailable P2 preserved. Full T015 handoff pending. T017a_image_v2_01 PID12624: high_trap_G0/it1 running,three reference images archived. Initial status stderr tails empty.
-- T016e_r_low_G1_01 PID12720,MPI43356: fresh budget advanced beyond restart checkpoint to499.4922ns at09:18:53;16 ranks active with CPU. Fresh cumulative source/energy columns reset at restart; retained raw records. No new logged step/Nrkl at initial check; inherited pre-restart samples are not new rmax4000 evidence.
-- T016e/high_thin_G0/it3: budget_t_ns=4.299988e+001; dt=3.2060e-003,Nrkl=3 (step5000,log_t_ns=4.2283e+001).
-- T016e/high_thin_G1/it0: budget_t_ns=6.299917e+002; dt=1.1364e-002,Nrkl=55 (step82000,log_t_ns=6.2192e+002).
-- T016e/high_trap_G0/it3: budget_t_ns=7.999807e+001; dt=3.7586e-003,Nrkl=4 (step17000,log_t_ns=8.0457e+001).
-- T016e/low_thin_G0/it1: budget_t_ns=9.584825e+002; dt=2.2638e-002,Nrkl=63 (step53000,log_t_ns=9.3409e+002).
-- T016e/low_thin_G1/it0 [intentionally stopped]: budget_t_ns=4.980000e+002; dt=6.3659e-003,Nrkl=63 (step72000,log_t_ns=4.9418e+002).
-- T016e/low_trap_G0/it1: budget_t_ns=9.484838e+002; dt=2.5222e-002,Nrkl=36 (step53000,log_t_ns=9.2650e+002).
-- T016e_r/low_thin_G1/it0: budget_t_ns=4.994922e+002; no fresh dt/Nrkl; inherited pre-restart dt0.0063659,Nrkl63 excluded.
-- skipped ready cards and why: none; no ready cards. Active solver members advanced/entered next iteration; no stagnation escalation. Next check5 active jobs.
