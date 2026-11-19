@@ -1,0 +1,1 @@
+high_thin_G1/it0 v0 imaging rc0,18 metric sets and finite raw frames verified; all18P2 unavailable preserved. See results/T016e/high_thin_G1/it0/image/ and report; prior 56,723,606 ConsToPrim and absorption discrepancy still require review.
