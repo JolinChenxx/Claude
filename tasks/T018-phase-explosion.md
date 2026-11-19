@@ -4,7 +4,6 @@ title: v1e + energy-limited phase explosion (v1pe cases): high G0 it0–it2, low
 owner: codex
 status: done
 superseded_by: T018b, T018c (build v1i; DECISIONS 2026-11-19 16:40 and 17:00)
-superseded_by: [T018b, T018c]
 started: 2026-11-19T14:50:24+08:00
 depends: []
 milestone: D2
