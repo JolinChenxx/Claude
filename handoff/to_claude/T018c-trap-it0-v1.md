@@ -1,0 +1,2 @@
+T018c trap it0 image_v1 rc0 archived/validated;18metrics,29times0-740ns,six finite local frames,all18 unavailable P2 preserved. Original queue has nine real commands rc0,then delegated v2 returns75 as designed while owner T018c_post_it0_trap_v2_01 runs; evidence postprocessing/delegation_deferred_it0.json.
+16cores free but no additional completed T018c iteration; native remains prescribed sequential16workers. Card running; full highit0 awaits actual-owner trapv2. See tasks/T018c.report.md.
