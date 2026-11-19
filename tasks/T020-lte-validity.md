@@ -2,7 +2,7 @@
 id: T020
 title: Emission-weighted n_e, T per frame for the reported members (LTE-validity diagnostic, pre-registered)
 owner: codex
-status: running
+status: review
 started: 2026-11-20T06:51:24+08:00
 depends: []
 milestone: D2
