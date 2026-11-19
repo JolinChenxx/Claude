@@ -1,5 +1,15 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T12:34:58+08:00 (UTC+8)
+- cards:T016i,T016e,T017a;pulleddd7a616. Claude consumed previousimage/literaturehandoffs;no newincomingnotes. Broadliterature verification remains incomplete with limitations already handedoff;note retained.
+- T016r2low_trap_G0/it0 native rc0,collected18metricsets/30times/sixfinite hashverifiedlocalframe archives;12P2unavailable retained. BothT016r2G0it0 sets complete;22nativeimages archivedtotal. Handoff/manifest prepared;reportsynced/hashverified. Native38032 nowT016h high_trap_G0/it0(v1b).
+- Fourjob.ps1 statuses running,stderr empty:production42332,native38032,reference12624(T016elowtrap it1),lowG1continuation12720. No newsolver/referencecompletion. No parameterchange,stop or newlaunch.
+- T016e/high_thin_G1/it0:budget_t_ns=7.759918e+002;step:97000; t = 7.7154e+002; dt = 9.2716e-003; 96.4 % | [Mach = 4.104409, Nrkl = 9]
+- T016e/low_thin_G0/it2:budget_t_ns=3.124917e+002;step:25000; t = 2.7998e+002; dt = 4.2617e-002; 21.5 % | [Mach = 2.779513, Nrkl = 8]
+- T016e/low_trap_G0/it2:budget_t_ns=1.279980e+002;no step in tail
+- T016e_r/low_thin_G1/it0:budget_t_ns=5.409973e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
+- readycards=[];no eligiblecard.
+
 ## 2026-11-19T12:21:40+08:00 (UTC+8)
 - cards:T016e,T016i,T017a;pulled249608b. Claude acknowledged/closedT016f afterfailedv1h check;STATE selects highit2/lowit1 references. No stopnote supplied;existingjobs preserved.
 - Collectedlow_trap_G0/it1 v0image rc0:18metricsets,30times10?1230ns,sixfiniteframes retainedlocally,copiedmetrics hashesverified;9P2unavailable retained. BaselinebP1thin/sa564.8856747/452.1765772ns. Completionlogs and handoffpushed1275031;reportsynced/hashverified.
@@ -408,18 +418,4 @@
 - T016e/low_trap_G0/it1: t_ns=6.859694e+002; latest logged dt=3.3065e-002, Nrkl=16 (step 42000, log_t_ns=6.5726e+002).
 - skipped ready cards and why: none; T017a was claimed, its imaging stage waits for T016i per card. No incoming note. Production members advanced: 6/6.
 - next: continue native T015 metrics and full-set handoff; collect new T016e iterations/repeat native imaging; start T017a v2 after T016i. No parameter changes or foreground waiting.
-
-## 2026-11-19 04:52 (UTC+8)
-- cards: T016e,T016i | action: pulled 859bd53 (Claude native low-series review). Archived first T015 native run high_thin_G0/it0 in 52df599: 18 metric CSVs,29 times 0-740 ns,six finite frame archives retained locally with hashes. All 18 P2 unavailable preserved. Seven native runs archived total (six T016e,one T015). T015 results 15,199,619 bytes, below 20 MiB.
-- T016i_native_01 PID 38032, execution commit f897ccd, elapsed 02:26:18 at check: T015/high_thin_G0/it0 rc=0, now it1; stderr empty. Full T015 set handoff pending.
-- production: T016e PID 42332, execution commit bc79e7d, elapsed 11:25:38 at check; stderr empty. Six completed iterations archived, no new completion; known numerical warnings retained.
-- Progress snapshot 2026-11-19T04:52:20.410304+08:00; budget and logged times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=2.929969e+002; latest logged dt=9.2338e-003, Nrkl=6 (step 58000, log_t_ns=2.8666e+002).
-- T016e/high_thin_G1/it0: t_ns=4.904890e+002; latest logged dt=1.3087e-002, Nrkl=12 (step 71000, log_t_ns=4.8357e+002).
-- T016e/high_trap_G0/it2: t_ns=2.924926e+002; latest logged dt=1.0041e-002, Nrkl=7 (step 58000, log_t_ns=2.8853e+002).
-- T016e/low_thin_G0/it1: t_ns=6.449876e+002; latest logged dt=2.5133e-002, Nrkl=59 (step 40000, log_t_ns=6.1668e+002).
-- T016e/low_thin_G1/it0: t_ns=4.544959e+002; latest logged dt=7.4886e-003, Nrkl=63 (step 67000, log_t_ns=4.5263e+002).
-- T016e/low_trap_G0/it1: t_ns=6.374918e+002; latest logged dt=3.8196e-002, Nrkl=8 (step 41000, log_t_ns=6.2370e+002).
-- skipped ready cards and why: none; no ready cards or incoming note. Production members advanced: 6/6.
-- next: archive native T015 outputs and hand off its complete set; collect new production iterations and repeat T016e native imaging. No parameter changes or foreground waiting.
 
