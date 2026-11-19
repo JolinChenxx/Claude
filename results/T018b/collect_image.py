@@ -21,7 +21,7 @@ run = Path('D:/sim_runs') / a.batch / a.member / a.iteration
 source = run / a.outname
 job = Path('D:/sim_runs') / a.job
 metadata = json.loads((job / 'job.json').read_text(encoding='utf-8-sig'))
-assert 'results\\T018b\\postprocessing\\run_it0.py' in metadata['cmd'] or 'results/T018b/postprocessing/run_it0.py' in metadata['cmd']
+assert f'/results/T018b/postprocessing/run_{a.iteration}.py' in metadata['cmd'].replace(chr(92), '/')
 summary = json.loads((job / 'postprocess_summary.json').read_text(encoding='utf-8'))
 evidence, = [r for r in summary['commands'] if r['name'] == f'{a.member}_{a.outname}' and r['returncode'] == 0]
 cmd = evidence['command']

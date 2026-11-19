@@ -1,0 +1,2 @@
+Authorized low G0 it2 stops completed at18:05:37/18:05:39; final budgets thin879.4857ns/trap892.4809ns. STOPPED.md, source/budget copies and validated partial shock CSVs(352/358 rows) are in results/T016e/low_*/it2/; no data deleted or tuning.
+Member rc1 is intentional; wrapper rc0 does not mean successful solvers. Freed16cores assigned to T018b it1 postprocessing; final T016e comparison/report consolidation remains pending. See tasks/T016e.report.md.
