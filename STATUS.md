@@ -1,5 +1,13 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T18:50:33.958755+08:00 (UTC+8)
+- Work card:none (monitoring only). Pulled ws7d5e821; only consumed T018b handoff removed upstream. Incoming handoff/to_codex empty. No Codex ready cards and no new completed command to collect; no claim,launch,solver change or ws commit. Unrelated output/ retained.
+- job.ps1 status checked T018b_post_it0_01,T018b_post_it1_01,T018c,T016i_native_01,T017a_image_v2_02:all wrappers running,stderr tails empty. T018b command completion totals remain it0=9,it1=7; all recorded commands rc0. Current images remain lowtrapit0/v2 and lowthinit1/v2; collected earlier outputs not duplicated.
+- At2026-11-19T18:49:53.810516+08:00, verified16PLUTO ranks underT018c and3active image pools with16workers each:reference highthinG1it0/v2 PID24040,T018b lowthinit1/v2 PID38656,lowtrapit0/v2 PID44324. Worker accumulated CPU seconds238425.656/25442.922/17018.875 recorded as a baseline (not an interval-rate measurement).64physicalcores reserved. Native39740/reference41556 dispatchers remain held with PID/create-time verified; no slot or reason to resume old queues.
+- Sample2026-11-19T18:49:53.810516+08:00: T018c/high_thin_G0/it0 budget_t_ns=301.9911; step:21000; t = 2.8292e+002; dt = 2.9892e-002; 35.4 %;             [Mach = 3.603764, Nrkl = 30]. No dt-limit line in bounded8MB tail; no full live-log scan.
+- Sample2026-11-19T18:49:53.810516+08:00: T018c/high_trap_G0/it0 budget_t_ns=327.9584; step:21000; t = 2.9273e+002; dt = 5.6051e-002; 36.6 %;             [Mach = 3.641998, Nrkl = 13]. No dt-limit line in bounded8MB tail; no full live-log scan.
+- Disk free2254.360GB decimal; activeT018c log growth0.00005745GB/h over849.5s; T018/T018b logs unchanged. Nearzero recent log growth makes long-range log-only extrapolation uninformative; stored value excludes field/image growth,otherwriters,future rates and remainingduration. No150GB threshold alert; no logs truncated/deleted.
+
 ## 2026-11-19T18:36:58.220650+08:00 (UTC+8)
 - Card worked:T018b; recorded T016e review disposition. Initial pull to598dec0; handoff/to_codex empty; no owner:codex/status:ready cards, so no new claim/launch. Unrelated output/ preserved. job.ps1 status checked T018b it0/it1post,T018c,T016i_native_01,T017a_image_v2_02: wrappers running,stderr tails empty; actual processes checked below.
 - Archived T018b low_trap_G0/it0/image_v1,per-commandrc0 at18:31:13.099167.18metricsets,30common times10?1230ns,6finite rawframe archives validated in place; copies/hash/provenance checks passed. All18P2 unavailable retained; b-baseline P1thin/sa974.542403/-1124.062324ns. Negative fits preserved. Report and handoff pushed86bc106; results3.83MB<20MB.
@@ -327,15 +335,3 @@
 - T016e/low_trap_G0/it1: budget_t_ns=1.186992e+003.
 - T016e_r/low_thin_G1/it0: budget_t_ns=5.219988e+002.
 - readycards=[];no additionalcards started;endpass afterlongjoblaunch. Fourotherjobscontinue;initialstderr tails empty.
-
-## 2026-11-19 10:50 (UTC+8)
-- cards:T016d,T016e,T016i,T017a. Pulled31562de (Claude consumed diagnostic launch). No new incoming note; broad literature lookup still pending source verification already handed off. No ready cards.
-- Five job.ps1 statuses running,stderr empty: production42332,native38032(T015/low_trap_G0/it0),reference12624(T016e/low_thin_G0/it0),lowG1continuation12720,diagnostic23668(MPI7108). No new solver/image completions.
-- T016d diagnostic partial: all8rank snapshots archived/hashed; step22000,t82.840ns,dt3.9728e-5ns,Nrkl2.20total dt-limit lines across ranks0/2/3/4; remaining ranks no dt-limit lines. Rank0kind2dt_src4.453e-11s; minimum printed among latest local lines rank2kind1dt_src3.587e-11s. Do not conflate local dt_src seconds with globally printed timestep ns.94ConsToPrim rank0 preserved. No budget.csv yet (next analysis output not reached), not evidence of no progress.
-- New high_thin_G0/it3 slowdown:step34000,t83.325ns,dt3.7333e-5ns,Nrkl2.20step/Nrklpairs saved; notified Claude with interim diagnostic evidence. No stop/tuning.
-- T016e/high_thin_G0/it3: budget_t_ns=8.299998e+001.
-- T016e/high_thin_G1/it0: budget_t_ns=6.854938e+002.
-- T016e/low_thin_G0/it1: budget_t_ns=1.086986e+003.
-- T016e/low_trap_G0/it1: budget_t_ns=1.161479e+003.
-- T016e_r/low_thin_G1/it0: budget_t_ns=5.154907e+002.
-- No new launch or foreground waiting; next pass collect completed1200second diagnostic and handoff; ongoing imaging queues unchanged.
