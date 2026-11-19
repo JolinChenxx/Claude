@@ -1,5 +1,15 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T21:20:02.070286+08:00 (UTC+8)
+- Work card:none (monitoring only). Pulled ws to682c185; Claude consumed the prior diagnostic handoff and recorded its it0 interpretation in STATE, with it2 confirmation and image_v2 metrics pending. Incoming to_codex empty; no owner:codex/status:ready cards. No new claim, launch, collection, stop, resume or ws commit; unrelated output/ preserved.
+- job.ps1 status checked T018c,T018c_post_it0_01,T016i_native_01: all wrappers running,stderr tails empty. Replacement postprocessing remains6/10 commands complete,high_thin_G0/it0/image_v1 active. Those six diagnostics were already archived/handed off last pass. Native remains T014 high_thin_G1/it0/v1; dispatcher39740 running. No newly completed iteration or image to collect.
+- Capacity sample2026-11-19T21:19:24.907297+08:00:16actual T018c PLUTO ranks+16replacement image workers+16native image workers=48physicalcores reserved,16free. No unassigned completed replacement work; queued images retain their existing runner and native batch roots remain sequential. No additional ready card to start; no duplicate parallel catch-up.
+- ImagePID8460:16workers,accumulated worker CPU17835.500s,increase12994.500s since prior pass. No stalled-progress evidence.
+- ImagePID20320:16workers,accumulated worker CPU105998.406s,increase12959.953s since prior pass. No stalled-progress evidence.
+- Sample2026-11-19T21:19:24.907297+08:00: T018c/high_thin_G0/it1 budget_t_ns=55.49729; step:7000; t = 5.3926e+001; dt = 3.0191e-003; 6.7 %; [Mach = 8.745580, Nrkl = 3]. Latest bounded-tail source limit:! lip dt-limit: step 7000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,6] rho=3.452e+001 T=5.859e+004 rhoe=2.934e+009 q=1.923e+019 dt_src=3.052e-011 s; dt_src is not actual step dt.
+- Sample2026-11-19T21:19:24.907297+08:00: T018c/high_trap_G0/it1 budget_t_ns=55.49793; step:7000; t = 5.3763e+001; dt = 3.3383e-003; 6.7 %; [Mach = 8.708890, Nrkl = 3]. Latest bounded-tail source limit:! lip dt-limit: step 7000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,6] rho=2.546e+001 T=6.354e+004 rhoe=2.566e+009 q=1.519e+019 dt_src=3.380e-011 s; dt_src is not actual step dt.
+- Disk free2253.303GB decimal; T018c log growth0.012914GB/h over859.6s; T018/T018b logs unchanged. Log-only estimates exclude fields,imaging,other writers,future rates/duration and are not a completion forecast. No threshold action or deletion/truncation. Evidence:D:/sim_runs/T018/pass_20261119_2118_monitor.json.
+
 ## 2026-11-19T21:07:44.782131+08:00 (UTC+8)
 - Work card:T018c, highit0 diagnostics archived. Pulled ws todce5aae (Claude consumed launch note); incoming to_codex empty, no owner:codex/status:ready cards. No next claim or new job. T017a remains done; unrelated output/ preserved.
 - All six it0 emission/core-energy/shock commands returned0. Archived six CSVs and command logs; per member4 emission,81 core(stride4),321 shock rows. Snapshot-time/fraction/finite-present-value checks and SHA256 copies passed; validation JSON read back. Default emission1000ns request selects actual800ns; no extrapolated1000ns state. Three no-core rows,four missing derived-power rows and six missing shock radii per axis/member preserved.
@@ -323,14 +333,3 @@
 - T016e/low_thin_G0/it2: budget_t_ns=6.344937e+002; step:33000; t = 6.0809e+002; dt = 2.8025e-002; 46.8 % |             [Mach = 2.072904, Nrkl = 37]
 - T016e/low_trap_G0/it2: budget_t_ns=4.469641e+002; step:29000; t = 4.0715e+002; dt = 5.4980e-002; 31.3 % |             [Mach = 2.502178, Nrkl = 10]
 - T016e_r/low_thin_G1/it0: budget_t_ns=5.549972e+002; step:76000; t = 5.4676e+002; dt = 1.5368e-002; 42.1 % |             [Mach = 2.994156, Nrkl = 66]
-
-## 2026-11-19T13:21:50+08:00 (UTC+8)
-- cards:T016e,T016i,T017a. Initialpull blocked by livehighG1completion registryappend;inspected/committed exactrow,rebaseda650b18. No newincomingnotes;literature request remains incomplete,verifiedportions/limitations previouslyhandedoff.
-- high_thin_G1/it0 rc0,800ns,71248s,16MPI;11productioniterationscompleted. All16logs streamed/hash/stabilitychecked,56,723,606ConsToPrim preserved. M_Cu=M_src3.2182709582e-12kg;targetmodel/PLUTOabs62.2318/8.71477uJ (+614.10%). Picardit0only;warnedClaude against treatingrc0 as numericalacceptance. Evidence/handoff pushed86a46a8;raw6.74GB logs retained.
-- Launched T016e_post_high_G1_01 PID49748,execution86a46a8,8workers/OMP1,BelowNormal,initialrunning/empty stderr. rmax1000/v1ctablehashesverified. NativeG1 deferredtorepeat;referenceG1 eligibleforactivecatch-upsweep. No solverrerun/tuning.
-- T014 high_thin_G0/it0 native collected:24native sets archivedoverall;18metricsets/29times/sixfinite hashverifiedrawframearchives,all18P2unavailable retained. Native38032 nowT014highthin it1;fullT014handoff pending.
-- Production42332/reference46228(highthinG0it2)/native38032/lowG1continuation12720 running;initialstderr empty. Reports synced/hashverified. Endpassafterlongjoblaunch;no foregroundwait.
-- T016e/low_thin_G0/it2:budget_t_ns=5.929741e+002;step:32000; t = 5.6842e+002; dt = 4.6236e-002; 43.7 % | [Mach = 2.148460, Nrkl = 9]
-- T016e/low_trap_G0/it2:budget_t_ns=3.424871e+002;step:27000; t = 3.3618e+002; dt = 3.6727e-002; 25.9 % | [Mach = 2.665741, Nrkl = 8]
-- T016e_r/low_thin_G1/it0:budget_t_ns=5.509944e+002;step:76000; t = 5.4676e+002; dt = 1.5368e-002; 42.1 % | [Mach = 2.994156, Nrkl = 66]
-- readycards=['T018-phase-explosion.md'] (owner codex, no dependencies). Newly pulled T018 is deferred because this pass already launched the long G1 imaging job and must end per heartbeat protocol. Next pass claim T018 and assess its explicit 32-free-core condition alongside production/imaging jobs.
