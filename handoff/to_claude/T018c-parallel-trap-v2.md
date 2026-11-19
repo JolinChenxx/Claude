@@ -1,2 +1,0 @@
-T018c trap it0 image_v2 launched via job.ps1 at2026-11-19T22:13:04 UTC+8, wrapper42732,16workers,commita3b7a6f;64/64cores now reserved. Original queue retains thinv2/trapv1; task remains running.
-See tasks/T018c.report.md and postprocessing/launch_it0_trap_v2.json: exact-output delegation prevents duplicate computation by the already-loaded original queue; skip only after actual owner rc0+artifact hashes, otherwise75/deferred. Collector requires actual owner. Future free16-core slots prioritize parallel queued T018c before T016i.
