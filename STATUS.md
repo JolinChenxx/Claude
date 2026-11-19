@@ -1,5 +1,16 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T19:11:43.371847+08:00 (UTC+8)
+- Cards worked: T018b/T017a; monitored T018c/T016i. Initial ws pull current at7d5e821; incoming handoff/to_codex empty and no owner:codex/status:ready cards. No new claim or job launch. Preserved unrelated output/.
+- Archived three completed image sets: T018b low_thin_G0/it1/image_v2(rc0 at18:56:40), T018b low_trap_G0/it1/image_v1(rc0 at19:05:55), and reference T016e high_thin_G1/it0/image_v2. Each18metricsets/6finite rawframe archives; source/copy hashes verified. Raw frames retained locally. Thin/trap each30times10-1230ns; reference29times0-740ns.
+- Retained unavailable P2 counts4/18,18/18,18/18 respectively. Filter-b baseline P1thin/sa(ns): lowthin478.715213/344.339464; lowtrap964.721758/-1130.457667; reference540.097749/519.858901. Negative fits,56,723,606 reference solver warnings and unconvergedG1it0 caveats retained. Reference exit0 first verified via retained Windows process handle/creation identity, then confirmed by resumed dispatcher log. T017a completed-run reference inventory10sets; lowthinG0it1 remained pending at handoff.
+- job.ps1 status checked T018b_post_it0_01,T018b_post_it1_01,T018c,T016i_native_01,T017a_image_v2_02: wrappers running,stderr tails empty. Both T018b loops reached their final lowtrap/image_v2 commands (9/10complete each). Verified runner sources contain no further capacity() guard after these final commands.
+- At19:08:53.196145+08:00 resumed existing reference dispatcher41556 after verifying PID/create-time1795063848.8141325 and exact command, under standing T018-capacity/T018c priority authorization. Background job wrapper46228 continued to reference T016e low_thin_G0/it1. Native dispatcher39740 remains held. Reserved capacity16T018c solver ranks+32T018b image workers+16reference workers=64physicalcores. No finished T018c iteration awaited diagnostics. Audit and hold-state records saved; no new job,stop or parameter change.
+- Future capacity checks must discover current reference descendants/commands: old high-series dispatcher41556 may exit after starting the low-series stage, and completed reference child24040 must not be treated as current capacity. End this pass after background resumption bookkeeping; no foreground wait.
+- Sample2026-11-19T19:06:47.890483+08:00: T018c/high_thin_G0/it0 budget_t_ns350.4796; step22000,t316.95ns,dt0.037624ns,Nrkl11. Latest dt-limit kind3 mass dt_src6.226e-10s is a source limit,not actual solver dt. T018c/high_trap_G0/it0 budget_t_ns432.4729; step23000,t404.22ns,dt0.056760ns,Nrkl12; no dt-limit line in bounded8MBtail.
+- Disk sample19:06:47: free2254.217GB decimal; activeT018c log growth0.000083106GB/h; stoppedT018/finishedT018b logs unchanged. Nearzero short-interval log growth is not useful as a long-range forecast; excludes fields,imaging,otherwriters,future rates and remainingduration. No threshold action or deletion/truncation.
+- Reports,handoffs,metrics and resumption audit pushed tows2b322a2 after successful pull/rebase. T018b/T017a updated reports copied to D:/Sync with SHA256 verification; no newly changed PNG/COMPARISON/metrics_table files in this commit. Receipt:D:/sim_runs/T018/pass_20261119_1903_sync.json. T018b/T017a remain in progress.
+
 ## 2026-11-19T18:50:33.958755+08:00 (UTC+8)
 - Work card:none (monitoring only). Pulled ws7d5e821; only consumed T018b handoff removed upstream. Incoming handoff/to_codex empty. No Codex ready cards and no new completed command to collect; no claim,launch,solver change or ws commit. Unrelated output/ retained.
 - job.ps1 status checked T018b_post_it0_01,T018b_post_it1_01,T018c,T016i_native_01,T017a_image_v2_02:all wrappers running,stderr tails empty. T018b command completion totals remain it0=9,it1=7; all recorded commands rc0. Current images remain lowtrapit0/v2 and lowthinit1/v2; collected earlier outputs not duplicated.
@@ -323,15 +334,3 @@
 - T016e/low_trap_G0/it1: budget firstcolumn t_ns=1.242489e+003; step:65000; t = 1.2313e+003; dt = 2.9160e-002; 94.7 % | [Mach = 1.141610, Nrkl = 9]
 - T016e_r/low_thin_G1/it0: budget firstcolumn t_ns=5.254905e+002; step:74000; t = 5.1830e+002; dt = 2.0841e-002; 39.9 % | [Mach = 3.067066, Nrkl = 17]
 - readycards=[]; no additional card eligible. No foreground waiting.
-
-## 2026-11-19 11:08 (UTC+8)
-- cards:T016d,T016e,T016i,T017a. Initialpull blocked by live v1fregistry append; committed exact row/rebased15f5515. FollowednewT016d_vmax note: collectedv1f,stoppedonlyhigh_thin_G0/it3,builtv1g. Broadliterature note still pending verifiedsources.
-- v1f ended10:57:30,1203.656s,authorizedtimeout,solverrc15/wrapperrc0. All8rank rawlogs archived/hashed;32dt-limit lines,94rank0ConsToPrim,8available step/Nrklrecords perrank,laststep25000,t82.963ns,dt3.8661e-5ns. No freshbudget/checkpoint.
-- Thinproductionstop11:06:20,MPI6744+8ranks;52othersolver/MPI processes andbatch42332 preserved. Lastbudget83.49996ns,lastdbl33 at82.49686ns,step17572;data retained,rc15intentional.
-- Launched T016d_vmax_01 wrapper17276,MPI6476,started2026-11-19T11:07:49.644332+08:00,execution52ec9cb;v1g rc0/sevenreplacements/source-exehashes verified,samecheckpoint33,8ranks,600secondcap. Endafterlaunch; nextpass collectallvmax lines and closefollow-upnote.
-- Archived T015low_trap_G0/it0 native rc0,18metricsets/30times,sixfinite localframe archives,hashverified;15P2unavailable andnegativea_thinP1 retained.18nativeimages total,12of14T015. Native38032 nowlow_trap_G0/it1;fullT015handoff pendingit1/it2. Reference12624 stilllow_thin_G0/it0,5v2imagesarchived.
-- T016e/high_thin_G1/it0: budget_t_ns=6.984935e+002.
-- T016e/low_thin_G0/it1: budget_t_ns=1.191498e+003.
-- T016e/low_trap_G0/it1: budget_t_ns=1.186992e+003.
-- T016e_r/low_thin_G1/it0: budget_t_ns=5.219988e+002.
-- readycards=[];no additionalcards started;endpass afterlongjoblaunch. Fourotherjobscontinue;initialstderr tails empty.
