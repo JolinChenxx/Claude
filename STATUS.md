@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T21:07:44.782131+08:00 (UTC+8)
+- Work card:T018c, highit0 diagnostics archived. Pulled ws todce5aae (Claude consumed launch note); incoming to_codex empty, no owner:codex/status:ready cards. No next claim or new job. T017a remains done; unrelated output/ preserved.
+- All six it0 emission/core-energy/shock commands returned0. Archived six CSVs and command logs; per member4 emission,81 core(stride4),321 shock rows. Snapshot-time/fraction/finite-present-value checks and SHA256 copies passed; validation JSON read back. Default emission1000ns request selects actual800ns; no extrapolated1000ns state. Three no-core rows,four missing derived-power rows and six missing shock radii per axis/member preserved.
+- Near300ns actual thin/trap times299.975/299.9566ns: core E_int68.4093774/71.3212187uJ,core M_Cu6.32980734/6.35353218ng,T_mw5604.59/5680.24K. Raw outputs handed off for physical review; original35,328,535 it0 ConsToPrim warnings retained. No parameter changes or physical acceptance claimed.
+- Report,collector adaptation,diagnostics and handoff pushedws cb61680. Results package1,095,738bytes,below20MiB. Synced1 allowed report/results files to D:/Sync/T018c,hash verified; no raw fields/logs or repository copy. Receipt:D:/sim_runs/T018/pass_20261119_2103_sync.json.
+- job.ps1 status checked T018c,T018c_post_it0_01,T016i_native_01: all wrappers running,stderr tails empty. Postprocessor6/10commands completed,currently high_thin_G0/it0/image_v1; no image completion this pass. Native remains T014 high_thin_G1/it0/v1,dispatcher39740 running. Solver it1 active; no new solver completion. Remaining prescribed images already assigned to existing queue; native batch roots remain sequential, so no duplicate parallel launch.
+- Capacity sample2026-11-19T21:05:05.261077+08:00:16solver ranks+16replacement image workers+16native image workers=48physicalcores,16free. No unassigned finished-iteration work or ready card to launch. No process stop/suspend/resume.
+- ImagePID8460: 16workers,accumulated worker CPU4841.000s,first recorded CPU baseline.
+- ImagePID20320: 16workers,accumulated worker CPU93038.453s,increase8776.125s since prior sample.
+- Sample2026-11-19T21:05:05.261077+08:00: T018c/high_thin_G0/it1 budget_t_ns=45.99948; step:4000; t = 4.5893e+001; dt = 8.2787e-004; 5.7 %; [Mach = 1541.824895, Nrkl = 10]. Source limit:! lip dt-limit: step 3000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,5] rho=4.550e+001 T=4.947e+004 rhoe=2.848e+009 q=1.942e+019 dt_src=2.933e-011 s; dt_src differs from actual step dt. Extended the bounded-tail search past intervening warning lines to recover actual Nrkl10/8; no invented values.
+- Sample2026-11-19T21:05:05.261077+08:00: T018c/high_trap_G0/it1 budget_t_ns=45.9993; step:4000; t = 4.5639e+001; dt = 6.8419e-004; 5.7 %; [Mach = 854.639738, Nrkl = 8]. Source limit:! lip dt-limit: step 3000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,5] rho=4.250e+001 T=5.002e+004 rhoe=2.734e+009 q=1.824e+019 dt_src=2.998e-011 s; dt_src differs from actual step dt. Extended the bounded-tail search past intervening warning lines to recover actual Nrkl10/8; no invented values.
+- Disk free2253.323GB decimal; active T018c log growth0.052621GB/h over572.6s,T018/T018b logs unchanged. Log-only estimate excludes fields/images/other writers/future rates/duration and is not a completion forecast. No deletion/truncation or threshold action. Evidence:D:/sim_runs/T018/pass_20261119_2103_monitor.json.
+
 ## 2026-11-19T20:59:56.522811+08:00 (UTC+8)
 - Work cards: T017a closeout; T018c high it0 collection/postprocessing launch. Initial ws pull blocked only by two completed solver registry rows; verified and committed7742d05, then pull/rebase succeeded. No incoming notes and no owner:codex/status:ready cards; no next claim. Unrelated output/ preserved.
 - T017a_image_v2_02 finished20:41:44 UTC+8 with wrapper and both high/low series rc0. Last T016e low_thin_G0/it1 reference set archived. Complete inventory:11 successful solver iterations,198 metric CSVs,11 summaries,66 finite local-frame archives; all hashes rechecked. Five authorized stops excluded.160 unavailable P2 and12 negative P1 fits retained; temperature extrapolation and solver-warning caveats remain. Final handoff pushedff24098; upstream f0711be reviewed it and closed T017a as done.
@@ -321,13 +334,3 @@
 - T016e/low_trap_G0/it2:budget_t_ns=3.424871e+002;step:27000; t = 3.3618e+002; dt = 3.6727e-002; 25.9 % | [Mach = 2.665741, Nrkl = 8]
 - T016e_r/low_thin_G1/it0:budget_t_ns=5.509944e+002;step:76000; t = 5.4676e+002; dt = 1.5368e-002; 42.1 % | [Mach = 2.994156, Nrkl = 66]
 - readycards=['T018-phase-explosion.md'] (owner codex, no dependencies). Newly pulled T018 is deferred because this pass already launched the long G1 imaging job and must end per heartbeat protocol. Next pass claim T018 and assess its explicit 32-free-core condition alongside production/imaging jobs.
-
-## 2026-11-19T13:04:51+08:00 (UTC+8)
-- cards:T016i,T016e,T017a;pulledws alreadycurrent e36b24a. No newincomingnotes. Broadliterature request remains incomplete;verified portions andremaininglimitations alreadyhandedoff,note retained.
-- Collected T016h high_trap_G0/it0 native rc0:18metricsets/29times0-740ns/sixfinite hashverifiedlocalframearchives;all18P2unavailable retained. BaselinebP1thin/sa311.9185046/263.7617771ns.23native sets archivedoverall;handoffwritten;reportsynced/hashverified. Native38032 nowT014 high_thin_G0/it0(v0).
-- Fourjob.ps1 statuses running,stderr empty:production42332,native38032,reference46228(T016ehighthin it2),lowG1continuation12720. No newsolver/referencecompletion. No newlaunch,stop orparameterchange.
-- T016e/high_thin_G1/it0:budget_t_ns=7.959983e+002;step:100000; t = 7.9320e+002; dt = 6.5035e-003; 99.2 % | [Mach = 4.052532, Nrkl = 9]
-- T016e/low_thin_G0/it2:budget_t_ns=4.389618e+002;step:29000; t = 4.2681e+002; dt = 5.8758e-002; 32.8 % | [Mach = 2.440616, Nrkl = 11]
-- T016e/low_trap_G0/it2:budget_t_ns=2.839967e+002;step:25000; t = 2.6765e+002; dt = 4.2384e-002; 20.6 % | [Mach = 2.800695, Nrkl = 7]
-- T016e_r/low_thin_G1/it0:budget_t_ns=5.474915e+002;step:76000; t = 5.4676e+002; dt = 1.5368e-002; 42.1 % | [Mach = 2.994156, Nrkl = 66]
-- readycards=[];no eligiblecard.
