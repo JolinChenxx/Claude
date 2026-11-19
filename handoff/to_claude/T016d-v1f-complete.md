@@ -1,2 +1,0 @@
-v1f timed diagnostic finished1203.656s,solverrc15 intentional;all8rank logs archived under results/T016d/final_v1f (32dt-limit lines,94rank0ConsToPrim,8available step/Nrkl records per rank,last82.963ns). No new budget/checkpoint.
-T016d_vmax.md thin-stop request executed11:06:20(MPI6744+8ranks),52other solver/MPI processes and batch preserved;lastbudget83.49996ns. v1g rc0/seven replacements verified;10minute follow-up prepared,card remains running.
