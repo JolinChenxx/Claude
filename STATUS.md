@@ -1,5 +1,15 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T20:06:30.651573+08:00 (UTC+8)
+- Work card: none (monitoring and upstream review disposition). Pulled ws to 7b9d85d: Claude closed T018b as done and consumed its handoff. STATE attributes negative/missing P1 and unavailable P2 to absent emission/no breakdown, not imaging defects, and identifies the27.1M ConsToPrim lines with rarefaction-cavity floor hits near axis/wall. This is Claude's recorded interpretation; original metrics/warnings remain unchanged. No ws edits or new handoff needed.
+- Incoming handoff/to_codex empty; no owner: codex/status: ready cards. job.ps1 status checked T018c, T016i_native_01 and T017a_image_v2_02: all wrappers running and stderr tails empty. No newly completed command or iteration to collect. Native remains T014 high_thin_G1/it0/v1; reference remains T016e low_thin_G0/it1/v2. No claim, launch, stop or resume; unrelated output/ retained.
+- At 2026-11-19T20:05:17.262001+08:00, actual allocation is16 T018c PLUTO ranks +16 native image workers +16 reference image workers =48 physical cores,16 free. Both imaging dispatchers running. No finished T018c iteration awaits diagnostics; native task requires sequential batch roots, so no duplicate parallel catch-up. Spare slot remains available for priority T018c postprocessing.
+- Image PID20320 (D:\sim_runs\T014\high_thin_G1\it0): 16 workers, accumulated CPU 37944.297s, increase 13342.906s since prior pass. No stalled-progress evidence.
+- Image PID29452 (D:\sim_runs\T016e\low_thin_G0\it1): 16 workers, accumulated CPU 50605.750s, increase 13347.391s since prior pass. No stalled-progress evidence.
+- Sample 2026-11-19T20:05:17.262001+08:00: T018c/high_thin_G0/it0 budget_t_ns=611.4718; step:28000; t = 6.0028e+002; dt = 3.9260e-002; 75.0 %; [Mach = 2.654892, Nrkl = 17]. Latest bounded-tail source limit: ! lip dt-limit: step 22000 kind 3 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,3] rho=3.356e-001 T=3.108e+003 rhoe=2.199e+005 q=2.695e+008 dt_src=6.226e-010 s; dt_src is not actual step dt.
+- Sample 2026-11-19T20:05:17.262001+08:00: T018c/high_trap_G0/it0 budget_t_ns=638.4912; step:28000; t = 6.3774e+002; dt = 3.0090e-002; 79.7 %; [Mach = 2.756823, Nrkl = 51]. No dt-limit line in bounded8 MB tail.
+- Disk free 2253.815 GB decimal; active T018c log growth 0.000050363 GB/h over 878.0s; stopped T018/completed T018b logs unchanged. Near-zero short-interval log growth is not a useful long-range forecast; log-only estimates exclude fields, imaging, other writers, future rates and remaining duration. No threshold action or deletion/truncation. Evidence: D:/sim_runs/T018/pass_20261119_2003_monitor.json.
+
 ## 2026-11-19T19:53:55.393632+08:00 (UTC+8)
 - Card worked: T018b, now review. Initial ws pull current at 217340b; no incoming notes or owner: codex/status: ready cards. No next card to claim, no new computation or process intervention. Preserved unrelated output/.
 - job.ps1 status checked T018b_post_it1_01 (finished rc0), T018c, T016i_native_01 and T017a_image_v2_02 (running; stderr tails empty). it1 final low_trap_G0/image_v2 ended 19:42:41.868323; wrapper completed 19:42:41.871305. All 10 it1 commands returned0. Archived final18 metric sets/summary/validation and full job completion evidence; queue marked complete.
@@ -321,15 +331,3 @@
 - T016e/low_trap_G0/it2:budget_t_ns=1.034990e+002;step:11000; t = 1.0052e+002; dt = 4.7254e-003; 7.7 % | [Mach = 18.732989, Nrkl = 3]
 - T016e_r/low_thin_G1/it0:budget_t_ns=5.384882e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
 - readycards=[];no eligiblecard.
-
-## 2026-11-19T12:08:40+08:00 (UTC+8)
-- cards:T016f,T016e,T016i,T017a. Initialpull blocked by two live registry appends; inspected/committed exact lowtrapit1 completion and boundedcheck timeout rows, then pulled. Results/handoffs pushed a2c973f. No newincominginstructions; literature note remains pending previously reported verification.
-- T016f step2FAILED: boundedv1h check finished11:57:20.800,1203.969s,solverrc15intentional/wrapperrc0. Laststep25000,t82.963ns,dt3.8661e-5ns,Nrkl2;maxlogdt4.1512e-5ns.94rank0ConsToPrim;all8ranklogs immutablearchived;no freshbudget/checkpoint. Inputs unchanged exceptgridtimestampcomment. Cardblocked;handoffsent;T016e_hc NOTstarted.
-- T016e low_trap_G0/it1 rc0,36302.5s,1300ns;10productioniterationscomplete.1,115,969ConsToPrim preserved;M_Cu=M_src5.2022995457e-13kg;absorptiondifference-2.92118%. it1/it2rmax1000/v1ctablehashesverified. Lowtrapit2running. Launchedv0image T016e_post_low_trap_02 PID26316,8workers/OMP1,BelowNormal,executiona2c973f.
-- low_thin_G0/it1 v0image retry2 rc0,collected18metricsets/30times/sixfiniteframes;3P2unavailable. Previousfailedattempts retained. NativeT016r2lowthin it0 archived (21total),referenceT016elowtrap it0 archived(7total),both12P2unavailable retained;native/rawarchivecopyhashes verified.
-- Production42332,native38032(T016r2lowtrap it0),reference12624(T016elowtrap it1),lowG1continuation12720 running,initialstderr empty. Reportcopies synced/hashverified. Endpassafterbackgroundlaunch;no foregroundwaiting.
-- T016e/high_thin_G1/it0:budget_t_ns=7.514917e+002;step:95000; t = 7.5005e+002; dt = 1.2631e-002; 93.8 % | [Mach = 4.156194, Nrkl = 10]
-- T016e/low_thin_G0/it2:budget_t_ns=1.759833e+002;step:20000; t = 1.7126e+002; dt = 2.0057e-002; 13.2 % | [Mach = 4.540430, Nrkl = 5]
-- T016e/low_trap_G0/it2:budget_t_ns=7.849755e+001;step:6000; t = 7.6268e+001; dt = 5.1635e-003; 5.9 % | [Mach = 15.374132, Nrkl = 2]
-- T016e_r/low_thin_G1/it0:budget_t_ns=5.359859e+002;step:75000; t = 5.3275e+002; dt = 1.4374e-002; 41.0 % | [Mach = 3.029781, Nrkl = 53]
-- readycards=[];no eligiblecard.T016f awaitingClaude investigation.
