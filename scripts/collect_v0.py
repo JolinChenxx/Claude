@@ -39,6 +39,9 @@ def collect_log(run_dir, dst):
 ap = argparse.ArgumentParser()
 ap.add_argument("root", type=Path)
 ap.add_argument("--out", type=Path, required=True)
+ap.add_argument("--skip-logs", action="store_true", help="Retain previously archived log counts/tails without rescanning large logs")
+ap.add_argument("--skip-frames", action="store_true", help="Keep raw image frame archives local")
+ap.add_argument("--skip-transmission", action="store_true", help="Keep raw transmission archives local")
 a = ap.parse_args()
 for member in sorted(p for p in a.root.iterdir() if p.is_dir()):
     its = sorted(p for p in member.iterdir() if p.is_dir() and p.name.startswith("it"))
@@ -46,18 +49,21 @@ for member in sorted(p for p in a.root.iterdir() if p.is_dir()):
         dst = a.out / member.name / it.name
         dst.mkdir(parents=True, exist_ok=True)
         for f in ("budget.csv", "pluto.ini", "surface_transmission.npz"):
+            if f == "surface_transmission.npz" and a.skip_transmission:
+                continue
             if (it / f).exists():
                 shutil.copy2(it / f, dst / f)
         if (it / "source/source_meta.json").exists():
             shutil.copy2(it / "source/source_meta.json", dst / "source_meta.json")
-        collect_log(it, dst)
+        if not a.skip_logs:
+            collect_log(it, dst)
         img = it / "image"
         if img.exists():
             for f in list(img.glob("metrics_*.csv")) + [img / "image_summary.json"]:
                 if f.exists():
                     (dst / "image").mkdir(exist_ok=True)
                     shutil.copy2(f, dst / "image" / f.name)
-            if it == its[-1]:
+            if it == its[-1] and not a.skip_frames:
                 for f in img.glob("frames_b_*.npz"):  # display frames: filter b only (size); metrics cover all
                     shutil.copy2(f, dst / "image" / f.name)
 print("collected into", a.out)
