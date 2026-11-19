@@ -1,5 +1,11 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T14:35:26+08:00 (UTC+8)
+- Pulled ws fc2ae4e; Claude incorporated stopped G1 diagnostics. No new incoming instructions. Literature search did not verify another eligible single-shot depth; requested 20 step records are already present. Literature note remains open.
+- T016e, T016i and T017a return running, no new member completion. Both current image PIDs matched recorded creation times and each still has 16 workers. Dispatchers held. 16 live solver ranks + 32 image workers reserve 48 of 64 physical cores. T018 is the only ready card; 16 free cores do not meet its 32-core requirement. No job started or stopped.
+- T016e/low_thin_G0/it2 budget t_ns=6.844996e+002; step:35000; t = 6.6161e+002; dt = 4.0130e-002; 50.9 % [Mach = 1.976395, Nrkl = 13]
+- T016e/low_trap_G0/it2 budget t_ns=6.259865e+002; step:34000; t = 6.0615e+002; dt = 3.5768e-002; 46.6 % [Mach = 2.081480, Nrkl = 9]
+
 ## 2026-11-19T14:22:26+08:00 (UTC+8)
 - T016e_r_stopped_diag_01 finished (exit 0). Archived 224 shock rows and 56 thin/v1c core rows; timestamps verified against snapshot index, missing values retained. Handoff and report pushed in 778b58c. Report synced; stopped-run v2 imaging remains deferred until T018 starts.
 - T018 remains ready. Both current images were live with 16 children each, verified by PID and creation time; their dispatchers remain suspended. Active T016e solver ranks 16 plus 32 imaging workers leaves 16 of 64 physical cores available. No new job launched.
@@ -369,21 +375,6 @@
 - T016e/low_thin_G0/it1: t_ns=7.819831e+002; latest logged dt=2.2159e-002, Nrkl=63 (step 46000, log_t_ns=7.7021e+002).
 - T016e/low_thin_G1/it0: t_ns=4.814998e+002; latest logged dt=6.9927e-003, Nrkl=60 (step 70000, log_t_ns=4.8093e+002).
 - T016e/low_trap_G0/it1: t_ns=7.884904e+002; latest logged dt=2.2195e-002, Nrkl=62 (step 47000, log_t_ns=7.8282e+002).
-- skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
-- next: job.ps1 status for all three jobs; collect native and reference metrics at completion and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
-
-## 2026-11-19 06:34 (UTC+8)
-- cards: T016e,T016i,T017a | action: ws current at a7fffbf; no incoming note or ready card. No new completed imaging or production iteration. Nine native runs and six production iterations archived.
-- T017a_image_v2_01 PID12624, execution963dd49, elapsed00:28:38: high_thin_G0/it0 running; stderr empty. Image PID40452 has16 workers, cumulative CPU1660.3-1671.1 s each (previous790.9-796.8), confirming progress. Handoffs due after low G0 it0 and high G0 it1 images.
-- T016i_native_01 PID38032, executionf897ccd, elapsed04:11:16: T015/high_thin_G1/it0 running; stderr empty. Image PID27032 has16 workers, cumulative CPU4071.4-4084.4 s each (previous3201.7-3208.7), confirming progress. Full T015 handoff pending.
-- T016e PID42332, executionbc79e7d, elapsed13:10:36; stderr empty. Known numerical warnings retained.
-- Progress snapshot 2026-11-19T06:34:57.097491+08:00; budget and log times recorded separately.
-- T016e/high_thin_G0/it2: t_ns=5.149976e+002; latest logged dt=7.5093e-003, Nrkl=5 (step 86000, log_t_ns=5.0936e+002).
-- T016e/high_thin_G1/it0: t_ns=5.834911e+002; latest logged dt=1.2166e-002, Nrkl=26 (step 78000, log_t_ns=5.7703e+002).
-- T016e/high_trap_G0/it2: t_ns=5.354972e+002; latest logged dt=1.0944e-002, Nrkl=6 (step 84000, log_t_ns=5.3439e+002).
-- T016e/low_thin_G0/it1: t_ns=7.699874e+002; latest logged dt=2.3215e-002, Nrkl=44 (step 45000, log_t_ns=7.4779e+002).
-- T016e/low_thin_G1/it0: t_ns=4.789998e+002; latest logged dt=6.8261e-003, Nrkl=61 (step 69000, log_t_ns=4.7207e+002).
-- T016e/low_trap_G0/it1: t_ns=7.769925e+002; latest logged dt=2.2598e-002, Nrkl=63 (step 46000, log_t_ns=7.6048e+002).
 - skipped ready cards and why: none; no ready cards. Production members advanced: 6/6.
 - next: job.ps1 status for all three jobs; collect native and reference metrics at completion and send requested handoffs; continue production collection. No parameter changes or foreground waiting.
 
