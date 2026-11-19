@@ -48,3 +48,6 @@ it2 was a convergence confirmation of it1 (target absorption 21.0/21.6 µJ). The
 
 ## 2026-11-20 02:30 (UTC+8) — time box on T018c high_trap_G0/it2 (standing authorization)
 From 63.4 to 63.6 ns, dt fell from 4e-3 to 1.6e-4 ns, with Mach 521 and Nrkl 33. The ConsToPrim repairs sit at the wall, z = 2.5 µm, at RKL stages 33–37: the known RKL-stage overshoot defect. Codex stops trap it2 alone if t advances < 1 ns in 60 min, and thin it2 becomes the reported member (thin and trap agree within 1–5% at it0 and it1). Data is kept.
+
+## 2026-11-20 03:00 (UTC+8) — stop T018c it2; withdraw the PE results (standing authorization)
+Both it2 members stall at ~63 ns: mass piles up near the wall because the PE source exceeds the choked evaporation flux 21×. That is an inconsistency in the PE model specification, not a solver defect. The runs are stopped, the data kept, and the PE results withdrawn (STATE/PREREG). The reported high-fluence result stays T016e it2 (PE off).
