@@ -250,7 +250,9 @@
         "16",
         "--scenarios",
         "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
-      ]
+      ],
+      "delegated_to": "T018c_post_it0_trap_v2_01",
+      "original_queue_action": "fresh child entrypoint verifies completed owner+artifact hashes then skips; pending/failed owner returns75 without computing"
     }
   ],
   "notes": "Six sequential diagnostics then four16-worker image commands. Default emission requests300,500,700,1000ns retained;1000ns selects nearest available snapshot from800ns run.",
@@ -269,6 +271,8 @@
   "last_collected": "2026-11-19T21:50:53.358867+08:00",
   "diagnostics_it0": "archived; all six commands rc0",
   "diagnostics_evidence": "results/T018c/postprocessing/diagnostics_it0_completed/summary.json",
-  "images": "high_thin_G0/image_v1 archived; high_thin_G0/image_v2 active; trap v1/v2 pending",
-  "completed_commands_at_collection": 7
+  "images": "thin image_v1 archived; thin image_v2 active; trap image_v1 stays with original queue; trap image_v2 delegated to T018c_post_it0_trap_v2_01 (prepared)",
+  "completed_commands_at_collection": 7,
+  "parallel_dispatch_policy": "Whenever 16 physical cores are available, delegate the next queued T018c item to a separate job before T016i. Never compute the same target in both jobs.",
+  "delegation_manifest": "results/T018c/postprocessing/delegations.json"
 }

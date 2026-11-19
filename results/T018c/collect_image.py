@@ -7,6 +7,7 @@ import hashlib
 import json
 import math
 import shutil
+import sys
 import numpy as np
 
 ap = argparse.ArgumentParser()
@@ -21,7 +22,16 @@ run = Path('D:/sim_runs') / a.batch / a.member / a.iteration
 source = run / a.outname
 job = Path('D:/sim_runs') / a.job
 metadata = json.loads((job / 'job.json').read_text(encoding='utf-8-sig'))
-assert f'/results/T018c/postprocessing/run_{a.iteration}.py' in metadata['cmd'].replace(chr(92), '/')
+sys.path.insert(0, str(repo / 'src'))
+from lipsim.image.dispatch import MANIFEST, completed_evidence
+delegations = json.loads(MANIFEST.read_text())['delegations'] if MANIFEST.exists() else []
+delegated = [e for e in delegations if Path(e['output']) == source]
+if delegated:
+    entry, = delegated
+    assert Path(entry['owner_job_dir']) == job, 'Collect actual delegated owner, never the administrative skip'
+    completed_evidence(entry)
+else:
+    assert f'/results/T018c/postprocessing/run_{a.iteration}.py' in metadata['cmd'].replace(chr(92), '/')
 summary = json.loads((job / 'postprocess_summary.json').read_text(encoding='utf-8'))
 evidence, = [r for r in summary['commands'] if r['name'] == f'{a.member}_{a.outname}' and r.get('returncode') == 0]
 cmd = evidence['command']
