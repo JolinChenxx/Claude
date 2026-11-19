@@ -369,3 +369,16 @@ Updated: 2026-11-15
 - Consequence: the extra ejecta above the choked flux cannot be vapour in this framework. Physically they are condensed-phase droplets (Bulgakova & Bulgakov 2001; Miotello & Kelly 1999), the fraction the extension declared "not modelled". A consistent version caps the injected vapour at ρ_v u_v(T_cap) and books the rest as droplets that leave the gas. **At T_s = T_cap this is identical to PE off for the gas** (mdot = Knight flux at T_cap either way). Phase explosion therefore cannot raise the vapour mass in a sonic Knight-layer model.
 - Withdrawn: the T018b low-fluence "no breakdown" result (the same pile-up: 130–165 kg/m³ in the first cell) and the T018c high it0/it1 differences (lower core specific energy, slightly faster decay). They are artefacts of the flux violation and are kept only as records. PREREG verdict: the declared extension is **invalid as specified**. Its premise (more vapour) is unreachable without violating choked flow. That answers the hypothesis "under-predicted vapour mass via phase explosion" in the negative.
 - Status: T018c it2 is stopped (stalled, and superseded by this diagnosis). High fluence stays reported with PE off (T016e it2). The slow high-fluence decay remains open; the next suspects are emission physics and plume cooling, not vapour mass.
+
+## 2026-11-20 06:00 — T019 split, high fluence (T016e high thin it2, image_v2, filter b, baseline)
+- All parts normalised to the total at 300 ns, thin (sa within 0.01):
+
+  | part | 200 | 300 | 400 | 500 | 600 | 700 ns |
+  |---|---|---|---|---|---|---|
+  | total | 1.43 | 1.00 | 0.84 | 0.81 | 0.72 | 0.66 |
+  | continuum | 0.25 | 0.13 | 0.082 | 0.058 | 0.043 | 0.034 |
+  | lines | 1.19 | 0.87 | 0.76 | 0.75 | 0.67 | 0.62 |
+  | experiment | 1.40 | 1.00 | 0.54 | 0.37 | 0.21 | 0.13 |
+
+- The model band is line-dominated (87% at 300 ns, 95% at 700 ns), and the **Cu I lines are what stays flat** (−29% from 300 to 700 ns). The continuum falls by 3.7× over the same interval, close to the experiment's 7.7×. The open discrepancy is therefore in the Cu I line emissivity of the cooling, recombining core: either the LTE line source (populations of the 3.8 eV upper levels while Cu II → Cu I recombination feeds the atoms) or a core that cools/dilutes too slowly. IP lowering is already Debye–Hückel in the tables.
+- Next (to be pre-declared before running): (a) an LTE-validity diagnostic for the upper levels (McWhirter and recombination-time criteria on the emission-weighted n_e, T per frame); (b) the emission-weighted T, n_e, n_CuI per frame, to separate the "too hot" and "too many atoms" explanations. Diagnostic only; no emissivity change without a separate pre-registration.
