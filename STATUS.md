@@ -1,5 +1,18 @@
 # Codex pass log (latest first)
 
+## 2026-11-19T16:53:49+08:00 (UTC+8)
+- Pulled2b30ea4; Claude accepted v1i and issuedT018c, closing literature lookup as documented partial DATA_NOTES result. No further source lookup required. ClaimedT018c b2b9e1e and pushed before operations.
+- T018c step1: verified exact wrapper8480 command/create-time and two high cwd/MPI trees/16PLUTO ranks; job.ps1 stop at16:50:47,rc0. Targets gone;103 recorded unrelated processes retained original identities. High thin last budget199.9899ns,step25000 t199.35ns/dt0.009769ns/Nrkl9; trap252.9527ns,step28000 t244.92ns/dt0.050992ns/Nrkl18. No data deletion/truncation. T018 status superseded byT018b/T018c. Evidence/registry provenance pushed824614e; old notes consumed and monitoring requirements retained.
+- Forced whole-batch stop prevented ordinary high registry append. Reconstructed2 rows using observed MPI start, actual original launchcommitfb8bbbc, source registry hash and retained ini hashes. Solver rc unknown, empty fields explicitly documented; not completed successes.
+- StartedT018c16:53:11 via job.ps1,PID19644,commit824614e,max-cores16; initial running. Existing v1i SHA256487decf2ef2383fd2442252ea6fcb0c9ae4d0a8106c849c5edfafcb8205f0169 reverified. Immediate generated-input checks:[{"member":"high_thin_G0","source_meta_exists":true,"pluto_ini_exists":true,"phase_explosion":true,"rmax_par":"1000"},{"member":"high_trap_G0","source_meta_exists":false,"pluto_ini_exists":false}]. No foreground compute wait; next pass verify pending inputs and completed iterations.
+- Capacity64 physicalcores: T018b16+T018c16+T016e16+referenceimage16. Freed oldhigh16 consumed byT018c, not an extra imaging slot. Native dispatcher39740 verified stopped/held. PrioritizeT018b/T018c images/diagnostics overT016i/T017a as slots free; no unauthorized stops. All other job.ps1 checks running, no new completed iteration/otherreadycard this pass.
+- Disk at2026-11-19T16:52:28+08:00: D free2263.96GB; oldlow rank0 rates0/0GB/h; T018b low thin/trap rank0 rates0.0611/0.0872GB/h,allT018b logs0.1489GB/h. OldT018 interval includes finalstop. Log-only horizon to150GB10944.3h excludes newT018c,fields,otherwriters and uncertain runtime; no immediate warning supported by current estimate. AddT018c log baseline next pass. Preserve logs.
+- Synced/hashverifiedT018/T018c reports; handoff records supersession and launch. T018b200ns checkpoint previouslydelivered eb0c436, accepted byClaude; do not duplicate checkpoint.
+- Sample16:52:28 T018b/low_thin_G0/it0: budget_t_ns=926.4667; step:8000; t = 8.1984e+002; dt = 1.4236e-001; 63.1 %; [Mach = 0.777922, Nrkl = 3]
+- Sample16:52:28 T018b/low_trap_G0/it0: budget_t_ns=893.3767; step:8000; t = 8.1994e+002; dt = 1.4241e-001; 63.1 %; [Mach = 0.768304, Nrkl = 3]
+- Sample16:52:28 T016e/low_thin_G0/it2: budget_t_ns=830.497; step:41000; t = 8.1733e+002; dt = 2.0699e-002; 62.9 %; [Mach = 1.708240, Nrkl = 63]
+- Sample16:52:28 T016e/low_trap_G0/it2: budget_t_ns=813.9992; step:41000; t = 7.9860e+002; dt = 2.0824e-002; 61.4 %; [Mach = 1.760931, Nrkl = 63]
+
 ## 2026-11-19T16:39:18+08:00 (UTC+8)
 - T018b low thin passed200ns. Verified both generated phase_explosion=true/rmax_par1000 and MPI39112/48700 each8 ranks using build_v1i. Pushed input copies, both budget captures, comparisonCSV/MD, byte-offset-verified logs and report/handoff eb0c436; report and COMPARISON synced/hashverified to D:/Sync/T018b.
 - 200ns checkpoint captured16:37:40 at low thin239.4524ns. Step3000 at200.40ns:dt0.075452ns,Nrkl10; latest rank0 dt-limit kind3,mass,dt_src7.622e-10s. Throughput1394.44ns/h since MPI start includes early transient, not a remaining-runtime forecast. Logging every1000steps means exact100/150ns Nrkl unavailable; nearest actual step and snapshot dt evidence supplied, no invented values.
@@ -334,16 +347,4 @@
 - T016e/low_trap_G0/it1: budget_t_ns=9.374896e+002; dt=2.5222e-002,Nrkl=36 (step53000,log_t_ns=9.2650e+002).
 - T016e_r/low_thin_G1/it0: copied budget498ns and inherited pre-restart log dt0.0063659ns,Nrkl63 (step72000,494.18ns); no fresh restart diagnostic at this snapshot. Restart checkpoint497.496814ns,dt0.0063618971ns; next pass measure fresh progress.
 - skipped ready cards and why: none; no ready cards. End pass after background launch; next check4 active jobs and collect restart progress/completions.
-
-## 2026-11-19 08:51 (UTC+8)
-- cards: T016e,T016i,T017a | action: pull ws already current at ef30ce0; no incoming note or ready card. Archived T015 low_thin_G0/it0 native image rc0:18 metrics,30 times10-1230ns,six finite frame archives local,13 unavailable P2 preserved. Fourteen native images archived; full T015 handoff remains pending.
-- T016e PID42332,executionbc79e7d: running; seven solver completions archived. T016i_native_01 PID38032,executionf897ccd: running T015/low_thin_G0/it1. T017a_image_v2_01 PID12624,execution963dd49: running high_trap_G0/it1; three reference images archived. T016e_post_high_trap_03 PID27240,executione6c1b88: running v0 high_trap it2. All four stderr tails empty.
-- T016e/high_thin_G0/it2: t_ns=7.524920e+002; dt=1.9608e-002, Nrkl=8 (step 109000, log_t_ns=7.5139e+002).
-- T016e/high_thin_G1/it0: t_ns=6.229918e+002; dt=1.1364e-002, Nrkl=55 (step 82000, log_t_ns=6.2192e+002).
-- T016e/high_trap_G0/it3: t_ns=5.649984e+001; dt=3.3669e-003, Nrkl=5 (step 9000, log_t_ns=5.4542e+001).
-- T016e/low_thin_G0/it1: t_ns=9.164826e+002; dt=2.4499e-002, Nrkl=56 (step 52000, log_t_ns=9.1114e+002).
-- T016e/low_thin_G1/it0: t_ns=4.964949e+002; dt=6.3659e-003, Nrkl=63 (step 72000, log_t_ns=4.9418e+002).
-- T016e/low_trap_G0/it1: t_ns=9.149968e+002; dt=2.2915e-002, Nrkl=62 (step 52000, log_t_ns=9.0258e+002).
-- skipped ready cards and why: none; no ready cards. All6 solver members advanced from08:36; no stagnation escalation needed.
-- next: check4 active jobs; archive new v0/native/reference completions; native/v2 imaging of new it2 pending after current queues. No foreground waiting.
 
