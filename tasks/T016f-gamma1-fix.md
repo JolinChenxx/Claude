@@ -2,7 +2,8 @@
 id: T016f
 title: Verify the Gamma1 bound (build v1h) on the stalled it3 checkpoint, then continue high-fluence Picard it3–it4
 owner: codex
-status: ready
+status: running
+started: 2026-11-19T11:34:39.343246+08:00
 depends: []
 milestone: D2
 est_time: 0.3h + 20 min check + about 8–12h machine time (16 cores)
