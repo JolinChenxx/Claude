@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-20T14:05:51+08:00 (UTC+8)
+- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
+- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
+- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
+
 ## 2026-11-20T13:50:54+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
@@ -194,14 +199,3 @@
 - Reservations after T019 completion: native catch-up16/64physical cores,48free; no PLUTO ranks. No ready card waits for capacity. T018c remains done, historical archive complete, PE results withdrawn; no T018c work remains.
 - Sample 2026-11-20T06:37:30.253954+08:00: T016i_catchup_01, PID16756, output D:\sim_runs\T016e\high_thin_G1\it0\image_v1;16workers, worker CPU43799.406s, increase15471.344s since 2026-11-20T06:20:47.288912+08:00. Activity, not completion percentage.
 - Disk free2250.289GB decimal; monitoring evidence D:/sim_runs/T019/pass_20261120_0635_monitor.json. No process intervention, raw deletion, physics/numerical change or foreground computation wait. No further executable card or user action this pass.
-
-## 2026-11-20T06:21:24+08:00 (UTC+8)
-- Work card: none (monitoring). Pulled ws, already current at 943c3ba. Incoming to_codex empty. No ready or blocked Codex cards; T012/T013 remain draft. T016i and T019 remain running. No new claim, launch, completed output, handoff or ws edit; unrelated output/ preserved.
-- job.ps1 status: T016i_catchup_01 wrapper 27348 / launch 7ff09dc and T019_split_01 wrapper 53740 / launch 533c8be running. Live wrapper creation identities match the previous sample, both exitcode files absent, stderr empty. All three image parents have 16 workers with increasing CPU time.
-- T016i catch-up continues T016e/high_thin_G1/it0/image_v1; 1/5 catch-up sets archived, remaining high_trap_G0/it2 and low thin/trap it1 still sequentially queued. Original queue complete. Native archive unchanged: 38 sets (T016e 7, T015 14, T016r2 2, T016h 1, T014 14); no newly completed native output to collect.
-- T019 low continuum and lines still running with no command returncode; high pair already archived with rc0. Actual command records/live children establish both low jobs active despite stale pending_commands. Complete split_table.csv and final handoff await all four outputs. No duplicate collection or active runner/plan edit.
-- Reservations: catch-up 16 + T019 32 = 48/64 physical cores, 16 free; no PLUTO ranks. No ready card waits for capacity. T018c stays done with historical archive complete and PE results withdrawn; no T018c restart or further work.
-- Sample 2026-11-20T06:20:47.288912+08:00: T016i_catchup_01, PID 16756, output D:\sim_runs\T016e\high_thin_G1\it0\image_v1; worker CPU 28328.062 s, increase 11832.266 s since 2026-11-20T06:07:40.439580+08:00. Activity, not completion percentage.
-- Sample 2026-11-20T06:20:47.288912+08:00: T019_split_01, PID 17836, output D:\sim_runs\T016e\low_thin_G0\it1\image_v2_continuum; worker CPU 60870.516 s, increase 11845.516 s since 2026-11-20T06:07:40.439580+08:00. Activity, not completion percentage.
-- Sample 2026-11-20T06:20:47.288912+08:00: T019_split_01, PID 38228, output D:\sim_runs\T016e\low_thin_G0\it1\image_v2_lines; worker CPU 59833.594 s, increase 11843.906 s since 2026-11-20T06:07:40.439580+08:00. Activity, not completion percentage.
-- Disk free 2250.296 GB decimal; evidence D:/sim_runs/T019/pass_20261120_0620_monitor.json. No report rewrite or redundant sync, process intervention, raw deletion, physics/numerical change, repeated large-log scan or foreground computation wait. No further executable work or user action this pass.
