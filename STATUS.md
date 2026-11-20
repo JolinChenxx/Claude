@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-20T11:20:55+08:00 (UTC+8)
+- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. No ready, running, blocked or review Codex cards; T012/T013 remain draft and all other Codex cards are done. No executable task or dependency/capacity ambiguity.
+- No active card requires job.ps1 polling. T016i original/catch-up jobs were previously verified finished rc0 and the card was closed by Claude. Final archive, handoff and report sync are complete. T019/T020 done; T018c remains done/withdrawn. No new launch, restart, collection, handoff, report rewrite or redundant sync.
+- Snapshot 2026-11-20T11:20:40.878570+08:00; evidence D:/sim_runs/T020/pass_20261120_1120_monitor.json; disk free 2250.303 GB decimal. Unrelated output/ preserved. No ws edits, raw deletion, model/numerical changes, process intervention or foreground computation wait. No executable work or user action this pass.
+
 ## 2026-11-20T11:05:55+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. No ready, running, blocked or review Codex cards; T012/T013 remain draft and all other Codex cards are done. No executable task or dependency/capacity ambiguity.
 - No active card requires job.ps1 polling. T016i original/catch-up jobs were previously verified finished rc0 and the card was closed by Claude. Final archive, handoff and report sync are complete. T019/T020 done; T018c remains done/withdrawn. No new launch, restart, collection, handoff, report rewrite or redundant sync.
@@ -278,16 +283,3 @@
 - Sample 2026-11-20T03:50:37.192751+08:00: T019_split_01, image PID42352, output D:\sim_runs\T016e\high_thin_G0\it2\image_v2_continuum, workers16, cumulative worker CPU20761.438s, increase13062.156s since previous pass.
 - Sample 2026-11-20T03:50:37.192751+08:00: T019_split_01, image PID9044, output D:\sim_runs\T016e\high_thin_G0\it2\image_v2_lines, workers16, cumulative worker CPU20789.766s, increase13068.766s since previous pass.
 - Disk free2250.319GB decimal; evidence D:/sim_runs/T019/pass_20261120_0350_monitor.json. No parameter/process intervention, raw-data deletion/truncation, full-log scan, report rewrite or redundant Sync copy. Reports/archives unchanged frome6a6292. No executable task or user action this pass.
-
-## 2026-11-20T03:36:32+08:00 (UTC+8)
-- Work card: none (monitoring T016i, remaining T018c historical image, T019). Initial ws pull already current ate6a6292. Incoming to_codex empty; no owner: codex / status: ready cards. No new completion, executable card, handoff or computation launch. Unrelated output/ preserved; no ws files changed.
-- job.ps1 status: T016i_native_01 wrapper38032/launchf897ccd, T018c_post_it1_thin_v2_01 wrapper51676/launch1bb6bcb and T019_split_01 wrapper53740/launch533c8be all running. Live wrapper creation identities match metadata; no exitcode files; stderr tails empty. T019 scheduler reports no error, both high-component commands active and low counterparts queued.
-- T019 remains diagnostic only: two concurrent16-worker images reserve32cores for the entire four-command queue. No completed output or split_table.csv to collect, no acceptance claim and no completion handoff yet. No parameter, code or scheduling change this pass.
-- T018c card remains done/PEwithdrawn. Its final previously started thin it1/v2 image continues under c5c469f, which permits already-running items to finish but forbids further starts. The two it2 solvers remain stopped; retained budgets thin62.99999ns/trap76.99786ns are historical, not current progress. No new T018c work or process intervention.
-- Native T016i remains sequential on T014 low_trap_G0/it1/image_v1. No newly completed unarchived set. Inventory35sets unchanged: T016e6,T01514,T016r2=2,T016h1,T01412. No per-set native handoff or repeated collection.
-- Reservations: native16 + T018c thinv2/16 + T01932 =64/64physical cores. Four live imaging parents each have16workers;0PLUTO ranks. All active outputs are distinct. Low T019 commands wait within their existing background queue; no foreground computation wait.
-- Sample 2026-11-20T03:35:42.835752+08:00: T016i_native_01, image PID24172, output D:\sim_runs\T014\low_trap_G0\it1\image_v1, workers16, cumulative worker CPU14882.438s. CPU sample is not a completion percentage.
-- Sample 2026-11-20T03:35:42.835752+08:00: T018c_post_it1_thin_v2_01, image PID13004, output D:\sim_runs\T018c\high_thin_G0\it1\image_v2, workers16, cumulative worker CPU20832.938s. CPU sample is not a completion percentage.
-- Sample 2026-11-20T03:35:42.835752+08:00: T019_split_01, image PID42352, output D:\sim_runs\T016e\high_thin_G0\it2\image_v2_continuum, workers16, cumulative worker CPU7699.281s. CPU sample is not a completion percentage.
-- Sample 2026-11-20T03:35:42.835752+08:00: T019_split_01, image PID9044, output D:\sim_runs\T016e\high_thin_G0\it2\image_v2_lines, workers16, cumulative worker CPU7721.000s. CPU sample is not a completion percentage.
-- Disk free2250.320GB decimal. Monitoring evidence: D:/sim_runs/T019/pass_20261120_0335_monitor.json. No raw-data deletion/truncation, full solver-log scan, report rewrite or redundant Sync copy. Reports/archives unchanged frome6a6292. No user action needed; no executable task this pass.
