@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-20T16:50:44+08:00 (UTC+8)
+- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
+- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
+- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
+
 ## 2026-11-20T16:35:46+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
@@ -153,11 +158,3 @@
 - Scientific review still required: all 756 P1 finite, 29 negative fits and 660 unavailable P2 values preserved with per-set lists; permitted empty-region NaNs and production warnings retained. Both queue executions and archival are complete; no scientific acceptance inferred. Original wall time 94,813.139952 s including scheduling/suspension; catch-up 15,552.218682 s, peak memory not measured.
 - T016i set to review; final handoff/to_claude/T016i.md, report and evidence committed/pushed on ws as ef8e5da after pull/rebase. Report synced to D:/Sync/T016i/T016i.report.md with SHA256 verification; receipt D:/sim_runs/T016i_catchup_01/pass_20261120_0920_sync.json. No other eligible T016i sync outputs; raw fields/frames and diagnostic CSVs remain local.
 - No ready, running or blocked Codex card. T016i awaits Claude review, T012/T013 draft, other Codex cards done; no dependency/capacity ambiguity or new launch. No PLUTO rank or native imaging reservation. T019/T020 done; T018c historical archive complete, PE results withdrawn. Unrelated output/ preserved. Final snapshot 2026-11-20T09:24:17.249196+08:00, disk free 2250.304 GB; evidence D:/sim_runs/T020/pass_20261120_0920_monitor.json. No user action required.
-
-## 2026-11-20T09:08:02+08:00 (UTC+8)
-- Work card: T016i. Pulled ws at 0f441d9; incoming to_codex empty. Archived completed T016e/low_thin_G0/it1/image_v1 with exact per-run rc0: 18 metrics CSVs, summary and validation at 30 common times 10-1230 ns; six finite local frame archives, source/archive hashes and readback verified. All 18 P1 finite/positive; six filter-a P2 unavailable, 12 filter-b/c P2 available. Original t_ref_used_ns=280 retained for all scenarios; permitted empty-region NaNs retained. No parameter adjustment or new physical acceptance claim.
-- Catch-up 4/5 archived; native inventory 41 sets / 738 metrics CSVs (T016e 10, T015 14, T016r2 2, T016h 1, T014 14). Results/T016e 16,991,143 bytes, below 20 MiB. Report/archive pushed to ws as eba678f after pull/rebase. Changed report alone synced to D:/Sync/T016i/T016i.report.md with SHA256 verification; receipt D:/sim_runs/T016i_catchup_01/pass_20261120_0905_sync.json. No per-set handoff under 53e3c49; final handoff awaits the last catch-up output and wrapper completion, or failure.
-- job.ps1 status: T016i_catchup_01 running, wrapper 27348 / launch 7ff09dc creation identity unchanged, no exitcode and stderr empty. Final low_trap_G0/it1/image_v1 active with PID 47924, created 1795135870.5392523, BelowNormal, 16 workers. Runner/plan hashes unchanged and match execution.json.
-- Sample 2026-11-20T09:06:26.888985+08:00: worker CPU 14317.609375 s, first sample for this image, not a delta against exited low_thin image or completion percentage. Reservations 16/64 physical cores, 48 free; no PLUTO ranks. No other unarchived native completion.
-- No ready/blocked/review Codex cards; only T016i running, T012/T013 draft, other Codex cards done. No card waits for capacity or unresolved dependency. T019/T020 done; T018c historical archive complete, PE results withdrawn. No new claim, launch, process intervention, raw deletion or foreground computation wait. Unrelated output/ preserved.
-- Disk free 2250.308 GB decimal; evidence D:/sim_runs/T020/pass_20261120_0905_monitor.json. Existing collector unchanged; no model/numerical/configuration or active runner/plan change. No user action required.
