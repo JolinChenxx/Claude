@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-20T14:35:46+08:00 (UTC+8)
+- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
+- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
+- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
+
 ## 2026-11-20T14:20:48+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
@@ -181,14 +186,3 @@
 - Reservations after T020 completion: native catch-up 16/64 physical cores, 48 free; no PLUTO ranks. No ready card waits for capacity. T018c stays done, historical archive complete and PE results withdrawn.
 - Native sample 2026-11-20T07:06:39.093006+08:00: PID 16756, D:\sim_runs\T016e\high_thin_G1\it0\image_v1; worker CPU 71258.500 s, increase 12361.672 s since 2026-11-20T06:53:31.678213+08:00. Activity, not completion percentage.
 - Disk free 2250.288 GB decimal; evidence D:/sim_runs/T020/pass_20261120_0705_monitor.json. No process intervention, raw deletion, physical/numerical change or foreground computation wait. No further executable card or user action this pass.
-
-## 2026-11-20T06:54:46+08:00 (UTC+8)
-- Work card: T020 claimed and launched. Pulled ws a9ad957 to df3b78b: Claude closed T019 as done, removed its delivered handoff and preregistered/issued T020. Read new STATE and PREREG entries; incoming to_codex empty. T020 was the only ready Codex card, depends empty; claim314bc25 changed it to running with started06:51:24 UTC+8. No other ready card skipped; T012/T013 remain draft.
-- Prescribed T020 diagnostics: unchanged scripts/diag_emission.py on reported T016e high_thin_G0/it2 (10times100..800ns) and low_thin_G0/it1 (12times100..1200ns), tablesv1c, filter510 12. Plan records exact commands,51file hashes including code/NIST lines/registry/tables and22nearest-snapshot size/mtime fingerprints; both requested and actual times retained, no interpolation.
-- Added only engineering runner/provenance/report files. Syntax and production-environment --help imports pass. Preflight validates frozen files, snapshot existence/fingerprints, absent outputs/logs, duplicate ownership and capacity. Two serial commands in parallel, BelowNormal, OMP/OPENBLAS/MKL=1. Reused unchanged T019 capacity helper in a separate module with2core reservation; no physical model, numerical setting, diagnostic script or native runner/plan change.
-- Prepared runner/plan/preflight/report pushed25273fd. Started job.ps1 background job T020_diag_01 at06:54:11 UTC+8, wrapper25240, runner39704, launch commit25273fd. Launch check06:54:12 verified wrapper creation1795128851.4488378, runner creation1795128851.572344, exact command, plan/runner hashes and empty stderr; startup was still preflighting. Launch receipt/report pushed bdd4417. No foreground computation wait or result acceptance claim; command starts/returncodes and logs are for the next pass to validate.
-- Expected outputs: results/T020/high_thin_G0_diag.csv and low_thin_G0_diag.csv plus two member logs. Owner summary D:/sim_runs/T020_diag_01/postprocess_summary.json. Final report/handoff and allowlisted report sync await validated completion; no premature handoff or sync of arbitrary CSV. LTE criteria are evaluated by Claude as explicitly assigned by the card.
-- T016i_catchup_01 remains on high_thin_G1/it0/image_v1. Wrapper27348 / launch7ff09dc creation identity verified;16workers, stderr empty. One of five catch-up sets archived; remaining high_trap_G0/it2 and both low it1 members stay queued. Native archive unchanged38sets; no new unarchived native output. T018c remains done with PE results withdrawn.
-- Preflight reservations: native16 + new T0202 =18/64physical cores,46free; no PLUTO ranks. All prior T019 computation is complete and card done. No duplicate work or solver restart.
-- Native sample 2026-11-20T06:53:31.678213+08:00: PID16756, D:\sim_runs\T016e\high_thin_G1\it0\image_v1; worker CPU58896.828s, increase15097.422s since 2026-11-20T06:37:30.253954+08:00. Activity, not completion percentage.
-- Disk free2250.288GB decimal; evidence D:/sim_runs/T020/pass_20261120_0650_monitor.json and results/T020/launch.json. End pass after detached launch bookkeeping; no foreground wait, raw deletion, process intervention or user action. Unrelated output/ preserved.
