@@ -1,0 +1,419 @@
+﻿{
+    "checked_at":  "2026-11-15T17:18:05.5697071+08:00",
+    "commands":  [
+                     "Get-ScheduledTask -TaskName S4Plume_* | Select TaskName,State,Actions,Triggers",
+                     "Disable-ScheduledTask -TaskName \u003ceach exact task name\u003e",
+                     "Get-ScheduledTask -TaskName S4Plume_*",
+                     "Get-CimInstance Win32_Process (PID35756 and parent31644)"
+                 ],
+    "before":  [
+                   {
+                       "TaskName":  "S4Plume_Daily0700",
+                       "State":  "Ready",
+                       "Actions":  {
+                                       "Execute":  "D:\\junlin\\PlasmaPlumeHighInfluence\\.venv\\Scripts\\pythonw.exe",
+                                       "Arguments":  "\"D:\\junlin\\PlasmaPlumeHighInfluence\\scripts\\report.py\" daily",
+                                       "WorkingDirectory":  "D:\\junlin\\PlasmaPlumeHighInfluence"
+                                   },
+                       "Triggers":  {
+                                        "StartBoundary":  "2026-11-11T07:00:00+08:00",
+                                        "EndBoundary":  "2026-11-13T22:37:46+08:00",
+                                        "Enabled":  true,
+                                        "DaysInterval":  null,
+                                        "Repetition":  {
+                                                           "CimClass":  {
+                                                                            "CimSuperClassName":  null,
+                                                                            "CimSuperClass":  null,
+                                                                            "CimClassProperties":  [
+                                                                                                       {
+                                                                                                           "Name":  "Duration",
+                                                                                                           "Value":  null,
+                                                                                                           "CimType":  14,
+                                                                                                           "Flags":  "Property, NullValue",
+                                                                                                           "Qualifiers":  [
+
+                                                                                                                          ],
+                                                                                                           "ReferenceClassName":  null
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "Name":  "Interval",
+                                                                                                           "Value":  null,
+                                                                                                           "CimType":  14,
+                                                                                                           "Flags":  "Property, NullValue",
+                                                                                                           "Qualifiers":  [
+
+                                                                                                                          ],
+                                                                                                           "ReferenceClassName":  null
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "Name":  "StopAtDurationEnd",
+                                                                                                           "Value":  null,
+                                                                                                           "CimType":  1,
+                                                                                                           "Flags":  "Property, NullValue",
+                                                                                                           "Qualifiers":  [
+
+                                                                                                                          ],
+                                                                                                           "ReferenceClassName":  null
+                                                                                                       }
+                                                                                                   ],
+                                                                            "CimClassQualifiers":  [
+
+                                                                                                   ],
+                                                                            "CimClassMethods":  [
+
+                                                                                                ],
+                                                                            "CimSystemProperties":  {
+                                                                                                        "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                                        "ServerName":  "DESKTOP-109C162",
+                                                                                                        "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                                        "Path":  null
+                                                                                                    }
+                                                                        },
+                                                           "CimInstanceProperties":  [
+                                                                                         {
+                                                                                             "Name":  "Duration",
+                                                                                             "Value":  null,
+                                                                                             "CimType":  14,
+                                                                                             "Flags":  "Property, NotModified, NullValue",
+                                                                                             "IsValueModified":  false
+                                                                                         },
+                                                                                         {
+                                                                                             "Name":  "Interval",
+                                                                                             "Value":  "P1D",
+                                                                                             "CimType":  14,
+                                                                                             "Flags":  "Property, NotModified",
+                                                                                             "IsValueModified":  false
+                                                                                         },
+                                                                                         {
+                                                                                             "Name":  "StopAtDurationEnd",
+                                                                                             "Value":  false,
+                                                                                             "CimType":  1,
+                                                                                             "Flags":  "Property, NotModified",
+                                                                                             "IsValueModified":  false
+                                                                                         }
+                                                                                     ],
+                                                           "CimSystemProperties":  {
+                                                                                       "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                       "ServerName":  "DESKTOP-109C162",
+                                                                                       "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                       "Path":  null
+                                                                                   }
+                                                       }
+                                    }
+                   },
+                   {
+                       "TaskName":  "S4Plume_Hourly",
+                       "State":  "Ready",
+                       "Actions":  {
+                                       "Execute":  "D:\\junlin\\PlasmaPlumeHighInfluence\\.venv\\Scripts\\pythonw.exe",
+                                       "Arguments":  "\"D:\\junlin\\PlasmaPlumeHighInfluence\\scripts\\report.py\" hourly",
+                                       "WorkingDirectory":  "D:\\junlin\\PlasmaPlumeHighInfluence"
+                                   },
+                       "Triggers":  {
+                                        "StartBoundary":  "2026-11-10T23:00:00+08:00",
+                                        "EndBoundary":  "2026-11-13T22:37:46+08:00",
+                                        "Enabled":  true,
+                                        "DaysInterval":  null,
+                                        "Repetition":  {
+                                                           "CimClass":  {
+                                                                            "CimSuperClassName":  null,
+                                                                            "CimSuperClass":  null,
+                                                                            "CimClassProperties":  [
+                                                                                                       {
+                                                                                                           "Name":  "Duration",
+                                                                                                           "Value":  null,
+                                                                                                           "CimType":  14,
+                                                                                                           "Flags":  "Property, NullValue",
+                                                                                                           "Qualifiers":  [
+
+                                                                                                                          ],
+                                                                                                           "ReferenceClassName":  null
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "Name":  "Interval",
+                                                                                                           "Value":  null,
+                                                                                                           "CimType":  14,
+                                                                                                           "Flags":  "Property, NullValue",
+                                                                                                           "Qualifiers":  [
+
+                                                                                                                          ],
+                                                                                                           "ReferenceClassName":  null
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "Name":  "StopAtDurationEnd",
+                                                                                                           "Value":  null,
+                                                                                                           "CimType":  1,
+                                                                                                           "Flags":  "Property, NullValue",
+                                                                                                           "Qualifiers":  [
+
+                                                                                                                          ],
+                                                                                                           "ReferenceClassName":  null
+                                                                                                       }
+                                                                                                   ],
+                                                                            "CimClassQualifiers":  [
+
+                                                                                                   ],
+                                                                            "CimClassMethods":  [
+
+                                                                                                ],
+                                                                            "CimSystemProperties":  {
+                                                                                                        "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                                        "ServerName":  "DESKTOP-109C162",
+                                                                                                        "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                                        "Path":  null
+                                                                                                    }
+                                                                        },
+                                                           "CimInstanceProperties":  [
+                                                                                         {
+                                                                                             "Name":  "Duration",
+                                                                                             "Value":  null,
+                                                                                             "CimType":  14,
+                                                                                             "Flags":  "Property, NotModified, NullValue",
+                                                                                             "IsValueModified":  false
+                                                                                         },
+                                                                                         {
+                                                                                             "Name":  "Interval",
+                                                                                             "Value":  "PT1H",
+                                                                                             "CimType":  14,
+                                                                                             "Flags":  "Property, NotModified",
+                                                                                             "IsValueModified":  false
+                                                                                         },
+                                                                                         {
+                                                                                             "Name":  "StopAtDurationEnd",
+                                                                                             "Value":  false,
+                                                                                             "CimType":  1,
+                                                                                             "Flags":  "Property, NotModified",
+                                                                                             "IsValueModified":  false
+                                                                                         }
+                                                                                     ],
+                                                           "CimSystemProperties":  {
+                                                                                       "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                       "ServerName":  "DESKTOP-109C162",
+                                                                                       "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                       "Path":  null
+                                                                                   }
+                                                       }
+                                    }
+                   },
+                   {
+                       "TaskName":  "S4Plume_Watchdog",
+                       "State":  "Ready",
+                       "Actions":  {
+                                       "Execute":  "D:\\junlin\\PlasmaPlumeHighInfluence\\.venv\\Scripts\\pythonw.exe",
+                                       "Arguments":  "\"D:\\junlin\\PlasmaPlumeHighInfluence\\scripts\\campaign.py\"",
+                                       "WorkingDirectory":  "D:\\junlin\\PlasmaPlumeHighInfluence"
+                                   },
+                       "Triggers":  {
+                                        "value":  [
+                                                      {
+                                                          "StartBoundary":  "2026-11-10T23:12:32+08:00",
+                                                          "EndBoundary":  "2026-11-13T22:37:46+08:00",
+                                                          "Enabled":  true,
+                                                          "DaysInterval":  null,
+                                                          "Repetition":  {
+                                                                             "CimClass":  {
+                                                                                              "CimSuperClassName":  null,
+                                                                                              "CimSuperClass":  null,
+                                                                                              "CimClassProperties":  [
+                                                                                                                         {
+                                                                                                                             "Name":  "Duration",
+                                                                                                                             "Value":  null,
+                                                                                                                             "CimType":  14,
+                                                                                                                             "Flags":  "Property, NullValue",
+                                                                                                                             "Qualifiers":  "",
+                                                                                                                             "ReferenceClassName":  null
+                                                                                                                         },
+                                                                                                                         {
+                                                                                                                             "Name":  "Interval",
+                                                                                                                             "Value":  null,
+                                                                                                                             "CimType":  14,
+                                                                                                                             "Flags":  "Property, NullValue",
+                                                                                                                             "Qualifiers":  "",
+                                                                                                                             "ReferenceClassName":  null
+                                                                                                                         },
+                                                                                                                         {
+                                                                                                                             "Name":  "StopAtDurationEnd",
+                                                                                                                             "Value":  null,
+                                                                                                                             "CimType":  1,
+                                                                                                                             "Flags":  "Property, NullValue",
+                                                                                                                             "Qualifiers":  "",
+                                                                                                                             "ReferenceClassName":  null
+                                                                                                                         }
+                                                                                                                     ],
+                                                                                              "CimClassQualifiers":  [
+
+                                                                                                                     ],
+                                                                                              "CimClassMethods":  [
+
+                                                                                                                  ],
+                                                                                              "CimSystemProperties":  {
+                                                                                                                          "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                                                          "ServerName":  "DESKTOP-109C162",
+                                                                                                                          "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                                                          "Path":  null
+                                                                                                                      }
+                                                                                          },
+                                                                             "CimInstanceProperties":  [
+                                                                                                           {
+                                                                                                               "Name":  "Duration",
+                                                                                                               "Value":  null,
+                                                                                                               "CimType":  14,
+                                                                                                               "Flags":  "Property, NotModified, NullValue",
+                                                                                                               "IsValueModified":  false
+                                                                                                           },
+                                                                                                           {
+                                                                                                               "Name":  "Interval",
+                                                                                                               "Value":  "PT5M",
+                                                                                                               "CimType":  14,
+                                                                                                               "Flags":  "Property, NotModified",
+                                                                                                               "IsValueModified":  false
+                                                                                                           },
+                                                                                                           {
+                                                                                                               "Name":  "StopAtDurationEnd",
+                                                                                                               "Value":  false,
+                                                                                                               "CimType":  1,
+                                                                                                               "Flags":  "Property, NotModified",
+                                                                                                               "IsValueModified":  false
+                                                                                                           }
+                                                                                                       ],
+                                                                             "CimSystemProperties":  {
+                                                                                                         "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                                         "ServerName":  "DESKTOP-109C162",
+                                                                                                         "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                                         "Path":  null
+                                                                                                     }
+                                                                         }
+                                                      },
+                                                      {
+                                                          "StartBoundary":  null,
+                                                          "EndBoundary":  "2026-11-13T22:37:46+08:00",
+                                                          "Enabled":  true,
+                                                          "DaysInterval":  null,
+                                                          "Repetition":  {
+                                                                             "CimClass":  {
+                                                                                              "CimSuperClassName":  null,
+                                                                                              "CimSuperClass":  null,
+                                                                                              "CimClassProperties":  [
+                                                                                                                         {
+                                                                                                                             "Name":  "Duration",
+                                                                                                                             "Value":  null,
+                                                                                                                             "CimType":  14,
+                                                                                                                             "Flags":  "Property, NullValue",
+                                                                                                                             "Qualifiers":  "",
+                                                                                                                             "ReferenceClassName":  null
+                                                                                                                         },
+                                                                                                                         {
+                                                                                                                             "Name":  "Interval",
+                                                                                                                             "Value":  null,
+                                                                                                                             "CimType":  14,
+                                                                                                                             "Flags":  "Property, NullValue",
+                                                                                                                             "Qualifiers":  "",
+                                                                                                                             "ReferenceClassName":  null
+                                                                                                                         },
+                                                                                                                         {
+                                                                                                                             "Name":  "StopAtDurationEnd",
+                                                                                                                             "Value":  null,
+                                                                                                                             "CimType":  1,
+                                                                                                                             "Flags":  "Property, NullValue",
+                                                                                                                             "Qualifiers":  "",
+                                                                                                                             "ReferenceClassName":  null
+                                                                                                                         }
+                                                                                                                     ],
+                                                                                              "CimClassQualifiers":  [
+
+                                                                                                                     ],
+                                                                                              "CimClassMethods":  [
+
+                                                                                                                  ],
+                                                                                              "CimSystemProperties":  {
+                                                                                                                          "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                                                          "ServerName":  "DESKTOP-109C162",
+                                                                                                                          "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                                                          "Path":  null
+                                                                                                                      }
+                                                                                          },
+                                                                             "CimInstanceProperties":  [
+                                                                                                           {
+                                                                                                               "Name":  "Duration",
+                                                                                                               "Value":  null,
+                                                                                                               "CimType":  14,
+                                                                                                               "Flags":  "Property, NotModified, NullValue",
+                                                                                                               "IsValueModified":  false
+                                                                                                           },
+                                                                                                           {
+                                                                                                               "Name":  "Interval",
+                                                                                                               "Value":  null,
+                                                                                                               "CimType":  14,
+                                                                                                               "Flags":  "Property, NotModified, NullValue",
+                                                                                                               "IsValueModified":  false
+                                                                                                           },
+                                                                                                           {
+                                                                                                               "Name":  "StopAtDurationEnd",
+                                                                                                               "Value":  false,
+                                                                                                               "CimType":  1,
+                                                                                                               "Flags":  "Property, NotModified",
+                                                                                                               "IsValueModified":  false
+                                                                                                           }
+                                                                                                       ],
+                                                                             "CimSystemProperties":  {
+                                                                                                         "Namespace":  "Root/Microsoft/Windows/TaskScheduler",
+                                                                                                         "ServerName":  "DESKTOP-109C162",
+                                                                                                         "ClassName":  "MSFT_TaskRepetitionPattern",
+                                                                                                         "Path":  null
+                                                                                                     }
+                                                                         }
+                                                      }
+                                                  ],
+                                        "Count":  2
+                                    }
+                   }
+               ],
+    "disable_attempts":  [
+                             {
+                                 "TaskName":  "S4Plume_Daily0700",
+                                 "Result":  "disabled",
+                                 "State":  "Disabled"
+                             },
+                             {
+                                 "TaskName":  "S4Plume_Hourly",
+                                 "Result":  "disabled",
+                                 "State":  "Disabled"
+                             },
+                             {
+                                 "TaskName":  "S4Plume_Watchdog",
+                                 "Result":  "disabled",
+                                 "State":  "Disabled"
+                             }
+                         ],
+    "after":  [
+                  {
+                      "TaskName":  "S4Plume_Daily0700",
+                      "State":  "Disabled"
+                  },
+                  {
+                      "TaskName":  "S4Plume_Hourly",
+                      "State":  "Disabled"
+                  },
+                  {
+                      "TaskName":  "S4Plume_Watchdog",
+                      "State":  "Disabled"
+                  }
+              ],
+    "unrelated_mpi_record":  [
+                                 {
+                                     "ProcessId":  31644,
+                                     "ParentProcessId":  10740,
+                                     "Name":  "fdtd-solutions.exe",
+                                     "CreationDate":  "\/Date(1794659725257)\/"
+                                 },
+                                 {
+                                     "ProcessId":  35756,
+                                     "ParentProcessId":  31644,
+                                     "Name":  "mpiexec.exe",
+                                     "CreationDate":  "\/Date(1794659751137)\/"
+                                 }
+                             ],
+    "data_deleted_or_moved":  false,
+    "tasks_deleted_or_unregistered":  false,
+    "privileges_escalated":  false
+}

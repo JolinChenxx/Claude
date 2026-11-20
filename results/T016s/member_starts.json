@@ -1,0 +1,40 @@
+[
+  {
+    "member": "A",
+    "restart": 276,
+    "command": [
+      "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+      "-n",
+      "8",
+      "D:/sim_tools/pluto_lip/build_v1d/mpi/pluto.exe",
+      "-restart",
+      "276",
+      "-dec",
+      "8",
+      "1"
+    ],
+    "started": "2026-11-18T08:08:23.341147+08:00",
+    "limit_seconds": 2400,
+    "state": "running",
+    "pid": 19768
+  },
+  {
+    "member": "B",
+    "restart": 276,
+    "command": [
+      "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+      "-n",
+      "8",
+      "D:/sim_tools/pluto_lip/build_v1d/mpi/pluto.exe",
+      "-restart",
+      "276",
+      "-dec",
+      "8",
+      "1"
+    ],
+    "started": "2026-11-18T08:08:23.341147+08:00",
+    "limit_seconds": 2400,
+    "state": "running",
+    "pid": 22676
+  }
+]

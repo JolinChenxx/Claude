@@ -1,0 +1,181 @@
+{
+  "checked_at": "2026-11-16T22:49:45+08:00",
+  "production_exitcode": 0,
+  "production_started": "2026-11-16T20:06:40+08:00",
+  "production_finished_exitcode_mtime": "2026-11-16T22:46:10+08:00",
+  "production_wall_seconds_from_exitcode_mtime": 9570.2,
+  "batch_members": 6,
+  "solver_runs": 14,
+  "registry_rows": 14,
+  "all_solver_returncodes_zero": true,
+  "high_imaging_job_preexists": false,
+  "high_iterations": [
+    {
+      "member": "high_thin_G0",
+      "iteration": 0,
+      "dir": "D:\\sim_runs\\T011\\high_thin_G0\\it0",
+      "returncode": 0,
+      "solver_seconds": 2097.3,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 36742529,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_thin_G0",
+      "iteration": 1,
+      "dir": "D:\\sim_runs\\T011\\high_thin_G0\\it1",
+      "returncode": 0,
+      "solver_seconds": 2167.8,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 58449988,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_thin_G0",
+      "iteration": 2,
+      "dir": "D:\\sim_runs\\T011\\high_thin_G0\\it2",
+      "returncode": 0,
+      "solver_seconds": 2307.8,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 21708693,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 0,
+      "dir": "D:\\sim_runs\\T011\\high_trap_G0\\it0",
+      "returncode": 0,
+      "solver_seconds": 2132.2,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 36672091,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 1,
+      "dir": "D:\\sim_runs\\T011\\high_trap_G0\\it1",
+      "returncode": 0,
+      "solver_seconds": 2207.0,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 57783447,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 2,
+      "dir": "D:\\sim_runs\\T011\\high_trap_G0\\it2",
+      "returncode": 0,
+      "solver_seconds": 2333.9,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 21549362,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_thin_G1",
+      "iteration": 0,
+      "dir": "D:\\sim_runs\\T011\\high_thin_G1\\it0",
+      "returncode": 0,
+      "solver_seconds": 5496.1,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 50870096,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    },
+    {
+      "member": "high_trap_G1",
+      "iteration": 0,
+      "dir": "D:\\sim_runs\\T011\\high_trap_G1\\it0",
+      "returncode": 0,
+      "solver_seconds": 5489.4,
+      "logs": [
+        {
+          "name": "pluto.log",
+          "bytes": 0,
+          "done_in_last_2000_bytes": false
+        },
+        {
+          "name": "pluto.0.log",
+          "bytes": 47395060,
+          "done_in_last_2000_bytes": true
+        }
+      ],
+      "image_summary_present": false
+    }
+  ],
+  "command": "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T011 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+  "workers": 16,
+  "concurrent_job": "T013a",
+  "concurrent_mpi_ranks": 32,
+  "total_planned_compute_workers": 48,
+  "physical_cores": 64,
+  "warning_counts": "Pending streamed rank-zero-log collection; rc=0 does not imply zero warnings"
+}

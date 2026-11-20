@@ -1,0 +1,25 @@
+# Event channel: when Codex pushes handoff/to_claude/*, this workflow runs. Its result shows up as a check on the
+# ws → main PR and wakes the cloud-side Claude session subscribed to that PR. It also checks that the task cards' front matter is well-formed.
+name: handoff
+on:
+  push:
+    branches: [ws]
+    paths: ['handoff/to_claude/**']
+  workflow_dispatch:
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: List pending handoffs and check task cards
+        run: |
+          echo "## Pending handoffs" >> "$GITHUB_STEP_SUMMARY"
+          ls handoff/to_claude | grep -v '^.gitkeep$' | tee -a "$GITHUB_STEP_SUMMARY" || true
+          bad=0
+          for f in tasks/T*.md; do
+            case "$f" in *.report.md) continue;; esac
+            [ -e "$f" ] || continue
+            grep -qE '^status: (draft|ready|running|review|blocked|done)' "$f" || { echo "bad status in $f"; bad=1; }
+          done
+          exit $bad

@@ -1,0 +1,70 @@
+{
+  "collected": "2026-11-19T15:35:24+08:00",
+  "phase": "now",
+  "reader": "lipsim.io.pluto.read_snapshot",
+  "source": "D:\\sim_runs\\T018\\low_thin_G0\\it0\\data.0076.dbl",
+  "source_sha256": "75ff6f5298534f03fa533594ffa2f9b96a21d2a8cc55aa672a90b5e3a5aeb3db",
+  "source_size": 2116800,
+  "nfile": 76,
+  "t_ns": 189.9989,
+  "indexing": "0-based reader arrays, inclusive i[0,30], j[60,110]; 51x31 [j,i]",
+  "units": "Unconverted PLUTO reader output; x1/x2 cell centres from grid.out",
+  "extract_sha256": "6ea986898e909d8c105a435f5ee37161b774ed44e3ab44d9e5f3313ec0195caf",
+  "fields": {
+    "rho": {
+      "shape": [
+        51,
+        31
+      ],
+      "finite": true,
+      "min": 0.00796990593418009,
+      "max": 1.4756007477688575
+    },
+    "T": {
+      "shape": [
+        51,
+        31
+      ],
+      "finite": true,
+      "min": 200.00000199681043,
+      "max": 6234.627934933605
+    },
+    "prs": {
+      "shape": [
+        51,
+        31
+      ],
+      "finite": true,
+      "min": 0.00020859035794575,
+      "max": 0.24301757096363413
+    },
+    "tr1": {
+      "shape": [
+        51,
+        31
+      ],
+      "finite": true,
+      "min": 0.07693187318779864,
+      "max": 0.9999999999651981
+    },
+    "vx1": {
+      "shape": [
+        51,
+        31
+      ],
+      "finite": true,
+      "min": -0.5052027566362642,
+      "max": 0.7497048837808198
+    },
+    "vx2": {
+      "shape": [
+        51,
+        31
+      ],
+      "finite": true,
+      "min": -0.7601331586667822,
+      "max": 1.4794457345941021
+    }
+  },
+  "next_extract": "first indexed snapshot with t_ns > 250; pending"
+}

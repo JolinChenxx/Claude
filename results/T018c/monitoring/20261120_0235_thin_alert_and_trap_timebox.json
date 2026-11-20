@@ -1,0 +1,136 @@
+{
+  "checked": "2026-11-20T02:36:21.501440+08:00",
+  "authority_commit": "7278552",
+  "sample_time": "2026-11-20T02:35:29.775230+08:00",
+  "thin": {
+    "run": "T018c/high_thin_G0/it2",
+    "budget_t_ns": 62.99999,
+    "step": "step:10000; t = 6.2856e+001; dt = 3.5640e-004; 7.9 %",
+    "mach": "[Mach = 365.071473, Nrkl = 8]",
+    "dt_limit_in_bounded_tail": "! lip dt-limit: step 9000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=4,4] rho=1.020e+002 T=3.190e+004 rhoe=2.863e+009 q=1.392e+019 dt_src=4.114e-011 s"
+  },
+  "thin_handoff_condition": true,
+  "thin_dt_ns": 0.0003564,
+  "thin_Mach": 365.071473,
+  "latest_thin_budget_rows": [
+    "6.099681e+001,1.8024060556e-003,3.4229605667e-005,1.2713586374e-012,8.1708395455e-009,2.3444727887e-004,1.2910424556e-004,9.1424094589e-006,9.6200623849e-005,4.7529085950e-006,1.1995856152e-073,1.2713586374e-012,2.8829679446e-006,5.6742723203e-006",
+    "6.149932e+001,1.8044445593e-003,3.4659413794e-005,1.2907858192e-012,8.1708589727e-009,2.3751830760e-004,1.3179488760e-004,9.2210055617e-006,9.6502414443e-005,4.8800917379e-006,1.1995856152e-073,1.2907858192e-012,2.9271045576e-006,5.7833030212e-006",
+    "6.199697e+001,1.8064022696e-003,3.5112982169e-005,1.3099757881e-012,8.1708781627e-009,2.4054362158e-004,1.3442657419e-004,9.3017934119e-006,9.6815253984e-005,5.0061946671e-006,1.1995856152e-073,1.3099757881e-012,2.9707003371e-006,5.8965168423e-006",
+    "6.249871e+001,1.8083539423e-003,3.5679405019e-005,1.3292720184e-012,8.1708974589e-009,2.4357668699e-004,1.3706815526e-004,9.3834252047e-006,9.7125106521e-005,5.1337602729e-006,1.1995856152e-073,1.3292720184e-012,3.0145357827e-006,6.0149241370e-006",
+    "6.299999e+001,1.8104618329e-003,3.7790238385e-005,1.3484954111e-012,8.1709166823e-009,2.4658870631e-004,1.3968670009e-004,9.4751302737e-006,9.7426875939e-005,5.2692729119e-006,1.1995856152e-073,1.3484954111e-012,3.0582041330e-006,6.1360620369e-006"
+  ],
+  "latest_thin_budget_finite": true,
+  "thin_rank0_last_up_to_50_lines": [
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 23); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 24); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 25); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 26); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 27); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 28); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 29); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 30); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 31); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10782 (stage = 32); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 1); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 2); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 3); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 4); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 5); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 6); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 7); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 8); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 9); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 10); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 11); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 12); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 13); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 14); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 15); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 16); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 17); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 18); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 19); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 20); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 21); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 22); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 23); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 24); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 25); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 26); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 27); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 28); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 29); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 30); [i,j = 3, 5], [x1,x2 =  1.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 30); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 31); [i,j = 3, 5], [x1,x2 =  1.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 31); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 32); [i,j = 3, 5], [x1,x2 =  1.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 32); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 1); [i,j = 3, 5], [x1,x2 =  1.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 1); [i,j = 4, 5], [x1,x2 =  3.750000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 1); [i,j = 5, 5], [x1,x2 =  6.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 2); [i,j = 3, 5], [x1,x2 =  1.250000, 2.500000]",
+    "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 10783 (stage = 2); [i,j = 4, 5], [x1,x2 =  3.750000, 2.5000"
+  ],
+  "tail_note": "Bounded active-file read; last line may be incomplete. Original warnings retained; no full-log count inferred.",
+  "trap_samples": [
+    {
+      "checked": "2026-11-20T01:20:55.062893+08:00",
+      "solver_t_ns": 36.27,
+      "budget_t_ns": 37.49744,
+      "step": "step:1000; t = 3.6270e+001; dt = 1.0886e-003; 4.5 %",
+      "mach": "[Mach = 10.957477, Nrkl = 2]",
+      "source": "D:\\sim_runs\\T018\\pass_20261120_0120_monitor.json"
+    },
+    {
+      "checked": "2026-11-20T01:35:33.760498+08:00",
+      "solver_t_ns": 47.267,
+      "budget_t_ns": 46.99831,
+      "step": "step:5000; t = 4.7267e+001; dt = 3.1206e-003; 5.9 %",
+      "mach": "[Mach = 9.232843, Nrkl = 5]",
+      "source": "D:\\sim_runs\\T018\\pass_20261120_0135_monitor.json"
+    },
+    {
+      "checked": "2026-11-20T01:51:05.614237+08:00",
+      "solver_t_ns": 57.274,
+      "budget_t_ns": 58.49724,
+      "step": "step:8000; t = 5.7274e+001; dt = 3.9876e-003; 7.2 %",
+      "mach": "[Mach = 13.589361, Nrkl = 4]",
+      "source": "D:\\sim_runs\\T018\\pass_20261120_0150_monitor.json"
+    },
+    {
+      "checked": "2026-11-20T02:06:00.356321+08:00",
+      "solver_t_ns": 63.402,
+      "budget_t_ns": 63.49997,
+      "step": "step:10000; t = 6.3402e+001; dt = 4.1868e-004; 7.9 %",
+      "mach": "[Mach = 316.586222, Nrkl = 9]",
+      "source": "D:\\sim_runs\\T018\\pass_20261120_0205_monitor.json"
+    },
+    {
+      "checked": "2026-11-20T02:20:29.993163+08:00",
+      "solver_t_ns": 63.645,
+      "budget_t_ns": 63.49997,
+      "step": "step:11000; t = 6.3645e+001; dt = 1.6400e-004; 8.0 %",
+      "mach": "[Mach = 521.231343, Nrkl = 33]",
+      "source": "D:\\sim_runs\\T018\\pass_20261120_0220_monitor.json"
+    },
+    {
+      "checked": "2026-11-20T02:35:29.775230+08:00",
+      "solver_t_ns": 63.645,
+      "budget_t_ns": 63.49997,
+      "step": "step:11000; t = 6.3645e+001; dt = 1.6400e-004; 8.0 %",
+      "mach": "[Mach = 521.231343, Nrkl = 33]",
+      "source": "D:\\sim_runs\\T018\\pass_20261120_0235_monitor.json"
+    }
+  ],
+  "trap_comparisons_at_least_60_minutes": [
+    {
+      "from": "2026-11-20T01:20:55.062893+08:00",
+      "to": "2026-11-20T02:35:29.775230+08:00",
+      "elapsed_seconds": 4474.712337,
+      "advance_ns": 27.375
+    }
+  ],
+  "trap_stop_condition_observed": false,
+  "action": "Handoff thin alert; keep both members running. No authorized thin stop, no trap stop condition established, no parameter changes."
+}

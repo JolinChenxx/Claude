@@ -1,0 +1,107 @@
+{
+ "config": {
+  "name": "v0",
+  "eos": {
+   "species": [
+    "Cu",
+    "N",
+    "O",
+    "Ar"
+   ]
+  },
+  "numerics": {
+   "log10_rho": {
+    "min": -5.0,
+    "max": 3.0,
+    "n": 81
+   },
+   "log10_T": {
+    "min": 2.30103,
+    "max": 5.1761,
+    "n": 145
+   },
+   "Y_cu": [
+    0.0,
+    0.001,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    0.65,
+    0.8,
+    0.9,
+    0.97,
+    0.99,
+    1.0
+   ]
+  }
+ },
+ "config_file": "configs\\tables\\v0.yaml",
+ "registry_sha256": "d14ff7fb8d069f55bdd19c077e939fc22bd8ad9b403daf165779aac5858cc250",
+ "nist_manifest_sha256": "3e737c44327874fafd1df0e2ad16034aa021164e447c134ee626a27c20c644bd",
+ "code_commit": "cf33f750b02592565673968d0b6e90a7444cc421",
+ "files": {
+  "eos.bin": {
+   "sha256": "8b700ab167f533387a1242a98f35463ab7701cb1474854885bc4a2ae7dd3073b",
+   "fields": [
+    "e",
+    "p",
+    "ne",
+    "dchi_eV"
+   ],
+   "shape": [
+    81,
+    145,
+    14
+   ]
+  },
+  "opt.bin": {
+   "sha256": "146ef4cd263501b676962f1f8604287587a9f81dd4d87cadc3d491c61c75c91b",
+   "fields": [
+    "alpha1064",
+    "nec_thin",
+    "nec_trap",
+    "kappa"
+   ],
+   "shape": [
+    81,
+    145,
+    14
+   ]
+  },
+  "pop.bin": {
+   "sha256": "16d7b530a64427c4a65c412745258b289417bcc3a08896fbd90409d85a3c4b7e",
+   "fields": [
+    "nQ_Cu0",
+    "n_Cu0",
+    "nQ_Cu1",
+    "n_Cu1",
+    "nQ_Cu2",
+    "n_Cu2",
+    "nQ_N0",
+    "n_N0",
+    "nQ_N1",
+    "n_N1",
+    "nQ_O0",
+    "n_O0",
+    "nQ_O1",
+    "n_O1",
+    "nQ_Ar0",
+    "n_Ar0",
+    "nQ_Ar1",
+    "n_Ar1",
+    "nion_z1",
+    "nion_z2",
+    "nion_z3"
+   ],
+   "shape": [
+    81,
+    145,
+    14
+   ]
+  }
+ },
+ "seconds": 64.7
+}

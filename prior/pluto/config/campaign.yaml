@@ -1,0 +1,32 @@
+duration_hours: 72
+cpu_budget: 64
+memory_budget_gib: 180
+workers: 8
+ranks_per_case: 8
+fine_workers: 2
+fine_ranks: 32
+random_seed: 20261110
+source_energy_limit_uj: 400
+report_timezone: Asia/Shanghai
+camera_gate_ns: 10
+calibration_times_ns: [20, 60, 150, 260, 400, 580]
+stages:
+  coarse_search_until_h: 18
+  medium_search_until_h: 54
+  fine_search_until_h: 66
+  finalize_at_h: 72
+parameter_bounds:
+  mass_ng: [0.7, 16.0]
+  energy_uj: [12.0, 180.0]
+  kinetic_frac: [0.0005, 0.12]
+  tail_frac: [0.0, 0.4]
+  tail_ns: [15.0, 180.0]
+  waist_um_choices: [11.0, 22.0]
+fixed:
+  cooling_scale: 1.0
+  line_width_nm: 0.2
+notes:
+  - Total thermal preparation plus gas injection energy is limited to 400 uJ.
+  - Raw fields of unsuccessful candidates are compacted after projection and scoring.
+  - No LLM or external API is used by the running campaign or report scheduler.
+

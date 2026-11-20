@@ -1,0 +1,577 @@
+{
+  "checked": "2026-11-19T23:37:28.565645+08:00",
+  "state": "it0_deliverables_complete",
+  "scope": "Both high G0 it0 only; it1/it2 and full T018c card remain running",
+  "actual_successful_commands": [
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_thin_G0_emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "300",
+        "500",
+        "700",
+        "1000",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-19T20:59:11.279438+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_emission.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:14.260330+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_thin_G0_core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-19T20:59:14.415653+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_core_energy.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:23.208651+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_thin_G0_shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-19T20:59:23.359162+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_shock_track.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:25.873724+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_trap_G0_emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "300",
+        "500",
+        "700",
+        "1000",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-19T20:59:26.020485+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_emission.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:32.570244+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_trap_G0_core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "trap",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-19T20:59:32.722268+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_core_energy.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:36.053720+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_trap_G0_shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-19T20:59:36.284452+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_shock_track.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:41.352706+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_thin_G0_image_v1",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\image_v1",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+      ],
+      "started": "2026-11-19T20:59:41.514049+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_image_v1.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T21:38:48.777803+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_thin_G0_image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-19T21:38:48.967221+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_image_v2.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T22:41:25.388562+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_01",
+      "name": "high_trap_G0_image_v1",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v1",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+      ],
+      "started": "2026-11-19T22:41:25.783987+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_image_v1.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T23:26:47.868890+08:00"
+    },
+    {
+      "job_id": "T018c_post_it0_trap_v2_01",
+      "name": "high_trap_G0_image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-19T22:13:13.843097+08:00",
+      "attempt": 1,
+      "execution": "computed_by_owner",
+      "log": "D:\\sim_runs\\T018c_post_it0_trap_v2_01\\high_trap_G0_image_v2.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T23:34:36.180868+08:00"
+    }
+  ],
+  "original_job_exitcode": 75,
+  "owner_job_exitcode": 0,
+  "original_deferred_attempt": {
+    "name": "high_trap_G0_image_v2",
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "-m",
+      "lipsim.image",
+      "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+      "--series",
+      "high",
+      "--tables",
+      "D:\\sim_runs\\tables\\v1c",
+      "--out",
+      "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+      "--workers",
+      "16",
+      "--scenarios",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+    ],
+    "started": "2026-11-19T23:26:49.028625+08:00",
+    "attempt": 1,
+    "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_image_v2.attempt1.log",
+    "returncode": 75,
+    "ended": "2026-11-19T23:26:54.378697+08:00"
+  },
+  "owner_completion_evidence": {
+    "job_id": "T018c_post_it0_trap_v2_01",
+    "command": {
+      "name": "high_trap_G0_image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-19T22:13:13.843097+08:00",
+      "attempt": 1,
+      "execution": "computed_by_owner",
+      "log": "D:\\sim_runs\\T018c_post_it0_trap_v2_01\\high_trap_G0_image_v2.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T23:34:36.180868+08:00"
+    },
+    "completed": "2026-11-19T23:34:36.380173+08:00"
+  },
+  "post_completion_skip_receipt": {
+    "action": "verified_delegation_skip",
+    "checked": "2026-11-19T23:37:28.605938+08:00",
+    "original_job_dir": "D:/sim_runs/T018c_post_it0_01",
+    "output": "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+    "owner": {
+      "job_id": "T018c_post_it0_trap_v2_01",
+      "command": {
+        "name": "high_trap_G0_image_v2",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+          "--series",
+          "high",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+          "--workers",
+          "16",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+        ],
+        "started": "2026-11-19T22:13:13.843097+08:00",
+        "attempt": 1,
+        "execution": "computed_by_owner",
+        "log": "D:\\sim_runs\\T018c_post_it0_trap_v2_01\\high_trap_G0_image_v2.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T23:34:36.180868+08:00"
+      },
+      "completed": "2026-11-19T23:34:36.380173+08:00"
+    }
+  },
+  "raw_status_policy": "Original exit75/failed summary retained unchanged; post-completion direct guard check returned0 without starting any image or rewriting job status.",
+  "solvers": [
+    {
+      "member": "high_thin_G0",
+      "completion_file": "results\\T018c\\high_thin_G0\\it0\\completion.json",
+      "completion_sha256": "95bd06feed7d6e8856e02d50c0869b3d017722656035514a71303aee4baed7d6",
+      "final_t_ns": 800,
+      "returncode": 0,
+      "ConsToPrim_total_all_ranks": 17860099
+    },
+    {
+      "member": "high_trap_G0",
+      "completion_file": "results\\T018c\\high_trap_G0\\it0\\completion.json",
+      "completion_sha256": "115cb07e3b4aec00a095d1a9beace28ff85f963eac83c6849daac072b50af0d7",
+      "final_t_ns": 800,
+      "returncode": 0,
+      "ConsToPrim_total_all_ranks": 17468436
+    }
+  ],
+  "diagnostics": [
+    {
+      "file": "results\\T018c\\high_thin_G0\\it0\\diagnostics\\diag_emission.csv",
+      "sha256": "c556456fd758c1cd805bf488d4feec81cbf54d6543d17839a245b4c32e65afdb"
+    },
+    {
+      "file": "results\\T018c\\high_thin_G0\\it0\\diagnostics\\core_energy.csv",
+      "sha256": "04dc27686f3a2381f8affb0851d0f9b4cf31ff97ac34b665cfcb38db9de03135"
+    },
+    {
+      "file": "results\\T018c\\high_thin_G0\\it0\\diagnostics\\shock_track.csv",
+      "sha256": "419326fa20bf8a1fab0e07bc65fd1b14df6a947beef9f46e1600ba19a02c8658"
+    },
+    {
+      "file": "results\\T018c\\high_trap_G0\\it0\\diagnostics\\diag_emission.csv",
+      "sha256": "0118312dc8babfc7f86a29e262930a68d5238b1cdb6faa29133e631ff4cc6205"
+    },
+    {
+      "file": "results\\T018c\\high_trap_G0\\it0\\diagnostics\\core_energy.csv",
+      "sha256": "d8dd66f7bacc249d4d80194a171c591f919142bb4f29d379f342d109c22c6747"
+    },
+    {
+      "file": "results\\T018c\\high_trap_G0\\it0\\diagnostics\\shock_track.csv",
+      "sha256": "46e8f6fe0b90235599062578a6e15b94f5f19d365398e600a6587abea9f2cd21"
+    }
+  ],
+  "images": [
+    {
+      "member": "high_thin_G0",
+      "version": "v1",
+      "validation": "results\\T018c\\high_thin_G0\\it0\\image_v1\\validation.json",
+      "validation_sha256": "a36cf37a8fb4981c8e0571dce8a8c9d752496fb552fb5bf1fb0caa3768a592ef",
+      "actual_job": "T018c_post_it0_01",
+      "metric_csvs": 18,
+      "local_finite_frame_archives": 6,
+      "times": 29,
+      "first_t_ns": 0,
+      "last_t_ns": 740,
+      "P2_unavailable": 18,
+      "baseline": {
+        "a_thin_baseline": {
+          "gain": 0.003451410442143126,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1221.1895266589024,
+          "P2_dt10_ns": NaN
+        },
+        "a_sa_baseline": {
+          "gain": 0.030813480165769416,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 999.9112379885272,
+          "P2_dt10_ns": NaN
+        },
+        "b_thin_baseline": {
+          "gain": 0.0013176027354110534,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 723.5225298007539,
+          "P2_dt10_ns": NaN
+        },
+        "b_sa_baseline": {
+          "gain": 0.004804581230210306,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 288.52451936403736,
+          "P2_dt10_ns": NaN
+        },
+        "c_thin_baseline": {
+          "gain": 0.0012939421293687962,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 345.9356855958348,
+          "P2_dt10_ns": NaN
+        },
+        "c_sa_baseline": {
+          "gain": 0.002327588942149878,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 225.79759578028424,
+          "P2_dt10_ns": NaN
+        }
+      }
+    },
+    {
+      "member": "high_thin_G0",
+      "version": "v2",
+      "validation": "results\\T018c\\high_thin_G0\\it0\\image_v2\\validation.json",
+      "validation_sha256": "56c2ad0932fb9739ec88864f7e30519ad3a40d62f0479d11db7bdaad9e56fce9",
+      "actual_job": "T018c_post_it0_01",
+      "metric_csvs": 18,
+      "local_finite_frame_archives": 6,
+      "times": 29,
+      "first_t_ns": 0,
+      "last_t_ns": 740,
+      "P2_unavailable": 18,
+      "baseline": {
+        "a_thin_baseline": {
+          "gain": 0.003451410442143126,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1221.1895266589024,
+          "P2_dt10_ns": NaN
+        },
+        "a_sa_baseline": {
+          "gain": 0.005245408314012119,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1168.6098422090358,
+          "P2_dt10_ns": NaN
+        },
+        "b_thin_baseline": {
+          "gain": 0.0013176027354110534,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 723.5225298007539,
+          "P2_dt10_ns": NaN
+        },
+        "b_sa_baseline": {
+          "gain": 0.0017518673498664705,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 682.9536611369645,
+          "P2_dt10_ns": NaN
+        },
+        "c_thin_baseline": {
+          "gain": 0.0012939421293687962,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 345.9356855958348,
+          "P2_dt10_ns": NaN
+        },
+        "c_sa_baseline": {
+          "gain": 0.001701204740373465,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 336.85724928726955,
+          "P2_dt10_ns": NaN
+        }
+      }
+    },
+    {
+      "member": "high_trap_G0",
+      "version": "v1",
+      "validation": "results\\T018c\\high_trap_G0\\it0\\image_v1\\validation.json",
+      "validation_sha256": "cd9827ba7104b5257b3d977731633e2c1396503e7ab70ded38eddbc482b8dca3",
+      "actual_job": "T018c_post_it0_01",
+      "metric_csvs": 18,
+      "local_finite_frame_archives": 6,
+      "times": 29,
+      "first_t_ns": 0,
+      "last_t_ns": 740,
+      "P2_unavailable": 18,
+      "baseline": {
+        "a_thin_baseline": {
+          "gain": 0.0034297360229804054,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1168.6851392861543,
+          "P2_dt10_ns": NaN
+        },
+        "a_sa_baseline": {
+          "gain": 0.03003819164268953,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1172.0209114623622,
+          "P2_dt10_ns": NaN
+        },
+        "b_thin_baseline": {
+          "gain": 0.0013127983184987892,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 735.4442208787561,
+          "P2_dt10_ns": NaN
+        },
+        "b_sa_baseline": {
+          "gain": 0.0047385509608609535,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 308.4923369652649,
+          "P2_dt10_ns": NaN
+        },
+        "c_thin_baseline": {
+          "gain": 0.0012904729068352293,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 360.13305334856597,
+          "P2_dt10_ns": NaN
+        },
+        "c_sa_baseline": {
+          "gain": 0.002301151302405646,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 237.13798384537247,
+          "P2_dt10_ns": NaN
+        }
+      }
+    },
+    {
+      "member": "high_trap_G0",
+      "version": "v2",
+      "validation": "results\\T018c\\high_trap_G0\\it0\\image_v2\\validation.json",
+      "validation_sha256": "755adb7b8268cfb9d50f2c0325f712e848c51b0b4870541242ec44c4e46bbd70",
+      "actual_job": "T018c_post_it0_trap_v2_01",
+      "metric_csvs": 18,
+      "local_finite_frame_archives": 6,
+      "times": 29,
+      "first_t_ns": 0,
+      "last_t_ns": 740,
+      "P2_unavailable": 18,
+      "baseline": {
+        "a_thin_baseline": {
+          "gain": 0.0034297360229804054,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1168.6851392861543,
+          "P2_dt10_ns": NaN
+        },
+        "a_sa_baseline": {
+          "gain": 0.005263071481809192,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 1206.5181764425636,
+          "P2_dt10_ns": NaN
+        },
+        "b_thin_baseline": {
+          "gain": 0.0013127983184987892,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 735.4442208787561,
+          "P2_dt10_ns": NaN
+        },
+        "b_sa_baseline": {
+          "gain": 0.001754842186079742,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 715.0127391374677,
+          "P2_dt10_ns": NaN
+        },
+        "c_thin_baseline": {
+          "gain": 0.0012904729068352293,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 360.13305334856597,
+          "P2_dt10_ns": NaN
+        },
+        "c_sa_baseline": {
+          "gain": 0.0016912539831635963,
+          "t_ref_used_ns": 300.0,
+          "P1_tau_ns": 350.8288024177475,
+          "P2_dt10_ns": NaN
+        }
+      }
+    }
+  ],
+  "totals": {
+    "solvers": 2,
+    "diagnostic_csvs": 6,
+    "image_sets": 4,
+    "metric_csvs": 72,
+    "local_finite_frame_archives": 24,
+    "P2_unavailable": 72,
+    "ConsToPrim": 35328535
+  },
+  "frame_validation_policy": "New trapv2 frames validated in this pass; prior sets use their existing finite-array validation records. All archived metric/summary hashes rechecked. Large solver logs not rescanned."
+}

@@ -1,0 +1,13 @@
+# T018: v1e physics + energy-limited phase explosion (case v1pe_*, registry phase_explosion_model), build v1h, tables v1c,
+# rmax_par 1000. High G0 Picard it0-it2 (it3 stall known), low G0 it0-it1 (low converged at it1 in T016e).
+name: T018
+pluto_exe: D:/sim_tools/pluto_lip/build_v1h/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T018
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v1pe_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: high_trap_G0, case: configs/cases/v1pe_high.yaml, grid: G0, nec: trap, tstop_ns: 800,  procs: 8, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G0,  case: configs/cases/v1pe_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, src_on: 1, rmax_par: 1000}
+    - {id: low_trap_G0,  case: configs/cases/v1pe_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 8, picard: 1, src_on: 1, rmax_par: 1000}

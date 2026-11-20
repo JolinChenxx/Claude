@@ -1,0 +1,171 @@
+{
+  "verified_at": "2026-11-20T03:12:49+08:00",
+  "job": {
+    "id": "T018c_post_it1_thin_v2_01",
+    "pid": 51676,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin_v2.py",
+    "threads": 1,
+    "commit": "1bb6bcb",
+    "started": "2026-11-20T03:12:25",
+    "dir": "D:\\sim_runs\\T018c_post_it1_thin_v2_01"
+  },
+  "wrapper_identity": {
+    "pid": 51676,
+    "created": 1795115545.0127707,
+    "cmdline": [
+      "C:\\Windows\\system32\\cmd.exe",
+      "/v:on",
+      "/c",
+      "set",
+      "OMP_NUM_THREADS=1&&",
+      "set",
+      "SIM_OUT_DIR=D:\\sim_runs\\T018c_post_it1_thin_v2_01&&",
+      "cd",
+      "/d",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "&&",
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin_v2.py",
+      "&",
+      "echo",
+      "!ERRORLEVEL!",
+      ">",
+      "D:\\sim_runs\\T018c_post_it1_thin_v2_01\\exitcode.txt"
+    ]
+  },
+  "runner_identity": {
+    "pid": 44872,
+    "created": 1795115545.1778755,
+    "cmdline": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin_v2.py"
+    ]
+  },
+  "runner_sha256": "6885168cfcf22b53e03621439d08594b1f852a7ed52664154e64098963178671",
+  "summary_state": "running",
+  "startup_capacity": {
+    "checked": "2026-11-20T03:12:32.468009+08:00",
+    "reservations": {
+      "T016i_native_01": 16,
+      "T018c_post_it1_thin_01": 16,
+      "T018c_post_it1_trap_v2_01": 16
+    },
+    "wrapper_identities": [
+      {
+        "job": "T016i_native_01",
+        "pid": 38032,
+        "created": 1795026177.8378432,
+        "children": [
+          46020,
+          10720,
+          20504,
+          51436,
+          31676,
+          42920,
+          48940,
+          22220,
+          13224,
+          9516,
+          49004,
+          13932,
+          48612,
+          37628,
+          34264,
+          31284,
+          8752,
+          18708,
+          52444,
+          54148
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c_post_it1_thin_01",
+        "pid": 44364,
+        "created": 1795112625.54839,
+        "children": [
+          42904,
+          25488,
+          52292,
+          38084,
+          32240,
+          5104,
+          15032,
+          42452,
+          49328,
+          16264,
+          25220,
+          28092,
+          49228,
+          6996,
+          15980,
+          53984,
+          42416,
+          26988,
+          43764
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c_post_it1_trap_v2_01",
+        "pid": 52000,
+        "created": 1795109144.4057622,
+        "children": [
+          19816,
+          53696,
+          52576,
+          53888,
+          31896,
+          53016,
+          27268,
+          21276,
+          47560,
+          21612,
+          53968,
+          51688,
+          27908,
+          53992,
+          32784,
+          16412,
+          26248,
+          27948,
+          49336
+        ],
+        "cores": 16
+      }
+    ],
+    "pluto_ranks": 0,
+    "reserved_physical_cores": 48,
+    "free_physical_cores": 16,
+    "requested_cores": 16,
+    "can_start": true,
+    "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics.",
+    "including_own_reservation": 64
+  },
+  "commands": [
+    {
+      "name": "high_thin_G0_image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it1",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it1\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-20T03:12:32.654354+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it1_thin_v2_01\\high_thin_G0_image_v2.attempt1.log"
+    }
+  ],
+  "authority": "23929ba: finish only previously queued it1 postprocessing; plan claimed before launch at1bb6bcb",
+  "note": "Startup verification only. No foreground computation wait or output collection after launch."
+}

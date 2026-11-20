@@ -1,0 +1,196 @@
+{
+  "checked": "2026-11-20T04:53:26.815720+08:00",
+  "capacity": {
+    "checked": "2026-11-20T04:53:26.815720+08:00",
+    "reservations": {
+      "T018c_post_it1_thin_v2_01": 16,
+      "T019_split_01": 32
+    },
+    "wrapper_identities": [
+      {
+        "job": "T018c_post_it1_thin_v2_01",
+        "pid": 51676,
+        "created": 1795115545.0127707,
+        "children": [
+          16008,
+          44872,
+          13004,
+          29332,
+          34960,
+          3868,
+          53784,
+          8864,
+          42840,
+          44216,
+          46152,
+          41624,
+          43932,
+          31420,
+          40196,
+          10152,
+          43852,
+          10860,
+          3524
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T019_split_01",
+        "pid": 53740,
+        "created": 1795116398.0373397,
+        "children": [
+          25920,
+          46136,
+          42352,
+          9044,
+          46996,
+          49420,
+          43672,
+          15596,
+          53768,
+          48528,
+          23900,
+          45248,
+          6552,
+          25344,
+          44004,
+          25512,
+          51216,
+          15660,
+          52964,
+          48680,
+          25168,
+          33184,
+          16756,
+          41052,
+          36788,
+          14356,
+          31552,
+          23272,
+          27404,
+          37848,
+          42796,
+          32992,
+          15632,
+          41808,
+          27736,
+          29104
+        ],
+        "cores": 32
+      }
+    ],
+    "pluto_ranks": 0,
+    "reserved_other_cores": 48,
+    "requested_cores": 16,
+    "including_own_reservation": 64,
+    "free_before": 16,
+    "can_start": true
+  },
+  "pending_runs": [
+    {
+      "run": "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+      "series": "high",
+      "solver_completion": {
+        "time": "2026-11-19T01:54:33",
+        "batch": "T016e",
+        "run": "high_thin_G0",
+        "picard_it": 2,
+        "grid": "G0",
+        "nec": "thin",
+        "case": "configs/cases/v0_high.yaml",
+        "procs": 8,
+        "returncode": 0,
+        "seconds": 26064.2,
+        "commit": "cf93793",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "935a249ba47435cf",
+        "dir": "D:\\sim_runs\\T016e\\high_thin_G0\\it2"
+      },
+      "out": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v1"
+    },
+    {
+      "run": "D:\\sim_runs\\T016e\\high_thin_G1\\it0",
+      "series": "high",
+      "solver_completion": {
+        "time": "2026-11-18T17:24:06",
+        "batch": "T016e",
+        "run": "high_thin_G1",
+        "picard_it": 0,
+        "grid": "G1",
+        "nec": "thin",
+        "case": "configs/cases/v0_high.yaml",
+        "procs": 16,
+        "returncode": 0,
+        "seconds": 71248.0,
+        "commit": "e60ee91",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "f5a6f1c40bed9870",
+        "dir": "D:\\sim_runs\\T016e\\high_thin_G1\\it0"
+      },
+      "out": "D:\\sim_runs\\T016e\\high_thin_G1\\it0\\image_v1"
+    },
+    {
+      "run": "D:\\sim_runs\\T016e\\high_trap_G0\\it2",
+      "series": "high",
+      "solver_completion": {
+        "time": "2026-11-19T01:50:25",
+        "batch": "T016e",
+        "run": "high_trap_G0",
+        "picard_it": 2,
+        "grid": "G0",
+        "nec": "trap",
+        "case": "configs/cases/v0_high.yaml",
+        "procs": 8,
+        "returncode": 0,
+        "seconds": 23713.4,
+        "commit": "b82e2bb",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "ca7f72eb241c4f19",
+        "dir": "D:\\sim_runs\\T016e\\high_trap_G0\\it2"
+      },
+      "out": "D:\\sim_runs\\T016e\\high_trap_G0\\it2\\image_v1"
+    },
+    {
+      "run": "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+      "series": "low",
+      "solver_completion": {
+        "time": "2026-11-19T01:50:25",
+        "batch": "T016e",
+        "run": "low_thin_G0",
+        "picard_it": 1,
+        "grid": "G0",
+        "nec": "thin",
+        "case": "configs/cases/v0_low.yaml",
+        "procs": 8,
+        "returncode": 0,
+        "seconds": 33989.1,
+        "commit": "8425f71",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "90edecdb91817d3f",
+        "dir": "D:\\sim_runs\\T016e\\low_thin_G0\\it1"
+      },
+      "out": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v1"
+    },
+    {
+      "run": "D:\\sim_runs\\T016e\\low_trap_G0\\it1",
+      "series": "low",
+      "solver_completion": {
+        "time": "2026-11-19T01:48:56",
+        "batch": "T016e",
+        "run": "low_trap_G0",
+        "picard_it": 1,
+        "grid": "G0",
+        "nec": "trap",
+        "case": "configs/cases/v0_low.yaml",
+        "procs": 8,
+        "returncode": 0,
+        "seconds": 36302.5,
+        "commit": "f05c9ff",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "8d7ccfa5b78e07c7",
+        "dir": "D:\\sim_runs\\T016e\\low_trap_G0\\it1"
+      },
+      "out": "D:\\sim_runs\\T016e\\low_trap_G0\\it1\\image_v1"
+    }
+  ]
+}

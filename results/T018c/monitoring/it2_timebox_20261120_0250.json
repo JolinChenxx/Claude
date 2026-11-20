@@ -1,0 +1,115 @@
+{
+  "checked": "2026-11-20T02:55:00.625400+08:00",
+  "authority_commit": "dea7dfe",
+  "rule": "Each member independently: stop only its MPI tree on <1 ns advance in any 60 wall-clock minutes; delete nothing; STOPPED/budget/log evidence; never launch it3.",
+  "members": {
+    "high_thin_G0": {
+      "samples": [
+        {
+          "checked": "2026-11-20T01:51:05.614237+08:00",
+          "solver_t_ns": 42.933,
+          "step": "step:3000; t = 4.2933e+001; dt = 3.2962e-003; 5.4 %",
+          "mach": "[Mach = 3.457726, Nrkl = 2]",
+          "budget_t_ns": 44.99722
+        },
+        {
+          "checked": "2026-11-20T02:06:00.356321+08:00",
+          "solver_t_ns": 50.88,
+          "step": "step:6000; t = 5.0880e+001; dt = 3.3727e-003; 6.4 %",
+          "mach": "[Mach = 12.354805, Nrkl = 3]",
+          "budget_t_ns": 51.99822
+        },
+        {
+          "checked": "2026-11-20T02:20:29.993163+08:00",
+          "solver_t_ns": 60.483,
+          "step": "step:9000; t = 6.0483e+001; dt = 4.0829e-003; 7.6 %",
+          "mach": "[Mach = 13.696573, Nrkl = 5]",
+          "budget_t_ns": 61.99697
+        },
+        {
+          "checked": "2026-11-20T02:35:29.775230+08:00",
+          "solver_t_ns": 62.856,
+          "step": "step:10000; t = 6.2856e+001; dt = 3.5640e-004; 7.9 %",
+          "mach": "[Mach = 365.071473, Nrkl = 8]",
+          "budget_t_ns": 62.99999
+        },
+        {
+          "checked": "2026-11-20T02:50:39.783009+08:00",
+          "solver_t_ns": 63.077,
+          "step": "step:11000; t = 6.3077e+001; dt = 1.6529e-004; 7.9 %",
+          "mach": "[Mach = 517.334222, Nrkl = 35]",
+          "budget_t_ns": 62.99999
+        }
+      ],
+      "comparisons_at_least_60_min": [],
+      "stop_condition_observed": false
+    },
+    "high_trap_G0": {
+      "samples": [
+        {
+          "checked": "2026-11-20T01:20:55.062893+08:00",
+          "solver_t_ns": 36.27,
+          "step": "step:1000; t = 3.6270e+001; dt = 1.0886e-003; 4.5 %",
+          "mach": "[Mach = 10.957477, Nrkl = 2]",
+          "budget_t_ns": 37.49744
+        },
+        {
+          "checked": "2026-11-20T01:35:33.760498+08:00",
+          "solver_t_ns": 47.267,
+          "step": "step:5000; t = 4.7267e+001; dt = 3.1206e-003; 5.9 %",
+          "mach": "[Mach = 9.232843, Nrkl = 5]",
+          "budget_t_ns": 46.99831
+        },
+        {
+          "checked": "2026-11-20T01:51:05.614237+08:00",
+          "solver_t_ns": 57.274,
+          "step": "step:8000; t = 5.7274e+001; dt = 3.9876e-003; 7.2 %",
+          "mach": "[Mach = 13.589361, Nrkl = 4]",
+          "budget_t_ns": 58.49724
+        },
+        {
+          "checked": "2026-11-20T02:06:00.356321+08:00",
+          "solver_t_ns": 63.402,
+          "step": "step:10000; t = 6.3402e+001; dt = 4.1868e-004; 7.9 %",
+          "mach": "[Mach = 316.586222, Nrkl = 9]",
+          "budget_t_ns": 63.49997
+        },
+        {
+          "checked": "2026-11-20T02:20:29.993163+08:00",
+          "solver_t_ns": 63.645,
+          "step": "step:11000; t = 6.3645e+001; dt = 1.6400e-004; 8.0 %",
+          "mach": "[Mach = 521.231343, Nrkl = 33]",
+          "budget_t_ns": 63.49997
+        },
+        {
+          "checked": "2026-11-20T02:35:29.775230+08:00",
+          "solver_t_ns": 63.645,
+          "step": "step:11000; t = 6.3645e+001; dt = 1.6400e-004; 8.0 %",
+          "mach": "[Mach = 521.231343, Nrkl = 33]",
+          "budget_t_ns": 63.49997
+        },
+        {
+          "checked": "2026-11-20T02:50:39.783009+08:00",
+          "solver_t_ns": 63.808,
+          "step": "step:12000; t = 6.3808e+001; dt = 2.0101e-004; 8.0 %",
+          "mach": "[Mach = 418.341250, Nrkl = 44]",
+          "budget_t_ns": 63.99981
+        }
+      ],
+      "comparisons_at_least_60_min": [
+        {
+          "from": "2026-11-20T01:20:55.062893+08:00",
+          "elapsed_seconds": 5384.720116,
+          "advance_ns": 27.537999999999997
+        },
+        {
+          "from": "2026-11-20T01:35:33.760498+08:00",
+          "elapsed_seconds": 4506.022511,
+          "advance_ns": 16.540999999999997
+        }
+      ],
+      "stop_condition_observed": false
+    }
+  },
+  "action": "No qualifying interval established in available samples; both continue. Re-evaluate each pass."
+}

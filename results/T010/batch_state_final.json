@@ -1,0 +1,117 @@
+{
+  "started": "2026-11-16T10:24:02.363524+08:00",
+  "commit": "a1fb9a11680954fdedec3986708251bf67a0666a",
+  "phase": "needs_review",
+  "stages": [
+    {
+      "name": "tables_full",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.tables.build",
+        "--config",
+        "configs/tables/v0.yaml",
+        "--out",
+        "D:\\sim_runs\\tables\\v0",
+        "--workers",
+        "48"
+      ],
+      "exitcode": 0,
+      "seconds": 47.71800000000076,
+      "log": "D:\\sim_runs\\T010\\tables_full.log"
+    },
+    {
+      "name": "smoke_serial",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.batch",
+        "configs/batches/T010_smoke.yaml",
+        "--max-cores",
+        "2"
+      ],
+      "exitcode": 0,
+      "seconds": 176.125,
+      "log": "D:\\sim_runs\\T010\\smoke_serial.log"
+    },
+    {
+      "name": "smoke_mpi",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.batch",
+        "configs/batches/T010_mpi.yaml",
+        "--max-cores",
+        "4"
+      ],
+      "exitcode": 0,
+      "seconds": 69.56300000000192,
+      "log": "D:\\sim_runs\\T010\\smoke_mpi.log"
+    },
+    {
+      "name": "compare_cross_platform",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "scripts/compare_budget.py",
+        "verify/ref/smoke_v0/budget_it0_linux.csv",
+        "D:\\sim_runs\\T010\\smoke\\high_thin_smoke\\it0\\budget.csv",
+        "--tol",
+        "0.005"
+      ],
+      "exitcode": 0,
+      "seconds": 25.07800000000134,
+      "log": "D:\\sim_runs\\T010\\compare_cross_platform.log"
+    },
+    {
+      "name": "compare_serial_mpi",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "scripts/compare_budget.py",
+        "D:\\sim_runs\\T010\\smoke\\high_thin_smoke\\it0\\budget.csv",
+        "D:\\sim_runs\\T010\\mpi\\high_thin_smoke_mpi4\\it0\\budget.csv",
+        "--tol",
+        "0.005"
+      ],
+      "exitcode": 0,
+      "seconds": 0.9530000000013388,
+      "log": "D:\\sim_runs\\T010\\compare_serial_mpi.log"
+    },
+    {
+      "name": "imaging",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T010\\smoke\\high_thin_smoke\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "verify/ref/tables_v0_lowres",
+        "--out",
+        "D:\\sim_runs\\T010\\smoke_img",
+        "--workers",
+        "8"
+      ],
+      "exitcode": 1,
+      "seconds": 1.5160000000032596,
+      "log": "D:\\sim_runs\\T010\\imaging.log"
+    }
+  ],
+  "failures": [
+    {
+      "stage": "imaging",
+      "exitcode": 1
+    }
+  ],
+  "note": "Smoke plumbing checks only; no experimental image validation.",
+  "updated": "2026-11-16T10:29:24.734259+08:00",
+  "wall_seconds": 322.3600000000006,
+  "table_nonfinite_counts": {
+    "eos.bin": 0,
+    "opt.bin": 0,
+    "pop.bin": 0
+  },
+  "smoke_serial_ConsToPrim_count": 0,
+  "smoke_mpi_ConsToPrim_count": 0,
+  "finished": "2026-11-16T10:29:24.734259+08:00"
+}

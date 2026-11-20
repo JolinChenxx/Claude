@@ -1,0 +1,16 @@
+[project]
+name = "lipsim"
+version = "0.0.1"
+description = "Laser-induced Cu plasma plume simulation and synthetic imaging (Chen et al. LPR 2025, Fig. S4 reproduction)"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

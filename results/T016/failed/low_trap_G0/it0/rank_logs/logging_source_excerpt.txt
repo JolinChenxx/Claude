@@ -1,0 +1,78 @@
+D:\sim_tools\pluto_lip\build_v1b\_pluto_src\PLUTO\Src\pluto.h
+440:  #define INTERNAL_BOUNDARY_REFLECT   NO
+441: #endif
+442: 
+443: #ifndef LIMITER
+444:  #define LIMITER         DEFAULT
+445: #endif
+446: 
+447: #ifndef MULTIPLE_LOG_FILES
+448:  #define MULTIPLE_LOG_FILES   NO
+449: #endif
+450: 
+451: #ifndef NGHOST_USR
+452:   #define NGHOST_USR          -1  /**< When positive, it specifes a
+453:                                        user-provided number of ghost zones. */
+454: #endif
+
+D:\sim_tools\pluto_lip\build_v1b\_pluto_src\PLUTO\Src\output_log.c
+331: void LogFileOpen(char *log_dir, char *mode)
+332: /*!
+333:  * Open log file name in parallel mode.
+334:  * Each processor has its own log file "pluto.prank.log", unless the
+335:  * MULTIPLE_LOG_FILES flag has been set to FALSE.
+336:  *
+337:  * \param [in] output_dir  the name of the output directory
+338:  * \param [in] cmd         pointer to cmd line option structure.
+339:  *                           
+340:  *********************************************************************** */
+341: {
+342: #ifdef PARALLEL
+343: 
+344:   sprintf (log_file_name, "%s/pluto.%d.log",log_dir,prank);
+345: 
+346:   #if MULTIPLE_LOG_FILES == NO
+347:   if (prank != 0) return;
+348:   #endif
+349: 
+350:   g_flog = fopen(log_file_name, mode);
+351: 
+352:   /* -- check that we have a valid directory name -- */
+353: 
+354:   if (g_flog == NULL){
+355:     printf ("! SetLogFile(): %s cannot be written.\n",log_file_name);
+356:     printf ("  Using current directory instead.\n");
+357:     sprintf (log_file_name, "./pluto.%d.log",prank);
+358:     g_flog = fopen(log_file_name, mode);
+359:   }
+360: #endif
+361: }
+362: 
+
+D:\sim_tools\pluto_lip\build_v1b\_pluto_src\PLUTO\Src\output_log.c
+394: void printLog (const char *fmt, ...)
+395: /*!
+396:  * Define printLog function for the static grid version
+397:  * of PLUTO [All processors will write]
+398:  *
+399:  *********************************************************************** */
+400: {
+401:   va_list args;
+402:   va_start(args, fmt);
+403: 
+404: #ifdef PARALLEL
+405: 
+406:   #if MULTIPLE_LOG_FILES == NO
+407:   if (prank != 0) return;
+408:   #endif
+409: 
+410:   /* --------------------------------------------
+411:       File may not be opened if
+412:       MULTIPLE_LOG_FILES is set to NO.
+413:      -------------------------------------------- */
+414: 
+415:   if (g_flog == NULL)  g_flog = fopen(log_file_name, "a");
+416:   vfprintf(g_flog, fmt, args);
+417: #else
+418:   vprintf(fmt, args);
+419: #endif

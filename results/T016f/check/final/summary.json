@@ -1,0 +1,505 @@
+{
+  "collected": "2026-11-19T12:06:06.035172+08:00",
+  "run": {
+    "command": [
+      "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+      "-n",
+      "8",
+      "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+      "-restart",
+      "33",
+      "-dec",
+      "8",
+      "1"
+    ],
+    "started": "2026-11-19T11:37:16.838282+08:00",
+    "limit_seconds": 1200,
+    "state": "time_limit",
+    "execution_commit": "662be0e",
+    "restart_index": 33,
+    "restart_time_ns": 82.49905550587303,
+    "pid": 32472,
+    "timed_out": true,
+    "stop_targets": [
+      [
+        11092,
+        1795059438.9145324,
+        "pluto.exe"
+      ],
+      [
+        13720,
+        1795059438.9115732,
+        "pluto.exe"
+      ],
+      [
+        20576,
+        1795059438.9027755,
+        "pluto.exe"
+      ],
+      [
+        21532,
+        1795059438.9081779,
+        "pluto.exe"
+      ],
+      [
+        25420,
+        1795059438.814087,
+        "pluto.exe"
+      ],
+      [
+        31536,
+        1795059438.8999252,
+        "pluto.exe"
+      ],
+      [
+        32472,
+        1795059436.8420148,
+        "mpiexec.exe"
+      ],
+      [
+        42168,
+        1795059438.9053147,
+        "pluto.exe"
+      ],
+      [
+        44516,
+        1795059438.896335,
+        "pluto.exe"
+      ]
+    ],
+    "returncode": 15,
+    "seconds": 1203.9690000000119,
+    "finished": "2026-11-19T11:57:20.800414+08:00"
+  },
+  "ranks": [
+    {
+      "rank": "pluto.0",
+      "bytes": 17862,
+      "sha256": "7a82faff4a88116138bd0449889816aadc873494bad5f9d2d376286aca9853c3",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.0.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 94,
+      "dt_limit": 8,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.1",
+      "bytes": 5686,
+      "sha256": "ab0d177a86c9ee3414cb143484122188d180ec8037c6227e84c3c3183de155fc",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.1.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 0,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.2",
+      "bytes": 6958,
+      "sha256": "53c5e57f9fe529e2e7a93ae087f7c1ef21f072c64c3299b6e15c158db1182721",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.2.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 8,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.3",
+      "bytes": 6974,
+      "sha256": "96459f0e2b44739422b4f1cb636094fd80825774dafcf73d849a640f22188ca9",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.3.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 8,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.4",
+      "bytes": 6958,
+      "sha256": "4bfd431407db170cbe621d517887a7d601a6d30891a99a7e04e0c0e2a7f5323c",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.4.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 8,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.5",
+      "bytes": 5686,
+      "sha256": "0d311a3a4d73ae1c77399e909259417937202047650cdbe2678db1525e72d5f1",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.5.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 0,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.6",
+      "bytes": 5694,
+      "sha256": "eb7fdcc7c53c76be2e01a72f750988f145dbfbe938e35b6bef9fa0b299b11102",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.6.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 0,
+      "vmax": 8
+    },
+    {
+      "rank": "pluto.7",
+      "bytes": 5695,
+      "sha256": "1833fcd576cacc05448e6542d99f9a3677c2e1734736a54ca1d043ae7f078ce7",
+      "archive": "D:\\sim_runs\\T016f\\archive_check\\pluto.7.log",
+      "steps": [
+        {
+          "step": 18000,
+          "t_ns": 82.67,
+          "dt_ns": 4.1512e-05
+        },
+        {
+          "step": 19000,
+          "t_ns": 82.713,
+          "dt_ns": 4.1054e-05
+        },
+        {
+          "step": 20000,
+          "t_ns": 82.756,
+          "dt_ns": 4.0592e-05
+        },
+        {
+          "step": 21000,
+          "t_ns": 82.798,
+          "dt_ns": 4.0146e-05
+        },
+        {
+          "step": 22000,
+          "t_ns": 82.84,
+          "dt_ns": 3.9728e-05
+        },
+        {
+          "step": 23000,
+          "t_ns": 82.882,
+          "dt_ns": 3.9328e-05
+        },
+        {
+          "step": 24000,
+          "t_ns": 82.923,
+          "dt_ns": 3.8979e-05
+        },
+        {
+          "step": 25000,
+          "t_ns": 82.963,
+          "dt_ns": 3.8661e-05
+        }
+      ],
+      "ConsToPrim": 0,
+      "dt_limit": 0,
+      "vmax": 8
+    }
+  ],
+  "input_checks": {
+    "pluto.ini": true,
+    "grid.out": false,
+    "restart.out": true,
+    "dbl.out": true,
+    "data.0033.dbl": true,
+    "lip_tables/eos.bin": true,
+    "lip_tables/opt.bin": true,
+    "lip_tables/target_source.bin": true,
+    "grid_content_excluding_generation_comment": true
+  },
+  "budget_exists": false,
+  "last_dbl_line": "33 8.249906e+001 3.592264e-003 17576 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+  "last_logged": {
+    "step": 25000,
+    "t_ns": 82.963,
+    "dt_ns": 3.8661e-05
+  },
+  "max_logged_dt_ns": 4.1512e-05,
+  "max_logged_t_ns": 82.963,
+  "acceptance_pass": false
+}

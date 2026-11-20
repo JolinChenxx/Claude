@@ -1,0 +1,14 @@
+{
+  "first_test": {
+    "command": "python -m pytest tests/test_image.py -q",
+    "outcome": "Windows fatal exception code0xc06d007f after three tests; image/forward.py line167",
+    "environment": "Python environment Library/bin and Scripts not prepended to PATH"
+  },
+  "corrected_test": {
+    "command": "python -m pytest tests/test_image.py -q",
+    "outcome": "6passed in3.27s",
+    "environment": "D:/sim_tools/envs/lipsim, Library/bin and Scripts prepended; OMP/OPENBLAS/MKL=1",
+    "includes": "test_component_split_is_additive_when_thin"
+  },
+  "runner": "AST parsed; exact four commands validated; baseline/config/input hashes frozen; no duplicate outputs; current capacity passes"
+}

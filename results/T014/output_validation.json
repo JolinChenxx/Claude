@@ -1,0 +1,3309 @@
+{
+  "checked_at": "2026-11-17T05:06:27.366902+08:00",
+  "members": 6,
+  "iterations": 14,
+  "frame_archives_total": 84,
+  "metric_csv_total": 252,
+  "generated_metric_rows": 252,
+  "total_ConsToPrim_warning_lines": 3330832,
+  "raw_rank_zero_log_bytes": 395185113,
+  "negative_P1_values": [
+    {
+      "member": "high_thin_G0",
+      "iteration": 1,
+      "scenario": "a_thin_baseline",
+      "P1_tau_ns": -2897.018334569989
+    },
+    {
+      "member": "high_thin_G0",
+      "iteration": 1,
+      "scenario": "a_thin_high",
+      "P1_tau_ns": -2414.0532143021246
+    },
+    {
+      "member": "high_thin_G0",
+      "iteration": 1,
+      "scenario": "a_thin_low",
+      "P1_tau_ns": -2458.4699334370257
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 1,
+      "scenario": "a_thin_baseline",
+      "P1_tau_ns": -2111.4301125318843
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 1,
+      "scenario": "a_thin_high",
+      "P1_tau_ns": -1934.8565440824277
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 1,
+      "scenario": "a_thin_low",
+      "P1_tau_ns": -2010.2952017063385
+    },
+    {
+      "member": "low_trap_G0",
+      "iteration": 1,
+      "scenario": "a_thin_baseline",
+      "P1_tau_ns": -8051.029663366463
+    },
+    {
+      "member": "low_trap_G0",
+      "iteration": 1,
+      "scenario": "a_thin_high",
+      "P1_tau_ns": -10456.984525788681
+    }
+  ],
+  "P2_not_reached_total": 228,
+  "generated_grades": {
+    "P1": {
+      "fail": 164,
+      "partial": 65,
+      "pass": 23
+    },
+    "P2": {
+      "n/a (window)": 126,
+      "fail": 105,
+      "pass": 16,
+      "partial": 5
+    },
+    "P3": {
+      "partial(sign)": 200,
+      "pass": 52
+    }
+  },
+  "issues": [],
+  "runs": [
+    {
+      "member": "high_thin_G0",
+      "iteration": 0,
+      "returncode": 0,
+      "solver_seconds": 2230.0,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1598,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.00029713330459,
+        "E_rad": 9.0245768373e-05,
+        "M_Cu": 3.2918609341e-12
+      },
+      "P1_range_ns": [
+        363.62391412805067,
+        598.2345689127135
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 777168,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 92642407,
+        "line_count": 778036,
+        "ConsToPrim_warning_lines": 777168,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "high_thin_G0",
+      "iteration": 1,
+      "returncode": 0,
+      "solver_seconds": 2310.5,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1598,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.00025725607081,
+        "E_rad": 7.977005402e-05,
+        "M_Cu": 1.6084850302e-12
+      },
+      "P1_range_ns": [
+        -2897.018334569989,
+        1809.1166774338953
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 234804,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 27820204,
+        "line_count": 235672,
+        "ConsToPrim_warning_lines": 234804,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "high_thin_G0",
+      "iteration": 2,
+      "returncode": 0,
+      "solver_seconds": 2331.3,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1598,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.00019988199998,
+        "E_rad": 5.0041407314e-05,
+        "M_Cu": 9.8875365664e-13
+      },
+      "P1_range_ns": [
+        1058.3855787548407,
+        3094.708046585613
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 86853,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 10223878,
+        "line_count": 87725,
+        "ConsToPrim_warning_lines": 86853,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 0,
+      "returncode": 0,
+      "solver_seconds": 2301.4,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1598,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.0002972817074,
+        "E_rad": 7.9935509197e-05,
+        "M_Cu": 3.2918607163e-12
+      },
+      "P1_range_ns": [
+        370.8090851098173,
+        742.4471064347716
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 761979,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 90815515,
+        "line_count": 762849,
+        "ConsToPrim_warning_lines": 761979,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 1,
+      "returncode": 0,
+      "solver_seconds": 2266.7,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1598,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.00025720965092,
+        "E_rad": 7.496388019e-05,
+        "M_Cu": 1.6074677806e-12
+      },
+      "P1_range_ns": [
+        -2111.4301125318843,
+        1990.0101152543943
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 231180,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 27388019,
+        "line_count": 232048,
+        "ConsToPrim_warning_lines": 231180,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "high_trap_G0",
+      "iteration": 2,
+      "returncode": 0,
+      "solver_seconds": 2445.4,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1598,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.00019983799281,
+        "E_rad": 4.7619360662e-05,
+        "M_Cu": 9.8830391708e-13
+      },
+      "P1_range_ns": [
+        888.1155569509696,
+        4339.295632502369
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 86880,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 10227328,
+        "line_count": 87752,
+        "ConsToPrim_warning_lines": 86880,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_thin_G0",
+      "iteration": 0,
+      "returncode": 0,
+      "solver_seconds": 1272.3,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 43
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 46
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 55
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 40
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2585,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 8.8671114986e-05,
+        "E_rad": 3.2946985837e-05,
+        "M_Cu": 1.0158455312e-12
+      },
+      "P1_range_ns": [
+        240.98155536998559,
+        2192.9492920221865
+      ],
+      "P2_finite_range_ns": [
+        562.354220891903,
+        609.4953964978622
+      ],
+      "P2_not_reached_count": 15,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 132560,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 15661074,
+        "line_count": 133804,
+        "ConsToPrim_warning_lines": 132560,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_thin_G0",
+      "iteration": 1,
+      "returncode": 0,
+      "solver_seconds": 1829.5,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 37
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 43
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 58
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 31
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2585,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 4.4556188187e-05,
+        "E_rad": 1.538486208e-05,
+        "M_Cu": 5.2148161435e-13
+      },
+      "P1_range_ns": [
+        272.8515715912295,
+        16900.730936918502
+      ],
+      "P2_finite_range_ns": [
+        501.48766786433373,
+        517.8120191269325
+      ],
+      "P2_not_reached_count": 15,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 73149,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 8620713,
+        "line_count": 74401,
+        "ConsToPrim_warning_lines": 73149,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_thin_G0",
+      "iteration": 2,
+      "returncode": 0,
+      "solver_seconds": 1533.3,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 37
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 37
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 52
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2585,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 4.1950859766e-05,
+        "E_rad": 1.5129440594e-05,
+        "M_Cu": 5.3955192757e-13
+      },
+      "P1_range_ns": [
+        278.75829067001195,
+        2989.7287976248726
+      ],
+      "P2_finite_range_ns": [
+        570.7295106196912,
+        612.1369673677453
+      ],
+      "P2_not_reached_count": 15,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 121258,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 14299492,
+        "line_count": 122508,
+        "ConsToPrim_warning_lines": 121258,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_trap_G0",
+      "iteration": 0,
+      "returncode": 0,
+      "solver_seconds": 1303.0,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 37
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 52
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 40
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2585,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 8.8918678898e-05,
+        "E_rad": 2.8422095999e-05,
+        "M_Cu": 1.0158471502e-12
+      },
+      "P1_range_ns": [
+        260.0547500324513,
+        8971.448925326322
+      ],
+      "P2_finite_range_ns": [
+        722.6156327613037,
+        785.3234376734365
+      ],
+      "P2_not_reached_count": 15,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 130357,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 15400519,
+        "line_count": 131601,
+        "ConsToPrim_warning_lines": 130357,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_trap_G0",
+      "iteration": 1,
+      "returncode": 0,
+      "solver_seconds": 1838.6,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 55
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2585,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 4.4770245806e-05,
+        "E_rad": 1.3456271706e-05,
+        "M_Cu": 5.216109919e-13
+      },
+      "P1_range_ns": [
+        -10456.984525788681,
+        5319.640281132769
+      ],
+      "P2_finite_range_ns": [
+        565.8517341509456,
+        582.882709880379
+      ],
+      "P2_not_reached_count": 15,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 72422,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 8534886,
+        "line_count": 73674,
+        "ConsToPrim_warning_lines": 72422,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_trap_G0",
+      "iteration": 2,
+      "returncode": 0,
+      "solver_seconds": 1570.9,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 52
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2585,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 4.2227307033e-05,
+        "E_rad": 1.3076068148e-05,
+        "M_Cu": 5.4017257729e-13
+      },
+      "P1_range_ns": [
+        308.04570036650523,
+        7653.825583578248
+      ],
+      "P2_finite_range_ns": [
+        660.8869248156183,
+        776.4279976464184
+      ],
+      "P2_not_reached_count": 15,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 119704,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 14115888,
+        "line_count": 120954,
+        "ConsToPrim_warning_lines": 119704,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "high_thin_G1",
+      "iteration": 0,
+      "returncode": 0,
+      "solver_seconds": 6038.1,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 29
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 7
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 10
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 29,
+          "time_radiance_finite": true,
+          "t_end_ns": 740.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 14
+        }
+      ],
+      "budget_rows": 1600,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 0.00029183368652,
+        "E_rad": 8.8893750855e-05,
+        "M_Cu": 3.2182534614e-12
+      },
+      "P1_range_ns": [
+        368.21942915743426,
+        1011.4000087207229
+      ],
+      "P2_finite_range_ns": null,
+      "P2_not_reached_count": 18,
+      "P2_lower_bound_ns": [
+        440.0
+      ],
+      "ConsToPrim_warning_lines": 326467,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 38740276,
+        "line_count": 327359,
+        "ConsToPrim_warning_lines": 326467,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    },
+    {
+      "member": "low_thin_G1",
+      "iteration": 0,
+      "returncode": 0,
+      "solver_seconds": 4212.8,
+      "summary_scenarios": 18,
+      "frame_archives": [
+        {
+          "name": "frames_a_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_a_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_b_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_sa.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        },
+        {
+          "name": "frames_c_thin.npz",
+          "numeric_arrays_finite": true,
+          "frames": 30
+        }
+      ],
+      "scenario_checks": [
+        {
+          "scenario": "a_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "a_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 31
+        },
+        {
+          "scenario": "b_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 49
+        },
+        {
+          "scenario": "b_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "b_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_sa_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 49
+        },
+        {
+          "scenario": "c_sa_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 59
+        },
+        {
+          "scenario": "c_sa_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": false,
+          "threshold_crossings": 1,
+          "secondary_empty_cells": 49
+        },
+        {
+          "scenario": "c_thin_baseline",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_high",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        },
+        {
+          "scenario": "c_thin_low",
+          "rows": 30,
+          "time_radiance_finite": true,
+          "t_end_ns": 1230.0,
+          "P2_not_reached": true,
+          "threshold_crossings": 0,
+          "secondary_empty_cells": 28
+        }
+      ],
+      "budget_rows": 2596,
+      "budget_all_values_finite": true,
+      "surface_transmission_finite": true,
+      "final_budget": {
+        "E_gas_abs": 7.7859033394e-05,
+        "E_rad": 2.9839049109e-05,
+        "M_Cu": 1.0083922395e-12
+      },
+      "P1_range_ns": [
+        225.69078137995763,
+        1880.7624328339136
+      ],
+      "P2_finite_range_ns": [
+        505.3879051736617,
+        863.7756104753826
+      ],
+      "P2_not_reached_count": 12,
+      "P2_lower_bound_ns": [
+        930.0
+      ],
+      "ConsToPrim_warning_lines": 176051,
+      "log_collection": {
+        "source_log": "pluto.0.log",
+        "source_bytes": 20694914,
+        "line_count": 177319,
+        "ConsToPrim_warning_lines": 176051,
+        "tail_lines": 50
+      },
+      "tail_matches_raw": true
+    }
+  ],
+  "notes": "P2 NaN without a threshold crossing is retained per Claude rulings fca056a/60c3c50. Secondary empty cells are counted without substitution. Finite image/input/budget checks do not certify all raw solver fields or physical validity; warnings and metric failures require scientific review."
+}

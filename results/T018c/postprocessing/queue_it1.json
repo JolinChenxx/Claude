@@ -1,0 +1,736 @@
+{
+  "prepared": "2026-11-20T01:23:11.492309+08:00",
+  "state": "completed",
+  "iteration": "it1",
+  "members": [
+    "high_trap_G0",
+    "high_thin_G0"
+  ],
+  "solver_completion": "rc0 and 800ns; warnings retained, no independent numerical/physical acceptance verdict",
+  "authority": "T018c steps 3-4 and standing free-core priority from 2473d51; disjoint plans prepared before launch",
+  "jobs": [
+    {
+      "job_id": "T018c_post_it1_trap_01",
+      "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap.py",
+      "runner_sha256": "9c26fd7bc27b619ad3eb26320f515c86306fab20fad20e74624a74fbb5157dc2",
+      "workers": 16,
+      "state": "completed",
+      "commands": [
+        {
+          "name": "high_trap_G0_emission",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--times",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\diagnostics\\diag_emission.csv"
+          ]
+        },
+        {
+          "name": "high_trap_G0_core_energy",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--nec",
+            "trap",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\diagnostics\\core_energy.csv"
+          ]
+        },
+        {
+          "name": "high_trap_G0_shock_track",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\diagnostics\\shock_track.csv"
+          ]
+        },
+        {
+          "name": "high_trap_G0_image_v1",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "-m",
+            "lipsim.image",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--series",
+            "high",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\image_v1",
+            "--workers",
+            "16",
+            "--scenarios",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+          ]
+        }
+      ],
+      "launched": "2026-11-20T01:25:44",
+      "pid": 49800,
+      "launch_commit": "9b5a698",
+      "launch_evidence": "launch_it1_trap.json",
+      "diagnostics_collected": "results\\T018c\\high_trap_G0\\it1\\diagnostics\\validation.json",
+      "completed_commands": [
+        "high_trap_G0_emission",
+        "high_trap_G0_core_energy",
+        "high_trap_G0_shock_track",
+        "high_trap_G0_image_v1"
+      ],
+      "progress_checked": "2026-11-20T02:23:03.657877+08:00",
+      "completed": "2026-11-20T02:15:37.151684+08:00",
+      "image_collected": "results/T018c/high_trap_G0/it1/image_v1/validation.json"
+    },
+    {
+      "job_id": "T018c_post_it1_trap_v2_01",
+      "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap_v2.py",
+      "runner_sha256": "bc6f3415f5a4fe305166a5bb03ded4b0177de8380292b5fe8aa0b9de7505fe85",
+      "workers": 16,
+      "state": "completed",
+      "commands": [
+        {
+          "name": "high_trap_G0_image_v2",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "-m",
+            "lipsim.image",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+            "--series",
+            "high",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\image_v2",
+            "--workers",
+            "16",
+            "--scenarios",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+          ]
+        }
+      ],
+      "launched": "2026-11-20T01:25:44",
+      "pid": 52000,
+      "launch_commit": "9b5a698",
+      "launch_evidence": "launch_it1_trap_v2.json",
+      "completed": "2026-11-20T03:14:49.159169+08:00",
+      "completed_commands": [
+        "high_trap_G0_image_v2"
+      ],
+      "progress_checked": "2026-11-20T03:22:26+08:00",
+      "image_collected": "results/T018c/high_trap_G0/it1/image_v2/validation.json"
+    },
+    {
+      "job_id": "T018c_post_it1_thin_01",
+      "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin.py",
+      "runner_sha256": "73cac25ac7a31a40161d244c3a94126f142e17b3972ad2fe4bec6a321ac778c1",
+      "workers": 16,
+      "state": "completed",
+      "commands": [
+        {
+          "name": "high_thin_G0_emission",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--times",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1\\diagnostics\\diag_emission.csv"
+          ]
+        },
+        {
+          "name": "high_thin_G0_core_energy",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--nec",
+            "thin",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1\\diagnostics\\core_energy.csv"
+          ]
+        },
+        {
+          "name": "high_thin_G0_shock_track",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1\\diagnostics\\shock_track.csv"
+          ]
+        },
+        {
+          "name": "high_thin_G0_image_v1",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "-m",
+            "lipsim.image",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1",
+            "--series",
+            "high",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1\\image_v1",
+            "--workers",
+            "16",
+            "--scenarios",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+          ]
+        }
+      ],
+      "preflight": {
+        "checked": "2026-11-20T01:52:27.417847+08:00",
+        "reservations": {
+          "T016i_native_01": 16,
+          "T018c": 16,
+          "T018c_post_it1_trap_01": 16,
+          "T018c_post_it1_trap_v2_01": 16
+        },
+        "wrapper_identities": [
+          {
+            "job": "T016i_native_01",
+            "pid": 38032,
+            "created": 1795026177.8378432,
+            "children": [
+              46020,
+              10720,
+              20504,
+              9456,
+              45256,
+              29512,
+              39664,
+              14296,
+              38372,
+              53040,
+              31876,
+              48496,
+              8604,
+              54144,
+              52088,
+              9072,
+              4820,
+              33424,
+              50200,
+              39776
+            ],
+            "cores": 16
+          },
+          {
+            "job": "T018c",
+            "pid": 19644,
+            "created": 1795078391.7728488,
+            "children": [
+              40572,
+              40888,
+              50372,
+              27532,
+              18288,
+              52560,
+              10676,
+              53920,
+              25356,
+              42988,
+              18964,
+              49356,
+              18568,
+              53280,
+              43840,
+              42592,
+              27144,
+              29576,
+              20204,
+              50512,
+              38648,
+              41184,
+              12528,
+              43844,
+              26224,
+              16112,
+              52340,
+              39816,
+              19396,
+              12504,
+              48552,
+              24000,
+              49236,
+              25332,
+              27984,
+              42420,
+              20144,
+              44636
+            ],
+            "cores": 16
+          },
+          {
+            "job": "T018c_post_it1_trap_01",
+            "pid": 49800,
+            "created": 1795109143.93311,
+            "children": [
+              25936,
+              43332,
+              32996,
+              53684,
+              28332,
+              9836,
+              50508,
+              31880,
+              32572,
+              25584,
+              19524,
+              20208,
+              48464,
+              8136,
+              53324,
+              45528,
+              45804,
+              46548,
+              16160
+            ],
+            "cores": 16
+          },
+          {
+            "job": "T018c_post_it1_trap_v2_01",
+            "pid": 52000,
+            "created": 1795109144.4057622,
+            "children": [
+              19816,
+              53696,
+              52576,
+              53888,
+              31896,
+              53016,
+              27268,
+              21276,
+              47560,
+              21612,
+              53968,
+              51688,
+              27908,
+              53992,
+              32784,
+              16412,
+              26248,
+              27948,
+              49336
+            ],
+            "cores": 16
+          }
+        ],
+        "pluto_ranks": 16,
+        "reserved_physical_cores": 64,
+        "free_physical_cores": 0,
+        "requested_cores": 16,
+        "can_start": false,
+        "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics."
+      },
+      "launched": "2026-11-20T02:23:45",
+      "pid": 44364,
+      "launch_commit": "5b660fb",
+      "launch_evidence": "launch_it1_thin.json",
+      "startup_checked": "2026-11-20T02:24:09.399268+08:00",
+      "diagnostics_collected": "results/T018c/high_thin_G0/it1/diagnostics/validation.json",
+      "completed_commands": [
+        "high_thin_G0_emission",
+        "high_thin_G0_core_energy",
+        "high_thin_G0_shock_track",
+        "high_thin_G0_image_v1"
+      ],
+      "progress_checked": "2026-11-20T03:22:26+08:00",
+      "completed": "2026-11-20T03:18:18.638618+08:00",
+      "image_collected": "results/T018c/high_thin_G0/it1/image_v1/validation.json"
+    },
+    {
+      "job_id": "T018c_post_it1_thin_v2_01",
+      "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_thin_v2.py",
+      "runner_sha256": "6885168cfcf22b53e03621439d08594b1f852a7ed52664154e64098963178671",
+      "workers": 16,
+      "state": "completed",
+      "commands": [
+        {
+          "name": "high_thin_G0_image_v2",
+          "command": [
+            "D:\\sim_tools\\envs\\lipsim\\python.exe",
+            "-m",
+            "lipsim.image",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1",
+            "--series",
+            "high",
+            "--tables",
+            "D:\\sim_runs\\tables\\v1c",
+            "--out",
+            "D:\\sim_runs\\T018c\\high_thin_G0\\it1\\image_v2",
+            "--workers",
+            "16",
+            "--scenarios",
+            "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+          ]
+        }
+      ],
+      "preflight": {
+        "checked": "2026-11-20T03:09:58.874464+08:00",
+        "reservations": {
+          "T016i_native_01": 16,
+          "T018c_post_it1_thin_01": 16,
+          "T018c_post_it1_trap_v2_01": 16
+        },
+        "wrapper_identities": [
+          {
+            "job": "T016i_native_01",
+            "pid": 38032,
+            "created": 1795026177.8378432,
+            "children": [
+              46020,
+              10720,
+              20504,
+              51436,
+              31676,
+              42920,
+              48940,
+              22220,
+              13224,
+              9516,
+              49004,
+              13932,
+              48612,
+              37628,
+              34264,
+              31284,
+              8752,
+              18708,
+              52444,
+              54148
+            ],
+            "cores": 16
+          },
+          {
+            "job": "T018c_post_it1_thin_01",
+            "pid": 44364,
+            "created": 1795112625.54839,
+            "children": [
+              42904,
+              25488,
+              52292,
+              38084,
+              32240,
+              5104,
+              15032,
+              42452,
+              49328,
+              16264,
+              25220,
+              28092,
+              49228,
+              6996,
+              15980,
+              53984,
+              42416,
+              26988,
+              43764
+            ],
+            "cores": 16
+          },
+          {
+            "job": "T018c_post_it1_trap_v2_01",
+            "pid": 52000,
+            "created": 1795109144.4057622,
+            "children": [
+              19816,
+              53696,
+              52576,
+              53888,
+              31896,
+              53016,
+              27268,
+              21276,
+              47560,
+              21612,
+              53968,
+              51688,
+              27908,
+              53992,
+              32784,
+              16412,
+              26248,
+              27948,
+              49336
+            ],
+            "cores": 16
+          }
+        ],
+        "pluto_ranks": 0,
+        "reserved_physical_cores": 48,
+        "free_physical_cores": 16,
+        "requested_cores": 16,
+        "can_start": true,
+        "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics."
+      },
+      "continuation_authority": "23929ba: finish already queued it1 postprocessing; original plan prepared 2026-11-20 01:55",
+      "launched": "2026-11-20T03:12:25",
+      "pid": 51676,
+      "launch_commit": "1bb6bcb",
+      "launch_evidence": "launch_it1_thin_v2.json",
+      "startup_checked": "2026-11-20T03:12:49+08:00",
+      "completed": "2026-11-20T05:01:04.790392+08:00",
+      "completed_commands": [
+        "high_thin_G0_image_v2"
+      ],
+      "progress_checked": "2026-11-20T05:06:53.073446+08:00",
+      "image_collected": "results/T018c/high_thin_G0/it1/image_v2/validation.json"
+    }
+  ],
+  "deduplication": "Ten distinct prescribed outputs preassigned to four member/version owners. No overlapping whole-it1 queue. Active-output guards run at preflight and before each command.",
+  "pending": "None. All ten it1 commands and archived validations complete; PE results remain withdrawn.",
+  "startup_checked": "2026-11-20T01:25:44.968122+08:00",
+  "capacity_after_launch": {
+    "checked": "2026-11-20T01:25:52.127422+08:00",
+    "reservations": {
+      "T016i_native_01": 16,
+      "T018c": 16,
+      "T018c_post_it1_trap_v2_01": 16
+    },
+    "wrapper_identities": [
+      {
+        "job": "T016i_native_01",
+        "pid": 38032,
+        "created": 1795026177.8378432,
+        "children": [
+          46020,
+          10720,
+          20504,
+          9456,
+          45256,
+          29512,
+          39664,
+          14296,
+          38372,
+          53040,
+          31876,
+          48496,
+          8604,
+          54144,
+          52088,
+          9072,
+          4820,
+          33424,
+          50200,
+          39776
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c",
+        "pid": 19644,
+        "created": 1795078391.7728488,
+        "children": [
+          40572,
+          40888,
+          26104,
+          50372,
+          41184,
+          12528,
+          43844,
+          26224,
+          16112,
+          52340,
+          39816,
+          19396,
+          12504,
+          48552,
+          24000,
+          49236,
+          25332,
+          27984,
+          42420,
+          20144,
+          44636,
+          31828,
+          21828,
+          44700,
+          44808,
+          23696,
+          39048,
+          49328,
+          52264,
+          53056,
+          25896,
+          5376,
+          32436,
+          51752,
+          45440,
+          35116,
+          43240,
+          45908
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c_post_it1_trap_v2_01",
+        "pid": 52000,
+        "created": 1795109144.4057622,
+        "children": [
+          19816,
+          53696
+        ],
+        "cores": 16
+      }
+    ],
+    "pluto_ranks": 16,
+    "reserved_physical_cores": 48,
+    "free_physical_cores": 16,
+    "requested_cores": 16,
+    "can_start": true,
+    "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics.",
+    "including_own_reservation": 64
+  },
+  "thin_prepared": "2026-11-20T01:52:27.820532+08:00",
+  "latest_capacity": {
+    "checked": "2026-11-20T02:24:17.400046+08:00",
+    "reservations": {
+      "T016i_native_01": 16,
+      "T018c": 16,
+      "T018c_post_it1_trap_v2_01": 16
+    },
+    "wrapper_identities": [
+      {
+        "job": "T016i_native_01",
+        "pid": 38032,
+        "created": 1795026177.8378432,
+        "children": [
+          46020,
+          10720,
+          20504,
+          9456,
+          45256,
+          29512,
+          39664,
+          14296,
+          38372,
+          53040,
+          31876,
+          48496,
+          8604,
+          54144,
+          52088,
+          9072,
+          4820,
+          33424,
+          50200,
+          39776
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c",
+        "pid": 19644,
+        "created": 1795078391.7728488,
+        "children": [
+          40572,
+          40888,
+          50372,
+          27532,
+          18288,
+          52560,
+          10676,
+          53920,
+          25356,
+          42988,
+          18964,
+          49356,
+          18568,
+          53280,
+          43840,
+          42592,
+          27144,
+          29576,
+          20204,
+          50512,
+          38648,
+          41184,
+          12528,
+          43844,
+          26224,
+          16112,
+          52340,
+          39816,
+          19396,
+          12504,
+          48552,
+          24000,
+          49236,
+          25332,
+          27984,
+          42420,
+          20144,
+          44636
+        ],
+        "cores": 16
+      },
+      {
+        "job": "T018c_post_it1_trap_v2_01",
+        "pid": 52000,
+        "created": 1795109144.4057622,
+        "children": [
+          19816,
+          53696,
+          52576,
+          53888,
+          31896,
+          53016,
+          27268,
+          21276,
+          47560,
+          21612,
+          53968,
+          51688,
+          27908,
+          53992,
+          32784,
+          16412,
+          26248,
+          27948,
+          49336
+        ],
+        "cores": 16
+      }
+    ],
+    "pluto_ranks": 16,
+    "reserved_physical_cores": 48,
+    "free_physical_cores": 16,
+    "requested_cores": 16,
+    "can_start": true,
+    "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics.",
+    "including_own_reservation": 64
+  },
+  "scope_update": {
+    "at": "2026-11-20T03:22:26+08:00",
+    "authority": "c5c469f; handoff/to_codex/T018c-it1-postprocessing.md",
+    "withdrawal": "PE results withdrawn: STATE 2026-11-20 03:00",
+    "allowed": "Only already running items may finish. Start no further T018c it1 images, thin v2 included. Freed cores go to T019.",
+    "solver_card_status": "done",
+    "postprocessing_complete": true,
+    "thin_v2_existing_launch": "2026-11-20T03:12:25; wrapper51676; launch1bb6bcb; already running before this note was received on the03:20pass",
+    "completion_checked": "2026-11-20T05:06:53.073446+08:00"
+  },
+  "completed": "2026-11-20T05:01:04.790392+08:00",
+  "completion_evidence": "results/T018c/postprocessing/it1_complete_withdrawn.json"
+}

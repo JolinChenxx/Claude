@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-17T15:08:00.394369+08:00",
+  "source_commit": "03d11ac",
+  "lock_commit": "cf33f750b02592565673968d0b6e90a7444cc421",
+  "workers": 40,
+  "threads_per_worker": 1,
+  "shape": [
+    81,
+    145,
+    14
+  ],
+  "opt_fields": [
+    "alpha1064",
+    "nec_thin",
+    "nec_trap",
+    "kappa"
+  ],
+  "input_sha256": {
+    "configs/tables/v0.yaml": "61e02ae15b32beadd5dcaecbdf8d006cd7b51f1917b45359d34b595d872cb9e0",
+    "configs/batches/T015.yaml": "5e317f84afd625eded4300fa608ca8c31e5e18db6eba25c6faf63f3315dd4f5a",
+    "src/lipsim/tables/build.py": "d4e9fed76beec8e68ba67830380e640d13258f0734950bd175c5d005b712f91d",
+    "src/lipsim/transport/kappa.py": "8c3efe2cd9605074e733fd6cf992da80aaec24b9c14518e2b445f2e9f9efa347",
+    "data/params/registry.yaml": "d14ff7fb8d069f55bdd19c077e939fc22bd8ad9b403daf165779aac5858cc250"
+  },
+  "v0_table_sha256": {
+    "eos.bin": "90e73817c0ece2611683a32e94cf468ed4738e9aae674d92efec20b8c71167e0",
+    "opt.bin": "2400f5b1fb0aecdc3c360d198429408de9241f8faf24accba2bbebfbb7492391",
+    "pop.bin": "02c6fb4691425b9effd5a38b353a9bd096ebb6ecb4b5748206247035dd6fe725"
+  },
+  "prior_executable_sha256": {
+    "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe": "71e8512c7849bddd19c1f99c959f2464857a28c00cd10027c154c62fe95bd9bf",
+    "D:\\sim_tools\\pluto_lip\\build_v01\\mpi\\pluto.exe": "ae19290542cf65790c7fa62840f879f0104cb20b3126f48a5fa06bf6656c8347"
+  },
+  "output": "D:/sim_runs/tables/v1"
+}

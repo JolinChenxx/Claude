@@ -1,0 +1,115 @@
+{
+  "collected": "2026-11-18T22:34:40.696754+08:00",
+  "run": "D:\\sim_runs\\T016e\\high_thin_G0\\it0",
+  "registry_record": {
+    "time": "2026-11-18T17:24:06",
+    "batch": "T016e",
+    "run": "high_thin_G0",
+    "picard_it": "0",
+    "grid": "G0",
+    "nec": "thin",
+    "case": "configs/cases/v0_high.yaml",
+    "procs": "8",
+    "returncode": "0",
+    "seconds": "17987.8",
+    "commit": "ff9a260",
+    "registry_sha256": "2d2a6f55679e2e4b",
+    "ini_sha256": "935a249ba47435cf",
+    "dir": "D:\\sim_runs\\T016e\\high_thin_G0\\it0"
+  },
+  "final_budget": {
+    "t_ns": 800.0,
+    "E_internal": 0.0018735525843,
+    "E_kinetic": 2.4467729627e-05,
+    "M_Cu": 3.2918067956e-12,
+    "M_total": 8.1728599937e-09,
+    "E_inc": 0.00039685230479,
+    "E_gas_abs": 0.00029561327047,
+    "E_targ_abs": 8.8077321683e-06,
+    "E_esc": 9.2431302144e-05,
+    "E_rad": 7.0812303567e-05,
+    "E_rad_limited": 1.718248352e-71,
+    "M_src": 3.2918067956e-12,
+    "E_src": 1.0254854666e-05,
+    "E_wall": 4.9631168411e-05
+  },
+  "target_model_abs_J": 6.223180071027081e-05,
+  "PLUTO_E_targ_abs_J": 8.8077321683e-06,
+  "absorption_relative_difference": 6.065587318180488,
+  "M_Cu_relative_to_M_src": 0.0,
+  "total_ConsToPrim_lines": 23557559,
+  "all_rank_logs": [
+    {
+      "rank": 0,
+      "bytes": 1311307854,
+      "sha256": "202cb933e157b87a50a4580b269f9d65de893d0b12d4a1c103f87403fac6ce9f",
+      "ConsToPrim_lines": 10992923,
+      "first_samples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19037 (stage = 1); [i,j = 10, 4], [x1,x2 =  18.750000, 1.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19037 (stage = 2); [i,j = 10, 4], [x1,x2 =  18.750000, 1.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19038 (stage = 1); [i,j = 10, 4], [x1,x2 =  18.750000, 1.500000]\r"
+      ]
+    },
+    {
+      "rank": 1,
+      "bytes": 1026983884,
+      "sha256": "85fe8c677bb7f69dc8f590893d6c1e7382c974fa67d6df6438d3f6a19936873d",
+      "ConsToPrim_lines": 8661274,
+      "first_samples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 16210 (stage = 1); [i,j = 18, 5], [x1,x2 =  83.750000, 2.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 16210 (stage = 2); [i,j = 18, 5], [x1,x2 =  83.750000, 2.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 16210 (stage = 1); [i,j = 18, 5], [x1,x2 =  83.750000, 2.500000]\r"
+      ]
+    },
+    {
+      "rank": 2,
+      "bytes": 462255423,
+      "sha256": "2271edfa9c05b624b9fa99cac7144c798dc9e439e6333eed411efc6bbd877867",
+      "ConsToPrim_lines": 3886094,
+      "first_samples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 16383 (stage = 1); [i,j = 3, 6], [x1,x2 =  91.250000, 3.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 16383 (stage = 2); [i,j = 3, 6], [x1,x2 =  91.250000, 3.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 16384 (stage = 1); [i,j = 3, 6], [x1,x2 =  91.250000, 3.500000]\r"
+      ]
+    },
+    {
+      "rank": 3,
+      "bytes": 2061392,
+      "sha256": "8be53150d9f10af353ccd1067c2a1b99e4dc7eb8b101dbea8f82aed14d3e6acb",
+      "ConsToPrim_lines": 17268,
+      "first_samples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19958 (stage = 1); [i,j = 3, 5], [x1,x2 =  136.250000, 2.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19958 (stage = 2); [i,j = 3, 5], [x1,x2 =  136.250000, 2.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19958 (stage = 1); [i,j = 3, 5], [x1,x2 =  136.250000, 2.500000]\r"
+      ]
+    },
+    {
+      "rank": 4,
+      "bytes": 23753,
+      "sha256": "3738a250b1bb36b7b66941c5223aa9e814a2c81091d02f67767a7e81e8122f12",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 5,
+      "bytes": 23753,
+      "sha256": "9c694cee7bb5a8fe964d2d9c15e03337551fd5c5d5be6edcbf97782f9668f959",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 6,
+      "bytes": 23753,
+      "sha256": "d2f6f116d1b221308a17451b8bc3a09d758a21d18df9cdbce18be1ae06bccf2d",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 7,
+      "bytes": 23754,
+      "sha256": "f86fadc54fdfd0e9cbddfc72ee83623426b35653256c7ee7b28e3c9369de2565",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    }
+  ]
+}

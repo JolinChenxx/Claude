@@ -1,0 +1,68 @@
+{
+  "source_commit": "9fe05d5",
+  "executable_sha256": "0f9e454c13685412da7fce91c104789caf76f002e7685dd17e6fcd8d088481ca",
+  "table_sha256": {
+    "eos.bin": "8b700ab167f533387a1242a98f35463ab7701cb1474854885bc4a2ae7dd3073b",
+    "opt.bin": "a846c3e17da7bf60288b31a610f6bd5ed27a3aee8bb02533b4d90e3458be9862",
+    "pop.bin": "16d7b530a64427c4a65c412745258b289417bcc3a08896fbd90409d85a3c4b7e"
+  },
+  "batch_sha256": "4d3c3d64da15853546886ec5f799508caaeb1a4eebd4d62d07e0c2be0204e3c7",
+  "only_config_changes": [
+    "name",
+    "root",
+    "rmax_par=1000 for each run"
+  ],
+  "runs": [
+    {
+      "id": "low_thin_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1,
+      "rmax_par": 1000
+    },
+    {
+      "id": "low_trap_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "trap",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1,
+      "rmax_par": 1000
+    },
+    {
+      "id": "low_thin_G1",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G1",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1,
+      "rmax_par": 1000
+    }
+  ],
+  "max_cores": 32,
+  "ini_previews": [
+    {
+      "member": "low_thin_G0",
+      "rmax_par": 1000,
+      "normalized_ini_sha256": "c3ba3b684c714ae706713be20ee914b30b662b1002111e731d60b7401934600f"
+    },
+    {
+      "member": "low_trap_G0",
+      "rmax_par": 1000,
+      "normalized_ini_sha256": "6002fe207a622634f4d52552b1a52bbbdee862aeeacb18563aa9751d71d5c627"
+    },
+    {
+      "member": "low_thin_G1",
+      "rmax_par": 1000,
+      "normalized_ini_sha256": "a28ee2c591a779e7ae2c9c320f84cdd70f330748ca39643dc2f5a4a5856f5303"
+    }
+  ]
+}

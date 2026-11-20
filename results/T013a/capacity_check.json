@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-16T21:18:38.5074376+08:00",
+  "T011_wrapper_pid": 10636,
+  "pluto_process_count": 48,
+  "pluto_cpu_core_equivalents": 41.64,
+  "sample_seconds": 2.015,
+  "system_logical_cpu_percent": 37,
+  "mpi_launchers": [
+    {
+      "ProcessId": 28316,
+      "ParentProcessId": 16420,
+      "CreationDate": "/Date(1794832957688)/",
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 8 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 8 1"
+    },
+    {
+      "ProcessId": 44612,
+      "ParentProcessId": 16420,
+      "CreationDate": "/Date(1794832992685)/",
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 8 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 8 1"
+    },
+    {
+      "ProcessId": 12384,
+      "ParentProcessId": 16420,
+      "CreationDate": "/Date(1794834859218)/",
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 16 1"
+    },
+    {
+      "ProcessId": 12796,
+      "ParentProcessId": 16420,
+      "CreationDate": "/Date(1794834880561)/",
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 16 1"
+    }
+  ],
+  "T013a_action": "Deferred per task step 1: T011 uses more than 40 cores; leave card ready and check next pass."
+}

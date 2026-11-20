@@ -1,0 +1,117 @@
+{
+  "collected": "2026-11-20T00:05:41.043383+08:00",
+  "batch": "T014",
+  "series": "high",
+  "state": "native_high_complete",
+  "batch_completion_evidence": {
+    "batch": "T014",
+    "series": "high",
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+      "D:/sim_runs/T014",
+      "--series",
+      "high",
+      "--tables",
+      "D:/sim_runs/tables/v0",
+      "--workers",
+      "16",
+      "--scenarios",
+      "configs/imaging/v1.yaml",
+      "--outname",
+      "image_v1"
+    ],
+    "started": "2026-11-19T12:49:41.680902+08:00",
+    "finished": "2026-11-19T23:55:49.701334+08:00",
+    "returncode": 0
+  },
+  "sets": [
+    {
+      "run": "high_thin_G0/it0",
+      "validation": "results\\T014\\high_thin_G0\\it0\\image_v1\\validation.json",
+      "validation_sha256": "5dd9232cc86d2aec2df345095d5cc4795a506c6588891b284cf45f5aa86b7924",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {}
+    },
+    {
+      "run": "high_thin_G0/it1",
+      "validation": "results\\T014\\high_thin_G0\\it1\\image_v1\\validation.json",
+      "validation_sha256": "52ff7350a43487681699ee5aa0ce164027141cdec40520682c45029e7c8a5d19",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {
+        "a_thin_baseline": -3230.247001240517,
+        "a_thin_low": -2677.8905698872604,
+        "a_thin_high": -2649.903497682951
+      }
+    },
+    {
+      "run": "high_thin_G0/it2",
+      "validation": "results\\T014\\high_thin_G0\\it2\\image_v1\\validation.json",
+      "validation_sha256": "5d3a2f87e44cce2ca98b5bb9399ae5dda05ffdb25e7f01fe6cb9c7fcafd1c963",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {
+        "a_thin_baseline": -7738.680694358409,
+        "a_thin_high": -11409.06591885983
+      }
+    },
+    {
+      "run": "high_thin_G1/it0",
+      "validation": "results\\T014\\high_thin_G1\\it0\\image_v1\\validation.json",
+      "validation_sha256": "ab12aa19a220dc32e39859a4e8f886bcb1cc30d0f464916f38a1253375970cee",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {}
+    },
+    {
+      "run": "high_trap_G0/it0",
+      "validation": "results\\T014\\high_trap_G0\\it0\\image_v1\\validation.json",
+      "validation_sha256": "d0353db44cd915cd8ed54618d490c0be343805f4cb532dbd6eaf97f24f139d80",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {}
+    },
+    {
+      "run": "high_trap_G0/it1",
+      "validation": "results\\T014\\high_trap_G0\\it1\\image_v1\\validation.json",
+      "validation_sha256": "0d3b04a0a95d521c63066e254dc33ffbee818980c5bbd37aced4ce96d65c3cab",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {
+        "a_thin_baseline": -2245.197932240629,
+        "a_thin_low": -2090.8132785891103,
+        "a_thin_high": -2050.175353623291
+      }
+    },
+    {
+      "run": "high_trap_G0/it2",
+      "validation": "results\\T014\\high_trap_G0\\it2\\image_v1\\validation.json",
+      "validation_sha256": "b47ab35cdc519ec3037cb24429bea37279850b334a9f89cfeecda691c8f7a441",
+      "metrics": 18,
+      "local_finite_frame_archives": 6,
+      "P2_unavailable": 18,
+      "negative_P1": {
+        "a_thin_baseline": -5017.460260423446,
+        "a_thin_low": -7030.829397009675,
+        "a_thin_high": -5197.515001153646
+      }
+    }
+  ],
+  "totals": {
+    "sets": 7,
+    "metric_csvs": 126,
+    "local_finite_frame_archives": 42,
+    "P2_unavailable": 126,
+    "negative_P1": 11
+  },
+  "scope": "High series only. Full T014 and later T016e catch-up remain pending; T016i stays running.",
+  "validation_policy": "Latest set validated during collection; previous sets use existing validation records. Raw frame arrays remain local."
+}

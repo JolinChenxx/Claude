@@ -1,0 +1,81 @@
+--- Src/Thermal_Conduction/tc_rhs.c
++++ tc_rhs.c
+@@ -38,6 +38,11 @@
+   double dtdV, dtdx;
+   static  double *fA;
+   static  Sweep sweep;
++#if NTRACER > 0
++  int nvl, vlist[2] = {ENG, TRC}, nvlist = 2;
++#else
++  int nvl, vlist[1] = {ENG}, nvlist = 1;
++#endif
+ 
+ /* --------------------------------------------------------
+    0. Allocate memory
+@@ -65,52 +70,57 @@
+    2. Multiply flux X area & compute rhs
+    -------------------------------------------------------- */
+ 
++  /* lipsim v1 step 2: loop over the parabolically updated conserved variables: energy and, with
++     NTRACER > 0, the Cu tracer rho*Y (Cu–air interdiffusion flux from tc_flux.c). Otherwise unchanged. */
++  for (nvl = 0; nvl < nvlist; nvl++){
++  nv = vlist[nvl];
+   if (g_dir == IDIR){
+     #if GEOMETRY != CARTESIAN
+     for (i = beg-1; i <= end; i++){
+-      fA[i] = sweep.tc_flux[i][ENG]*grid->A[IDIR][k][j][i];
++      fA[i] = sweep.tc_flux[i][nv]*grid->A[IDIR][k][j][i];
+     }  
+     #endif
+     for (i = beg; i <= end; i++){
+       #if GEOMETRY == CARTESIAN
+       dtdx = dt/grid->dx[IDIR][i];
+-      dU[k][j][i][ENG] += dtdx*(sweep.tc_flux[i][ENG] - sweep.tc_flux[i-1][ENG]);
++      dU[k][j][i][nv] += dtdx*(sweep.tc_flux[i][nv] - sweep.tc_flux[i-1][nv]);
+       #else
+       dtdV = dt/grid->dV[k][j][i];
+-      dU[k][j][i][ENG] += dtdV*(fA[i] - fA[i-1]);
++      dU[k][j][i][nv] += dtdV*(fA[i] - fA[i-1]);
+       #endif
+     }    
+   } else if (g_dir == JDIR){
+     #if GEOMETRY != CARTESIAN
+     for (j = beg-1; j <= end; j++){
+-      fA[j] = sweep.tc_flux[j][ENG]*grid->A[JDIR][k][j][i];
++      fA[j] = sweep.tc_flux[j][nv]*grid->A[JDIR][k][j][i];
+     }  
+     #endif
+     for (j = beg; j <= end; j++){
+       #if GEOMETRY == CARTESIAN
+       dtdx = dt/grid->dx[JDIR][j];
+-      dU[k][j][i][ENG] += dtdx*(sweep.tc_flux[j][ENG] - sweep.tc_flux[j-1][ENG]);
++      dU[k][j][i][nv] += dtdx*(sweep.tc_flux[j][nv] - sweep.tc_flux[j-1][nv]);
+       #else
+       dtdV = dt/grid->dV[k][j][i];
+-      dU[k][j][i][ENG] += dtdV*(fA[j] - fA[j-1]);
++      dU[k][j][i][nv] += dtdV*(fA[j] - fA[j-1]);
+       #endif
+     }    
+   } else if (g_dir == KDIR){
+     #if GEOMETRY != CARTESIAN
+     for (k = beg-1; k <= end; k++){
+-      fA[k] = sweep.tc_flux[k][ENG]*grid->A[KDIR][k][j][i];
++      fA[k] = sweep.tc_flux[k][nv]*grid->A[KDIR][k][j][i];
+     }  
+     #endif
+     for (k = beg; k <= end; k++){
+       #if GEOMETRY == CARTESIAN
+       dtdx = dt/grid->dx[KDIR][k];
+-      dU[k][j][i][ENG] += dtdx*(sweep.tc_flux[k][ENG] - sweep.tc_flux[k-1][ENG]);
++      dU[k][j][i][nv] += dtdx*(sweep.tc_flux[k][nv] - sweep.tc_flux[k-1][nv]);
+       #else
+       dtdV = dt/grid->dV[k][j][i];
+-      dU[k][j][i][ENG] += dtdV*(fA[k] - fA[k-1]);
++      dU[k][j][i][nv] += dtdV*(fA[k] - fA[k-1]);
+       #endif
+     }    
+   }   
++  }
+     
+   #ifdef CHOMBO
+   StoreAMRFlux (sweep.tc_flux, aflux, -1, ENG, ENG, beg-1, end, grid);

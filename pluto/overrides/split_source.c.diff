@@ -1,0 +1,21 @@
+--- Src/split_source.c
++++ split_source.c
+@@ -23,6 +23,7 @@
+ */
+ /* ///////////////////////////////////////////////////////////////////// */
+ #include "pluto.h"
++#include "lip_glue.h"
+ 
+ /* ********************************************************************* */
+ void SplitSource (Data *d, double dt, timeStep *Dts, Grid *grid)
+@@ -62,6 +63,10 @@
+     - viscosity 
+    ---------------------------------------------- */
+ 
++/* lipsim (PLAN v3): laser absorption, radiative cooling and target evaporation source, operator split.
++   This is the only change to the upstream file. */
++  LipSource (d, dt, Dts, grid);
++
+ #if (PARABOLIC_FLUX & SUPER_TIME_STEPPING)
+   STS (d, dt, Dts, grid);
+ #endif

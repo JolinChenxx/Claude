@@ -1,0 +1,18 @@
+# Grid levels (N grade: chosen by convergence only, never by agreement with experiment). Units: um.
+# PLUTO segment syntax: [start, n, type(u|s|l), end]; 's' = stretched continuation of the previous spacing.
+numerics:
+  G0:
+    x1: [[0.0, 60, u, 150.0], [150.0, 80, s, 1200.0]]
+    x2: [[0.0, 100, u, 100.0], [100.0, 110, s, 1500.0]]
+  G1:
+    x1: [[0.0, 120, u, 150.0], [150.0, 140, s, 1200.0]]
+    x2: [[0.0, 200, u, 100.0], [100.0, 200, s, 1500.0]]
+  G2:
+    x1: [[0.0, 240, u, 150.0], [150.0, 260, s, 1200.0]]
+    x2: [[0.0, 400, u, 100.0], [100.0, 380, s, 1500.0]]
+  smoke:
+    x1: [[0.0, 60, u, 300.0]]
+    x2: [[0.0, 80, u, 400.0]]
+  cfl: 0.3
+  output_dt_ns: 2.5
+  analysis_dt_ns: 0.5

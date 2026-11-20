@@ -1,0 +1,329 @@
+{
+  "member": "high_thin_G0",
+  "iteration": "it2",
+  "status": "stopped_by_instruction",
+  "withdrawal": "PE results withdrawn: STATE 2026-11-20 03:00",
+  "authority": "handoff/to_codex/T018c-stop-it2.md; DECISIONS 2026-11-20 03:00; commit 23929ba",
+  "stop_process_evidence": {
+    "member": "high_thin_G0",
+    "root_pid": 27532,
+    "processes": [
+      {
+        "pid": 27532,
+        "ppid": 40888,
+        "created": 1795109956.3630412,
+        "name": "mpiexec.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+          "-n",
+          "8",
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 18288,
+        "ppid": 27532,
+        "created": 1795109956.4017873,
+        "name": "smpd.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe",
+          "-p",
+          "8677",
+          "-d",
+          "0",
+          "-mgr",
+          "372",
+          "job",
+          "-localonly"
+        ]
+      },
+      {
+        "pid": 52560,
+        "ppid": 18288,
+        "created": 1795109956.4621513,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 10676,
+        "ppid": 18288,
+        "created": 1795109956.47762,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 53920,
+        "ppid": 18288,
+        "created": 1795109956.4871552,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 25356,
+        "ppid": 18288,
+        "created": 1795109956.4954965,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 42988,
+        "ppid": 18288,
+        "created": 1795109956.5018594,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 18964,
+        "ppid": 18288,
+        "created": 1795109956.5078008,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 49356,
+        "ppid": 18288,
+        "created": 1795109956.5134964,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 18568,
+        "ppid": 18288,
+        "created": 1795109956.5184307,
+        "name": "pluto.exe",
+        "cwd": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+        "cmdline": [
+          "D:\\sim_tools\\pluto_lip\\build_v1i\\mpi\\pluto.exe",
+          "-dec",
+          "8",
+          "1"
+        ]
+      },
+      {
+        "pid": 53280,
+        "ppid": 18568,
+        "created": 1795109956.5253856,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 43840,
+        "ppid": 49356,
+        "created": 1795109956.5216587,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 42592,
+        "ppid": 18964,
+        "created": 1795109956.516529,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 27144,
+        "ppid": 42988,
+        "created": 1795109956.510446,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 29576,
+        "ppid": 25356,
+        "created": 1795109956.5049748,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 20204,
+        "ppid": 53920,
+        "created": 1795109956.499584,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 50512,
+        "ppid": 10676,
+        "created": 1795109956.491854,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      },
+      {
+        "pid": 38648,
+        "ppid": 52560,
+        "created": 1795109956.4842007,
+        "name": "conhost.exe",
+        "cwd": "C:\\Windows",
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ]
+      }
+    ],
+    "taskkill": {
+      "at": "2026-11-20T03:08:27+08:00",
+      "returncode": 0,
+      "stdout": "SUCCESS: The process with PID 38648 (child process of PID 52560) has been terminated.\nSUCCESS: The process with PID 50512 (child process of PID 10676) has been terminated.\nSUCCESS: The process with PID 20204 (child process of PID 53920) has been terminated.\nSUCCESS: The process with PID 29576 (child process of PID 25356) has been terminated.\nSUCCESS: The process with PID 27144 (child process of PID 42988) has been terminated.\nSUCCESS: The process with PID 42592 (child process of PID 18964) has been terminated.\nSUCCESS: The process with PID 43840 (child process of PID 49356) has been terminated.\nSUCCESS: The process with PID 53280 (child process of PID 18568) has been terminated.\nSUCCESS: The process with PID 52560 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 10676 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 53920 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 25356 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 42988 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 18964 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 49356 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 18568 (child process of PID 18288) has been terminated.\nSUCCESS: The process with PID 18288 (child process of PID 27532) has been terminated.\nSUCCESS: The process with PID 27532 (child process of PID 40888) has been terminated.\n",
+      "stderr": ""
+    },
+    "remaining_original_processes": []
+  },
+  "verified_at": "2026-11-20T03:10:57+08:00",
+  "last_step_line": "step:12000; t = 6.3308e+001; dt = 4.0556e-004; 7.9 % [Mach = 266.362665, Nrkl = 19]",
+  "last_step": {
+    "step": 12000,
+    "t_ns": 63.308,
+    "dt_ns": 0.00040556,
+    "Mach": 266.362665,
+    "Nrkl": 19
+  },
+  "last_budget": {
+    "t_ns": 62.99999,
+    "E_internal": 0.0018104618329,
+    "E_kinetic": 3.7790238385e-05,
+    "M_Cu": 1.3484954111e-12,
+    "M_total": 8.1709166823e-09,
+    "E_inc": 0.00024658870631,
+    "E_gas_abs": 0.00013968670009,
+    "E_targ_abs": 9.4751302737e-06,
+    "E_esc": 9.7426875939e-05,
+    "E_rad": 5.2692729119e-06,
+    "E_rad_limited": 1.1995856152e-73,
+    "M_src": 1.3484954111e-12,
+    "E_src": 3.058204133e-06,
+    "E_wall": 6.1360620369e-06
+  },
+  "budget_rows": 123,
+  "budget_all_finite": true,
+  "rank0_diagnostic_read": {
+    "source_bytes": 19022703,
+    "offset": 14828399,
+    "bytes": 4194298,
+    "full_warning_recount": false
+  },
+  "registry_row_preserved": {
+    "time": "2026-11-20T01:39:16",
+    "batch": "T018c",
+    "run": "high_thin_G0",
+    "picard_it": "2",
+    "grid": "G0",
+    "nec": "thin",
+    "case": "configs/cases/v1pe_high.yaml",
+    "procs": "8",
+    "returncode": "1",
+    "seconds": "5351.3",
+    "commit": "23929ba",
+    "registry_sha256": "7c65e7c8bad63ce0",
+    "ini_sha256": "935a249ba47435cf",
+    "dir": "D:\\sim_runs\\T018c\\high_thin_G0\\it2"
+  },
+  "batch_wrapper_exitcode": 0,
+  "member_returncode": 1,
+  "raw_directory": "D:\\sim_runs\\T018c\\high_thin_G0\\it2",
+  "files": {
+    "source_meta.json": {
+      "source": "D:\\sim_runs\\T018c\\high_thin_G0\\it2\\source\\source_meta.json",
+      "bytes": 762,
+      "sha256": "886dd2ec96335e69de745dd8d3e21927fdc2761533f51439ef90449a9952dcdb"
+    },
+    "pluto.ini": {
+      "source": "D:\\sim_runs\\T018c\\high_thin_G0\\it2\\pluto.ini",
+      "bytes": 1055,
+      "sha256": "935a249ba47435cfe05e9eee325557184675ee29cf1fc4adba44e03eab635ad2"
+    },
+    "dbl.out": {
+      "source": "D:\\sim_runs\\T018c\\high_thin_G0\\it2\\dbl.out",
+      "bytes": 2391,
+      "sha256": "c087f2c02a33009922f8873ae60360b7c2aa4f26ec4bcc3074de0bbc8a5d34bd"
+    },
+    "budget.csv": {
+      "source": "D:\\sim_runs\\T018c\\high_thin_G0\\it2\\budget.csv",
+      "bytes": 30815,
+      "sha256": "c195a0581ab5950c881a4e521aa5153e74a6e264e86b474cc0aac792e17779b8"
+    },
+    "pluto.0.last200.log": {
+      "source": "D:\\sim_runs\\T018c\\high_thin_G0\\it2\\pluto.0.log",
+      "source_bytes": 19022703,
+      "lines": 200,
+      "bytes": 23163,
+      "sha256": "695ba478aabb453882ee27d3ad4f9cd1aa9c51725d78d6c13d21e436ac664c23",
+      "preserves_final_partial_line": true
+    }
+  },
+  "caveat": "Last emitted step and budget records have different sampling cadence; neither is inferred to be the exact solver time at termination. Data retained as withdrawn evidence, not accepted physics."
+}

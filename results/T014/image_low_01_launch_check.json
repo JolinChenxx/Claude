@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-17T02:04:01.3673384+08:00",
+  "job": {
+    "id": "T014_image_low_01",
+    "pid": 47692,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16",
+    "threads": 1,
+    "commit": "bf96204",
+    "started": "2026-11-17T02:03:46",
+    "dir": "D:\\sim_runs\\T014_image_low_01"
+  },
+  "wrapper": {
+    "ProcessId": 47692,
+    "ParentProcessId": 47968,
+    "Name": "cmd.exe",
+    "CommandLine": "\"C:\\Windows\\system32\\cmd.exe\" /v:on /c set OMP_NUM_THREADS=1&& set SIM_OUT_DIR=D:\\sim_runs\\T014_image_low_01&& cd /d \"D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\" && D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 & echo !ERRORLEVEL! > \"D:\\sim_runs\\T014_image_low_01\\exitcode.txt\" "
+  },
+  "children": [
+    {
+      "ProcessId": 14900,
+      "ParentProcessId": 47692,
+      "Name": "conhost.exe",
+      "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+    },
+    {
+      "ProcessId": 25708,
+      "ParentProcessId": 47692,
+      "Name": "python.exe",
+      "CommandLine": "D:\\sim_tools\\envs\\lipsim\\python.exe  scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 "
+    }
+  ],
+  "status": [
+    "STATE=running  elapsed=0.00:00:15  pid=47692  commit=bf96204",
+    "--- stdout (last 5) ---",
+    "imaging D:\\sim_runs\\T014\\low_thin_G0\\it0",
+    "--- stderr (last 5) ---"
+  ],
+  "exitcode_present": false
+}

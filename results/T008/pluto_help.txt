@@ -1,0 +1,68 @@
+
+job aborted:
+[ranks] message
+
+[0] application aborted
+aborting MPI_COMM_WORLD (comm=0x44000000), error 1, comm rank 0
+Usage: pluto [options]
+
+           or 
+
+       mpirun -np NP ./pluto [options]
+
+[options] are:
+
+ -dec n1 [n2] [n3]
+    Enable user-defined parallel decomposition mode. The integers
+    n1, n2 and n3 specify the number of processors along the x1,
+    x2, and x3 directions. There must be as many integers as the
+    number of dimensions and their product must equal the total
+    number of processors used by mpirun or an error will occurr.
+
+ -frestart n
+    Restart computations for the fluid (no particles) from the
+    n-th output file in double in precision format (.dbl).
+
+ -i <name>
+    Use <name> as initialization file instead of pluto.ini.
+
+ --help
+    Show this option summary.
+
+ -h5restart n
+    Restart computations from the n-th output file in HDF5
+    double precision format (.dbl.h5).
+
+ -makegrid
+    Generate grid only, do not start computations.
+
+ -maxsteps n
+    Stop computations after n steps.
+
+ -no-write
+    Do not write data to disk.
+
+ -no-x1par, -no-x2par, -no-x3par
+    Do not perform parallel domain decomposition along the x1, x2
+    or x3 direction, respectively.
+
+ -restart n
+    Restart computations from the n-th output file in double in
+    precision format (.dbl).
+
+ -show-dec
+    Show domain decomposition when running in parallel mode.
+
+ -x1jet, -x2jet, -x3jet
+    Exclude from integration regions of zero pressure gradient
+    that extends up to the end of the domain in x1, x2 or x3
+    direction, respectively. This option is specifically
+    designed for jets propagating along one of the coordinate
+    axis. In parallel mode, parallel decomposition is not
+    performed along the selected direction.
+
+ -xres n1
+    Set the grid resolution in the x1 direction to n1 zones
+    by overriding pluto.ini. Cell aspect ratio is preserved by
+    modifying the grid resolution in the other coordinate
+    directions accordingly.

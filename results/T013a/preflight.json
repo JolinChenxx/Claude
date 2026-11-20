@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-11-16T22:34:31+08:00",
+  "source_commit": "93d663ae81a418524be096aa8b9d79686fb9ec4f",
+  "capacity": {
+    "checked_at": "2026-11-16T22:33:02.9681352+08:00",
+    "pluto_process_count": 32,
+    "pluto_cpu_core_equivalents": 30.05,
+    "sample_seconds": 2.017,
+    "mpi_launchers": [
+      {
+        "ProcessId": 12384,
+        "ParentProcessId": 16420,
+        "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 16 1"
+      },
+      {
+        "ProcessId": 12796,
+        "ParentProcessId": 16420,
+        "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 16 1"
+      }
+    ]
+  },
+  "completed_imaging_job": "T011img_low",
+  "previous_T013a_job": "none",
+  "max_cores": 32,
+  "members": [
+    {
+      "id": "high_thin_G2",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G2",
+      "nec": "thin",
+      "tstop_ns": 800,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    },
+    {
+      "id": "high_trap_G2",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G2",
+      "nec": "trap",
+      "tstop_ns": 800,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    }
+  ],
+  "executable": "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+  "executable_sha256": "71e8512c7849bddd19c1f99c959f2464857a28c00cd10027c154c62fe95bd9bf",
+  "batch_sha256": "776a4f1961b8bc158b9f37d19440018cee2d6a0e99b7a9dae23043ff88ad0dcc",
+  "tables": {
+    "eos.bin": {
+      "sha256": "90e73817c0ece2611683a32e94cf468ed4738e9aae674d92efec20b8c71167e0",
+      "bytes": 5263820,
+      "shape": [
+        81,
+        145,
+        14
+      ]
+    },
+    "opt.bin": {
+      "sha256": "2400f5b1fb0aecdc3c360d198429408de9241f8faf24accba2bbebfbb7492391",
+      "bytes": 3948364,
+      "shape": [
+        81,
+        145,
+        14
+      ]
+    },
+    "pop.bin": {
+      "sha256": "02c6fb4691425b9effd5a38b353a9bd096ebb6ecb4b5748206247035dd6fe725",
+      "bytes": 27626572,
+      "shape": [
+        81,
+        145,
+        14
+      ]
+    }
+  },
+  "command": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T013a_G2.yaml --max-cores 32"
+}

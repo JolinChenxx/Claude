@@ -1,0 +1,381 @@
+{
+  "budget_seconds": 60401.11539506912,
+  "runs": [
+    {
+      "case": "H00",
+      "elapsed_seconds": 440.44293570518494,
+      "exit_code": 0,
+      "official_stop_requested": false
+    },
+    {
+      "case": "H01",
+      "elapsed_seconds": 20.02223014831543,
+      "exit_code": 0,
+      "official_stop_requested": false
+    },
+    {
+      "case": "H02",
+      "elapsed_seconds": 380.3756799697876,
+      "exit_code": 0,
+      "official_stop_requested": false
+    },
+    {
+      "case": "H03",
+      "elapsed_seconds": 40.034103870391846,
+      "exit_code": 0,
+      "official_stop_requested": false
+    },
+    {
+      "case": "H04",
+      "elapsed_seconds": 220.15754532814026,
+      "exit_code": 0,
+      "official_stop_requested": false
+    },
+    {
+      "case": "H05",
+      "elapsed_seconds": 486.9117429256439,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Persistent nonlinear rejection near 323 ns with default minimal Jacobian / four-iteration Time solver; save partial for J and raw-field diagnosis, rebuild with current Newton Jacobian and 15 iterations."
+    },
+    {
+      "case": "H07",
+      "elapsed_seconds": 488.0354495048523,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Verified geometric boundary IDs: prior harmonic ALE mistakenly fixed solid symmetry axis 1 instead of bottom 2. Correct bottom constraint resolves the cause of local fold; return to sparse harmonic mapping to avoid slow nonlocal projection assembly. All partial mappings remain diagnostic."
+    },
+    {
+      "case": "H08",
+      "elapsed_seconds": 466.2144272327423,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Repeated nonlinear step rejection around 315 ns despite 15 Newton iterations; retain corrected sparse ALE physics and update Jacobian every Newton iteration in H09. Save partial to verify J, Y and conservation rather than continue at <2 ns/min."
+    },
+    {
+      "case": "H09",
+      "elapsed_seconds": 365.79532122612,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Full Newton solves the same equations but is costly in the early pulse. Continue from the already audited real H08 state at 314 ns, preserving H08 history and using official COMSOL solution concatenation. Avoid paying again for accepted early states; no synthetic time extrapolation."
+    },
+    {
+      "case": "H10",
+      "elapsed_seconds": 245.6554126739502,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Updating the Jacobian alone still causes repeated Newton failures near 315 ns. Preserve the same saved-state history and equations; H11 adds automatic Newton damping for nonsmooth constitutive/phase-change slopes. No further global diffusion increase."
+    },
+    {
+      "case": "H11",
+      "elapsed_seconds": 225.6434063911438,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Automatic Newton damping crossed the 315 ns stall and is stable beyond 410 ns with no rejected steps. Save a real checkpoint, preserve the full solution history, then use fixed 0.8 damping with minimal Jacobian updates to reserve budget for mesh/time validation. Same equations, mesh and tolerances."
+    },
+    {
+      "case": "H13",
+      "elapsed_seconds": 105.650563955307,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Fixed 0.8 damping with minimal Jacobian is slower and accumulates rejected steps near 442 ns. Save the real partial state and restore the already successful automatic damping with a fresh Jacobian each Newton iteration; no physical equation or global diffusion change."
+    },
+    {
+      "case": "H14",
+      "elapsed_seconds": 1546.702125787735,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "The pulse and 315 ns nonlinear stall are past; full Newton remains stable at >1.3 us but factorizes on every iteration. Save a real checkpoint and continue late cooling with automatic damping and minimal Jacobian updates on 8 cores, preserving equations, mesh, tolerances and maxstep. This is a targeted cost optimization to preserve the fixed 4h verification budget."
+    },
+    {
+      "case": "H15",
+      "elapsed_seconds": 1160.9394171237946,
+      "threads": 8,
+      "started_epoch": 1793855682.839432,
+      "finished_epoch": 1793856843.7788491,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null
+    },
+    {
+      "case": "VG",
+      "elapsed_seconds": 606.5167119503021,
+      "threads": 8,
+      "started_epoch": 1793858433.5252469,
+      "finished_epoch": 1793859040.0419588,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Early Newton cost review: VG onevery has 327 Jacobians / 307 steps; same pulse region of main H08 minimal used 24 Jacobians / 403 steps. Save real VG history; continue same mesh, equations, tolerance and max step using minimal Jacobian with automatic damping to reserve verification budget."
+    },
+    {
+      "case": "VGM",
+      "elapsed_seconds": 487.51270031929016,
+      "threads": 8,
+      "started_epoch": 1793859137.1787536,
+      "finished_epoch": 1793859624.691454,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "Measured early minimal+automatic damping still updates one Jacobian per step (143 / 140), so the expected early reuse did not occur. Save actual history; use the validated main-case early minimal+constant-1 strategy until 300ns, then switch to automatic/current Jacobian for the known nonlinear region. No equation, mesh, tolerance or step-limit change."
+    },
+    {
+      "case": "VGE",
+      "elapsed_seconds": 425.8068118095398,
+      "threads": 8,
+      "started_epoch": 1793859741.2713654,
+      "finished_epoch": 1793860167.079172,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "early_Newton_checkpoint: refined mesh nonlinear stall near 258ns; official save-stop recovery after stop-request encoding caused the Python worker to exit. Actual solver elapsed time fully retained. Switch current Jacobian/automatic damping after audit.",
+      "recovered_worker_encoding_failure": true
+    },
+    {
+      "case": "VGEA",
+      "elapsed_seconds": 2288.698809146881,
+      "threads": 8,
+      "started_epoch": 1793860285.9065194,
+      "finished_epoch": 1793862574.6053286,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "S4_window_checkpoint: save real history after all allowed S4 gates; reserve budget for the other independent verification."
+    },
+    {
+      "case": "BENCH8",
+      "elapsed_seconds": 100.10029816627502,
+      "threads": 8,
+      "started_epoch": 1793872167.0765016,
+      "finished_epoch": 1793872267.1767998,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "BENCH16",
+      "elapsed_seconds": 100.09075546264648,
+      "threads": 16,
+      "started_epoch": 1793872283.1027963,
+      "finished_epoch": 1793872383.1935518,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "BENCH32",
+      "elapsed_seconds": 120.13993096351624,
+      "threads": 32,
+      "started_epoch": 1793872403.679745,
+      "finished_epoch": 1793872523.819676,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "B64",
+      "elapsed_seconds": 247.23315262794495,
+      "threads": 16,
+      "started_epoch": 1793872578.5156822,
+      "finished_epoch": 1793872825.7488348,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "early_Newton_checkpoint: main-case early minimal/constant-1 strategy reached 300ns; preserve real history and use automatic damping/current Jacobian across the known later nonlinear region.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "B64A",
+      "elapsed_seconds": 2241.1162016391754,
+      "threads": 16,
+      "started_epoch": 1793872860.6737485,
+      "finished_epoch": 1793875101.7899501,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "T64",
+      "elapsed_seconds": 306.9441134929657,
+      "threads": 16,
+      "started_epoch": 1793876784.929283,
+      "finished_epoch": 1793877091.8733964,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "early_Newton_checkpoint: main-case early minimal/constant-1 strategy reached 300ns; preserve real history and use automatic damping/current Jacobian across the known later nonlinear region.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "T64A",
+      "elapsed_seconds": 1604.7716119289398,
+      "threads": 16,
+      "started_epoch": 1793877127.1567278,
+      "finished_epoch": 1793878731.9283397,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "S4_window_checkpoint: save real history after all allowed S4 gates; reserve budget for the other independent verification.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G64",
+      "elapsed_seconds": 517.0252208709717,
+      "threads": 16,
+      "started_epoch": 1793878814.3995194,
+      "finished_epoch": 1793879331.4247403,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "early_Newton_checkpoint: observed real stiffness at 259ns; tiny 0.015625ns steps and 36 nonlinear failures. Save accepted history and switch to current Jacobian/automatic damping before planned 300ns.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G64A",
+      "elapsed_seconds": 1837.282160282135,
+      "threads": 16,
+      "started_epoch": 1793879373.0554833,
+      "finished_epoch": 1793881210.3376436,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "S4_window_checkpoint: save real history after all allowed S4 gates; reserve budget for the other independent verification.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "T64AC1",
+      "elapsed_seconds": 2647.6390101909637,
+      "threads": 16,
+      "started_epoch": 1793881312.571384,
+      "finished_epoch": 1793883960.2103941,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "solve_time_budget",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "T64AC2",
+      "elapsed_seconds": 352.9873557090759,
+      "threads": 16,
+      "started_epoch": 1793884077.8138375,
+      "finished_epoch": 1793884430.8011932,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G64AC1",
+      "elapsed_seconds": 2650.9616708755493,
+      "threads": 16,
+      "started_epoch": 1793884545.783074,
+      "finished_epoch": 1793887196.7447448,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "solve_time_budget",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G64AC2",
+      "elapsed_seconds": 1580.6462187767029,
+      "threads": 16,
+      "started_epoch": 1793887389.90668,
+      "finished_epoch": 1793888970.552899,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264",
+      "elapsed_seconds": 641.1810054779053,
+      "threads": 16,
+      "started_epoch": 1793893868.8137362,
+      "finished_epoch": 1793894509.9947417,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "early_Newton_checkpoint: early minimal/constant-1 strategy reached 240ns; preserve real history and use automatic damping/current Jacobian across the known later nonlinear region.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264A",
+      "elapsed_seconds": 1329.6279118061066,
+      "threads": 16,
+      "started_epoch": 1793894593.8406765,
+      "finished_epoch": 1793895923.4685884,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "worker_exception_save_stop",
+      "comsol_version": "6.4.0.429",
+      "worker_error": "[WinError 5] 拒绝访问。: 'D:\\\\junlin\\\\PlasmaPlume\\\\COMSOL_CuPlasma_S4_server_handoff_20261105\\\\project\\\\status.tmp' -> 'D:\\\\junlin\\\\PlasmaPlume\\\\COMSOL_CuPlasma_S4_server_handoff_20261105\\\\project\\\\status.json'"
+    },
+    {
+      "case": "G264R1",
+      "elapsed_seconds": 2621.0327179431915,
+      "threads": 16,
+      "started_epoch": 1793896387.0943656,
+      "finished_epoch": 1793899008.1270835,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "solve_time_budget",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264R1C1",
+      "elapsed_seconds": 794.2220177650452,
+      "threads": 16,
+      "started_epoch": 1793899214.4240332,
+      "finished_epoch": 1793900008.646051,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "S4_window_checkpoint: preserve full observation-gate coverage for extra refined mesh; continue same settings after audit.",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264R1C2",
+      "elapsed_seconds": 2621.487305164337,
+      "threads": 16,
+      "started_epoch": 1793900225.683485,
+      "finished_epoch": 1793902847.1707902,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "solve_time_budget",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264R1C3",
+      "elapsed_seconds": 2653.489711046219,
+      "threads": 16,
+      "started_epoch": 1793903061.0187876,
+      "finished_epoch": 1793905714.5084987,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "solve_time_budget",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264R1C4",
+      "elapsed_seconds": 2657.1208760738373,
+      "threads": 16,
+      "started_epoch": 1793906245.1918974,
+      "finished_epoch": 1793908902.3127735,
+      "exit_code": 0,
+      "official_stop_requested": true,
+      "stop_reason": "solve_time_budget",
+      "comsol_version": "6.4.0.429"
+    },
+    {
+      "case": "G264R1C5",
+      "elapsed_seconds": 266.05687141418457,
+      "threads": 16,
+      "started_epoch": 1793909315.9340806,
+      "finished_epoch": 1793909581.990952,
+      "exit_code": 0,
+      "official_stop_requested": false,
+      "stop_reason": null,
+      "comsol_version": "6.4.0.429"
+    }
+  ],
+  "total_seconds": 37892.27151274681,
+  "active_case": null,
+  "active_elapsed_seconds": 0,
+  "historical_solver_seconds": 10001.115395069122,
+  "session_started_utc": "2026-11-05T09:01:44.661471+00:00",
+  "solver_deadline_utc": "2026-11-05T23:01:44.661471+00:00",
+  "budget_note": "Original run ledger retained. New work is additionally bounded by the 14h solver wall deadline; final 2h reserved for delivery."
+}

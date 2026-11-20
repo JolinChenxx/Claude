@@ -1,0 +1,90 @@
+{
+  "checked": "2026-11-19T19:08:53.194156+08:00",
+  "authority": "8314809 T018-capacity.md step3; T018c steps3-4 replacement priority",
+  "reference_dispatcher": {
+    "pid": 41556,
+    "created": 1795063848.8141325,
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+      "D:/sim_runs/T016e",
+      "--series",
+      "high",
+      "--tables",
+      "D:/sim_runs/tables/v1c",
+      "--workers",
+      "16",
+      "--scenarios",
+      "configs/imaging/v2.yaml",
+      "--outname",
+      "image_v2"
+    ]
+  },
+  "queues": {
+    "it0": {
+      "completed_count": 9,
+      "remaining": [
+        "low_trap_G0_image_v2"
+      ],
+      "last_command_already_inflight": true
+    },
+    "it1": {
+      "completed_count": 9,
+      "remaining": [
+        "low_trap_G0_image_v2"
+      ],
+      "last_command_already_inflight": true
+    }
+  },
+  "active_images_before": [
+    {
+      "pid": 22404,
+      "created": 1795086355.4157531,
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018b\\low_trap_G0\\it1",
+        "--series",
+        "low",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018b\\low_trap_G0\\it1\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "workers": 16
+    },
+    {
+      "pid": 44324,
+      "created": 1795084273.2376893,
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+        "--series",
+        "low",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018b\\low_trap_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "workers": 16
+    }
+  ],
+  "solver_ranks": 16,
+  "reserved_before": 48,
+  "reserve_reference": 16,
+  "reserved_after": 64,
+  "reason": "No unassigned replacement diagnostics; both replacement runners already in their last command, so no future capacity() call. Resume existing background reference queue within64physicalcores; native remains held.",
+  "resumed_at": "2026-11-19T19:08:53.196145+08:00",
+  "observed_status_after": "running"
+}

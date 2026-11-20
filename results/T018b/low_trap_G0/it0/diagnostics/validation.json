@@ -1,0 +1,181 @@
+{
+  "collected": "2026-11-19T17:50:21+08:00",
+  "member": "low_trap_G0",
+  "iteration": 0,
+  "job": "T018b_post_it0_01",
+  "execution_commit": "928df27",
+  "files": {
+    "diag_emission": {
+      "rows": 4,
+      "sha256": "ccf88abe27c2a082b4c8827afa694ff7eab3544e4c21a30c07c7a9a0af77f76c",
+      "all_present_values_finite": true,
+      "blank_counts": {
+        "t_req_ns": 0,
+        "t_snap_ns": 0,
+        "frac Cu I": 0,
+        "frac Cu II": 0,
+        "frac N I": 0,
+        "frac N II": 0,
+        "frac O I": 0,
+        "frac O II": 0,
+        "frac Ar I": 0,
+        "frac Ar II": 0,
+        "frac continuum": 0,
+        "P_total_W_sr": 0,
+        "T 0-3000": 0,
+        "T 3000-5000": 0,
+        "T 5000-7000": 0,
+        "T 7000-10000": 0,
+        "T 10000-15000": 0,
+        "T 15000-20000": 0,
+        "T 20000-30000": 0,
+        "T 30000-1000000000": 0,
+        "Y 0.0-0.1": 0,
+        "Y 0.1-0.5": 0,
+        "Y 0.5-1.0": 0,
+        "T_emw_K": 0,
+        "ne_emw_m3": 0,
+        "Y_emw": 0
+      },
+      "snapshot_times_match": true,
+      "first_t_ns": 299.9401,
+      "last_t_ns": 999.8656,
+      "command": {
+        "name": "low_trap_G0_emission",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+          "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--times",
+          "300",
+          "500",
+          "700",
+          "1000",
+          "--out",
+          "D:\\sim_runs\\T018b\\low_trap_G0\\it0\\diagnostics\\diag_emission.csv"
+        ],
+        "started": "2026-11-19T17:37:36.540278+08:00",
+        "attempt": 1,
+        "returncode": 0,
+        "ended": "2026-11-19T17:37:44.077766+08:00",
+        "log": "D:\\sim_runs\\T018b_post_it0_01\\low_trap_G0_emission.attempt1.log"
+      },
+      "selected_values": [
+        {
+          "t_req_ns": 300.0,
+          "t_snap_ns": 299.9401,
+          "P_total_W_sr": 3.6465061242305204e-05,
+          "T_emw_K": 6540.767622621215,
+          "frac Cu I": 0.9987194696778607
+        },
+        {
+          "t_req_ns": 500.0,
+          "t_snap_ns": 499.9911,
+          "P_total_W_sr": 2.909225155456043e-05,
+          "T_emw_K": 6102.924180393908,
+          "frac Cu I": 0.999194958616095
+        },
+        {
+          "t_req_ns": 700.0,
+          "t_snap_ns": 699.9048,
+          "P_total_W_sr": 1.7509238387654226e-05,
+          "T_emw_K": 5810.456223383139,
+          "frac Cu I": 0.9993984444649594
+        },
+        {
+          "t_req_ns": 1000.0,
+          "t_snap_ns": 999.8656,
+          "P_total_W_sr": 1.0046961774479592e-05,
+          "T_emw_K": 5660.599523026879,
+          "frac Cu I": 0.9995010458623306
+        }
+      ]
+    },
+    "core_energy": {
+      "rows": 131,
+      "sha256": "8fd40239a31d46195714e811fe8b9e4546b609596e372ca1f3569998d6529756",
+      "all_present_values_finite": true,
+      "blank_counts": {
+        "t_ns": 0,
+        "M_Cu": 0,
+        "E_int": 4,
+        "E_kin": 4,
+        "T_mw": 4,
+        "P_rad": 4,
+        "V": 4,
+        "dEdt": 5,
+        "P_other": 5
+      },
+      "snapshot_times_match": true,
+      "first_t_ns": 0.0,
+      "last_t_ns": 1300.0,
+      "command": {
+        "name": "low_trap_G0_core_energy",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+          "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--nec",
+          "trap",
+          "--out",
+          "D:\\sim_runs\\T018b\\low_trap_G0\\it0\\diagnostics\\core_energy.csv"
+        ],
+        "started": "2026-11-19T17:37:44.256506+08:00",
+        "attempt": 1,
+        "returncode": 0,
+        "ended": "2026-11-19T17:37:47.468383+08:00",
+        "log": "D:\\sim_runs\\T018b_post_it0_01\\low_trap_G0_core_energy.attempt1.log"
+      },
+      "missing_meaning": "Four initial snapshots have no Y>0.5 core; five derivative values are consequently missing. Original blanks retained.",
+      "no_core_t_ns": [
+        0.0,
+        9.270807,
+        19.1032,
+        29.91686
+      ]
+    },
+    "shock_track": {
+      "rows": 521,
+      "sha256": "6543c73c0175857baaf7479e9a238b9ba07532de9c97e749f28645209e00f214",
+      "all_present_values_finite": true,
+      "blank_counts": {
+        "t_ns": 0,
+        "R_axis_um": 69,
+        "R_surf_um": 63
+      },
+      "snapshot_times_match": true,
+      "first_t_ns": 0.0,
+      "last_t_ns": 1300.0,
+      "command": {
+        "name": "low_trap_G0_shock_track",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+          "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+          "--out",
+          "D:\\sim_runs\\T018b\\low_trap_G0\\it0\\diagnostics\\shock_track.csv"
+        ],
+        "started": "2026-11-19T17:37:47.647662+08:00",
+        "attempt": 1,
+        "returncode": 0,
+        "ended": "2026-11-19T17:37:54.890726+08:00",
+        "log": "D:\\sim_runs\\T018b_post_it0_01\\low_trap_G0_shock_track.attempt1.log"
+      },
+      "last_valid_by_axis": {
+        "R_axis_um": {
+          "t_ns": 1154.917,
+          "R_um": 590.23237670425
+        },
+        "R_surf_um": {
+          "t_ns": 1169.909,
+          "R_um": 566.16859622685
+        }
+      },
+      "missing_meaning": "No pressure-threshold crossing (default thr1.2); blanks retained, not interpolated."
+    }
+  }
+}

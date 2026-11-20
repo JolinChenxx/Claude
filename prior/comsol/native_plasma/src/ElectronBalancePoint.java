@@ -1,0 +1,7 @@
+import com.comsol.model.*;import com.comsol.model.util.*;import java.util.*;
+public class ElectronBalancePoint {public static void main(String[] a){try{ModelUtil.initStandalone(false);Model m=ModelUtil.load("m",a[0]);String s=ExportNative.savedSolution(m);ExportNative.dataset(m,s);
+for(String op:new String[]{"intGas","intSurf"})m.component("c").cpl(op).set("axisym",true);
+m.result().numerical().create("auditE","EvalGlobal");m.result().numerical("auditE").set("data","dset1");m.result().numerical("auditE").set("solnum",new int[]{m.sol(s).getPVals().length});
+String[] ex={"c.intGas(d(c.plas.ne,TIME)-d(r,TIME)*d(c.plas.ne,r)-d(z,TIME)*d(c.plas.ne,z))","c.intGas(c.plas.Re)","c.intSurf(c.plas.ne_bnd+c.plas.tne_bnd+c.plas.nemig_bnd)","c.intSurf(c.vnSurf*c.plas.ne)","c.intGas(c.plas.ne)","c.intSurf(c.Gtherm)","c.intSurf(c.GeIn)","c.intSurf(c.Iwall)","c.intSurf((d(r,TIME)*c.ncr+d(z,TIME)*c.ncz-c.vnSurf)*c.plas.ne)","c.intSurf((d(r,TIME)*c.ncr+d(z,TIME)*c.ncz)*c.plas.ne)","c.intGas(d(c.plas.ne,TIME)+c.plas.ne*(d(d(r,TIME),r)+d(r,TIME)/max(r,1e-12[m])+d(d(z,TIME),z)))"};
+for(int q:new int[]{8,16}){for(String op:new String[]{"intGas","intSurf"})m.component("c").cpl(op).set("intorder",q);m.sol(s).updateSolution();m.result().numerical("auditE").set("expr",ex);double[][] d=m.result().numerical("auditE").getReal();System.out.println("ORDER "+q);for(int i=0;i<ex.length;i++)System.out.println(ex[i]+"="+d[i][0]);}
+System.exit(0);}catch(Throwable e){e.printStackTrace();System.exit(1);}}}

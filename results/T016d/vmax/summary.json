@@ -1,0 +1,198 @@
+{
+  "collected": "2026-11-19T11:20:01.589413+08:00",
+  "run": {
+    "command": [
+      "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+      "-n",
+      "8",
+      "D:\\sim_tools\\pluto_lip\\build_v1g\\mpi\\pluto.exe",
+      "-restart",
+      "33",
+      "-dec",
+      "8",
+      "1"
+    ],
+    "started": "2026-11-19T11:07:49.644332+08:00",
+    "limit_seconds": 600,
+    "state": "time_limit",
+    "execution_commit": "52ec9cb",
+    "restart_index": 33,
+    "restart_time_ns": 82.49905550587303,
+    "pid": 6476,
+    "timed_out": true,
+    "stop_targets": [
+      [
+        6476,
+        1795057669.6468148,
+        "mpiexec.exe"
+      ],
+      [
+        25024,
+        1795057671.9940763,
+        "pluto.exe"
+      ],
+      [
+        25412,
+        1795057671.9135294,
+        "pluto.exe"
+      ],
+      [
+        26416,
+        1795057671.9974918,
+        "pluto.exe"
+      ],
+      [
+        32604,
+        1795057671.9910798,
+        "pluto.exe"
+      ],
+      [
+        40156,
+        1795057672.0010948,
+        "pluto.exe"
+      ],
+      [
+        40444,
+        1795057671.985813,
+        "pluto.exe"
+      ],
+      [
+        40800,
+        1795057671.9883952,
+        "pluto.exe"
+      ],
+      [
+        44676,
+        1795057671.982813,
+        "pluto.exe"
+      ]
+    ],
+    "returncode": 15,
+    "seconds": 603.0940000000119,
+    "finished": "2026-11-19T11:17:52.743001+08:00"
+  },
+  "ranks": [
+    {
+      "rank_log": "pluto.0.log",
+      "bytes": 16398,
+      "sha256": "ee99e953068ecd3960085e2f5c5ecbe9cedc63903bbe1b7809935fdc374f9010",
+      "combined_bytes": 33372,
+      "combined_sha256": "82ece1f45f2140ba305b7c046aa51c6c6b6582d3dbb189e03d076ab31d3746af",
+      "excluded_prefix_bytes": 16974,
+      "dt_limit_count": 4,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 94,
+      "other_count": 8,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.0.log"
+    },
+    {
+      "rank_log": "pluto.1.log",
+      "bytes": 4858,
+      "sha256": "dca2aa2e206f16772fa934b1ea95bd74275f7fdde162ef7de69a079c40027800",
+      "combined_bytes": 9664,
+      "combined_sha256": "c2590a5c6fd785dbaaea7a091102256ce96e8870b3a27920754e90da7e6df50f",
+      "excluded_prefix_bytes": 4806,
+      "dt_limit_count": 0,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 4,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.1.log"
+    },
+    {
+      "rank_log": "pluto.2.log",
+      "bytes": 5494,
+      "sha256": "806bf1b3f2f1750fa6ce2cb642c8899373e644704f105add706e8f7e486f6dce",
+      "combined_bytes": 11572,
+      "combined_sha256": "9fe00da900e378d9d8298f5e14c653d81dccda28f78173d971e763749234800a",
+      "excluded_prefix_bytes": 6078,
+      "dt_limit_count": 4,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 8,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.2.log"
+    },
+    {
+      "rank_log": "pluto.3.log",
+      "bytes": 5502,
+      "sha256": "4df57b6e5fd790e57616d6deab7f6be046b241f828ec519428c5ec3d7cd3e4a8",
+      "combined_bytes": 11588,
+      "combined_sha256": "557634aa2797593b5d63ced8442f23994886b3b4a4f2eff55f1088ea6a05c5b5",
+      "excluded_prefix_bytes": 6086,
+      "dt_limit_count": 4,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 8,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.3.log"
+    },
+    {
+      "rank_log": "pluto.4.log",
+      "bytes": 5494,
+      "sha256": "fc19e0662ecac7e3e31093ae85778119cafa1c9f508980eb37ab2c6a4ab33d61",
+      "combined_bytes": 11572,
+      "combined_sha256": "098b02bc895d9117f253bce989341f10dac3bceeae659bf39564347402ef7bc3",
+      "excluded_prefix_bytes": 6078,
+      "dt_limit_count": 4,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 8,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.4.log"
+    },
+    {
+      "rank_log": "pluto.5.log",
+      "bytes": 4858,
+      "sha256": "2ac9a6fa66f341ab14b6d678361da4df6747301d0b1e9ac0a0fea054d45516eb",
+      "combined_bytes": 9664,
+      "combined_sha256": "7075e493eae40a9ef77e373808ceec576f27a31e069f81ad2c580facd18da89c",
+      "excluded_prefix_bytes": 4806,
+      "dt_limit_count": 0,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 4,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.5.log"
+    },
+    {
+      "rank_log": "pluto.6.log",
+      "bytes": 4862,
+      "sha256": "6cbe9bae4ee2e57bc8f08de82a7667d9afe680df914906e24626d982b351aad2",
+      "combined_bytes": 9668,
+      "combined_sha256": "14c3347adf5b8b7f040ce0932e085b752e386a85e4f1457de3ee993aff8ede20",
+      "excluded_prefix_bytes": 4806,
+      "dt_limit_count": 0,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 4,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.6.log"
+    },
+    {
+      "rank_log": "pluto.7.log",
+      "bytes": 4863,
+      "sha256": "5c7a90345aa2885338ea51092264d9814a71f691ba45d46da0266246591c9bbc",
+      "combined_bytes": 9670,
+      "combined_sha256": "60869015183159dbdb4e2dbc64683468f78953f083cf27ed27510e33b0b6fa00",
+      "excluded_prefix_bytes": 4807,
+      "dt_limit_count": 0,
+      "vmax_count": 4,
+      "steps_collected": 4,
+      "last_step": "step:21000; t = 8.2798e+001; dt = 4.0146e-005; 10.3 %",
+      "ConsToPrim": 0,
+      "other_count": 4,
+      "raw_archive": "D:\\sim_runs\\T016d\\archive_vmax\\pluto.7.log"
+    }
+  ],
+  "budget_exists": false,
+  "last_dbl_line": "33 8.249906e+001 3.592264e-003 17576 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad "
+}

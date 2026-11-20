@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "scripts/shock_track.py",
+      "D:\\sim_runs\\T016e_r\\low_thin_G1\\it0",
+      "--out",
+      "D:\\sim_runs\\T016e_r_stopped_diag_01\\shock_track.csv"
+    ],
+    "started": "2026-11-19T14:08:35.277272+08:00",
+    "returncode": 0,
+    "finished": "2026-11-19T14:08:47.297362+08:00"
+  },
+  {
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "scripts/core_energy.py",
+      "D:\\sim_runs\\T016e_r\\low_thin_G1\\it0",
+      "--tables",
+      "D:/sim_runs/tables/v1c",
+      "--nec",
+      "thin",
+      "--out",
+      "D:\\sim_runs\\T016e_r_stopped_diag_01\\core_energy.csv"
+    ],
+    "started": "2026-11-19T14:08:47.331320+08:00",
+    "returncode": 0,
+    "finished": "2026-11-19T14:09:00.602649+08:00"
+  }
+]

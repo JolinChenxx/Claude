@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-16T21:32:44.0104552+08:00",
+  "T011_wrapper_pid": 10636,
+  "T011_batch_pid": 16420,
+  "T011_active_mpi_ranks": 48,
+  "pluto_process_count": 48,
+  "pluto_cpu_core_equivalents": 37.27,
+  "sample_seconds": 2.017,
+  "mpi_launchers": [
+    {
+      "ProcessId": 12384,
+      "ParentProcessId": 16420,
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 16 1"
+    },
+    {
+      "ProcessId": 12796,
+      "ParentProcessId": 16420,
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 16 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 16 1"
+    },
+    {
+      "ProcessId": 39096,
+      "ParentProcessId": 16420,
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 8 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 8 1"
+    },
+    {
+      "ProcessId": 32140,
+      "ParentProcessId": 16420,
+      "CommandLine": "\"C:/Program Files/Microsoft MPI/Bin/mpiexec.exe\" -n 8 D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe -dec 8 1"
+    }
+  ],
+  "T013a_action": "Deferred: T011 still has 48 allocated/running MPI ranks (>40). A short CPU-utilization sample of 37.27 does not establish free rank capacity; no oversubscription or interruption."
+}

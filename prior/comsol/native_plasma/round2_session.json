@@ -1,0 +1,507 @@
+{
+  "started_utc": "2026-11-08T03:16:43Z",
+  "started_beijing": "2026-11-08T11:16:43+08:00",
+  "deadline_utc": "2026-11-09T06:00:00Z",
+  "deadline_beijing": "2026-11-09T14:00:00+08:00",
+  "status": "Physical review requested by user: all prior route1 jobs ended; no new COMSOL runs. Completed A01/A02/D01/G34-G36 do not meet the combined S4 morphology, intensity and position target.",
+  "report_interval_seconds": 3600,
+  "last_hourly_report_utc": "2026-11-09T03:59:38.218393+00:00",
+  "primary_case": "No accepted S4 candidate; saved cases retained for physical diagnosis",
+  "base_model": "P85_ready.mph equations; fresh initial state",
+  "beam_radius_um": 11,
+  "beam_diameter_um": 22,
+  "threads_per_numa_job": 32,
+  "target_model_time_ns": 1000,
+  "comparison_time_shift_ns": 118,
+  "stages": [
+    "fixed_plane_explicit_sheath",
+    "dominant_physics_correction",
+    "moving_surface",
+    "validation_and_delivery"
+  ],
+  "reporting": "Previous hourly compute reporting has ended. Current task is physical review; report substantive conclusions and blockers.",
+  "comparison_case": "F70",
+  "running_cases": {},
+  "milestones_ns": [
+    123,
+    203,
+    403,
+    1000
+  ],
+  "prepared_moving_mesh": {
+    "model": "models/M03_ready.mph",
+    "solved": true,
+    "radial_nodes": 121,
+    "normal_nodes": 26,
+    "first_layer_nm": 1.909391,
+    "shared_columns_verified": true,
+    "corrections": [
+      "positive gas temperature",
+      "ground-state feed matched to F80/F87",
+      "matched heavy wall quadrature",
+      "mass-average diffusion"
+    ],
+    "last_saved_ns": 80,
+    "latest_valid_solution": "models/M121_valid_to89ns.mph",
+    "latest_valid_end_ns": 89
+  },
+  "notes": "F63 stopped near 85.44 ns; F70 changes coordinates and derives total density from all species. Charge audit identified time-discrete chain-rule drift in old simplex coordinates. M02 structure prepared but must inherit any accepted coordinate update before solving.",
+  "hourly_reports": [
+    {
+      "hour": 1,
+      "F01_saved_ns": 123,
+      "F02_accepted_ns": 123.13,
+      "F11_accepted_ns": 101.43,
+      "figure": "figures/F01/fields_0123.00ns_zoom.png",
+      "finding": "Cu and line-emission region remains about 50-70 um; surface peak about 8500 K; first gated image processing"
+    },
+    {
+      "hour": 2,
+      "saved_baseline_end_ns": 161,
+      "F31_accepted_ns": 18.294,
+      "F21_accepted_ns": 87.589,
+      "figure": "figures/F01/S4_first_frame_physical.png",
+      "finding": "First exposure remains too small; removed pressure/internal-energy temperature-floor mismatch in fresh F31; thermal surface Cu state feed F21 underway; F11 rejected for missing heavy species source increment."
+    },
+    {
+      "hour": 3,
+      "baseline_saved_ns": 130,
+      "baseline_accepted_ns": 133.96,
+      "surface_saved_ns": 92,
+      "surface_accepted_ns": 94.192,
+      "figure": "figures/F31_vs_F51_88ns.png",
+      "finding": "Smaller maximum steps crossed both observed stalls. At 88 ns thermal surface feed raises absorption from 5.96e-5 to 0.00425 W without appreciable Cu-size change; F51 mass/charge/energy residuals 0.116/2.77/1.72 percent."
+    },
+    {
+      "hour": 4,
+      "baseline_accepted_ns": 196.03,
+      "surface_massframe_accepted_ns": 84.942,
+      "figure": "figures/F31_vs_F56_98ns.png",
+      "finding": "Located nonzero summed native Fick mass flux inconsistent with continuity; explicit mass-average correction passes algebraic flux-sum check; fresh F62/F63 solve ongoing. F56 98 ns image is diagnostic only and fails charge balance."
+    },
+    {
+      "hour": 5,
+      "baseline_saved_ns": 227,
+      "surface_accepted_ns": 96.9,
+      "surface_saved_ns": 96,
+      "figure": "figures/Fbase_complete_early/S4_comparison.png",
+      "finding": "All seven early frames have complete exposures; threshold27 radius 67-156 vs183-300um, area deficit80-90%; no radius or area pass. Provisional gain only. Ground-state control F80 running with same new conservative structure."
+    },
+    {
+      "hour": 6,
+      "ground_accepted_ns": 91.444,
+      "corrected_accepted_ns": 67.048,
+      "corrected_case": "F100",
+      "figure": "figures/F75/ignition_and_charge_diagnosis.png",
+      "finding": "F75 avalanche begins but charge fails; corrected physical BDF storage, order-8 native domain integration and duplicate neutral/ion collision counting. No complete corrected exposure yet."
+    },
+    {
+      "hour": 7,
+      "ground_accepted_ns": 102.93,
+      "ground_case": "F87",
+      "corrected_accepted_ns": 4.0478,
+      "corrected_case": "F110",
+      "figure": "figures/F86/fields_0101.00ns_zoom.png",
+      "finding": "Ground control crossed previous 100.36 ns stall; F86 Cu/charge/energy residuals 0.150/0.006/0.031%. F100 trace projection failed; F110 uses Gauss-point physical storage, 1.76M DOF. No corrected full exposure yet."
+    },
+    {
+      "hour": 8,
+      "ground_case": "F88",
+      "ground_saved_ns": 123,
+      "corrected_case": "F130",
+      "corrected_accepted_ns": 3.22,
+      "figure": "figures/F87/S4_first_frame_physical.png",
+      "finding": "Complete first exposure still substantially too small; F87 interval mass/charge/energy errors0.0174/0.0068/0.0734%; Gauss storage stalled in cold early stage, nodal physical storage fresh solve underway"
+    },
+    {
+      "hour": 9,
+      "ground_case": "F88",
+      "ground_accepted_ns": 148.02,
+      "moving_case": "M03",
+      "moving_accepted_ns": 64.937,
+      "figure": "figures/Fground_123/supply_energy_diagnosis.png",
+      "finding": "97.5percentCu below50um, plume absorption0.000394uJ vs21.88uJ target through123ns; conservative-storage branches unsuccessful, secondNUMA now moving control"
+    },
+    {
+      "hour": 10,
+      "ground_saved_ns": 148,
+      "moving_saved_ns": 80,
+      "moving_accepted_ns": 80.524,
+      "candidate": "F160",
+      "candidate_accepted_ns": 14.342,
+      "figure": "figures/M03/surface_motion.png",
+      "finding": "Actual mapped moving mesh reaches80ns, center recession0.465nm, maxrise0.10nm, maxliquidspeed0.587m/s; groundcontrol stalls in traceCu+ atcoldfront; native stabilized strong-form candidate running"
+    },
+    {
+      "hour": 11,
+      "moving_case": "M04",
+      "moving_accepted_ns": 107.95,
+      "candidate": "F165",
+      "candidate_saved_ns": 48.3417416850958,
+      "figure": "figures/extension_reference/existing_trend_frames.png",
+      "finding": "Existing full-window mechanism bounds show persistent hemispherical emission or premature decay; starting native global-plasma expanding-volume reduction while moving model continues"
+    },
+    {
+      "hour": 12,
+      "moving_case": "M04",
+      "moving_saved_ns": 123,
+      "moving_sign_screened_end_ns": 122,
+      "invalid_saved_times_ns": [
+        123
+      ],
+      "global_case": "G04",
+      "global_saved_ns": 72,
+      "figure": "figures/M04mapped/radiance_instant_preview.png",
+      "finding": "Real moving rim and crater formed, but optical plume remains small; final123ns mesh inverted, invalidates complete gate and automatic continuation. Global initialization/energy corrected and audited through72ns."
+    },
+    {
+      "hour": 13,
+      "figure": "figures/G03-G04/S4_global_shape_closure.png",
+      "finding": "Seven complete gates from0to80ns; global bulk plume too small and early brightness falls instead of rising. G06 fixes thin absorption; G08 adds explicit5d photoionization; M110 fresh full-height columns."
+    },
+    {
+      "hour": 14,
+      "figure": "figures/G03-G04-G05/S4_global_shape_closure.png",
+      "saved_global_ns": 1000,
+      "finding": "29complete gates but early brightness declines, late photons weak. G06/G08 early windows no material morphology improvement. Inherited pulse zero timing inconsistent with paper description; finite pulse sensitivity G10 started. G12 spectral escape correction started."
+    },
+    {
+      "hour": 15,
+      "figure": "figures/G10/S4_global_shape_closure.png",
+      "finding": "Finite60ns envelope produces faint0ns then brighter20ns, but peak too early and size still too small. Saved209ns; native all29-gate Gaussian controls complete. G16 tests separate swept air; G12 spectral escape; M120 compact mapped grid."
+    },
+    {
+      "hour": 16,
+      "figure": "figures/G10-G11/S4_global_shape_closure.png",
+      "saved_global_ns": 1000,
+      "finding": "Finite pulse29gates complete, totalpeak20ns, too small. G16 no cold-air mixing gives total-photonpeak60ns but peak-pixel20ns and too small. S14target reference extracted; M121solver block split active."
+    },
+    {
+      "hour": 17,
+      "source_saved_ns": 103,
+      "source_peak_absorption_W": 48.3904,
+      "moving_case": "M121",
+      "moving_accepted_ns": 79.383,
+      "global_case": "G18",
+      "global_accepted_ns": 127.29,
+      "figure": "figures/G22/source_layer_history.png",
+      "finding": "Source density materially increases local absorption; two-reservoir conservative native coupling preparing, still no S4 match"
+    },
+    {
+      "utc": "2026-11-09T03:00:00Z",
+      "case": "G46",
+      "saved_ns": 1000,
+      "complete_frames": 29,
+      "peak_total_and_pixel_time_ns": 50,
+      "figure": "figures/G46/S4_global_frozen_camera.png",
+      "finding": "Physical temporal peak improves; near-target source too concentrated, late uniform hemisphere persists; target separation unresolved"
+    },
+    {
+      "utc": "2026-11-09T03:59:38.218393+00:00",
+      "case": "G47",
+      "saved_ns": 1000,
+      "complete_frames": 29,
+      "radius_pass27": 11,
+      "area_pass27": 0,
+      "height_pass27": 0,
+      "figure": "figures/G47/S4_paper_style_frozen.png",
+      "finding": "Physical expansion/fade and threshold radius contraction; first pixel peak0ns remains wrong; native axial transport being built"
+    }
+  ],
+  "first_exposure": {
+    "case": "F01",
+    "saved_interval_ns": [
+      0,
+      123
+    ],
+    "exposure_ns": [
+      113,
+      123
+    ],
+    "figure": "figures/F01/S4_first_frame_physical.png",
+    "Cu_residual_percent": 0.02652,
+    "charge_residual_percent": -0.02974,
+    "energy_residual_percent": 0.57426
+  },
+  "material_EOS_diagnostic": "Independent ANEOS fit to Tb,Tc,Pc converges; latent heat-10.8percent, critical density+61.6percent vs reference; not adopted.",
+  "rejected_cases": {
+    "F11": "charge conservation failed: newly added reactions absent from frozen heavy-species source overrides; corrected code but no valid rerun yet",
+    "F61": "No solution: invalid time-dependent expression in constant maximum-step field; code fixed, alternative coordinates not yet adopted",
+    "F130": "stalled at3.2203ns; cold wall trace electron loss, saved2.157752ns",
+    "F135": "first-order BDF reproducedF130 stall",
+    "F140": "consistent initialization failed, no transient solution",
+    "F145/F150/F155": "failed to resume useful progress from saved near148ns, no new complete exposure",
+    "F160": "Strong-form wall convection term missing, early run stopped and rebuilt asF165",
+    "F165": "Native strong stabilization stalled49.99ns before useful heating; saved48.3417ns"
+  },
+  "baseline_checkpoint": {
+    "case": "F02",
+    "saved_end_ns": 161,
+    "stop_reason": "step collapse near 161.7 ns; low-temperature pressure/internal-energy floor mismatch diagnosed"
+  },
+  "surface_checkpoint": {
+    "case": "F21",
+    "saved_end_ns": 87,
+    "accepted_stop_ns": 87.779,
+    "reason": "N2 mass remainder collapse; nonzero sum of native Fick mass diffusion inconsistent with total continuity",
+    "plume_absorption_87ns_W": 0.00184345,
+    "baseline_absorption_87ns_W": 3.51382e-05,
+    "charge_residual_percent": 13.4029,
+    "accepted": false,
+    "quadrature_issue": "native heavy-species surface weak terms order 2 vs conductor/electron order 8; F51 uses matched order 8",
+    "latest": "F60",
+    "diagnosis": "docs/mass_frame_diagnosis_20261108.md"
+  },
+  "checkpoints": {
+    "F31_saved_ns": 123,
+    "F51_passed_87_779_ns": true,
+    "F35_saved_ns": 135,
+    "F56_saved_ns": 98,
+    "F60_saved_ns": 98.25098312914068,
+    "F62_saved_ns": 2,
+    "F36_saved_ns": 203,
+    "F63_saved_ns": 85,
+    "F70_saved_ns": 96,
+    "F37_saved_ns": 227,
+    "F75_saved_ns": 96.93449997043858,
+    "F90_saved_ns": 68,
+    "F100_saved_ns": 72,
+    "F105_saved_ns": 72.00003520312502,
+    "F84_saved_ns": 100,
+    "F86_saved_ns": 101,
+    "F110_saved_ns": 20.047752,
+    "F87_saved_ns": 123,
+    "F88_saved_ns": 148,
+    "M03_saved_ns": 80,
+    "H01_saved_ns": 1000,
+    "H03_saved_ns": 1000,
+    "G46_saved_ns": 1000,
+    "G44_saved_ns": 1000,
+    "G47_saved_ns": 1000,
+    "G49_saved_ns": 1000,
+    "G35_saved_ns": 138,
+    "A01_saved_ns": 1000.0000000000001,
+    "A02_saved_ns": 1000.0000000000001,
+    "D01_saved_ns": 1000.0000000000001,
+    "G34-G36_saved_ns": 1000.0000000000001
+  },
+  "early_comparison": {
+    "case": "Fbase_complete_early",
+    "frames": 7,
+    "calibration": "provisional",
+    "radius_pass_threshold27": 0,
+    "area_pass_threshold27": 0
+  },
+  "F75_diagnosis": {
+    "plume_absorption_W": 274.96247,
+    "peak_ne_m3": 3.33558e+26,
+    "delta_total_charge_pC": -0.0166482,
+    "chain_charge_integral_pC": 2.38824e-06,
+    "accepted": false,
+    "trace_species_stiffness": "N+ nodal depletion also remains a potential spatial issue"
+  },
+  "solver_step_strategy": {
+    "reason": "Physical storage and adaptive error control permit relaxing inherited 0.05 ns cap; no physics changes",
+    "checkpoint_ns": 80,
+    "first_exposure_maxstep_ns": 0.5,
+    "later_maxsteps_ns": [
+      0.5,
+      1,
+      2
+    ],
+    "continuations": {
+      "F80": "F84",
+      "F90": "F94"
+    }
+  },
+  "F95_reason": "F75 quadrature-converged total charge 0.04233 pC differs from order-2 assembly -0.01645 pC; fix known spatial integration defect together with physical storage instead of completing lower-order F90.",
+  "prepared_not_run": [
+    "F94 not created; replaced by F95 after quadrature audit"
+  ],
+  "neutral_collision_audit": {
+    "source_case": "F75",
+    "charged_proxy_fraction_of_total_collision_frequency_at_peak_ne": 0.3192746,
+    "correction": "charged heavy particles were counted in both neutral and Coulomb collisions; exclude them from neutral sum, without changing cross sections",
+    "implemented_case": "F100"
+  },
+  "storage_projection_issue": "Continuous linear storage projection has negative trace nodes; interpolation breaks nonlinear relation. F110 matches storage to native Gauss quadrature, keeps actual accepted output states.",
+  "F110_outcome": "Stopped after ten minutes with no accepted step at21.798ns; last stored accepted state20.047752ns; not an S4 result",
+  "moving_continuation": {
+    "M03": "save80ns",
+    "M04": "same physics80to123ns, maxstep0.1ns"
+  },
+  "ground_chain": [
+    "F80",
+    "F84",
+    "F86",
+    "F87",
+    "F88",
+    "F145",
+    "F146",
+    "F147"
+  ],
+  "ground_chain_status": "F88 saved148ns, F145 failed to progress from interpolated148ns; F150 replays from147ns",
+  "moving_first_checkpoint": {
+    "case": "M03",
+    "saved_ns": 80,
+    "Cu_error_percent": -1.06052,
+    "charge_error_percent": 0.19203,
+    "energy_error_including_mechanical_percent": 0.76957
+  },
+  "moving_optics": "Surface-following fields and ray occultation implemented; bulk excludes first0.1um, omitted emissivity audited",
+  "original_deadline_utc": "2026-11-08T19:16:43Z",
+  "extension_started_utc": "2026-11-08T13:59:17Z",
+  "extension_priority": "Full S4 expansion/peak/decay trend; retain native moving and planar tracks; if blocked use clearly labeled reduced-physics full-window comparator",
+  "morphology_priority": "0ns shallow faint plume; growing bright central body; later shrinking/dimming; radius, brightness and relative target position evolve together",
+  "global_branch": {
+    "initial_probe": "G02 stopped before useful heating; incorrect initial ions and ambient energy term",
+    "candidate": "G03",
+    "corrections": [
+      "ambient enthalpy with pressure work",
+      "fixed initial Nn0",
+      "physical variable scaling"
+    ],
+    "documentation": "docs/global_energy_audit_20261108.md",
+    "saved_G03_ns": 72,
+    "initial_state_verified": {
+      "ne_m3": 999999903.135,
+      "Te_K": 293.15
+    },
+    "G03_copper_error_percent": -0.002517,
+    "G03_energy_error_percent": 0.104387,
+    "thin_absorption_correction": "G03/G04 direct1-exp(-tau) rounded tozero atseed density; G06 uses analytic smalltau series. At72ns missed heating0.0655eV/electron/ns despite tiny total power.",
+    "continuations": {
+      "G06": "G07 after203ns",
+      "G08": "G09 after203ns",
+      "G10": "G11 after203ns",
+      "G12": "G13 after203ns",
+      "G16": "G17 after203ns"
+    },
+    "saved_G05_ns": 1000,
+    "saved_G06_ns": 208,
+    "G06_outcome": "Thin absorption arithmetic fixed but early physical fields differ<0.5percent; no trend improvement",
+    "saved_G08_ns": 206,
+    "G08_outcome": "High-level photo absorbed0.000237uJ; radius change<0.1percent, ne peak changes<2percent. Not dominant.",
+    "saved_G07_ns": 1000,
+    "saved_G10_ns": 209,
+    "saved_G09_ns": 1000,
+    "saved_G12_ns": 207,
+    "G12_outcome": "Frequency escape correction did not fix early size/peak; all7 early radius and area checks fail.",
+    "saved_G11_ns": 1000,
+    "saved_G16_ns": 206,
+    "G16_outcome": "Early total photons rise80,593 at0ns to238,606 at60ns, but peak pixel is at20ns. All7 early radius and area checks still fail. Mass0.0109percent; energy0.2816percent.",
+    "saved_G13_ns": 1000,
+    "saved_G21_diagnostic_ns": 80,
+    "G21_diagnostic": "Near-target fixed reservoir saved80ns; Cu0.0033percent, energy0.1434percent; still early target3716K, no conclusion on avalanche yet",
+    "saved_G17_ns": 1000,
+    "G16_G17_outcome": "All29gates; total peak60ns but persistent late light147k ideal photons740ns and maxradius171um. No-cold-mixing limit does not fix match.",
+    "saved_G22_diagnostic_ns": 103,
+    "G22_diagnostic": "At103ns ne3.24e24, absorbed48.39W; combined Cu residual0.000014percent, energy0.239percent; not S4 spatial result",
+    "G24_outcome": "Saved119ns; relaxed minor tolerance did not improve runtime; discontinued after119 checkpoint",
+    "G30_G31": "Assembly probes failed namespace collisions; no physical saved solutions",
+    "G37_outcome": "Solver-only tolerance test stopped at124.5ns; no material efficiency gain",
+    "multicharge_audit": "G32 first123ns has5-9eV electrons; Cu+ higher ionization is sub-ns; nativeCu2+/3+/4+ added in fresh G38"
+  },
+  "moving_mesh_diagnosis": {
+    "M04_inverted_at123ns": "Unmapped gas triangles atR9.64um,Z8.87um; copper triangles atR10.72um,Z-1.92um",
+    "M04_sheath_min_relvol123ns": 0.999353564,
+    "new_model": "M110 shared radial columns through entire height, 31350 vertices; no triangles belowr60um",
+    "M110_outcome": "Saved66ns after3h; grid positive, very slow Newton near68ns. M120 coarsens remote columns and reuses Jacobian.",
+    "M120_outcome": "Normally stopped at accepted70.355ns; saved70ns. Slow global Newton persisted; M121 changes solver partition only.",
+    "M121_outcome": "Failed89.8397ns endpoint hasNaN diagnostics despite positive mappedrelvol; actual vectors trimmed and reopened through89ns. Cu1.31percent, charge1.06percent, energy2.37percent"
+  },
+  "pulse_timing_audit": "docs/pulse_timing_audit_20261108.md",
+  "solver_log_parser_fix": "Step1000 has no leading whitespace; allow optional indentation in status and checkpoint watchers. Restarted only watcher processes.",
+  "target_reference": "results/S14_target_reference.json: secondary published composite, visible target, grayscale80 bottom roughly21/31/85um at150/210/330ns; not raw independent measurements",
+  "axial_namespace_fix": {
+    "physics_identifier_set_explicitly": true,
+    "native_species_source_overrides_audited_in_all24cells": true,
+    "audit_log": "logs/FixAxialNamespaces_A01fix_java.log",
+    "additional_eedf_components_excluded_from_cell_count": true
+  },
+  "solver_branches_stopped": [
+    "G48 compactthermal saved118ns",
+    "G53 relaxedrtol saved118ns",
+    "G51 algebraicsurfaceaux saved118ns"
+  ],
+  "phase": "physics_review_before_further_simulation",
+  "status_updated_utc": "2026-11-09T12:37:45.910259+00:00",
+  "comparison_time_shift_provenance": "118 ns is a legacy image-fit offset, not an independently measured paper synchronization value; retained only to identify historical output.",
+  "comparison_passband_provenance": "475-525 nm is the model assumption; the paper specifies a filter near500 nm without exact transmission endpoints.",
+  "current_review_document": "docs/物理问题复核_20261109.md",
+  "completed_late_cases": {
+    "A01": {
+      "saved_end_ns": 1000.0000000000001,
+      "complete_frames": 29,
+      "copper_error_percent": -0.017562281296246072,
+      "energy_error_percent": -7.356993684141664e-13,
+      "threshold27": {
+        "visible_frames": 27,
+        "radius_pass_count": 6,
+        "height_pass_count": 5,
+        "area_within30percent_count": 7,
+        "late_visible_frames": 20,
+        "late_radius_pass_count": 3,
+        "last_simulated_visible_frame_ns": 740.0,
+        "last_experimental_visible_frame_ns": 630.0
+      },
+      "accepted_S4_match": false,
+      "summary": "results/A01_axial_summary.json"
+    },
+    "A02": {
+      "saved_end_ns": 1000.0000000000001,
+      "complete_frames": 29,
+      "copper_error_percent": -0.019110329048341246,
+      "energy_error_percent": 2.3616444309796714e-12,
+      "threshold27": {
+        "visible_frames": 27,
+        "radius_pass_count": 0,
+        "height_pass_count": 0,
+        "area_within30percent_count": 0,
+        "late_visible_frames": 20,
+        "late_radius_pass_count": 0,
+        "last_simulated_visible_frame_ns": 400.0,
+        "last_experimental_visible_frame_ns": 630.0
+      },
+      "accepted_S4_match": false,
+      "summary": "results/A02_axial_summary.json"
+    },
+    "D01": {
+      "saved_end_ns": 1000.0000000000001,
+      "complete_frames": 29,
+      "copper_error_percent": -0.02468376873124118,
+      "energy_error_percent": -3.950877747306166e-13,
+      "threshold27": {
+        "visible_frames": 27,
+        "radius_pass_count": 2,
+        "height_pass_count": 1,
+        "area_within30percent_count": 0,
+        "late_visible_frames": 20,
+        "late_radius_pass_count": 2,
+        "last_simulated_visible_frame_ns": 260.0,
+        "last_experimental_visible_frame_ns": 630.0
+      },
+      "accepted_S4_match": false,
+      "summary": "results/D01_grid_summary.json",
+      "copper_outflow_fraction_at_end": 0.7415155092399843
+    },
+    "G34-G36": {
+      "saved_end_ns": 1000.0000000000001,
+      "complete_frames": 29,
+      "copper_error_percent": 0.13120913358201014,
+      "energy_error_percent": -0.0015005902999442478,
+      "threshold27": {
+        "visible_frames": 27,
+        "radius_pass_count": 5,
+        "height_pass_count": 4,
+        "area_within30percent_count": 7,
+        "late_visible_frames": 20,
+        "late_radius_pass_count": 5,
+        "last_simulated_visible_frame_ns": 740.0,
+        "last_experimental_visible_frame_ns": 630.0
+      },
+      "accepted_S4_match": false,
+      "summary": "results/G36_two_zone_summary.json"
+    }
+  }
+}
