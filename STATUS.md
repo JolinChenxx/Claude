@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-20T15:05:57+08:00 (UTC+8)
+- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
+- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
+- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
+
 ## 2026-11-20T14:50:45+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
@@ -171,11 +176,3 @@
 - Reservations: native catch-up 16/64 physical cores; 48 free and no PLUTO ranks. No ready card waits for capacity. No new solver or diagnostic run without an executable task card.
 - Sample 2026-11-20T07:35:39.030797+08:00: PID 16756, D:\sim_runs\T016e\high_thin_G1\it0\image_v1; worker CPU 98583.094 s, increase 14035.250 s since 2026-11-20T07:20:45.651045+08:00. Activity, not completion percentage.
 - Disk free 2250.288 GB decimal; evidence D:/sim_runs/T020/pass_20261120_0735_monitor.json. No process intervention, raw deletion, physical/numerical changes or foreground computation wait. No executable work or user action this pass.
-
-## 2026-11-20T07:21:12+08:00 (UTC+8)
-- Work card: none (monitoring). Pulled ws 6b3f82f to 15d79da. Read the six new STATE lines and T020 status change: Claude evaluated the diagnostic, closed T020 as done and removed the delivered handoff. No new card or executable instruction; incoming to_codex empty. No ready/blocked/review Codex cards; only T016i running, T012/T013 draft, other cards done.
-- job.ps1 status: T016i_catchup_01 still running, wrapper 27348 / launch 7ff09dc, creation identity unchanged, no exitcode and stderr empty. Active image high_thin_G1/it0/image_v1 has 16 workers. One of five catch-up sets archived; high_trap_G0/it2 and both low it1 members remain queued. No active runner or plan modification.
-- Native archive remains 38 sets (T016e 7, T015 14, T016r2 2, T016h 1, T014 14); no newly completed unarchived set. No new collection, report rewrite, ws commit, handoff, duplicate job or redundant sync. The T020 outputs/report were already handed off and synced last pass.
-- Reservations: native catch-up 16/64 physical cores; 48 free, no PLUTO ranks. No ready card waits for capacity. T019/T020 are done; T018c remains done with historical archive complete and PE results withdrawn. No physical/numerical changes or new diagnostic run without a task card.
-- Sample 2026-11-20T07:20:45.651045+08:00: native PID 16756, D:\sim_runs\T016e\high_thin_G1\it0\image_v1; worker CPU 84547.844 s, increase 13289.344 s since 2026-11-20T07:06:39.093006+08:00. Activity, not completion percentage.
-- Disk free 2250.288 GB decimal; evidence D:/sim_runs/T020/pass_20261120_0720_monitor.json. Unrelated output/ preserved. No process intervention, raw deletion or foreground computation wait. No executable work or user action this pass.
