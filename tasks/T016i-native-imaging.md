@@ -2,7 +2,7 @@
 id: T016i
 title: Re-image all finished runs with native-grid radiative transfer (imaging v1)
 owner: codex
-status: review
+status: done
 started: 2026-11-19T02:21:34.537384+08:00
 depends: []
 milestone: D2
