@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-20T15:50:51+08:00 (UTC+8)
+- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
+- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
+- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
+
 ## 2026-11-20T15:35:53+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
@@ -163,11 +168,3 @@
 - Sample 2026-11-20T08:20:44.245049+08:00: worker CPU 26533.781250 s, increase 11431.265625 s since 2026-11-20T08:08:33.416752+08:00. Activity, not completion percentage. Reservations 16/64 physical cores, 48 free; no PLUTO ranks. No ready card waits for capacity or dependency clarification.
 - Native inventory unchanged at 39 sets / 702 metrics CSVs (T016e 8, T015 14, T016r2 2, T016h 1, T014 14); no unarchived native completion. Previous archive/report already pushed and synced; no duplicate collection, report rewrite or redundant sync. T019/T020 done; T018c historical archive complete, PE results withdrawn. No per-set handoff; final T016i handoff awaits full catch-up completion or failure.
 - Disk free 2250.284 GB decimal; evidence D:/sim_runs/T020/pass_20261120_0820_monitor.json. No physical/numerical changes, process intervention, raw deletion or foreground computation wait. No executable work or user action this pass.
-
-## 2026-11-20T08:10:12+08:00 (UTC+8)
-- Work card: T016i. Pulled ws at 15d79da; incoming to_codex empty. Archived newly completed T016e/high_thin_G1/it0/image_v1 using exact catch-up per-run rc0: 18 metrics CSVs, summary and validation, 29 common times 0-740 ns, six finite local frame archives. Source/archive hashes and readback verified. All 18 P1 finite/positive; all 18 P2 unavailable and permitted empty-region NaNs retained. No physical acceptance claim or parameter tuning.
-- Catch-up 2/5 archived; total native inventory 39 sets / 702 metrics CSVs (T016e 8, T015 14, T016r2 2, T016h 1, T014 14). Results/T016e 16,834,261 bytes, below 20 MiB. Report/archive committed and pushed to ws as 1b7274a after pull/rebase. Changed report alone copied to D:/Sync/T016i/T016i.report.md and SHA256 verified; receipt D:/sim_runs/T016i_catchup_01/pass_20261120_0805_sync.json. No per-set handoff under 53e3c49; final handoff awaits full queue completion or failure.
-- job.ps1 status: T016i_catchup_01 running, wrapper 27348 / launch 7ff09dc, creation identity unchanged, no exitcode and stderr empty. Active high_trap_G0/it2/image_v1 PID 53120, creation 1795132344.007084, BelowNormal, 16 workers; low_thin_G0/it1 and low_trap_G0/it1 queued. Runner and plan hashes still match execution.json.
-- Sample 2026-11-20T08:08:33.416752+08:00: active image worker CPU 15102.515625 s, first sample for this process; no delta against exited G1 process and no completion-percentage claim. Reservations 16/64 physical cores, 48 free; no PLUTO ranks. No further unarchived native completion.
-- No ready/blocked/review Codex cards; only T016i running, T012/T013 draft, other Codex cards done. No card waits for capacity or unresolved dependency. T019/T020 done; T018c historical archive complete, PE results withdrawn. No new claim, launch, process intervention, raw deletion or foreground computation wait. Unrelated output/ preserved.
-- Disk free 2250.284 GB decimal; evidence D:/sim_runs/T020/pass_20261120_0805_monitor.json. Monitoring read exact frontmatter keys after existing unquoted title colon prevented general YAML parsing; cards unchanged. No user action required.
