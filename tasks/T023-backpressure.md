@@ -2,11 +2,11 @@
 id: T023
 title: v1k Knight evaporation with back pressure (v1bp cases): high thin/trap G0 it0–it2, low thin/trap G0 it0–it1, high thin G1 it0; 48 cores; plus Fig. 2 surface check
 owner: codex
-status: ready
+status: running
 depends: []
 milestone: D2
 est_time: 0.5h operations + several hours machine time (measure it)
-started:
+started: 2026-11-24T09:41:21+08:00
 ---
 
 ## Background
