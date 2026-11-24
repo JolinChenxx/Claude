@@ -525,3 +525,12 @@ Updated: 2026-11-15
   - S1 median 106 against 125 µm, 7/11 against 8/11 frames.
   - σ_z 69 against 68 µm; σ_z/σ_x 0.67 against 0.70.
   - The headline metrics agree to about 10–15% between grids; the decay and lift readings are unchanged. The high G1 member is at about 340 ns.
+
+## 2026-11-25 07:35 — T029 high it0 (v1q) and T028 high G1 production
+- T029 high it0 against T026 high it0 (matched iteration):
+  - σ_z/σ_x at 300 ns: 0.632 against 0.551 (+15%, ≥ 5%).
+  - S1 median 80 µm, 0/20 frames, against 123 µm.
+  - L730/L300 0.356 against 0.315.
+  - At high fluence the spatter-top sink raises the aspect ratio but lowers the lift and slows the decay. 1.7 ng stays condensed.
+- T028 high G1 it0 production is complete (closure 0.07%); imaging is pending.
+- Early over-brightness found while answering the user. With the gain fixed at 300 ns, the v1n low series has L(t)/L(300) = 20–58 at 60–140 ns, against 0.5–0.8 in the experiment (which is saturated there, so a lower bound). The droplet release window [85, 300] ns from v1j cools the 300 ns frame. A release window from the measured spatter duration (high: rising to ≈500 ns; low: scattering to ≈400 ns, ends ≈900 ns) is a candidate physical correction, left for the user to decide.
