@@ -17,11 +17,15 @@ RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 assert len(sys.argv) <= 3
 ITERATION = sys.argv[1] if len(sys.argv) >= 2 else 'it0'
 BATCH = sys.argv[2] if len(sys.argv) == 3 else 'T026'
-assert BATCH in ('T026', 'T027') or (BATCH, ITERATION) in {('T025', 'it2'), ('T021', 'it1')}
+assert BATCH in ('T026', 'T027') or (BATCH, ITERATION) in {('T025', 'it0'), ('T025', 'it2'), ('T021', 'it1')}
 assert ITERATION in ('it0', 'it1', 'it2')
 QUEUE06 = (BATCH, ITERATION) == ('T026', 'it0')
 JOB = Path('D:/sim_runs') / ('T023_T025_T026_post_06b' if QUEUE06 else 'T026_T027_post_07')
 RUNNER = 'run_priority_06.py' if QUEUE06 else 'run_priority_07.py'
+RUNNER_PATH = REPO / 'results/T021/postprocessing' / RUNNER
+if (BATCH, ITERATION) == ('T025', 'it0'):
+    JOB = JOB.with_name('T029_T028_post_08')
+    RUNNER_PATH = REPO / 'results/T029/postprocessing/run_priority_08.py'
 RAW = Path('D:/sim_runs') / BATCH / 'high_thin_G0' / ITERATION
 OUT = REPO / 'results' / BATCH / 'high_thin_G0' / ITERATION
 
@@ -59,7 +63,7 @@ def main():
         assert sha(path) == digest, path
     for path, digest in queue['preflight']['input_sha256'].items():
         assert sha(path) == digest, path
-    assert sha(REPO / 'results/T021/postprocessing' / RUNNER) == queue['runner_sha256']
+    assert sha(RUNNER_PATH) == queue['runner_sha256']
     completion = json.loads((OUT / 'completion.json').read_text(encoding='utf-8'))
     assert completion['registry_row'] == run['registry_row']
     for name, item in completion['files'].items():
