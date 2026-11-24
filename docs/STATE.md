@@ -443,3 +443,9 @@ Updated: 2026-11-15
 ## 2026-11-24 ~16:05 — v1m bookkeeping bug found by the cloud smoke test, fixed before any workstation run
 - First v1m smoke (high, 0–120 ns): the cumulative store transfer reached −68.7 µJ, i.e. energy was created. Cause: the store was defined against the current LTE electron density. When the hydro moves a cell to a new (ρ, T), LTE recombination is already in the EOS energy, and the store released it a second time. Onset was 28.1 vs 29.7 ns, but that run is void.
 - Fix: tracer 2 is now the excess electron number per Cu-atom mass. The store χ·x·ρ/m_Cu is advected and changes only in the source step, where each change is taken from or returned to ρe. Added mass carries no excess. T024 was put on hold before launch; the rerun is in progress.
+
+## 2026-11-24 ~16:15 — T023 high thin it0 imaging (v1k), against the T016e baseline (it2), band b, sa
+- L(730)/L(300): 0.376 against 0.636 (experiment 0.107). Back pressure speeds up the late decay, but it is still 3.5× slower than the experiment.
+- σ_z / σ_x at 300 ns: 67 / 121 µm against 70 / 124 (experiment σ_z 151). Size unchanged.
+- S1 lift at 150–630 ns: median 80 µm against 91 µm; the experimental minimum is 178 µm; 0/20 frames. PREREG v1k (b) fails: the lift does not rise.
+- Caveat: v1k it0 against baseline it2. it1/it2 imaging is pending.
