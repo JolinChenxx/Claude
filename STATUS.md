@@ -1,5 +1,15 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T10:18:43+08:00 (UTC+8)
+- Work cards: T021 completion/diagnostics/images, T023 early fields. Initial ws pull refused exactly2 appended completed-run registry rows; verified rc0/final times/rank0 Done, committed append unchanged, then rebased. Incoming queue initially empty. Final ws pushed at ef1139d; unrelated output/ preserved.
+- T021 high_thin_G0/it0 completed rc0 in4787.7s,800ns,1598 finite budget rows; all-rank ConsToPrim4,380,885. Low_thin_G0/it1 rc0 in2541.5s,1300ns,2586 finite rows; all-rank ConsToPrim3,421,812. Archived budgets/source/ini/log hashes/counts/tails with committed-byte checks; M_Cu=M_src in both. Raw large logs remain local.
+- Reported high endpoint closure0.00460181% and low-it1 residual+1.7440484485microjoules (8.67084073% net sources); initially blocked/escalated under the old2% rule. Claude replied in T021-accept-low-it1.md: accepted with documented droplet-window residual, likely energy-floor effect; no rerun. Archived/consumed note, restored running via Claude's commit, original numbers unchanged. New guidance: record residuals at200/250/300/400ns in subsequent handoffs; no2% block for T021 droplets. Checkpoints for both completed runs pushed. No stop/restart/tuning.
+- Existing T021_post_low_it0_01 finished rc0 at10:13:38; image stage1680.494s. Collected18 metric CSVs, summary/log/provenance; verified all6 original radiance arrays,30frames each of58x113 pixels, all finite. Nine thin-mode P2 unavailable NaNs and allowed empty metrics preserved. Raw frame NPZs retained locally and hashed. Low-it0 image completion handoff pushed.
+- T023 early step3 complete: nearest40/60/80ns high_thin_G0/it0 snapshots16/24/32 at39.99986/59.99776/79.99819ns. Three exact41x31 field-slice NPZs plus manifest pushed, all arrays finite and byte/equality-verified. Handoff sent for Claude's physical review. No foreground simulation wait; reached trigger during T021 collection.
+- Launched T021_post_completed_02 with job.ps1 at10:17:45,PID31068,commit3c24653,Threads1; initial state waiting_for_predecessor,stderr empty, wrapper creation recorded. Predecessor is already completed rc0. Queue runs high-it0 then low-it1,3single-thread diagnostics followed by16-worker imaging per member,BelowNormal. Guard prevents overlap with predecessor and fails if frozen inputs change. End this pass after launch bookkeeping; no foreground wait or collection of this new queue.
+- Progress snapshot 2026-11-24T10:17:46.122168+08:00: T021/high_thin_G0/it0=800.0ns; T021/high_thin_G0/it1=48.99911ns; T021/low_thin_G0/it0=1300.0ns; T021/low_thin_G0/it1=1300.0ns; T023/high_thin_G0/it0=85.49812ns; T023/high_thin_G1/it0=35.99885ns; T023/high_trap_G0/it0=85.49663ns; T023/low_thin_G0/it0=299.9845ns; T023/low_trap_G0/it0=302.9784ns. T021/T023 production continue; configured max16+48MPI ranks (low T021 chain now completed), postprocessing cap16. No T023 iteration/it1 input complete at this snapshot.
+- No eligible ready card; no skipped-ready ambiguity. T012/T013 remain draft. Reports synced with hash checks to D:/Sync/T021 and T023; no raw fields/NPZs synced. Next pass process incoming notes, inspect all active jobs, collect completed queue stages/iterations, verify T023 it1 pressure provenance when available. No user action needed.
+
 ## 2026-11-24T10:01:05+08:00 (UTC+8)
 - Work cards: T021 diagnostics collection and T023 paper Fig.2 delivery. Initial ws pull already current at 0272fa7; incoming queue empty. Committed validated deliverables, pulled/rebased again, and pushed ws to ddff6af. Unrelated output/ preserved.
 - T021 low_thin_G0/it0: archived three completed diagnostic CSVs and logs (all rc0, 53,573 bytes), with source/copy/committed-byte SHA256 checks. Emission: 12 requested times and nearest-snapshot times verified; core_energy:131 rows, every fourth snapshot; shock_track:521 snapshots,0-1300ns. Original no-core/no-front missing values retained, no infinities or recalculation. image_v2 still running in the existing queue, no duplicate queue launched.
@@ -158,11 +168,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T17:20:46+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T17:05:51+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
