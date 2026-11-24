@@ -449,3 +449,7 @@ Updated: 2026-11-15
 - σ_z / σ_x at 300 ns: 67 / 121 µm against 70 / 124 (experiment σ_z 151). Size unchanged.
 - S1 lift at 150–630 ns: median 80 µm against 91 µm; the experimental minimum is 178 µm; 0/20 frames. PREREG v1k (b) fails: the lift does not rise.
 - Caveat: v1k it0 against baseline it2. it1/it2 imaging is pending.
+
+## 2026-11-24 17:05 — T025 low it0: droplet-window residual recurs (+1.14 µJ, 4.8% of net), accepted under the T021 rule
+- The residual is 0.15/0.48/1.12/1.14 µJ at 200/250/300/400 ns, flat after the window. This is the same energy-floor clamp as T021 low it1: at low fluence the core cannot pay L_v for the time-uniform release. The realised droplet cooling at low fluence is about 1 µJ smaller than booked. It recurs, so an energy-limited release (droplets evaporate only as fast as the local gas can pay L_v) is a candidate model correction for the next declared version. It is not applied mid-test.
+- T023 high thin it2: closure 0.04%, ConsToPrim 1.66M. Accepted; imaging in progress.

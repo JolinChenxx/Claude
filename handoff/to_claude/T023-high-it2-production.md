@@ -1,2 +1,0 @@
-2026-11-24T17:00:17+08:00: T023 high_thin_G0/it2 rc0 at800ns; budget/source/all-rank counts/checkpoints and three completed diagnostics pushed. ConsToPrim1656337; closure0.03914643835049572%, mass residual0. See completion.json and diagnostics/validation.json.
-Full image_v2 is active in queue05 since16:42:55; peak_lift follows. Full deadline delivery still pending that milestone; T023 continues unchanged.
