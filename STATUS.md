@@ -1,5 +1,14 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T09:48:20+08:00 (UTC+8)
+- Work cards: T021 completed low-it0 collection/monitoring and T023 claim/build/launch. Initial ws pull was refused solely by the running batch's new run_registry.csv row. Verified the one appended T021 low it0 rc0 row, committed it without stashing/replacing the live registry, then rebased successfully. Final ws pushed at 0272fa7. Incoming instructions consumed; unrelated output/ preserved.
+- T021 low_thin_G0/it0 completed rc0, 2325.9 s, 1300 ns, 2586 finite budget rows. All-rank ConsToPrim=2,366,757 (ranks0/1/2:2,170,010/156,458/40,289; others0); full raw logs retained, hashes/tails and budget/source metadata pushed. Escalated for review, then Claude explicitly accepted known RKL-stage warnings (0.6% energy closure; M_Cu=M_src). Applied note, restored running, continue unchanged; future escalation only for stalls/time-box or energy closure >2% under that note. No stop/restart/tuning.
+- Existing T021 production PID33364, 16 ranks, continues. Progress at 2026-11-24T09:46:01+08:00: high_thin_G0/it0=436.4758 ns; low_thin_G0/it0=1300.0 ns; low_thin_G0/it1=413.9516 ns. Low-it0 archive and acceptance report synced to D:/Sync/T021 with byte verification.
+- T023 lock pushed before work (fb9fdca). v1k MPI/PVTE/TC build rc0 in11.470s, 7 replacements, all18 problem-file hashes verified; test_knight_bp 5passed. Exact compiler log retained with one upstream pointer-type warning. Started job T023 at09:45:27 UTC+8, PID14496, execution commit cc35b3b, max-cores48 (4x10+1x8), Threads1. Initial status running, stderr empty; all5 actual runtime ini checks pass BACKP1/DROP_M0/rmax_par1000. At 2026-11-24T09:46:31+08:00: high_thin_G0/it0=24.97596 ns; high_thin_G1/it0=0.0 ns; high_trap_G0/it0=24.97586 ns; low_thin_G0/it0=40.97339 ns; low_trap_G0/it0=40.97337 ns.
+- T021_post_low_it0_01 launched in the same final background-start step at09:45:27, PID10588, BelowNormal, OMP/BLAS1; 3 serial-thread diagnostics concurrently then16 image_v2 workers. At09:46:01 all3 diagnostic commands rc0 and image_v2 running; output validation/copy awaits next pass. Total production reservation64 MPI ranks; postprocessing <=16 workers uses T023's authorized hyperthread allowance. Both new wrapper identities and startup states archived; no foreground computation wait after launch.
+- No eligible ready card remains; no dependency ambiguity or skipped ready card. T012/T013 remain draft. Next pass check all3 jobs, validate/collect diagnostics/images, watch T023 high_thin_G0 near80ns for prescribed40/60/80ns extracts, and handle the pending Fig.2 PDF surface check. Early extracts not yet due at the launch snapshot; PDF check deferred because this pass must end after background launch.
+- No raw-data deletion or source/model/numerical edits. Status recorded on codex-status; no user action required.
+
 ## 2026-11-24T09:22:48+08:00 (UTC+8)
 - Work card: T021 monitoring. Pulled ws, already current at c2342b6. Incoming to_codex empty. T021 is the only active Codex card; no ready card, unmet-dependency ambiguity or new instruction. T022 and previous completed cards remain closed; T012/T013 remain draft.
 - T021 job.ps1 running, elapsed 00:38:40, wrapper PID 33364 with original creation identity (1795481029215 ms since epoch). At 2026-11-24T09:22:29+08:00, high_thin_G0/it0 budget t=101.4888 ns (200 rows), low_thin_G0/it0 t=1290.47 ns (2566 rows). Both advanced since the prior pass (65.9972/691.3871 ns); neither has a completed-iteration registry entry yet. No exitcode or batch summary file; batch stderr empty. Low it0 is near its 1300 ns target; collect after completion on a later pass without waiting now.
@@ -151,11 +160,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T16:50:44+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T16:35:46+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
