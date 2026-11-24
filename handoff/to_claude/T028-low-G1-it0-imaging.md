@@ -1,0 +1,1 @@
+T028 low G1 it0: all five stages returned zero; six 30-frame archives, three diagnostics, metrics, peak and hash receipt are in results/T028/low_thin_G1/it0/. Band-b baseline P1 thin/sa: 346.26/303.99 ns. Review the low grid comparison; high G1 is still running.

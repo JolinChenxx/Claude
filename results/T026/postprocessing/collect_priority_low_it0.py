@@ -17,13 +17,21 @@ RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 assert len(sys.argv) <= 3
 BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
 ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
-assert BATCH in ('T025', 'T026', 'T027')
+assert BATCH in ('T025', 'T026', 'T027', 'T028', 'T029')
 assert ITERATION in ('it0', 'it1')
 QUEUE07 = BATCH == 'T027' or (BATCH, ITERATION) == ('T026', 'it1')
 JOB = Path('D:/sim_runs') / ('T026_T027_post_07' if QUEUE07 else 'T023_T025_T026_post_06b')
 RUNNER = 'run_priority_07.py' if QUEUE07 else 'run_priority_06.py'
-RAW = Path('D:/sim_runs') / BATCH / 'low_thin_G0' / ITERATION
-OUT = REPO / 'results' / BATCH / 'low_thin_G0' / ITERATION
+MEMBER = 'low_thin_G1' if BATCH == 'T028' else 'low_thin_G0'
+RAW = Path('D:/sim_runs') / BATCH / MEMBER / ITERATION
+OUT = REPO / 'results' / BATCH / MEMBER / ITERATION
+PRODUCTS = RAW
+RUNNER_PATH = REPO / 'results/T021/postprocessing' / RUNNER
+if BATCH in ('T028', 'T029'):
+    JOB = JOB.with_name('T029_T028_post_08' if BATCH == 'T028' else 'T029_low_' + ITERATION + '_post_09')
+    RUNNER_PATH = REPO / 'results/T029/postprocessing' / ('run_priority_08.py' if BATCH == 'T028' else 'run_parallel_low_09.py')
+    if BATCH == 'T029':
+        PRODUCTS = JOB / 'products'
 
 
 def sha(path):
@@ -48,18 +56,24 @@ def copy(source, target):
 def main():
     assert not (OUT / 'priority_delivery.json').exists(), 'Milestone already collected'
     queue = json.loads((JOB / 'postprocess_summary.json').read_text())
-    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, 'low_thin_G0', ITERATION)
+    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, MEMBER, ITERATION)
     milestone, = [r for r in queue['milestones_ready_for_collection'] if match(r)]
-    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == 'low_thin_G0' and r['registry_row']['picard_it'] == ITERATION[2:]]
+    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == MEMBER and r['registry_row']['picard_it'] == ITERATION[2:]]
     commands = {r['name']: r for r in queue['commands'] if match(r)}
     commands.update({r['name']: r for r in run['reused_completed_commands']})
     assert set(commands) == {'image_v2', 'peak_lift', 'core_energy', 'shock_track', 'emission'}
     assert all(r['returncode'] == 0 for r in commands.values())
     for path, digest in run['input_sha256'].items():
         assert sha(path) == digest, path
-    for path, digest in queue['preflight']['input_sha256'].items():
+    if BATCH == 'T029':
+        assert queue['state'] == 'completed' and (JOB / 'exitcode.txt').read_text().strip() == '0'
+        preflight = json.loads((REPO / 'results/T021/postprocessing/deadline_05_preflight.json').read_text())
+        assert preflight['runtime_commit'] == queue['runtime_commit']
+    else:
+        preflight = queue['preflight']
+    for path, digest in preflight['input_sha256'].items():
         assert sha(path) == digest, path
-    assert sha(REPO / 'results/T021/postprocessing' / RUNNER) == queue['runner_sha256']
+    assert sha(RUNNER_PATH) == queue['runner_sha256']
     completion = json.loads((OUT / 'completion.json').read_text(encoding='utf-8'))
     assert completion['registry_row'] == run['registry_row']
     for name, item in completion['files'].items():
@@ -74,12 +88,12 @@ def main():
     meta = yaml.safe_load((RUNTIME / 'data/exp/meta.yaml').read_text(encoding='utf-8'))['sets']['low']
     times = sorted({r['t_ns'] for r in meta['frames']})
     scenarios = {f'{b}_{m}_{d}' for b in 'abc' for m in ['thin', 'sa'] for d in ['baseline', 'low', 'high']}
-    summary = json.loads((RAW / 'image_v2/image_summary.json').read_text())
+    summary = json.loads((PRODUCTS / 'image_v2/image_summary.json').read_text())
     assert set(summary) == scenarios
     expected = {'image_summary.json'} | {f'frames_{b}_{m}.npz' for b in 'abc' for m in ['thin', 'sa']} | {f'metrics_{s}.csv' for s in scenarios}
-    assert {p.name for p in (RAW / 'image_v2').iterdir()} == expected
+    assert {p.name for p in (PRODUCTS / 'image_v2').iterdir()} == expected
     files = []
-    for source in sorted((RAW / 'image_v2').iterdir()):
+    for source in sorted((PRODUCTS / 'image_v2').iterdir()):
         detail = {}
         if source.suffix == '.npz':
             with np.load(source) as arrays:
@@ -102,7 +116,7 @@ def main():
             detail['original_missing_values'] = missing
         files.append({**copy(source, OUT / 'image_v2' / source.name), **detail})
     files.append(copy(Path(commands['image_v2']['log']), OUT / 'image_v2/image_v2.log'))
-    peak = pd.read_csv(RAW / 'peak_lift.csv')
+    peak = pd.read_csv(PRODUCTS / 'peak_lift.csv')
     assert peak.t_ns.tolist() == times
     assert np.isfinite(peak[['t_ns', 'model_lift_thin_um', 'model_lift_sa_um']].to_numpy(dtype=float)).all()
     peak_missing = {k: peak.loc[peak[k].isna(), 't_ns'].tolist() for k in peak.columns if peak[k].isna().any()}
@@ -110,14 +124,14 @@ def main():
     exp = exp[exp.series == 'low'].groupby('t_ns', as_index=False).mean(numeric_only=True)
     for column, original in [('exp_lift_min_um', 'lower50_row'), ('exp_lift_max_um', 'lower10_row')]:
         assert np.allclose(peak[column], (exp[original] - exp.peak_row) * 9.244, rtol=0, atol=.0500001, equal_nan=True)
-    files.append(copy(RAW / 'peak_lift.csv', OUT / 'peak_lift.csv'))
+    files.append(copy(PRODUCTS / 'peak_lift.csv', OUT / 'peak_lift.csv'))
     files.append(copy(Path(commands['peak_lift']['log']), OUT / 'peak_lift.log'))
     index = [line.split() for line in (RAW / 'dbl.out').read_text().splitlines() if line.strip()]
     snap_times = [float(r[1]) for r in index]
     tables = {}
     checks = {}
     for name, filename in [('core_energy', 'core_energy.csv'), ('shock_track', 'shock_track.csv'), ('emission', 'diag_emission.csv')]:
-        source = RAW / 'diagnostics' / filename
+        source = PRODUCTS / 'diagnostics' / filename
         rows = list(csv.DictReader(source.open(newline='')))
         missing = {k: [i for i, r in enumerate(rows) if not r[k] or math.isnan(float(r[k]))] for k in rows[0]}
         assert all(not math.isinf(float(v)) for r in rows for v in r.values() if v)
