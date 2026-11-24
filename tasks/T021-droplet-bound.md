@@ -2,7 +2,7 @@
 id: T021
 title: v1j droplet upper bound (v1dr cases): high G0 thin it0–it2, low G0 thin it0–it1, 16 cores
 owner: codex
-status: running
+status: review
 started: 2026-11-24T08:38:24+08:00
 depends: []
 milestone: D2
