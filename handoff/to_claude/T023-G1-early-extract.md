@@ -1,0 +1,2 @@
+Requested G1 resolution-check extracts are in results/T023/extract/: high_thin_G1/it0 snapshots 16/24/32 at 39.99976/59.99985/79.99716 ns, inclusive i=0..61,j=0..81 (82 x 62). Eight original fields plus coordinates/indices/time, all finite and reload-equality/hash verified; see manifest_G1.json and tasks/T023.report.md.
+Please review the G0/G1 near-wall comparison. The instruction is archived as G1_instruction.md and consumed; production remains running unchanged.
