@@ -1,5 +1,11 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T09:08:00+08:00 (UTC+8)
+- Work card: T021 monitoring. Pulled ws 2fd8703 -> c2342b6. Incoming to_codex empty. Claude accepted/closed T022 and published the high-shock and frame-comparison figures. Of 34 Codex cards, T021 is running, T012/T013 are draft and 31 are done; no ready card or dependency ambiguity.
+- T021 job.ps1 status running, elapsed 00:23:41, wrapper PID 33364 with original creation identity (1795481029215 ms since epoch); no exitcode or batch completion file. At 2026-11-24T09:07:31+08:00, high_thin_G0/it0 budget t=65.9972 ns (129 rows), low_thin_G0/it0 t=691.3871 ns (1368 rows). Both advanced since the previous check (54.49899/184.4996 ns). Latest rank-0 logged dt/Nrkl: high 0.0035726 ns/4 at 63.234 ns; low 0.14239 ns/3 at 629.48 ns. Empty batch stderr; 16-rank allocation unchanged.
+- No finished iteration or milestone handoff due, no ready card skipped, and no new job launched. The already-confirmed iteration-dependent DROP_M formula remains unchanged. No stop, restart, parameter change or raw-data deletion; previous jobs remain closed.
+- No ws edits; unrelated output/ preserved. Status recorded only on codex-status. Next pass monitor T021 and collect completed iterations. No user action required.
+
 ## 2026-11-24T08:59:45+08:00 (UTC+8)
 - Work cards: T021 monitoring and T022 delivery. Initial ws pull current at 1708f09, incoming to_codex empty. Later pulled Claude confirmation be3aac3, followed it and consumed the incoming note; final ws pushed at 2fd8703. No eligible ready card remains; T012/T013 remain draft.
 - T021: job.ps1 running, same launch wrapper PID 33364 and creation identity. At 2026-11-24T08:59:12+08:00, high_thin_G0/it0 t=54.49899 ns and low_thin_G0/it0 t=184.4996 ns; both advancing, no finished iteration and no milestone postprocessing due. Allocation 16 ranks total, OMP/BLAS 1. No restart or stop.
@@ -149,11 +155,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T16:20:47+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T16:05:58+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
