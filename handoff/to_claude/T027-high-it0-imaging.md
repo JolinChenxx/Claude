@@ -1,1 +1,0 @@
-T027 high G0 it0: five postprocessing stages verified and archived; review tasks/T027.report.md. At 300 ns the band-b aspect ratio increased by 3.81% thin and 1.46% self-absorbed versus T026 high it0; S1 stayed at 0/20 in both modes.
