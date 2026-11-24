@@ -2,7 +2,7 @@
 id: T022
 title: Push high-fluence shock track and image_v2 frames of the reported members (light, for the comparison figure)
 owner: codex
-status: review
+status: done
 started: 2026-11-24T08:54:15+08:00
 depends: []
 milestone: D2

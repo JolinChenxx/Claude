@@ -65,14 +65,18 @@ a.legend(frameon=False, fontsize=9)
 
 a = ax[1, 1]
 e = pd.read_csv("data/exp/curves/fig3d_shock.csv", comment="#")
-ee = e[e.fluence == "low"]
-a.plot(ee.t_ns, ee.R_um, "o", color=K, ms=5, label="实验（低通量）")
-g0 = pd.read_csv("results/T016e/low_thin_G0/it2/shock_track.csv")
-g1 = pd.read_csv("results/T016e_r/low_thin_G1/it0/diagnostics/shock_track.csv")
-a.plot(g0.t_ns, g0.R_axis_um, "-", color=B, lw=2, label="模拟：G0 第 2 轮（算到 880 ns）")
-a.plot(g1.t_ns, g1.R_axis_um, "-", color=O, lw=2, label="模拟：G1 细网格（算到 557 ns）")
-a.set(xlim=(0, 900), xlabel="t (ns)", ylabel="轴向冲击波半径 (µm)", title="低通量冲击波（对比主文 Fig. 3d）")
-a.legend(frameon=False, fontsize=9)
+for fl, mk, lab in (("high", "s", "实验 高通量"), ("low", "o", "实验 低通量")):
+    ee = e[e.fluence == fl]
+    a.plot(ee.t_ns, ee.R_um, mk, color=K, ms=5, mfc="none" if fl == "high" else K, label=lab)
+runs = (("results/T016e/high_thin_G0/it2/shock_track.csv", B, "-", "模拟 高通量：T016e 第 2 轮"),
+        ("results/shock/T015_high_trap_G0_it2.csv", B, ":", "模拟 高通量：T015 自吸收第 2 轮"),
+        ("results/T016e/low_thin_G0/it2/shock_track.csv", O, "-", "模拟 低通量：G0 第 2 轮"),
+        ("results/T016e_r/low_thin_G1/it0/diagnostics/shock_track.csv", O, ":", "模拟 低通量：G1 细网格"))
+for f, c, ls, lab in runs:
+    g = pd.read_csv(f)
+    a.plot(g.t_ns, g.R_axis_um, ls, color=c, lw=2, label=lab)
+a.set(xlim=(0, 900), ylim=(0, 900), xlabel="t (ns)", ylabel="轴向冲击波半径 (µm)", title="冲击波（对比主文 Fig. 3d）")
+a.legend(frameon=False, fontsize=8, loc="lower right")
 for a in (ax[0, 0], ax[0, 1], ax[1, 0]):
     a.yaxis.set_major_formatter(LOGFMT)
 fig.suptitle("当前正式结果与实验对照（第二版成像 image_v2，波段 b，散焦基准）", fontsize=12)
