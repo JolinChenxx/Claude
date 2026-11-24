@@ -1,0 +1,10 @@
+# T028: grid-convergence check of the current best model v1n (cases v1bpde_*), fine grid G1, build v1n, tables v1c.
+name: T028
+pluto_exe: D:/sim_tools/pluto_lip/build_v1n/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T028
+numerics:
+  runs:
+    - {id: high_thin_G1, case: configs/cases/v1bpde_high.yaml, grid: G1, nec: thin, tstop_ns: 800,  procs: 12, picard: 0, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G1,  case: configs/cases/v1bpde_low.yaml,  grid: G1, nec: thin, tstop_ns: 1300, procs: 12, picard: 0, src_on: 1, rmax_par: 1000}
