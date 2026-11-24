@@ -17,9 +17,9 @@ RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 assert len(sys.argv) <= 3
 BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
 ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
-assert BATCH in ('T025', 'T026')
+assert BATCH in ('T025', 'T026', 'T027')
 assert ITERATION in ('it0', 'it1')
-QUEUE07 = (BATCH, ITERATION) == ('T026', 'it1')
+QUEUE07 = BATCH == 'T027' or (BATCH, ITERATION) == ('T026', 'it1')
 JOB = Path('D:/sim_runs') / ('T026_T027_post_07' if QUEUE07 else 'T023_T025_T026_post_06b')
 RUNNER = 'run_priority_07.py' if QUEUE07 else 'run_priority_06.py'
 RAW = Path('D:/sim_runs') / BATCH / 'low_thin_G0' / ITERATION
