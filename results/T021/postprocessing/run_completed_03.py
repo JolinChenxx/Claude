@@ -1,4 +1,4 @@
-"""Serialized T021/T023 postprocessing of seven verified completed runs."""
+"""Serialized T021/T023 postprocessing of eight verified completed runs."""
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
@@ -18,7 +18,8 @@ PREDECESSOR = Path('D:/sim_runs/T021_post_completed_02')
 EVIDENCE = REPO / 'results/T021/postprocessing/completed_03_preflight.json'
 TARGETS = [('T023', 'high_thin_G0', 'it0'), ('T023', 'high_thin_G0', 'it1'),
            ('T021', 'high_thin_G0', 'it2'), ('T023', 'high_trap_G0', 'it0'),
-           ('T023', 'high_trap_G0', 'it1'), ('T023', 'low_trap_G0', 'it0'),
+           ('T023', 'high_trap_G0', 'it1'), ('T023', 'low_thin_G0', 'it0'),
+           ('T023', 'low_trap_G0', 'it0'),
            ('T021', 'high_thin_G0', 'it1')]
 
 
@@ -90,7 +91,7 @@ def preflight():
     return {'recorded': now(), 'job_id': JOB.name, 'commands': plans,
             'input_sha256': {str(p): sha(p) for p in inputs}, 'runner_sha256': sha(Path(__file__)),
             'max_workers': 24, 'predecessor': PREDECESSOR.name,
-            'resource_policy': 'Claude priority note 2026-11-24 14:00: T023 high thin it0/it1 first, T021 high it2 next, then remaining trap/low and T021 high it1. Seven completed runs sequentially; three single-thread diagnostics concurrently, then 24-worker imaging, then T023 peak_lift. BelowNormal; OMP/BLAS1; no production intervention.',
+            'resource_policy': 'Claude priority note 2026-11-24 14:00: T023 high thin it0/it1 first, T021 high it2 next, then remaining trap/low and T021 high it1. Eight completed runs sequentially; three single-thread diagnostics concurrently, then 24-worker imaging, then T023 peak_lift. BelowNormal; OMP/BLAS1; no production intervention.',
             'time_policy': 'Emission requests 1000/1200 ns on 800 ns high runs retain the supplied nearest-final-snapshot behavior; no extrapolation or extension.'}
 
 
