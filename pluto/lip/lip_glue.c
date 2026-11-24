@@ -370,7 +370,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[9], Bbpg[1], Bbdg[1];
+  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -383,9 +383,16 @@ void lip_analysis(const Data *d, Grid *grid)
     tot[1] += 0.5 * rho * (vr * vr + vz * vz) * dV;
     tot[2] += rho * Y * dV;
     tot[3] += rho * dV;
+#if NTRACER > 1
+    {   /* v1m: current energy held in ionisation above LTE (the difference to E_bd_transfer is the hydro-step change) */
+      double neL = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
+      double neN = v[TRC + 1] * rho / (63.546 * 1.66053906660e-27);
+      if (neN > neL) tot[4] += 7.72638 * 1.602176634e-19 * (neN - neL) * dV;
+    }
+#endif
   }
 #ifdef PARALLEL
-  MPI_Allreduce(tot, glob, 4, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(tot, glob, 5, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B, Bg, 9, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_bp, Bbpg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_bd, Bbdg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
@@ -395,9 +402,9 @@ void lip_analysis(const Data *d, Grid *grid)
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_store\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4]);
     fclose(fp);
   }
   if (trans != NULL && grid->lbound[JDIR] != 0) {
