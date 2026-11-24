@@ -1,5 +1,11 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T18:45:40+08:00 (UTC+8)
+- T026 low_thin_G0/it0 production completed rc0 at 1300 ns (2541.1 s, 2576 finite budget rows). Final residual +2.10613e-9 J, final condensed mass 9.94272e-13 kg, 581952 ConsToPrim warnings. Maximum post-300 ns growth 1.47998e-14 J is below 2e-7 J. Checkpoints, mass history, rank evidence and report delivered. T026 low-it1 source and actual ini verified; low-it0 image, diagnostics and peak await the shared postprocessing allocation.
+- T023 high_trap_G0/it1 postprocessing delivered (18 metric tables, 29 peak rows, original missing P2 retained). Verified six frame archive hashes; original NPZs remain local. Also delivered low_trap_G0/it0 diagnostics: 131 core, 521 shock and 12 emission rows. Its image stage is running. Queue05: 25 commands complete, five milestones delivered. The 21:00 note remains active for latest low-thin; it0 is delivered and it1 is still running.
+- Verified and committed the single live registry append before retrying pull. Pushed both handoffs and reports at ws 9a1dcbc; 47 original/archive/index evidence files verified, plus six local frame archives. Updated T023/T026 report-only sync copies. No ready card, so none skipped. No new job launched or stopped.
+- job.ps1: T023, T025, T026 and T021_T023_post_05 running. Active production budgets at 18:45 UTC+8 (ns): T023 high_thin_G1/it0 223.4915, low_thin_G0/it1 845.9884, low_trap_G0/it1 878.4958; T025 high_thin_G0/it1 82.49671; T026 high_thin_G0/it0 95.49652, low_thin_G0/it1 85.49641.
+
 ## 2026-11-24T18:27:44+08:00 (UTC+8)
 - Work card: none. ws is up to date at aa9641d. No ready card or new completion to hand off. The 21:00 comparison instruction remains open for T023 low_thin_G0/it1; it0 remains the latest completed and delivered low-thin iteration.
 - job.ps1 status: T023, T025, T026 and T021_T023_post_05 are running. The image queue is processing T023 high_trap_G0/it1; its 20 completed commands and four previously delivered milestones are unchanged.
@@ -230,8 +236,3 @@
 - Work card: none. Required git pull --rebase origin ws failed: configured proxy 127.0.0.1:7897 refused connection; no listener was found on that port. A command-local direct GitHub connectivity check also failed with a low-speed timeout. Repository configuration and system settings were not changed; remote task state is unverified.
 - Local-only inspection: ws d6b6ef4; incoming to_codex empty; 32 Codex cards, with T012/T013 draft and 30 done. No locally active card requires job.ps1 polling. No local ready card exists; no task claimed or launched while remote synchronization is unavailable. Unrelated output/ preserved.
 - Separate codex-status pull also failed. This entry is saved locally for later synchronization; its push will be attempted after the local commit. Restore the local proxy or GitHub connectivity before remote task polling can resume. No ws edits or process intervention.
-
-## 2026-11-20T22:05:57+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
