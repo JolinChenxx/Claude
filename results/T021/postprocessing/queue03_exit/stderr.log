@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Codex\2026-11-11\wo\outputs\Claude\results\T021\postprocessing\run_completed_03.py", line 165, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\Codex\2026-11-11\wo\outputs\Claude\results\T021\postprocessing\run_completed_03.py", line 148, in main
+    verify_inputs(frozen)
+  File "D:\Codex\2026-11-11\wo\outputs\Claude\results\T021\postprocessing\run_completed_03.py", line 101, in verify_inputs
+    assert sha(path) == expected, 'Frozen input changed: ' + path
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Frozen input changed: D:\Codex\2026-11-11\wo\outputs\Claude\data\params\registry.yaml

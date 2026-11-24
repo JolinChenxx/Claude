@@ -1,0 +1,98 @@
+{
+  "recorded": "2026-11-24T15:09:29.325591+08:00",
+  "members": [
+    {
+      "member": "high_thin_G0",
+      "parameters": {
+        "BD_ON": 1.0,
+        "BACKP": 1.0,
+        "SIG_EN": 1e-19,
+        "LOTZ_A": 4.5e-18,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true,
+      "files": [
+        {
+          "source": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\pluto.ini",
+          "archive": "results/T024/runtime_check/high_thin_G0/pluto.ini",
+          "sha256": "55a5e0bd40f6d55638a4dcd0d2e2581d5b144e7ee853a5845be9e3279a02bc90"
+        },
+        {
+          "source": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\source\\source_meta.json",
+          "archive": "results/T024/runtime_check/high_thin_G0/source_meta.json",
+          "sha256": "813cf35829ab8d319534b7a543ef89c844ff2ef2f21cb6385bf5c79b16fa16b8"
+        }
+      ],
+      "budget_columns": [
+        "t_ns",
+        "E_internal",
+        "E_kinetic",
+        "M_Cu",
+        "M_total",
+        "E_inc",
+        "E_gas_abs",
+        "E_targ_abs",
+        "E_esc",
+        "E_rad",
+        "E_rad_limited",
+        "M_src",
+        "E_src",
+        "E_wall",
+        "M_bp_suppressed",
+        "E_bd_transfer",
+        "E_bd_store"
+      ],
+      "latest_t_ns": 39.9991,
+      "tr2_in_dbl_index": true,
+      "early_extract_due": false
+    },
+    {
+      "member": "low_thin_G0",
+      "parameters": {
+        "BD_ON": 1.0,
+        "BACKP": 1.0,
+        "SIG_EN": 1e-19,
+        "LOTZ_A": 4.5e-18,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true,
+      "files": [
+        {
+          "source": "D:\\sim_runs\\T024\\low_thin_G0\\it0\\pluto.ini",
+          "archive": "results/T024/runtime_check/low_thin_G0/pluto.ini",
+          "sha256": "f4c58e0b9b15cec5e0ad2dd8ae1854ed596a44aba1bb3c248c98068c02e3e50e"
+        },
+        {
+          "source": "D:\\sim_runs\\T024\\low_thin_G0\\it0\\source\\source_meta.json",
+          "archive": "results/T024/runtime_check/low_thin_G0/source_meta.json",
+          "sha256": "151720cb27badf72c810d914402dd7a17bc5b51aa5bf49f34e5eb2eca39f0dcd"
+        }
+      ],
+      "budget_columns": [
+        "t_ns",
+        "E_internal",
+        "E_kinetic",
+        "M_Cu",
+        "M_total",
+        "E_inc",
+        "E_gas_abs",
+        "E_targ_abs",
+        "E_esc",
+        "E_rad",
+        "E_rad_limited",
+        "M_src",
+        "E_src",
+        "E_wall",
+        "M_bp_suppressed",
+        "E_bd_transfer",
+        "E_bd_store"
+      ],
+      "latest_t_ns": 62.99918,
+      "tr2_in_dbl_index": true,
+      "early_extract_due": false
+    }
+  ],
+  "policy": "Stable ini/source copies only; live budget sampled read-only, not claimed complete. No80ns extraction until high run reaches80ns."
+}
