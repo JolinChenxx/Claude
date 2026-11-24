@@ -423,3 +423,19 @@ Updated: 2026-11-15
   - T_emw at 300/500/700 ns: 12.0/10.4/9.2 kK against 25.3/19.9/16.9 kK.
   - Direction (a) holds.
   - Axial shock radius at 500–700 ns is +14–17%. Because it0 is unshielded, this is not yet comparable. The reading of (a)–(c) waits for it2 imaging.
+
+## 2026-11-24 15:00 — where the face-pinning starts: the pulse phase (diagnosis, no model change)
+- Conduction is not the cause. On the axis at 60/80 ns (T023 high it0), the conductive flux through the near-wall layer is ≤ 0.5% of the free-streaming limit, and the wall sink (≈ 34 µJ by 80 ns, 53–77 µJ by 800 ns) is wide-area exchange with a resolved boundary layer.
+- 1064 nm absorption (tables v1c):
+  - Shocked air at 10× compression and 25 kK: L_abs = 6 µm. At 5× and 15 kK: 600 µm.
+  - Hot thin Cu at 1 kg/m³ and 100 kK: 260 µm.
+  - Wall layer at 600 kg/m³ and 10 kK: 0.1 µm.
+  - In the model, the light passes the thin hot gas and dies in the wall layer.
+- Experiment vs model during the pulse:
+  - Fig. 3d shock (high): 86–114 µm at 25 ns, 138 µm at 51 ns, 224 µm at 69 ns. Model: ≈ 10 / 97 / 160 µm.
+  - S3/S4 frames: the emission peak is already 80 µm (low, marked surface) and ~160 µm (high) above the face at 10–20 ns, and the emitting region reaches 190–360 µm.
+  - In the experiment, energy is deposited earlier and higher up the beam than in the model, an absorption wave running toward the lens at several km/s. The model ignites late (gas absorption 21 µJ at 40 ns) and at the face.
+- Candidate physics (all outside PLAN v3 §3.3/§3.4, so a scope decision for the user):
+  1. Early breakdown out of LTE: laser-heated electrons (T_e ≫ T_h) avalanche-ionise the vapour and air within ns, which a single-T LTE model delays.
+  2. Radiative precursor: VUV from the hot plasma photoionises and heats the air ahead.
+  - A time-zero shift alone cannot fix it: the model lift stays ≈ 40–90 µm at all times.
