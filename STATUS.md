@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T06:34:25+08:00 (UTC+8)
+- T028 low G1 it0 (06:11:51) and T029 low G0 it0/it1 (06:27:04 / 06:28:21) completed imaging. All five stages per member returned zero. Three separate handoffs and 102 source/index hash-verified files pushed to ws at 7fd9fd8; T028/T029 report sync verified. Each member has six 30-frame archives, 18 metric tables, 30 peak rows, and core/shock/emission (131/521/12 rows).
+- Queue 08 is now imaging T029 high G0 it0. Authorized successor T029_T028_post_10 (wrapper PID 32484, commit 4f89088) started at 06:33:56 and is waiting for its five-stage, child-free idle boundary. It excludes both delivered low members; check its transition before consuming T029-queue-answer.md. Nothing was stopped this pass.
+- Production high G1 it0: T023 579.4863 ns, T028 601.4695 ns; T029 high G0 it1 759.4832 ns. No ready Codex card.
+
 ## 2026-11-25T05:59:53+08:00 (UTC+8)
 - Work card: none. At 05:59, T023 high G1 it0 reached 569.4801 ns, T028 high G1 it0 reached 342.9556 ns and T029 high G0 it1 reached 666.4667 ns. All advanced since 05:29.
 - job.ps1 reports all six jobs running. T028 low G1 it0 and T029 low G0 it0/it1 remain in image_v2, with eight live image workers each. No new collection milestone. Inbox empty; no ready Codex card. No job started or stopped. Previous queue 08 handoff is awaiting a reply.
@@ -131,9 +136,3 @@
 - job.ps1: successor T023_T025_T026_post_06b PID 14288, waiting_for_queue05_boundary, group 1 with 24 secondary SMT lanes. Queue05 PID 32784 is imaging T023 low_trap_G0/it0. No production stop or new image delivery. Initial post_06 exited 1 before computation due to a processor-group mismatch; original logs preserved.
 - Next: T026 low it0, T025 high latest completed, T023 low thin it1 and T026 high it0 when finished, then lower-priority members. Both priority and 21:00 notes remain open until cutover/delivery. No ready Codex card.
 - Production jobs T023/T025/T026 running; budget times (ns): T023/high_thin_G1/it0 2.269885e+002; T023/low_thin_G0/it1 8.844850e+002; T023/low_trap_G0/it1 9.474851e+002; T025/high_thin_G0/it1 1.094971e+002; T026/high_thin_G0/it0 2.119681e+002; T026/low_thin_G0/it1 1.121264e+003.
-
-## 2026-11-24T18:45:40+08:00 (UTC+8)
-- T026 low_thin_G0/it0 production completed rc0 at 1300 ns (2541.1 s, 2576 finite budget rows). Final residual +2.10613e-9 J, final condensed mass 9.94272e-13 kg, 581952 ConsToPrim warnings. Maximum post-300 ns growth 1.47998e-14 J is below 2e-7 J. Checkpoints, mass history, rank evidence and report delivered. T026 low-it1 source and actual ini verified; low-it0 image, diagnostics and peak await the shared postprocessing allocation.
-- T023 high_trap_G0/it1 postprocessing delivered (18 metric tables, 29 peak rows, original missing P2 retained). Verified six frame archive hashes; original NPZs remain local. Also delivered low_trap_G0/it0 diagnostics: 131 core, 521 shock and 12 emission rows. Its image stage is running. Queue05: 25 commands complete, five milestones delivered. The 21:00 note remains active for latest low-thin; it0 is delivered and it1 is still running.
-- Verified and committed the single live registry append before retrying pull. Pushed both handoffs and reports at ws 9a1dcbc; 47 original/archive/index evidence files verified, plus six local frame archives. Updated T023/T026 report-only sync copies. No ready card, so none skipped. No new job launched or stopped.
-- job.ps1: T023, T025, T026 and T021_T023_post_05 running. Active production budgets at 18:45 UTC+8 (ns): T023 high_thin_G1/it0 223.4915, low_thin_G0/it1 845.9884, low_trap_G0/it1 878.4958; T025 high_thin_G0/it1 82.49671; T026 high_thin_G0/it0 95.49652, low_thin_G0/it1 85.49641.
