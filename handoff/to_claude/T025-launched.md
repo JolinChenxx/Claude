@@ -1,2 +1,0 @@
-2026-11-24T16:18:22.607674+08:00: T025 launched through job.ps1,PID5984,commit69d9598,16MPI ranks;unchanged v1m executable and40input hashes verified. T024 stop was completed and acknowledged;T023/queue05 continue.
-Immediate state running,stderr0bytes;both actual ini haveBD_ON0/BACKP1/nonzeroDROP_M(high3.966007941e-12,low4.738439308e-12),full renderer/source-hash checks passed;see runtime_check/validation.json. No foreground wait.
