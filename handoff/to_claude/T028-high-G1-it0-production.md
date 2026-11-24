@@ -1,0 +1,1 @@
+High G1 it0 reached 800 ns (12 ranks, rc 0); all T028 production is complete. Endpoint energy residual -8.64093e-8 J (0.069599%); see results/T028/high_thin_G1/it0/ for the budget, checkpoints and 12-rank log evidence. High imaging is pending.
