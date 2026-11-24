@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T05:29:43+08:00 (UTC+8)
+- Work card: none. Production jobs T023, T028 and T029 are running. Latest high-fluence budgets: T023 G1 it0 548.9931 ns, T028 G1 it0 298.9885 ns and T029 G0 it1 575.9961 ns.
+- All three imaging jobs remain in image_v2: queue 08 on T028 low G1 it0 and the two queue 09 jobs on T029 low G0 it0/it1 (eight workers each). No new collection milestone; T025 high G0 it0 was already delivered. Inbox empty, no ready Codex card, no job launched. The queue 08 question remains open.
+
 ## 2026-11-25T05:04:36+08:00 (UTC+8)
 - T029: both low G0 jobs started at 05:03:08: T029_low_it0_post_09 (PID 42200) and T029_low_it1_post_09 (PID 9008). By 05:03:37 each had passed three diagnostics and entered image_v2 with eight workers. Queue 08 (PID 41948, eight workers) continues T028 low G1 it0; T029 high G0 it0 is next. Independent output roots prevent overwrites. Images and peaks have not been handed off.
 - Running production: T023 high G1 it0 544.4958 ns; T028 high G1 it0 290.9979 ns; T029 high G0 it1 265.4678 ns. No ready Codex cards. Inbox note consumed; ws 579c6af requests a decision before queue 08 revisits the two low members. T029 report sync verified.
@@ -134,8 +138,3 @@
 - Work card: none. ws is up to date at aa9641d. No ready card or new completion to hand off. The 21:00 comparison instruction remains open for T023 low_thin_G0/it1; it0 remains the latest completed and delivered low-thin iteration.
 - job.ps1 status: T023, T025, T026 and T021_T023_post_05 are running. The image queue is processing T023 high_trap_G0/it1; its 20 completed commands and four previously delivered milestones are unchanged.
 - Active budgets at 18:27 UTC+8 (ns): T023 high_thin_G1/it0 216.9948, low_thin_G0/it1 815.4865, low_trap_G0/it1 845.4823; T025 high_thin_G0/it1 65.99725; T026 high_thin_G0/it0 69.49816 and low_thin_G0/it0 1186.980. All six advanced since the previous check. No job started or stopped.
-
-## 2026-11-24T18:13:42+08:00 (UTC+8)
-- Work card: none. Pulled ws to aa9641d; Claude consumed the T023 and T025 handoffs. The 21:00 comparison instruction remains active. No new completed iteration, uncollected milestone or ready Codex card.
-- job.ps1 reports T023 (PID 14496), T025 (5984), T026 (1700) and T021_T023_post_05 (32784) running. Queue05 is computing T023 high_trap_G0/it1 images; 20 commands finished, all four available milestones already delivered.
-- Active production budgets at 18:13 UTC+8, in ns: T023 high_thin_G1/it0 211.9928, low_thin_G0/it1 799.9960, low_trap_G0/it1 825.4962; T025 high_thin_G0/it1 54.99873; T026 high_thin_G0/it0 57.49944 and low_thin_G0/it0 145.9702. All six advanced since the previous snapshot. Latest completed T023 low-thin remains it0 and is delivered; it1 is still below its 1300 ns endpoint. No additional job started.
