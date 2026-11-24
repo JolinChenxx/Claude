@@ -439,3 +439,7 @@ Updated: 2026-11-15
   1. Early breakdown out of LTE: laser-heated electrons (T_e ≫ T_h) avalanche-ionise the vapour and air within ns, which a single-T LTE model delays.
   2. Radiative precursor: VUV from the hot plasma photoionises and heats the air ahead.
   - A time-zero shift alone cannot fix it: the model lift stays ≈ 40–90 µm at all times.
+
+## 2026-11-24 ~16:05 — v1m bookkeeping bug found by the cloud smoke test, fixed before any workstation run
+- First v1m smoke (high, 0–120 ns): the cumulative store transfer reached −68.7 µJ, i.e. energy was created. Cause: the store was defined against the current LTE electron density. When the hydro moves a cell to a new (ρ, T), LTE recombination is already in the EOS energy, and the store released it a second time. Onset was 28.1 vs 29.7 ns, but that run is void.
+- Fix: tracer 2 is now the excess electron number per Cu-atom mass. The store χ·x·ρ/m_Cu is advected and changes only in the source step, where each change is taken from or returned to ρe. Added mass carries no excess. T024 was put on hold before launch; the rerun is in progress.

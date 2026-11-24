@@ -177,7 +177,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
 #if NTRACER > 1
       if (bd_active) {
         double neL = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
-        double neN = fmax(v[TRC + 1] * rho / mCu_bd, neL);              /* LTE electrons seed the avalanche */
+        double neN = neL + fmax(v[TRC + 1], 0.0) * rho / mCu_bd;     /* LTE electrons + stored excess (seed = LTE) */
         if (Y > 1e-3) {
           double n0 = fmax(rho * Y / mCu_bd - neN, 0.0) + rho * (1.0 - Y) / mAir_bd;
           double Te = lip_te_qs(I_cell[j][i], neN, n0, T, g_inputParam[SIG_EN], g_inputParam[LOTZ_A]);
@@ -310,16 +310,17 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       lip_eos_T_from_e(&lip_eos, m, rhoe_new / m, Y_new, &T_new);
 #if NTRACER > 1
       if (g_inputParam[BD_ON] > 0.5) {
-        /* v1m: electrons above the LTE value hold chi per electron outside the LTE EOS. Moving energy into or out of
-           that store is taken from / returned to rhoe, so total energy is conserved; after the pulse the store relaxes
-           to LTE (zero). The tracer carries electrons per Cu-atom mass (advected with rho). */
-        double neL_old = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
-        double neN_old = v[TRC + 1] * rho / mCu_bd;
-        double Ex_old = chiJ_bd * fmax(neN_old - neL_old, 0.0);
+        /* v1m: tracer 2 is the EXCESS electron number per Cu-atom mass above LTE, x = (n_e - n_e,LTE) m_Cu / rho, and it
+           carries chi per electron outside the LTE EOS. It is advected with rho, so the store changes only here, and
+           every change is taken from / returned to rhoe (total energy conserved exactly). After the pulse the store is
+           returned (x -> 0). */
+        double x_old = fmax(v[TRC + 1], 0.0);
+        double Ex_old = chiJ_bd * x_old * rho / mCu_bd;             /* store per volume (added mass carries no excess) */
         double neL_new = lip_interp(&lip_eos.tab, lip_eos.ine, log10(m), log10(T_new), Y_new, 1);
         double neN_new = neL_new;
         if (bd_active && Y_new > 1e-3) {
-          double ne_s = fmax(neN_old, neL_old) * m / rho;            /* electrons conserved per mass through the sources */
+          double neL_old = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
+          double ne_s = neL_old * m / rho + x_old * rho / mCu_bd;    /* LTE electrons scale with the added mass; excess does not */
           neN_new = lip_ne_step(ne_s, m * Y_new / mCu_bd, Te_cell[j][i], dt_SI, g_inputParam[LOTZ_A]);
         }
         if (neN_new < neL_new) neN_new = neL_new;
@@ -334,7 +335,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
           lip_eos_T_from_e(&lip_eos, m, rhoe_new / m, Y_new, &T_new);
         }
         B_bd[0] += dEx * dV;
-        d->Vc[TRC + 1][k][j][i] = neN_new * mCu_bd / m;
+        d->Vc[TRC + 1][k][j][i] = (Ex_old + dEx) / chiJ_bd * mCu_bd / m;   /* exact: store / (chi rho / m_Cu) */
       }
 #endif
       double p_new = lip_eos_p(&lip_eos, m, T_new, Y_new);
@@ -385,9 +386,7 @@ void lip_analysis(const Data *d, Grid *grid)
     tot[3] += rho * dV;
 #if NTRACER > 1
     {   /* v1m: current energy held in ionisation above LTE (the difference to E_bd_transfer is the hydro-step change) */
-      double neL = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
-      double neN = v[TRC + 1] * rho / (63.546 * 1.66053906660e-27);
-      if (neN > neL) tot[4] += 7.72638 * 1.602176634e-19 * (neN - neL) * dV;
+      tot[4] += 7.72638 * 1.602176634e-19 * fmax(v[TRC + 1], 0.0) * rho / (63.546 * 1.66053906660e-27) * dV;
     }
 #endif
   }
