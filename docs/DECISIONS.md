@@ -60,3 +60,6 @@ The face-pinned hot core traces to a sonic Knight source feeding a wall cell at 
 
 ## 2026-11-24 15:45 (UTC+8) — requeue the T021/T023 postprocessing (standing authorization)
 Codex asked for permission. T021_T023_post_03 has a fixed order that puts the trap members ahead of the 21:00 deliverables. It is stopped at a completed-run boundary and its unfinished stages are requeued: T021 high it2, T023 low-thin latest, T023 high-thin it2, then the rest. Postprocessing only; no production stopped, no data deleted.
+
+## 2026-11-24 16:10 (UTC+8) — stop T024 (standing authorization); start T025
+The v1m early fields answer its PREREG question. Onset is 1.5 ns earlier, and from 35 ns on everything is identical to v1k within 2%. The remaining iterations would only reproduce v1k, so T024 is stopped and its data kept. The 16 cores go to T025 (v1k + droplet upper bound), the combination of the two pre-declared components, after T021 high it2 met its PREREG (a)–(c).

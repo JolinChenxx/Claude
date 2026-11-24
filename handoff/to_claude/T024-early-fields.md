@@ -1,2 +1,0 @@
-2026-11-24T16:02:08+08:00: T024 step3 delivered results/T024/extract/:nearest30/40/60/80ns at29.99792/39.99910/59.99947/79.99517ns,41x31 physical windows withtr2,plus149 original budget rows<=80ns. All finite,reload/raw/archive hashes verified;manifest and report contain exact provenance.
-Please review ignition/early fields;original tr2 minimum -3.709181090280844e-17 at30/40ns is preserved without clipping. Production continues at16ranks;no physical/numerical change,extra member or stop.

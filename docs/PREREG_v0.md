@@ -97,3 +97,25 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
 - **Reading:**
   - If (a) and (b) hold but S1 and σ_z do not move, ignition timing is not what sets the morphology, and radiative transfer (the user's alternative) is next.
   - If (a) fails (no earlier onset), the 2-D ignition is limited by vapour supply, not by electron kinetics.
+
+### Outcome readings recorded 2026-11-24 ~16:10 (after the results)
+- **v1j droplet upper bound (T021):**
+  - High it2: T_emw at 300/500/700 ns is 8.7/7.6/7.1 kK against 25.3/19.9/16.9 kK, and the core specific energy is 4.5 against ≈ 44 MJ/kg. (a) holds.
+  - L(730)/L(300) (sa) is 0.155 against 0.636; the experiment is 0.107. (b) holds: within a factor 2, a sufficient mechanism inside the bracket.
+  - Axial shock at 500–700 ns: ±0.0% against the lower bound. (c) holds.
+  - S1 (sa): median 177 µm. High: 7/20 frames (fails the 70% rule). Low it1: 8/11 frames (passes).
+  - Low it1 L(1035)/L(300) is 0.193 against 0.113 for the lower bound (experiment 0.027). The late decay at low fluence gets slower; see the low-it1 energy-floor note.
+  - σ_z at 300 ns: 79 µm (high), 65 µm (low), against 151 / 94 µm in the experiment. Still small.
+- **v1m two-temperature breakdown (T024 high it0, early fields):**
+  - Onset (1 µJ) at 27.5 ns against 29.0 ns: (a) holds, but small.
+  - From 35 ns on, E_gas_abs, E_kin, E_wall and the near-wall fields match v1k within 2%. (b) is not met; the early shock is unchanged.
+  - Reading: ignition timing does not set the morphology. T024 is stopped as uninformative; the data is kept.
+
+## Combination declared 2026-11-24 ~16:10 (UTC+8), before any result: v1k back pressure + v1j droplet upper bound (cases v1bpdr_*)
+- Both components were pre-declared separately. This is their joint run; no new parameter.
+- Expectations, read whatever the outcome:
+  - (a) High L(730)/L(300) within a factor 2 of the experiment, as T021.
+  - (b) S1: report the frame fractions, high and low.
+  - (c) σ_z: report it; no pass expected.
+  - (d) Shock at 500–700 ns within 10% of T023 v1k.
+- Low-fluence decay: report it against T021 low. If the low-it1 energy-floor clamp recurs, report it; no fix mid-test.
