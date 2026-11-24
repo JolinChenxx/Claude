@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T00:33:41+08:00 (UTC+8)
+- T027 high G0 it0: all five stages verified; six native frame archives, 18 metric tables, 29 peak rows and three diagnostics delivered at a8ab361. Matched 300 ns aspect ratio rose 3.81% thin and 1.46% self-absorbed; both S1 counts remain 0/20. Report synced.
+- At 00:29 UTC+8 the T023 high G1 it0, T027 high G0 it2, and T028 high/low G1 it0 budgets were at 365.4999, 77.49645, 57.99727 and 117.4736 ns, respectively. Queue 07 moved to T027 low G0 it0 imaging. T021 and T025 production finished; postprocessing is pending.
+- No incoming handoff or ready Codex card. T029 already claimed and built; 40 solver ranks plus 24 image workers occupy the 64 physical cores; the required 16 are unavailable. No new computation started.
+
 ## 2026-11-25T00:07:41+08:00 (UTC+8)
 - T026: all five production and postprocessing deliveries archived for review. T027 high G0 it1: 800 ns, rc 0; budget, checkpoints and rank evidence handed off. Both reports synced and both handoffs consumed.
 - At 00:07 UTC+8: T023 high G1 it0 360.4943 ns; T027 high G0 it2 53.99785 ns; T028 high/low G1 it0 50.99949/83.99603 ns. Queue 07 imaging T027 high G0 it0. T021/T025/T026 production finished.
@@ -176,10 +181,3 @@
 - Jobs:T023PID14496,T024PID37412,queue05PID32784 running with matching creation identities,stderr0bytes,noexitcodes. Queue state running,5 new commands complete,highT021it2 milestone collected;T023 low_thin_G0/it0 imaging active,selected as latest completed at15:48:56. Lowit1 continues production;must revisit latest-low delivery if it completes later. T023 highit2 follows once complete. No new job,production stop/restart,physics/numerics change,data deletion or foreground wait.
 - Budget snapshot2026-11-24T16:00:36.292306+08:00: T023: high_thin_G0/it0=800.0ns, high_thin_G0/it1=800.0ns, high_thin_G0/it2=710.4947ns, high_thin_G1/it0=178.9987ns, high_trap_G0/it0=800.0ns, high_trap_G0/it1=800.0ns, high_trap_G0/it2=578.973ns, low_thin_G0/it0=1300.0ns, low_thin_G0/it1=627.9955ns, low_trap_G0/it0=1300.0ns, low_trap_G0/it1=638.9827ns; T024: high_thin_G0/it0=97.49619ns, low_thin_G0/it0=359.4671ns.
 - Incoming deadline note remains until all required T023/T021 deliveries are fulfilled(or21:00 partial delivery with missing-items handoff). Next pass collect completed queue milestones and completed production records;do not duplicate active work. Unrelatedoutput/ preserved. No user action required.
-
-## 2026-11-24T15:42:16+08:00 (UTC+8)
-- Work cards:T021/T023/T024 monitoring only. Pulled ws51f54f8,already current. Incoming21:00 full-comparison deadline remains active;no new note. No newly completed production/postprocessing stage and no ready Codex card;no eligible card skipped.
-- job.ps1 status:T023PID14496,T024PID37412,T021_T023_post_05PID32784 all running;original wrapper creation identities match,all stderr0bytes,no exitcodes. Queue05 remains in T021 high_thin_G0/it2 image_v2;completed new commands0,milestones empty. RunnerPID18376 creation identity matches;25 descendants accumulated25238.125CPU seconds at15:41:56,consistent with active imaging. Its108 frozen common/recovery inputs and runner hash match;no duplicate execution of previously completed diagnostics.
-- Budget snapshot2026-11-24T15:41:56+08:00:T023 high_thin_G0/it0=800,it1=800,it2=691.9865ns;high_thin_G1/it0=174.4945ns;high_trap_G0/it0=800,it1=800,it2=546.4776ns;low_thin_G0/it0=1300,it1=609.493ns;low_trap_G0/it0=1300,it1=622.4966ns. All active members advanced since preceding pass.
-- T024 high_thin_G0/it0=75.49651ns,low_thin_G0/it0=135.9894ns. High remains below80ns;required nearest30/40/60/80ns tr2-inclusive extraction is not due yet. Next pass check this threshold and send the prescribed extraction/budget handoff when met. No foreground wait or premature extraction.
-- T021 production complete;remaining images/peaks are already queued in authorized order. Collect only completed milestones,next ensure latest-low deadline delivery. Pinned scientific runtime remains unchanged. No process stopped/restarted,parameters changed,data deleted,new job launched,or report/artifact change to sync. Unrelatedoutput/ preserved. Updated only codex-status heartbeat;no user action needed.
