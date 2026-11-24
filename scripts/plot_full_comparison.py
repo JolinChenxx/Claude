@@ -152,6 +152,48 @@ def frames_figure(series, mode, srow):
     return out
 
 
+def geometry_figure(series, mode, srow):
+    """Geometry check: model frames placed on the surface row WITHOUT defocus blur, each frame normalised to its own
+    maximum and shown on a log scale (1e-3..1), so position and shape are visible without saturation."""
+    from matplotlib.colors import LogNorm
+    ex, um = exp_frames(series)
+    rows = [("实验（8 位计数，各帧自身归一）", {t: np.clip(x - np.median(x[:3]), 1e-6, None) for t, x in ex.items()})]
+    for key, p in MEMBERS[series].items():
+        if p is None:
+            continue
+        d = np.load(p / "image_v2" / f"frames_b_{mode}.npz")
+        rows.append((f"{LAB[key]}\n{p.parent.parent.name} {p.name}",
+                     {int(t): place(x, srow) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all() and x.max() > 0}))
+    times = FRAME_T[series]
+    fig, ax = plt.subplots(len(rows), len(times), figsize=(1.25 * len(times), 1.3 * len(rows) + 0.5))
+    for r, (lab, fr) in enumerate(rows):
+        for c, t in enumerate(times):
+            a = ax[r, c]
+            a.set_xticks([]), a.set_yticks([])
+            a.grid(False)
+            for sp in a.spines.values():
+                sp.set_visible(False)
+            if t in fr and fr[t].max() > 0:
+                cm = plt.get_cmap("inferno").copy()
+                cm.set_bad("black")
+                cm.set_under("black")
+                a.imshow(np.clip(fr[t] / fr[t].max(), 1e-12, 1.0), cmap=cm, norm=LogNorm(1e-3, 1), interpolation="nearest")
+            else:
+                a.set_facecolor("#dddddd")
+            a.axhline(srow, color="#7fd3ff", lw=0.7, ls="--")
+            if r == 0:
+                a.set_title(f"{t} ns" + ("*" if t < 60 else ""), fontsize=8)
+            if c == 0:
+                a.set_ylabel(lab, fontsize=7.5, rotation=0, ha="right", va="center")
+    fig.suptitle(f"{'高' if series == 'high' else '低'}通量几何核对：模型不加散焦模糊，每帧按自身最大值归一，对数色标 1e-3 到 1\n"
+                 f"虚线为靶面；用于看位置与形状（亮度比较见主图）", fontsize=10)
+    fig.tight_layout(rect=(0.04, 0, 1, 0.92), h_pad=0.3, w_pad=0.2)
+    out = ROOT / f"results/figures/full_frames_{series}_geometry.png"
+    fig.savefig(out, dpi=170)
+    plt.close(fig)
+    return out
+
+
 def lift_curve(path, mode):
     d = np.load(path / "image_v2" / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
@@ -262,6 +304,7 @@ def main(argv=None):
     for s in ("high", "low"):
         print(s, {k: (str(v.relative_to(ROOT)) if v else None) for k, v in MEMBERS[s].items()})
         print(frames_figure(s, a.mode, srows[s]))
+        print(geometry_figure(s, a.mode, srows[s]))
     print(curves_figure(a.mode, srows))
     print(shock_figure())
 
