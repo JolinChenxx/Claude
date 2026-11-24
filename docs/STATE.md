@@ -453,3 +453,6 @@ Updated: 2026-11-15
 ## 2026-11-24 17:05 — T025 low it0: droplet-window residual recurs (+1.14 µJ, 4.8% of net), accepted under the T021 rule
 - The residual is 0.15/0.48/1.12/1.14 µJ at 200/250/300/400 ns, flat after the window. This is the same energy-floor clamp as T021 low it1: at low fluence the core cannot pay L_v for the time-uniform release. The realised droplet cooling at low fluence is about 1 µJ smaller than booked. It recurs, so an energy-limited release (droplets evaporate only as fast as the local gas can pay L_v) is a candidate model correction for the next declared version. It is not applied mid-test.
 - T023 high thin it2: closure 0.04%, ConsToPrim 1.66M. Accepted; imaging in progress.
+
+## 2026-11-24 18:50 — T026 low it0 (v1n energy-limited droplets): PREREG v1n (a) holds
+- Endpoint residual 0.002 µJ, against +1.14 µJ for T025 low it0 (same case without the energy limit) and +1.74 µJ for T021 low it1. 0.99 ng of the 4.74 ng droplet mass stays condensed because the gas cannot pay L_v. The floor-clamp energy is gone, so the bound is now energy-consistent. Imaging is pending; (b)–(d) wait for it.
