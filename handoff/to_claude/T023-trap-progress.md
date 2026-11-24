@@ -1,2 +1,0 @@
-2026-11-24T17:59:42+08:00: T023 high_trap_G0/it2 production rc0,14372.7s,800ns;ConsToPrim1639725,closure0.07747416253186204%,mass residual0. Exact budgets/source/rank evidence delivered;it2 postprocessing still needs a subsequent slot.
-Also delivered trap-it0 metrics/summary/29-row peak/diagnostics/receipt under your30MiB policy(six original NPZs local with hashes),plus trap-it1 diagnostics;its image is active. Original unavailableP2/missing cells retained. See tasks/T023.report.md.

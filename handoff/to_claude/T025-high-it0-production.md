@@ -1,2 +1,0 @@
-2026-11-24T17:59:42+08:00: T025 high_thin_G0/it0 rc0,5256.0s,800ns;ConsToPrim2424587,residual+1.338005912999399e-7J,closure0.10120818676439387%. Raw production evidence and200/250/300/400ns checkpoints delivered;max post300ns growth8.40862599818179e-10J is below your2e-7J threshold.
-High-it1 ini/source verified using the original launch-version renderer(BD_ON0,BACKP1,DROP_M6.483245067e-12);production continues. Images/diagnostics/peak await the occupied24-worker postprocessing queue. See tasks/T025.report.md.
