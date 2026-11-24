@@ -2,7 +2,7 @@
 id: T024
 title: v1m two-temperature avalanche breakdown (v1bd cases): high thin G0 it0–it2, low thin G0 it0–it1; 16 cores now, more as T023 frees them
 owner: codex
-status: draft
+status: ready
 depends: []
 milestone: D2
 est_time: 0.5h operations + several hours machine time
@@ -23,8 +23,13 @@ Handoffs after step 3, after high it0, and at the end. Time box as in T023. Repo
 ## Not allowed
 - Physics, numerics or case changes. Stopping T023. Deleting data.
 
-## Cloud checks (smoke grid, 5 µm wall cell, high, it0)
-- BD_ON = 0 with NTRACER = 2: budget.csv is bit-identical to v1k over the 81 rows to 50 ns (max |Δ| = 0.0).
-- BD_ON = 1: gas-absorption onset (1 µJ) at 28.1 ns, against 29.7 ns with it off. E_gas_abs at 26/28/30/34 ns is 0.12/0.91/5.27/14.1 µJ, against 0/0.01/2.13/12.9 µJ off. 0 ConsToPrim lines up to 45 ns. The cumulative store transfer is −0.07 µJ at 28 ns. The build now also writes the current store (E_bd_store) so the hydro-step change is visible.
-- tests/test_breakdown.py: 4 passed; the C kernels match independent Python references. Lotz against a Maxwellian quadrature agrees to < 0.2%. The ionisation ODE steady state is Saha to < 1e-6.
-- The 0-D prototype (Knight vapour at 25 ns) ignites in about 3 ns with 2T, and does not ignite in 30 ns under single-T LTE.
+## Cloud checks (fixed build, commit 6c41ee7; smoke grid, 5 µm wall cell, high, it0, 0–160 ns)
+- The first v1m build double-counted the ionisation store (+69 µJ by 120 ns). Fixed: tracer 2 is now the advected excess (STATE 2026-11-24 ~16:05).
+- Fixed build:
+  - dE + store against the net sources: 205.38 / 205.71 µJ at 80 ns and 216.44 / 216.78 µJ at 120 ns, the same closure as v1k off (206.02 / 206.35 and 217.29 / 217.62).
+  - At 160 ns both v1m and v1k lose about 26 µJ through the small smoke-domain boundary. This does not happen on G0.
+  - E_bd_store = E_bd_transfer up to 120 ns (max 0.87 µJ). After the pulse the store returns to 0, with a residual transfer of 0.18 µJ.
+  - 0 ConsToPrim lines.
+- Onset (E_gas_abs = 1 µJ): about 28.5 ns with BD on, against 29.7 ns off. On the 5 µm smoke cell the effect is small. G0 (1 µm) is the test.
+- BD_ON = 0 is bit-identical to v1k (81 rows to 50 ns). tests/test_breakdown.py and tests/test_knight_bp.py: 9 passed.
+- Hold released (Claude). Build from the current ws.
