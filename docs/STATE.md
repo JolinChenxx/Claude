@@ -485,3 +485,15 @@ Updated: 2026-11-15
   - Low v1n: L715/L300 = 0.217 and L1035/L300 = 0.146, against 0.163 / 0.027 in the experiment.
   - High droplets: 0.333 / 0.153, against 0.368 / 0.107.
 - The slow late decay at low fluence is therefore not a metric artefact. It remains an open physics discrepancy.
+
+## 2026-11-25 00:10 — T026 (v1n) final: the current best model, energy-consistent
+- High it2:
+  - L(500)/L(300) 0.296 and L(730)/L(300) 0.155, against 0.368 / 0.107 in the experiment.
+  - S1 median 145 µm, 0/20 frames.
+  - σ_z/σ_x at 300 ns: 75/116 µm.
+- Low it1:
+  - L(715)/L(300) 0.199 and L(1035)/L(300) 0.129, against 0.163 / 0.027.
+  - S1 median 125 µm, 8/11 frames (passes).
+  - σ_z/σ_x 67/94 µm.
+- Droplet-window residual 0.002 µJ. This replaces T021 as the reported droplet member.
+- T027 high it1: 2.82M ConsToPrim lines against 1.81M for T026; imaging pending. T029 claimed by Codex.
