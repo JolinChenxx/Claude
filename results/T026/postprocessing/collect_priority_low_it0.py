@@ -15,10 +15,13 @@ import yaml
 REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 JOB = Path('D:/sim_runs/T023_T025_T026_post_06b')
-BATCH = sys.argv[1] if len(sys.argv) == 2 else 'T026'
+assert len(sys.argv) <= 3
+BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
+ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
 assert BATCH in ('T025', 'T026')
-RAW = Path('D:/sim_runs') / BATCH / 'low_thin_G0/it0'
-OUT = REPO / 'results' / BATCH / 'low_thin_G0/it0'
+assert ITERATION in ('it0', 'it1')
+RAW = Path('D:/sim_runs') / BATCH / 'low_thin_G0' / ITERATION
+OUT = REPO / 'results' / BATCH / 'low_thin_G0' / ITERATION
 
 
 def sha(path):
@@ -43,9 +46,9 @@ def copy(source, target):
 def main():
     assert not (OUT / 'priority_delivery.json').exists(), 'Milestone already collected'
     queue = json.loads((JOB / 'postprocess_summary.json').read_text())
-    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, 'low_thin_G0', 'it0')
+    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, 'low_thin_G0', ITERATION)
     milestone, = [r for r in queue['milestones_ready_for_collection'] if match(r)]
-    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == 'low_thin_G0' and r['registry_row']['picard_it'] == '0']
+    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == 'low_thin_G0' and r['registry_row']['picard_it'] == ITERATION[2:]]
     commands = {r['name']: r for r in queue['commands'] if match(r)}
     commands.update({r['name']: r for r in run['reused_completed_commands']})
     assert set(commands) == {'image_v2', 'peak_lift', 'core_energy', 'shock_track', 'emission'}
