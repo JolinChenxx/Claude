@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T14:28:25+08:00 (UTC+8)
+- Work cards: T021/T023. Pulled ws ae93bbf; received deadline-2100-full-comparison.md and archived its exact text, retaining the live note pending fulfillment. Delivered T021 low_thin_G0/it1 complete image_v2 (25 original output files, including six NPZs) plus existing diagnostics and new peak_lift, and pushed ws 179a623. Reports/allowed files only synced to D:/Sync; NPZs were not synced. Unrelated output/ preserved.
+- Full low-it1 image outputs matched prior recorded hashes; finite frame arrays 30x58x113. Peak script rc0, 30 rows, finite model columns; preserved original missing experimental upper lift at1120ns. Collector-only all-finite validation was corrected to source-equivalent missingness; no imaging or peak rerun. Subprocess elapsed seconds not persisted before validation error and recorded null. Verified27 image/peak Git-index hashes and all155 frozen queue inputs. T021 results about6.97MB, below20MiB.
+- Running jobs: T023 PID14496, matching creation identity, stderr_bytes=0; T021_T023_post_03 PID11136, matching creation identity, stderr_bytes=0. job.ps1 checked both running. Queue state=running, completed_commands=3, milestones=[]; still first T023 high-thin it0 image stage. No new production iteration finished, no new long job or foreground wait.
+- Deadline ordering requires latest T023 thin high/low before old trap work; existing live runner has immutable loaded order and self-hash checks, without boundary control. Sent question-T023.md requesting Claude's specifically named authorization to retire ONLY T021_T023_post_03 at a completed-run boundary and requeue, or confirm existing order. No process stopped/restarted, frozen runner edited, outputs duplicated or production interrupted. Deadline pending21:00; select newer high it2/low it1 only once completed and validated.
+- T023 progress: high_thin_G0/it0=800.0ns; high_thin_G0/it1=800.0ns; high_thin_G0/it2=178.9703ns; high_thin_G1/it0=138.9893ns; high_trap_G0/it0=800.0ns; high_trap_G0/it1=800.0ns; high_trap_G0/it2=79.99766ns; low_thin_G0/it0=1300.0ns; low_thin_G0/it1=238.9941ns; low_trap_G0/it0=1300.0ns; low_trap_G0/it1=300.9832ns. T021 production complete. Existing high-thin it0/it1 and T021 high-it2 priority handoffs still await their image milestones. T021/T023 remain running; T012/T013 draft; no ready Codex card, no ready card skipped. No numerical tuning, data deletion or user action required.
+
 ## 2026-11-24T14:10:10+08:00 (UTC+8)
 - Work cards: T021/T023 monitoring and T023 completed diagnostics/input validation. Initial ws pull already current, incoming queue empty; pushed local compact evidence/report at 43c2ba7. Unrelated output/ preserved.
 - job.ps1 reports T023 PID14496 and T021_T023_post_03 PID11136 running, stderr empty; both wrapper creation identities match. The first T023 high_thin_G0/it0 image stage remains in progress; queue milestones_ready_for_collection is empty. No production iteration finished since the preceding pass. No new job or foreground wait.
@@ -172,11 +179,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T18:05:53+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T17:50:48+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
