@@ -77,3 +77,6 @@ Autonomous until 07:00. Hourly reports stay short. A summary with updated figure
 
 ## 2026-11-25 00:40 (UTC+8) — close v1p, stop T027 high it2 (standing authorization)
 PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by +1.5% (sa) and +3.8% (thin), below the declared 5%. S1 is unchanged (0/20) and L730/L300 is 0.332 against 0.315. Vapour exit momentum is not the missing elongation mechanism, and it costs 1.5–15× more ConsToPrim. The remaining T027 production (high it2) is stopped and its data kept. Low it0 imaging stays as the confirmation. The freed cores go to T029 (v1q).
+
+## 2026-11-25 01:40 (UTC+8) — T029 ahead of low-value imaging (standing authorization)
+24 imaging workers held physical cores on T021 high it1, the lowest-priority item, and T029 could not start (8 cores free, 16 needed). Queue 07 is stopped at a member boundary and relaunched with ≤ 8 workers; T029 launches with 16 ranks. No production stopped, no data deleted.
