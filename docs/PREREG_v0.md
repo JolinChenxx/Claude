@@ -129,3 +129,12 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - (c) High fluence: L(730)/L(300) within a factor 2 of the experiment is expected to survive, because the high core can pay.
   - (d) S1 and σ_z: report them.
 - This is a consistency correction of the v1j bound. It is not chosen from the comparison: the trigger was the closure residual.
+
+## v1p correction declared 2026-11-24 ~20:25 (UTC+8), before any v1p result: vapour exit momentum (user choice "先做第1个", with the instruction: no tuning, physics only)
+- **Physics:** the vapour leaves the Knudsen layer with the Knight exit velocity u_v = M·c_v, normal to the face. M is set by the back pressure (v1k), and c_v = √(γkT_v/m) with γ = 5/3. Its momentum flux ṁu_v has been left out since the 11-17 engineering correction, which injected only mass and stagnation enthalpy. That correction was made under the sonic, uncapped source; the ConsToPrim repairs then arose with the PE source at 21× the choked flux. With back pressure the flux is choked or subsonic. v1p restores the dm·u_v momentum in the wall cell. The energy is unchanged, since h_v already contains u_v²/2. No new parameter. VMOM = 0 is bit-identical to v1n. Cases v1bpdem_* = v1bpde_* + vapour_momentum.
+- **Motivation (descriptive, from the comparison):** the experimental emission aspect ratio σ_z/σ_x is ≈ 1.07, against ≈ 0.63 in the model. Blur cannot explain both widths. This motivated looking at the missing forward momentum, which is a known omission and not a fitted quantity.
+- **Declared expectations, read whatever the outcome:**
+  - (a) Momentum injected (P_vap_mom) is reported. ConsToPrim count and closure no worse than v1n (T026).
+  - (b) σ_z/σ_x at 300 ns: report the change from T026. The direction is expected up, but the size is not predicted and may be negligible, because ṁu_v ~ p_v is small against the plume pressure.
+  - (c) S1, L(730)/L(300) (high), L(715)/L(300) (low), shock at 500–700 ns: report them.
+- **Reading:** if (b) changes by < 5%, vapour momentum is not the missing elongation mechanism. The next candidate is then droplet kinematics, with the measured 344 m/s as an independent input (declared separately), then radiative transfer.

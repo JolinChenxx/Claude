@@ -23,6 +23,7 @@ static int  s_mdot, s_Tv, s_rhov, s_uv, s_A, s_Ts;
 static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
 static double *trans = NULL, *pw_cell = NULL;
 static double B_bp[1];   /* v1k: evaporated mass suppressed by back pressure (kg) */
+static double B_mom[1];  /* v1p: z-momentum injected with the vapour (kg m/s) */
 static double B_dr[1];   /* v1n: droplet mass left condensed by the energy limit (kg) */
 static double B_bd[1];   /* v1m: energy held in non-equilibrium ionisation (J, cumulative transfer = current store) */
 static double **I_cell = NULL, **Te_cell = NULL;
@@ -44,7 +45,7 @@ void lip_init(void)
 #if THERMAL_CONDUCTION != NO
   if (i_kappa < 0 || s_Ts < 0 || i_D < 0 || i_dh < 0) { printLog("! lip: conduction build needs opt.bin fields kappa, D_cuair, dh_dY and source field Ts (v1 step-2 tables)\n"); QUIT_PLUTO(1); }
 #endif
-  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd)); memset(B_dr, 0, sizeof(B_dr));
+  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd)); memset(B_dr, 0, sizeof(B_dr)); memset(B_mom, 0, sizeof(B_mom));
   lip_ready = 1;
 }
 
@@ -280,6 +281,10 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
              enthalpy only; no direct momentum next to the reflecting wall (the ṁu_v momentum source drove
              E − ½ρv² negative in the first cells -> ConsToPrim repairs). The pressure accelerates the vapour. */
           m += dm; mY += dm; E += dm * hv;
+          /* v1p (PREREG 2026-11-24): the vapour leaves the Knudsen layer with the Knight exit velocity u_v (normal to
+             the face, +z), so it carries momentum dm*u_v. hv already contains u_v^2/2, so the energy is consistent; the
+             mixing with the cell gas is inelastic and cannot make the internal energy negative. */
+          if (g_inputParam[VMOM] > 0.5) { pz += dm * uv; B_mom[0] += dm * uv * dV; }
           B[6] += dm * dV; B[7] += dm * hv * dV;
         }
       }
@@ -388,7 +393,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1], Bdrg[1];
+  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1], Bdrg[1], Bmomg[1];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -413,15 +418,16 @@ void lip_analysis(const Data *d, Grid *grid)
   MPI_Allreduce(B_bp, Bbpg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_bd, Bbdg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_dr, Bdrg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(B_mom, Bmomg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 #else
-  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp)); memcpy(Bbdg, B_bd, sizeof(B_bd)); memcpy(Bdrg, B_dr, sizeof(B_dr));
+  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp)); memcpy(Bbdg, B_bd, sizeof(B_bd)); memcpy(Bdrg, B_dr, sizeof(B_dr)); memcpy(Bmomg, B_mom, sizeof(B_mom));
 #endif
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store,M_drop_condensed\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4], Bdrg[0]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store,M_drop_condensed,P_vap_mom\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4], Bdrg[0], Bmomg[0]);
     fclose(fp);
   }
   if (trans != NULL && grid->lbound[JDIR] != 0) {
