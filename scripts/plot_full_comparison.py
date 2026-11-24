@@ -5,6 +5,7 @@ match to the data:
   baseline  : T016e (v1i, PE off, sonic Knight)           high it2 / low it1
   droplets  : T021  (v1j droplet upper bound)              high it2 / low it1
   backpress : T023  (v1k Knight with back pressure)        latest finished iteration
+  combo     : T025  (v1k + v1j droplet upper bound)        latest finished iteration
 Imaging: image_v2, filter b, self-absorption (sa) unless --mode thin; baseline defocus; one gain per model and series
 set at t_ref = 300 ns (camera.gain_for_reference), common 0–255 scale.
 Geometry: the model face is placed on the experimental surface row (results/surface/: low = Fig. 2a Air/Copper line,
@@ -42,8 +43,8 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
 LOGFMT = FuncFormatter(lambda v, _: f"{v:g}")
 T_REF = 300.0  # num (registry t_ref_norm, ns)
 K = "#222222"
-COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a"}
-LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k"}
+COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad"}
+LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）"}
 
 
 def latest(base, its):
@@ -57,10 +58,12 @@ def latest(base, its):
 MEMBERS = {
     "high": {"baseline": latest("results/T016e/high_thin_G0", ["it2"]),
              "droplets": latest("results/T021/high_thin_G0", ["it2"]),
-             "backpress": latest("results/T023/high_thin_G0", ["it2", "it1"])},
+             "backpress": latest("results/T023/high_thin_G0", ["it2", "it1"]),
+             "combo": latest("results/T025/high_thin_G0", ["it2", "it1", "it0"])},
     "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
             "droplets": latest("results/T021/low_thin_G0", ["it1"]),
-            "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"])},
+            "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
+            "combo": latest("results/T025/low_thin_G0", ["it1", "it0"])},
 }
 SHOCK = {"high": {"baseline": "results/T016e/high_thin_G0/it2/shock_track.csv"},
          "low": {"baseline": "results/T016e/low_thin_G0/it2/shock_track.csv"}}
