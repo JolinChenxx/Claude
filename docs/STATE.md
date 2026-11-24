@@ -497,3 +497,11 @@ Updated: 2026-11-15
   - σ_z/σ_x 67/94 µm.
 - Droplet-window residual 0.002 µJ. This replaces T021 as the reported droplet member.
 - T027 high it1: 2.82M ConsToPrim lines against 1.81M for T026; imaging pending. T029 claimed by Codex.
+
+## 2026-11-25 00:20 — low-fluence late decay: diagnosis (no model change)
+- T026 low it1 diag_emission: after 300 ns the emission-weighted T stays at 6.2 → 5.4 kK (300 → 1200 ns), with n_e,emw 3e22 → 7e21 m⁻³. Over 99.9% of the band signal is Cu I lines. The mass-weighted core temperature is only 2.5 kK, cooled by the droplets. The late signal therefore comes from a small pocket that stays near 5.5 kK and cools very slowly.
+- The radiation limit is not the cause: T023 low trap against thin gives L1035/L300 = 0.111 against 0.098.
+- Remaining candidates, both outside the current model:
+  1. Mixing of the hot pocket with cold air at the decelerating Cu–air contact. That interface is Rayleigh–Taylor unstable; 2-D axisymmetric laminar flow with molecular diffusion under-represents it.
+  2. Condensation, not modelled. The 2.5 kK core is below T_boil, which bears on the paper's nanoparticle subject. It would release heat and would not by itself speed the decay.
+- Both would be model-form additions, so they are for the user to decide in the morning; nothing is tuned overnight.
