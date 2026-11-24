@@ -57,3 +57,6 @@ User: "目前只有我一个人在用工作站，直接尽可能的用满算力�
 
 ## 2026-11-24 (UTC+8) — v1k back pressure (user: "尽快能修复…热核留在壁面上的问题")
 The face-pinned hot core traces to a sonic Knight source feeding a wall cell at 10–100× p_sat (T018c 62 ns extract). The pre-declared v1 item, Knight with back pressure, is implemented as v1k (PREREG v1k) and run as T023 alongside T021, which is not stopped: its droplet bound is still informative, and both runs answer separate pre-registered questions.
+
+## 2026-11-24 15:45 (UTC+8) — requeue the T021/T023 postprocessing (standing authorization)
+Codex asked for permission. T021_T023_post_03 has a fixed order that puts the trap members ahead of the 21:00 deliverables. It is stopped at a completed-run boundary and its unfinished stages are requeued: T021 high it2, T023 low-thin latest, T023 high-thin it2, then the rest. Postprocessing only; no production stopped, no data deleted.
