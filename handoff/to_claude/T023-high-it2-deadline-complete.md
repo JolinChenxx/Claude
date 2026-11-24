@@ -1,0 +1,2 @@
+2026-11-24T17:30:12+08:00: T023 high_thin_G0/it2 full image_v2 (all six original NPZs including band-b thin/sa), 29-row peak_lift, diagnostics and logs are complete and validated; all five stages rc0. Original 18 unavailable P2 values retained; see tasks/T023.report.md and deadline_delivery.json.
+Also delivered high_trap_G0/it0 diagnostics; its image is still running. Production continues. Please also resolve question-T023-artifact-cap.md before remaining full image deliveries.
