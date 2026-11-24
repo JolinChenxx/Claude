@@ -1,0 +1,418 @@
+{
+  "recorded": "2026-11-24T16:12:34.002402+08:00",
+  "authority": "handoff/to_codex/T024-stop.md",
+  "authority_sha256": "9b0d1745bf8132eda002eac828d68d116955b735a763d924cbdc1a0a9b2a9828",
+  "job": {
+    "id": "T024",
+    "pid": 37412,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T024.yaml --max-cores 16",
+    "threads": 1,
+    "commit": "282c821",
+    "started": "2026-11-24T14:59:09",
+    "dir": "D:\\sim_runs\\T024"
+  },
+  "target_tree": [
+    {
+      "pid": 37412,
+      "creation_epoch": 1795503549.0785756,
+      "cmdline": [
+        "C:\\Windows\\system32\\cmd.exe",
+        "/v:on",
+        "/c",
+        "set",
+        "OMP_NUM_THREADS=1&&",
+        "set",
+        "SIM_OUT_DIR=D:\\sim_runs\\T024&&",
+        "cd",
+        "/d",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+        "&&",
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.batch",
+        "configs/batches/T024.yaml",
+        "--max-cores",
+        "16",
+        "&",
+        "echo",
+        "!ERRORLEVEL!",
+        ">",
+        "D:\\sim_runs\\T024\\exitcode.txt"
+      ]
+    },
+    {
+      "pid": 39724,
+      "creation_epoch": 1795503549.1167374,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 37544,
+      "creation_epoch": 1795503549.1604667,
+      "cmdline": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.batch",
+        "configs/batches/T024.yaml",
+        "--max-cores",
+        "16"
+      ]
+    },
+    {
+      "pid": 38764,
+      "creation_epoch": 1795503578.7805989,
+      "cmdline": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "8",
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 11244,
+      "creation_epoch": 1795503578.7813904,
+      "cmdline": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "8",
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 31424,
+      "creation_epoch": 1795503578.7933636,
+      "cmdline": [
+        "C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe",
+        "-p",
+        "8677",
+        "-d",
+        "0",
+        "-mgr",
+        "372",
+        "job",
+        "-localonly"
+      ]
+    },
+    {
+      "pid": 21916,
+      "creation_epoch": 1795503582.296831,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 20956,
+      "creation_epoch": 1795503582.3052883,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 29788,
+      "creation_epoch": 1795503582.307482,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 40056,
+      "creation_epoch": 1795503582.3093967,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 36512,
+      "creation_epoch": 1795503582.3114614,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 25412,
+      "creation_epoch": 1795503582.3138149,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 42200,
+      "creation_epoch": 1795503582.31665,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 35356,
+      "creation_epoch": 1795503582.3201673,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 1520,
+      "creation_epoch": 1795503582.3250651,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 40944,
+      "creation_epoch": 1795503582.3220332,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 37176,
+      "creation_epoch": 1795503582.318411,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 32620,
+      "creation_epoch": 1795503582.3156993,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 17544,
+      "creation_epoch": 1795503582.312882,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 37188,
+      "creation_epoch": 1795503582.311056,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 11016,
+      "creation_epoch": 1795503582.3089943,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 33092,
+      "creation_epoch": 1795503582.3068385,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 13832,
+      "creation_epoch": 1795503578.793679,
+      "cmdline": [
+        "C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe",
+        "-p",
+        "8677",
+        "-d",
+        "0",
+        "-mgr",
+        "396",
+        "job",
+        "-localonly"
+      ]
+    },
+    {
+      "pid": 7308,
+      "creation_epoch": 1795503582.2968621,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 13248,
+      "creation_epoch": 1795503582.3064573,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 42512,
+      "creation_epoch": 1795503582.308637,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 9072,
+      "creation_epoch": 1795503582.3106408,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 28168,
+      "creation_epoch": 1795503582.3133872,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 20832,
+      "creation_epoch": 1795503582.316416,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 28464,
+      "creation_epoch": 1795503582.3214664,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 13492,
+      "creation_epoch": 1795503582.3249707,
+      "cmdline": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "pid": 20932,
+      "creation_epoch": 1795503582.3310597,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 13320,
+      "creation_epoch": 1795503582.3267922,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 31932,
+      "creation_epoch": 1795503582.3230367,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 11204,
+      "creation_epoch": 1795503582.3182652,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 17148,
+      "creation_epoch": 1795503582.3151972,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 41384,
+      "creation_epoch": 1795503582.3120716,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 7776,
+      "creation_epoch": 1795503582.30994,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 12380,
+      "creation_epoch": 1795503582.307864,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    }
+  ],
+  "protected_jobs": {
+    "T023": {
+      "pid": 14496,
+      "creation_epoch": 1795484727.6840496
+    },
+    "queue05": {
+      "pid": 32784,
+      "creation_epoch": 1795505005.892073
+    }
+  }
+}
