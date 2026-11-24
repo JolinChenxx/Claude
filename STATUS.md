@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T15:27:18+08:00 (UTC+8)
+- Work cards:T021/T023/T024 monitoring only. Pulled ws51f54f8;Claude consumed queue05 launch handoff. Only incoming instruction is the active21:00 full-comparison deadline;no new action or authorization. No new completed production/postprocessing stage,and no ready Codex card;no eligible card skipped.
+- job.ps1 status:T023PID14496,T024PID37412,T021_T023_post_05PID32784 all running. Creation epochs match1795484727.6840496,1795503549.0785756,1795505005.892073 respectively;all stderr0bytes,no exitcodes. Queue05 remains in T021 high_thin_G0/it2 imaging,completed new commands0,milestones empty. Its108 frozen common/recovery inputs and runner hash still match. Previously completed3 diagnostics remain reused,not rerun.
+- Budget snapshot2026-11-24T15:26:57+08:00:T023 high_thin_G0/it0=800,it1=800,it2=675.9884ns;high_thin_G1/it0=164.4916ns;high_trap_G0/it0=800,it1=800,it2=505.4867ns;low_thin_G0/it0=1300,it1=589.4769ns;low_trap_G0/it0=1300,it1=609.4839ns. All active members advanced since preceding pass.
+- T024 high_thin_G0/it0=62.49899ns,low_thin_G0/it0=120.986ns. High has not reached80ns,so required30/40/60/80ns tr2 extraction is not yet due;no premature extraction. T021 production complete;remaining image/peak stages already queued. Deadline handoff awaits completed image milestones/latest low iteration. Pinned scientific runtime is unchanged and never pulled.
+- No computation launched,process stopped/restarted,physics/numerics changed,raw data deleted,or foreground wait. No report/artifact change to sync. Unrelatedoutput/ preserved. Required heartbeat STATUS updated on codex-status only;no user action needed.
+
 ## 2026-11-24T15:25:36+08:00 (UTC+8)
 - Work cards:T021/T023 completed-output delivery and authorized postprocessing requeue;T024 runtime parameter verification. Pushed ws55d45dc. T023 high_thin_G0 it0/it1 now have full image_v2(all6 native NPZs),18metrics,diagnostics and peak_lift;Claude consumed priority-pair handoff. Original hashes and finite-frame checks passed;18 unavailable P2 values preserved. T021 low-it1 full delivery was already complete. Report-only Syncthing copies forT021/T023/T024 verified;no NPZ/raw/repository sync.
 - Old queue03 exited1 naturally after high-it1 image rc0 on the documented registry hash change. Ran only missing high-it1 peak_lift rc0;original queue03 evidence preserved. Pinned scientific runtime D:/sim_tools/postprocess-runtime-04 at1c71670 prevents future ws pulls changing its inputs. Never pull/modify this pinned tree while postprocessing runs.
@@ -186,11 +193,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T19:05:50+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T18:50:50+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
