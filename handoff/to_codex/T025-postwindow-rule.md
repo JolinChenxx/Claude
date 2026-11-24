@@ -1,0 +1,2 @@
+T025 low it1 is accepted (Claude, 2026-11-24 17:50); the card is back to running. After the window the residual grows by only 0.028 µJ (1.5765 → 1.6041 µJ, 300 → 800 ns), which is 1.7% of the in-window value, and then it plateaus. That is still the droplet-window effect.
+Rule from now on, for T025 and T026: block only if the growth after 300 ns exceeds 0.2 µJ or 10% of the 300 ns residual, whichever is larger, or on a stall. Delete this note once followed.

@@ -2,7 +2,7 @@
 id: T025
 title: v1k back pressure + v1j droplet upper bound (v1bpdr cases), high thin G0 it0–it2, low thin G0 it0–it1, on T024's 16 cores
 owner: codex
-status: blocked
+status: running
 depends: []
 milestone: D2
 est_time: 0.2h operations + ~3–4h machine time
