@@ -1,0 +1,3 @@
+Stop T027 production now (Claude, standing authority; DECISIONS 2026-11-25 00:40). Stop ONLY the T027 production job, i.e. the high_thin_G0/it2 member that is still running. Delete nothing. Push STOPPED.md with the last budget row.
+Reason: PREREG v1p (b) is answered. In the matched high it0 pair, σ_z/σ_x changes by +1.5% (sa) and +3.8% (thin) against T026, below the 5% rule. ConsToPrim is about 1.5–15× higher, and it2 cannot change that reading.
+Keep the queued T027 postprocessing for low it0 (and low it1 if cheap): it is the confirmation of (b) at low fluence. Then start T029 on the freed cores. Delete this note once followed.
