@@ -101,11 +101,22 @@ def exp_frames(series):
     return out, M["um_per_px"]
 
 
+def occlude(img, srow):
+    """Knife-edge occlusion by the target: after the defocus blur, image rows below the face receive no light
+    (rays from the plume that head below the surface plane hit the copper in front of the source). Display option."""
+    out = img.copy()
+    out[int(np.floor(srow)) + 1:] = 0.0
+    return out
+
+
+OCCLUDE = False
+
+
 def model_frames(path, mode, srow, L_ref):
     d = np.load(path / "image_v2" / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
     dfoc = P.get("defocus_um_scenarios")["baseline"]
-    fr = {int(t): camera.blur(place(x, srow), um, dfoc) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all()}
+    fr = {int(t): (occlude(camera.blur(place(x, srow), um, dfoc), srow) if OCCLUDE else camera.blur(place(x, srow), um, dfoc)) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all()}
     if not fr:
         return {}, 0.0
     g = camera.gain_for_reference(fr[min(fr, key=lambda t: abs(t - T_REF))], L_ref)
@@ -143,10 +154,10 @@ def frames_figure(series, mode, srow):
                 a.set_ylabel(lab, fontsize=7.5, rotation=0, ha="right", va="center")
     src = "Fig. 2a 作者标注的 Air/Copper 线" if series == "low" else "由低通量标注线换算（仅供参考）"
     fig.suptitle(f"{'高' if series == 'high' else '低'}通量逐帧对照（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}，散焦 250 µm，"
-                 f"各行在 300 ns 单独定增益，同一 0–255 色标）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
+                 f"各行在 300 ns 单独定增益，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
                  fontsize=10)
     fig.tight_layout(rect=(0.04, 0, 1, 0.92), h_pad=0.3, w_pad=0.2)
-    out = ROOT / f"results/figures/full_frames_{series}.png"
+    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}.png"
     fig.savefig(out, dpi=170)
     plt.close(fig)
     return out
@@ -299,8 +310,15 @@ def shock_figure():
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", default="sa", choices=["sa", "thin"])
+    ap.add_argument("--occlude", action="store_true", help="display option: knife-edge occlusion of the image below the face")
     a = ap.parse_args(argv)
+    global OCCLUDE
+    OCCLUDE = a.occlude
     srows = surface_rows()
+    if OCCLUDE:
+        for s_ in ("high", "low"):
+            print(frames_figure(s_, a.mode, srows[s_]))
+        return
     for s in ("high", "low"):
         print(s, {k: (str(v.relative_to(ROOT)) if v else None) for k, v in MEMBERS[s].items()})
         print(frames_figure(s, a.mode, srows[s]))
