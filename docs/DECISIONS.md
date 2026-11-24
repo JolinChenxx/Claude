@@ -71,3 +71,6 @@ Autonomous until 07:00. Hourly reports stay short. A summary with updated figure
 3. Decision rule fixed now. If T027 (b) changes σ_z/σ_x by < 5%, v1p is closed and the next pre-declared candidate, droplet kinematics (v1q: droplets launched at the measured 344 m/s, evaporating along their path), is declared, smoke-tested and run on the freed cores. If (b) changes ≥ 5%, the momentum source is first moved into a boundary-flux form (the ConsToPrim issue) before any further use.
 4. Free cores also go to a G1 (fine-grid) run of the current best model, v1n (T026 cases), high it0, to show that the headline metrics (decay, S1, σ_z) are grid-converged.
 5. No parameter is chosen from the comparison. Any new mechanism is pre-registered before its first result.
+
+## 2026-11-24 23:45 (UTC+8) — v1q started in parallel with T027 (plan change)
+16 cores are idle. v1q (droplets at the measured spatter top) is independent of the T027 reading, so it runs now instead of waiting for T027 (b). Pre-registered before any result.

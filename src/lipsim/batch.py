@@ -94,7 +94,8 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int,
               ("SIG_EN", P.get("sigma_en_Cu")), ("LOTZ_A", P.get("lotz_a_cu")),
               ("DROP_TB", P.get("cu_T_boil") if (case_cfg.get("target") or {}).get("droplet_release") == "energy_limited" else 0.0),
               ("VMOM", 1 if (case_cfg.get("target") or {}).get("vapour_momentum", False) else 0),
-              ("DROP_VD", P.get("cu_droplet_speed_measured") if (case_cfg.get("target") or {}).get("droplet_kinematics", False) else 0.0)]
+              ("DROP_VD", float((case_cfg.get("target") or {}).get("spatter_speed", 0.0) or 0.0)),
+              ("DROP_TPL", float((case_cfg.get("target") or {}).get("spatter_plateau", 0.0) or 0.0))]
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",

@@ -149,7 +149,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
         double Yc = d->Vc[TRC][k][j][i];
         int in_row = 1;
         if (g_inputParam[DROP_VD] > 0.0) {     /* v1q: only the row that holds the droplet front z_d(t) */
-          double zd = g_inputParam[DROP_VD] * (t_SI + dt_SI - g_inputParam[DROP_T0]) / LIP_LEN_SI;
+          double tz = t_SI + dt_SI; if (g_inputParam[DROP_TPL] > 0.0 && tz > g_inputParam[DROP_TPL]) tz = g_inputParam[DROP_TPL]; double zd = g_inputParam[DROP_VD] * (tz - g_inputParam[DROP_T0]) / LIP_LEN_SI;
           double zl = grid->x[JDIR][j] - 0.5 * grid->dx[JDIR][j], zh = zl + grid->dx[JDIR][j];
           in_row = (zd >= zl && zd < zh);
         }
@@ -301,7 +301,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       double m_pre_drop = m;
       int drop_row = 1;
       if (g_inputParam[DROP_VD] > 0.0) {
-        double zd = g_inputParam[DROP_VD] * (t_SI + dt_SI - g_inputParam[DROP_T0]) / LIP_LEN_SI;
+        double tz = t_SI + dt_SI; if (g_inputParam[DROP_TPL] > 0.0 && tz > g_inputParam[DROP_TPL]) tz = g_inputParam[DROP_TPL]; double zd = g_inputParam[DROP_VD] * (tz - g_inputParam[DROP_T0]) / LIP_LEN_SI;
         double zl = grid->x[JDIR][j] - 0.5 * grid->dx[JDIR][j], zh = zl + grid->dx[JDIR][j];
         drop_row = (zd >= zl && zd < zh);
       }

@@ -1,0 +1,19 @@
+# v1q: v1n + spatter kinematics (droplets evaporate at the measured spatter top; PREREG 2026-11-25 v1q). Base v1n: v1k + v1j combination with energy-limited droplet release (high fluence): back pressure AND droplet upper bound (PREREG 2026-11-24 'combination').
+name: v1bpdk_high
+laser:
+  energy: '@E_pulse_high'
+  diameter_1e2: '@D_beam_high'
+  fwhm: '@tau_fwhm'
+target:
+  model: knight_backpressure_v1k
+  back_pressure: true      # v1k: PLAN v3 §3.2 v1 item (Knight with back pressure; no recondensation)
+  droplets: upper          # v1j droplet upper bound (PREREG 2026-11-24 08:20)
+  droplet_release: energy_limited   # v1n: evaporate only while the mixture stays >= T_boil
+  spatter_speed: '@cu_spatter_speed_high'   # v1q: measured spatter-top rise speed (registry, pump-probe)
+  spatter_plateau: '@cu_spatter_plateau_high'   # v1q: measured plateau time
+numerics:
+  rings: 24
+  r_max_over_w: 2.5
+  t_end_ns: 400
+  dt_ns: 0.05
+  picard_relax: 0.5

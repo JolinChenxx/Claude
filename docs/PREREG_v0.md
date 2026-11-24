@@ -138,3 +138,18 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - (b) σ_z/σ_x at 300 ns: report the change from T026. The direction is expected up, but the size is not predicted and may be negligible, because ṁu_v ~ p_v is small against the plume pressure.
   - (c) S1, L(730)/L(300) (high), L(715)/L(300) (low), shock at 500–700 ns: report them.
 - **Reading:** if (b) changes by < 5%, vapour momentum is not the missing elongation mechanism. The next candidate is then droplet kinematics, with the measured 344 m/s as an independent input (declared separately), then radiative transfer.
+
+### Reading recorded 2026-11-24 23:40 (after the results): T026 v1n high it1
+- L(730)/L(300) (sa) is 0.146 against 0.107 in the experiment; T021 gave 0.155. The energy-consistent bound keeps the high-fluence decay within a factor 2. PREREG v1n (c) holds.
+- S1 median 166 µm, 1/20 frames. σ_z/σ_x at 300 ns: 77/117 µm.
+
+## v1q extension declared 2026-11-24 ~23:45 (UTC+8), before any v1q result: droplets evaporate at the measured spatter top
+- **Source (an independent measurement, not the S4 comparison data):** the paper's pump-probe shadowgraphy gives the rise speed of the molten-copper spatter top as 344 m/s (high) and ≈190 m/s (low). At high fluence the height is stable after 500 ns. The authors find the bright high-temperature plume centre coincides with the spatter top and interpret it as evaporation on entry. Verbatim quotes are in data/exp/paper/droplets_notes.md; registry cu_spatter_speed_high/low and cu_spatter_plateau_high, grade B.
+- **Model (DROP_VD, DROP_TPL; cases v1bpdk_* = v1bpde_* + spatter kinematics):** the v1n droplet mass and window are unchanged: launch at t_peak + FWHM/2 from the face, release until t_ref, energy-limited. The release is restricted to the grid row that holds the spatter top z_d = v_s (t − t_launch), which stops at the plateau time where one is measured. Within that row the mass is spread over Cu-core cells (Y > 0.5) in proportion to ρY. No free parameter. The cell-row placement is the spatial discretisation. The window is kept so that only the location changes against v1n.
+- **Caveat, declared:** the spatter-top speed is an edge speed, not a droplet speed distribution. Placing all droplets at the front is the extreme of "evaporation on entry to the hot core". The opposite extreme is v1n, release throughout the core. The two bracket the location.
+- **Plan change, recorded:** the overnight rule ran v1q only after T027 (b) failed. It runs now in parallel because 16 cores are idle. It is an independent mechanism, and its reading does not depend on T027.
+- **Declared expectations, read whatever the outcome:**
+  - (a) Closure and the droplet-window residual as in v1n (< 0.2 µJ).
+  - (b) σ_z/σ_x and S1 against T026: the direction is expected up, the size is not predicted.
+  - (c) L ratios and shock: report them.
+- **Reading:** if σ_z/σ_x moves by < 5%, the location of the droplet sink does not set the elongation either. The remaining candidate is then radiative transfer (absorption front up the beam), which is declared separately and decided by the user.
