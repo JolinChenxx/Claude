@@ -16,10 +16,10 @@ TABLES = Path('D:/sim_runs/tables/v1c')
 JOB = Path('D:/sim_runs/T021_T023_post_03')
 PREDECESSOR = Path('D:/sim_runs/T021_post_completed_02')
 EVIDENCE = REPO / 'results/T021/postprocessing/completed_03_preflight.json'
-TARGETS = [('T021', 'high_thin_G0', 'it1'), ('T021', 'high_thin_G0', 'it2'),
-           ('T023', 'high_thin_G0', 'it0'), ('T023', 'high_trap_G0', 'it0'),
-           ('T023', 'high_thin_G0', 'it1'), ('T023', 'high_trap_G0', 'it1'),
-           ('T023', 'low_trap_G0', 'it0')]
+TARGETS = [('T023', 'high_thin_G0', 'it0'), ('T023', 'high_thin_G0', 'it1'),
+           ('T021', 'high_thin_G0', 'it2'), ('T023', 'high_trap_G0', 'it0'),
+           ('T023', 'high_trap_G0', 'it1'), ('T023', 'low_trap_G0', 'it0'),
+           ('T021', 'high_thin_G0', 'it1')]
 
 
 def now():
@@ -48,7 +48,7 @@ def commands(batch, member, iteration):
         ('emission', [str(PYTHON), str(REPO / 'scripts/diag_emission.py'), str(run), '--tables', str(TABLES), '--times', '100', '150', '200', '250', '300', '400', '500', '600', '700', '800', '1000', '1200', '--filter', '510', '12', '--out', str(diag / 'diag_emission.csv')]),
         ('core_energy', [str(PYTHON), str(REPO / 'scripts/core_energy.py'), str(run), '--tables', str(TABLES), '--nec', nec, '--out', str(diag / 'core_energy.csv')]),
         ('shock_track', [str(PYTHON), str(REPO / 'scripts/shock_track.py'), str(run), '--out', str(diag / 'shock_track.csv')]),
-        ('image_v2', [str(PYTHON), '-m', 'lipsim.image', str(run), '--series', series, '--tables', str(TABLES), '--out', str(run / 'image_v2'), '--workers', '16', '--scenarios', str(REPO / 'configs/imaging/v2.yaml')])]
+        ('image_v2', [str(PYTHON), '-m', 'lipsim.image', str(run), '--series', series, '--tables', str(TABLES), '--out', str(run / 'image_v2'), '--workers', '24', '--scenarios', str(REPO / 'configs/imaging/v2.yaml')])]
     if batch == 'T023':
         plans.append(('peak_lift', [str(PYTHON), str(REPO / 'scripts/peak_lift.py'), str(run / 'image_v2'), '--series', series, '--out', str(REPO / 'results' / batch / member / iteration / 'peak_lift.csv')]))
     return [{'batch': batch, 'member': member, 'iteration': iteration, 'name': name, 'command': command} for name, command in plans]
@@ -89,8 +89,8 @@ def preflight():
             plans.append(plan)
     return {'recorded': now(), 'job_id': JOB.name, 'commands': plans,
             'input_sha256': {str(p): sha(p) for p in inputs}, 'runner_sha256': sha(Path(__file__)),
-            'max_workers': 16, 'predecessor': PREDECESSOR.name,
-            'resource_policy': 'Seven completed runs sequentially; three single-thread diagnostics concurrently, then 16-worker imaging, then T023 peak_lift. BelowNormal; OMP/BLAS1; no production intervention.',
+            'max_workers': 24, 'predecessor': PREDECESSOR.name,
+            'resource_policy': 'Claude priority note 2026-11-24 14:00: T023 high thin it0/it1 first, T021 high it2 next, then remaining trap/low and T021 high it1. Seven completed runs sequentially; three single-thread diagnostics concurrently, then 24-worker imaging, then T023 peak_lift. BelowNormal; OMP/BLAS1; no production intervention.',
             'time_policy': 'Emission requests 1000/1200 ns on 800 ns high runs retain the supplied nearest-final-snapshot behavior; no extrapolation or extension.'}
 
 
@@ -119,7 +119,7 @@ def main():
     if args.check_only:
         frozen = preflight()
         save(EVIDENCE, frozen)
-        print(json.dumps({'job_id': JOB.name, 'commands': len(frozen['commands']), 'inputs': len(frozen['input_sha256']), 'max_workers': 16}))
+        print(json.dumps({'job_id': JOB.name, 'commands': len(frozen['commands']), 'inputs': len(frozen['input_sha256']), 'max_workers': 24}))
         return 0
     frozen = json.loads(EVIDENCE.read_text())
     assert not (JOB / 'postprocess_summary.json').exists(), 'Queue already executed'
@@ -148,6 +148,9 @@ def main():
                 summary['commands'].append(execute(plan, env))
                 save(path, summary)
                 assert summary['commands'][-1]['returncode'] == 0, 'Postprocessing failure'
+            if (batch, member, iteration) in [('T023', 'high_thin_G0', 'it1'), ('T021', 'high_thin_G0', 'it2')]:
+                summary.setdefault('milestones_ready_for_collection', []).append({'batch': batch, 'member': member, 'iteration': iteration, 'finished': now(), 'next_action': 'Collect and validate compact outputs; write/push milestone handoff on the next pass.'})
+                save(path, summary)
         summary.update(state='completed', finished=now())
         save(path, summary)
         return 0
