@@ -10,7 +10,7 @@
 #define  TIME_STEPPING                  RK2
 #define  NTRACER                        2   /* tr1 = Y_Cu; tr2 = v1m non-equilibrium electrons per Cu-atom mass (BD_ON) */
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            18
+#define  USER_DEF_PARAMETERS            19
 
 /* -- physics dependent declarations -- */
 #define  DUST_FLUID                     NO
@@ -39,6 +39,7 @@
 #define  BD_ON                          15  /* 1 = v1m two-temperature avalanche breakdown during the pulse; 0 = LTE only */
 #define  SIG_EN                         16  /* m^2, electron momentum-transfer cross-section (registry sigma_en_Cu) */
 #define  LOTZ_A                         17  /* m^2 eV^2, Lotz constant for Cu 4s (registry lotz_a_cu) */
+#define  DROP_TB                        18  /* K; > 0: v1n energy-limited droplet release (mixture must stay >= T_boil); 0 = off */
 
 /* -- supplementary constants (user editable) -- */
 #define  UNIT_DENSITY                   1.0e-3   /* g/cm^3 = 1 kg/m^3 */

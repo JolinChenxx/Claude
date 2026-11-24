@@ -119,3 +119,13 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - (c) σ_z: report it; no pass expected.
   - (d) Shock at 500–700 ns within 10% of T023 v1k.
 - Low-fluence decay: report it against T021 low. If the low-it1 energy-floor clamp recurs, report it; no fix mid-test.
+
+## v1n correction declared 2026-11-24 ~17:15 (UTC+8), before any v1n result: energy-limited droplet release
+- **Why:** the v1j release is time-uniform, so it does not check whether the gas can pay L_v. At low fluence the core is too cold, and the floor clamp adds energy: T021 low it1 +1.74 µJ, T025 low it0 +1.14 µJ, both inside the window. The bound then holds more cooling than the energy allows, and it is not energy-consistent.
+- **Model (DROP_TB > 0, cases v1bpde_*):** in each cell, the droplet mass released in a step evaporates only as far as the mixture stays at or above T_boil (registry cu_T_boil, 2835 K, grade C). It arrives at rest with e_vap(T_cap) − L_v, as in v1j. The rest stays condensed: it is removed from the bound and booked as M_drop_condensed. No new parameter. With DROP_TB = 0 the results are bit-identical to v1j/v1k.
+- **Declared expectations, read whatever the outcome:**
+  - (a) The droplet-window energy residual at low fluence is < 0.2 µJ, against 1.1–1.7 µJ.
+  - (b) Low fluence: report L(1035)/L(300) and M_drop_condensed. The direction is not predicted. Less cooling could slow the decay, while the absence of the spurious floor energy could speed it up.
+  - (c) High fluence: L(730)/L(300) within a factor 2 of the experiment is expected to survive, because the high core can pay.
+  - (d) S1 and σ_z: report them.
+- This is a consistency correction of the v1j bound. It is not chosen from the comparison: the trigger was the closure residual.

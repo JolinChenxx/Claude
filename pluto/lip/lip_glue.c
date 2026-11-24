@@ -23,6 +23,7 @@ static int  s_mdot, s_Tv, s_rhov, s_uv, s_A, s_Ts;
 static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
 static double *trans = NULL, *pw_cell = NULL;
 static double B_bp[1];   /* v1k: evaporated mass suppressed by back pressure (kg) */
+static double B_dr[1];   /* v1n: droplet mass left condensed by the energy limit (kg) */
 static double B_bd[1];   /* v1m: energy held in non-equilibrium ionisation (J, cumulative transfer = current store) */
 static double **I_cell = NULL, **Te_cell = NULL;
 static double B[9];   /* budget: inc, gas_abs, targ_abs, esc, rad, rad_limited, mass_src, energy_src, wall (gas->target) */
@@ -43,7 +44,7 @@ void lip_init(void)
 #if THERMAL_CONDUCTION != NO
   if (i_kappa < 0 || s_Ts < 0 || i_D < 0 || i_dh < 0) { printLog("! lip: conduction build needs opt.bin fields kappa, D_cuair, dh_dY and source field Ts (v1 step-2 tables)\n"); QUIT_PLUTO(1); }
 #endif
-  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd));
+  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd)); memset(B_dr, 0, sizeof(B_dr));
   lip_ready = 1;
 }
 
@@ -290,6 +291,22 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       if (drop_dm > 0.0 && Y > 0.5) {
         double dmd = drop_dm * rho * Y / drop_W;                          /* kg/m^3 this step */
         double einj = lip_eos_e(&lip_eos, rho, g_inputParam[DROP_TCAP], 1.0) - g_inputParam[DROP_LV];
+        if (g_inputParam[DROP_TB] > 0.0) {
+          /* v1n (PREREG 2026-11-24): energy-limited release. Droplets evaporate only as far as the mixture stays at or
+             above T_boil (it cannot pay L_v below that); the rest stays condensed (booked, removed from the bound). */
+          double KE = 0.5 * m * (vr * vr + vz * vz);
+          double ei = E - KE;                                             /* internal energy per volume now */
+          double lo = 0.0, hi = dmd;
+          double Yd = (mY + hi) / (m + hi);
+          if (ei + hi * einj < (m + hi) * lip_eos_e(&lip_eos, m + hi, g_inputParam[DROP_TB], Yd)) {
+            for (int it = 0; it < 50; it++) {
+              double mid = 0.5 * (lo + hi), Ym = (mY + mid) / (m + mid);
+              if (ei + mid * einj >= (m + mid) * lip_eos_e(&lip_eos, m + mid, g_inputParam[DROP_TB], Ym)) lo = mid; else hi = mid;
+            }
+            B_dr[0] += (dmd - lo) * dV;
+            dmd = lo;
+          }
+        }
         m += dmd; mY += dmd; E += dmd * einj;
         B[6] += dmd * dV; B[7] += dmd * einj * dV;
       }
@@ -371,7 +388,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1];
+  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1], Bdrg[1];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -395,15 +412,16 @@ void lip_analysis(const Data *d, Grid *grid)
   MPI_Allreduce(B, Bg, 9, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_bp, Bbpg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_bd, Bbdg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(B_dr, Bdrg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 #else
-  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp)); memcpy(Bbdg, B_bd, sizeof(B_bd));
+  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp)); memcpy(Bbdg, B_bd, sizeof(B_bd)); memcpy(Bdrg, B_dr, sizeof(B_dr));
 #endif
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store,M_drop_condensed\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4], Bdrg[0]);
     fclose(fp);
   }
   if (trans != NULL && grid->lbound[JDIR] != 0) {
