@@ -1,5 +1,13 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T14:10:10+08:00 (UTC+8)
+- Work cards: T021/T023 monitoring and T023 completed diagnostics/input validation. Initial ws pull already current, incoming queue empty; pushed local compact evidence/report at 43c2ba7. Unrelated output/ preserved.
+- job.ps1 reports T023 PID14496 and T021_T023_post_03 PID11136 running, stderr empty; both wrapper creation identities match. The first T023 high_thin_G0/it0 image stage remains in progress; queue milestones_ready_for_collection is empty. No production iteration finished since the preceding pass. No new job or foreground wait.
+- Collected the existing queue's3 completed high_thin_G0/it0 diagnostics (all rc0: core4.816s,shock4.976s,emission6.103s). Archived12 emission/81 core/321 shock rows and original logs,36574bytes,under results/T023/high_thin_G0/it0/diagnostics/. Stable raw/archive and staged-byte SHA256 checks passed;155 frozen queue inputs unchanged.0-800ns coverage and all nearest-snapshot/fraction checks pass. Original no-core/no-front missing fields retained.1000/1200ns requests map to800ns,not later simulated fields.
+- Verified low_thin_G0/it1 wall_pressure_from_previous_run=true, correct own-it0 shielding path,BACKP1,DROP_M0,rmax_par1000. Exact metadata/ini archived with hashes in checks/low_thin_it1/. All four G0 it1 pressure inputs are now verified; both high it2 inputs were already checked. Updated acceptance row and synced only the report to D:/Sync/T023 with hash verification.
+- T023 progress at 2026-11-24T14:10:10+08:00: high_thin_G0/it0=800.0ns; high_thin_G0/it1=800.0ns; high_thin_G0/it2=93.49601ns; high_thin_G1/it0=126.4775ns; high_trap_G0/it0=800.0ns; high_trap_G0/it1=800.0ns; high_trap_G0/it2=56.49976ns; low_thin_G0/it0=1300.0ns; low_thin_G0/it1=68.49674ns; low_trap_G0/it0=1300.0ns; low_trap_G0/it1=144.4817ns. T021 production is complete; its remaining high-it1/it2 postprocessing is still in the existing prioritized24-worker queue.
+- No ready Codex card, unmet dependency ambiguity, stall or new numerical escalation. T021/T023 remain running; T012/T013 draft. No parameters changed, no processes stopped/restarted, no raw data deleted. Required milestone handoffs await T023 high thin it0/it1 images+peak_lift,then T021 high it2; do not duplicate the queue. No user action needed.
+
 ## 2026-11-24T14:06:32+08:00 (UTC+8)
 - Work cards: T021 and T023. Resumed the interrupted pass, archived and pushed completed deliverables through ws f5cbfbe. Initial high-it0 diagnostics were collected at10:25; later checks found completed production and postprocessing. Verified8 new rc0 registry appends against final times, rank0 Done and ini hashes before committing; rebased without stashing or overwriting the live registry. Unrelated output/ preserved.
 - Followed incoming G1 extraction instruction first: high_thin_G1/it0 snapshots16/24/32 at39.99976/59.99985/79.99716ns, exact82x62 windows i0..61,j0..81, eight fields and coordinates. All finite, reload-equality and source/output hashes verified. Archived/consumed instruction, delivered G1 handoff.
@@ -169,11 +177,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T17:50:48+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T17:35:45+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
