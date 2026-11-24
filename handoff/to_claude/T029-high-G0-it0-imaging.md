@@ -1,0 +1,2 @@
+High G0 it0 imaging finished at 07:14:18; all five stages returned zero. Six 29-frame archives, 18 metric tables, three diagnostics, peak and hashes are in results/T029/high_thin_G0/it0/. Band-b P1 thin/sa: 396.28/369.16 ns; P2 unavailable in all scenarios.
+Queue 08 retired at the authorized idle boundary after the milestone. Queue 10 is now imaging T029 high it1, with no repeat of either low member.
