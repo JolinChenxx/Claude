@@ -6,6 +6,7 @@ import hashlib
 import json
 import math
 import shutil
+import sys
 
 import numpy as np
 import pandas as pd
@@ -13,9 +14,13 @@ import yaml
 
 REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
-JOB = Path('D:/sim_runs/T023_T025_T026_post_06b')
-RAW = Path('D:/sim_runs/T026/high_thin_G0/it0')
-OUT = REPO / 'results/T026/high_thin_G0/it0'
+assert len(sys.argv) <= 2
+ITERATION = sys.argv[1] if len(sys.argv) == 2 else 'it0'
+assert ITERATION in ('it0', 'it1', 'it2')
+JOB = Path('D:/sim_runs') / ('T023_T025_T026_post_06b' if ITERATION == 'it0' else 'T026_T027_post_07')
+RUNNER = 'run_priority_06.py' if ITERATION == 'it0' else 'run_priority_07.py'
+RAW = Path('D:/sim_runs/T026/high_thin_G0') / ITERATION
+OUT = REPO / 'results/T026/high_thin_G0' / ITERATION
 
 
 def sha(path):
@@ -40,9 +45,9 @@ def copy(source, target):
 def main():
     assert not (OUT / 'priority_delivery.json').exists(), 'Milestone already collected'
     queue = json.loads((JOB / 'postprocess_summary.json').read_text())
-    match = lambda r: (r['batch'], r['member'], r['iteration']) == ('T026', 'high_thin_G0', 'it0')
+    match = lambda r: (r['batch'], r['member'], r['iteration']) == ('T026', 'high_thin_G0', ITERATION)
     milestone, = [r for r in queue['milestones_ready_for_collection'] if match(r)]
-    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == 'T026' and r['registry_row']['run'] == 'high_thin_G0' and r['registry_row']['picard_it'] == '0']
+    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == 'T026' and r['registry_row']['run'] == 'high_thin_G0' and r['registry_row']['picard_it'] == ITERATION[2:]]
     commands = {r['name']: r for r in queue['commands'] if match(r)}
     commands.update({r['name']: r for r in run['reused_completed_commands']})
     assert set(commands) == {'image_v2', 'peak_lift', 'core_energy', 'shock_track', 'emission'}
@@ -51,7 +56,7 @@ def main():
         assert sha(path) == digest, path
     for path, digest in queue['preflight']['input_sha256'].items():
         assert sha(path) == digest, path
-    assert sha(REPO / 'results/T021/postprocessing/run_priority_06.py') == queue['runner_sha256']
+    assert sha(REPO / 'results/T021/postprocessing' / RUNNER) == queue['runner_sha256']
     completion = json.loads((OUT / 'completion.json').read_text(encoding='utf-8'))
     assert completion['registry_row'] == run['registry_row']
     for name, item in completion['files'].items():
