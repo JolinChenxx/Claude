@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T19:37:23+08:00 (UTC+8)
+- T023/T025/T026 handoffs pushed on ws at 8a6804e. Production completed: T023 low-trap it1 and low-thin it1 at 1300 ns, T025 high-thin it1 and T026 high-thin it0 at 800 ns. Original completion evidence, energy checkpoints, rank warnings and reports delivered. T026 low-thin it1 production and T023 low-trap it0 postprocessing were archived at 9a3eeca.
+- Queue05 yielded after all five low-trap it0 stages returned zero. Priority queue06b: running, member T026/low_thin_G0/it0, stage image_v2. T026 low-it0 diagnostics returned zero. No new solver or image job launched. The 21:00 deadline remains active; pending images and peaks have not been reported as complete.
+- Production wrappers T023/T025/T026 running at check. Active budgets: T023/high_thin_G1/it0 2.354899e+002 ns; T025/high_thin_G0/it2 3.449937e+001 ns; T026/high_thin_G0/it1 4.749830e+001 ns. No ready Codex card. Only the completed priority note was archived.
+
 ## 2026-11-24T19:04:13+08:00 (UTC+8)
 - T026/T025/T023: priority runner pushed on ws at 54c4ef0. Pinned preflight and post-300 ns growth checks passed for T026 low it0 and T025 high it0; latest finished T025 iteration will be selected again at admission.
 - job.ps1: successor T023_T025_T026_post_06b PID 14288, waiting_for_queue05_boundary, group 1 with 24 secondary SMT lanes. Queue05 PID 32784 is imaging T023 low_trap_G0/it0. No production stop or new image delivery. Initial post_06 exited 1 before computation due to a processor-group mismatch; original logs preserved.
@@ -232,8 +237,3 @@
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-24T07:55:32+08:00 (UTC+8)
-- Work card: none. User-requested retry: git pull --rebase origin ws succeeded with the existing proxy configuration; ws is current at d6b6ef4. Separate codex-status pull also succeeded. The previous locally committed failure entry is preserved for synchronization with this entry.
-- Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity. No active card requires job.ps1 polling and no ready card was skipped.
-- No task claimed, job launched, result collected or handoff required. Unrelated output/ preserved. No ws edits, configuration changes or process intervention. Connectivity recovered; no user action required.
