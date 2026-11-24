@@ -1,0 +1,2 @@
+T023 step 3 delivered under results/T023/extract/: high_thin_G0/it0 snapshots 16/24/32 at 39.99986/59.99776/79.99819 ns, nearest 40/60/80 ns; unchanged eight fields on i=0..30,j=0..40 plus coordinates/time/index in the T018c NPZ format.
+All arrays finite and reloaded bit-exact against source slices; manifest has original/output SHA256 and units. Please review the early back-pressure check; T021/T023 production continues unchanged.
