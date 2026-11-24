@@ -1,0 +1,220 @@
+{
+  "recorded": "2026-11-24T14:42:24.036562+08:00",
+  "drift": [
+    {
+      "file": "data/params/registry.yaml",
+      "frozen_sha256": "34fd05b259766e5fda169bad5e2281ba18cf94bcaef41b9ba1e35cbcff61635a",
+      "current_sha256": "88c891ab23985a84ff489377fb76541e95f4224429c0cc05214df780d32b5948",
+      "original_archive": "results/T023/postprocessing/queue03_frozen_original/data/params/registry.yaml"
+    },
+    {
+      "file": "src/lipsim/batch.py",
+      "frozen_sha256": "04158d8d8386e0a6fba12d65087b79adeeba41420e50907e9d8439f055d95c95",
+      "current_sha256": "ac98c4f73fecd0b1fc1b3b2c35cbcfaf61880753c10f946f56980c9438533674",
+      "original_archive": "results/T023/postprocessing/queue03_frozen_original/src/lipsim/batch.py"
+    }
+  ],
+  "unchanged_input_count": 153,
+  "cause": "Cloud T024 commit d3305dc added lotz_a_cu and batch ini parameters; observed after pull at 14:38 while high-it1 imaging was active. Completed high-it0 outputs and high-it1 diagnostics finished before this pull. Active runner remains unmodified and will fail its next input-hash check unless retired at the authorized completed-run boundary.",
+  "completed_commands": [
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it0",
+      "name": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-24T14:04:39.939040+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it0_core_energy.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:04:44.755837+08:00",
+      "seconds": 4.816281800001889
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it0",
+      "name": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-24T14:04:39.939040+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it0_shock_track.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:04:44.915300+08:00",
+      "seconds": 4.975670499999978
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it0",
+      "name": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-24T14:04:39.939040+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it0_emission.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:04:46.042617+08:00",
+      "seconds": 6.1033969999989495
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it0",
+      "name": "image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0\\image_v2",
+        "--workers",
+        "24",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-24T14:04:46.144987+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it0_image_v2.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:52.294345+08:00",
+      "seconds": 1746.1480250999994
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it0",
+      "name": "peak_lift",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\peak_lift.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it0\\image_v2",
+        "--series",
+        "high",
+        "--out",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T023\\high_thin_G0\\it0\\peak_lift.csv"
+      ],
+      "started": "2026-11-24T14:33:52.401945+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it0_peak_lift.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:53.653694+08:00",
+      "seconds": 1.2520203000021866
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-24T14:33:53.759467+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_core_energy.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:56.067318+08:00",
+      "seconds": 2.30783750000046
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-24T14:33:53.759467+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_shock_track.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:56.284495+08:00",
+      "seconds": 2.525042500001291
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-24T14:33:53.758471+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_emission.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:57.446972+08:00",
+      "seconds": 3.687638200000947
+    }
+  ]
+}

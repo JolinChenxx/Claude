@@ -1,0 +1,2 @@
+2026-11-24T14:43:15+08:00: T024 hold followed before any build/test/launch. Incoming draft change conflicted with the unpushed claim; skipped only that claim, retaining draft/empty started. No T024 job or v1m executable exists, so no process stop or STOPPED budget was applicable.
+Hold archived in results/T024/claude_hold.md and acknowledged in hold_ack.json/report. Source fix6c41ee7 received; waiting for explicit ready status/release.

@@ -1,0 +1,189 @@
+{
+  "recorded": "2026-11-24T14:42:24.550680+08:00",
+  "commands": [
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-24T14:33:53.759467+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_core_energy.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:56.067318+08:00",
+      "seconds": 2.30783750000046
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-24T14:33:53.758471+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_emission.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:57.446972+08:00",
+      "seconds": 3.687638200000947
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1",
+        "--out",
+        "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-24T14:33:53.759467+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_shock_track.log",
+      "returncode": 0,
+      "finished": "2026-11-24T14:33:56.284495+08:00",
+      "seconds": 2.525042500001291
+    }
+  ],
+  "files": [
+    {
+      "source": "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\core_energy.csv",
+      "archive": "results/T023/high_thin_G0/it1/diagnostics/core_energy.csv",
+      "bytes": 13695,
+      "sha256": "ccff339a7de2ba7aad9875a4cb850694508cd2b8694d1ea2b5e4ddc6f7a76923"
+    },
+    {
+      "source": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_core_energy.log",
+      "archive": "results/T023/high_thin_G0/it1/diagnostics/T023_high_thin_G0_it1_core_energy.log",
+      "bytes": 1395,
+      "sha256": "a72b74924530adfa86e50c936d919823ffa530b906fba5eac1fa04d8b0fd43d7"
+    },
+    {
+      "source": "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\diag_emission.csv",
+      "archive": "results/T023/high_thin_G0/it1/diagnostics/diag_emission.csv",
+      "bytes": 6441,
+      "sha256": "1d48f7a076f66c2d67081178548d3a3a52f82be3d667795364fddaac580b22e2"
+    },
+    {
+      "source": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_emission.log",
+      "archive": "results/T023/high_thin_G0/it1/diagnostics/T023_high_thin_G0_it1_emission.log",
+      "bytes": 1392,
+      "sha256": "e68e8f38b4fa2efce59ad63a128f12b72bf5cfd2ae56255ab139976055e4215e"
+    },
+    {
+      "source": "D:\\sim_runs\\T023\\high_thin_G0\\it1\\diagnostics\\shock_track.csv",
+      "archive": "results/T023/high_thin_G0/it1/diagnostics/shock_track.csv",
+      "bytes": 13114,
+      "sha256": "b5a38d73204f7165faa3610abb3891306f397034fdbfd37678a952b4e90e49c1"
+    },
+    {
+      "source": "D:\\sim_runs\\T021_T023_post_03\\T023_high_thin_G0_it1_shock_track.log",
+      "archive": "results/T023/high_thin_G0/it1/diagnostics/T023_high_thin_G0_it1_shock_track.log",
+      "bytes": 612,
+      "sha256": "d0e6b98c3217628597fcb4391fa702390ba3fdd98e35646c8fcaa5912a47883f"
+    }
+  ],
+  "checks": {
+    "core_energy": {
+      "rows": 81,
+      "missing_row_indices": {
+        "E_int": [
+          0,
+          1,
+          2
+        ],
+        "E_kin": [
+          0,
+          1,
+          2
+        ],
+        "T_mw": [
+          0,
+          1,
+          2
+        ],
+        "P_rad": [
+          0,
+          1,
+          2
+        ],
+        "V": [
+          0,
+          1,
+          2
+        ],
+        "dEdt": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "P_other": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "emission": {
+      "rows": 12,
+      "missing_row_indices": {}
+    },
+    "shock_track": {
+      "rows": 321,
+      "missing_row_indices": {
+        "R_axis_um": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "R_surf_um": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    }
+  },
+  "policy": "Original missing values retained. High requests1000/1200ns reuse final800ns snapshot. Diagnostics finished before the T024 source update; provenance drift recorded separately."
+}
