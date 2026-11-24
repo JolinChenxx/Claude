@@ -1,0 +1,54 @@
+{
+  "recorded": "2026-11-24T16:00:36.292306+08:00",
+  "jobs": {
+    "T023": {
+      "pid": 14496,
+      "identity_matches": true,
+      "stderr_bytes": 0,
+      "exitcode_exists": false
+    },
+    "T024": {
+      "pid": 37412,
+      "identity_matches": true,
+      "stderr_bytes": 0,
+      "exitcode_exists": false
+    },
+    "T021_T023_post_05": {
+      "pid": 32784,
+      "identity_matches": true,
+      "stderr_bytes": 0,
+      "exitcode_exists": false
+    }
+  },
+  "progress": {
+    "T023": {
+      "high_thin_G0/it0": 800.0,
+      "high_thin_G0/it1": 800.0,
+      "high_thin_G0/it2": 710.4947,
+      "high_thin_G1/it0": 178.9987,
+      "high_trap_G0/it0": 800.0,
+      "high_trap_G0/it1": 800.0,
+      "high_trap_G0/it2": 578.973,
+      "low_thin_G0/it0": 1300.0,
+      "low_thin_G0/it1": 627.9955,
+      "low_trap_G0/it0": 1300.0,
+      "low_trap_G0/it1": 638.9827
+    },
+    "T024": {
+      "high_thin_G0/it0": 97.49619,
+      "low_thin_G0/it0": 359.4671
+    }
+  },
+  "ready_cards": [],
+  "queue_state": "running",
+  "completed_commands": 5,
+  "milestones": [
+    {
+      "batch": "T021",
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "finished": "2026-11-24T15:48:56.258715+08:00",
+      "next_action": "Collect full image directory and diagnostics/peak; push priority handoff without waiting for remaining queue."
+    }
+  ]
+}

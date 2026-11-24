@@ -1,0 +1,2 @@
+2026-11-24T16:02:08+08:00: T021 high_thin_G0/it2 complete image_v2(all6 finite native NPZs,18metrics,summary),diagnostics and29-row peak_lift delivered with logs/hashes;image1528.4205619s rc0,peak1.3629039s rc0. Band-b P1 thin/sa248.4028683945467/211.03887340062215ns;18 unavailable P2 retained.
+Both T021 deadline members(highit2,lowit1)are fully delivered;highit1 remains queued for final card completion. See T021 report and high_thin_G0/it2/deadline_delivery.json;queue05 continues T023 lowit0 image,then highit2 when finished.
