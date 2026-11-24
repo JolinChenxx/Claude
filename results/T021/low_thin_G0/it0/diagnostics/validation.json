@@ -1,0 +1,314 @@
+{
+  "collected": "2026-11-24T09:56:55.411325+08:00",
+  "job_id": "T021_post_low_it0_01",
+  "commands": [
+    {
+      "name": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T021\\low_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-24T09:45:28.025968+08:00",
+      "log": "D:\\sim_runs\\T021_post_low_it0_01\\emission.log",
+      "returncode": 0,
+      "finished": "2026-11-24T09:45:37.751372+08:00",
+      "seconds": 9.724756600000546
+    },
+    {
+      "name": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T021\\low_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-24T09:45:28.026964+08:00",
+      "log": "D:\\sim_runs\\T021_post_low_it0_01\\core_energy.log",
+      "returncode": 0,
+      "finished": "2026-11-24T09:45:36.615370+08:00",
+      "seconds": 8.588644899999963
+    },
+    {
+      "name": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T021\\low_thin_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-24T09:45:28.026964+08:00",
+      "log": "D:\\sim_runs\\T021_post_low_it0_01\\shock_track.log",
+      "returncode": 0,
+      "finished": "2026-11-24T09:45:30.671569+08:00",
+      "seconds": 2.644905199999812
+    }
+  ],
+  "checks": {
+    "emission": {
+      "rows": 12,
+      "missing_row_indices_zero_based": {},
+      "infinity_count": 0,
+      "nearest_snapshots": [
+        {
+          "requested_ns": 100,
+          "snapshot": 40,
+          "actual_ns": 99.99261
+        },
+        {
+          "requested_ns": 150,
+          "snapshot": 60,
+          "actual_ns": 149.9376
+        },
+        {
+          "requested_ns": 200,
+          "snapshot": 80,
+          "actual_ns": 199.9619
+        },
+        {
+          "requested_ns": 250,
+          "snapshot": 100,
+          "actual_ns": 249.8894
+        },
+        {
+          "requested_ns": 300,
+          "snapshot": 120,
+          "actual_ns": 299.867
+        },
+        {
+          "requested_ns": 400,
+          "snapshot": 160,
+          "actual_ns": 399.8944
+        },
+        {
+          "requested_ns": 500,
+          "snapshot": 200,
+          "actual_ns": 499.926
+        },
+        {
+          "requested_ns": 600,
+          "snapshot": 240,
+          "actual_ns": 599.9994
+        },
+        {
+          "requested_ns": 700,
+          "snapshot": 280,
+          "actual_ns": 699.9681
+        },
+        {
+          "requested_ns": 800,
+          "snapshot": 320,
+          "actual_ns": 799.9186
+        },
+        {
+          "requested_ns": 1000,
+          "snapshot": 400,
+          "actual_ns": 999.8651
+        },
+        {
+          "requested_ns": 1200,
+          "snapshot": 480,
+          "actual_ns": 1199.986
+        }
+      ]
+    },
+    "core_energy": {
+      "rows": 131,
+      "missing_row_indices_zero_based": {
+        "E_int": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "E_kin": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "T_mw": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "P_rad": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "V": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "dEdt": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "P_other": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "infinity_count": 0
+    },
+    "shock_track": {
+      "rows": 521,
+      "missing_row_indices_zero_based": {
+        "R_axis_um": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "R_surf_um": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "infinity_count": 0
+    }
+  },
+  "files": [
+    {
+      "source": "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\diag_emission.csv",
+      "archive": "results\\T021\\low_thin_G0\\it0\\diagnostics\\diag_emission.csv",
+      "bytes": 6117,
+      "sha256_raw_bytes": "36a68f6db766ce53904283c93013e2b6303d653125b40526a4d35e760b6e82d6",
+      "source_mtime": "2026-11-24T09:45:37.672762+08:00"
+    },
+    {
+      "source": "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\core_energy.csv",
+      "archive": "results\\T021\\low_thin_G0\\it0\\diagnostics\\core_energy.csv",
+      "bytes": 22398,
+      "sha256_raw_bytes": "c4bf086aa983ce2b1946fa9b0363fa984e6c2bb4962b82f647273188e38218fa",
+      "source_mtime": "2026-11-24T09:45:36.533922+08:00"
+    },
+    {
+      "source": "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\shock_track.csv",
+      "archive": "results\\T021\\low_thin_G0\\it0\\diagnostics\\shock_track.csv",
+      "bytes": 21347,
+      "sha256_raw_bytes": "c8a64eb3c669327779dd4b609c75a7888a9f7a80195f76cf2e556b26a9950cda",
+      "source_mtime": "2026-11-24T09:45:30.622589+08:00"
+    },
+    {
+      "source": "D:\\sim_runs\\T021_post_low_it0_01\\emission.log",
+      "archive": "results\\T021\\low_thin_G0\\it0\\diagnostics\\emission.log",
+      "bytes": 1364,
+      "sha256_raw_bytes": "73e5c3a6b3d2863b7639ecd82f16222c96e53e0646e8a2cb6fc8f588e43809c7",
+      "source_mtime": "2026-11-24T09:45:37.668779+08:00"
+    },
+    {
+      "source": "D:\\sim_runs\\T021_post_low_it0_01\\core_energy.log",
+      "archive": "results\\T021\\low_thin_G0\\it0\\diagnostics\\core_energy.log",
+      "bytes": 1395,
+      "sha256_raw_bytes": "9899565d8105daa917408b8023ca76f0e16f8aff121967ae2efdbddf0efa8208",
+      "source_mtime": "2026-11-24T09:45:36.535914+08:00"
+    },
+    {
+      "source": "D:\\sim_runs\\T021_post_low_it0_01\\shock_track.log",
+      "archive": "results\\T021\\low_thin_G0\\it0\\diagnostics\\shock_track.log",
+      "bytes": 952,
+      "sha256_raw_bytes": "8f9fda0b4e747357f8b8669f120761ceb122deef672f58eedadc0d89606ec3e0",
+      "source_mtime": "2026-11-24T09:45:30.625093+08:00"
+    }
+  ],
+  "index_sha256": "0feb14cc7471b9e4b85ea17310e7aa86955627e6f144e31449666b38a662fde6",
+  "input_sha256": {
+    "D:\\sim_tools\\envs\\lipsim\\python.exe": "ebaa567a05430aed7b109d77f47098584c5bdc746d9816125349b5a0ad65f2f3",
+    "D:\\sim_runs\\T021\\low_thin_G0\\it0\\budget.csv": "91759f05181ab4e352f01f991c2b76f2b2a945d1eea0caa4eb2ec3c55530923e",
+    "D:\\sim_runs\\T021\\low_thin_G0\\it0\\pluto.ini": "6d4648907e3cad0b6d382de1cd5f35e7b41753ad6527adc6d468f94eec513766",
+    "D:\\sim_runs\\T021\\low_thin_G0\\it0\\grid.out": "830220b477babb2dd03883c1d7665d3a40040f915dd2700eb1a2e89288d19fca",
+    "D:\\sim_runs\\T021\\low_thin_G0\\it0\\dbl.out": "0feb14cc7471b9e4b85ea17310e7aa86955627e6f144e31449666b38a662fde6",
+    "D:\\sim_runs\\T021\\low_thin_G0\\it0\\source\\source_meta.json": "5045e29b757e8758e6b7173fdb83b92bb61ad937ba52e43844211f0efec5e29e",
+    "D:\\sim_runs\\tables\\v1c\\eos.bin": "8b700ab167f533387a1242a98f35463ab7701cb1474854885bc4a2ae7dd3073b",
+    "D:\\sim_runs\\tables\\v1c\\opt.bin": "6e5c5232a139e95590ea7776c7312631aae4ec18685bc7262be5aeac054ea127",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml": "24a63bdd39f3a50cdf86d96e634faf5c5113e5ca72de2236fe53ce50662b89c6",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\batch.py": "04158d8d8386e0a6fba12d65087b79adeeba41420e50907e9d8439f055d95c95",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\mixture.py": "56934447fcf8dc227d3c2e8b6e5b1a225439c5094f140443227052b4de004b1e",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\nist_io.py": "1aa6573dc427e2e64fef953f336c884eae38962f74caf9e6e2b2e4812acc4918",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\saha.py": "def50734a6934545a8dad68c4fc380c88d7e506ebab5dc4bbce9ab1b08978d30",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\thermo.py": "850b327e1d3f9c6a94fa3bbb8ca88575f87686a8cdcc031b25a90a5cca5cafc2",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\__main__.py": "f55e9b4028342fa8faf599e0da3128c37dc67f782dab716d8c8e6be011e06449",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\camera.py": "cdd7815e03566e986f0d8ee5e8089cb1832dfdf4042b65a4ffbb616829bcaa24",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\dispatch.py": "e08a9bc3edb8aff521c193d3f97cd8c6d70d0f747dc04c476499793b7545953e",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\forward.py": "f64b066f0f757429bb330c9129021e6cded49dce8ccd1992dbfc8dd84c327e96",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\run.py": "591d787e663bb6e4ddf45e9ce9c20a45ce4f67a5a5b4afe824bc31dec3ef13e1",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\io\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\io\\pluto.py": "63e3a735d1acbc3b7f5811637c28873b338294aa898b01c0c02ae7ff1b3b737f",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\optics\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\optics\\props.py": "b83c3362dd555ae0f01005e2ec534b23cab853832ff2a67205b735d26291cb8b",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\params.py": "225ef24ac814eab94a53f0a6bd8cf5cb6d5afd3665b57df176fd19cd3cb216ac",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\pipeline\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\pipeline\\expframes.py": "4fd70b7e5178ebb44d1500d7c6d9e9d3d253269710b630c8545000e4b790c15d",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\pipeline\\metrics.py": "e45efb3ce530fd3963d315dbf2444d5c29068cf367c24648feac1787217d2be5",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\tables\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\tables\\build.py": "aa3beb0a1fd0c85417834cdbd7c5be57c45bed1563bcbb7126b13ae57eab2a40",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\target\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\target\\build.py": "fdef1bee9680baba88bd97c421c38b262fa48f2bcbc62841a945ab4af3f370db",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\target\\model.py": "025a8c7944f4c7e2ff7cd89d103f68ca07ea56c90869d92d1689be80d598de34",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\transport\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\transport\\diffusion.py": "7edacfab2f6735a516989b9f63f55d91b2cf89f3fcfc8635b1943227de88d389",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\transport\\kappa.py": "8c3efe2cd9605074e733fd6cf992da80aaec24b9c14518e2b445f2e9f9efa347",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py": "198a84a9c8ea3106b668b28f503d32c5cebd370c9eaaf17cf1062ab7ee93d9cf",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py": "f92b90658bde6ed7844c7b9cf475f60eead10a4e8b0c377c749f7a579eb61d3e",
+    "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py": "315da9f876e79dd4a32e993e02f1ef3cce36a43a23fd42c0e769a14924408c41"
+  },
+  "missing_value_policy": "Original empty fields retained. Core rows 0-3 have no Y>0.5 core; the first finite core row also lacks the centered derivative. Missing shock fronts remain missing; no interpolation or replacement.",
+  "image_v2": "Separate stage remains in the same existing queue; these diagnostic files are complete independently of its state."
+}
