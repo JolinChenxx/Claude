@@ -1,1 +1,0 @@
-T029 low G0 it1: independent job finished at 06:28:21, all five stages rc 0. See results/T029/low_thin_G0/it1/ for six 30-frame archives (including band-b), metrics, diagnostics, peak and hash receipt; band-b baseline P1 thin/sa 423.73/379.46 ns.
