@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T00:07:41+08:00 (UTC+8)
+- T026: all five production and postprocessing deliveries archived for review. T027 high G0 it1: 800 ns, rc 0; budget, checkpoints and rank evidence handed off. Both reports synced and both handoffs consumed.
+- At 00:07 UTC+8: T023 high G1 it0 360.4943 ns; T027 high G0 it2 53.99785 ns; T028 high/low G1 it0 50.99949/83.99603 ns. Queue 07 imaging T027 high G0 it0. T021/T025/T026 production finished.
+- T029 claimed; build and nine tests passed, both configurations verified in preview. Capacity at 00:06: 40 MPI ranks and 24 imaging workers on 64 physical cores; production awaits 16 free cores. No other ready card. ws at 8366ba7.
+
 ## 2026-11-24T23:32:28+08:00 (UTC+8)
 - T026 high G0 it1: verified five successful commands, 29 times, six native frame archives, 18 metric tables, 29 peak rows and three diagnostics. Handoff pushed on ws at d07169b; synced report hash verified. Band-b P1 thin/sa 227.34284/194.63325 ns; P2 unavailable in all 18 cases. Queue 07 proceeded to T026 high G0 it2 imaging.
 - Both actual T028 G1 it0 ini files matched BACKP 1, BD_ON 0, DROP_TB 2835, VMOM 0. At 23:31:09, T028 high/low budget times were 36.49773/64.49728 ns; T023 high G1 it0 and T027 high G0 it1 were at 351.9926/275.9905 ns. The T025 production wrapper exited 0; its old PID was reused by a later Python process. No process stopped or relaunched.
@@ -178,10 +183,3 @@
 - Budget snapshot2026-11-24T15:41:56+08:00:T023 high_thin_G0/it0=800,it1=800,it2=691.9865ns;high_thin_G1/it0=174.4945ns;high_trap_G0/it0=800,it1=800,it2=546.4776ns;low_thin_G0/it0=1300,it1=609.493ns;low_trap_G0/it0=1300,it1=622.4966ns. All active members advanced since preceding pass.
 - T024 high_thin_G0/it0=75.49651ns,low_thin_G0/it0=135.9894ns. High remains below80ns;required nearest30/40/60/80ns tr2-inclusive extraction is not due yet. Next pass check this threshold and send the prescribed extraction/budget handoff when met. No foreground wait or premature extraction.
 - T021 production complete;remaining images/peaks are already queued in authorized order. Collect only completed milestones,next ensure latest-low deadline delivery. Pinned scientific runtime remains unchanged. No process stopped/restarted,parameters changed,data deleted,new job launched,or report/artifact change to sync. Unrelatedoutput/ preserved. Updated only codex-status heartbeat;no user action needed.
-
-## 2026-11-24T15:27:18+08:00 (UTC+8)
-- Work cards:T021/T023/T024 monitoring only. Pulled ws51f54f8;Claude consumed queue05 launch handoff. Only incoming instruction is the active21:00 full-comparison deadline;no new action or authorization. No new completed production/postprocessing stage,and no ready Codex card;no eligible card skipped.
-- job.ps1 status:T023PID14496,T024PID37412,T021_T023_post_05PID32784 all running. Creation epochs match1795484727.6840496,1795503549.0785756,1795505005.892073 respectively;all stderr0bytes,no exitcodes. Queue05 remains in T021 high_thin_G0/it2 imaging,completed new commands0,milestones empty. Its108 frozen common/recovery inputs and runner hash still match. Previously completed3 diagnostics remain reused,not rerun.
-- Budget snapshot2026-11-24T15:26:57+08:00:T023 high_thin_G0/it0=800,it1=800,it2=675.9884ns;high_thin_G1/it0=164.4916ns;high_trap_G0/it0=800,it1=800,it2=505.4867ns;low_thin_G0/it0=1300,it1=589.4769ns;low_trap_G0/it0=1300,it1=609.4839ns. All active members advanced since preceding pass.
-- T024 high_thin_G0/it0=62.49899ns,low_thin_G0/it0=120.986ns. High has not reached80ns,so required30/40/60/80ns tr2 extraction is not yet due;no premature extraction. T021 production complete;remaining image/peak stages already queued. Deadline handoff awaits completed image milestones/latest low iteration. Pinned scientific runtime is unchanged and never pulled.
-- No computation launched,process stopped/restarted,physics/numerics changed,raw data deleted,or foreground wait. No report/artifact change to sync. Unrelatedoutput/ preserved. Required heartbeat STATUS updated on codex-status only;no user action needed.
