@@ -43,8 +43,8 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
 LOGFMT = FuncFormatter(lambda v, _: f"{v:g}")
 T_REF = 300.0  # num (registry t_ref_norm, ns)
 K = "#222222"
-COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad"}
-LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）"}
+COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b"}
+LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）"}
 
 
 def latest(base, its):
@@ -59,11 +59,13 @@ MEMBERS = {
     "high": {"baseline": latest("results/T016e/high_thin_G0", ["it2"]),
              "droplets": latest("results/T021/high_thin_G0", ["it2"]),
              "backpress": latest("results/T023/high_thin_G0", ["it2", "it1"]),
-             "combo": latest("results/T025/high_thin_G0", ["it2", "it1", "it0"])},
+             "combo": latest("results/T025/high_thin_G0", ["it2", "it1", "it0"]),
+             "elim": latest("results/T026/high_thin_G0", ["it2", "it1", "it0"])},
     "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
             "droplets": latest("results/T021/low_thin_G0", ["it1"]),
             "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
-            "combo": latest("results/T025/low_thin_G0", ["it1", "it0"])},
+            "combo": latest("results/T025/low_thin_G0", ["it1", "it0"]),
+            "elim": latest("results/T026/low_thin_G0", ["it1", "it0"])},
 }
 SHOCK = {"high": {"baseline": "results/T016e/high_thin_G0/it2/shock_track.csv"},
          "low": {"baseline": "results/T016e/low_thin_G0/it2/shock_track.csv"}}
