@@ -1,0 +1,96 @@
+{
+  "recorded": "2026-11-24T15:23:55.179158+08:00",
+  "job": {
+    "id": "T021_T023_post_05",
+    "pid": 32784,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe results\\T021\\postprocessing\\launch_deadline_05.py",
+    "threads": 1,
+    "commit": "affa648",
+    "started": "2026-11-24T15:23:25",
+    "dir": "D:\\sim_runs\\T021_T023_post_05"
+  },
+  "wrapper_creation_epoch": 1795505005.892073,
+  "runner_identity": {
+    "recorded": "2026-11-24T15:23:26.062786+08:00",
+    "pid": 18376,
+    "creation_epoch": 1795505005.9625733,
+    "processor_group": 0,
+    "logical_processors": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31,
+      33,
+      35,
+      37,
+      39,
+      41,
+      43,
+      45,
+      47
+    ],
+    "priority": "BelowNormal",
+    "runtime_path_prefix": [
+      "D:\\sim_tools\\envs\\lipsim",
+      "D:\\sim_tools\\envs\\lipsim\\Library\\bin",
+      "D:\\sim_tools\\envs\\lipsim\\Scripts"
+    ],
+    "launcher_sha256": "58fc3a7e2fc53873290082d84290ce09037db6869ba024d16a404dd9ce616e81",
+    "note": "24 secondary SMT lanes; child processes inherit affinity and priority. Production affinities unchanged; no exclusive-core claim."
+  },
+  "state": "running",
+  "stderr_bytes": 0,
+  "exitcode_exists": false,
+  "admitted_runs": [
+    [
+      "T021",
+      "high_thin_G0",
+      "2"
+    ]
+  ],
+  "production_identities": {
+    "T023": {
+      "pid": 14496,
+      "creation_epoch": 1795484727.6840496,
+      "identity_matches": true
+    },
+    "T024": {
+      "pid": 37412,
+      "creation_epoch": 1795503549.0785756,
+      "identity_matches": true
+    }
+  },
+  "progress": {
+    "T023": {
+      "high_thin_G0\\it0": 800.0,
+      "high_thin_G0\\it1": 800.0,
+      "high_thin_G0\\it2": 657.9805,
+      "high_thin_G1\\it0": 163.4881,
+      "high_trap_G0\\it0": 800.0,
+      "high_trap_G0\\it1": 800.0,
+      "high_trap_G0\\it2": 493.9784,
+      "low_thin_G0\\it0": 1300.0,
+      "low_thin_G0\\it1": 584.9736,
+      "low_trap_G0\\it0": 1300.0,
+      "low_trap_G0\\it1": 606.9908
+    },
+    "T024": {
+      "high_thin_G0\\it0": 60.49802,
+      "low_thin_G0\\it0": 107.4678
+    }
+  },
+  "ready_cards": [],
+  "note": "Immediate launch bookkeeping only. No wait or newly started stage collection."
+}

@@ -1,0 +1,2 @@
+2026-11-24T15:23:55.179158+08:00: Authorized remaining queue T021_T023_post_05 started via job.ps1,PID 32784,commit affa648;explicit Python runtime PATH,24 secondary SMT lanes,BelowNormal,pinned scientific runtime1c71670. Immediate state running in T021 high-it2 image;original3 rc0 diagnostics reused.
+Queue04 image startup failed with BrokenProcessPool/Windows0xc06d007f;original evidence retained,no image files overwritten,no production stopped.24-worker runtime smoke passed;exact DLL cause unproven. Requeue note consumed;21:00 full-comparison deadline remains active.
