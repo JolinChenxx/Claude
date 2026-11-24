@@ -6,6 +6,7 @@ import hashlib
 import json
 import math
 import shutil
+import sys
 
 import numpy as np
 import pandas as pd
@@ -14,8 +15,10 @@ import yaml
 REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 JOB = Path('D:/sim_runs/T023_T025_T026_post_06b')
-RAW = Path('D:/sim_runs/T026/low_thin_G0/it0')
-OUT = REPO / 'results/T026/low_thin_G0/it0'
+BATCH = sys.argv[1] if len(sys.argv) == 2 else 'T026'
+assert BATCH in ('T025', 'T026')
+RAW = Path('D:/sim_runs') / BATCH / 'low_thin_G0/it0'
+OUT = REPO / 'results' / BATCH / 'low_thin_G0/it0'
 
 
 def sha(path):
@@ -40,9 +43,9 @@ def copy(source, target):
 def main():
     assert not (OUT / 'priority_delivery.json').exists(), 'Milestone already collected'
     queue = json.loads((JOB / 'postprocess_summary.json').read_text())
-    match = lambda r: (r['batch'], r['member'], r['iteration']) == ('T026', 'low_thin_G0', 'it0')
+    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, 'low_thin_G0', 'it0')
     milestone, = [r for r in queue['milestones_ready_for_collection'] if match(r)]
-    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == 'T026' and r['registry_row']['run'] == 'low_thin_G0' and r['registry_row']['picard_it'] == '0']
+    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == 'low_thin_G0' and r['registry_row']['picard_it'] == '0']
     commands = {r['name']: r for r in queue['commands'] if match(r)}
     commands.update({r['name']: r for r in run['reused_completed_commands']})
     assert set(commands) == {'image_v2', 'peak_lift', 'core_energy', 'shock_track', 'emission'}
@@ -134,7 +137,7 @@ def main():
                 'input_sha256': run['input_sha256'],
                 'policy': 'Full original image_v2, diagnostics, peak and logs. No calculation rerun, value adjustment or interpolation. Original no-core/no-front and experimental-bracket missing values and any unavailable P2 retained.'}
     (OUT / 'priority_delivery.json').write_text(json.dumps(evidence, indent=2) + '\n', encoding='utf-8')
-    total = sum(p.stat().st_size for p in (REPO / 'results/T026').rglob('*') if p.is_file())
+    total = sum(p.stat().st_size for p in (REPO / 'results' / BATCH).rglob('*') if p.is_file())
     assert total < 20 * 1024**2
     print(json.dumps({'frames': len(times), 'peak_rows': len(peak), 'diagnostics': checks, 'peak_original_missing_t_ns': peak_missing,
                       'P2_unavailable': len(evidence['P2_unavailable']), 'baseline_b': evidence['baseline_b'],
