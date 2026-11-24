@@ -1,5 +1,11 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T19:04:13+08:00 (UTC+8)
+- T026/T025/T023: priority runner pushed on ws at 54c4ef0. Pinned preflight and post-300 ns growth checks passed for T026 low it0 and T025 high it0; latest finished T025 iteration will be selected again at admission.
+- job.ps1: successor T023_T025_T026_post_06b PID 14288, waiting_for_queue05_boundary, group 1 with 24 secondary SMT lanes. Queue05 PID 32784 is imaging T023 low_trap_G0/it0. No production stop or new image delivery. Initial post_06 exited 1 before computation due to a processor-group mismatch; original logs preserved.
+- Next: T026 low it0, T025 high latest completed, T023 low thin it1 and T026 high it0 when finished, then lower-priority members. Both priority and 21:00 notes remain open until cutover/delivery. No ready Codex card.
+- Production jobs T023/T025/T026 running; budget times (ns): T023/high_thin_G1/it0 2.269885e+002; T023/low_thin_G0/it1 8.844850e+002; T023/low_trap_G0/it1 9.474851e+002; T025/high_thin_G0/it1 1.094971e+002; T026/high_thin_G0/it0 2.119681e+002; T026/low_thin_G0/it1 1.121264e+003.
+
 ## 2026-11-24T18:45:40+08:00 (UTC+8)
 - T026 low_thin_G0/it0 production completed rc0 at 1300 ns (2541.1 s, 2576 finite budget rows). Final residual +2.10613e-9 J, final condensed mass 9.94272e-13 kg, 581952 ConsToPrim warnings. Maximum post-300 ns growth 1.47998e-14 J is below 2e-7 J. Checkpoints, mass history, rank evidence and report delivered. T026 low-it1 source and actual ini verified; low-it0 image, diagnostics and peak await the shared postprocessing allocation.
 - T023 high_trap_G0/it1 postprocessing delivered (18 metric tables, 29 peak rows, original missing P2 retained). Verified six frame archive hashes; original NPZs remain local. Also delivered low_trap_G0/it0 diagnostics: 131 core, 521 shock and 12 emission rows. Its image stage is running. Queue05: 25 commands complete, five milestones delivered. The 21:00 note remains active for latest low-thin; it0 is delivered and it1 is still running.
@@ -231,8 +237,3 @@
 - Work card: none. User-requested retry: git pull --rebase origin ws succeeded with the existing proxy configuration; ws is current at d6b6ef4. Separate codex-status pull also succeeded. The previous locally committed failure entry is preserved for synchronization with this entry.
 - Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity. No active card requires job.ps1 polling and no ready card was skipped.
 - No task claimed, job launched, result collected or handoff required. Unrelated output/ preserved. No ws edits, configuration changes or process intervention. Connectivity recovered; no user action required.
-
-## 2026-11-24T07:53:50+08:00 (UTC+8)
-- Work card: none. Required git pull --rebase origin ws failed: configured proxy 127.0.0.1:7897 refused connection; no listener was found on that port. A command-local direct GitHub connectivity check also failed with a low-speed timeout. Repository configuration and system settings were not changed; remote task state is unverified.
-- Local-only inspection: ws d6b6ef4; incoming to_codex empty; 32 Codex cards, with T012/T013 draft and 30 done. No locally active card requires job.ps1 polling. No local ready card exists; no task claimed or launched while remote synchronization is unavailable. Unrelated output/ preserved.
-- Separate codex-status pull also failed. This entry is saved locally for later synchronization; its push will be attempted after the local commit. Restore the local proxy or GitHub connectivity before remote task polling can resume. No ws edits or process intervention.
