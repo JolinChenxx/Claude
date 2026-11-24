@@ -1,0 +1,41 @@
+{
+  "recorded": "2026-11-24T14:59:09+08:00",
+  "job": {
+    "id": "T024",
+    "pid": 37412,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T024.yaml --max-cores 16",
+    "threads": 1,
+    "commit": "282c821",
+    "started": "2026-11-24T14:59:09",
+    "dir": "D:\\sim_runs\\T024"
+  },
+  "wrapper_creation_epoch": 1795503549.0785756,
+  "state": "running",
+  "exitcode_exists": false,
+  "stderr_bytes": 0,
+  "children_at_immediate_check": [
+    {
+      "pid": 39724,
+      "name": "conhost.exe",
+      "creation_epoch": 1795503549.1167374
+    },
+    {
+      "pid": 37544,
+      "name": "python.exe",
+      "creation_epoch": 1795503549.1604667
+    }
+  ],
+  "runtime_inputs": [
+    {
+      "member": "high_thin_G0",
+      "ini_exists": false,
+      "next_action": "Check actual ini after target generation on next pass; preflight previews passed."
+    },
+    {
+      "member": "low_thin_G0",
+      "ini_exists": false,
+      "next_action": "Check actual ini after target generation on next pass; preflight previews passed."
+    }
+  ],
+  "policy": "Immediate launch snapshot only; no wait for target generation, production, or80ns threshold."
+}
