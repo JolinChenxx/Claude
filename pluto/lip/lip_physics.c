@@ -128,3 +128,105 @@ double lip_src_get(const LipSrcTable *s, int k, double t, double r)
   return (1 - wt) * ((1 - wr) * f[i * nr + j] + wr * f[i * nr + j + 1])
        + wt * ((1 - wr) * f[(i + 1) * nr + j] + wr * f[(i + 1) * nr + j + 1]);
 }
+
+/* ------------------------------------------------------------- v1m: two-temperature breakdown (Cu) */
+#define BD_KB 1.380649e-23
+#define BD_E  1.602176634e-19
+#define BD_ME 9.1093837015e-31
+#define BD_H  6.62607015e-34
+#define BD_C  2.99792458e8
+#define BD_EPS0 8.8541878128e-12
+#define BD_MCU (63.546 * 1.66053906660e-27)
+#define BD_CHI 7.72638          /* registry IP_Cu_I, eV */
+#define BD_LAMBDA 1.064e-6
+
+double lip_e1(double x)
+{
+  /* exponential integral E1(x), x > 0: series for x <= 1, continued fraction (Lentz) otherwise */
+  if (x <= 1.0) {
+    double s = 0.0, term = 1.0;
+    for (int k = 1; k < 60; k++) {
+      term *= -x / k;
+      s += -term / k;
+      if (fabs(term / k) < 1e-17 * fabs(s)) break;
+    }
+    return -0.57721566490153286 - log(x) + s;
+  }
+  double b = x + 1.0, c = 1e300, d = 1.0 / b, h = d;
+  for (int i = 1; i < 300; i++) {
+    double an = -(double)i * i;
+    b += 2.0;
+    d = 1.0 / (an * d + b);
+    c = b + an / c;
+    double del = c * d;
+    h *= del;
+    if (fabs(del - 1.0) < 1e-16) break;
+  }
+  return h * exp(-x);
+}
+
+double lip_k_ion_cu(double Te, double lotz_a)
+{
+  /* Lotz (1967) single-shell (4s, q = 1) Maxwellian rate, m^3/s; lotz_a in m^2 eV^2 */
+  double kT = BD_KB * Te / BD_E;
+  if (kT <= 0.0) return 0.0;
+  double x = BD_CHI / kT;
+  if (x > 700.0) return 0.0;
+  return lotz_a / BD_CHI * sqrt(8.0 * BD_E / (CONST_PI_LIP * BD_ME * kT)) * lip_e1(x);
+}
+
+double lip_saha_cu(double Te)
+{
+  /* n_e n_II / n_I [m^-3]; Q_I = 2 + 6 exp(-1.389/kT) + 4 exp(-1.642/kT) (3d10 4s 2S, 3d9 4s2 2D), Q_II = 1 */
+  double kT = BD_KB * Te / BD_E;
+  double QI = 2.0 + 6.0 * exp(-1.389 / kT) + 4.0 * exp(-1.642 / kT);
+  double lam = pow(2.0 * CONST_PI_LIP * BD_ME * BD_KB * Te / (BD_H * BD_H), 1.5);
+  return 2.0 * (1.0 / QI) * lam * exp(-BD_CHI / kT);
+}
+
+double lip_alpha_2t(double ne, double Te, double n0, double sig_m)
+{
+  /* 1064 nm absorption with electron temperature Te: e-neutral Drude (momentum-transfer frequency) with the
+     quantum factor (1 - e^-x)/x, plus e-ion Kramers (Z = 1, n_i = n_e, Gaunt 1) with stimulated emission. */
+  double nu = BD_C / BD_LAMBDA, om = 2.0 * CONST_PI_LIP * nu, x = BD_H * nu / (BD_KB * Te);
+  double vth = sqrt(8.0 * BD_KB * Te / (CONST_PI_LIP * BD_ME));
+  double k_en = ne * BD_E * BD_E * (n0 * sig_m * vth) / (BD_EPS0 * BD_ME * BD_C * om * om) * (-expm1(-x)) / x;
+  double e2 = BD_E * BD_E / (4.0 * CONST_PI_LIP * BD_EPS0);
+  double K = (4.0 / 3.0) * sqrt(2.0 * CONST_PI_LIP / (3.0 * BD_ME * BD_KB * Te)) * e2 * e2 * e2 / (BD_H * BD_C * BD_ME * nu * nu * nu);
+  return k_en + K * ne * ne * expm1(x);
+}
+
+double lip_te_qs(double I, double ne, double n0, double Th, double sig_m, double lotz_a)
+{
+  /* quasi-steady electron temperature: absorbed power per electron = elastic loss to heavies + ionisation power */
+  if (ne <= 0.0 || I <= 0.0) return Th;
+  double lo = Th, hi = 3.0e5;
+  for (int it = 0; it < 80; it++) {
+    double Te = 0.5 * (lo + hi);
+    double P = lip_alpha_2t(ne, Te, n0, sig_m) * I / ne;
+    double vth = sqrt(8.0 * BD_KB * Te / (CONST_PI_LIP * BD_ME));
+    double Qel = 3.0 * BD_ME / BD_MCU * (n0 * sig_m * vth) * 1.5 * BD_KB * (Te - Th);
+    double Qi = lip_k_ion_cu(Te, lotz_a) * n0 * BD_CHI * BD_E;
+    if (P > Qel + Qi) lo = Te; else hi = Te;
+    if (hi - lo < 1e-6 * hi) break;
+  }
+  return 0.5 * (lo + hi);
+}
+
+double lip_ne_step(double ne, double nCu, double Te, double dt, double lotz_a)
+{
+  /* backward Euler for dn/dt = k_i n (nCu - n) - (k_i / S) n^3 (Cu I <-> Cu II, three-body by detailed balance) */
+  double ki = lip_k_ion_cu(Te, lotz_a), S = lip_saha_cu(Te);
+  if (ki <= 0.0 || nCu <= 0.0) return ne;
+  double n = ne;
+  for (int it = 0; it < 60; it++) {
+    double f = n - ne - dt * (ki * n * (nCu - n) - ki / S * n * n * n);
+    double df = 1.0 - dt * (ki * (nCu - 2.0 * n) - 3.0 * ki / S * n * n);
+    double nn = n - f / df;
+    if (nn <= 0.0) nn = 0.5 * n;
+    if (nn > nCu) nn = 0.5 * (n + nCu);
+    if (fabs(nn - n) < 1e-12 * n) { n = nn; break; }
+    n = nn;
+  }
+  return n;
+}

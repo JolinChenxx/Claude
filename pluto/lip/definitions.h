@@ -8,9 +8,9 @@
 #define  COOLING                        NO
 #define  RECONSTRUCTION                 LINEAR
 #define  TIME_STEPPING                  RK2
-#define  NTRACER                        1
+#define  NTRACER                        2   /* tr1 = Y_Cu; tr2 = v1m non-equilibrium electrons per Cu-atom mass (BD_ON) */
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            15
+#define  USER_DEF_PARAMETERS            18
 
 /* -- physics dependent declarations -- */
 #define  DUST_FLUID                     NO
@@ -36,6 +36,9 @@
 #define  DROP_T0                        12  /* s, start of droplet release window */
 #define  DROP_T1                        13  /* s, end of droplet release window */
 #define  BACKP                          14  /* 1 = Knight evaporation with back pressure (v1k); 0 = sonic (v1j) */
+#define  BD_ON                          15  /* 1 = v1m two-temperature avalanche breakdown during the pulse; 0 = LTE only */
+#define  SIG_EN                         16  /* m^2, electron momentum-transfer cross-section (registry sigma_en_Cu) */
+#define  LOTZ_A                         17  /* m^2 eV^2, Lotz constant for Cu 4s (registry lotz_a_cu) */
 
 /* -- supplementary constants (user editable) -- */
 #define  UNIT_DENSITY                   1.0e-3   /* g/cm^3 = 1 kg/m^3 */

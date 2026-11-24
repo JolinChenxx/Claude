@@ -23,6 +23,8 @@ static int  s_mdot, s_Tv, s_rhov, s_uv, s_A, s_Ts;
 static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
 static double *trans = NULL, *pw_cell = NULL;
 static double B_bp[1];   /* v1k: evaporated mass suppressed by back pressure (kg) */
+static double B_bd[1];   /* v1m: energy held in non-equilibrium ionisation (J, cumulative transfer = current store) */
+static double **I_cell = NULL, **Te_cell = NULL;
 static double B[9];   /* budget: inc, gas_abs, targ_abs, esc, rad, rad_limited, mass_src, energy_src, wall (gas->target) */
 
 void lip_init(void)
@@ -41,7 +43,7 @@ void lip_init(void)
 #if THERMAL_CONDUCTION != NO
   if (i_kappa < 0 || s_Ts < 0 || i_D < 0 || i_dh < 0) { printLog("! lip: conduction build needs opt.bin fields kappa, D_cuair, dh_dY and source field Ts (v1 step-2 tables)\n"); QUIT_PLUTO(1); }
 #endif
-  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp));
+  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd));
   lip_ready = 1;
 }
 
@@ -123,7 +125,17 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
     trans = ARRAY_1D(NX1_TOT, double);
     pw_cell = ARRAY_1D(NX1_TOT, double);
     for (i = 0; i < NX1_TOT; i++) pw_cell[i] = 0.0;
+    I_cell = ARRAY_2D(NX2_TOT, NX1_TOT, double);
+    Te_cell = ARRAY_2D(NX2_TOT, NX1_TOT, double);
+    for (j = 0; j < NX2_TOT; j++) for (i = 0; i < NX1_TOT; i++) { I_cell[j][i] = 0.0; Te_cell[j][i] = 0.0; }
   }
+  /* v1m (PREREG 2026-11-24): two-temperature avalanche breakdown of Cu vapour while the pulse is on */
+  const double mCu_bd = 63.546 * 1.66053906660e-27, mAir_bd = 28.96 * 1.66053906660e-27;   /* registry A_Cu, amu; air */
+  const double chiJ_bd = 7.72638 * 1.602176634e-19;                                          /* registry IP_Cu_I */
+  int bd_active = 0;
+#if NTRACER > 1
+  bd_active = g_inputParam[BD_ON] > 0.5 && t_SI < g_inputParam[T_PEAK] + 1.5 * g_inputParam[FWHM];
+#endif
   double *dz = ARRAY_1D(nz, double), *al = ARRAY_1D(nz, double), *q = ARRAY_1D(nz, double);
   /* v1j droplet release: mass for this step (global, identical on all ranks) and the global weight sum */
   static double drop_done = 0.0;
@@ -161,6 +173,20 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       double rho = v[RHO] * LIP_RHO_SI, Y = lip_Y(v);
       dz[j - JBEG] = grid->dx[JDIR][j] * LIP_LEN_SI;
       al[j - JBEG] = lip_interp(&lip_opt, i_alpha, log10(rho), log10(T), Y, 1);
+      Te_cell[j][i] = T;
+#if NTRACER > 1
+      if (bd_active) {
+        double neL = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
+        double neN = fmax(v[TRC + 1] * rho / mCu_bd, neL);              /* LTE electrons seed the avalanche */
+        if (Y > 1e-3) {
+          double n0 = fmax(rho * Y / mCu_bd - neN, 0.0) + rho * (1.0 - Y) / mAir_bd;
+          double Te = lip_te_qs(I_cell[j][i], neN, n0, T, g_inputParam[SIG_EN], g_inputParam[LOTZ_A]);
+          double a2 = lip_alpha_2t(neN, Te, n0, g_inputParam[SIG_EN]);
+          if (a2 > al[j - JBEG]) al[j - JBEG] = a2;
+          Te_cell[j][i] = Te;
+        }
+      }
+#endif
     }
     /* 2. laser */
     double I_top = laser_I(r, t_SI);
@@ -168,6 +194,8 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
     double I_s, I_e;
     double absd = lip_laser_column(nz, dz, al, I_top, A_s, q, &I_s, &I_e);
     trans[i] = I_top > 0.0 ? I_s / I_top : 1.0;
+    for (j = JBEG; j <= JEND; j++)   /* local intensity for the next step's quasi-steady Te (v1m), I ~ q / alpha */
+      I_cell[j][i] = al[j - JBEG] > 0.0 ? q[j - JBEG] / al[j - JBEG] : I_top;
     B[0] += I_top * ring * dt_SI; B[1] += absd * ring * dt_SI;
     B[2] += A_s * I_s * ring * dt_SI; B[3] += I_e * ring * dt_SI;
     /* 3./4. update cells */
@@ -280,6 +308,35 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       double rhoe_new = E - 0.5 * m * (vr_new * vr_new + vz_new * vz_new);
       double Y_new = mY / m, T_new;
       lip_eos_T_from_e(&lip_eos, m, rhoe_new / m, Y_new, &T_new);
+#if NTRACER > 1
+      if (g_inputParam[BD_ON] > 0.5) {
+        /* v1m: electrons above the LTE value hold chi per electron outside the LTE EOS. Moving energy into or out of
+           that store is taken from / returned to rhoe, so total energy is conserved; after the pulse the store relaxes
+           to LTE (zero). The tracer carries electrons per Cu-atom mass (advected with rho). */
+        double neL_old = lip_interp(&lip_eos.tab, lip_eos.ine, log10(rho), log10(T), Y, 1);
+        double neN_old = v[TRC + 1] * rho / mCu_bd;
+        double Ex_old = chiJ_bd * fmax(neN_old - neL_old, 0.0);
+        double neL_new = lip_interp(&lip_eos.tab, lip_eos.ine, log10(m), log10(T_new), Y_new, 1);
+        double neN_new = neL_new;
+        if (bd_active && Y_new > 1e-3) {
+          double ne_s = fmax(neN_old, neL_old) * m / rho;            /* electrons conserved per mass through the sources */
+          neN_new = lip_ne_step(ne_s, m * Y_new / mCu_bd, Te_cell[j][i], dt_SI, g_inputParam[LOTZ_A]);
+        }
+        if (neN_new < neL_new) neN_new = neL_new;
+        double dEx = chiJ_bd * (neN_new - neL_new) - Ex_old;
+        double rhoe_fl = m * lip_eos_e(&lip_eos, m, g_inputParam[T_FLOOR], Y_new);
+        if (rhoe_new - dEx < rhoe_fl) {                              /* ionisation limited by the available energy */
+          dEx = rhoe_new - rhoe_fl;
+          neN_new = neL_new + (Ex_old + dEx) / chiJ_bd;
+        }
+        if (dEx != 0.0) {
+          rhoe_new -= dEx;
+          lip_eos_T_from_e(&lip_eos, m, rhoe_new / m, Y_new, &T_new);
+        }
+        B_bd[0] += dEx * dV;
+        d->Vc[TRC + 1][k][j][i] = neN_new * mCu_bd / m;
+      }
+#endif
       double p_new = lip_eos_p(&lip_eos, m, T_new, Y_new);
       d->Vc[RHO][k][j][i] = m / LIP_RHO_SI;
       d->Vc[VX2][k][j][i] = vz_new / LIP_VEL_SI;
@@ -313,7 +370,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[9], Bbpg[1];
+  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[9], Bbpg[1], Bbdg[1];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -331,15 +388,16 @@ void lip_analysis(const Data *d, Grid *grid)
   MPI_Allreduce(tot, glob, 4, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B, Bg, 9, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_bp, Bbpg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(B_bd, Bbdg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 #else
-  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp));
+  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp)); memcpy(Bbdg, B_bd, sizeof(B_bd));
 #endif
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_store\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0]);
     fclose(fp);
   }
   if (trans != NULL && grid->lbound[JDIR] != 0) {

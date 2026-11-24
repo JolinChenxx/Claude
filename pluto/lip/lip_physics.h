@@ -28,6 +28,16 @@ double lip_vapour_enthalpy(const LipEOS *eos, double rhov, double uv, double Tv)
 #define CONST_PI_LIP 3.14159265358979323846
 double lip_knight_bp(double pr, double *M, double *Tv_over_Ts, double *rhov_over_rhos);
 
+/* v1m two-temperature breakdown kernels (Cu only, SI). E1 exponential integral; Lotz electron-impact ionisation rate
+ * of Cu I (m^3/s, lotz_a in m^2 eV^2); Saha ratio n_e n_II/n_I (m^-3) with Cu I 2S + 2D levels; 1064 nm absorption with
+ * electron temperature Te (e-neutral Drude + e-ion Kramers); quasi-steady Te; backward-Euler ionisation step. */
+double lip_e1(double x);
+double lip_k_ion_cu(double Te, double lotz_a);
+double lip_saha_cu(double Te);
+double lip_alpha_2t(double ne, double Te, double n0, double sig_m);
+double lip_te_qs(double I, double ne, double n0, double Th, double sig_m, double lotz_a);
+double lip_ne_step(double ne, double nCu, double Te, double dt, double lotz_a);
+
 /* Source table on (t, r) axes (LIPTAB01 with axis names t, r): bilinear lookup of field k. */
 typedef struct { int nt, nr; double *t, *r; int nf; char name[16][17]; double *f[16]; } LipSrcTable;
 int    lip_src_read(const char *path, LipSrcTable *s);

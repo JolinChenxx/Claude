@@ -89,7 +89,9 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int,
     params = [("E_PULSE", las.E), ("D_BEAM", las.D), ("FWHM", las.fwhm), ("T_PEAK", las.t_peak),
               ("NEC_LIMIT", NEC[nec]), ("P_AMB", P.get("p_ambient")), ("T_AMB", P.get("T_ambient")),
               ("SRC_ON", src_on), ("T_FLOOR", P.get("T_ambient"))] + droplet_params(case_cfg, vaporised_mass_kg) + \
-             [("BACKP", 1 if (case_cfg.get("target") or {}).get("back_pressure", False) else 0)]
+             [("BACKP", 1 if (case_cfg.get("target") or {}).get("back_pressure", False) else 0),
+              ("BD_ON", 1 if (case_cfg.get("plasma") or {}).get("breakdown_2t", False) else 0),
+              ("SIG_EN", P.get("sigma_en_Cu")), ("LOTZ_A", P.get("lotz_a_cu"))]
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",

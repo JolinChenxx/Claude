@@ -25,6 +25,9 @@ void Init(double *v, double x1, double x2, double x3)
   v[VX2] = 0.0;
   v[PRS] = g_inputParam[P_AMB] / LIP_PRS_SI;
   v[TRC] = 0.0;
+#if NTRACER > 1
+  v[TRC + 1] = 0.0;
+#endif
 }
 
 void InitDomain(Data *d, Grid *grid) { (void)d; (void)grid; }

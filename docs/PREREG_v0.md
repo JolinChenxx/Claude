@@ -76,3 +76,24 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - (b) S1 lift rises above the baseline at both fluences (direction only; no size promised).
   - (c) Report as before: L(700)/L(300) (high), shock radius vs Fig. 3d, core specific energy and T_emw at t_ref, ConsToPrim count.
 - **Reading:** if (a) holds but S1 stays < 50% of lift_min, the face-pinned emission is not caused by the source layer alone; the next pre-declared candidates are the converging beam ("会聚射线管", PLAN §3.2 sensitivity) and the 3-D end-face effect (PLAN §3.3), each declared separately before it is run. If (a) fails, the near-wall resolution is the suspect (G1 member in T023). Nothing is tuned to S1.
+
+## v1m extension declared 2026-11-24 ~15:40 (UTC+8), before any v1m hydro result: two-temperature avalanche breakdown (user choice)
+- **Why:** STATE 2026-11-24 15:00. The model diverges during the pulse: it ignites late (~30 ns) and at the face, while the experiment shows an early, elevated emitting core and an early shock about 20 ns ahead. The 0-D prototype (fresh Knight vapour, 68 kg/m³, 4.7 kK, 1.7 GW/cm²) does not ignite in 30 ns under single-T LTE (α = 2.8 m⁻¹), but ignites in about 3 ns by Cu electron avalanche (T_e ≈ 1.2 eV). The user chose this upgrade (2026-11-24) over radiative transfer. It is outside PLAN v3 §3.4, which is recorded as a scope change by the user.
+- **Model (build v1m, BD_ON, cases v1bd_*):** while the pulse is on (t < t_peak + 1.5 FWHM), the Cu cells (Y > 1e-3) carry non-equilibrium electrons n_e,neq ≥ n_e,LTE (tracer 2).
+  - Quasi-steady T_e: inverse-bremsstrahlung power per electron = elastic loss 3(m_e/M)ν_m·(3/2)k(T_e − T_h) + ionisation power k_i n_0 χ.
+  - Electron–neutral momentum-transfer cross-section σ_en_Cu = 1e-19 m², registry grade C.
+  - Lotz electron-impact ionisation of Cu I: registry lotz_a_cu, grade B.
+  - Three-body recombination by detailed balance with Saha(T_e). Cu I partition function from the 2S + 2D levels; Cu II ground state only.
+  - The 1064 nm absorption is max(α_LTE, α(n_e,neq, T_e)).
+  - Ionisation above LTE holds χ per electron outside the LTE EOS; the transfer is energy-conserving and booked as E_bd_store.
+  - After the pulse the store relaxes to LTE.
+  - Declared simplifications: only Cu avalanches (air ionisation at 12–15 eV is slower and ignored); electron thermal energy above T_h is neglected in the EOS; a quasi-steady T_e; the local intensity is lagged one step.
+- **Sensitivity, not tuning:** σ_en_Cu at the registry bounds (3e-20, 3e-19) for high it0 only, reported whatever the outcome.
+- **Declared expectations, read whatever the outcome:**
+  - (a) Gas-absorption onset earlier than v1k. Onset = E_gas_abs reaching 1 µJ; prototype estimate 5–10 ns earlier, bounded by the vapour appearing at about 20 ns.
+  - (b) Shock radius at 25–70 ns closer to Fig. 3d than v1k. Direction only.
+  - (c) S1 lift and the second-moment height σ_z at 150–630 ns: report the change from v1k. No pass expected from (a) alone.
+  - (d) Report L(700)/L(300) (high), T_emw and core specific energy at t_ref, and the late shock.
+- **Reading:**
+  - If (a) and (b) hold but S1 and σ_z do not move, ignition timing is not what sets the morphology, and radiative transfer (the user's alternative) is next.
+  - If (a) fails (no earlier onset), the 2-D ignition is limited by vapour supply, not by electron kinetics.
