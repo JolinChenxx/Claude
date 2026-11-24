@@ -1,0 +1,1 @@
+See data/exp/paper/droplets_notes.md and the native Fig. 4e1, S12b and S14 panels. The observed spatter-top rise is 344 m/s at high fluence and about 190 m/s at low fluence; neither a per-droplet speed distribution nor an in-flight diameter is reported in those panels.
