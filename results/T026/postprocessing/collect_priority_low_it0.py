@@ -14,12 +14,14 @@ import yaml
 
 REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
-JOB = Path('D:/sim_runs/T023_T025_T026_post_06b')
 assert len(sys.argv) <= 3
 BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
 ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
 assert BATCH in ('T025', 'T026')
 assert ITERATION in ('it0', 'it1')
+QUEUE07 = (BATCH, ITERATION) == ('T026', 'it1')
+JOB = Path('D:/sim_runs') / ('T026_T027_post_07' if QUEUE07 else 'T023_T025_T026_post_06b')
+RUNNER = 'run_priority_07.py' if QUEUE07 else 'run_priority_06.py'
 RAW = Path('D:/sim_runs') / BATCH / 'low_thin_G0' / ITERATION
 OUT = REPO / 'results' / BATCH / 'low_thin_G0' / ITERATION
 
@@ -57,7 +59,7 @@ def main():
         assert sha(path) == digest, path
     for path, digest in queue['preflight']['input_sha256'].items():
         assert sha(path) == digest, path
-    assert sha(REPO / 'results/T021/postprocessing/run_priority_06.py') == queue['runner_sha256']
+    assert sha(REPO / 'results/T021/postprocessing' / RUNNER) == queue['runner_sha256']
     completion = json.loads((OUT / 'completion.json').read_text(encoding='utf-8'))
     assert completion['registry_row'] == run['registry_row']
     for name, item in completion['files'].items():

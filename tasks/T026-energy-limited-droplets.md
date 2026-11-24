@@ -2,7 +2,7 @@
 id: T026
 title: v1n energy-limited droplet release + back pressure (v1bpde cases), high thin G0 it0–it2, low thin G0 it0–it1; 16 cores when free
 owner: codex
-status: running
+status: review
 depends: []
 milestone: D2
 est_time: 0.5h operations + ~3–4h machine time
