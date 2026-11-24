@@ -478,3 +478,10 @@ Updated: 2026-11-15
 - ConsToPrim: 8.59M against 0.58M for T026 low it0. Endpoint closure 0.76% against 0.009%.
 - (a) as declared ("no worse than v1n") fails. Closure stays below the 2% limit, and the count is the same order as already accepted members (T021 high it0 4.4M, T025 low it1 3.2M). The run is kept, because the physics question (b), σ_z/σ_x, needs its imaging.
 - The extra repairs sit where the vapour momentum enters next to the reflecting wall, the same location as the 11-17 problem. If (b) shows < 5% change, v1p is closed as both ineffective and numerically costlier. If (b) shows a real change, the momentum injection is moved into a boundary-flux form before it is reported as a result.
+
+## 2026-11-24 23:10 — late-decay comparison checked on the same 8-bit pipeline as the experiment
+- The experiment's L comes from 8-bit frames (saturation at 255, noise mask). The low frames are saturated at 130–340 ns (190 px at 300 ns), and the mask shrinks late (584 px at 1035 ns against ~3000 at 300 ns).
+- The model's 8-bit L column, from the same pipeline and the same gain rule, gives ratios equal to or slightly slower than L_radiance:
+  - Low v1n: L715/L300 = 0.217 and L1035/L300 = 0.146, against 0.163 / 0.027 in the experiment.
+  - High droplets: 0.333 / 0.153, against 0.368 / 0.107.
+- The slow late decay at low fluence is therefore not a metric artefact. It remains an open physics discrepancy.
