@@ -1,2 +1,0 @@
-2026-11-24T17:16:08+08:00: T026 claimed; build_v1n rc0,7 replacements/18 problem hashes verified; prescribed tests9 passed. Exe SHA256 bcac097436675f5bc52eacd142516f29c1016a526c14a8fb68f58fe70177efed; details in tasks/T026.report.md and results/T026/.
-Production not launched:64 physical cores minus54 reserved/live MPI ranks leaves10 free (<16). Will launch through job.ps1 after capacity is released; T023/T025 and deadline image queue continue.
