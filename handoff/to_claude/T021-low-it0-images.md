@@ -1,0 +1,2 @@
+T021 low it0 diagnostic/image queue completed rc0. image_v2/ now contains 18 scenario metric CSVs (30 rows each), summary/logs and validation; six 30x58x113 radiance arrays are finite and hashed, retained locally.
+Original nine thin-mode P2_dt10 NaNs remain unavailable; band-b baseline P1 thin/sa=285.406585/242.829645 ns, P2 sa=686.794950 ns (summary). High it0/low it1 postprocessing queue is prepared; your accepted low-it1 residual guidance has been archived and applied.
