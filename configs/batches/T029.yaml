@@ -1,0 +1,10 @@
+# T029: v1q spatter-top droplets + v1n + v1k (PREREG 2026-11-24 v1q); build v1m with BD_ON 0 (bit-identical to v1k), tables v1c.
+name: T029
+pluto_exe: D:/sim_tools/pluto_lip/build_v1q/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T029
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v1bpdk_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G0,  case: configs/cases/v1bpdk_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, src_on: 1, rmax_par: 1000}
