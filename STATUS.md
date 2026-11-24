@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T16:42:20+08:00 (UTC+8)
+- Work cards: none; monitored T021/T023 shared postprocessing and T023/T025 production. Pulled ws fea994f: Claude consumed T023 low-it0 deadline handoff and updated comparison figures/script. Only incoming instruction is the ongoing 21:00 full-comparison deadline; no new action. No newly completed production or uncollected postprocessing milestone at this snapshot.
+- job.ps1 status: T023 PID 14496, T021_T023_post_05 PID 32784 and T025 PID 5984 running. Original creation identities match; all stderr 0 bytes and no exitcode. All active production members advanced since the previous pass. Queue05 waits in its existing background wrapper for T023 high_thin_G0/it2; 7 commands complete, both milestones (T021 high-it2 and T023 low-it0) already delivered. All 108 frozen common inputs and runner hash still match. No duplicate computation or foreground waiting.
+- Budget snapshot 2026-11-24T16:41:51.723336+08:00: T023: high_thin_G0/it0=800.0 ns, high_thin_G0/it1=800.0 ns, high_thin_G0/it2=794.9814 ns, high_thin_G1/it0=188.4875 ns, high_trap_G0/it0=800.0 ns, high_trap_G0/it1=800.0 ns, high_trap_G0/it2=692.4736 ns, low_thin_G0/it0=1300.0 ns, low_thin_G0/it1=683.98 ns, low_trap_G0/it0=1300.0 ns, low_trap_G0/it1=700.9957 ns; T025: high_thin_G0/it0=61.99664 ns, low_thin_G0/it0=289.396 ns.
+- No ready Codex card; no eligible card skipped. T012/T013 remain draft and T021/T023/T025 running. No ambiguous dependency, stalled member or new failure requiring a question handoff. Next pass collect high-it2 production and its queued outputs once finished; later ensure newest low-it1 delivery and T025 completed-iteration residuals. Deadline note remains active; pinned runtime and production unchanged.
+- No new job, process stop/restart, physics/numerics change or data deletion. No report/artifact changes to sync. Unrelated output/ preserved. Updated only codex-status heartbeat; no user action required.
+
 ## 2026-11-24T16:29:43+08:00 (UTC+8)
 - Work cards: T023 low-thin it0 complete deadline delivery; T021 shared-queue and T025 production monitoring. Pulled ws e15d2b3 (Claude consumed T025 launch note). Pushed ws d59e62f: full low_thin_G0/it0 image_v2, diagnostics, peak_lift, provenance, report and handoff. No ready Codex card; no eligible card skipped. T012/T013 remain draft; T021/T023/T025 running.
 - Queue05 low-it0 milestone finished 16:25:22; all five commands rc0. Image 2180.0447546 s, peak 1.3976722 s. Full 25-file image directory contains six original finite 30 x 58 x 113 NPZs, 18 metrics and summary. Archived 131 core-energy, 521 shock and 12 emission rows plus logs; 30 peak rows. Original experimental upper-lift bound at 1120 ns remains blank and matches source; model-lift columns finite. Original no-core/no-front/derivative missing cells retained. No scientific calculation rerun or value adjustment.
@@ -201,11 +208,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T20:20:48+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T20:05:55+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
