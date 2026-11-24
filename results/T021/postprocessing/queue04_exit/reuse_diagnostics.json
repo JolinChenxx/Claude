@@ -1,0 +1,104 @@
+{
+  "recorded": "2026-11-24T15:22:47.756927+08:00",
+  "previous_job": "T021_T023_post_04",
+  "previous_exitcode": 1,
+  "commands": [
+    {
+      "batch": "T021",
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "name": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T021\\high_thin_G0\\it2",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T021\\high_thin_G0\\it2\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-24T15:18:17.366631+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_04\\T021_high_thin_G0_it2_core_energy.log",
+      "returncode": 0,
+      "seconds": 2.743810599997232,
+      "finished": "2026-11-24T15:18:20.110253+08:00"
+    },
+    {
+      "batch": "T021",
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "name": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T021\\high_thin_G0\\it2",
+        "--out",
+        "D:\\sim_runs\\T021\\high_thin_G0\\it2\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-24T15:18:17.367626+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_04\\T021_high_thin_G0_it2_shock_track.log",
+      "returncode": 0,
+      "seconds": 2.864240700000664,
+      "finished": "2026-11-24T15:18:20.231695+08:00"
+    },
+    {
+      "batch": "T021",
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "name": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T021\\high_thin_G0\\it2",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T021\\high_thin_G0\\it2\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-24T15:18:17.367626+08:00",
+      "log": "D:\\sim_runs\\T021_T023_post_04\\T021_high_thin_G0_it2_emission.log",
+      "returncode": 0,
+      "seconds": 4.0916484000008495,
+      "finished": "2026-11-24T15:18:21.459205+08:00"
+    }
+  ],
+  "output_sha256": {
+    "D:\\sim_runs\\T021\\high_thin_G0\\it2\\diagnostics\\core_energy.csv": "73f33ee144b5fcae52f867da8ec32dc7c09b948975b4c0f3157c165f99fe732b",
+    "D:\\sim_runs\\T021\\high_thin_G0\\it2\\diagnostics\\shock_track.csv": "af216c0e92a2d458eaeea8265c0ec8763d2b8a1a3c79da298e243a89b23f0a15",
+    "D:\\sim_runs\\T021\\high_thin_G0\\it2\\diagnostics\\diag_emission.csv": "8febcd0aeb1e02d5df7362c4d835f8110a2f4230396cb2b19a006ab96e02373b"
+  },
+  "archive_sha256": {
+    "affinity_launch.json": "f8d4d4ef6f1b52b4659924b1d336334dda416e6eceabdf4d6be8ffa3431483e8",
+    "exitcode.txt": "14d887ce1b420874bf8a4f221e0ff13cb6cb210d29e75edac7346cdefc3de37c",
+    "job.json": "b72dbbd6617f9275582cf5e2917f4df9c70363c66bf766c9988d85bdb4910b09",
+    "postprocess_summary.json": "cc1290ed83220836545b42c2a08f6228110839e1986273e6b525cd7e682b3ebb",
+    "stderr.log": "a5a3623dce8cfa25e8f127313963fa405a09ee94f37a3ecae71c9cfd15c67fd5",
+    "stdout.log": "433bb84be859723de2297ef08f457d13df36cc64b31c237e9a33dc6c53010f4e",
+    "T021_high_thin_G0_it2_core_energy.log": "6e781ace676d158715497c9d8f60d699930b70874d2a963a187cad0d475a2c51",
+    "T021_high_thin_G0_it2_emission.log": "00f8d0c11c06d15477b458ce7636a97de3c34546b20f1ebe538e36ce47b044cd",
+    "T021_high_thin_G0_it2_image_v2.log": "9242cb28194175a660d9f517367f0f95703ddaf172827b5dec96072f7806baac",
+    "T021_high_thin_G0_it2_shock_track.log": "7a5564aedd53dac32e9d15ce163307b3762475896c65fdec6452dd233cfe0645",
+    "queue04_spawn_probe.py": "8bae83271dfb6fc061fc5048c9c71e7124d6d84098b05fb95e8880ad1f207220",
+    "queue04_spawn_probe.log": "451da6aee3ee5ce1ce987291dbbf269f5b087931ff562ba5331028ef83eb4dc3"
+  },
+  "failure": "Image workers terminated abruptly; BrokenProcessPool and Windows KERNELBASE.dll c06d007f. No image artifacts.",
+  "engineering_action": "Explicit process-local Python/Library/bin/Scripts PATH;24-worker spawn/import/BLAS/ndimage smoke passed;retain completed diagnostics and retry only missing image/peak."
+}
