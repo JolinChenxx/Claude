@@ -10,7 +10,7 @@
 #define  TIME_STEPPING                  RK2
 #define  NTRACER                        2   /* tr1 = Y_Cu; tr2 = v1m non-equilibrium electrons per Cu-atom mass (BD_ON) */
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            20
+#define  USER_DEF_PARAMETERS            21
 
 /* -- physics dependent declarations -- */
 #define  DUST_FLUID                     NO
@@ -41,6 +41,7 @@
 #define  LOTZ_A                         17  /* m^2 eV^2, Lotz constant for Cu 4s (registry lotz_a_cu) */
 #define  DROP_TB                        18  /* K; > 0: v1n energy-limited droplet release (mixture must stay >= T_boil); 0 = off */
 #define  VMOM                           19  /* 1 = v1p: the evaporating vapour carries its Knight exit momentum mdot*u_v (+z); 0 = off */
+#define  DROP_VD                        20  /* m/s; > 0: v1q droplets launched at DROP_T0 from the face at this measured speed evaporate only in the row at z_d = v_d (t - DROP_T0); 0 = whole core */
 
 /* -- supplementary constants (user editable) -- */
 #define  UNIT_DENSITY                   1.0e-3   /* g/cm^3 = 1 kg/m^3 */

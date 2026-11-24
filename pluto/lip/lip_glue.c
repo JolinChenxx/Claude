@@ -147,7 +147,13 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
       double rr = grid->x[IDIR][i] * LIP_LEN_SI, dr = grid->dx[IDIR][i] * LIP_LEN_SI;
       JDOM_LOOP(j) {
         double Yc = d->Vc[TRC][k][j][i];
-        if (Yc > 0.5) drop_W += d->Vc[RHO][k][j][i] * LIP_RHO_SI * Yc * 2.0 * CONST_PI * rr * dr * grid->dx[JDIR][j] * LIP_LEN_SI;
+        int in_row = 1;
+        if (g_inputParam[DROP_VD] > 0.0) {     /* v1q: only the row that holds the droplet front z_d(t) */
+          double zd = g_inputParam[DROP_VD] * (t_SI + dt_SI - g_inputParam[DROP_T0]) / LIP_LEN_SI;
+          double zl = grid->x[JDIR][j] - 0.5 * grid->dx[JDIR][j], zh = zl + grid->dx[JDIR][j];
+          in_row = (zd >= zl && zd < zh);
+        }
+        if (Yc > 0.5 && in_row) drop_W += d->Vc[RHO][k][j][i] * LIP_RHO_SI * Yc * 2.0 * CONST_PI * rr * dr * grid->dx[JDIR][j] * LIP_LEN_SI;
       }
     }
 #ifdef PARALLEL
@@ -293,7 +299,13 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
          at rest (momentum conserved) with the Cu-vapour internal energy at DROP_TCAP minus the latent heat, so the gas
          pays L_v. Booked as source mass/energy (B[6], B[7]). Off when DROP_M = 0 (bit-identical to v1i). */
       double m_pre_drop = m;
-      if (drop_dm > 0.0 && Y > 0.5) {
+      int drop_row = 1;
+      if (g_inputParam[DROP_VD] > 0.0) {
+        double zd = g_inputParam[DROP_VD] * (t_SI + dt_SI - g_inputParam[DROP_T0]) / LIP_LEN_SI;
+        double zl = grid->x[JDIR][j] - 0.5 * grid->dx[JDIR][j], zh = zl + grid->dx[JDIR][j];
+        drop_row = (zd >= zl && zd < zh);
+      }
+      if (drop_dm > 0.0 && Y > 0.5 && drop_row) {
         double dmd = drop_dm * rho * Y / drop_W;                          /* kg/m^3 this step */
         double einj = lip_eos_e(&lip_eos, rho, g_inputParam[DROP_TCAP], 1.0) - g_inputParam[DROP_LV];
         if (g_inputParam[DROP_TB] > 0.0) {
