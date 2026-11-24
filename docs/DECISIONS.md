@@ -63,3 +63,11 @@ Codex asked for permission. T021_T023_post_03 has a fixed order that puts the tr
 
 ## 2026-11-24 16:10 (UTC+8) — stop T024 (standing authorization); start T025
 The v1m early fields answer its PREREG question. Onset is 1.5 ns earlier, and from 35 ns on everything is identical to v1k within 2%. The remaining iterations would only reproduce v1k, so T024 is stopped and its data kept. The 16 cores go to T025 (v1k + droplet upper bound), the combination of the two pre-declared components, after T021 high it2 met its PREREG (a)–(c).
+
+## 2026-11-24 22:20 (UTC+8) — overnight plan (user: "持续工作，直到工作站的北京时间早上 7 点，给出规划")
+Autonomous until 07:00. Hourly reports stay short. A summary with updated figures is due at 07:00.
+1. Postprocessing first (priority-3 note): T026 high it1/it2, T025 low it1, then T027 iterations.
+2. Readings as soon as data arrive: T026 high (does the energy-limited bound keep the high-fluence decay?), T027 PREREG v1p (b).
+3. Decision rule fixed now. If T027 (b) changes σ_z/σ_x by < 5%, v1p is closed and the next pre-declared candidate, droplet kinematics (v1q: droplets launched at the measured 344 m/s, evaporating along their path), is declared, smoke-tested and run on the freed cores. If (b) changes ≥ 5%, the momentum source is first moved into a boundary-flux form (the ConsToPrim issue) before any further use.
+4. Free cores also go to a G1 (fine-grid) run of the current best model, v1n (T026 cases), high it0, to show that the headline metrics (decay, S1, σ_z) are grid-converged.
+5. No parameter is chosen from the comparison. Any new mechanism is pre-registered before its first result.
