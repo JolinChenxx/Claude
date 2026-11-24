@@ -1,0 +1,2 @@
+2026-11-24T16:28:27+08:00: T023 low_thin_G0/it0 complete image_v2 (all six native NPZs including band b), diagnostics and peak_lift are delivered under results/T023/low_thin_G0/it0; all five commands rc0, hashes/frame/time checks pass. See deadline_delivery.json and T023.report.md. Original experimental upper-lift bound at 1120 ns remains blank.
+Queue05 waits for high-thin it2; latest low-thin it1 is still producing, so the 21:00 deadline note remains active. T023/T025 continue unchanged.
