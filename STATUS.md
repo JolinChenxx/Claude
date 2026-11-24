@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T20:15:29+08:00 (UTC+8)
+- T025 high_thin_G0/it1 postprocessing delivered on ws at 85f8dec. All five stages returned zero; full image_v2 with the two native band-b frame archives, three diagnostic tables and 29 peak rows were verified. All 18 missing P2 values retained. Report-only sync hash verified.
+- T023/T025/T026 production and queue06b running at job.ps1 check. Queue: running, T023/low_thin_G0/it1, stage image_v2. The 21:00 note is still pending for the completed T023 low-thin it1 production run's image and peak. No new job started or stopped.
+- Active budgets: T023/high_thin_G1/it0 2.624794e+002 ns; T025/high_thin_G0/it2 8.049631e+001 ns; T026/high_thin_G0/it1 1.069989e+002 ns. No ready Codex card.
+
 ## 2026-11-24T19:58:16+08:00 (UTC+8)
 - Work card: none. Pulled ws to ae025b0; the T026 handoff was consumed. No ready Codex card and no newly completed postprocessing milestone to collect. The 21:00 deadline note remains open for T023 low_thin_G0/it1.
 - job.ps1 status: T023, T025, T026 and T023_T025_T026_post_06b running. Queue: running, T025/high_thin_G0/it1, stage image_v2. T026 low-thin it0 was already delivered at 16b3259. No job launched or stopped.
@@ -231,9 +236,3 @@
 - T021 generated DROP_M high=3.966007941e-12, low=4.738439308e-12 initially differed from the card's approximate numbers, so evidence and a clarification handoff were pushed (9829daf). Claude confirmed the per-iteration removal-minus-vapour formula is authoritative and the approximate values describe later converged iterations. Applied the note, restored running and left all computation unchanged (2fd8703); timing/rmax input checks pass. Confirmation and progress archived in results/T021; no unresolved blocker.
 - T022 claimed/pushed 52b9250 and completed to review in b2fbb8b. Both high T016e it2 shock extractions rc0 in about 118 s each concurrently; 321 snapshot-matched rows over 0-800 ns, six original missing values per radius preserved. Four exact image_v2 band-b NPZ copies total 2,085,425 bytes; all staged blob sizes and SHA256 verified. Historical comparison traced to the already-pushed T015 high_trap_G0/it2 CSV. Report, evidence and one handoff pushed; reports for T021/T022 copied to approved D:/Sync/<id>/ locations with byte verification.
 - No physical/numerical edits, data deletion or process intervention. Unrelated output/ preserved. No ready card skipped and no user action required; next pass monitor T021 and process review feedback.
-
-## 2026-11-24T08:44:45+08:00 (UTC+8)
-- Work card: T021. Pulled ws to c3a9657; incoming to_codex empty. Claimed lowest eligible card T021 and pushed lock 4b0bac4. Built v1j MPI/PVTE/TC with 8 build jobs in 13.993 s, rc 0, 7 upstream replacements; source hashes and executable SHA256 verified. Build/provenance/report evidence recorded under results/T021 and tasks/T021.report.md.
-- Started T021 with job.ps1 at 2026-11-24T08:43:49 UTC+8, wrapper PID 33364, max-cores 16 (8 ranks each for high_thin_G0 and low_thin_G0), OMP/OpenBLAS/MKL 1. Initial job.ps1 status at 2026-11-24T08:44:04.545876+08:00 was running with empty stdout/stderr and no exitcode; wrapper creation identity archived. Both it0 pluto.ini and budget.csv were not yet present, so no t_ns is available; parameter and progress checks are pending next pass. No foreground wait or completed-iteration handoff.
-- T022 is ready with no dependencies but remains unclaimed: the explicit end-after-background-launch rule ends this pass after T021 launch/bookkeeping. Process it next pass alongside T021 monitoring. T012/T013 remain draft; historical completed jobs remain closed. No other ready card skipped or dependency ambiguity.
-- Unrelated output/ preserved. No physical-model/numerical changes, process intervention or raw-data deletion. No user action required.
