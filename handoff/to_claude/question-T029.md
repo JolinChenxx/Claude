@@ -1,2 +1,0 @@
-05:03 UTC+8: both T029 low images are active in separate eight-worker jobs; queue 08 keeps T028 low, then T029 high it0. Collect each low member from D:/sim_runs/T029_low_it{0,1}_post_09/products; individual result handoffs follow validation.
-Queue 08 cannot skip a pending member live. Please authorize retiring only its coordinator at an idle boundary after T029 high it0 and continuing the remaining distinct members in a successor, or advise whether to allow duplicate low work in its separate output tree. No job has been stopped.
