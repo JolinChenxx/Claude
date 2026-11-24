@@ -463,3 +463,13 @@ Updated: 2026-11-15
 - (c) σ_z at 300 ns: 76 µm against 151 µm in the experiment. Still small.
 - (d) Axial shock at 600 ns: 628 µm against 609 µm for T023 (+3%). Holds.
 - T026 low it0 (v1n): L(715)/L(300) 0.201 against 0.163 in the experiment, the closest of all members; S1 8/11 (passes); σ_z 68 against 94 µm; L(1035)/L(300) 0.136 against 0.027.
+
+## 2026-11-24 20:55 — v1p smoke check (vapour exit momentum); T027 issued
+- The first smoke run had VMOM 0: a string replace in the case generation slipped. The cases were fixed and rerun.
+- v1p against v1n (high, smoke, 0–160 ns):
+  - Momentum injected: 2.5e-9 kg m/s.
+  - Closure −0.63% against −0.16%.
+  - ConsToPrim: 10 278 lines against 283.
+  - Gas absorption at 40/60 ns: 15/129 µJ against 33/143 µJ; vapour moves off the face and the onset is slightly later.
+  - T027 (G0) gives the real test.
+- T023 low it1 (v1k): S1 median 88 µm, 0/11 frames; back pressure alone does not lift the emission at low fluence either.
