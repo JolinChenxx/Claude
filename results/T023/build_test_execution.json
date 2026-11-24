@@ -1,0 +1,52 @@
+{
+  "source_commit": "fb9fdcac9ba890fd60ccd629ac7c0f607e9b77b6",
+  "commands": [
+    {
+      "name": "build",
+      "command": [
+        "D:/sim_tools/envs/lipsim/python.exe",
+        "scripts/build_pluto.py",
+        "--problem",
+        "pluto/lip",
+        "--out",
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi",
+        "--platform",
+        "windows",
+        "--mpi",
+        "--eos",
+        "pvte",
+        "--tc",
+        "--extra-obj",
+        "lip_tables.o",
+        "lip_physics.o",
+        "lip_glue.o",
+        "--jobs",
+        "8"
+      ],
+      "started": "2026-11-24T09:41:48.676818+08:00",
+      "finished": "2026-11-24T09:42:00.145945+08:00",
+      "seconds": 11.46956500000033,
+      "returncode": 0,
+      "log": "results\\T023\\build.log"
+    },
+    {
+      "name": "test_knight_bp",
+      "command": [
+        "D:/sim_tools/envs/lipsim/python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_knight_bp.py"
+      ],
+      "started": "2026-11-24T09:42:00.146940+08:00",
+      "finished": "2026-11-24T09:42:12.845471+08:00",
+      "seconds": 12.699089699999604,
+      "returncode": 0,
+      "log": "results\\T023\\test_knight_bp.log"
+    }
+  ],
+  "executable": "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+  "executable_sha256": "245cce7946a34f534b90b4676719826c922945cd2d1194fc3c5576c9ff3bfc2e",
+  "replaced_count": 7,
+  "test_output": ".....                                                                    [100%]\n5 passed in 1.95s\n"
+}
