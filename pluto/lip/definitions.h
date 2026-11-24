@@ -10,7 +10,7 @@
 #define  TIME_STEPPING                  RK2
 #define  NTRACER                        1
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            9
+#define  USER_DEF_PARAMETERS            14
 
 /* -- physics dependent declarations -- */
 #define  DUST_FLUID                     NO
@@ -30,6 +30,11 @@
 #define  T_AMB                          6   /* K        (registry T_ambient) */
 #define  SRC_ON                         7   /* 1 = evaporation source from target table */
 #define  T_FLOOR                        8   /* K, radiation energy limiter floor (= T_AMB) */
+#define  DROP_M                         9   /* kg, droplet mass evaporated in the Cu core (v1j bound; 0 = off) */
+#define  DROP_TCAP                      10  /* K, droplet temperature on release (= f_Tcap * T_c) */
+#define  DROP_LV                        11  /* J/kg, latent heat taken from the gas on evaporation */
+#define  DROP_T0                        12  /* s, start of droplet release window */
+#define  DROP_T1                        13  /* s, end of droplet release window */
 
 /* -- supplementary constants (user editable) -- */
 #define  UNIT_DENSITY                   1.0e-3   /* g/cm^3 = 1 kg/m^3 */

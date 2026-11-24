@@ -1,0 +1,15 @@
+# v1j droplet upper bound case (high fluence): v0_high + target.droplets = upper (PREREG 2026-11-24).
+name: v1dr_high
+laser:
+  energy: '@E_pulse_high'
+  diameter_1e2: '@D_beam_high'
+  fwhm: '@tau_fwhm'
+target:
+  model: knight_sonic_v0
+  droplets: upper          # v1j droplet upper bound (PREREG 2026-11-24)
+numerics:
+  rings: 24
+  r_max_over_w: 2.5
+  t_end_ns: 400
+  dt_ns: 0.05
+  picard_relax: 0.5

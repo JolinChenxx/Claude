@@ -61,14 +61,34 @@ def grid_lines(level: str) -> list[str]:
     return out
 
 
-def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int, rmax_par: float | None = None) -> str:
+def droplet_params(case_cfg: dict, vaporised_mass_kg: float) -> list:
+    """v1j droplet bound (PREREG 2026-11-24). With target.droplets = "upper", the condensed ejecta mass is the single-shot
+    Cu removal (registry cu_removal_efficiency × pulse energy × solid density) minus the vapour mass of this
+    iteration's target model. Released into the Cu core from the end of the pulse (t_peak + FWHM/2) to t_ref.
+    Off by default (DROP_M = 0)."""
+    from lipsim.target.model import Laser, Material
+    las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"])
+    mat = Material()
+    mode = (case_cfg.get("target") or {}).get("droplets", "off")
+    m_d = 0.0
+    if mode == "upper":
+        m_rem = P.get("cu_removal_efficiency") * las.E * mat.rho
+        m_d = max(m_rem - vaporised_mass_kg, 0.0)
+    elif mode != "off":
+        raise ValueError(f"target.droplets must be off|upper, got {mode}")
+    return [("DROP_M", m_d), ("DROP_TCAP", mat.T_cap), ("DROP_LV", mat.Lv),
+            ("DROP_T0", las.t_peak + 0.5 * las.fwhm), ("DROP_T1", P.get("t_ref_norm"))]  # math (end of pulse to t_ref)
+
+
+def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int, rmax_par: float | None = None,
+             vaporised_mass_kg: float = 0.0) -> str:
     """pluto.ini with every physical number taken from the registry via the resolved case config."""
     num = yaml.safe_load((REPO / "configs/grids/levels.yaml").read_text())["numerics"]
     from lipsim.target.model import Laser
     las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"])
     params = [("E_PULSE", las.E), ("D_BEAM", las.D), ("FWHM", las.fwhm), ("T_PEAK", las.t_peak),
               ("NEC_LIMIT", NEC[nec]), ("P_AMB", P.get("p_ambient")), ("T_AMB", P.get("T_ambient")),
-              ("SRC_ON", src_on), ("T_FLOOR", P.get("T_ambient"))]
+              ("SRC_ON", src_on), ("T_FLOOR", P.get("T_ambient"))] + droplet_params(case_cfg, vaporised_mass_kg)
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",
@@ -135,8 +155,11 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
         if not dry:
             subprocess.run(cmd, check=True, cwd=REPO, env={**__import__("os").environ, "PYTHONPATH": str(REPO / "src")})
             shutil.copy2(src_out / "target_source.bin", rd / "lip_tables/target_source.bin")
+        mvap = 0.0
+        if not dry and (src_out / "source_meta.json").exists():
+            mvap = float(json.loads((src_out / "source_meta.json").read_text()).get("vaporised_mass_kg", 0.0))
         (rd / "pluto.ini").write_text(make_ini(case_cfg, spec["grid"], spec["nec"], spec["tstop_ns"], spec.get("src_on", 1),
-                                                spec.get("rmax_par")))
+                                                spec.get("rmax_par"), mvap))
         procs = int(spec.get("procs", 1))
         exe = str(Path(batch["pluto_exe"]).resolve())
         pcmd = ([batch["mpiexec"], "-n", str(procs), exe, "-dec", str(procs), "1"] if procs > 1 and batch.get("mpiexec")

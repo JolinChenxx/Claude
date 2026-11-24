@@ -122,6 +122,28 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
     trans = ARRAY_1D(NX1_TOT, double);
   }
   double *dz = ARRAY_1D(nz, double), *al = ARRAY_1D(nz, double), *q = ARRAY_1D(nz, double);
+  /* v1j droplet release: mass for this step (global, identical on all ranks) and the global weight sum */
+  static double drop_done = 0.0;
+  double drop_dm = 0.0, drop_W = 0.0;
+  if (g_inputParam[DROP_M] > 0.0 && t_SI + dt_SI > g_inputParam[DROP_T0] && drop_done < g_inputParam[DROP_M]) {
+    IDOM_LOOP(i) {
+      double rr = grid->x[IDIR][i] * LIP_LEN_SI, dr = grid->dx[IDIR][i] * LIP_LEN_SI;
+      JDOM_LOOP(j) {
+        double Yc = d->Vc[TRC][k][j][i];
+        if (Yc > 0.5) drop_W += d->Vc[RHO][k][j][i] * LIP_RHO_SI * Yc * 2.0 * CONST_PI * rr * dr * grid->dx[JDIR][j] * LIP_LEN_SI;
+      }
+    }
+#ifdef PARALLEL
+    { double wl = drop_W; MPI_Allreduce(&wl, &drop_W, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD); }
+#endif
+    if (drop_W > 0.0) {
+      double frac = (t_SI + dt_SI - g_inputParam[DROP_T0]) / (g_inputParam[DROP_T1] - g_inputParam[DROP_T0]);
+      double target = g_inputParam[DROP_M] * (frac < 1.0 ? frac : 1.0);
+      drop_dm = target - drop_done;
+      if (drop_dm < 0.0) drop_dm = 0.0;
+      drop_done += drop_dm;
+    }
+  }
   IDOM_LOOP(i) {
     double r = grid->x[IDIR][i] * LIP_LEN_SI;
     double dr = grid->dx[IDIR][i] * LIP_LEN_SI;
@@ -214,21 +236,36 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
           B[6] += dm * dV; B[7] += dm * hv * dV;
         }
       }
+      /* v1j droplet bound (PREREG 2026-11-24): condensed ejecta evaporate inside the Cu core (Y > 0.5) during
+         [DROP_T0, DROP_T1] (end of pulse to t_ref). Each cell receives the step's droplet mass in proportion to its rho·Y. The droplets arrive
+         at rest (momentum conserved) with the Cu-vapour internal energy at DROP_TCAP minus the latent heat, so the gas
+         pays L_v. Booked as source mass/energy (B[6], B[7]). Off when DROP_M = 0 (bit-identical to v1i). */
+      double m_pre_drop = m;
+      if (drop_dm > 0.0 && Y > 0.5) {
+        double dmd = drop_dm * rho * Y / drop_W;                          /* kg/m^3 this step */
+        double einj = lip_eos_e(&lip_eos, rho, g_inputParam[DROP_TCAP], 1.0) - g_inputParam[DROP_LV];
+        m += dmd; mY += dmd; E += dmd * einj;
+        B[6] += dmd * dV; B[7] += dmd * einj * dV;
+      }
       /* stability limits for the next step: |Δ(rhoe)| ≤ F_E·rhoe, injected mass ≤ F_M·ρ, vapour signal speed */
       if (rhoe > 0.0) LIP_LIM(2, fabs(ql - dE_rad / dt_SI) / (F_E * rhoe), ql - dE_rad / dt_SI);
       if (m > rho) {
         double Sm = (m - rho) / dt_SI;
         LIP_LIM(3, Sm / (F_M * rho), Sm);
-        double cv = sqrt(lip_eos_cs2(&lip_eos, m, T, mY / m));
-        LIP_LIM(4, (fabs(vz) + cv) / dz[0], cv);
+        if (j == JBEG) {
+          double cv = sqrt(lip_eos_cs2(&lip_eos, m, T, mY / m));
+          LIP_LIM(4, (fabs(vz) + cv) / dz[0], cv);
+        }
       }
       double vz_new = pz / m;
-      double rhoe_new = E - 0.5 * m * (vr * vr + vz_new * vz_new);
+      double vr_new = (m_pre_drop != m) ? vr * m_pre_drop / m : vr;        /* = vr exactly unless droplets were added */
+      double rhoe_new = E - 0.5 * m * (vr_new * vr_new + vz_new * vz_new);
       double Y_new = mY / m, T_new;
       lip_eos_T_from_e(&lip_eos, m, rhoe_new / m, Y_new, &T_new);
       double p_new = lip_eos_p(&lip_eos, m, T_new, Y_new);
       d->Vc[RHO][k][j][i] = m / LIP_RHO_SI;
       d->Vc[VX2][k][j][i] = vz_new / LIP_VEL_SI;
+      if (m_pre_drop != m) d->Vc[VX1][k][j][i] = vr_new / LIP_VEL_SI;
       d->Vc[PRS][k][j][i] = p_new / LIP_PRS_SI;
       d->Vc[TRC][k][j][i] = Y_new;
       T_cell[j][i] = T_new;
