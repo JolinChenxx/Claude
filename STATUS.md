@@ -1,5 +1,14 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T16:03:28+08:00 (UTC+8)
+- Work cards:T021 complete high-it2 deadline milestone delivery;T024 step3 early extraction;T023 monitoring. Initial ws pull current,only active21:00 deadline note. Pushed ws84c3609 with both handoffs,reports,full artifacts and reproducible read-only collectors. No ready Codex card;no eligible card skipped. All3 cards remain running for outstanding production/postprocessing.
+- T021 high_thin_G0/it2 queue05 image rc0 in1528.4205619s and peak rc0 in1.3629039s,finished15:48:56. Archived full25-file image_v2(six original finite29x81x84 NPZs,18metrics,summary),29 finite peak rows,81core/321shock/12emission rows and logs. Existing queue04 diagnostics reused,not recomputed. Raw/archive/index hashes verified. All18 unavailableP2 values preserved;band-b P1 thin/sa248.4028683945467/211.03887340062215ns. Original no-core/no-front missing cells retained;1000/1200ns emission requests map to800ns. T021 highit2 andlowit1 deadline members fully delivered;highit1 remains queued for full card completion.
+- T024 highit0 passed80ns. Exact T018c-format41x31 physical windows(i0..30,j0..40),nine fields includingtr2,coordinates/indices/times archived for requested30/40/60/80ns at29.99792/39.99910/59.99947/79.99517ns(snapshots12/16/24/32). All finite,reload equality and stable source/archive hashes verified.149 original17-column budget rows0..79.99517ns copied byte-for-byte,includingE_bd_transfer/E_bd_store. No interpolation,extrapolation or clipping;tr2 original minimum-3.709181090280844e-17 at30/40ns noted explicitly for Claude. Step3 handoff delivered;future finished-iteration closure includesE_bd_store-E_bd_transfer.
+- Verification:39 original artifact/index hashes matched;108 queue frozen inputs+runner unchanged. Evidence sizes:T02110172538bytes,T02310427486bytes,T024454202bytes,all below20MiB/card. Scoped evidence attributes preserve existing rules and original bytes. Only updated reports synced toD:/Sync/T021,T023,T024 with SHA256 verification;no NPZ/raw/repository sync.
+- Jobs:T023PID14496,T024PID37412,queue05PID32784 running with matching creation identities,stderr0bytes,noexitcodes. Queue state running,5 new commands complete,highT021it2 milestone collected;T023 low_thin_G0/it0 imaging active,selected as latest completed at15:48:56. Lowit1 continues production;must revisit latest-low delivery if it completes later. T023 highit2 follows once complete. No new job,production stop/restart,physics/numerics change,data deletion or foreground wait.
+- Budget snapshot2026-11-24T16:00:36.292306+08:00: T023: high_thin_G0/it0=800.0ns, high_thin_G0/it1=800.0ns, high_thin_G0/it2=710.4947ns, high_thin_G1/it0=178.9987ns, high_trap_G0/it0=800.0ns, high_trap_G0/it1=800.0ns, high_trap_G0/it2=578.973ns, low_thin_G0/it0=1300.0ns, low_thin_G0/it1=627.9955ns, low_trap_G0/it0=1300.0ns, low_trap_G0/it1=638.9827ns; T024: high_thin_G0/it0=97.49619ns, low_thin_G0/it0=359.4671ns.
+- Incoming deadline note remains until all required T023/T021 deliveries are fulfilled(or21:00 partial delivery with missing-items handoff). Next pass collect completed queue milestones and completed production records;do not duplicate active work. Unrelatedoutput/ preserved. No user action required.
+
 ## 2026-11-24T15:42:16+08:00 (UTC+8)
 - Work cards:T021/T023/T024 monitoring only. Pulled ws51f54f8,already current. Incoming21:00 full-comparison deadline remains active;no new note. No newly completed production/postprocessing stage and no ready Codex card;no eligible card skipped.
 - job.ps1 status:T023PID14496,T024PID37412,T021_T023_post_05PID32784 all running;original wrapper creation identities match,all stderr0bytes,no exitcodes. Queue05 remains in T021 high_thin_G0/it2 image_v2;completed new commands0,milestones empty. RunnerPID18376 creation identity matches;25 descendants accumulated25238.125CPU seconds at15:41:56,consistent with active imaging. Its108 frozen common/recovery inputs and runner hash match;no duplicate execution of previously completed diagnostics.
@@ -190,11 +199,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T19:35:47+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T19:20:47+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
