@@ -14,7 +14,7 @@ import run_deadline_05 as base
 
 
 OLD = base.JOB
-JOB = OLD.with_name('T023_T025_T026_post_06')
+JOB = OLD.with_name('T023_T025_T026_post_06b')
 CURRENT = ('T023', 'low_trap_G0', 'it0')
 DEFER = ('T021', 'high_thin_G0', 'it1')
 FIRST = [('T026','low_thin_G0','it0'), ('T025','high_thin_G0','latest')]
@@ -91,13 +91,26 @@ def admit(row):
 
 
 def configure():
-    receipt=load(OLD/'affinity_launch.json');api=ctypes.WinDLL('kernel32',use_last_error=True)
+    api=ctypes.WinDLL('kernel32',use_last_error=True)
     api.GetCurrentThread.restype=ctypes.c_void_p
     api.GetThreadGroupAffinity.argtypes=[ctypes.c_void_p,ctypes.c_void_p]
     buf=ctypes.create_string_buffer(16);assert api.GetThreadGroupAffinity(api.GetCurrentThread(),buf)
-    assert struct.unpack_from('<H',buf.raw,8)[0]==receipt['processor_group']
-    lanes=receipt['logical_processors'];assert len(set(lanes))==24
+    group=struct.unpack_from('<H',buf.raw,8)[0]
+    size=ctypes.c_ulong();api.GetLogicalProcessorInformationEx(0,None,ctypes.byref(size))
+    topology=ctypes.create_string_buffer(size.value)
+    assert api.GetLogicalProcessorInformationEx(0,topology,ctypes.byref(size))
+    offset=0;siblings=[]
+    while offset<size.value:
+        _,length=struct.unpack_from('<II',topology,offset)
+        count=struct.unpack_from('<H',topology,offset+30)[0]
+        for idx in range(count):
+            mask,item_group=struct.unpack_from('<QH',topology,offset+32+16*idx)
+            pair=[i for i in range(64) if (mask>>i)&1]
+            if item_group==group and len(pair)==2:siblings.append(pair[1])
+        offset+=length
+    lanes=sorted(set(siblings))[:24];assert len(lanes)==24
     p=psutil.Process();p.cpu_affinity(lanes);p.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS);assert p.cpu_affinity()==lanes
+    print('processor_group',group,'SMT lanes',lanes,flush=True)
     prefix=base.PYTHON.parent
     return dict(os.environ,PATH=os.pathsep.join(map(str,[prefix,prefix/'Library/bin',prefix/'Scripts',os.environ['PATH']])),PYTHONPATH=str(base.RUNTIME/'src'),PYTHONUTF8='1',PYTHONUNBUFFERED='1',PYTHONDONTWRITEBYTECODE='1',OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
 
