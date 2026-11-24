@@ -473,3 +473,8 @@ Updated: 2026-11-15
   - Gas absorption at 40/60 ns: 15/129 µJ against 33/143 µJ; vapour moves off the face and the onset is slightly later.
   - T027 (G0) gives the real test.
 - T023 low it1 (v1k): S1 median 88 µm, 0/11 frames; back pressure alone does not lift the emission at low fluence either.
+
+## 2026-11-24 21:50 — T027 low it0 (v1p vapour momentum): PREREG v1p (a) not met; run continues
+- ConsToPrim: 8.59M against 0.58M for T026 low it0. Endpoint closure 0.76% against 0.009%.
+- (a) as declared ("no worse than v1n") fails. Closure stays below the 2% limit, and the count is the same order as already accepted members (T021 high it0 4.4M, T025 low it1 3.2M). The run is kept, because the physics question (b), σ_z/σ_x, needs its imaging.
+- The extra repairs sit where the vapour momentum enters next to the reflecting wall, the same location as the 11-17 problem. If (b) shows < 5% change, v1p is closed as both ineffective and numerically costlier. If (b) shows a real change, the momentum injection is moved into a boundary-flux form before it is reported as a result.
