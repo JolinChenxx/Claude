@@ -1,5 +1,12 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T15:42:16+08:00 (UTC+8)
+- Work cards:T021/T023/T024 monitoring only. Pulled ws51f54f8,already current. Incoming21:00 full-comparison deadline remains active;no new note. No newly completed production/postprocessing stage and no ready Codex card;no eligible card skipped.
+- job.ps1 status:T023PID14496,T024PID37412,T021_T023_post_05PID32784 all running;original wrapper creation identities match,all stderr0bytes,no exitcodes. Queue05 remains in T021 high_thin_G0/it2 image_v2;completed new commands0,milestones empty. RunnerPID18376 creation identity matches;25 descendants accumulated25238.125CPU seconds at15:41:56,consistent with active imaging. Its108 frozen common/recovery inputs and runner hash match;no duplicate execution of previously completed diagnostics.
+- Budget snapshot2026-11-24T15:41:56+08:00:T023 high_thin_G0/it0=800,it1=800,it2=691.9865ns;high_thin_G1/it0=174.4945ns;high_trap_G0/it0=800,it1=800,it2=546.4776ns;low_thin_G0/it0=1300,it1=609.493ns;low_trap_G0/it0=1300,it1=622.4966ns. All active members advanced since preceding pass.
+- T024 high_thin_G0/it0=75.49651ns,low_thin_G0/it0=135.9894ns. High remains below80ns;required nearest30/40/60/80ns tr2-inclusive extraction is not due yet. Next pass check this threshold and send the prescribed extraction/budget handoff when met. No foreground wait or premature extraction.
+- T021 production complete;remaining images/peaks are already queued in authorized order. Collect only completed milestones,next ensure latest-low deadline delivery. Pinned scientific runtime remains unchanged. No process stopped/restarted,parameters changed,data deleted,new job launched,or report/artifact change to sync. Unrelatedoutput/ preserved. Updated only codex-status heartbeat;no user action needed.
+
 ## 2026-11-24T15:27:18+08:00 (UTC+8)
 - Work cards:T021/T023/T024 monitoring only. Pulled ws51f54f8;Claude consumed queue05 launch handoff. Only incoming instruction is the active21:00 full-comparison deadline;no new action or authorization. No new completed production/postprocessing stage,and no ready Codex card;no eligible card skipped.
 - job.ps1 status:T023PID14496,T024PID37412,T021_T023_post_05PID32784 all running. Creation epochs match1795484727.6840496,1795503549.0785756,1795505005.892073 respectively;all stderr0bytes,no exitcodes. Queue05 remains in T021 high_thin_G0/it2 imaging,completed new commands0,milestones empty. Its108 frozen common/recovery inputs and runner hash still match. Previously completed3 diagnostics remain reused,not rerun.
@@ -188,11 +195,6 @@
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
 
 ## 2026-11-20T19:20:47+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T19:05:50+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
