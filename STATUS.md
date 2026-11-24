@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-24T18:27:44+08:00 (UTC+8)
+- Work card: none. ws is up to date at aa9641d. No ready card or new completion to hand off. The 21:00 comparison instruction remains open for T023 low_thin_G0/it1; it0 remains the latest completed and delivered low-thin iteration.
+- job.ps1 status: T023, T025, T026 and T021_T023_post_05 are running. The image queue is processing T023 high_trap_G0/it1; its 20 completed commands and four previously delivered milestones are unchanged.
+- Active budgets at 18:27 UTC+8 (ns): T023 high_thin_G1/it0 216.9948, low_thin_G0/it1 815.4865, low_trap_G0/it1 845.4823; T025 high_thin_G0/it1 65.99725; T026 high_thin_G0/it0 69.49816 and low_thin_G0/it0 1186.980. All six advanced since the previous check. No job started or stopped.
+
 ## 2026-11-24T18:13:42+08:00 (UTC+8)
 - Work card: none. Pulled ws to aa9641d; Claude consumed the T023 and T025 handoffs. The 21:00 comparison instruction remains active. No new completed iteration, uncollected milestone or ready Codex card.
 - job.ps1 reports T023 (PID 14496), T025 (5984), T026 (1700) and T021_T023_post_05 (32784) running. Queue05 is computing T023 high_trap_G0/it1 images; 20 commands finished, all four available milestones already delivered.
@@ -227,11 +232,6 @@
 - Separate codex-status pull also failed. This entry is saved locally for later synchronization; its push will be attempted after the local commit. Restore the local proxy or GitHub connectivity before remote task polling can resume. No ws edits or process intervention.
 
 ## 2026-11-20T22:05:57+08:00 (UTC+8)
-- Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
-- No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
-- Unrelated output/ preserved. No ws edits or process intervention. No user action required.
-
-## 2026-11-20T21:50:56+08:00 (UTC+8)
 - Work card: none. Pulled ws, already current at d6b6ef4. Incoming to_codex empty. Checked all 32 Codex cards: T012/T013 remain draft and the other 30 are done. No ready, running, blocked or review card; no executable task or dependency ambiguity.
 - No active card requires job.ps1 polling. Previously completed jobs remain closed. No card claimed, job launched, result collected or handoff required this pass; no ready card was skipped.
 - Unrelated output/ preserved. No ws edits or process intervention. No user action required.
