@@ -24,3 +24,4 @@
 11. 单脉冲凹坑的深度剖面或烧蚀体积 / 质量（高、低通量各一）。
 12. 是否有发射光谱（任何波段）或电子密度 / 温度的测量。
 13. 冲击波阴影图（图 3c/S10/S11）的原始图像与像素尺寸。
+- Fig. 2a scale bar: the '100 µm' bar spans 103 px of a 239 px panel. With the S3 scale bar (9.244 µm/px), which also reproduces the Fig. 2c radii, it is 231 µm. Which is correct? (Claude, 2026-11-24)
