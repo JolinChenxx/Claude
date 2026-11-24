@@ -456,3 +456,10 @@ Updated: 2026-11-15
 
 ## 2026-11-24 18:50 — T026 low it0 (v1n energy-limited droplets): PREREG v1n (a) holds
 - Endpoint residual 0.002 µJ, against +1.14 µJ for T025 low it0 (same case without the energy limit) and +1.74 µJ for T021 low it1. 0.99 ng of the 4.74 ng droplet mass stays condensed because the gas cannot pay L_v. The floor-clamp energy is gone, so the bound is now energy-consistent. Imaging is pending; (b)–(d) wait for it.
+
+## 2026-11-24 20:15 — T025 high it1 (back pressure + droplet upper bound), PREREG "combination"
+- (a) L(730)/L(300) (sa) is 0.157; the experiment is 0.107 and T021 0.155. Holds: within a factor 2.
+- (b) S1 (sa): median 155 µm, 1/20 frames reach the experimental minimum (T021: 177 µm, 7/20). The lift is a little lower than with droplets alone.
+- (c) σ_z at 300 ns: 76 µm against 151 µm in the experiment. Still small.
+- (d) Axial shock at 600 ns: 628 µm against 609 µm for T023 (+3%). Holds.
+- T026 low it0 (v1n): L(715)/L(300) 0.201 against 0.163 in the experiment, the closest of all members; S1 8/11 (passes); σ_z 68 against 94 µm; L(1035)/L(300) 0.136 against 0.027.
