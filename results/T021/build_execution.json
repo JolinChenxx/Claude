@@ -1,0 +1,33 @@
+{
+  "started": "2026-11-24T08:39:50.419610+08:00",
+  "finished": "2026-11-24T08:40:04.411786+08:00",
+  "command": [
+    "D:\\sim_tools\\envs\\lipsim\\python.exe",
+    "scripts/build_pluto.py",
+    "--problem",
+    "pluto/lip",
+    "--out",
+    "D:\\sim_tools\\pluto_lip\\build_v1j\\mpi",
+    "--platform",
+    "windows",
+    "--mpi",
+    "--eos",
+    "pvte",
+    "--tc",
+    "--extra-obj",
+    "lip_tables.o",
+    "lip_physics.o",
+    "lip_glue.o",
+    "--jobs",
+    "8"
+  ],
+  "returncode": 0,
+  "wall_seconds": 13.99283719999994,
+  "source_commit": "4b0bac441769b2b2e63de47e6354af048aaee156",
+  "executable_sha256": "f85761643b233da249556e28d6fbbe08264b4a12c6bfc91696ef584fc14d252f",
+  "replaced_count": 7,
+  "verified_problem_files": 18,
+  "existing_solver_or_fdtd_processes": [],
+  "disk_free_bytes": 2250196561920,
+  "runtime_import_check": "lipsim.batch and lipsim.target.build imported successfully"
+}
