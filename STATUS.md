@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T07:31:08+08:00 (UTC+8)
+- T029 high G0 it0 imaging finished at 07:14:18: five zero exits, six 29-frame archives, 18 metrics tables, 29 peak rows and three diagnostics. Verified 34 archived files against their SHA-256 receipts; result handoff pushed as d294fd6 and report sync verified. Band-b baseline P1 (thin / self-absorbed): 396.28 / 369.16 ns. P2 unavailable in all 18 scenarios.
+- Queue 08 retired its idle coordinator PID 41384 at 07:14:18 after the high-it0 milestone. Wrapper exit 15 was the authorized retirement. Queue 10 is imaging T029 high G0 it1; no low members repeated. Inbox note consumed. Production: T023 high G1 it0 587.9947 ns and T029 high G0 it2 72.99895 ns. T028 production finished and its high imaging is pending. No ready card or new job.
+
 ## 2026-11-25T07:02:08+08:00 (UTC+8)
 - T029 high G0 it1 and T028 high G1 it0 both completed at 800 ns, rc 0 (1,590 and 1,602 finite budget rows). The initial pull encountered the live registry append. Verified both new rows, input hashes and rank-0 Done markers, committed and rebased. Pushed separate production handoffs and reports at 75d03f7; 26 archived blobs and both synced reports were hash-verified. Absolute relative energy residuals: T029 0.269375%, T028 0.069599%.
 - T028 production wrapper finished; high G1 imaging remains outstanding. At 07:01 queue 08 was imaging T029 high G0 it0. Queue 10 was still waiting for the authorized idle boundary; retain its inbox note until transition is confirmed. T023 high G1 it0 at 583.4959 ns, T029 high G0 it2 at 36.9998 ns. No ready Codex card; no new job launched.
@@ -129,8 +133,3 @@
 - T026 low_thin_G0/it0 postprocessing delivered on ws at 16b3259: five successful commands, full image_v2 including native band-b thin/sa, three diagnostics and 30 peak rows. All 18 unavailable P2 values preserved. Report-only sync hash verified.
 - Priority queue06b: running, T025/high_thin_G0/it1, stage image_v2. T025 high-thin it1 diagnostics returned zero. No new launch or stop. Deadline note remains open for the T023 low-thin it1 images and peak.
 - T023/T025/T026 production running at check. Latest active budgets: T023/high_thin_G1/it0 2.409912e+002 ns; T025/high_thin_G0/it2 4.799756e+001 ns; T026/high_thin_G0/it1 5.999851e+001 ns. No ready Codex card.
-
-## 2026-11-24T19:37:23+08:00 (UTC+8)
-- T023/T025/T026 handoffs pushed on ws at 8a6804e. Production completed: T023 low-trap it1 and low-thin it1 at 1300 ns, T025 high-thin it1 and T026 high-thin it0 at 800 ns. Original completion evidence, energy checkpoints, rank warnings and reports delivered. T026 low-thin it1 production and T023 low-trap it0 postprocessing were archived at 9a3eeca.
-- Queue05 yielded after all five low-trap it0 stages returned zero. Priority queue06b: running, member T026/low_thin_G0/it0, stage image_v2. T026 low-it0 diagnostics returned zero. No new solver or image job launched. The 21:00 deadline remains active; pending images and peaks have not been reported as complete.
-- Production wrappers T023/T025/T026 running at check. Active budgets: T023/high_thin_G1/it0 2.354899e+002 ns; T025/high_thin_G0/it2 3.449937e+001 ns; T026/high_thin_G0/it1 4.749830e+001 ns. No ready Codex card. Only the completed priority note was archived.
