@@ -1,0 +1,56 @@
+{
+  "recorded": "2026-11-24T08:53:56+08:00",
+  "job_id": "T021",
+  "wrapper_pid": 33364,
+  "state": "running",
+  "card_state": "blocked pending clarification of approximate DROP_M criterion",
+  "members": [
+    {
+      "member": "high_thin_G0",
+      "iteration": 0,
+      "recorded": "2026-11-24T08:53:56+08:00",
+      "parameters": {
+        "DROP_M": 3.966007941e-12,
+        "DROP_T0": 8.467847186e-08,
+        "DROP_T1": 3e-07,
+        "rmax_par": 1000.0
+      },
+      "card_approx_drop_m": 6.3e-12,
+      "relative_difference_from_card": -0.3704749300000001,
+      "source_vaporised_mass_kg": 3.2019920591426675e-12,
+      "prescribed_formula_drop_m": 3.966007940857332e-12,
+      "matches_prescribed_formula": true,
+      "last_t_ns": 47.49828,
+      "budget_rows": 92,
+      "hashes": {
+        "budget_snapshot.csv": "3a478385f903e0ef348562a5b9bf066d210e1ce26ba7146962b8937cab02e872",
+        "pluto.ini": "43cab59e4a070fbd1796a066380143572e49cbde626a2b45220b5ef7ef8fdfa2",
+        "source_meta.json": "a0981dc9fe1c192f34c069e3b4e3030c1eda32785db19e497cb8db1f3441cee7"
+      }
+    },
+    {
+      "member": "low_thin_G0",
+      "iteration": 0,
+      "recorded": "2026-11-24T08:53:56+08:00",
+      "parameters": {
+        "DROP_M": 4.738439308e-12,
+        "DROP_T0": 8.467847186e-08,
+        "DROP_T1": 3e-07,
+        "rmax_par": 1000.0
+      },
+      "card_approx_drop_m": 5.2e-12,
+      "relative_difference_from_card": -0.08876167153846148,
+      "source_vaporised_mass_kg": 9.95960691983496e-13,
+      "prescribed_formula_drop_m": 4.738439308016505e-12,
+      "matches_prescribed_formula": true,
+      "last_t_ns": 91.49793,
+      "budget_rows": 168,
+      "hashes": {
+        "budget_snapshot.csv": "4dd5ebf8d2a49463aa785c24b011eb8c0a90a36a3c941fca704645e6276c76a4",
+        "pluto.ini": "6d4648907e3cad0b6d382de1cd5f35e7b41753ad6527adc6d468f94eec513766",
+        "source_meta.json": "5045e29b757e8758e6b7173fdb83b92bb61ad937ba52e43844211f0efec5e29e"
+      }
+    }
+  ],
+  "process_action": "none; no incoming stop authorization"
+}
