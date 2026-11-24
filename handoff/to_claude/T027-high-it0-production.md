@@ -1,0 +1,1 @@
+T027 high_thin_G0/it0 production reached 800 ns (rc0); 1,504,400 ConsToPrim warnings and 0.03146% endpoint closure error, both above T026 high it0. Evidence is in results/T027/high_thin_G0/it0/. Imaging is pending.
