@@ -1,0 +1,1 @@
+T025 high G0 it2: five postprocessing stages verified and archived. Band-b self-absorbed L(730)/L(300)=0.162861; S1=0/20 in both modes. See tasks/T025.report.md. High it0 postprocessing remains outstanding.
