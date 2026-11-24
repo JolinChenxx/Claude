@@ -409,3 +409,9 @@ Updated: 2026-11-15
 ## 2026-11-24 — T021 low it1: energy residual inside the droplet window (accepted, corrected)
 - Closure at 1300 ns: ΔE 21.86 µJ against net sources 20.11 µJ (+1.74 µJ). The residual is 0 up to 100 ns, 0.15 at 200, 0.64 at 250, 1.71 at 300 ns, then flat. M_Cu = M_src exactly. By comparison, it0 closes to 0.29 µJ and high it0 to 0.005%.
 - Reading: in it1 the gas absorbs half of what it did in it0 (44.6 vs 87.8 µJ) for the same 5.2 ng of droplets. Late in the window the core cannot pay L_v, and the floor clamp adds the difference. The realised droplet cooling in low it1 is about 1.7 µJ less than booked. The run is kept as the upper bound with this correction. Making the droplet release energy-limited would be a model change and is not done mid-test.
+
+## 2026-11-24 — T023 early check (high thin G0 it0, 40/60/80 ns) against PREREG v1k (a)
+- The wall cell on the beam peaks at 114 / 642 / 466 kg/m³ (40/60/80 ns), against 6282 kg/m³ for the sonic source (T018c it2, 62 ns). That is 10× lower, but 60 ns is above the 500 kg/m³ threshold: (a)-1 fails marginally. The near-wall profile is now smooth: no 200 K floor cell and no 150 kK table cap (T_max 88/111/82 kK).
+- 94 / 91 / 90% of the absorbed laser power is still within 5 µm of the face: **(a)-2 fails**. A dense absorbing vapour layer (10–600 kg/m³ over 0–3 µm) remains, and the hot 70–110 kK gas above it is too thin (0.1–10 kg/m³) to absorb first.
+- Caveat: old = Picard it2, new = it0. The it0 source is unshielded and carries more vapour, so it1/it2 will be read the same way.
+- PREREG reading for a failed (a): near-wall resolution is the suspect, and the G1 member (0.5 µm wall cell) is already running. Converging beam and the 3-D end face stay the next separately declared candidates. Nothing is tuned.
