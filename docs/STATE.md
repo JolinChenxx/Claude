@@ -513,3 +513,15 @@ Updated: 2026-11-15
   - L715/L300 0.723 and L1035/L300 0.455, against 0.199 / 0.129.
   - The vapour momentum keeps a hot emitting layer at the face and destroys the low-fluence decay and lift.
 - High it2 was stopped at 162 ns as authorised. Together with the high it0 reading (aspect +1.5%), v1p is closed, and the reported model stays v1n (T026).
+
+## 2026-11-25 06:40 — T029 low (v1q, droplets at the measured spatter top) and T028 low G1 (grid check of v1n)
+- **T029 low it1 against T026 low it1, PREREG v1q:**
+  - (b) σ_z/σ_x at 300 ns: 0.917 against 0.711, +29%; the experiment is 0.94. The plume shape becomes round, close to the experiment, but by narrowing (σ_x 94 → 79 µm against 99 in the experiment) more than by elongating (σ_z 67 → 73 µm against 94).
+  - S1 median 134 µm, 8/11 frames, which passes.
+  - (c) The decay gets worse: L715/L300 0.336 against 0.199 (experiment 0.163), and L1035/L300 0.159 against 0.129. At the low spatter speed, 190 m/s, the gas at the front can pay for only part of the droplets: 3.56 of 4.74 ng stay condensed, against 0.99 ng in T026. So the cooling is weaker.
+  - Reading: the location of the droplet sink sets the plume aspect. v1n (whole core) and v1q (front) bracket the location, so each matches part of the data. Shape matches at the front; decay and width match in the core.
+- **T028 low G1 it0 against T026 low G0 it0:**
+  - L715/L300 0.228 against 0.201 (+13%); L1035/L300 0.150 against 0.136 (+10%).
+  - S1 median 106 against 125 µm, 7/11 against 8/11 frames.
+  - σ_z 69 against 68 µm; σ_z/σ_x 0.67 against 0.70.
+  - The headline metrics agree to about 10–15% between grids; the decay and lift readings are unchanged. The high G1 member is at about 340 ns.
