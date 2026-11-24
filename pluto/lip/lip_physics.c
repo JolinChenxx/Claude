@@ -37,6 +37,39 @@ double lip_vapour_enthalpy(const LipEOS *eos, double rhov, double uv, double Tv)
   return e + p / rhov + 0.5 * uv * uv;
 }
 
+/* Knight (AIAA J. 17, 519, 1979) Knudsen-layer jump for a monatomic vapour (gamma = 5/3) at exit Mach M. */
+static void knight_M(double M, double *tr, double *rr)
+{
+  const double g = 5.0 / 3.0, sp = sqrt(CONST_PI_LIP);
+  double m = M * sqrt(0.5 * g), b = (g - 1.0) / (g + 1.0) * 0.5 * m;
+  double st = sqrt(1.0 + CONST_PI_LIP * b * b) - sp * b;
+  double E = exp(m * m) * erfc(m);              /* m <= 0.913: no overflow */
+  *tr = st * st;
+  *rr = sqrt(1.0 / *tr) * ((m * m + 0.5) * E - m / sp) + 0.5 / *tr * (1.0 - sp * m * E);
+}
+
+double lip_knight_bp(double pr, double *M_out, double *tr_out, double *rr_out)
+{
+  double tr1, rr1, tr, rr, M;
+  knight_M(1.0, &tr1, &rr1);
+  if (pr <= rr1 * tr1) { M = 1.0; tr = tr1; rr = rr1; }
+  else if (pr >= 1.0) { M = 0.0; tr = 1.0; rr = 1.0; }
+  else {
+    double lo = 0.0, hi = 1.0;                  /* p_v/p_sat falls monotonically with M */
+    for (int it = 0; it < 60; it++) {
+      M = 0.5 * (lo + hi);
+      knight_M(M, &tr, &rr);
+      if (rr * tr > pr) lo = M; else hi = M;
+    }
+    M = 0.5 * (lo + hi);
+    knight_M(M, &tr, &rr);
+  }
+  if (M_out) *M_out = M;
+  if (tr_out) *tr_out = tr;
+  if (rr_out) *rr_out = rr;
+  return rr * M * sqrt(tr) / (rr1 * sqrt(tr1));
+}
+
 /* ------------------------------------------------------------- source table (t, r) */
 int lip_src_read(const char *path, LipSrcTable *s)
 {

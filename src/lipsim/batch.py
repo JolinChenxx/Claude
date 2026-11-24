@@ -88,7 +88,8 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int,
     las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"])
     params = [("E_PULSE", las.E), ("D_BEAM", las.D), ("FWHM", las.fwhm), ("T_PEAK", las.t_peak),
               ("NEC_LIMIT", NEC[nec]), ("P_AMB", P.get("p_ambient")), ("T_AMB", P.get("T_ambient")),
-              ("SRC_ON", src_on), ("T_FLOOR", P.get("T_ambient"))] + droplet_params(case_cfg, vaporised_mass_kg)
+              ("SRC_ON", src_on), ("T_FLOOR", P.get("T_ambient"))] + droplet_params(case_cfg, vaporised_mass_kg) + \
+             [("BACKP", 1 if (case_cfg.get("target") or {}).get("back_pressure", False) else 0)]
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",
@@ -119,7 +120,12 @@ def merge_surftrans(run_dir: Path):
     it = np.searchsorted(t, a[:, 0])
     ir = np.searchsorted(r, a[:, 1])
     trans[it, ir] = a[:, 2]
-    np.savez_compressed(run_dir / "surface_transmission.npz", t=t, r=r, trans=trans)
+    extra = {}
+    if a.shape[1] >= 4:  # v1k builds also write the wall-cell gas pressure [Pa]
+        pw = np.zeros((len(t), len(r)))
+        pw[it, ir] = a[:, 3]
+        extra["pwall"] = pw
+    np.savez_compressed(run_dir / "surface_transmission.npz", t=t, r=r, trans=trans, **extra)
     return run_dir / "surface_transmission.npz"
 
 

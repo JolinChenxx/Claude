@@ -8,7 +8,9 @@ and no surface recession in v0 (ablated depth reported). T_s capped at f_Tcap·T
 would have raised T_s above the cap is booked as "over-cap" (U4 trigger, PLAN §3.6).
 Evaporation: Clausius–Clapeyron p_sat through (T_boil, 1 atm) with L_v; Knight sonic Knudsen layer
 (M = 1): T_v = 0.669 T_s, ρ_v = 0.308 ρ_sat, u_v = sqrt(5/3 k T_v / m), ṁ = ρ_v u_v (v0 uses the sonic
-relation at all p_sat — an upper bound at low p_sat where ṁ is negligible; v1 adds back pressure).
+relation at all p_sat — an upper bound at low p_sat where ṁ is negligible). v1k: with a wall-pressure history
+p_w(t, r) from the previous Picard iteration, the Knight layer is subsonic when p_w > 0.206 p_sat and ṁ = 0 when
+p_w ≥ p_sat (recondensation not modelled: declared bound); `knight_bp` below, same relations as the solver.
 Absorptance A(T): A_RT (optical constants) + Drude change driven by the measured resistivity,
 A(T) = A_RT + A_D(ρ_e(T)) − A_D(ρ_e(293 K)), A_D from Fresnel with ε = 1 − ω_p²/(ω² + iων), ν = ε0 ω_p² ρ_e.
 """
@@ -18,6 +20,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 from scipy.linalg import solve_banded
+from scipy.special import erfcx
 
 from lipsim import params as P
 
@@ -27,6 +30,36 @@ EPS0 = P.get("eps0")
 E_CH = P.get("e")
 M_E = P.get("m_e")
 C = P.get("c")
+
+
+GAMMA_V = 5.0 / 3.0  # math (monatomic vapour)
+
+
+def knight_M(M):
+    """Knight (AIAA J. 17, 519, 1979) jump at exit Mach M: (T_v/T_s, rho_v/rho_sat), gamma = 5/3."""
+    m = np.asarray(M, float) * np.sqrt(GAMMA_V / 2)  # math
+    b = (GAMMA_V - 1) / (GAMMA_V + 1) * m / 2  # math
+    tr = (np.sqrt(1 + np.pi * b * b) - np.sqrt(np.pi) * b) ** 2  # math
+    E = erfcx(m)
+    rr = np.sqrt(1 / tr) * ((m * m + 0.5) * E - m / np.sqrt(np.pi)) + 0.5 / tr * (1 - np.sqrt(np.pi) * m * E)  # math
+    return tr, rr
+
+
+def knight_bp(pr):
+    """Exit Mach M, T_v/T_s, rho_v/rho_sat for back-pressure ratio pr = p_w/p_sat (array). Sonic for
+    pr <= p_v(1)/p_sat, M = 0 for pr >= 1, bisection in between (p_v/p_sat falls monotonically with M)."""
+    pr = np.asarray(pr, float)
+    lo, hi = np.zeros_like(pr), np.ones_like(pr)
+    for _ in range(60):  # num (bisection to machine precision)
+        M = 0.5 * (lo + hi)
+        tr, rr = knight_M(M)
+        up = rr * tr > pr
+        lo, hi = np.where(up, M, lo), np.where(up, hi, M)
+    M = 0.5 * (lo + hi)
+    tr1, rr1 = knight_M(1.0)
+    M = np.where(pr <= rr1 * tr1, 1.0, np.where(pr >= 1.0, 0.0, M))
+    tr, rr = knight_M(M)
+    return M, tr, rr
 
 
 def _tab(key, col):
@@ -90,12 +123,18 @@ class Material:
     def psat(self, T):
         return self.p0 * np.exp(self.m_atom * self.Lv / K_B * (1.0 / self.Tb - 1.0 / T))
 
-    def knight(self, Ts):
+    def knight(self, Ts, pw=None):
+        """Sonic Knight state (pw None), or v1k with back pressure pw [Pa]: returns mdot, Tv, rhov, uv."""
         kv = P.get("knight_M1")
         rho_sat = self.psat(Ts) * self.m_atom / (K_B * Ts)
-        Tv = kv["Tv_over_Ts"] * Ts
-        rhov = kv["rhov_over_rhos"] * rho_sat
-        uv = np.sqrt(5.0 / 3.0 * K_B * Tv / self.m_atom)  # math (monatomic gamma)
+        if pw is None:
+            Tv = kv["Tv_over_Ts"] * Ts
+            rhov = kv["rhov_over_rhos"] * rho_sat
+            uv = np.sqrt(5.0 / 3.0 * K_B * Tv / self.m_atom)  # math (monatomic gamma)
+            return rhov * uv, Tv, rhov, uv
+        M, tr, rr = knight_bp(np.asarray(pw, float) / self.psat(Ts))
+        Tv, rhov = tr * Ts, rr * rho_sat
+        uv = M * np.sqrt(GAMMA_V * K_B * Tv / self.m_atom)  # math
         return rhov * uv, Tv, rhov, uv
 
     def h_table(self, T0, Tmax=12000.0, n=24000):  # num
@@ -146,8 +185,11 @@ def depth_grid(dz0=10e-9, growth=1.03, depth=40e-6):  # num
 
 
 def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, shielding=None,  # num
-        T0=None, n_inner=3, phase_explosion=False):  # num
-    """Integrate all rings. shielding: callable (r, t) -> transmission in [0,1] (Picard input) or None."""
+        T0=None, n_inner=3, phase_explosion=False, wall_pressure=None):  # num
+    """Integrate all rings. shielding: callable (r, t) -> transmission in [0,1] (Picard input) or None.
+    wall_pressure: callable (r, t) -> gas pressure of the wall cell [Pa] (v1k Picard input) or None (sonic).
+    The recorded vapour state (Tv, rhov, uv, mdot) stays the SONIC state at T_s: the solver applies the back
+    pressure with its current wall-cell pressure. Latent cooling and the vaporised mass use the back-pressure ṁ."""
     T0 = P.get("T_ambient") if T0 is None else T0
     dz = depth_grid()
     nz, nr = len(dz), len(r)
@@ -156,7 +198,7 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
     Tg, hg = mat.h_table(T0)
     H = np.zeros((nr, nz))  # volumetric enthalpy rho*(h - h(T0)), J/m^3
     nt = int(round(t_end / dt))
-    out = {k: np.zeros((nt + 1, nr)) for k in ("Ts", "mdot", "Tv", "rhov", "uv", "I_inc", "q_abs", "q_overcap", "A")}
+    out = {k: np.zeros((nt + 1, nr)) for k in ("Ts", "mdot", "Tv", "rhov", "uv", "I_inc", "q_abs", "q_overcap", "A", "mdot_bp")}
     E = {k: np.zeros(nr) for k in ("inc", "abs", "vap_latent", "overcap", "mass", "pe_mass")}
     rho = mat.rho
     times = np.arange(nt + 1) * dt
@@ -175,7 +217,8 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
             Ts = Tn[:, 0]
             A = mat.absorptance(Ts)
             mdot, Tv, rv, uv = mat.knight(Ts)
-            q_net = A * tau * I - mdot * mat.Lv
+            mdot_bp = mdot if wall_pressure is None else mat.knight(Ts, np.maximum(wall_pressure(r, t), 0.0))[0]
+            q_net = A * tau * I - mdot_bp * mat.Lv
             kk = mat.k(Tn)
             kf = 2 * kk[:, :-1] * kk[:, 1:] / (kk[:, :-1] + kk[:, 1:])  # math (harmonic face conductivity)
             cap = rho * mat.c_eff(Tn) * dz / dt
@@ -222,9 +265,10 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
         record(n, T[:, 0], I, tau, A, mdot, Tv, rv, uv, qo)
         E["inc"] += I * dt
         E["abs"] += A * tau * I * dt
-        E["vap_latent"] += (mdot - mpe) * mat.Lv * dt   # Knight evaporation; the phase-explosion part is booked above
+        E["vap_latent"] += mdot_bp * mat.Lv * dt   # Knight evaporation (v1k: with back pressure); the phase-explosion part is booked above
         E["overcap"] += qo * dt
-        E["mass"] += mdot * dt
+        E["mass"] += (mdot_bp + mpe) * dt
+        out["mdot_bp"][n] = mdot_bp
     # stored energy per unit area (sensible + latent of fusion) for the conservation check
     TT = np.linspace(T0, 1.0, 2)  # placeholder to keep the namespace explicit
     del TT

@@ -51,3 +51,9 @@ From 63.4 to 63.6 ns, dt fell from 4e-3 to 1.6e-4 ns, with Mach 521 and Nrkl 33.
 
 ## 2026-11-20 03:00 (UTC+8) — stop T018c it2; withdraw the PE results (standing authorization)
 Both it2 members stall at ~63 ns: mass piles up near the wall because the PE source exceeds the choked evaporation flux 21×. That is an inconsistency in the PE model specification, not a solver defect. The runs are stopped, the data kept, and the PE results withdrawn (STATE/PREREG). The reported high-fluence result stays T016e it2 (PE off).
+
+## 2026-11-24 (UTC+8) — full machine for the project (user)
+User: "目前只有我一个人在用工作站，直接尽可能的用满算力即可". Cards may fill all 64 physical cores (AGENTS.md; 128 logical) with MPI ranks, postprocessing using the hyperthreads, instead of the earlier ~60-core background ceiling. T021 keeps its 16 cores; T023 takes 48.
+
+## 2026-11-24 (UTC+8) — v1k back pressure (user: "尽快能修复…热核留在壁面上的问题")
+The face-pinned hot core traces to a sonic Knight source feeding a wall cell at 10–100× p_sat (T018c 62 ns extract). The pre-declared v1 item, Knight with back pressure, is implemented as v1k (PREREG v1k) and run as T023 alongside T021, which is not stopped: its droplet bound is still informative, and both runs answer separate pre-registered questions.

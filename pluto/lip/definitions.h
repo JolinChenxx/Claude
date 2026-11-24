@@ -10,7 +10,7 @@
 #define  TIME_STEPPING                  RK2
 #define  NTRACER                        1
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            14
+#define  USER_DEF_PARAMETERS            15
 
 /* -- physics dependent declarations -- */
 #define  DUST_FLUID                     NO
@@ -35,6 +35,7 @@
 #define  DROP_LV                        11  /* J/kg, latent heat taken from the gas on evaporation */
 #define  DROP_T0                        12  /* s, start of droplet release window */
 #define  DROP_T1                        13  /* s, end of droplet release window */
+#define  BACKP                          14  /* 1 = Knight evaporation with back pressure (v1k); 0 = sonic (v1j) */
 
 /* -- supplementary constants (user editable) -- */
 #define  UNIT_DENSITY                   1.0e-3   /* g/cm^3 = 1 kg/m^3 */

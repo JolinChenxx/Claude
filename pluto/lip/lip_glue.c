@@ -21,7 +21,8 @@ LipSrcTable lip_src;
 static int  lip_ready = 0, i_alpha = -1, i_nec = -1, i_kappa = -1, i_D = -1, i_dh = -1;
 static int  s_mdot, s_Tv, s_rhov, s_uv, s_A, s_Ts;
 static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
-static double *trans = NULL;
+static double *trans = NULL, *pw_cell = NULL;
+static double B_bp[1];   /* v1k: evaporated mass suppressed by back pressure (kg) */
 static double B[9];   /* budget: inc, gas_abs, targ_abs, esc, rad, rad_limited, mass_src, energy_src, wall (gas->target) */
 
 void lip_init(void)
@@ -40,7 +41,7 @@ void lip_init(void)
 #if THERMAL_CONDUCTION != NO
   if (i_kappa < 0 || s_Ts < 0 || i_D < 0 || i_dh < 0) { printLog("! lip: conduction build needs opt.bin fields kappa, D_cuair, dh_dY and source field Ts (v1 step-2 tables)\n"); QUIT_PLUTO(1); }
 #endif
-  memset(B, 0, sizeof(B));
+  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp));
   lip_ready = 1;
 }
 
@@ -120,6 +121,8 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
     q_rad = ARRAY_2D(NX2_TOT, NX1_TOT, double);
     T_cell = ARRAY_2D(NX2_TOT, NX1_TOT, double);
     trans = ARRAY_1D(NX1_TOT, double);
+    pw_cell = ARRAY_1D(NX1_TOT, double);
+    for (i = 0; i < NX1_TOT; i++) pw_cell[i] = 0.0;
   }
   double *dz = ARRAY_1D(nz, double), *al = ARRAY_1D(nz, double), *q = ARRAY_1D(nz, double);
   /* v1j droplet release: mass for this step (global, identical on all ranks) and the global weight sum */
@@ -224,9 +227,24 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
 #endif
       if (j == JBEG && g_inputParam[SRC_ON] > 0.5 && grid->lbound[JDIR] != 0) {
         double mdot = lip_src_get(&lip_src, s_mdot, t_SI, r);
+        pw_cell[i] = v[PRS] * LIP_PRS_SI;          /* wall-cell gas pressure, Picard input of the target model */
         if (mdot > 0.0) {
           double Tv = lip_src_get(&lip_src, s_Tv, t_SI, r), rv = lip_src_get(&lip_src, s_rhov, t_SI, r);
           double uv = lip_src_get(&lip_src, s_uv, t_SI, r);
+          /* v1k (PLAN v3 §3.2 v1 item, PREREG 2026-11-24): Knight layer with back pressure. The table holds the
+             sonic state for T_s; the gas pressure of this cell sets the exit Mach number. No free parameter. */
+          if (g_inputParam[BACKP] > 0.5) {
+            const double kB = 1.380649e-23, mCu = 63.546 * 1.66053906660e-27;   /* registry k_B, A_Cu, amu */
+            double tr1, rr1, M, tr, rr;
+            lip_knight_bp(0.0, NULL, &tr1, &rr1);
+            double Ts_k = Tv / tr1, rhos = rv / rr1, psat = rhos * kB * Ts_k / mCu;
+            double pg = v[PRS] * LIP_PRS_SI;
+            double f = lip_knight_bp(pg / psat, &M, &tr, &rr);
+            Tv = tr * Ts_k; rv = rr * rhos; uv = M * sqrt(5.0 / 3.0 * kB * Tv / mCu);
+            mdot = rv * uv;
+            (void)f;
+            B_bp[0] += (lip_src_get(&lip_src, s_mdot, t_SI, r) - mdot) * ring * dt_SI;   /* suppressed mass */
+          }
           double dm = mdot / dz[0] * dt_SI;
           double hv = lip_vapour_enthalpy(&lip_eos, rv, uv, Tv);
           /* v1 correction (pre-declared, PREREG_v0 §5 / STATE 11-17): inject mass and the vapour's stagnation
@@ -295,7 +313,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[9];
+  double tot[4] = {0, 0, 0, 0}, glob[4], Bg[9], Bbpg[1];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -312,22 +330,23 @@ void lip_analysis(const Data *d, Grid *grid)
 #ifdef PARALLEL
   MPI_Allreduce(tot, glob, 4, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B, Bg, 9, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(B_bp, Bbpg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 #else
-  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B));
+  memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp));
 #endif
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0]);
     fclose(fp);
   }
   if (trans != NULL && grid->lbound[JDIR] != 0) {
     char fn[64];
     sprintf(fn, "surftrans_%03d.txt", prank);
     FILE *fp = fopen(fn, "a");
-    IDOM_LOOP(i) fprintf(fp, "%.6e %.6e %.6e\n", g_time * LIP_TIME_SI, grid->x[IDIR][i] * LIP_LEN_SI, trans[i]);
+    IDOM_LOOP(i) fprintf(fp, "%.6e %.6e %.6e %.6e\n", g_time * LIP_TIME_SI, grid->x[IDIR][i] * LIP_LEN_SI, trans[i], pw_cell[i]);
     fclose(fp);
   }
 }

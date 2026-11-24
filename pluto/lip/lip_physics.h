@@ -21,6 +21,13 @@ double lip_laser_column(int nz, const double *dz, const double *alpha, double I_
  * Returns the specific total enthalpy carried into the gas: e(ρv,Tv,1) + p/ρv + uv^2/2 (J/kg). */
 double lip_vapour_enthalpy(const LipEOS *eos, double rhov, double uv, double Tv);
 
+/* v1k: Knight Knudsen layer with back pressure (subsonic evaporation). pr = p_gas / p_sat(T_s).
+ * pr <= 0.2062: sonic (M = 1); pr >= 1: no net evaporation (recondensation not modelled: declared bound);
+ * otherwise the exit Mach M solves p_v(M)/p_sat = pr. Returns the mass flux relative to the sonic flux at the
+ * same T_s, and M, T_v/T_s, rho_v/rho_sat. */
+#define CONST_PI_LIP 3.14159265358979323846
+double lip_knight_bp(double pr, double *M, double *Tv_over_Ts, double *rhov_over_rhos);
+
 /* Source table on (t, r) axes (LIPTAB01 with axis names t, r): bilinear lookup of field k. */
 typedef struct { int nt, nr; double *t, *r; int nf; char name[16][17]; double *f[16]; } LipSrcTable;
 int    lip_src_read(const char *path, LipSrcTable *s);
