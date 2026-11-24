@@ -1,0 +1,770 @@
+{
+  "recorded": "2026-11-24T17:44:43.320272+08:00",
+  "frozen_input_hashes_verified": 62,
+  "physical_cores": 64,
+  "reserved_cores": 46,
+  "free_slots": 18,
+  "active_ranks": 46,
+  "rank_counts_by_directory": {
+    "D:\\sim_runs\\T023\\low_trap_G0\\it1": 10,
+    "D:\\sim_runs\\T023\\low_thin_G0\\it1": 10,
+    "D:\\sim_runs\\T023\\high_thin_G1\\it0": 8,
+    "D:\\sim_runs\\T025\\high_thin_G0\\it0": 8,
+    "D:\\sim_runs\\T023\\high_trap_G0\\it2": 10
+  },
+  "reservations": [
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "final_iteration": 2,
+      "final_rc0_registered": true,
+      "reserved_cores": 0
+    },
+    {
+      "batch": "T023",
+      "member": "high_trap_G0",
+      "final_iteration": 2,
+      "final_rc0_registered": false,
+      "reserved_cores": 10
+    },
+    {
+      "batch": "T023",
+      "member": "low_thin_G0",
+      "final_iteration": 1,
+      "final_rc0_registered": false,
+      "reserved_cores": 10
+    },
+    {
+      "batch": "T023",
+      "member": "low_trap_G0",
+      "final_iteration": 1,
+      "final_rc0_registered": false,
+      "reserved_cores": 10
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G1",
+      "final_iteration": 0,
+      "final_rc0_registered": false,
+      "reserved_cores": 8
+    },
+    {
+      "batch": "T025",
+      "member": "high_thin_G0",
+      "final_iteration": 2,
+      "final_rc0_registered": false,
+      "reserved_cores": 8
+    },
+    {
+      "batch": "T025",
+      "member": "low_thin_G0",
+      "final_iteration": 1,
+      "final_rc0_registered": true,
+      "reserved_cores": 0
+    }
+  ],
+  "protected_jobs": [
+    {
+      "job": "T023",
+      "pid": 14496,
+      "creation_epoch": 1795484727.6840496,
+      "identity_matches": true
+    },
+    {
+      "job": "T025",
+      "pid": 5984,
+      "creation_epoch": 1795508264.593215,
+      "identity_matches": true
+    },
+    {
+      "job": "T021_T023_post_05",
+      "pid": 32784,
+      "creation_epoch": 1795505005.892073,
+      "identity_matches": true
+    }
+  ],
+  "rank_processes": [
+    {
+      "create_time": 1795499585.0732741,
+      "pid": 1440,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0766504,
+      "pid": 3636,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.070698,
+      "pid": 4728,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0541108,
+      "pid": 6220,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0827231,
+      "pid": 7404,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.750682,
+      "pid": 7840,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0880892,
+      "pid": 8168,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508295.0110435,
+      "pid": 8828,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0808167,
+      "pid": 9740,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508295.0148454,
+      "pid": 9808,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0937288,
+      "pid": 9888,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508295.003148,
+      "pid": 10064,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0633056,
+      "pid": 10316,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.4501908,
+      "pid": 11112,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.7399948,
+      "pid": 11676,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.760532,
+      "pid": 18180,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.453675,
+      "pid": 19500,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.7308824,
+      "pid": 21104,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.7545373,
+      "pid": 21172,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.4519293,
+      "pid": 21700,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0844977,
+      "pid": 21984,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0687108,
+      "pid": 25896,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508294.9962556,
+      "pid": 25904,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.44861,
+      "pid": 26328,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.4597447,
+      "pid": 26840,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0649152,
+      "pid": 28720,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.4414783,
+      "pid": 29484,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508294.9794254,
+      "pid": 30844,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.446986,
+      "pid": 31264,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.455708,
+      "pid": 31892,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.091797,
+      "pid": 32440,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.7429678,
+      "pid": 32780,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.7468643,
+      "pid": 33828,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0583744,
+      "pid": 34796,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.06004,
+      "pid": 35468,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.445371,
+      "pid": 36912,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0863369,
+      "pid": 37424,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508294.988517,
+      "pid": 38076,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0616572,
+      "pid": 38672,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484758.7656112,
+      "pid": 39052,
+      "name": "pluto.exe",
+      "ppid": 39240,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.4575782,
+      "pid": 39712,
+      "name": "pluto.exe",
+      "ppid": 18336,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499585.0667925,
+      "pid": 40044,
+      "name": "pluto.exe",
+      "ppid": 13428,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0898757,
+      "pid": 40428,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0960112,
+      "pid": 41336,
+      "name": "pluto.exe",
+      "ppid": 9588,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508294.9994311,
+      "pid": 42436,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795508294.9925852,
+      "pid": 42520,
+      "name": "pluto.exe",
+      "ppid": 40132,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    }
+  ],
+  "launchers": [
+    {
+      "create_time": 1795508294.918617,
+      "pid": 3728,
+      "name": "mpiexec.exe",
+      "ppid": 42428,
+      "cwd": "D:\\sim_runs\\T025\\high_thin_G0\\it0",
+      "command": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "8",
+        "D:\\sim_tools\\pluto_lip\\build_v1m\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795484757.13043,
+      "pid": 23728,
+      "name": "mpiexec.exe",
+      "ppid": 17968,
+      "cwd": "D:\\sim_runs\\T023\\high_thin_G1\\it0",
+      "command": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "8",
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499638.415337,
+      "pid": 34180,
+      "name": "mpiexec.exe",
+      "ppid": 17968,
+      "cwd": "D:\\sim_runs\\T023\\high_trap_G0\\it2",
+      "command": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "10",
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795500216.0504332,
+      "pid": 36568,
+      "name": "mpiexec.exe",
+      "ppid": 17968,
+      "cwd": "D:\\sim_runs\\T023\\low_thin_G0\\it1",
+      "command": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "10",
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "create_time": 1795499584.9971771,
+      "pid": 40244,
+      "name": "mpiexec.exe",
+      "ppid": 17968,
+      "cwd": "D:\\sim_runs\\T023\\low_trap_G0\\it1",
+      "command": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "10",
+        "D:\\sim_tools\\pluto_lip\\build_v1k\\mpi\\pluto.exe",
+        "-dec",
+        "10",
+        "1"
+      ]
+    }
+  ],
+  "launch_allowed": true,
+  "policy": "Retain reservations through final Picard iteration, including source-generation gaps. No unknown MPI production process allowed."
+}

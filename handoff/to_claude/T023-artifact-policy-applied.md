@@ -1,0 +1,1 @@
+2026-11-24T17:44:01+08:00: T023-artifact-cap.md archived/consumed; future collection uses 30 MiB, low-it1 band-b frames and trap metrics/diagnostics/peak plus hashes of local NPZs. No existing artifact deleted; active queue unchanged.
