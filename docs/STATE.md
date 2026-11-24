@@ -415,3 +415,11 @@ Updated: 2026-11-15
 - 94 / 91 / 90% of the absorbed laser power is still within 5 µm of the face: **(a)-2 fails**. A dense absorbing vapour layer (10–600 kg/m³ over 0–3 µm) remains, and the hot 70–110 kK gas above it is too thin (0.1–10 kg/m³) to absorb first.
 - Caveat: old = Picard it2, new = it0. The it0 source is unshielded and carries more vapour, so it1/it2 will be read the same way.
 - PREREG reading for a failed (a): near-wall resolution is the suspect, and the G1 member (0.5 µm wall cell) is already running. Converging beam and the 3-D end face stay the next separately declared candidates. Nothing is tuned.
+
+## 2026-11-24 14:00 — T023 resolution check (G1, 0.5 µm wall cell); T021 high it0 preliminary
+- G1 against G0 (high thin it0, 40/60/80 ns): wall-cell ρ on the beam 157/680/530 against 114/642/466 kg/m³; absorbed fraction in z < 5 µm 0.93/0.88/0.89 against 0.94/0.91/0.90. **The near-wall absorbing layer is converged in resolution**, so PREREG v1k (a)-2 fails robustly. Grid is ruled out. Next are the separately declared candidates (converging beam, 3-D end face), after S1 from T023 it0/it1 imaging. Figure: results/figures/nearwall_G0_G1.png.
+- T021 high it0 (droplet upper bound; preliminary, it0 against the baseline's it2):
+  - Core specific energy at 300 ns: 9.7 MJ/kg against ≈ 44.
+  - T_emw at 300/500/700 ns: 12.0/10.4/9.2 kK against 25.3/19.9/16.9 kK.
+  - Direction (a) holds.
+  - Axial shock radius at 500–700 ns is +14–17%. Because it0 is unshielded, this is not yet comparable. The reading of (a)–(c) waits for it2 imaging.
