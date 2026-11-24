@@ -2,7 +2,7 @@
 id: T024
 title: v1m two-temperature avalanche breakdown (v1bd cases): high thin G0 it0–it2, low thin G0 it0–it1; 16 cores now, more as T023 frees them
 owner: codex
-status: ready
+status: draft
 depends: []
 milestone: D2
 est_time: 0.5h operations + several hours machine time
