@@ -505,3 +505,11 @@ Updated: 2026-11-15
   1. Mixing of the hot pocket with cold air at the decelerating Cu–air contact. That interface is Rayleigh–Taylor unstable; 2-D axisymmetric laminar flow with molecular diffusion under-represents it.
   2. Condensation, not modelled. The 2.5 kK core is below T_boil, which bears on the paper's nanoparticle subject. It would release heat and would not by itself speed the decay.
 - Both would be model-form additions, so they are for the user to decide in the morning; nothing is tuned overnight.
+
+## 2026-11-25 01:10 — T027 (v1p) final: closed; at low fluence it is clearly worse
+- Low it1 against T026 low it1:
+  - σ_z/σ_x at 300 ns: 0.699 against 0.711.
+  - S1 median 42 µm, 0/11 frames, against 125 µm and 8/11.
+  - L715/L300 0.723 and L1035/L300 0.455, against 0.199 / 0.129.
+  - The vapour momentum keeps a hot emitting layer at the face and destroys the low-fluence decay and lift.
+- High it2 was stopped at 162 ns as authorised. Together with the high it0 reading (aspect +1.5%), v1p is closed, and the reported model stays v1n (T026).
