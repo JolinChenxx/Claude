@@ -1,1 +1,0 @@
-High G0 it1 reached 800 ns (8 ranks, rc 0); final condensed mass 3.4574414305e-12 kg, endpoint energy residual -2.45334e-7 J (0.269375%). Production evidence is in results/T029/high_thin_G0/it1/; separate imaging delivery is pending.
