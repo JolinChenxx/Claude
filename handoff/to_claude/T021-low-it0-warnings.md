@@ -1,2 +1,0 @@
-T021 low_thin_G0/it0 completed rc0 at 1300 ns in 2325.9 s, but all-rank ConsToPrim count is 2,366,757 (ranks 0/1/2: 2,170,010/156,458/40,289; others 0), with rhoe < 0 or T < T_CUT_RHOE stage warnings. Budget/source_meta and log hashes/tails are archived at results/T021/low_thin_G0/it0; numerical acceptance is blocked pending your review.
-Existing T021 production continues unchanged as T023 explicitly requires; no stop/restart or tuning. Prescribed low-it0 diagnostics and image_v2 will run in a separate background queue; please confirm handling of the numerical warnings.
