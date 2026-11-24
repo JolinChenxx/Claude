@@ -110,6 +110,7 @@ def occlude(img, srow):
 
 
 OCCLUDE = False
+GAIN_MODE = "tref"
 
 
 def model_frames(path, mode, srow, L_ref):
@@ -119,7 +120,12 @@ def model_frames(path, mode, srow, L_ref):
     fr = {int(t): (occlude(camera.blur(place(x, srow), um, dfoc), srow) if OCCLUDE else camera.blur(place(x, srow), um, dfoc)) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all()}
     if not fr:
         return {}, 0.0
-    g = camera.gain_for_reference(fr[min(fr, key=lambda t: abs(t - T_REF))], L_ref)
+    if GAIN_MODE == "peak":
+        # display option: one gain per model row, set so the brightest frame shown (t >= 60 ns) just reaches 255
+        shown = [x for t, x in fr.items() if t >= 60]
+        g = 255.0 / max(float(x.max()) for x in shown)
+    else:
+        g = camera.gain_for_reference(fr[min(fr, key=lambda t: abs(t - T_REF))], L_ref)
     return {t: camera.to_8bit(x, g) for t, x in fr.items()}, um
 
 
@@ -154,10 +160,10 @@ def frames_figure(series, mode, srow):
                 a.set_ylabel(lab, fontsize=7.5, rotation=0, ha="right", va="center")
     src = "Fig. 2a 作者标注的 Air/Copper 线" if series == "low" else "由低通量标注线换算（仅供参考）"
     fig.suptitle(f"{'高' if series == 'high' else '低'}通量逐帧对照（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}，散焦 250 µm，"
-                 f"各行在 300 ns 单独定增益，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
+                 f"{'模型各行按自身最亮帧定增益（不饱和），实验为原 8 位' if GAIN_MODE == 'peak' else '各行在 300 ns 单独定增益'}，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
                  fontsize=10)
     fig.tight_layout(rect=(0.04, 0, 1, 0.92), h_pad=0.3, w_pad=0.2)
-    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}.png"
+    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}{'_unsat' if GAIN_MODE == 'peak' else ''}.png"
     fig.savefig(out, dpi=170)
     plt.close(fig)
     return out
@@ -310,10 +316,12 @@ def shock_figure():
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", default="sa", choices=["sa", "thin"])
+    ap.add_argument("--gain", default="tref", choices=["tref", "peak"], help="display option: gain at t_ref (default) or no-saturation gain per row")
     ap.add_argument("--occlude", action="store_true", help="display option: knife-edge occlusion of the image below the face")
     a = ap.parse_args(argv)
-    global OCCLUDE
+    global OCCLUDE, GAIN_MODE
     OCCLUDE = a.occlude
+    GAIN_MODE = a.gain
     srows = surface_rows()
     if OCCLUDE:
         for s_ in ("high", "low"):
