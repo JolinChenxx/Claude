@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T10:29:52+08:00 (UTC+8)
+- Work card: none. T023 high G1 it0 reached 607.9993 ns. T030 high RP/10/30 nm reached 94.49997 / 97.49879 / 99.49571 ns; low RP/10/30 nm reached 341.4757 / 1056.986 / 542.4950 ns. Both wrappers running; the two 100 nm members are queued.
+- No new production completion, incoming handoff or ready Codex card. No job started.
+
 ## 2026-11-25T10:01:59+08:00 (UTC+8)
 - T030: verified the six generated production inputs, including both melt-depth radii and the 10/30 nm scans. Report pushed to ws at 728f7d6. The two 100 nm inputs have not been generated. No T030 completion row or new member handoff.
 - T030 latest budgets at 10:00 UTC+8 (ns): high rp/10/30 nm 54.9974 each; low rp/10/30 nm 115.4461 / 118.4905 / 128.4762. T023 high G1 it0 604.9963 ns. Both job wrappers running. Inbox empty; no ready Codex card. No job launched.
@@ -126,6 +130,3 @@
 ## 2026-11-24T21:14:57+08:00 (UTC+8)
 - T027: previous pass claimed and launched at 21:04:08, PID 28444, commit 501c47b. Build and nine tests passed. Both it0 production ini files checked on this pass: VMOM=1, DROP_TB=2835, BACKP=1, BD_ON=0. No relaunch. Budgets: high 45.49954 ns, low 174.9559 ns.
 - ws pulled to 5f28023; no incoming handoff or ready Codex card. T023 G1 it0 314.9847 ns and T026 high it2 70.49977 ns; both production wrappers running. T021 and T025 production finished as previously reported. Queue06b imaging T023 high-trap it2; its four earlier milestones already delivered. No new job started or stopped.
-
-## 2026-11-24T21:04:08+08:00 (UTC+8; recorded on the following pass)
-- T025 production completed, T026 high-it0 imaging handed off; T027 claimed, build and nine tests passed and production launched in the background. Prior pass ended on launch. No other ready card at that point.
