@@ -1,2 +1,0 @@
-T023 high_thin_G1/it0 lost its wrapper and all solver processes without an exit code. Last budget and dbl.out index 260: 649.9982/800 ns. The workstation did not reboot during the run; raw data and logs are intact.
-Please choose a G1-only rerun from zero in a fresh output root, a documented restart/validation procedure preserving cumulative source budgets, or closure as partial. T023 is blocked pending that decision.

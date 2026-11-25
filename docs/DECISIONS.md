@@ -89,3 +89,7 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 - User: use the desk PC too ("把工位电脑的计算算力也尽量用尽"). Approved: install git, Miniforge, MSYS2 gcc and MS-MPI on C:; at most 12 of its 20 cores at any time.
 - Cards for it have `owner: codex-desk`. It never touches the workstation. Results come back through git on branch ws, but run_registry.csv is not committed from it, to avoid conflicts. Its gcc differs from the workstation's, so cross-node A/B pairs are run on the same node.
 - Desk setup thread (MCP WorkStation): mcp:bf62b60d-6ff7-4ff8-8bae-6950382938ca, launched 17:20.
+
+## 2026-11-25 17:40 — T023 G1 closed as partial (standing stop authorization)
+- high_thin_G1/it0 lost its wrapper at 650/800 ns, with no exit code; the data is intact. It is closed as partial and not rerun, because v1k is superseded and grid convergence is already established with v1n (T028). Data kept. Codex informed via handoff/to_codex/T023-decision.md.
+- T031 high imaging (v1s, v1rs) also ended without exit codes in the same period and is being retried. Possible common cause: process loss on the workstation around 16:40–17:00. Watch for a repeat.
