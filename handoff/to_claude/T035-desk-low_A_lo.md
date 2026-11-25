@@ -1,0 +1,1 @@
+low_A_lo: rc 0, 1550.5 s, final 1.300000e+03 ns, M_recondensed 3.9999110766e-13. Final budget and droplet history in results/T035/low_A_lo/. Imaging and peak lift completed.
