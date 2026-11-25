@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T00:02:36+08:00 (UTC+8)
+- T033: high_rem_lo delivered and report sync hash verified (18/18 production, 6/18 imaging). Existing high_ftc_hi continues. T034: seven generated input sets; explicitly checked that high_ftc_hi ini is not present at inspection. T036 checked follow-up Mattern correction; waveform/PDF locators pending. T037 claimed and pushed lock ec31a2b; preflight passed four slots with original tables/scenarios/workers. Started serial imaging + peak job in freed node-0 slot, T031 high first; one handoff after four, no stop/restart or baseline overwrite. T035 desk-only. ws 46419db.
+- Jobs: T037 STATE=running  elapsed=0.00:00:00  pid=39268  commit=46419db; T034 STATE=running  elapsed=0.02:05:01  pid=38616  commit=a5f05ad; T033_high_ftc_hi_post STATE=running  elapsed=0.00:29:20  pid=50748  commit=c696c31. T034 latest t_ns: high_A_hi=7.099794e+002, high_A_lo=7.804696e+002, high_cond_lo=3.354705e+002, high_ftc_lo=8.949802e+001, high_gaunt_hi=9.199873e+001, high_sig_hi=7.949812e+001, high_sig_lo=6.799878e+002.
+
 ## 2026-11-25T23:33:16+08:00 (UTC+8)
 - T033: verified and committed two registry rows before rebase; production wrapper finished rc 0, 18/18 receipts. Delivered high_A_lo (5/18 imaging), report sync hash verified. Started high_ftc_hi on freed node 1; no restarts. T034: seven generated inputs verified; high_ftc_hi input pending. T036 claimed (721ce14), checked main and SI timing/laser passages and first Mattern data; second paper and waveform digitisation still pending. T035 desk-owned. ws c696c31.
 - Jobs: T034 STATE=running  elapsed=0.01:35:41  pid=38616  commit=a5f05ad; T033_high_rem_lo_post STATE=running  elapsed=0.00:30:48  pid=22016  commit=5bc9899; T033_high_ftc_hi_post STATE=running  elapsed=0.00:00:00  pid=50748  commit=c696c31. T034 latest budget t_ns: high_A_hi=4.309459e+002, high_A_lo=4.404483e+002, high_cond_lo=1.019982e+002, high_ftc_lo=5.399771e+001, high_gaunt_hi=6.149793e+001, high_sig_hi=4.499714e+001, high_sig_lo=3.869684e+002.
@@ -123,8 +127,4 @@
 - T030 low 10 nm imaging completed (five zero exits); 30 archived products verified. Band-b baseline thin/self-absorbed P1 296.06/295.41 ns, P2 893.83/833.06 ns. Low 30 nm production completed at 1300 ns (rc 0), 1.4814777421 ng evaporated, 3.7115445729 ng airborne; 1425510 ConsToPrim lines. Separate handoffs pushed at e8e928f; synced report verified. All eight production inputs now verified.
 - Started T030_low_a30n_post at 2026-11-25T12:04:54, wrapper PID 25692, eight workers, commit e8e928f. No incoming handoff or ready Codex card. Both RP members still in production.
 - Budgets near 12:01 UTC+8 (ns): T023 high G1 it0 618.9955; T030 high RP/10/30/100 nm 694.4780 / 786.4738 / 606.4771 / 27.48391; low RP/100 nm 661.4853 / 478.9872. Both production wrappers running.
-
-## 2026-11-25T11:30:32+08:00 (UTC+8)
-- Work card: none. T023 high G1 it0 advanced to 615.9950 ns. T030 high RP/10/30 nm: 609.4813 / 732.4925 / 557.9885 ns; low RP/30/100 nm: 618.4809 / 873.4871 / 315.4333 ns. Both production wrappers are running; high 100 nm is queued.
-- T030 low 10 nm production handoff received upstream. Its separate job T030_low_a10n_post is running image_v2. No new completion, incoming handoff or ready Codex card. No job started.
 
