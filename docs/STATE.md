@@ -534,3 +534,9 @@ Updated: 2026-11-15
   - At high fluence the spatter-top sink raises the aspect ratio but lowers the lift and slows the decay. 1.7 ng stays condensed.
 - T028 high G1 it0 production is complete (closure 0.07%); imaging is pending.
 - Early over-brightness found while answering the user. With the gain fixed at 300 ns, the v1n low series has L(t)/L(300) = 20–58 at 60–140 ns, against 0.5–0.8 in the experiment (which is saturated there, so a lower bound). The droplet release window [85, 300] ns from v1j cools the 300 ns frame. A release window from the measured spatter duration (high: rising to ≈500 ns; low: scattering to ≈400 ns, ends ≈900 ns) is a candidate physical correction, left for the user to decide.
+
+### 2026-11-25 08:00 — T029 (v1q) high it1 reading (band b, sa, 250 µm)
+- T029 high it1: L500/L300 0.638, L730/L300 0.442; σz/σx at 300 ns 88/114 µm (0.769); S1 median 80 µm, 0/20.
+- Same iteration T026 (v1n) it1: L730/L300 0.145; σz/σx 77/117 (0.653); S1 166 µm, 1/20.
+- Experiment: L730/L300 0.107; σz/σx 1.07; min-lift median 178 µm.
+- Reading: at high fluence v1q moves the aspect toward the experiment (+18% vs v1n), but the decay worsens (0.36 → 0.44 from it0 to it1) and the emission peak falls back toward the face. As at low fluence, v1q and v1n are the two ends of the droplet evaporation location. No change to the reported model (v1n).
