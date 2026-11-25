@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T21:08:49+08:00 (UTC+8)
+- T034 claimed (6f2c362), preflight passed for eight high-fluence v1rs members, existing executable, seeds and table hashes. T033 currently occupies 56 ranks; 56+16 > 60, so no T034 MPI job yet. Started T034_gate via job.ps1: it will start T034 when the combined limit permits 16 and then let it expand in eight-rank groups. Engineering/checks reported in ws a5f05ad. T032/T035 are desk-only, not claimed.
+- T034_gate STATE=running  elapsed=0.00:00:00  pid=49340  commit=a5f05ad; T033 STATE=running  elapsed=0.01:37:23  pid=49952  commit=9c6b07d; T033_high_rem_hi_post STATE=running  elapsed=0.00:06:15  pid=25260  commit=c9e0a8c; T033_high_A_hi_post STATE=running  elapsed=0.00:06:15  pid=42828  commit=c9e0a8c. Latest T033 budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.649883e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.944960e+002, high_sig_lo 8.000000e+002, low_A_hi 1.384544e+002, low_ftc_hi 8.049524e+001, low_ftc_lo 9.378132e+002, low_sig_hi 8.099996e+001, low_sig_lo 8.449594e+001. No existing job stopped/restarted.
+
 ## 2026-11-25T21:03:21+08:00 (UTC+8)
 - Scheduled check after the T033 decision handoff: ws up to date at c9e0a8c; inbox empty. T033 batch PID 49952 active. Five completed members already archived, seven advancing, six not started. Budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.544769e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.664895e+002, high_sig_lo 8.000000e+002, low_A_hi 9.049559e+001, low_ftc_hi 6.599593e+001, low_ftc_lo 2.209620e+002, low_sig_hi 6.749594e+001, low_sig_lo 7.049813e+001.
 - Both imaging jobs (high_rem_hi PID 25260, high_A_hi PID 42828) entered image_v2; no newly completed products or unaudited member inputs. No duplicate job launched. Only ready card T032 belongs to codex-desk.
@@ -124,7 +128,3 @@
 ## 2026-11-25T08:29:55+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 reached 595.4989 ns and T029 high G0 it2 reached 449.97 ns; both production jobs are running. T028 production finished previously.
 - Queue 10 remains in image_v2 for T028 high G1 it0; its only completed milestone, T029 high G0 it1, was already delivered. Incoming handoff directory empty. No ready Codex card, new delivery or job launch.
-
-## 2026-11-25T08:01:15+08:00 (UTC+8)
-- T029 high G0 it1 finished imaging at 07:44:09 with five zero exits. Verified six 29-frame archives, 18 metric tables, 29 peak rows and three diagnostics. All 34 archived files matched their Git blob hashes. Result handoff pushed at 20fb4c4; synced report verified. Band-b baseline P1 thin / self-absorbed was 599.98 / 522.97 ns; P2 unavailable in all 18 scenarios.
-- Queue 10 is imaging T028 high G1 it0 (its production wrapper finished). Running production budgets: T023 high G1 it0 591.9896 ns; T029 high G0 it2 129.4704 ns. Inbox empty and no ready Codex card. No new job started.
