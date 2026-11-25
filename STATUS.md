@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T23:33:16+08:00 (UTC+8)
+- T033: verified and committed two registry rows before rebase; production wrapper finished rc 0, 18/18 receipts. Delivered high_A_lo (5/18 imaging), report sync hash verified. Started high_ftc_hi on freed node 1; no restarts. T034: seven generated inputs verified; high_ftc_hi input pending. T036 claimed (721ce14), checked main and SI timing/laser passages and first Mattern data; second paper and waveform digitisation still pending. T035 desk-owned. ws c696c31.
+- Jobs: T034 STATE=running  elapsed=0.01:35:41  pid=38616  commit=a5f05ad; T033_high_rem_lo_post STATE=running  elapsed=0.00:30:48  pid=22016  commit=5bc9899; T033_high_ftc_hi_post STATE=running  elapsed=0.00:00:00  pid=50748  commit=c696c31. T034 latest budget t_ns: high_A_hi=4.309459e+002, high_A_lo=4.404483e+002, high_cond_lo=1.019982e+002, high_ftc_lo=5.399771e+001, high_gaunt_hi=6.149793e+001, high_sig_hi=4.499714e+001, high_sig_lo=3.869684e+002.
+
 ## 2026-11-25T23:02:28+08:00 (UTC+8)
 - T033: verified/committed two registry rows before rebase; high_rem_lo/high_sig_hi production archived (16/18). Delivered high_ftc_lo imaging (4/18, 5 stages rc 0; despite status PID, terminal receipt and exitcode 0 confirm completion). Applied compact frame manifest and confirmed 280 ns low reference. Report sync SHA verified. Started high_rem_lo imaging on freed node 0 after preflight. T034 now 5/8 generated inputs independently checked; full production still running. No workstation-ready cards; T035 desk only. ws 5bc9899.
 - Jobs: T033 STATE=running  elapsed=0.03:31:02  pid=49952  commit=9c6b07d; T034 STATE=running  elapsed=0.01:04:53  pid=38616  commit=a5f05ad; T033_high_A_lo_post STATE=running  elapsed=0.00:28:54  pid=4464  commit=e90043c; T033_high_rem_lo_post STATE=running  elapsed=0.00:00:00  pid=22016  commit=5bc9899. Latest t_ns: T033/high_A_hi=8.000000e+002, T033/high_A_lo=8.000000e+002, T033/high_ftc_hi=8.000000e+002, T033/high_ftc_lo=8.000000e+002, T033/high_gaunt_hi=7.094895e+002, T033/high_rem_hi=8.000000e+002, T033/high_rem_lo=8.000000e+002, T033/high_sig_hi=8.000000e+002, T033/high_sig_lo=8.000000e+002, T033/low_A_hi=1.300000e+003, T033/low_A_lo=1.300000e+003, T033/low_ftc_hi=1.300000e+003, T033/low_ftc_lo=1.300000e+003, T033/low_gaunt_hi=1.300000e+003, T033/low_rem_hi=1.300000e+003, T033/low_rem_lo=9.049850e+002, T033/low_sig_hi=1.300000e+003, T033/low_sig_lo=1.300000e+003, T034/high_A_hi=1.489707e+002, T034/high_A_lo=1.384654e+002, T034/high_cond_lo=6.099833e+001, T034/high_gaunt_hi=2.749951e+001, T034/high_sig_lo=1.089943e+002.
@@ -123,9 +127,4 @@
 ## 2026-11-25T11:30:32+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 advanced to 615.9950 ns. T030 high RP/10/30 nm: 609.4813 / 732.4925 / 557.9885 ns; low RP/30/100 nm: 618.4809 / 873.4871 / 315.4333 ns. Both production wrappers are running; high 100 nm is queued.
 - T030 low 10 nm production handoff received upstream. Its separate job T030_low_a10n_post is running image_v2. No new completion, incoming handoff or ready Codex card. No job started.
-
-## 2026-11-25T11:03:55+08:00 (UTC+8)
-- T030 low_a10n it1 production finished at 1300 ns (rc 0, 2576 finite budget rows). Launched/evaporated/airborne: 5.1930223150 / 2.1110136286 / 3.0820086864 ng. Endpoint residual -2.889637e-10 J; 698261 ConsToPrim lines. Full droplets.csv and production evidence handed off at be55f3f; report sync verified.
-- Started T030_low_a10n_post at 2026-11-25T11:03:55 (wrapper PID 28116, eight image workers, commit be55f3f); imaging deliverables pending. Only this scan had completed production. The low 100 nm input passed all required parameter checks; high 100 nm still queued.
-- Production still running. Latest budgets at 11:02 (ns): T023 high G1 it0 611.4934; T030 high RP/10/30 nm 375.4561 / 496.4146 / 500.9940; low RP/30/100 nm 570.4233 / 627.4762 / 65.99968. Inbox empty; no ready Codex cards.
 
