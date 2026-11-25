@@ -584,3 +584,4 @@ Updated: 2026-11-15
 - high_a10n it2 (scan): L500/L300 0.674, L730/L300 0.437; σz/σx 0.76; S1 91 µm, 2/20. Against T026 v1n 0.302/0.156/0.64, T029 v1q 0.570/0.408/0.80, T023 v1k 0.746/0.667/0.58. Experiment L730/L300 0.107, aspect 1.07.
 - At high fluence even 10 nm droplets (31% evaporated by t_ref, 56% at 800 ns) give a decay much slower than v1n. The low-fluence 10 nm result (decay near v1n) does not carry over.
 - Production: high_a30n evaporated 2.26 of 6.29 ng; low_a100n 0.65 of 5.19 ng. Imaging pending. RP imaging first.
+- 14:05 high_a100n production: evaporated 1.21 of 6.29 ng (19%) by 800 ns; residual 0.032%. Scan evaporated fraction at 800 ns (high): 10 nm 56%, 30 nm 36%, 100 nm 19%, melt-depth 4.5 µm 0.37%.
