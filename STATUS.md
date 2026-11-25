@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T17:07:35+08:00 (UTC+8)
+- T023 high G1 it0 interrupted without an exit code. No solver remained; last budget and dbl.out index 260 at 649.9982/800 ns. Last OS boot predates the run. Cause unknown. Raw data preserved, card blocked and question-T023 pushed at 0e8970c: choose a fresh G1-only rerun, a validated checkpoint recovery, or partial closure.
+- Both T031 high imaging attempts interrupted during image_v2 with zero completed stages and no output files. Ten original wrapper files hash-verified under D:/sim_runs/interrupted_jobs/20261125_1702/. No production restarted. Both imaging preflights passed. High v1s restarted at 2026-11-25T17:07:35, wrapper PID 47508, eight workers; high v1rs retry pending for next pass. Incident handed off at f31b599; both report syncs verified. No incoming note or ready Codex card.
+
 ## 2026-11-25T16:36:46+08:00 (UTC+8)
 - T031 high_v1rs/it2 finished at 16:34:13, 800 ns, rc 0. All four production members returned 0. Recondensed 0.794074 ng of 1.169938 ng gross Cu input; endpoint energy residual 0.005252%; 1384301 ConsToPrim lines. The original 1590-row droplet archive and final airborne mass were verified.
 - Low v1s imaging finished at 16:13:11. Verified 30 band-b frames per mode, 18 metric tables and diagnostic/peak rows. P1 thin/SA 327.95/299.62 ns; all P2 unavailable. Both handoffs pushed at 7688660 and report sync verified. Started high v1rs imaging with eight workers at 2026-11-25T16:36:46, PID 45776. High v1s imaging: STATE=running  elapsed=0.00:30:43  pid=44644  commit=410ad45. Low v1rs imaging pending. T023 high G1 it0: 649.4999 ns. Inbox empty; no ready Codex card.
@@ -126,9 +130,4 @@
 - T029 launched at 02:05:17 (PID 40156, commit 798896d). At 02:06:02 all 16 v1q ranks were running, high/low it0 budgets 19.99964/28.79405 ns. Both actual pluto.ini files match all five requested parameters. Launch handoff pushed at 51984a6; synced report hash verified.
 - Queue 07 stopped while idle after T021 high G0 it1 completed at 01:45:47. Its receipts and logs remain for next-pass collection. Queue 08 launched at 02:05:18 (PID 41948), eight imaging workers; started T025 high G0 it0. T027 was not restarted.
 - T023 high G1 it0 at 398.995 ns; T028 high/low G1 it0 at 96.99817/753.999 ns (02:05 snapshot). No ready Codex card.
-
-## 2026-11-25T01:34:11+08:00 (UTC+8)
-- T025 high G0 it2: five postprocessing stages returned zero. Six native frame archives, 18 metric tables, 29 peak rows and three diagnostics verified and handed off at 543325f; report sync hash checked. Band-b self-absorbed L(730)/L(300)=0.162861; S1 0/20 in both modes. High G0 it0 has no image summary, peak or shock output; T025 remains running.
-- At 01:32 UTC+8: T023 high G1 it0 390.4990 ns, T028 high/low G1 it0 78.4978/721.9946 ns. T021 and T025 production finished. Queue 07 is imaging T021 high G0 it1.
-- T029 remains claimed, with no production wrapper. At 01:33, 32 solver ranks and 24 imaging workers occupied 56 of 64 physical cores; eight available versus 16 required. The existing handoff still awaits the T029 launch. The earlier T027 stop was not repeated. No ready card; no new computation started.
 
