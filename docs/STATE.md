@@ -540,3 +540,8 @@ Updated: 2026-11-15
 - Same iteration T026 (v1n) it1: L730/L300 0.145; σz/σx 77/117 (0.653); S1 166 µm, 1/20.
 - Experiment: L730/L300 0.107; σz/σx 1.07; min-lift median 178 µm.
 - Reading: at high fluence v1q moves the aspect toward the experiment (+18% vs v1n), but the decay worsens (0.36 → 0.44 from it0 to it1) and the emission peak falls back toward the face. As at low fluence, v1q and v1n are the two ends of the droplet evaporation location. No change to the reported model (v1n).
+
+### 2026-11-25 09:40 — T028 high G1 (v1n fine grid) reading; T028 closed
+- High it0, G1 vs G0 (band b, sa, 250 µm): L500/L300 0.527 vs 0.568; L730/L300 0.280 vs 0.316; σz/σx at 300 ns 0.570 vs 0.551; S1 median 123 vs 123 µm (0/20 frames both).
+- With the low-fluence result (10–15%), grid convergence of v1n is adequate at G0 for the readings made. T028 done.
+- T029 high it2 production done (residual 0.027%); imaging is in queue 10.
