@@ -147,6 +147,8 @@ def main(argv=None):
     ap.add_argument("--tables", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--workers", type=int, default=0)
+    ap.add_argument("--t-offset-ns", type=float, default=0.0,
+                    help="model time = experimental frame label + offset (registry t0_offset_shock; PREREG t0 alignment)")
     a = ap.parse_args(argv)
     sc = P.resolve(yaml.safe_load(a.scenarios.read_text()))
     if a.workers:
@@ -163,7 +165,8 @@ def main(argv=None):
     idx = pluto.read_index(a.run_dir / "dbl.out")
     snap_t = np.array([t for _, t, _, _ in idx]) * 1e-9  # math
     gate = P.get("gate_width")
-    need = sorted({k for t in times for k, ts in enumerate(snap_t) if t * 1e-9 - 1e-12 <= ts <= t * 1e-9 + gate + 1e-12})  # math/num
+    off = a.t_offset_ns * 1e-9  # math (ns -> s)
+    need = sorted({k for t in times for k, ts in enumerate(snap_t) if t * 1e-9 + off - 1e-12 <= ts <= t * 1e-9 + off + gate + 1e-12})  # math/num
     a.out.mkdir(parents=True, exist_ok=True)
     jobs = [(idx[k][0], sc["filters"], tuple(num["self_absorption"]), num, um, (h, w)) for k in need]
     workers = int(num.get("workers", 1))
@@ -187,7 +190,7 @@ def main(argv=None):
             key = f"{fname}_{'sa' if sa else 'thin'}"
             frames = []
             for t in times:
-                sel = [k for k in need if t * 1e-9 - 1e-12 <= snap_t[k] <= t * 1e-9 + gate + 1e-12]  # math/num
+                sel = [k for k in need if t * 1e-9 + off - 1e-12 <= snap_t[k] <= t * 1e-9 + off + gate + 1e-12]  # math/num
                 if len(sel) >= 2:  # num
                     stack = np.array([imgs[idx[k][0]][(fname, sa)] for k in sel])
                     ts = snap_t[sel]
@@ -214,6 +217,7 @@ def main(argv=None):
                 tau, _ = decay_time(df.t_ns, df.L_radiance) if len(df) else (np.nan, np.nan)
                 d10 = time_to_fraction(df.t_ns, df.L_radiance) if len(df) else np.nan
                 results[f"{key}_{dname}"] = {"gain": G, "t_ref_used_ns": float(tarr[iref]), "P1_tau_ns": tau, "P2_dt10_ns": d10}
+    results["t_offset_ns"] = a.t_offset_ns
     (a.out / "image_summary.json").write_text(json.dumps(results, indent=1, default=float))
     print(json.dumps(results, indent=1, default=float))
 

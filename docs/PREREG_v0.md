@@ -216,3 +216,19 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
 - **T034:** workstation, high fluence, v1rs, seeded from T026 it1 → compare with T031 high_v1rs.
 - **T035:** desk node, low fluence, v1rs, Picard it0 unseeded, with its own baseline on the same node, so compiler differences cancel.
 - **Reading as T033:** sensitivity only, no value adopted. For each input report Δ(L ratios), Δ(σz/σx), Δ(S1), Δ(plume size σx). If no member changes σx by more than 20% or σz/σx by more than 10%, size and shape are structural, and the next step is to audit the energy coupling (laser absorption model and t0 alignment), not to add a new sink.
+
+## t0 alignment declared 2026-11-26 ~00:15 (UTC+8), before any shifted image is made
+- **Evidence that the experimental t = 0 is not the 10%-of-peak point:**
+  - High fluence: the experimental t = 0 frame already emits, and at 20 ns the threshold radius is 236 µm (data/exp/metrics_high.csv). The model has no gas absorption before 25 ns.
+  - Low fluence: the 10 ns frame is saturated, with a radius of 65 µm.
+  - The paper gives no optical definition of t = 0; its delays are set by delay generators and checked on an oscilloscope (data/exp/paper/timing_laser_notes.md, T036).
+  - The registry's t0_convention already declares ±30 ns.
+- **Determination of the offset:**
+  - It comes from an observable independent of the plume images, the high-fluence pump–probe shock radius (main-text Fig. 3d).
+  - Log least squares over all 23 points against the model shock gives Δ = 28 ns, the same for v1n and v1rs (registry t0_offset_shock).
+  - High fluence is used because its ignition is the most robust. Low fluence then tests the same Δ.
+- **Use:** image_v2_t28 renders the experimental frame at t from the model over [t + 28, t + 38] ns (`lipsim.image --t-offset-ns 28`). Δ = 0 is kept as the bracket, and both are reported.
+- **Declared readings:**
+  - Early frames (≤ 150 ns) and the L(t)/L(150) trend against the experiment, for both Δ.
+  - At low fluence the same Δ leaves the shock about 25% small (pre-computed), which is a real deficit in ignition and coupling.
+  - No Δ other than 28 ns will be tried on the images.

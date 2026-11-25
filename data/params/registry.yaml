@@ -130,6 +130,7 @@ p_ambient:    {value: 101325.0, unit: Pa, grade: F, source: "Paper: ablation in 
 T_ambient:    {value: 293.15, unit: K, grade: F, source: "Room temperature assumed", uncertainty: "±5 K", date: 2026-11-15, verified: true}
 t0_convention: {value: "t=0 at 10% of peak power on the pulse leading edge; frame label = gate start, gate [t, t+10 ns]", unit: "-", grade: F,
                source: "PLAN v2 §1.3", uncertainty: "±30 ns", date: 2026-11-15, verified: true}
+t0_offset_shock: {value: 28.0, unit: ns, grade: E, source: "PREREG 2026-11-26 t0 alignment: log least squares of the high-fluence axial shock radius (main-text Fig. 3d, pump-probe, all 23 points) against the model shock track; identical for v1n (T026 it2) and v1rs (T031 it2); within the declared t0_convention uncertainty (±30 ns). Fixed for both fluences (same timing chain). Not fitted to plume images.", uncertainty: "±5 ns (fit), plus the ignition-physics difference", date: 2026-11-26, verified: false}
 pulse_shape_baseline: {value: gaussian, unit: "-", grade: F, source: "PLAN v2 §1.3; scenario: MOPA waveform from the laser datasheet", uncertainty: scenario, date: 2026-11-15, verified: true}
 M2_beam:      {value: 1.5, unit: "1", grade: F, source: "PLAN v2 §1.3 baseline (to be replaced by the IPG YLPN datasheet nominal value)", uncertainty: [1.2, 2.0], date: 2026-11-15, verified: false}
 filter_scenarios_nm: {value: {a: [515, 5], b: [510, 12], c: [500, 20]}, unit: "nm [centre, half-width]", grade: F,
