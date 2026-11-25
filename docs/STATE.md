@@ -552,3 +552,6 @@ Updated: 2026-11-15
 
 ### 2026-11-25 09:50 — T030 (v1r) launched 09:41:59; paper has no particle-size number
 - data/exp/paper/np_size_notes.md (Codex, verbatim): no numerical diameter or size distribution of deposited NPs or droplets in the main text or SI. Only qualitative: NP number and size grow with fluence near the trace; "nanometer-scale solid and liquid metal particles" form when the plume cools. The v1r droplet radius therefore has no independent measurement; the melt-depth rule stays the reported member and the scan stays sensitivity only.
+
+### 2026-11-25 11:00 — T030 inputs verified (Codex 10:00)
+- Melt depth (area mean, shielded target model of the seeded iteration): high 4.79 µm → DROP_A0 4.53 µm; low 3.62 µm → 3.42 µm. Scan inputs 1e-8 / 3e-8 verified; 100 nm members queued. No member finished yet.
