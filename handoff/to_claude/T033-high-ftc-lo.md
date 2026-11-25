@@ -1,0 +1,1 @@
+high_ftc_lo imaging verified (5 stages, 29 frames per mode); band-b raw manifest and T026 comparisons are in the receipt/report. Also archived high_rem_lo and high_sig_hi production checks (16/18 production; 4/18 imaging).

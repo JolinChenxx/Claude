@@ -16,7 +16,7 @@ REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
 ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
-MEMBER_JOB = BATCH in ('T030', 'T031', 'T033')
+MEMBER_JOB = BATCH in ('T030', 'T031', 'T033', 'T034')
 assert len(sys.argv) == 4 if MEMBER_JOB else len(sys.argv) <= 3
 assert BATCH in ('T025', 'T026', 'T027', 'T028', 'T029') or MEMBER_JOB
 assert ITERATION in ('it0', 'it1') or (MEMBER_JOB and ITERATION == 'it2')
@@ -28,8 +28,8 @@ if MEMBER_JOB:
     MEMBER = sys.argv[3]
     series, size = MEMBER.split('_', 1)
     models = ('rp', 'a10n', 'a30n', 'a100n') if BATCH == 'T030' else ('v1s', 'v1rs')
-    if BATCH == 'T033':
-        specs = yaml.safe_load((REPO/'configs/batches/T033.yaml').read_text(encoding='utf-8'))['numerics']['runs']
+    if BATCH in ('T033', 'T034'):
+        specs = yaml.safe_load((REPO/f'configs/batches/{BATCH}.yaml').read_text(encoding='utf-8'))['numerics']['runs']
         assert MEMBER in {spec['id'] for spec in specs}
     else:
         assert size in models
@@ -109,6 +109,7 @@ def main():
     expected = {'image_summary.json'} | {f'frames_{b}_{m}.npz' for b in 'abc' for m in ['thin', 'sa']} | {f'metrics_{s}.csv' for s in scenarios}
     assert {p.name for p in (PRODUCTS / 'image_v2').iterdir()} == expected
     files = []
+    raw_frames = []
     for source in sorted((PRODUCTS / 'image_v2').iterdir()):
         detail = {}
         if source.suffix == '.npz':
@@ -132,6 +133,10 @@ def main():
             detail['original_missing_values'] = missing
         if MEMBER_JOB and source.suffix == '.npz' and not source.name.startswith('frames_b_'):
             continue  # All six archives were checked; these cards deliver band b.
+        if BATCH in ('T033', 'T034') and source.suffix == '.npz':
+            raw_frames.append({'path': str(source), 'sha256': sha(source),
+                               'shape': detail['radiance_shape'], 't_ns': times})
+            continue
         files.append({**copy(source, OUT / 'image_v2' / source.name), **detail})
     files.append(copy(Path(commands['image_v2']['log']), OUT / 'image_v2/image_v2.log'))
     peak = pd.read_csv(PRODUCTS / 'peak_lift.csv')
@@ -176,6 +181,10 @@ def main():
     if MEMBER_JOB:
         evidence['policy'] = 'Original band-b frames, every scenario metric, image summary, peak, diagnostics and logs archived; band-a/c frames remain in the raw directory.'
         evidence['raw_only_sha256'] = {str(p): sha(p) for p in sorted((RAW / 'image_v2').glob('frames_[ac]_*.npz'))}
+    if BATCH in ('T033', 'T034'):
+        assert len(raw_frames) == 2
+        evidence['band_b_frame_manifest'] = raw_frames
+        evidence['policy'] = 'Verified sensitivity frames remain in raw storage; paths, hashes, shapes and frame times are recorded here. Metrics, peak, diagnostics and logs are archived.'
     (OUT / 'priority_delivery.json').write_text(json.dumps(evidence, indent=2) + '\n', encoding='utf-8')
     total = sum(p.stat().st_size for p in (REPO / 'results' / BATCH).rglob('*') if p.is_file())
     assert total < 20 * 1024**2
