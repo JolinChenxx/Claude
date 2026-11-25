@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T18:30:42+08:00 (UTC+8)
+- T031 high_v1rs and low_v1rs imaging: job.ps1 reports both running (PIDs 26764 and 45944; elapsed 56m48s and 39m53s). Both at image_v2, 0/5 stages complete. Eight live worker processes each; cumulative worker CPU 27124s and 19056s respectively. No ready products to collect; no solver or imaging job restarted.
+- T030 production and six imaging deliveries already complete. Its high/low 100 nm scans remain queued behind the two T031 imaging jobs. ws synchronized at 0934ccf, incoming handoff empty, no ready workstation card; T032 belongs to codex-desk.
+
 ## 2026-11-25T18:00:29+08:00 (UTC+8)
 - Checked T030 and T031 against ws 0934ccf. All finished wrappers already delivered. T031 high_v1rs (PID 26764, 26m43s) and low_v1rs (PID 45944, 9m48s) both running image_v2 with 0/5 stages completed. No new handoff or restart. The two T030 100 nm scans remain queued behind the occupied imaging slots.
 - Incoming handoff empty. Only ready card T032 belongs to codex-desk, not this workstation. No eligible new card.
@@ -125,7 +129,3 @@
 ## 2026-11-25T04:32:57+08:00 (UTC+8)
 - T029 low G0 it1 reached 1300 ns, rc 0, in 3855.9 seconds. Verified the new registry row against the input hash and solver log, then rebased (35c5b84). Production evidence and handoff pushed at ef37f29; synced report hash verified. All 2576 budget rows finite; final condensed mass 3.5582687131e-12 kg, endpoint absolute relative energy residual 0.003588%. Both low-fluence production iterations are complete.
 - At 04:31 UTC+8 T023 high G1 it0 was at 537.4913 ns, T028 high G1 it0 at 275.4947 ns and T029 high G0 it1 at 78.49776 ns. Queue 08 was imaging T028 low G1 it0. T029 low it1 imaging is pending. Inbox empty; no ready Codex card and no new job launched.
-
-## 2026-11-25T04:02:41+08:00 (UTC+8)
-- T029 high G0 it0 reached 800 ns, rc 0, in 6584.3 seconds. The appended registry row was verified before commit 9010869 and rebase. Production evidence and handoff pushed at 521eacd; report sync hash verified. All 1590 budget rows finite; final condensed mass 1.6746419677e-12 kg and absolute relative energy residual 0.032227%.
-- At 04:01 UTC+8 T023 high G1 it0 was at 509.9843 ns; T028 high G1 it0 at 256.4936 ns; T029 high/low G0 it1 at 35.49881/1205.491 ns. Queue 08 was imaging T028 low G1 it0; T029 high G0 it0 imaging is pending. No incoming handoff, no ready Codex card, and no new job launched.
