@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T18:46:12+08:00 (UTC+8)
+- T033 locked on ws (311c388); both requested test modules passed all 10 tests with GCC. Verified existing build_v1s and baseline EOS. Started three isolated variant table builds, 32 workers each; 18 MPI members await table hash/identity checks. No split batch while 96 table workers and T031 imaging are active. Evidence at b805efc.
+- T033_v1c_sigen_lo STATE=running  elapsed=0.00:00:36  pid=49144  commit=311c388; T033_v1c_sigen_hi STATE=running  elapsed=0.00:00:35  pid=48468  commit=311c388; T033_v1c_gaunt15 STATE=running  elapsed=0.00:00:35  pid=26896  commit=311c388; T031_high_v1rs_post STATE=running  elapsed=0.01:12:36  pid=26764  commit=cc01cc6; T031_low_v1rs_post STATE=running  elapsed=0.00:55:41  pid=45944  commit=5c292a5. T030 scan imaging remains behind T031. T032 is owned by codex-desk; no other ready workstation card.
+
 ## 2026-11-25T18:30:42+08:00 (UTC+8)
 - T031 high_v1rs and low_v1rs imaging: job.ps1 reports both running (PIDs 26764 and 45944; elapsed 56m48s and 39m53s). Both at image_v2, 0/5 stages complete. Eight live worker processes each; cumulative worker CPU 27124s and 19056s respectively. No ready products to collect; no solver or imaging job restarted.
 - T030 production and six imaging deliveries already complete. Its high/low 100 nm scans remain queued behind the two T031 imaging jobs. ws synchronized at 0934ccf, incoming handoff empty, no ready workstation card; T032 belongs to codex-desk.
@@ -125,7 +129,3 @@
 ## 2026-11-25T05:04:36+08:00 (UTC+8)
 - T029: both low G0 jobs started at 05:03:08: T029_low_it0_post_09 (PID 42200) and T029_low_it1_post_09 (PID 9008). By 05:03:37 each had passed three diagnostics and entered image_v2 with eight workers. Queue 08 (PID 41948, eight workers) continues T028 low G1 it0; T029 high G0 it0 is next. Independent output roots prevent overwrites. Images and peaks have not been handed off.
 - Running production: T023 high G1 it0 544.4958 ns; T028 high G1 it0 290.9979 ns; T029 high G0 it1 265.4678 ns. No ready Codex cards. Inbox note consumed; ws 579c6af requests a decision before queue 08 revisits the two low members. T029 report sync verified.
-
-## 2026-11-25T04:32:57+08:00 (UTC+8)
-- T029 low G0 it1 reached 1300 ns, rc 0, in 3855.9 seconds. Verified the new registry row against the input hash and solver log, then rebased (35c5b84). Production evidence and handoff pushed at ef37f29; synced report hash verified. All 2576 budget rows finite; final condensed mass 3.5582687131e-12 kg, endpoint absolute relative energy residual 0.003588%. Both low-fluence production iterations are complete.
-- At 04:31 UTC+8 T023 high G1 it0 was at 537.4913 ns, T028 high G1 it0 at 275.4947 ns and T029 high G0 it1 at 78.49776 ns. Queue 08 was imaging T028 low G1 it0. T029 low it1 imaging is pending. Inbox empty; no ready Codex card and no new job launched.
