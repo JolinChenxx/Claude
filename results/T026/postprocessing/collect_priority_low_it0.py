@@ -14,15 +14,21 @@ import yaml
 
 REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
-assert len(sys.argv) <= 3
+assert len(sys.argv) <= 3 or (len(sys.argv) == 4 and sys.argv[1] == 'T030')
 BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
 ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
-assert BATCH in ('T025', 'T026', 'T027', 'T028', 'T029')
-assert ITERATION in ('it0', 'it1')
+assert BATCH in ('T025', 'T026', 'T027', 'T028', 'T029', 'T030')
+assert ITERATION in ('it0', 'it1') or (BATCH == 'T030' and ITERATION == 'it2')
 QUEUE07 = BATCH == 'T027' or (BATCH, ITERATION) == ('T026', 'it1')
 JOB = Path('D:/sim_runs') / ('T026_T027_post_07' if QUEUE07 else 'T023_T025_T026_post_06b')
 RUNNER = 'run_priority_07.py' if QUEUE07 else 'run_priority_06.py'
 MEMBER = 'low_thin_G1' if BATCH == 'T028' else 'low_thin_G0'
+if BATCH == 'T030':
+    MEMBER = sys.argv[3]
+    series, size = MEMBER.split('_')
+    assert series in ('low', 'high') and size in ('rp', 'a10n', 'a30n', 'a100n')
+    assert ITERATION == ('it1' if series == 'low' else 'it2')
+SERIES = MEMBER.split('_')[0]
 RAW = Path('D:/sim_runs') / BATCH / MEMBER / ITERATION
 OUT = REPO / 'results' / BATCH / MEMBER / ITERATION
 PRODUCTS = RAW
@@ -32,6 +38,9 @@ if BATCH in ('T028', 'T029'):
     RUNNER_PATH = REPO / 'results/T029/postprocessing' / ('run_priority_08.py' if BATCH == 'T028' else 'run_parallel_low_09.py')
     if BATCH == 'T029':
         PRODUCTS = JOB / 'products'
+if BATCH == 'T030':
+    JOB = JOB.with_name('T030_' + MEMBER + '_post')
+    RUNNER_PATH = REPO / 'results/T030/postprocessing/run_member.py'
 
 
 def sha(path):
@@ -65,7 +74,7 @@ def main():
     assert all(r['returncode'] == 0 for r in commands.values())
     for path, digest in run['input_sha256'].items():
         assert sha(path) == digest, path
-    if BATCH == 'T029':
+    if BATCH in ('T029', 'T030'):
         assert queue['state'] == 'completed' and (JOB / 'exitcode.txt').read_text().strip() == '0'
         preflight = json.loads((REPO / 'results/T021/postprocessing/deadline_05_preflight.json').read_text())
         assert preflight['runtime_commit'] == queue['runtime_commit']
@@ -85,7 +94,7 @@ def main():
         if rule not in rules:
             rules += rule
     attributes.write_text(rules, encoding='utf-8')
-    meta = yaml.safe_load((RUNTIME / 'data/exp/meta.yaml').read_text(encoding='utf-8'))['sets']['low']
+    meta = yaml.safe_load((RUNTIME / 'data/exp/meta.yaml').read_text(encoding='utf-8'))['sets'][SERIES]
     times = sorted({r['t_ns'] for r in meta['frames']})
     scenarios = {f'{b}_{m}_{d}' for b in 'abc' for m in ['thin', 'sa'] for d in ['baseline', 'low', 'high']}
     summary = json.loads((PRODUCTS / 'image_v2/image_summary.json').read_text())
@@ -114,6 +123,8 @@ def main():
                         assert (key in ['xc_um', 'zc_um', 'sigma_x2_um2', 'sigma_z2_um2'] and float(row['L']) == 0) or (key in ['thr_mean_gray', 'thr_top_um', 'thr_bottom_um'] and float(row['thr_area_mm2']) == 0)
                         missing.append({'t_ns': float(row['t_ns']), 'field': key})
             detail['original_missing_values'] = missing
+        if BATCH == 'T030' and source.suffix == '.npz' and not source.name.startswith('frames_b_'):
+            continue  # T030 delivers band-b frames; all six archives were generated and checked.
         files.append({**copy(source, OUT / 'image_v2' / source.name), **detail})
     files.append(copy(Path(commands['image_v2']['log']), OUT / 'image_v2/image_v2.log'))
     peak = pd.read_csv(PRODUCTS / 'peak_lift.csv')
@@ -121,9 +132,9 @@ def main():
     assert np.isfinite(peak[['t_ns', 'model_lift_thin_um', 'model_lift_sa_um']].to_numpy(dtype=float)).all()
     peak_missing = {k: peak.loc[peak[k].isna(), 't_ns'].tolist() for k in peak.columns if peak[k].isna().any()}
     exp = pd.read_csv(RUNTIME / 'results/surface/surface_rows.csv')
-    exp = exp[exp.series == 'low'].groupby('t_ns', as_index=False).mean(numeric_only=True)
+    exp = exp[exp.series == SERIES].groupby('t_ns', as_index=False).mean(numeric_only=True)
     for column, original in [('exp_lift_min_um', 'lower50_row'), ('exp_lift_max_um', 'lower10_row')]:
-        assert np.allclose(peak[column], (exp[original] - exp.peak_row) * 9.244, rtol=0, atol=.0500001, equal_nan=True)
+        assert np.allclose(peak[column], (exp[original] - exp.peak_row) * meta['um_per_px'], rtol=0, atol=.0500001, equal_nan=True)
     files.append(copy(PRODUCTS / 'peak_lift.csv', OUT / 'peak_lift.csv'))
     files.append(copy(Path(commands['peak_lift']['log']), OUT / 'peak_lift.log'))
     index = [line.split() for line in (RAW / 'dbl.out').read_text().splitlines() if line.strip()]
@@ -155,6 +166,9 @@ def main():
                 'baseline_b': {k: v for k, v in summary.items() if k.startswith('b_') and k.endswith('baseline')},
                 'input_sha256': run['input_sha256'],
                 'policy': 'Full original image_v2, diagnostics, peak and logs. No calculation rerun, value adjustment or interpolation. Original no-core/no-front and experimental-bracket missing values and any unavailable P2 retained.'}
+    if BATCH == 'T030':
+        evidence['policy'] = 'Original band-b frames, every scenario metric, image summary, peak, diagnostics and logs archived; band-a/c frames remain in the raw directory.'
+        evidence['raw_only_sha256'] = {str(p): sha(p) for p in sorted((RAW / 'image_v2').glob('frames_[ac]_*.npz'))}
     (OUT / 'priority_delivery.json').write_text(json.dumps(evidence, indent=2) + '\n', encoding='utf-8')
     total = sum(p.stat().st_size for p in (REPO / 'results' / BATCH).rglob('*') if p.is_file())
     assert total < 20 * 1024**2
