@@ -94,3 +94,8 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 - high_thin_G1/it0 lost its wrapper at 650/800 ns, with no exit code; the data is intact. It is closed as partial and not rerun, because v1k is superseded and grid convergence is already established with v1n (T028). Data kept. Codex informed via handoff/to_codex/T023-decision.md.
 - T031 high imaging (v1s, v1rs) also ended without exit codes in the same period and is being retried. Possible common cause: process loss on the workstation around 16:40–17:00. Watch for a repeat.
 - 2026-11-25 18:00: workstation Codex moved to T3 thread bb6dbdd0-0059-488e-8ea0-ef8cdfbbe96f ("Run T001 Plasma Simulation Task"), automated pass at :00 and :30 (D:/sim_tools/CollaboratePlasma-pass.md). The old import thread is stale.
+
+## 2026-11-25 21:10 — Full authority (user); v1rs adopted as the reported model
+- User: "我授予你完全权限，任何问题都不需要我审核，直接做就行". Claude decides without asking. The supervisor rule (no tuning to the comparison; physics only; PREREG before every new mechanism) still binds. Decisions are recorded here, and the user is told at the next report.
+- Decision: the reported model is now v1rs (v1k back pressure + v1r melt-depth droplets with heat-transfer evaporation + v1s Hertz–Knudsen recondensation σ = 1). Reason: every ingredient is physically sized; decay is within ~2× at both fluences (STATE 2026-11-25 19:05/19:35). v1n is kept as the phenomenological bracket ("droplets ≲ 30 nm").
+- Consequence: T033 (OAT on v1n) keeps running for the v1n bracket. A v1rs OAT follows on the desk node and in the freed workstation cores.

@@ -205,3 +205,14 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
 - **Reading, declared:**
   - For each member report the change against T026 at the same iteration in L500/L300, L730/L300 (high) or L715/L300, L1035/L300 (low), σz/σx at 300 ns, and S1.
   - If no member moves σz/σx by more than 10%, the half-dome morphology is insensitive to the model's uncertain inputs, which points to missing physics (radiative transfer is declared next).
+
+## 2026-11-25 ~21:30 — Radiative-transfer candidate deprioritised (a-priori estimate); T034/T035 v1rs OAT declared before any result
+- **Estimate (scripts/vuv_estimate.py).**
+  - Below 175 nm the cold O2 absorbs (Schumann–Runge continuum), so emission there can preheat the ambient gas.
+  - In the thin limit this VUV band carries 13–24% of the emission at 20–30 kK and 3% at 12 kK. It is mostly resonance lines, which the plume largely traps itself.
+  - With the T026 core P_rad of 30–240 W, 0.2 × P_rad × 50 ns deposited in the air within 0.2 mm heats it by only tens of K.
+  - Radiative preheating therefore cannot move the absorption front, and radiative transfer is not pursued as the morphology mechanism now.
+- **Remaining candidates for size and morphology:** laser absorption in the vapour and the energy coupling into the gas. The model plume is about half the experimental size, and half of the incident energy escapes. T033 (v1n) and T034/T035 (v1rs) test whether the declared ranges of the absorption inputs move them: sigma_en_Cu, gaunt_ff, cu_A1064_RT, f_Tcap, and for v1rs also cu_condensation_coeff = 0.3.
+- **T034:** workstation, high fluence, v1rs, seeded from T026 it1 → compare with T031 high_v1rs.
+- **T035:** desk node, low fluence, v1rs, Picard it0 unseeded, with its own baseline on the same node, so compiler differences cancel.
+- **Reading as T033:** sensitivity only, no value adopted. For each input report Δ(L ratios), Δ(σz/σx), Δ(S1), Δ(plume size σx). If no member changes σx by more than 20% or σz/σx by more than 10%, size and shape are structural, and the next step is to audit the energy coupling (laser absorption model and t0 alignment), not to add a new sink.
