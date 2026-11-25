@@ -62,6 +62,11 @@ def main(argv=None):
     E = {k: float((v * A).sum()) for k, v in o["E_area"].items()}
     E["stored"] = float((o["stored_area"] * A).sum())
     a.out.mkdir(parents=True, exist_ok=True)
+    hm = o["melt_depth_max"]
+    molten = hm > 0
+    melt = {"melt_depth_axis_m": float(hm[0]),
+            "melt_depth_mean_m": float((hm * A)[molten].sum() / A[molten].sum()) if molten.any() else 0.0,  # area mean over molten rings
+            "melt_radius_m": float(r[molten].max()) if molten.any() else 0.0}
     fields = {k: o[k] for k in ("mdot", "Tv", "rhov", "uv", "Ts", "A", "I_inc", "q_abs", "q_overcap", "mdot_bp")}
     np.savez_compressed(a.out / "target_source.npz", t=o["t"], r=r, trans_used=trans_used, **fields)
     write_bin(a.out / "target_source.bin", {"t": o["t"], "r": r}, {k: fields[k] for k in ("mdot", "Tv", "rhov", "uv", "Ts", "A")})
@@ -69,7 +74,7 @@ def main(argv=None):
             "budget_J": E, "absorbed_fraction": E["abs"] / E["inc"], "overcap_fraction_of_absorbed": E["overcap"] / E["abs"],
             "U4_triggered": E["overcap"] / E["abs"] > 0.2,  # num: PLAN v3 §3.6 threshold
             "vaporised_mass_kg": E["mass"], "phase_explosion": pe, "back_pressure": bp,
-            "wall_pressure_from_previous_run": pwall is not None, "pe_mass_kg": E.get("pe_mass", 0.0), "registry_sha256": P.registry_hash(),
+            "wall_pressure_from_previous_run": pwall is not None, "pe_mass_kg": E.get("pe_mass", 0.0), **melt, "registry_sha256": P.registry_hash(),
             "bin_sha256": hashlib.sha256((a.out / "target_source.bin").read_bytes()).hexdigest()}
     (a.out / "source_meta.json").write_text(json.dumps(meta, indent=1))
     print(json.dumps({k: meta[k] for k in ("case", "picard_iteration", "absorbed_fraction", "vaporised_mass_kg", "U4_triggered")}))

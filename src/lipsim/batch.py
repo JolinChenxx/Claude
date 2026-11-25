@@ -80,8 +80,25 @@ def droplet_params(case_cfg: dict, vaporised_mass_kg: float) -> list:
             ("DROP_T0", las.t_peak + 0.5 * las.fwhm), ("DROP_T1", P.get("t_ref_norm"))]  # math (end of pulse to t_ref)
 
 
+def droplet_radius(case_cfg: dict, melt_depth_m: float) -> float:
+    """v1r launch radius (PREREG 2026-11-25). target.droplet_size = "melt_rp": Rayleigh-Plateau breakup of a crown rim
+    whose diameter is the area-mean maximum melt depth of this iteration's target model (registry droplet_size_model);
+    a number: fixed radius in m (pre-registered sensitivity scan). 0 when v1r is off (no target.droplet_size)."""
+    t = case_cfg.get("target") or {}
+    ds = t.get("droplet_size")
+    if ds is None:
+        return 0.0
+    if t.get("droplet_release") != "energy_limited" or not t.get("spatter_speed") or t.get("spatter_plateau"):
+        raise ValueError("v1r needs droplet_release energy_limited, spatter_speed and no spatter_plateau")
+    if ds == "melt_rp":
+        if not melt_depth_m > 0:
+            raise ValueError("v1r melt_rp needs the target model's melt depth (source_meta melt_depth_mean_m)")
+        return 0.5 * P.get("rp_drop_over_jet") * melt_depth_m
+    return float(ds)
+
+
 def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int, rmax_par: float | None = None,
-             vaporised_mass_kg: float = 0.0) -> str:
+             vaporised_mass_kg: float = 0.0, melt_depth_m: float = 0.0) -> str:
     """pluto.ini with every physical number taken from the registry via the resolved case config."""
     num = yaml.safe_load((REPO / "configs/grids/levels.yaml").read_text())["numerics"]
     from lipsim.target.model import Laser
@@ -95,7 +112,8 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int,
               ("DROP_TB", P.get("cu_T_boil") if (case_cfg.get("target") or {}).get("droplet_release") == "energy_limited" else 0.0),
               ("VMOM", 1 if (case_cfg.get("target") or {}).get("vapour_momentum", False) else 0),
               ("DROP_VD", float((case_cfg.get("target") or {}).get("spatter_speed", 0.0) or 0.0)),
-              ("DROP_TPL", float((case_cfg.get("target") or {}).get("spatter_plateau", 0.0) or 0.0))]
+              ("DROP_TPL", float((case_cfg.get("target") or {}).get("spatter_plateau", 0.0) or 0.0)),
+              ("DROP_A0", droplet_radius(case_cfg, melt_depth_m)), ("DROP_RL", P.get("cu_rho_liquid"))]
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",
@@ -167,11 +185,12 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
         if not dry:
             subprocess.run(cmd, check=True, cwd=REPO, env={**__import__("os").environ, "PYTHONPATH": str(REPO / "src")})
             shutil.copy2(src_out / "target_source.bin", rd / "lip_tables/target_source.bin")
-        mvap = 0.0
+        mvap, hmelt = 0.0, 0.0
         if not dry and (src_out / "source_meta.json").exists():
-            mvap = float(json.loads((src_out / "source_meta.json").read_text()).get("vaporised_mass_kg", 0.0))
+            sm = json.loads((src_out / "source_meta.json").read_text())
+            mvap, hmelt = float(sm.get("vaporised_mass_kg", 0.0)), float(sm.get("melt_depth_mean_m", 0.0))
         (rd / "pluto.ini").write_text(make_ini(case_cfg, spec["grid"], spec["nec"], spec["tstop_ns"], spec.get("src_on", 1),
-                                                spec.get("rmax_par"), mvap))
+                                                spec.get("rmax_par"), mvap, hmelt))
         procs = int(spec.get("procs", 1))
         exe = str(Path(batch["pluto_exe"]).resolve())
         pcmd = ([batch["mpiexec"], "-n", str(procs), exe, "-dec", str(procs), "1"] if procs > 1 and batch.get("mpiexec")

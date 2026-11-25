@@ -202,6 +202,8 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
     E = {k: np.zeros(nr) for k in ("inc", "abs", "vap_latent", "overcap", "mass", "pe_mass")}
     rho = mat.rho
     times = np.arange(nt + 1) * dt
+    zface = np.concatenate([[0.0], np.cumsum(dz)])  # cell faces below the surface
+    melt_max = np.zeros(nr)  # v1r: deepest liquid layer (contiguous T >= T_m from the surface) over the run, m
 
     def record(n, Ts, I, tau, A, mdot, Tv, rv, uv, qo):
         out["Ts"][n], out["mdot"][n], out["Tv"][n], out["rhov"][n], out["uv"][n] = Ts, mdot, Tv, rv, uv
@@ -246,6 +248,9 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
             H[over, 0] = Hcap
             Tn[over, 0] = mat.T_cap
         T = Tn
+        liq = T >= mat.Tm
+        nliq = np.where(liq.all(axis=1), nz, np.argmin(liq, axis=1))  # contiguous liquid cells from the surface
+        melt_max = np.maximum(melt_max, zface[nliq])
         mpe = np.zeros(nr)
         if phase_explosion and over.any():
             # registry phase_explosion_model: the over-cap enthalpy flux is not discarded. It drives explosive
@@ -273,7 +278,7 @@ def run(laser: Laser, mat: Material, r: np.ndarray, t_end=400e-9, dt=0.05e-9, sh
     TT = np.linspace(T0, 1.0, 2)  # placeholder to keep the namespace explicit
     del TT
     stored = (H * dz).sum(axis=1)
-    out.update({"t": times, "r": r, "E_area": E, "stored_area": stored, "dz": dz, "T_final": T})
+    out.update({"t": times, "r": r, "E_area": E, "stored_area": stored, "dz": dz, "T_final": T, "melt_depth_max": melt_max})
     return out
 
 

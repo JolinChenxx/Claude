@@ -230,3 +230,29 @@ double lip_ne_step(double ne, double nCu, double Te, double dt, double lotz_a)
   }
   return n;
 }
+
+/* ---- v1r droplet heat transfer (PREREG 2026-11-25) ---- */
+double lip_drop_qfm(double rho, double T, double mbar, double deps)
+{
+  /* effusive heavy-particle mass flux rho*vbar/4 times the energy each kg gives up on accommodating to the droplet
+     at T_b: deps = [e + p/(2 rho)](T) - [e + p/(2 rho)](T_b) (2kT translational per particle plus ionisation and
+     excitation; electrons follow the ions, ambipolar). Accommodation coefficient 1 (upper bound). */
+  const double kB = 1.380649e-23;
+  if (rho <= 0.0 || T <= 0.0 || deps <= 0.0) return 0.0;
+  return 0.25 * rho * sqrt(8.0 * kB * T / (3.14159265358979323846 * mbar)) * deps;
+}
+
+double lip_drop_q(double qfm, double K, double a)
+{
+  if (qfm <= 0.0 || K <= 0.0) return 0.0;
+  return 1.0 / (1.0 / qfm + a / K);
+}
+
+double lip_drop_dm(double m, double m0, double a0, double rho_l, double qfm, double K, double Lv, double dt)
+{
+  if (m <= 0.0 || m0 <= 0.0) return 0.0;
+  double a = a0 * cbrt(m / m0);
+  double N = m0 / (4.0 / 3.0 * 3.14159265358979323846 * a0 * a0 * a0 * rho_l);
+  double dm = dt * N * 4.0 * 3.14159265358979323846 * a * a * lip_drop_q(qfm, K, a) / Lv;
+  return dm < m ? dm : m;
+}

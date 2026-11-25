@@ -39,6 +39,13 @@ double lip_te_qs(double I, double ne, double n0, double Th, double sig_m, double
 double lip_ne_step(double ne, double nCu, double Te, double dt, double lotz_a);
 
 /* Source table on (t, r) axes (LIPTAB01 with axis names t, r): bilinear lookup of field k. */
+/* v1r droplet evaporation by gas heat transfer (PREREG 2026-11-25). Heat flux to a droplet of radius a held at T_boil:
+ * 1/q = 1/q_FM + a/K, with q_FM the free-molecular effusive energy flux and K = int_{T_b}^{T} kappa dT (continuum,
+ * Nu = 2). lip_drop_dm: mass evaporated in dt from a parcel of N = m0 / (4/3 pi a0^3 rho_l) equal droplets, current
+ * mass m, in a uniform gas (qfm, K), latent heat Lv; never more than m. */
+double lip_drop_q(double qfm, double K, double a);
+double lip_drop_dm(double m, double m0, double a0, double rho_l, double qfm, double K, double Lv, double dt);
+double lip_drop_qfm(double rho, double T, double mbar, double deps);
 typedef struct { int nt, nr; double *t, *r; int nf; char name[16][17]; double *f[16]; } LipSrcTable;
 int    lip_src_read(const char *path, LipSrcTable *s);
 double lip_src_get(const LipSrcTable *s, int k, double t, double r);
