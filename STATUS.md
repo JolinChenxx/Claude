@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T21:30:44+08:00 (UTC+8)
+- Sync blocked: git pull --rebase origin ws refused unstaged changes in results/run_registry.csv. Five new T033 rc=0 rows (low_ftc_lo, high_A_lo, low_sig_lo, low_sig_hi, low_ftc_hi) observed locally; no remote inbox or card state assumed, no acceptance or new claim. Left registry and running jobs intact. Next sync needs the append-only rows preserved before rebase.
+- Read-only status: T033 production PID 49952 active; imaging high_rem_hi/high_A_hi PIDs 25260/42828 active. T034 gate PID 49340 waiting; no T034 production job yet. Latest T033 budget times (ns): high_A_hi 8.000000e+002, high_A_lo 8.000000e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_gaunt_hi 2.799791e+001, high_rem_hi 8.000000e+002, high_rem_lo 7.239819e+002, high_sig_lo 8.000000e+002, low_A_hi 1.001991e+003, low_A_lo 2.657050e+002, low_ftc_hi 1.300000e+003, low_ftc_lo 1.300000e+003, low_gaunt_hi 5.449633e+001, low_rem_hi 4.997796e+001, low_rem_lo 5.749964e+001, low_sig_hi 1.300000e+003, low_sig_lo 1.300000e+003.
+
 ## 2026-11-25T21:08:49+08:00 (UTC+8)
 - T034 claimed (6f2c362), preflight passed for eight high-fluence v1rs members, existing executable, seeds and table hashes. T033 currently occupies 56 ranks; 56+16 > 60, so no T034 MPI job yet. Started T034_gate via job.ps1: it will start T034 when the combined limit permits 16 and then let it expand in eight-rank groups. Engineering/checks reported in ws a5f05ad. T032/T035 are desk-only, not claimed.
 - T034_gate STATE=running  elapsed=0.00:00:00  pid=49340  commit=a5f05ad; T033 STATE=running  elapsed=0.01:37:23  pid=49952  commit=9c6b07d; T033_high_rem_hi_post STATE=running  elapsed=0.00:06:15  pid=25260  commit=c9e0a8c; T033_high_A_hi_post STATE=running  elapsed=0.00:06:15  pid=42828  commit=c9e0a8c. Latest T033 budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.649883e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.944960e+002, high_sig_lo 8.000000e+002, low_A_hi 1.384544e+002, low_ftc_hi 8.049524e+001, low_ftc_lo 9.378132e+002, low_sig_hi 8.099996e+001, low_sig_lo 8.449594e+001. No existing job stopped/restarted.
@@ -124,7 +128,3 @@
 ## 2026-11-25T08:59:50+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 at 597.9961 ns and T029 high G0 it2 at 764.9889 ns. Both production wrappers are running; T028 production has finished.
 - Queue 10 is still imaging T028 high G1 it0. Its T029 high G0 it1 milestone was already delivered. Inbox empty, no ready Codex card and no new job started.
-
-## 2026-11-25T08:29:55+08:00 (UTC+8)
-- Work card: none. T023 high G1 it0 reached 595.4989 ns and T029 high G0 it2 reached 449.97 ns; both production jobs are running. T028 production finished previously.
-- Queue 10 remains in image_v2 for T028 high G1 it0; its only completed milestone, T029 high G0 it1, was already delivered. Incoming handoff directory empty. No ready Codex card, new delivery or job launch.
