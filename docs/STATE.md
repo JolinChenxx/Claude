@@ -545,3 +545,7 @@ Updated: 2026-11-15
 - High it0, G1 vs G0 (band b, sa, 250 µm): L500/L300 0.527 vs 0.568; L730/L300 0.280 vs 0.316; σz/σx at 300 ns 0.570 vs 0.551; S1 median 123 vs 123 µm (0/20 frames both).
 - With the low-fluence result (10–15%), grid convergence of v1n is adequate at G0 for the readings made. T028 done.
 - T029 high it2 production done (residual 0.027%); imaging is in queue 10.
+
+### 2026-11-25 09:45 — T029 (v1q) high it2 reading; T029 closed
+- T029 high it2 vs T026 it2 (band b, sa, 250 µm): L500/L300 0.570 vs 0.302; L730/L300 0.408 vs 0.156; σz/σx 88/110 (0.80) vs 75/116 (0.64); S1 median 80 vs 145 µm (0/20 both). Experiment: L730/L300 0.107, aspect 1.07.
+- PREREG v1q readings final: (b) aspect +24% toward the experiment (met); (c) decay worse by 2.6×. Same pattern at both fluences. v1q remains the front-only bracket of the droplet location; v1r (T030) replaces the bracket with flight time and heat-transfer evaporation.
