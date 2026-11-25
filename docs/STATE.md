@@ -549,3 +549,6 @@ Updated: 2026-11-15
 ### 2026-11-25 09:45 — T029 (v1q) high it2 reading; T029 closed
 - T029 high it2 vs T026 it2 (band b, sa, 250 µm): L500/L300 0.570 vs 0.302; L730/L300 0.408 vs 0.156; σz/σx 88/110 (0.80) vs 75/116 (0.64); S1 median 80 vs 145 µm (0/20 both). Experiment: L730/L300 0.107, aspect 1.07.
 - PREREG v1q readings final: (b) aspect +24% toward the experiment (met); (c) decay worse by 2.6×. Same pattern at both fluences. v1q remains the front-only bracket of the droplet location; v1r (T030) replaces the bracket with flight time and heat-transfer evaporation.
+
+### 2026-11-25 09:50 — T030 (v1r) launched 09:41:59; paper has no particle-size number
+- data/exp/paper/np_size_notes.md (Codex, verbatim): no numerical diameter or size distribution of deposited NPs or droplets in the main text or SI. Only qualitative: NP number and size grow with fluence near the trace; "nanometer-scale solid and liquid metal particles" form when the plume cools. The v1r droplet radius therefore has no independent measurement; the melt-depth rule stays the reported member and the scan stays sensitivity only.
