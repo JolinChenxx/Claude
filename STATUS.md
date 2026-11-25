@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T20:31:03+08:00 (UTC+8)
+- T030 high_a100n/it2 postprocessing finished at 20:02:39 with 5/5 stages and wrapper rc 0. Verified 29 frame times per band-b mode, 18 metrics tables, 29 peak rows and 81/321/12 diagnostic rows. Handoff pushed at e3c4ab7, report synced and hash-checked. Low_a100n (PID 34664) remains in image_v2; seven of eight imaging deliveries complete.
+- T033 acceptance blocked, no new Claude instruction. Existing production PID 49952 running; first-wave latest budget times (ns): high_A_hi 1.089982e+002, high_A_lo 1.004983e+002, high_ftc_hi 1.094965e+002, high_ftc_lo 9.499840e+001, high_rem_hi 2.009912e+002, high_rem_lo 9.849667e+001, high_sig_lo 9.649625e+001. No new run directories beyond these seven. Inbox empty; T032 is ready for codex-desk only.
+
 ## 2026-11-25T20:01:37+08:00 (UTC+8)
 - T033 blocked for clarification, handoff 6984a63 and report sync verified. Seven generated inputs matched overrides, table and source hashes; two high-rem members missed the literal net DROP_M ratios (0.2407855 and 3.2776434). Gross ratios including vapour match 1/3 and 3. Existing 56-core job PID 49952 left running. First-wave budget times in ns: high_rem_lo 61.49815, high_rem_hi 64.99772, high_A_lo 61.99884, high_A_hi 61.49821, high_ftc_lo 61.49781, high_ftc_hi 61.99744, high_sig_lo 60.9991. Eleven runs await generated inputs.
 - T030 high/low 100 nm imaging still in image_v2 (PIDs 48768/34664); no new completed imaging delivery. T031 is done on ws. Inbox empty; only ready T032 is assigned to codex-desk.
@@ -124,8 +128,3 @@
 ## 2026-11-25T07:02:08+08:00 (UTC+8)
 - T029 high G0 it1 and T028 high G1 it0 both completed at 800 ns, rc 0 (1,590 and 1,602 finite budget rows). The initial pull encountered the live registry append. Verified both new rows, input hashes and rank-0 Done markers, committed and rebased. Pushed separate production handoffs and reports at 75d03f7; 26 archived blobs and both synced reports were hash-verified. Absolute relative energy residuals: T029 0.269375%, T028 0.069599%.
 - T028 production wrapper finished; high G1 imaging remains outstanding. At 07:01 queue 08 was imaging T029 high G0 it0. Queue 10 was still waiting for the authorized idle boundary; retain its inbox note until transition is confirmed. T023 high G1 it0 at 583.4959 ns, T029 high G0 it2 at 36.9998 ns. No ready Codex card; no new job launched.
-
-## 2026-11-25T06:34:25+08:00 (UTC+8)
-- T028 low G1 it0 (06:11:51) and T029 low G0 it0/it1 (06:27:04 / 06:28:21) completed imaging. All five stages per member returned zero. Three separate handoffs and 102 source/index hash-verified files pushed to ws at 7fd9fd8; T028/T029 report sync verified. Each member has six 30-frame archives, 18 metric tables, 30 peak rows, and core/shock/emission (131/521/12 rows).
-- Queue 08 is now imaging T029 high G0 it0. Authorized successor T029_T028_post_10 (wrapper PID 32484, commit 4f89088) started at 06:33:56 and is waiting for its five-stage, child-free idle boundary. It excludes both delivered low members; check its transition before consuming T029-queue-answer.md. Nothing was stopped this pass.
-- Production high G1 it0: T023 579.4863 ns, T028 601.4695 ns; T029 high G0 it1 759.4832 ns. No ready Codex card.
