@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T11:30:32+08:00 (UTC+8)
+- Work card: none. T023 high G1 it0 advanced to 615.9950 ns. T030 high RP/10/30 nm: 609.4813 / 732.4925 / 557.9885 ns; low RP/30/100 nm: 618.4809 / 873.4871 / 315.4333 ns. Both production wrappers are running; high 100 nm is queued.
+- T030 low 10 nm production handoff received upstream. Its separate job T030_low_a10n_post is running image_v2. No new completion, incoming handoff or ready Codex card. No job started.
+
 ## 2026-11-25T11:03:55+08:00 (UTC+8)
 - T030 low_a10n it1 production finished at 1300 ns (rc 0, 2576 finite budget rows). Launched/evaporated/airborne: 5.1930223150 / 2.1110136286 / 3.0820086864 ng. Endpoint residual -2.889637e-10 J; 698261 ConsToPrim lines. Full droplets.csv and production evidence handed off at be55f3f; report sync verified.
 - Started T030_low_a10n_post at 2026-11-25T11:03:55 (wrapper PID 28116, eight image workers, commit be55f3f); imaging deliverables pending. Only this scan had completed production. The low 100 nm input passed all required parameter checks; high 100 nm still queued.
@@ -127,7 +131,3 @@
 ## 2026-11-24T21:48:02+08:00 (UTC+8)
 - T023 high-trap it2 postprocessing handed off at 3125eb6: 29 peak rows, 3 diagnostics, 18 metric tables and six locally retained frame archives verified. T027 low-thin it0 production handed off at c9a170a: rc0 to 1300 ns. Expectation (a) missed against T026 low it0 (8,594,711 vs 581,952 ConsToPrim lines; closure error 0.75835% vs 0.00873%). Both reports synced and verified.
 - Queue06b already entered T023 low-trap it1 imaging before the new order was received. The priority-3 note is open; T026 high it1 comes next after an authorized completed-run boundary. No process stopped. T023 G1 it0 323.4895 ns; T026 high it2 140.9712 ns; T027 high it0 78.99964 ns, low it1 257.9400 ns. No ready Codex card.
-
-## 2026-11-24T21:28:36+08:00 (UTC+8)
-- Work card: none. ws pulled to 5c1ea46. No incoming handoff, eligible ready card or new postprocessing delivery. T021 and T025 production already finished; their pending postprocessing keeps the cards open.
-- job.ps1 status: T023, T026, T027 and queue06b running. Queue06b is imaging T023 high_trap_G0/it2. Latest budget times (ns): T023 high G1 it0 318.9923, T026 high G0 it2 85.99790, T027 high G0 it0 60.49956 and low G0 it0 1189.707. No job launched or stopped.
