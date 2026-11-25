@@ -1,1 +1,0 @@
-T033 high_rem_hi and high_A_hi imaging accepted, 29 band-b frames per mode and 18 scenario tables each. Review the T026 comparison and S1 counts (12/20 and 0/20) in tasks/T033.report.md; all 18 input sets audited and 14 production completions archived.

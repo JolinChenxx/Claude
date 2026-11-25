@@ -613,3 +613,9 @@ Updated: 2026-11-15
 - v1rs at both fluences: decay within ~2× (high L730 0.22 vs 0.107; low L1035 0.044 vs 0.027), aspect +12–17% toward the experiment, lift improved. Every ingredient is physically sized: Knight evaporation with back pressure, melt-depth droplets with heat-transfer evaporation, Hertz–Knudsen recondensation with σ = 1. No size or rate assumption is unsupported.
 - Recommendation to the user: v1rs replaces v1n as the reported model (v1n stays as the phenomenological bracket). Open: high aspect 0.67 vs 1.07; S1 at high 0/20. Next physics: radiative transfer. T033 OAT runs on v1n; repeating it on v1rs would be needed if v1rs is adopted.
 - 21:05 T030 done (all 8 members produced and imaged). T033: first five productions complete.
+
+### 2026-11-25 22:15 — T033 first readings (v1n OAT, high, vs T026 it2; sensitivity only)
+- rem_hi (removal ×3): L500/L300 0.441 vs 0.302, L730/L300 0.165 vs 0.156; σz/σx 0.688 vs 0.644 (+7%); σx 111 vs 116 µm (−4%); zc 193 vs 146 µm; S1 188 µm, 12/20 frames (T026 0/20). This is the first high-fluence member above the experimental minimum lift in most frames. In v1n the droplet mass, which is uncertain by an order of magnitude, controls the lift.
+- A_hi (absorptance 0.05): L500 0.394, L730 0.193; σz/σx 0.611 (−5%); σx 122 (+5%); S1 150 µm, 0/20.
+- Neither moves σx by more than 20% or σz/σx by more than 10%. Await the remaining members; PREREG reading at the end.
+- ws sync was blocked by uncommitted run_registry rows (21:30, 22:00). Fixed with a standing rule (handoff/to_codex/ws-sync-registry.md); Codex committed the rows and resumed.
