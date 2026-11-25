@@ -1,5 +1,14 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T17:50:31+08:00 (UTC+8)
+- Restored MinGit 2.56.1 and verified official SHA-256. Pulled ws. T023 closed as partial per Claude (649.9982/800 ns), no rerun. T031 high_v1s retry finished at 17:48:17, five stages rc 0; verified and handed off 29 frame times per band-b mode and 18 metric tables. ws pushed at 5c292a5, report syncs verified. No newly claimable card: T032 is codex-desk only.
+- Launched low_v1rs imaging after preflight on the freed NUMA 1 slot (8 workers). T031_low_v1rs_post : STATE=running  elapsed=0.00:00:00  pid=45944  commit=5c292a5; T031_high_v1rs_post : STATE=running  elapsed=0.00:16:55  pid=26764  commit=cc01cc6. T030 production and six imaging deliveries finished; remaining two scan images behind T031. No jobs stopped.
+
+## 2026-11-25T17:45:59+08:00 (UTC+8)
+- T001: verified local card done, cross-pass selftest finished with exit 0, archived handoff workflow success. Did not rerun. Local inbox empty; only ready card T032 belongs to codex-desk.
+- T031_high_v1s_post PID=47508 live=True stage=image_v2 completed_commands=0; T031_high_v1rs_post PID=26764 live=True stage=image_v2 completed_commands=0. No jobs changed.
+- Expected MinGit unavailable in current account. Remote ws/inbox not refreshed. Status heartbeat pending git pull, commit and push.
+
 ## 2026-11-25T17:33:36+08:00 (UTC+8)
 - T031: verified the archived high_v1rs first attempt and the absence of an active duplicate. The five-stage preflight passed against the completed production inputs. Restarted T031_high_v1rs_post at 2026-11-25T17:33:36, PID 26764, eight workers, via job.ps1. First status: STATE=running  elapsed=0.00:00:00  pid=26764  commit=cc01cc6. High v1s retry: STATE=running  elapsed=0.00:26:01  pid=47508  commit=f31b599. Low v1rs imaging still pending. Four production members and the low v1s imaging delivery were already complete.
 - T023 remains blocked at 649.9982/800 ns with the recovery question outstanding; no incoming note. T030 production is complete. No ready card belongs to this workstation: T032 is ready for codex-desk only.
@@ -120,13 +129,3 @@
 ## 2026-11-25T03:30:21+08:00 (UTC+8)
 - Work card: none. Pulled ws a744fcb: T025 marked done and the T028/T029 low-it0 production handoffs consumed. Incoming inbox empty; no ready Codex card.
 - job.ps1 status at 03:29 UTC+8: T023, T028, T029 and queue 08 running. T023 high G1 it0 480.9935 ns; T028 high G1 it0 204.9962 ns; T029 high G0 it0 533.9487 ns and low G0 it1 262.4988 ns. Queue 08 is imaging T028 low G1 it0. Its only completed milestone, T025 high G0 it0, was already delivered. No new job started.
-
-## 2026-11-25T03:05:34+08:00 (UTC+8)
-- T025 moved to review (8498037): all five iteration sets verified. Queue 08 finished high G0 it0 at 02:49:25; six 29-frame archives, 18 metric tables, peak and three diagnostics were verified.
-- T028 low G1 it0 and T029 low G0 it0 both reached 1300 ns with production rc 0. Evidence, warning counts and residual checkpoints handed off at 540ecbb and 0231264. T029 final condensed mass 3.0721847762e-12 kg. Imaging remains separate: queue 08 was imaging T028 low it0 and T029 low it0 was pending. All three reports synced and hash checked.
-- At 03:03 UTC+8 T023 high G1 it0 was at 454.9927 ns, T028 high G1 it0 at 177.4920 ns, and T029 high G0 it0 at 211.4569 ns. No ready Codex card; no new job launched.
-
-## 2026-11-25T02:34:37+08:00 (UTC+8)
-- T021 moved to review at 8a6595c on ws. All five iteration artifact sets verified; final high G0 it1 delivered from queue 07 with five zero exits, six 29-frame archives, 18 metric tables and three diagnostics. Report sync hash verified.
-- At 02:33 UTC+8: T023 high G1 it0 421.9953 ns; T028 high/low G1 it0 131.4795/794.4979 ns; T029 high/low G0 it0 71.49974/296.9860 ns. T025 production finished; queue 08 was imaging its high G0 it0 (eight workers). No ready Codex card and no new job started.
-
