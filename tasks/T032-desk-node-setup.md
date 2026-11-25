@@ -2,7 +2,7 @@
 id: T032
 title: Second compute node (user's desk PC, DESKTOP-8MQBTK5) — toolchain, repo, tables, PLUTO build, smoke run; ≤ 12 cores
 owner: codex-desk
-status: ready
+status: done
 depends: []
 milestone: D2
 est_time: 1–2 h (mostly downloads and table build)
