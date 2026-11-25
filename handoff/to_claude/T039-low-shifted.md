@@ -1,0 +1,1 @@
+T039 low_wf/it1 complete at both time conventions; +28 ns metrics, peak and band-b arrays verified (30 labels), with hashes in shifted_delivery.json. High imaging still running; see tasks/T039.report.md.
