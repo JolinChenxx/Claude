@@ -566,3 +566,6 @@ Updated: 2026-11-15
 - Same pipeline, same iteration: T026 v1n 0.219 / 0.141 / 0.72 / 8/11; T029 v1q 0.385 / 0.179 / 0.90; T023 v1k 0.303 / 0.121 / 0.69. Experiment: 0.163 / 0.027 / 0.94.
 - Reading (scan, not adoptable): with 10 nm droplets the location from flight and heat transfer gives v1q's aspect and a decay close to v1n. Only 17% of the droplet mass has evaporated by t_ref. This shows that the decay is set by where and when the vapour cools the core, not only by how much evaporates.
 - low_a30n production: evaporated 1.48 ng of 5.19 ng (29%) by 1300 ns; airborne 3.71 ng. Imaging pending.
+
+### 2026-11-25 12:35 — T030 high_a10n production
+- 800 ns rc 0. Launched 6.29 ng; evaporated 0.72 / 1.96 / 2.96 / 3.51 ng at 150 / 300 / 500 / 800 ns (56% at the end); airborne 2.78 ng. Energy residual 0.13% (v1n 0.03%); 3.5 M ConsToPrim lines. Half-mass spatter top 55 µm at 300 ns, 116 µm at 500 ns, 208 µm at 800 ns: it keeps rising, so no 500 ns plateau (PREREG (d) mismatch, as at low fluence). Imaging pending. high_rp/low_rp not finished yet.
