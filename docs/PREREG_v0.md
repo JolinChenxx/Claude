@@ -232,3 +232,16 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - Early frames (≤ 150 ns) and the L(t)/L(150) trend against the experiment, for both Δ.
   - At low fluence the same Δ leaves the shock about 25% small (pre-computed), which is a real deficit in ignition and coupling.
   - No Δ other than 28 ns will be tried on the images.
+
+## T038 low-fluence ignition sensitivity declared 2026-11-26 ~00:55 (UTC+8), before any result
+- **Problem:** v1rs ignites the low-fluence plume at about 55 ns and couples about 3× too little energy into the gas (shock about 25% small at any t0 offset). The experiment emits by its 10 ns frame.
+- **Members (desk node, Picard it0; baseline T035 low_base on the same node):**
+  - (1) v1m two-temperature avalanche breakdown during the pulse, added to v1rs (case v1rsbd_low). It was declared on 2026-11-24 and judged ineffective on v1k; this is a retest on the reported model.
+  - (2) Pulse-duration reading: "60 ns" in SI Table 1 is not defined as FWHM (T036 found no convention). The alternative reading, a 1/e² full width, gives FWHM = 60 × √(ln2/2) = 35 ns.
+  - (3) Both together.
+- **Readings, declared:**
+  - ignition time, meaning the first time E_gas_abs exceeds 1 µJ;
+  - E_gas_abs at 150 ns;
+  - the shock radius against Fig. 3d with Δ = 28 ns;
+  - σx and the L(t)/L(140) trend.
+- **Use of the results:** no member is adopted for being closer. An interpretation of 60 ns would be adopted only on documentary evidence, such as the laser datasheet's definition of pulse width.
