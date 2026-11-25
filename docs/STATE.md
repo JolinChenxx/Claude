@@ -595,3 +595,7 @@ Updated: 2026-11-15
 ### 2026-11-25 16:05 — T030 low_rp imaging; T031 high_v1s and low_v1rs production
 - low_rp it1 (v1r, reported): L715/L300 0.335, L1035/L300 0.132; σz/σx 0.70; S1 88 µm, 0/11. Same as T023 v1k (0.303 / 0.121 / 0.69). At both fluences v1r with melt-depth droplets equals the no-droplet case. Low figures redrawn with the v1r row.
 - T031 production: high_v1s recondensed 2.73 of 7.24 ng gross Cu (38%), residual 0.008%; low_v1rs recondensed 0.46 of 0.60 ng (77%), residual 0.008%. Imaging pending.
+
+### 2026-11-25 16:40 — T031 low_v1s imaging (first v1s reading)
+- low_v1s it1 vs T026 it1 (band b, sa, 250 µm): σz/σx at the t_ref frame (280 ns) 0.750 vs 0.721 (+4.0%); at 340 ns 0.747 vs 0.689 (+8%); at 500 ns 0.752 vs 0.690 (+9%). The core lifts: zc 150 vs 136 µm. S1 median 143 vs 125 µm, 10/11 vs 8/11 frames. L715/L300 0.204 vs 0.219; L1035/L300 0.156 vs 0.141.
+- PREREG v1s (b) at the declared time: +4% < 5%, not met. Later frames +8–9%, and the lift improves. The aspect gain comes from a narrower σx (88 vs 94 µm), not a taller σz. Recondensation helps the lift but does not make the plume round: 0.75 against the experiment's 0.94. high_v1rs production done (68% recondensed); high imaging pending.
