@@ -1,1 +1,0 @@
-T039 resumed under the approved pre-t0-tail criterion; neither production run was changed. low_wf reached 1300 ns (rc 0); rowwise budget/droplet checks and warnings are in results/T039/low_wf/it1/completion.json. High production and imaging acceptance remain open.
