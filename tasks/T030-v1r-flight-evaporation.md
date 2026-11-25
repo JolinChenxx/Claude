@@ -9,7 +9,7 @@ est_time: 0.5h operations + ~3.5h (high) / ~1.2h (low) machine time per member
 ---
 
 ## Background
-User decision 2026-11-25: "先做液滴空间分布的折中，按飞行时间和蒸发时间定". PREREG_v0, "v1r extension declared 2026-11-25 ~10:30".
+User decision 2026-11-25: "先做液滴空间分布的折中，按飞行时间和蒸发时间定". PREREG_v0, "v1r extension declared 2026-11-25 ~09:25".
 
 v1n (T026) evaporates the droplets throughout the Cu core, and v1q (T029) evaporates them at the spatter top. In v1r, each 1-ns launch bin is a parcel of equal droplets of radius a0. The parcel flies at the measured spatter speed and loses mass by the gas heat flux in its grid row. The flux is the free-molecular and continuum series law, energy-limited at T_boil. What the gas cannot evaporate stays airborne.
 
