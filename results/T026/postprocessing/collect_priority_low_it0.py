@@ -16,7 +16,7 @@ REPO = Path(__file__).resolve().parents[3]
 RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 BATCH = sys.argv[1] if len(sys.argv) > 1 else 'T026'
 ITERATION = sys.argv[2] if len(sys.argv) > 2 else 'it0'
-MEMBER_JOB = BATCH in ('T030', 'T031')
+MEMBER_JOB = BATCH in ('T030', 'T031', 'T033')
 assert len(sys.argv) == 4 if MEMBER_JOB else len(sys.argv) <= 3
 assert BATCH in ('T025', 'T026', 'T027', 'T028', 'T029') or MEMBER_JOB
 assert ITERATION in ('it0', 'it1') or (MEMBER_JOB and ITERATION == 'it2')
@@ -26,9 +26,14 @@ RUNNER = 'run_priority_07.py' if QUEUE07 else 'run_priority_06.py'
 MEMBER = 'low_thin_G1' if BATCH == 'T028' else 'low_thin_G0'
 if MEMBER_JOB:
     MEMBER = sys.argv[3]
-    series, size = MEMBER.split('_')
+    series, size = MEMBER.split('_', 1)
     models = ('rp', 'a10n', 'a30n', 'a100n') if BATCH == 'T030' else ('v1s', 'v1rs')
-    assert series in ('low', 'high') and size in models
+    if BATCH == 'T033':
+        specs = yaml.safe_load((REPO/'configs/batches/T033.yaml').read_text(encoding='utf-8'))['numerics']['runs']
+        assert MEMBER in {spec['id'] for spec in specs}
+    else:
+        assert size in models
+    assert series in ('low', 'high')
     assert ITERATION == ('it1' if series == 'low' else 'it2')
 SERIES = MEMBER.split('_')[0]
 RAW = Path('D:/sim_runs') / BATCH / MEMBER / ITERATION
