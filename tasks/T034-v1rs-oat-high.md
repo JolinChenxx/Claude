@@ -2,7 +2,8 @@
 id: T034
 title: OAT of the reported model v1rs at high fluence; 8 members seeded from T026 it1; start when T033 frees ≥ 16 cores
 owner: codex
-status: ready
+status: running
+started: 2026-11-25T21:06:45+08:00
 depends: []
 milestone: D2
 est_time: ~3.5 h per member
