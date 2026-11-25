@@ -641,3 +641,4 @@ Updated: 2026-11-15
 - 06:35 T039 high (comparable-device waveform), same seed as T031: σz/σx 0.825 against 0.667 (+24%); zc 153 against 132 µm; L500/L300 0.385, L730/L300 0.192 (v1rs 0.424 / 0.220; experiment 0.107); σx 109 against 113 µm.
   - Refitted shock offsets: high 7 ns (Gaussian 28 ns); low 36 ns (Gaussian 53 ns). The front-loaded waveform explains most of the t0 discrepancy physically and is the largest morphology gain so far. It is a scenario only, because the waveform is not the paper laser's.
   - Data request: the measured YLPN 60 ns waveform.
+- 07:30 T039 done (both fluences, nominal and +28 ns imaging, shock diagnostics).
