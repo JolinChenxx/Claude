@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T18:00:29+08:00 (UTC+8)
+- Checked T030 and T031 against ws 0934ccf. All finished wrappers already delivered. T031 high_v1rs (PID 26764, 26m43s) and low_v1rs (PID 45944, 9m48s) both running image_v2 with 0/5 stages completed. No new handoff or restart. The two T030 100 nm scans remain queued behind the occupied imaging slots.
+- Incoming handoff empty. Only ready card T032 belongs to codex-desk, not this workstation. No eligible new card.
+
 ## 2026-11-25T17:50:31+08:00 (UTC+8)
 - Restored MinGit 2.56.1 and verified official SHA-256. Pulled ws. T023 closed as partial per Claude (649.9982/800 ns), no rerun. T031 high_v1s retry finished at 17:48:17, five stages rc 0; verified and handed off 29 frame times per band-b mode and 18 metric tables. ws pushed at 5c292a5, report syncs verified. No newly claimable card: T032 is codex-desk only.
 - Launched low_v1rs imaging after preflight on the freed NUMA 1 slot (8 workers). T031_low_v1rs_post : STATE=running  elapsed=0.00:00:00  pid=45944  commit=5c292a5; T031_high_v1rs_post : STATE=running  elapsed=0.00:16:55  pid=26764  commit=cc01cc6. T030 production and six imaging deliveries finished; remaining two scan images behind T031. No jobs stopped.
@@ -125,7 +129,3 @@
 ## 2026-11-25T04:02:41+08:00 (UTC+8)
 - T029 high G0 it0 reached 800 ns, rc 0, in 6584.3 seconds. The appended registry row was verified before commit 9010869 and rebase. Production evidence and handoff pushed at 521eacd; report sync hash verified. All 1590 budget rows finite; final condensed mass 1.6746419677e-12 kg and absolute relative energy residual 0.032227%.
 - At 04:01 UTC+8 T023 high G1 it0 was at 509.9843 ns; T028 high G1 it0 at 256.4936 ns; T029 high/low G0 it1 at 35.49881/1205.491 ns. Queue 08 was imaging T028 low G1 it0; T029 high G0 it0 imaging is pending. No incoming handoff, no ready Codex card, and no new job launched.
-
-## 2026-11-25T03:30:21+08:00 (UTC+8)
-- Work card: none. Pulled ws a744fcb: T025 marked done and the T028/T029 low-it0 production handoffs consumed. Incoming inbox empty; no ready Codex card.
-- job.ps1 status at 03:29 UTC+8: T023, T028, T029 and queue 08 running. T023 high G1 it0 480.9935 ns; T028 high G1 it0 204.9962 ns; T029 high G0 it0 533.9487 ns and low G0 it1 262.4988 ns. Queue 08 is imaging T028 low G1 it0. Its only completed milestone, T025 high G0 it0, was already delivered. No new job started.
