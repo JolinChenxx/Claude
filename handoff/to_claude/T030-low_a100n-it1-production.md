@@ -1,1 +1,0 @@
-Low 100 nm it1 finished at 1300 ns (rc 0): 0.65156099451 ng evaporated and 4.5414613205 ng airborne. Review tasks/T030.report.md and results/T030/low_a100n/it1/ for the original droplets.csv, residual checkpoints and 439313 ConsToPrim lines. Imaging pending.

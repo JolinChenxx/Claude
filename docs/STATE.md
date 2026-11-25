@@ -579,3 +579,8 @@ Updated: 2026-11-15
 - low_rp it1 (a0 3.42 µm), still running (807 ns of 1300 at 13:31, ~2 ns/min, progressing): evaporated 0.014 ng (0.28%).
 - Reading: with droplets of the size the melt layer gives, gas heat transfer evaporates < 0.5% of them. The plume is then effectively the no-droplet case (v1k, T023: L730/L300 0.60 high). The v1n fast decay is physical only if the ejecta are ≲ 30 nm fragments at launch, which neither our model nor the paper's data establishes. v1n stays the best phenomenological model, but it is not a physically closed one. Recorded as the main open problem of the decay.
 - Spatter top (d): the parcels keep their mass and keep rising (246 µm at 800 ns high), with no plateau. The measured stop after 500 ns is not reproduced: in the model the droplets neither evaporate nor stop.
+
+### 2026-11-25 13:40 — T030 high_a10n imaging; high_a30n and low_a100n production
+- high_a10n it2 (scan): L500/L300 0.674, L730/L300 0.437; σz/σx 0.76; S1 91 µm, 2/20. Against T026 v1n 0.302/0.156/0.64, T029 v1q 0.570/0.408/0.80, T023 v1k 0.746/0.667/0.58. Experiment L730/L300 0.107, aspect 1.07.
+- At high fluence even 10 nm droplets (31% evaporated by t_ref, 56% at 800 ns) give a decay much slower than v1n. The low-fluence 10 nm result (decay near v1n) does not carry over.
+- Production: high_a30n evaporated 2.26 of 6.29 ng; low_a100n 0.65 of 5.19 ng. Imaging pending. RP imaging first.
