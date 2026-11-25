@@ -80,3 +80,7 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 
 ## 2026-11-25 01:40 (UTC+8) — T029 ahead of low-value imaging (standing authorization)
 24 imaging workers held physical cores on T021 high it1, the lowest-priority item, and T029 could not start (8 cores free, 16 needed). Queue 07 is stopped at a member boundary and relaunched with ≤ 8 workers; T029 launches with 16 ranks. No production stopped, no data deleted.
+
+## 2026-11-25 16:50 — Direct MCP channel to the workstation (user)
+- The user connected two MCP servers. "WorkStaion_SuperCalculator" is the 76-core workstation: T3 project "Claude" at D:\Codex\2026-11-11\wo\outputs\Claude, Codex thread import:codex:01a1ccf8… "执行 AGENTS.md 的 T001", heartbeat automation "claude-codex". "WorkStation" is the user's desk PC, with only a scratch project.
+- Use: task cards and reports stay in git as the record. The MCP thread is used for urgent instructions, status queries and stop orders (each also recorded in handoff/to_codex or DECISIONS). The thread is not restarted or interrupted while a heartbeat run is active.
