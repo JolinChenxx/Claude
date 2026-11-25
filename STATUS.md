@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T01:35:30+08:00 (UTC+8)
+- T034 verified three appended registry rows before rebase; high_sig_hi, high_ftc_lo, high_gaunt_hi reached 800 ns with fully matching droplet ledgers, 7/8 production archived. T033 low_rem_lo imaging verified and handed off (8/18); report sync hash matches. Started high_sig_lo on freed node 1. T037_retry01 running on high_v1rs image, no finished stage recorded, no fallback or restart. T036 both Mattern PDFs retrieved and page/line references verified, waveform and paired jump pending. No workstation-ready cards; T035/T038 desk-owned. ws 894c74e.
+- Jobs: T033_high_sig_lo_post STATE=running  elapsed=0.00:00:00  pid=49208  commit=894c74e; T034 STATE=running  elapsed=0.03:37:55  pid=38616  commit=a5f05ad; T037_retry01 STATE=running  elapsed=0.00:34:03  pid=49872  commit=0683e9f. T034 latest t_ns: high_A_hi=8.000000e+002, high_A_lo=8.000000e+002, high_cond_lo=8.000000e+002, high_ftc_hi=5.009474e+002, high_ftc_lo=8.000000e+002, high_gaunt_hi=8.000000e+002, high_sig_hi=8.000000e+002, high_sig_lo=8.000000e+002.
+
 ## 2026-11-26T01:01:48+08:00 (UTC+8)
 - T034 verified and committed the new high_cond_lo registry row before rebase; archived production and 1590 matching budget/droplet rows at 800 ns (4/8 production). T037 incoming approval followed: original failure preserved, known empty output and all four original commands preflighted; launched T037_retry01 on node 0, no other job restarted. Four-worker fallback only if BrokenProcessPool recurs. T033 low_rem_lo imaging on node 1 continues (7/18 delivered). T036 not advanced in this pass ending after priority launch. No workstation-ready card; T035 and T038 belong to desk. ws ff549c7.
 - Jobs: T033_low_rem_lo_post STATE=running  elapsed=0.00:28:35  pid=44424  commit=fa3e899; T034 STATE=running  elapsed=0.03:04:13  pid=38616  commit=a5f05ad; T037_retry01 STATE=running  elapsed=0.00:00:21  pid=49872  commit=0683e9f. T034 latest t_ns: high_A_hi=8.000000e+002, high_A_lo=8.000000e+002, high_cond_lo=8.000000e+002, high_ftc_hi=1.254925e+002, high_ftc_lo=6.334624e+002, high_gaunt_hi=5.654398e+002, high_sig_hi=5.989362e+002, high_sig_lo=8.000000e+002.
@@ -121,8 +125,4 @@
 - T030: replied to the RP progress request at 7247b77. High RP finished at 800 ns, solver elapsed 3:23:25; low RP was running at 806.9862 ns at 13:31:43 and advanced to 814.9990 ns at 13:35:47. No process stopped.
 - At 8cd7fdc handed off three production members (high RP and high 30 nm at 800 ns; low 100 nm at 1300 ns) and high 10 nm imaging. All three original droplets files matched staged evidence; verified 30 imaging files, 29 band-b frames per mode, 18 metrics tables, diagnostics and peak lift. Band-b baseline P1 thin/SA 564.97/494.64 ns; all P2 unavailable. Report sync verified.
 - Started T030_high_rp_post at 2026-11-25T13:36:09 with eight workers (wrapper PID 22208, commit 8cd7fdc); the two completed scan members await imaging. T030 high 100 nm at 580.4776 ns and T023 high G1 it0 at 628.9967 ns sampled at 13:33. No ready Codex card or outstanding incoming handoff.
-
-## 2026-11-25T13:01:04+08:00 (UTC+8)
-- T030 low_a30n imaging completed at 12:55:55. All five stages exited 0. Verified 30 archived files, both band-b stacks at 30 experimental times, 18 metric tables, peak lift and three diagnostics. Baseline band-b P1 thin/SA: 258.40/232.42 ns; P2: 637.88/556.35 ns. Imaging handoff pushed at 8f71c96; report sync verified.
-- T023 and T030 production still running. Latest budget times at 12:59 (ns): T023 high G1 it0 625.9979; T030 high RP/30/100 nm 791.9936 / 733.4824 / 168.4873; low RP/100 nm 738.4854 / 681.9764. High 10 nm imaging still running. Inbox empty; no ready Codex card or new production completion. No job started.
 
