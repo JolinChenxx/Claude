@@ -1,0 +1,1 @@
+High 30 nm it2 finished at 800 ns (rc 0): 2.2593225280 ng evaporated and 4.0349025730 ng airborne. Review tasks/T030.report.md and results/T030/high_a30n/it2/ for the original droplets.csv, residual checkpoints and 3467410 ConsToPrim lines. Imaging pending.
