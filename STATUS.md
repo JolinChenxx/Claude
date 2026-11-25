@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T21:03:21+08:00 (UTC+8)
+- Scheduled check after the T033 decision handoff: ws up to date at c9e0a8c; inbox empty. T033 batch PID 49952 active. Five completed members already archived, seven advancing, six not started. Budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.544769e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.664895e+002, high_sig_lo 8.000000e+002, low_A_hi 9.049559e+001, low_ftc_hi 6.599593e+001, low_ftc_lo 2.209620e+002, low_sig_hi 6.749594e+001, low_sig_lo 7.049813e+001.
+- Both imaging jobs (high_rem_hi PID 25260, high_A_hi PID 42828) entered image_v2; no newly completed products or unaudited member inputs. No duplicate job launched. Only ready card T032 belongs to codex-desk.
+
 ## 2026-11-25T21:02:34+08:00 (UTC+8)
 - Applied Claude decision 0d9ed10: T033 running, gross ratios accepted. Production job PID 49952 never restarted. Verified 12/18 generated inputs and archived five completed 800 ns runs, all rc 0. Started two five-stage imaging jobs, eight workers each: started T033_high_rem_hi_post pid=25260 dir=D:\sim_runs\T033_high_rem_hi_post; T033_high_rem_hi_post STATE=running  elapsed=0.00:00:00  pid=25260  commit=c9e0a8c; started T033_high_A_hi_post pid=42828 dir=D:\sim_runs\T033_high_A_hi_post; T033_high_A_hi_post STATE=running  elapsed=0.00:00:00  pid=42828  commit=c9e0a8c. Budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.524893e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.519815e+002, high_sig_lo 8.000000e+002, low_A_hi 8.849855e+001, low_ftc_hi 6.399578e+001, low_ftc_lo 2.084292e+002, low_sig_hi 6.599671e+001, low_sig_lo 6.849581e+001.
 - T030 low_a100n/it1 imaging finished 20:32:13, all five stages rc 0; verified 30 band-b frames per mode, 18 scenario tables and 131/521/12 diagnostic rows. All eight production and imaging deliveries complete; card submitted for review. Reports synced and verified. ws pushed at c9e0a8c. T032 is for codex-desk only.
@@ -124,7 +128,3 @@
 ## 2026-11-25T08:01:15+08:00 (UTC+8)
 - T029 high G0 it1 finished imaging at 07:44:09 with five zero exits. Verified six 29-frame archives, 18 metric tables, 29 peak rows and three diagnostics. All 34 archived files matched their Git blob hashes. Result handoff pushed at 20fb4c4; synced report verified. Band-b baseline P1 thin / self-absorbed was 599.98 / 522.97 ns; P2 unavailable in all 18 scenarios.
 - Queue 10 is imaging T028 high G1 it0 (its production wrapper finished). Running production budgets: T023 high G1 it0 591.9896 ns; T029 high G0 it2 129.4704 ns. Inbox empty and no ready Codex card. No new job started.
-
-## 2026-11-25T07:31:08+08:00 (UTC+8)
-- T029 high G0 it0 imaging finished at 07:14:18: five zero exits, six 29-frame archives, 18 metrics tables, 29 peak rows and three diagnostics. Verified 34 archived files against their SHA-256 receipts; result handoff pushed as d294fd6 and report sync verified. Band-b baseline P1 (thin / self-absorbed): 396.28 / 369.16 ns. P2 unavailable in all 18 scenarios.
-- Queue 08 retired its idle coordinator PID 41384 at 07:14:18 after the high-it0 milestone. Wrapper exit 15 was the authorized retirement. Queue 10 is imaging T029 high G0 it1; no low members repeated. Inbox note consumed. Production: T023 high G1 it0 587.9947 ns and T029 high G0 it2 72.99895 ns. T028 production finished and its high imaging is pending. No ready card or new job.
