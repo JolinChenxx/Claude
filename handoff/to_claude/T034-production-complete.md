@@ -1,0 +1,1 @@
+T034 production is complete: 8/8 rc 0, finite budgets, and airborne mass verified for every droplet ledger row. Input audits and numerical warning counts are in tasks/T034.report.md; imaging is pending, not a final card handoff.
