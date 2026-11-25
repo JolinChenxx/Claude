@@ -2,7 +2,7 @@
 id: T030
 title: v1r droplets located by flight time and gas-heat-transfer evaporation; 8 members (melt-depth size + 10/30/100 nm scan) × high/low, one Picard iteration seeded from T026; up to 48 cores
 owner: codex
-status: hold   # released after the cloud smoke run (v1r + v1n bit-identity)
+status: open
 depends: []
 milestone: D2
 est_time: 0.5h operations + ~3.5h (high) / ~1.2h (low) machine time per member
@@ -18,7 +18,9 @@ The reported member uses a0 from the melt depth of the target model (Rayleigh–
 Cloud checks:
 - Build OK.
 - Tests pass, including tests/test_droplet_v1r.py.
-- Smoke runs: see the report section of the commit that issued this card.
+- Smoke runs (smoke grid, 1 core):
+  - v1n regression with build_v1r vs build_v1q, v1bpde_low, 0–110 ns: all 175 budget rows are bit-identical. The new column M_drop_airborne is appended.
+  - v1r 10 nm, low fluence, 0–180 ns: rc 0. 96 parcels launched 2.098 ng, evaporated 0.720 ng (34%), airborne 1.378 ng. Mass closure is 2e-11, and M_Cu in the gas equals M_src.
 
 ## Steps
 1. Run `git pull --rebase origin ws`.
