@@ -555,3 +555,8 @@ Updated: 2026-11-15
 
 ### 2026-11-25 11:00 — T030 inputs verified (Codex 10:00)
 - Melt depth (area mean, shielded target model of the seeded iteration): high 4.79 µm → DROP_A0 4.53 µm; low 3.62 µm → 3.42 µm. Scan inputs 1e-8 / 3e-8 verified; 100 nm members queued. No member finished yet.
+
+### 2026-11-25 11:05 — T030 low_a10n (v1r, 10 nm scan member) production
+- 1300 ns, rc 0. Launched 5.19 ng; evaporated 0.41 / 0.90 / 1.55 / 2.11 ng at 150 / 300 / 600 / 1300 ns (17% by t_ref, 41% at the end); airborne 3.08 ng. v1n (T026 low it1) evaporated 3.87 ng (M_Cu 4.45 vs 2.60 ng here).
+- Even 10 nm droplets evaporate slowly: at 190 m/s they sit within 40 µm of the face up to 300 ns (lower plume edge), where the gas is coolest. The spatter-top check (d): the highest half-mass parcel keeps rising with the front (37 µm at 300 ns, 219 µm at 1300 ns); there is no evaporation-limited stop.
+- Imaging pending. Melt-depth members (a0 3–5 µm) are expected to evaporate far less (PREREG (b)).
