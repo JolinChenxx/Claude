@@ -573,3 +573,9 @@ Updated: 2026-11-15
 ### 2026-11-25 13:00 — T030 low_a30n imaging
 - low_a30n it1 (scan): L715/L300 0.196, L1035/L300 0.052 (best late decay so far; exp 0.027, v1n 0.141); σz/σx 0.75; S1 116 µm, 8/11.
 - The scan is not monotonic in a: 10 nm aspect 0.91 / late 0.134; 30 nm aspect 0.75 / late 0.052. Scan only, not adoptable. Asked Codex for high_rp/low_rp progress (no rp member delivered after 3 h 20 min).
+
+### 2026-11-25 13:35 — T030 reported members (melt-depth droplets): PREREG (b) confirmed
+- high_rp it2 (a0 4.53 µm), 800 ns rc 0: launched 6.29 ng, evaporated 0.023 ng (0.37%), airborne 6.27 ng.
+- low_rp it1 (a0 3.42 µm), still running (807 ns of 1300 at 13:31, ~2 ns/min, progressing): evaporated 0.014 ng (0.28%).
+- Reading: with droplets of the size the melt layer gives, gas heat transfer evaporates < 0.5% of them. The plume is then effectively the no-droplet case (v1k, T023: L730/L300 0.60 high). The v1n fast decay is physical only if the ejecta are ≲ 30 nm fragments at launch, which neither our model nor the paper's data establishes. v1n stays the best phenomenological model, but it is not a physically closed one. Recorded as the main open problem of the decay.
+- Spatter top (d): the parcels keep their mass and keep rising (246 µm at 800 ns high), with no plateau. The measured stop after 500 ns is not reproduced: in the model the droplets neither evaporate nor stop.
