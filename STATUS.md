@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T03:32:46+08:00 (UTC+8)
+- T039: committed one verified low registry row; cloud approved the pre-t0 tail criterion (0.318%), both original inputs untouched. Low finished at 1300 ns, rc 0; 2591 matching finite ledger rows, rank warning counts reported. Pushed low milestone and hash-verified report sync. Started T039_low_wf_post (8 imaging workers; nominal/28 ns, both peaks, diagnostics including shock). High production t_ns=1.029941e+002. T037 low v1rs shifted frames verified; 2/4 archived, T026 high in progress. T033 high_sig_hi still in image_v2 (9/18 delivered); T034 imaging queued behind priority work. No workstation-ready card; T035/T038 desk-owned. ws 5df0b101.
+- Jobs: T039 STATE=running  elapsed=0.00:59:57  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:00:00  pid=45376  commit=5df0b101; T037_retry01 STATE=running  elapsed=0.02:31:19  pid=49872  commit=0683e9f; T033_high_sig_hi_post STATE=running  elapsed=0.00:30:59  pid=44452  commit=19f3cfb9.
+
 ## 2026-11-26T03:01:47+08:00 (UTC+8)
 - T039 blocked and handed off (ws 19f3cfb9): both 4000-row solver pulse tables are 0.317971% below case/ini energy (limit 0.1%). PULSE_TAB, COND_SIG and radii passed. Complete trace includes 0.317918% before t=0. Production left running without modifications or new imaging; synced report hash verified. T037 on low_v1rs, high_v1rs alone archived (1/4); no restart. T033 high_sig_hi preflight passed and started on available node 1; 9/18 imaging deliveries. No workstation-ready cards; T035/T038 desk-owned.
 - Jobs: T033_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=44452  commit=19f3cfb9; T037_retry01 STATE=running  elapsed=0.02:00:20  pid=49872  commit=0683e9f; T039 STATE=running  elapsed=0.00:28:58  pid=44548  commit=eedb525f. T039 latest budget t_ns: high_wf=5.199932e+001, low_wf=2.684195e+002.
@@ -120,8 +124,3 @@
 ## 2026-11-25T15:32:07+08:00 (UTC+8)
 - T031 low_v1s/it1 finished at 15:08:44, 1300 ns, rc 0. Verified 2576 finite budget rows; M_recondensed 2.66751 ng, net M_src = M_Cu = 1.88828 ng, endpoint energy residual +1.77969e-9 J (0.01005%), 496979 ConsToPrim lines. Production handoff 6aa78ce. Started the first eligible T031 imaging member low_v1s (eight workers, PID 17712, 2026-11-25T15:32:07); both higher-priority high-fluence members are still in production. Latest budgets: high_v1rs 107.9941 ns, high_v1s 137.9956 ns, low_v1rs 814.994 ns, low_v1s 1300 ns.
 - T030 high 30 nm it2 imaging handed off at a98e477. Both band-b stacks verified (29 times), 18 metric tables; P1 baseline thin/SA 484.24/372.77 ns, P2 unavailable. Both T030 and T031 report syncs verified. T030 low RP imaging still running at status check. T023 high G1 it0: 642.9944 ns. No incoming note or ready Codex card.
-
-## 2026-11-25T15:01:31+08:00 (UTC+8)
-- T030 high RP imaging handed off at 3abaccb; report sync verified. All five stages returned 0, both band-b stacks cover 29 experimental times, 18 metric tables, and complete diagnostics/peak-lift delivery. Band-b P1 thin/SA 765.97/788.24 ns; no P2 in any scenario. High 30 nm imaging: STATE=finished  elapsed=0.00:58:29  pid=44548  commit=628aee3. Started low RP imaging at 2026-11-25T15:01:31 via job.ps1, PID 36152, eight workers. No new scan launch.
-- All four T031 ini files passed the card checks, including both melt-depth radii (c829a6e). Latest T031 budget times: high_v1rs 60.99786 ns, high_v1s 60.99786 ns, low_v1rs 212.4431 ns, low_v1s 557.9244 ns. T023 high G1 it0: 639.4962 ns. No incoming handoff or ready Codex card.
-
