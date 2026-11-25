@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T19:01:17+08:00 (UTC+8)
+- T031 high_v1rs/it2 imaging finished 18:48:21, wrapper and all five stages rc 0. Verified 29 frame times per band-b mode, 18 metric tables, 29 peak rows, diagnostics 81/321/12. Delivered on ws 134391f; synced report verified. Low_v1rs remains in image_v2. Launched T030 high_a100n on freed node-0 imaging slot after eight-worker preflight; first preflight shell lacked MinGit PATH; rerun with PATH succeeded. Low_a100n queued. Old T030 high_a30n wrapper PID reused by newer python; original rc=0 and delivery intact, no action.
+- T030_high_a100n_post STATE=running  elapsed=0.00:00:00  pid=48768  commit=134391f; T031_low_v1rs_post STATE=running  elapsed=0.01:10:44  pid=45944  commit=5c292a5; T033_v1c_sigen_lo STATE=running  elapsed=0.00:15:39  pid=49144  commit=311c388; T033_v1c_sigen_hi STATE=running  elapsed=0.00:15:38  pid=48468  commit=311c388; T033_v1c_gaunt15 STATE=running  elapsed=0.00:15:38  pid=26896  commit=311c388. All three T033 variant output folders still empty at initial check; no production launch before table validation. Inbox empty; T032 ready for desk node only.
+
 ## 2026-11-25T18:46:12+08:00 (UTC+8)
 - T033 locked on ws (311c388); both requested test modules passed all 10 tests with GCC. Verified existing build_v1s and baseline EOS. Started three isolated variant table builds, 32 workers each; 18 MPI members await table hash/identity checks. No split batch while 96 table workers and T031 imaging are active. Evidence at b805efc.
 - T033_v1c_sigen_lo STATE=running  elapsed=0.00:00:36  pid=49144  commit=311c388; T033_v1c_sigen_hi STATE=running  elapsed=0.00:00:35  pid=48468  commit=311c388; T033_v1c_gaunt15 STATE=running  elapsed=0.00:00:35  pid=26896  commit=311c388; T031_high_v1rs_post STATE=running  elapsed=0.01:12:36  pid=26764  commit=cc01cc6; T031_low_v1rs_post STATE=running  elapsed=0.00:55:41  pid=45944  commit=5c292a5. T030 scan imaging remains behind T031. T032 is owned by codex-desk; no other ready workstation card.
@@ -125,7 +129,3 @@
 ## 2026-11-25T05:29:43+08:00 (UTC+8)
 - Work card: none. Production jobs T023, T028 and T029 are running. Latest high-fluence budgets: T023 G1 it0 548.9931 ns, T028 G1 it0 298.9885 ns and T029 G0 it1 575.9961 ns.
 - All three imaging jobs remain in image_v2: queue 08 on T028 low G1 it0 and the two queue 09 jobs on T029 low G0 it0/it1 (eight workers each). No new collection milestone; T025 high G0 it0 was already delivered. Inbox empty, no ready Codex card, no job launched. The queue 08 question remains open.
-
-## 2026-11-25T05:04:36+08:00 (UTC+8)
-- T029: both low G0 jobs started at 05:03:08: T029_low_it0_post_09 (PID 42200) and T029_low_it1_post_09 (PID 9008). By 05:03:37 each had passed three diagnostics and entered image_v2 with eight workers. Queue 08 (PID 41948, eight workers) continues T028 low G1 it0; T029 high G0 it0 is next. Independent output roots prevent overwrites. Images and peaks have not been handed off.
-- Running production: T023 high G1 it0 544.4958 ns; T028 high G1 it0 290.9979 ns; T029 high G0 it1 265.4678 ns. No ready Codex cards. Inbox note consumed; ws 579c6af requests a decision before queue 08 revisits the two low members. T029 report sync verified.
