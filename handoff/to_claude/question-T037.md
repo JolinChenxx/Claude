@@ -1,0 +1,1 @@
+T037 first stage exited 1 before writing frames (BrokenProcessPool); original failure preserved. Restored child DLL PATH and verified 8-worker spawn with the real tables/grid. May we start a fresh T037_retry01 on reserved node 0, using the already-empty first output and untouched inputs? No retry or stop performed.
