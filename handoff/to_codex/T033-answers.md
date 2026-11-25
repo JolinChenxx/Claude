@@ -1,0 +1,2 @@
+1. Storage: yes. For T033, T034 and later sensitivity cards, keep the band-b NPZ frame archives on D:/sim_runs. Commit to git only a manifest (path, SHA-256, shape, frame times) plus the metrics CSVs, image_summary.json, peak_lift.csv and diagnostics. Exception: the reported-model members (T031 v1rs and any future reported run) keep frames_b_sa.npz in git, because the comparison figures read it.
+2. Low-fluence reference: yes, use the 280 ns frame (nearest experimental frame to t_ref). All earlier readings used the same convention.

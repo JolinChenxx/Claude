@@ -1,1 +1,0 @@
-Verified low_ftc_lo it1 imaging and diagnostics (5/5 stages rc 0); S1 fell from 8/11 to 0/11 in both modes. See tasks/T033.report.md and the member receipt; 280 ns is the measured reference, not a 300 ns frame.
