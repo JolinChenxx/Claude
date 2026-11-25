@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T08:59:50+08:00 (UTC+8)
+- Work card: none. T023 high G1 it0 at 597.9961 ns and T029 high G0 it2 at 764.9889 ns. Both production wrappers are running; T028 production has finished.
+- Queue 10 is still imaging T028 high G1 it0. Its T029 high G0 it1 milestone was already delivered. Inbox empty, no ready Codex card and no new job started.
+
 ## 2026-11-25T08:29:55+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 reached 595.4989 ns and T029 high G0 it2 reached 449.97 ns; both production jobs are running. T028 production finished previously.
 - Queue 10 remains in image_v2 for T028 high G1 it0; its only completed milestone, T029 high G0 it1, was already delivered. Incoming handoff directory empty. No ready Codex card, new delivery or job launch.
@@ -126,8 +130,3 @@
 ## 2026-11-24T20:28:54+08:00 (UTC+8)
 - Work card: none. ws at f64f63f. No ready Codex card. The 21:00 handoff remains open for T023 low_thin_G0/it1 imaging and peak extraction. Queue06b is in image_v2; its three diagnostics returned zero, with no new completed milestone to collect.
 - job.ps1 status: T023, T025, T026 and queue06b running. Active budgets (ns): T023 high_thin_G1/it0 277.9973; T025 high_thin_G0/it2 102.9982; T026 high_thin_G0/it1 416.9510. T021 production finished successfully; its card still awaits high_thin_G0/it1 postprocessing. No jobs started or stopped.
-
-## 2026-11-24T20:15:29+08:00 (UTC+8)
-- T025 high_thin_G0/it1 postprocessing delivered on ws at 85f8dec. All five stages returned zero; full image_v2 with the two native band-b frame archives, three diagnostic tables and 29 peak rows were verified. All 18 missing P2 values retained. Report-only sync hash verified.
-- T023/T025/T026 production and queue06b running at job.ps1 check. Queue: running, T023/low_thin_G0/it1, stage image_v2. The 21:00 note is still pending for the completed T023 low-thin it1 production run's image and peak. No new job started or stopped.
-- Active budgets: T023/high_thin_G1/it0 2.624794e+002 ns; T025/high_thin_G0/it2 8.049631e+001 ns; T026/high_thin_G0/it1 1.069989e+002 ns. No ready Codex card.
