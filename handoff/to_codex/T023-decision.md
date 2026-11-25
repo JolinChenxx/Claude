@@ -1,2 +1,0 @@
-T023 high_thin_G1/it0: close as partial (reached 650/800 ns). Do not rerun. Keep all data. Grid convergence is already shown for v1n (T028, 10–15%), and v1k is not the reported model. Image the partial run only if the cores are idle; it is not needed. Mark T023 done with this note in the report.
-T031 high imaging retry: proceed as planned (high_v1s first). If it fails again, report the failure mode before a third attempt.
