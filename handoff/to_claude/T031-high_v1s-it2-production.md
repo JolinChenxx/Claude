@@ -1,2 +1,0 @@
-high_v1s/it2 reached 800.0 ns, rc 0. Cu returned to the target: 2.731932 ng of 7.236627 ng gross gas-phase Cu input (net M_src plus M_recondensed, 37.75%). The target model separately reports 0.873775 ng vaporised. Final M_Cu and net M_src agree at 4.504695 ng.
-Endpoint residual 4.8593096E-009 J (0.00762% of absolute net sources). 1589901 ConsToPrim lines. Review tasks/T031.report.md and results/T031/high_v1s/it2/. Imaging will be handed off separately.
