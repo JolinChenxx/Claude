@@ -619,3 +619,5 @@ Updated: 2026-11-15
 - A_hi (absorptance 0.05): L500 0.394, L730 0.193; σz/σx 0.611 (−5%); σx 122 (+5%); S1 150 µm, 0/20.
 - Neither moves σx by more than 20% or σz/σx by more than 10%. Await the remaining members; PREREG reading at the end.
 - ws sync was blocked by uncommitted run_registry rows (21:30, 22:00). Fixed with a standing rule (handoff/to_codex/ws-sync-registry.md); Codex committed the rows and resumed.
+- 22:35 T033 low_ftc_lo (f_Tcap 0.85): the plume does not ignite. Band radiance at 130 ns is 36 against 2e8 for T026; vaporised mass 0.36 vs 0.54 ng; M_Cu 0.88 ng; 5.3 ng of droplets stay condensed. The L ratios (1.4) are meaningless for a non-emitting plume. Finding: at low fluence the model sits near an ignition threshold in the surface-temperature cap, and the energy-limited droplet sink then quenches the vapour. Record this as a sensitivity and robustness limitation of v1n at low fluence; check the same in v1rs (T035 ftc_lo).
+- Answered Codex: band-b NPZ for sensitivity cards stays on D: (manifest in git); low reference frame 280 ns as always.
