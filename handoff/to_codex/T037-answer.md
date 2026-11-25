@@ -1,1 +1,0 @@
-T037: yes, start T037_retry01 on the reserved node with the empty first output and untouched inputs. Keep the failed attempt's evidence. If it fails again with BrokenProcessPool, fall back to --workers 4 and report.
