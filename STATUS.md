@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T07:31:01+08:00 (UTC+8)
+- T039 submitted for review: high shifted image and peak finished 07:14; all 14 stages rc 0, all 94 archived nominal/shifted products match raw hashes. High/low solver endpoints 800/1300 ns. Report sync hash verified. T034 high_A_lo nominal imaging was still active at inspection (production 800 ns). Started T033 low_rem_hi imaging on freed node 0, 8 workers (production 1300 ns, 11/18 delivered). No new workstation-ready card; T038 desk-owned. ws dff23b83.
+- Jobs: T033_low_rem_hi_post STATE=running  elapsed=0.00:00:00  pid=49260  commit=dff23b83; T034_high_A_lo_post STATE=running  elapsed=0.00:59:50  pid=50924  commit=f0b7b859; T039_high_wf_post STATE=finished  elapsed=0.02:29:12  pid=35792  commit=cabb438d.
+
 ## 2026-11-26T07:00:44+08:00 (UTC+8)
 - None to start or collect. ws at 65b519f2, inbox empty, no registry additions. T039 high is on shifted +28 ns imaging; the five completed nominal/diagnostic stages were previously delivered, no shifted stage receipt yet. T034 high_A_lo nominal imaging continues. Final solver budgets: T039 high 8.000000e+002 ns, T034 high_A_lo 8.000000e+002 ns. T033 remaining low members queued; both imaging slots occupied. Only ready card T038 is desk-owned. No launch, restart or parameter changes.
 - Jobs: T039_high_wf_post: pid 35792, 11 live descendants, 23382 cumulative descendant CPU seconds; T034_high_A_lo_post: pid 50924, 11 live descendants, 13997 cumulative descendant CPU seconds.
@@ -118,7 +122,3 @@
 ## 2026-11-25T18:30:42+08:00 (UTC+8)
 - T031 high_v1rs and low_v1rs imaging: job.ps1 reports both running (PIDs 26764 and 45944; elapsed 56m48s and 39m53s). Both at image_v2, 0/5 stages complete. Eight live worker processes each; cumulative worker CPU 27124s and 19056s respectively. No ready products to collect; no solver or imaging job restarted.
 - T030 production and six imaging deliveries already complete. Its high/low 100 nm scans remain queued behind the two T031 imaging jobs. ws synchronized at 0934ccf, incoming handoff empty, no ready workstation card; T032 belongs to codex-desk.
-
-## 2026-11-25T18:00:29+08:00 (UTC+8)
-- Checked T030 and T031 against ws 0934ccf. All finished wrappers already delivered. T031 high_v1rs (PID 26764, 26m43s) and low_v1rs (PID 45944, 9m48s) both running image_v2 with 0/5 stages completed. No new handoff or restart. The two T030 100 nm scans remain queued behind the occupied imaging slots.
-- Incoming handoff empty. Only ready card T032 belongs to codex-desk, not this workstation. No eligible new card.
