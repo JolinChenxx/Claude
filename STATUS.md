@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T08:29:55+08:00 (UTC+8)
+- Work card: none. T023 high G1 it0 reached 595.4989 ns and T029 high G0 it2 reached 449.97 ns; both production jobs are running. T028 production finished previously.
+- Queue 10 remains in image_v2 for T028 high G1 it0; its only completed milestone, T029 high G0 it1, was already delivered. Incoming handoff directory empty. No ready Codex card, new delivery or job launch.
+
 ## 2026-11-25T08:01:15+08:00 (UTC+8)
 - T029 high G0 it1 finished imaging at 07:44:09 with five zero exits. Verified six 29-frame archives, 18 metric tables, 29 peak rows and three diagnostics. All 34 archived files matched their Git blob hashes. Result handoff pushed at 20fb4c4; synced report verified. Band-b baseline P1 thin / self-absorbed was 599.98 / 522.97 ns; P2 unavailable in all 18 scenarios.
 - Queue 10 is imaging T028 high G1 it0 (its production wrapper finished). Running production budgets: T023 high G1 it0 591.9896 ns; T029 high G0 it2 129.4704 ns. Inbox empty and no ready Codex card. No new job started.
@@ -127,8 +131,3 @@
 - T025 high_thin_G0/it1 postprocessing delivered on ws at 85f8dec. All five stages returned zero; full image_v2 with the two native band-b frame archives, three diagnostic tables and 29 peak rows were verified. All 18 missing P2 values retained. Report-only sync hash verified.
 - T023/T025/T026 production and queue06b running at job.ps1 check. Queue: running, T023/low_thin_G0/it1, stage image_v2. The 21:00 note is still pending for the completed T023 low-thin it1 production run's image and peak. No new job started or stopped.
 - Active budgets: T023/high_thin_G1/it0 2.624794e+002 ns; T025/high_thin_G0/it2 8.049631e+001 ns; T026/high_thin_G0/it1 1.069989e+002 ns. No ready Codex card.
-
-## 2026-11-24T19:58:16+08:00 (UTC+8)
-- Work card: none. Pulled ws to ae025b0; the T026 handoff was consumed. No ready Codex card and no newly completed postprocessing milestone to collect. The 21:00 deadline note remains open for T023 low_thin_G0/it1.
-- job.ps1 status: T023, T025, T026 and T023_T025_T026_post_06b running. Queue: running, T025/high_thin_G0/it1, stage image_v2. T026 low-thin it0 was already delivered at 16b3259. No job launched or stopped.
-- Production budget times: T023/high_thin_G1/it0 2.474951e+002 ns; T025/high_thin_G0/it2 6.099896e+001 ns; T026/high_thin_G0/it1 7.399647e+001 ns.
