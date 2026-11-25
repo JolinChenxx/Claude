@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T14:37:35+08:00 (UTC+8)
+- T030 low_rp/it1 finished at 14:35:25, 1300 ns, rc 0. All eight production runs finished successfully. The residual at the endpoint was -1.13971e-7 J (0.56749%). Archived full droplets and solver evidence; handed off at fabb627 and verified report sync. Low RP imaging is pending; high RP and high 30 nm imaging were still running at 14:35. T023 high G1 it0: 635.4975 ns.
+- T031 claimed and release note processed. Built build_v1s and passed 15/15 tests. Started four 8-rank members with job.ps1 at 2026-11-25T14:36:56, PID 45300, commit fabb627, --max-cores 32. Generated inputs checked: 0/4; No generated ini yet; verify all four on the next pass. Progress: no budget samples yet. No unclaimed ready Codex card.
+
 ## 2026-11-25T14:03:23+08:00 (UTC+8)
 - T030 high_a100n/it2 reached 800 ns at 14:00:28, rc 0. All 1590 budget rows were finite. Of 6.2942251010 ng launched, 1.2090838567 ng evaporated and 5.0851412443 ng remained airborne. Endpoint residual -2.50968954e-8 J (0.032439%); 2363943 ConsToPrim lines. Production evidence and original droplets.csv handed off at 628aee3; synced report verified.
 - High RP imaging was running; low RP production advanced to 883.4920 ns at 14:01, and T023 high G1 it0 reached 631.9950 ns at 13:59. Started T030_high_a30n_post at 14:03:02, wrapper PID 44548, eight workers and NUMA node 0 preferred. Low/high 100 nm imaging remains pending. No incoming handoff or ready Codex card.
@@ -132,7 +136,3 @@
 - Both actual T028 G1 it0 ini files matched BACKP 1, BD_ON 0, DROP_TB 2835, VMOM 0. At 23:31:09, T028 high/low budget times were 36.49773/64.49728 ns; T023 high G1 it0 and T027 high G0 it1 were at 351.9926/275.9905 ns. The T025 production wrapper exited 0; its old PID was reused by a later Python process. No process stopped or relaunched.
 - Incoming handoff directory empty; no ready Codex card to claim. No new computation started.
 
-## 2026-11-24T23:05:26+08:00 (UTC+8)
-- T025 low G0 it1: five postprocessing stages rc0, 30 peak rows, 18 metric tables and both band-b native archives verified and handed off at 08747fa. The report was synced. Queue 06b stopped at the authorized complete-member boundary; queue 07 was imaging T026 high G0 it1.
-- Paper lookup handed off at a705d19 with exact source locations and three native crops. T023 high G1 it0 and T027 high G0 it1 last sampled at 344.4909 and 79.99853 ns respectively.
-- T028 was the only eligible card. Its lock was pushed at 95f663b. Both rendered configs passed the four parameter checks; 16 MPI ranks were active on 64 physical cores. job.ps1 started the 24-rank G1 batch at 2026-11-24T23:04:43, PID 20832. No foreground wait; runtime ini and progress are due next pass.
