@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T04:30:33+08:00 (UTC+8)
+- BLOCKED: ws pull/rebase succeeded onto 94fc9292; remote rejected the ws push with 'fatal error in commit_refs_rules'. Pending local T037/T033 handoffs: e5e66e7d [codex] T033: deliver high_sig_hi imaging and diagnostics; a7360d18 [codex] T037: verify four aligned image sets and hand off for review. No card claimed, report sync or job launch; do not use unsynced state. No new registry row at pass start. No settings changed or force push attempted.
+- Read-only job check for heartbeat: T039 STATE=running  elapsed=0.01:57:44  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:57:47  pid=45376  commit=5df0b101. T039 high_wf latest budget 6.459397e+002 ns; low_wf production complete (1300 ns), last low postprocessing stage logged: image_v2.
+
 ## 2026-11-26T04:03:07+08:00 (UTC+8)
 - BLOCKED on ws push: initial and pre-push pulls succeeded, but schannel TLS handshake failed on git push origin ws. Two local commits, head 319d8776, not confirmed on remote. Next pass pull/rebase and push both pending commits, then sync reports for T037/T033 and verify hashes. No new job started or card claimed. T035/T038 are desk-owned.
 - T037_retry01 rc 0; verified 4/4 shifted images and peaks, 84 archived hashes; local review and handoff ready. T033_high_sig_hi_post rc 0; local 10th imaging milestone verified, high_gaunt_hi preflight only. T034 imaging queued. T039 production still running (high_wf 3.514741e+002 ns, low_wf complete 1300 ns), T039_low_wf_post on nominal image_v2. No jobs stopped or restarted.
@@ -120,7 +124,3 @@
 ## 2026-11-25T16:36:46+08:00 (UTC+8)
 - T031 high_v1rs/it2 finished at 16:34:13, 800 ns, rc 0. All four production members returned 0. Recondensed 0.794074 ng of 1.169938 ng gross Cu input; endpoint energy residual 0.005252%; 1384301 ConsToPrim lines. The original 1590-row droplet archive and final airborne mass were verified.
 - Low v1s imaging finished at 16:13:11. Verified 30 band-b frames per mode, 18 metric tables and diagnostic/peak rows. P1 thin/SA 327.95/299.62 ns; all P2 unavailable. Both handoffs pushed at 7688660 and report sync verified. Started high v1rs imaging with eight workers at 2026-11-25T16:36:46, PID 45776. High v1s imaging: STATE=running  elapsed=0.00:30:43  pid=44644  commit=410ad45. Low v1rs imaging pending. T023 high G1 it0: 649.4999 ns. Inbox empty; no ready Codex card.
-
-## 2026-11-25T16:06:03+08:00 (UTC+8)
-- T031 high_v1s/it2 completed at 800 ns (2.731932 ng recondensed; energy residual 0.00762%); low_v1rs/it1 completed at 1300 ns (0.462868 ng; residual 0.00848%). Both rc 0. Verified full budgets, checkpoints, rank log counts and the low-v1rs droplet archive, then handed off at 410ad45. Three of four production members complete; high_v1rs at 445.9941 ns of 800. Started high_v1s imaging via job.ps1, PID 44644, at 2026-11-25T16:06:03, eight workers. Low v1s imaging status: STATE=running  elapsed=0.00:33:56  pid=17712  commit=6aa78ce.
-- T030 low RP imaging handed off at 037b786. Verified 30 frames per band-b mode, 18 scenario tables and diagnostics. Baseline P1 thin/SA 343.84/330.22 ns; P2 787.45/763.21 ns. Both T030 and T031 report syncs verified. T023 high G1 it0: 646.4952 ns. No incoming note or ready Codex card.
