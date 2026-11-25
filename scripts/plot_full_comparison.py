@@ -47,32 +47,39 @@ COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "co
 LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）", "recond": "v1r + 回凝 v1rs（T031）"}
 
 
+IMG = "image_v2"  # --image-dir image_v2_t28: t0-aligned imaging (PREREG t0 alignment)
+
+
 def latest(base, its):
     for it in its:
         p = ROOT / base / it
-        if (p / "image_v2" / "frames_b_sa.npz").exists():
+        if (p / IMG / "frames_b_sa.npz").exists():
             return p
     return None
 
 
-MEMBERS = {
-    "high": {"baseline": latest("results/T016e/high_thin_G0", ["it2"]),
-             "backpress": latest("results/T023/high_thin_G0", ["it2", "it1"]),
-             "combo": latest("results/T025/high_thin_G0", ["it2", "it1", "it0"]),
-             "elim": latest("results/T026/high_thin_G0", ["it2", "it1", "it0"]),
-             "spatter": latest("results/T029/high_thin_G0", ["it2", "it1", "it0"]),
-             "g1": latest("results/T028/high_thin_G1", ["it0"]),
-             "flight": latest("results/T030/high_rp", ["it2"]),
-             "recond": latest("results/T031/high_v1rs", ["it2"])},
-    "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
-            "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
-            "combo": latest("results/T025/low_thin_G0", ["it1", "it0"]),
-            "elim": latest("results/T026/low_thin_G0", ["it1", "it0"]),
-            "spatter": latest("results/T029/low_thin_G0", ["it1", "it0"]),
-            "g1": latest("results/T028/low_thin_G1", ["it0"]),
-            "flight": latest("results/T030/low_rp", ["it1"]),
-            "recond": latest("results/T031/low_v1rs", ["it1"])},
-}
+def members():
+    return {
+        "high": {"baseline": latest("results/T016e/high_thin_G0", ["it2"]),
+                 "backpress": latest("results/T023/high_thin_G0", ["it2", "it1"]),
+                 "combo": latest("results/T025/high_thin_G0", ["it2", "it1", "it0"]),
+                 "elim": latest("results/T026/high_thin_G0", ["it2", "it1", "it0"]),
+                 "spatter": latest("results/T029/high_thin_G0", ["it2", "it1", "it0"]),
+                 "g1": latest("results/T028/high_thin_G1", ["it0"]),
+                 "flight": latest("results/T030/high_rp", ["it2"]),
+                 "recond": latest("results/T031/high_v1rs", ["it2"])},
+        "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
+                "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
+                "combo": latest("results/T025/low_thin_G0", ["it1", "it0"]),
+                "elim": latest("results/T026/low_thin_G0", ["it1", "it0"]),
+                "spatter": latest("results/T029/low_thin_G0", ["it1", "it0"]),
+                "g1": latest("results/T028/low_thin_G1", ["it0"]),
+                "flight": latest("results/T030/low_rp", ["it1"]),
+                "recond": latest("results/T031/low_v1rs", ["it1"])},
+    }
+
+
+MEMBERS = members()
 SHOCK = {"high": {"baseline": "results/T016e/high_thin_G0/it2/shock_track.csv"},
          "low": {"baseline": "results/T016e/low_thin_G0/it2/shock_track.csv"}}
 FRAME_T = {"high": [20, 60, 80, 150, 200, 250, 300, 350, 400, 450, 500, 580, 630, 740],
@@ -118,7 +125,7 @@ GAIN_MODE = "tref"
 
 
 def model_frames(path, mode, srow, L_ref):
-    d = np.load(path / "image_v2" / f"frames_b_{mode}.npz")
+    d = np.load(path / IMG / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
     dfoc = P.get("defocus_um_scenarios")["baseline"]
     fr = {int(t): (occlude(camera.blur(place(x, srow), um, dfoc), srow) if OCCLUDE else camera.blur(place(x, srow), um, dfoc)) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all()}
@@ -171,7 +178,7 @@ def frames_figure(series, mode, srow):
                  f"{'模型各行按自身最亮帧定增益（不饱和），实验为原 8 位' if GAIN_MODE == 'peak' else ('模型各行按 150 ns 帧最亮像素 = 255 定增益，实验为原 8 位' if GAIN_MODE == 'peak150' else '各行在 300 ns 单独定增益')}，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
                  fontsize=10)
     fig.tight_layout(rect=(0.04, 0, 1, 0.92), h_pad=0.3, w_pad=0.2)
-    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}{'_unsat' if GAIN_MODE == 'peak' else ''}{'_g150' if GAIN_MODE == 'peak150' else ''}.png"
+    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}{'_unsat' if GAIN_MODE == 'peak' else ''}{'_g150' if GAIN_MODE == 'peak150' else ''}{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}.png"
     fig.savefig(out, dpi=170)
     plt.close(fig)
     return out
@@ -186,7 +193,7 @@ def geometry_figure(series, mode, srow):
     for key, p in MEMBERS[series].items():
         if p is None:
             continue
-        d = np.load(p / "image_v2" / f"frames_b_{mode}.npz")
+        d = np.load(p / IMG / f"frames_b_{mode}.npz")
         rows.append((f"{LAB[key]}\n{p.parent.parent.name} {p.name}",
                      {int(t): place(x, srow) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all() and x.max() > 0}))
     times = FRAME_T[series]
@@ -220,7 +227,7 @@ def geometry_figure(series, mode, srow):
 
 
 def lift_curve(path, mode):
-    d = np.load(path / "image_v2" / f"frames_b_{mode}.npz")
+    d = np.load(path / IMG / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
     dfoc = P.get("defocus_um_scenarios")["baseline"]
     t_, l_ = [], []
@@ -245,7 +252,7 @@ def curves_figure(mode, srows):
             if p is None:
                 continue
             for md, ls in ((mode, "-"), ("thin" if mode == "sa" else "sa", ":")):
-                f = p / "image_v2" / f"metrics_b_{md}_baseline.csv"
+                f = p / IMG / f"metrics_b_{md}_baseline.csv"
                 if f.exists():
                     m = pd.read_csv(f)
                     a.semilogy(m.t_ns, m.L_radiance / np.interp(T_REF, m.t_ns, m.L_radiance), ls, color=COL[key], lw=1.8 if ls == "-" else 1.1,
@@ -278,7 +285,7 @@ def curves_figure(mode, srows):
         for key, p in MEMBERS[series].items():
             if p is None:
                 continue
-            f = p / "image_v2" / f"metrics_b_{mode}_baseline.csv"
+            f = p / IMG / f"metrics_b_{mode}_baseline.csv"
             if f.exists():
                 m = pd.read_csv(f)
                 a.plot(m.t_ns, np.sqrt(m.sigma_x2_um2), "-", color=COL[key], lw=1.8, label=f"{LAB[key]} σx")
@@ -288,7 +295,7 @@ def curves_figure(mode, srows):
         a.legend(frameon=False, fontsize=6.5, ncol=2)
     fig.suptitle(f"全过程仿真与实验对照：亮度衰减、发光峰高度、发光区尺寸（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}；实线为主模式）", fontsize=11)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
-    out = ROOT / "results/figures/full_curves.png"
+    out = ROOT / f"results/figures/full_curves{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}.png"
     fig.savefig(out, dpi=160)
     plt.close(fig)
     return out
@@ -311,11 +318,12 @@ def shock_figure():
                     break
         for key, f in cand.items():
             g = pd.read_csv(ROOT / f)
-            a.plot(g.t_ns, g.R_axis_um, ls, color=COL[key], lw=1.8, label=f"{LAB[key]}（{'高' if series == 'high' else '低'}通量）")
-    a.set(xlim=(0, 900), ylim=(0, 1000), xlabel="t (ns)", ylabel="轴向冲击波半径 (µm)", title="冲击波（对比主文 Fig. 3d）")
+            off = P.get("t0_offset_shock") if IMG != "image_v2" else 0.0  # experimental label = model time - offset
+            a.plot(g.t_ns - off, g.R_axis_um, ls, color=COL[key], lw=1.8, label=f"{LAB[key]}（{'高' if series == 'high' else '低'}通量）")
+    a.set(xlim=(0, 900), ylim=(0, 1000), xlabel="t (ns)", ylabel="轴向冲击波半径 (µm)", title="冲击波（对比主文 Fig. 3d）" + (f"，模型时间平移 {P.get('t0_offset_shock'):g} ns" if IMG != "image_v2" else ""))
     a.legend(frameon=False, fontsize=7, loc="lower right")
     fig.tight_layout()
-    out = ROOT / "results/figures/full_shock.png"
+    out = ROOT / f"results/figures/full_shock{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}.png"
     fig.savefig(out, dpi=160)
     plt.close(fig)
     return out
@@ -326,8 +334,12 @@ def main(argv=None):
     ap.add_argument("--mode", default="sa", choices=["sa", "thin"])
     ap.add_argument("--gain", default="tref", choices=["tref", "peak", "peak150"], help="display option: gain at t_ref (default) or no-saturation gain per row")
     ap.add_argument("--occlude", action="store_true", help="display option: knife-edge occlusion of the image below the face")
+    ap.add_argument("--image-dir", default="image_v2", help="imaging subfolder, e.g. image_v2_t28 (t0-aligned)")
     a = ap.parse_args(argv)
-    global OCCLUDE, GAIN_MODE
+    global OCCLUDE, GAIN_MODE, IMG, MEMBERS
+    IMG = a.image_dir
+    if IMG != "image_v2":
+        MEMBERS = members()
     OCCLUDE = a.occlude
     GAIN_MODE = a.gain
     srows = surface_rows()
