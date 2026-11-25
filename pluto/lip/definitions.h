@@ -10,7 +10,7 @@
 #define  TIME_STEPPING                  RK2
 #define  NTRACER                        2   /* tr1 = Y_Cu; tr2 = v1m non-equilibrium electrons per Cu-atom mass (BD_ON) */
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            24
+#define  USER_DEF_PARAMETERS            26
 
 /* -- physics dependent declarations -- */
 #define  DUST_FLUID                     NO
@@ -44,6 +44,8 @@
 #define  DROP_VD                        20  /* m/s; > 0: v1q droplets launched at DROP_T0 from the face at this measured speed evaporate only in the row at z_d = v_d (t - DROP_T0); 0 = whole core */
 #define  DROP_TPL                       21  /* s; > 0: the spatter top stops rising at this time (measured plateau); 0 = no plateau */
 #define  DROP_A0                        22  /* m; > 0: v1r droplets of this launch radius fly at DROP_VD and evaporate by gas heat transfer (needs DROP_VD > 0, DROP_TPL = 0) */
+#define  COND_SIG                       24  /* v1s: Cu condensation coefficient on the target (Hertz-Knudsen net flux); 0 = no recondensation */
+#define  COND_TB                        25  /* K, normal boiling point for p_sat(T_s) (registry cu_T_boil; p0 = P_AMB, L_v = DROP_LV) */
 #define  DROP_RL                        23  /* kg/m^3, liquid Cu density (registry cu_rho_liquid), v1r droplet number */
 
 /* -- supplementary constants (user editable) -- */

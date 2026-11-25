@@ -24,6 +24,7 @@ static double **q_las = NULL, **q_rad = NULL, **T_cell = NULL;
 static double *trans = NULL, *pw_cell = NULL;
 static double B_bp[1];   /* v1k: evaporated mass suppressed by back pressure (kg) */
 static double B_mom[1];  /* v1p: z-momentum injected with the vapour (kg m/s) */
+static double B_cd[1];   /* v1s: Cu mass recondensed on the target (kg) */
 static double B_dr[1];   /* v1n: droplet mass left condensed by the energy limit (kg) */
 static double B_bd[1];   /* v1m: energy held in non-equilibrium ionisation (J, cumulative transfer = current store) */
 static double **I_cell = NULL, **Te_cell = NULL;
@@ -55,7 +56,7 @@ void lip_init(void)
   if (g_inputParam[DROP_A0] > 0.0 && (g_inputParam[DROP_VD] <= 0.0 || g_inputParam[DROP_TPL] > 0.0 || g_inputParam[DROP_TB] <= 0.0
                                        || g_inputParam[DROP_RL] <= 0.0 || i_kappa < 0)) {
     printLog("! lip: v1r (DROP_A0 > 0) needs DROP_VD > 0, DROP_TPL = 0, DROP_TB > 0, DROP_RL > 0 and opt.bin kappa\n"); QUIT_PLUTO(1); }
-  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd)); memset(B_dr, 0, sizeof(B_dr)); memset(B_mom, 0, sizeof(B_mom)); memset(B_par, 0, sizeof(B_par));
+  memset(B, 0, sizeof(B)); memset(B_bp, 0, sizeof(B_bp)); memset(B_bd, 0, sizeof(B_bd)); memset(B_dr, 0, sizeof(B_dr)); memset(B_mom, 0, sizeof(B_mom)); memset(B_par, 0, sizeof(B_par)); memset(B_cd, 0, sizeof(B_cd));
   lip_ready = 1;
 }
 
@@ -360,6 +361,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
         B[8] -= dEw * dV;
       }
 #endif
+      int evap_now = 0;
       if (j == JBEG && g_inputParam[SRC_ON] > 0.5 && grid->lbound[JDIR] != 0) {
         double mdot = lip_src_get(&lip_src, s_mdot, t_SI, r);
         pw_cell[i] = v[PRS] * LIP_PRS_SI;          /* wall-cell gas pressure, Picard input of the target model */
@@ -385,6 +387,7 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
           /* v1 correction (pre-declared, PREREG_v0 §5 / STATE 11-17): inject mass and the vapour's stagnation
              enthalpy only; no direct momentum next to the reflecting wall (the ṁu_v momentum source drove
              E − ½ρv² negative in the first cells -> ConsToPrim repairs). The pressure accelerates the vapour. */
+          if (dm > 0.0) evap_now = 1;
           m += dm; mY += dm; E += dm * hv;
           /* v1p (PREREG 2026-11-24): the vapour leaves the Knudsen layer with the Knight exit velocity u_v (normal to
              the face, +z), so it carries momentum dm*u_v. hv already contains u_v^2/2, so the energy is consistent; the
@@ -397,6 +400,28 @@ void LipSource(Data *d, double dt, timeStep *Dts, Grid *grid)
          [DROP_T0, DROP_T1] (end of pulse to t_ref). Each cell receives the step's droplet mass in proportion to its rho·Y. The droplets arrive
          at rest (momentum conserved) with the Cu-vapour internal energy at DROP_TCAP minus the latent heat, so the gas
          pays L_v. Booked as source mass/energy (B[6], B[7]). Off when DROP_M = 0 (bit-identical to v1i). */
+      /* v1s (PREREG 2026-11-25): recondensation of Cu vapour on the target. Net Hertz-Knudsen mass flux into the face,
+         j = sigma [rho_Cu sqrt(kT/(2 pi m)) - p_sat(T_s) sqrt(m/(2 pi k T_s))], applied only when the Knight source is not
+         evaporating this step (no double counting). The condensing Cu carries its effusive energy e_Cu + p_Cu/(2 rho_Cu)
+         plus its kinetic energy out of the gas (booked as a negative source). The latent heat released in the target is
+         not fed back to T_s (estimated surface rise < 10 K). */
+      if (j == JBEG && g_inputParam[COND_SIG] > 0.0 && grid->lbound[JDIR] != 0 && s_Ts >= 0 && !evap_now && Y > 1e-6) {
+        const double kB = 1.380649e-23, mCu = 63.546 * 1.66053906660e-27;   /* registry k_B, A_Cu, amu */
+        double Ts = lip_src_get(&lip_src, s_Ts, t_SI, r);
+        if (Ts < g_inputParam[T_AMB]) Ts = g_inputParam[T_AMB];
+        double psat = g_inputParam[P_AMB] * exp(mCu * g_inputParam[DROP_LV] / kB * (1.0 / g_inputParam[COND_TB] - 1.0 / Ts));
+        double rc = rho * Y;
+        double jc = g_inputParam[COND_SIG] * (rc * sqrt(kB * T / (2.0 * CONST_PI * mCu)) - psat * sqrt(mCu / (2.0 * CONST_PI * kB * Ts)));
+        if (jc > 0.0) {
+          double dmc = jc * dt_SI / dz[0];
+          if (dmc > 0.5 * mY) dmc = 0.5 * mY;
+          double eps = lip_eos_e(&lip_eos, rc, T, 1.0) + 0.5 * lip_eos_p(&lip_eos, rc, T, 1.0) / rc;
+          double vzc = pz / m, ek = eps + 0.5 * (vr * vr + vzc * vzc);
+          m -= dmc; mY -= dmc; pz -= dmc * vzc; E -= dmc * ek;
+          B[6] -= dmc * dV; B[7] -= dmc * ek * dV; B_cd[0] += dmc * dV;
+          LIP_LIM(3, jc / (dz[0] * rc * F_M), -jc / dz[0]);
+        }
+      }
       double m_pre_drop = m;
       int drop_row = 1;
       if (g_inputParam[DROP_VD] > 0.0) {
@@ -529,7 +554,7 @@ double lip_uservar(const char *name, int k, int j, int i)
 void lip_analysis(const Data *d, Grid *grid)
 {
   int i, j, k = 0;
-  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1], Bdrg[1], Bmomg[1];
+  double tot[5] = {0, 0, 0, 0, 0}, glob[5], Bg[9], Bbpg[1], Bbdg[1], Bdrg[1], Bmomg[1], Bcdg[1];
   lip_init();
   DOM_LOOP(k, j, i) {
     double v[NVAR];
@@ -555,15 +580,17 @@ void lip_analysis(const Data *d, Grid *grid)
   MPI_Allreduce(B_bd, Bbdg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_dr, Bdrg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(B_mom, Bmomg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Allreduce(B_cd, Bcdg, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 #else
+  Bcdg[0] = B_cd[0];
   memcpy(glob, tot, sizeof(tot)); memcpy(Bg, B, sizeof(B)); memcpy(Bbpg, B_bp, sizeof(B_bp)); memcpy(Bbdg, B_bd, sizeof(B_bd)); memcpy(Bdrg, B_dr, sizeof(B_dr)); memcpy(Bmomg, B_mom, sizeof(B_mom));
 #endif
   if (prank == 0) {
     FILE *fp = fopen("budget.csv", g_stepNumber == 0 ? "w" : "a");
     if (g_stepNumber == 0)
-      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store,M_drop_condensed,P_vap_mom,M_drop_airborne\n");
-    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
-            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4], Bdrg[0], Bmomg[0], B_par[0] - B_par[1]);
+      fprintf(fp, "t_ns,E_internal,E_kinetic,M_Cu,M_total,E_inc,E_gas_abs,E_targ_abs,E_esc,E_rad,E_rad_limited,M_src,E_src,E_wall,M_bp_suppressed,E_bd_transfer,E_bd_store,M_drop_condensed,P_vap_mom,M_drop_airborne,M_recondensed\n");
+    fprintf(fp, "%.6e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e,%.10e\n", g_time,
+            glob[0], glob[1], glob[2], glob[3], Bg[0], Bg[1], Bg[2], Bg[3], Bg[4], Bg[5], Bg[6], Bg[7], Bg[8], Bbpg[0], Bbdg[0], glob[4], Bdrg[0], Bmomg[0], B_par[0] - B_par[1], Bcdg[0]);
     fclose(fp);
     if (g_inputParam[DROP_A0] > 0.0) {
       /* v1r diagnostics: spatter-top height = highest parcel holding more than half its launched mass (PREREG check) */

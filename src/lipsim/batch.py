@@ -113,7 +113,9 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int,
               ("VMOM", 1 if (case_cfg.get("target") or {}).get("vapour_momentum", False) else 0),
               ("DROP_VD", float((case_cfg.get("target") or {}).get("spatter_speed", 0.0) or 0.0)),
               ("DROP_TPL", float((case_cfg.get("target") or {}).get("spatter_plateau", 0.0) or 0.0)),
-              ("DROP_A0", droplet_radius(case_cfg, melt_depth_m)), ("DROP_RL", P.get("cu_rho_liquid"))]
+              ("DROP_A0", droplet_radius(case_cfg, melt_depth_m)), ("DROP_RL", P.get("cu_rho_liquid")),
+              ("COND_SIG", P.get("cu_condensation_coeff") if (case_cfg.get("target") or {}).get("recondensation", False) else 0.0),
+              ("COND_TB", P.get("cu_T_boil"))]
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",

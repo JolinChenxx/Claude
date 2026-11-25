@@ -1,0 +1,12 @@
+# T031: v1s recondensation of Cu vapour on the target (PREREG 2026-11-25 v1s). One Picard iteration seeded from T026 (as T030).
+name: T031
+pluto_exe: D:/sim_tools/pluto_lip/build_v1s/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T031
+numerics:
+  runs:
+    - {id: high_v1s,  case: configs/cases/v1s_high.yaml,  grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_v1s,   case: configs/cases/v1s_low.yaml,   grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}
+    - {id: high_v1rs, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_v1rs,  case: configs/cases/v1rs_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}

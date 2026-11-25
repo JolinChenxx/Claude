@@ -168,3 +168,27 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - (d) Independent check against the measured spatter top: the model's highest parcel that still holds more than half its mass, against the measured rise (344 m/s) and the high-fluence plateau after 500 ns. A plateau that the model does not produce is reported as a mismatch, not adjusted.
 - **Runs:** one Picard iteration seeded with the T026 shielding of the same fluence (high: T026 it1 → v1r it2; low: T026 it0 → v1r it1), so that each v1r member and T026 at that iteration differ only in the droplet location rule.
 - **Limitation, declared:** the parcel state is not in the restart files. A v1r run that stops is restarted from t = 0.
+
+## v1s extension declared 2026-11-25 ~14:40 (UTC+8), before any v1s hydro result: recondensation of Cu vapour on the target
+- **Why (diagnosis, not a fit):**
+  - In every model the emitting core sits on the face as a half-dome.
+  - A uniform emitting hemisphere on a wall projects to σz/σx = √(19/64) ≈ 0.55, about 0.6 after the 250 µm blur. That is the model value: 0.60–0.69 across all 18 imaging scenarios of T026 high it2, so the imaging choices are not the cause.
+  - The experiment's core is detached from the face, with aspect 1.07.
+  - The models have evaporation but no return flux. After the pulse the face cools to about T_m, p_sat(T_s) collapses, and kinetic theory then requires the dense near-wall Cu vapour to condense.
+  - Estimate: at 5 kK the effusive speed is √(kT/2πm) ≈ 320 m/s, so a 100 µm layer empties in ~0.3 µs.
+- **Model (COND_SIG, COND_TB; registry recondensation_model, cu_condensation_coeff = 1):**
+  - Net Hertz–Knudsen Cu mass flux from the first gas cell into the face: j = σ[ρY √(kT/2πm_Cu) − p_sat(T_s) √(m_Cu/2πkT_s)], applied when j > 0.
+  - p_sat uses the same Clausius–Clapeyron as the target model.
+  - It is applied only in steps where the Knight source does not evaporate, so the two are not double-counted.
+  - Each kg removed takes e_Cu + p_Cu/(2ρ_Cu) plus its kinetic energy out of the gas, booked as a negative source.
+  - The latent heat released into the target is not fed back: the estimated surface rise is < 10 K for 300 ns at 1.5e8 W/m².
+  - σ = 1 is the measured value for clean liquid metals and the kinetic upper bound. No value of σ will be chosen from the results.
+- **Runs (T031):**
+  - v1s = v1n + recondensation (cases v1s_*).
+  - v1rs = v1r with melt-depth droplets + recondensation (cases v1rs_*); this one is physically consistent with T030.
+  - Both are seeded with the T026 shielding as in T030: high it1 → it2, low it0 → it1.
+- **Expectations, declared, read whatever the outcome:**
+  - (a) Mass and energy closure as before. M_recondensed is booked in budget.csv.
+  - (b) σz/σx rises against the same-iteration base (T026 for v1s, T030 rp for v1rs), and S1 lift rises. A rise < 5% means recondensation does not detach the core.
+  - (c) L ratios: direction not predicted. Removing Cu lowers late emission, but the near-wall gas was dim anyway.
+  - (d) Report the recondensed mass against the evaporated mass.
