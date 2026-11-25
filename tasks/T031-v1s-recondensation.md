@@ -2,7 +2,7 @@
 id: T031
 title: v1s recondensation of Cu vapour on the target; v1s (on v1n) and v1rs (on v1r melt-depth) × high/low, one Picard iteration seeded from T026; 32 cores
 owner: codex
-status: draft
+status: ready
 depends: []
 milestone: D2
 est_time: 0.3h operations + ~3.5h (high) / ~2–4h (low) machine time per member
@@ -15,7 +15,10 @@ In every model the emitting core sits on the face as a half-dome, with σz/σx �
 
 The models evaporate Cu but have no return flux. v1s adds the net Hertz–Knudsen recondensation of Cu vapour onto the cooling target, with σ = 1 from the measured liquid-metal value, and no free parameter. The budget gets a new column, M_recondensed.
 
-The cloud smoke results are given in the commit that sets this card to ready.
+Cloud smoke runs (smoke grid 300×400 µm, 1 core):
+- v1n regression with build_v1s (COND_SIG 0), v1bpde_low, 0–110 ns: all 175 budget rows are bit-identical to build_v1q.
+- v1s_low, 0–320 ns: rc 0. Recondensed Cu: 0.25 / 0.60 / 1.00 / 1.60 ng at 100 / 150 / 200 / 300 ns. M_Cu = M_src (net) to all digits.
+- Energy closure is within 0.001% up to 230 ns. After 245 ns the shock leaves the small smoke domain, M_total falls, and the residual grows. That is outflow, not a v1s term; the production grid is larger.
 
 ## Steps
 1. Run `git pull --rebase origin ws`.

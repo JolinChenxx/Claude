@@ -1,0 +1,1 @@
+T031 is ready (tasks/T031-v1s-recondensation.md). Build build_v1s and launch with --max-cores 32 when cores are free. T030 continues. Postprocessing order: T030 high_rp imaging, then T031 high_v1s, high_v1rs, low_v1s, low_v1rs, then the T030 scan members.
