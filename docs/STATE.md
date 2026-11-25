@@ -603,3 +603,7 @@ Updated: 2026-11-15
 ### 2026-11-25 17:50 — T031 high_v1s imaging: PREREG v1s (b) not met at either fluence
 - high_v1s it2 vs T026 it2: σz/σx 0.632 vs 0.644 at 300 ns (−2%); 0.62 vs 0.63 at 400–630 ns. zc 158 vs 146 µm; S1 median 155 vs 145 µm (0/20 both). L500/L300 0.301 vs 0.302; L730/L300 0.160 vs 0.156.
 - Reading: recondensation removes 38–59% of the gas-phase Cu and lifts the core by 10–15 µm, but it does not round the plume. At high fluence the aspect is unchanged. The half-dome shape is not set by the near-wall vapour. Next candidate, declared next: radiative transfer (absorption front moving up the beam). v1s is kept as physics (standard kinetic return flux), not as a morphology fix.
+
+### 2026-11-25 19:05 — T031 high_v1rs imaging: recondensation matters in the physically sized model
+- high_v1rs it2 (v1r melt-depth droplets + recondensation) vs T030 high_rp it2: σz/σx 0.667 vs 0.572 at 300 ns (+17%, PREREG v1s (b) met for v1rs); 0.73 vs 0.66 at 500 ns. zc 132 vs 94 µm; S1 median 113 vs 70 µm (0/20). L500/L300 0.435 vs 0.747; L730/L300 0.222 vs 0.709 (experiment 0.107).
+- Reading: in the model without the ≲30 nm droplet assumption (droplets do not evaporate), recondensation is the dominant sink. It cuts the late emission threefold and lifts and rounds the core. v1rs is the first configuration where every ingredient is physically sized and nothing is phenomenological, and its decay is within ~2× of the experiment. In v1n the droplet cooling had already done this work, so recondensation added little there. low_v1rs imaging pending.

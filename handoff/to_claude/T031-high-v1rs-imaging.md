@@ -1,1 +1,0 @@
-T031 high_v1rs/it2 imaging retry finished, rc 0. Review the band-b frame stacks (29 times each), 18 scenario tables, peak lift and diagnostics in results/T031/high_v1rs/it2/. Low v1rs imaging remains in progress.
