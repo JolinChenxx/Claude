@@ -560,3 +560,9 @@ Updated: 2026-11-15
 - 1300 ns, rc 0. Launched 5.19 ng; evaporated 0.41 / 0.90 / 1.55 / 2.11 ng at 150 / 300 / 600 / 1300 ns (17% by t_ref, 41% at the end); airborne 3.08 ng. v1n (T026 low it1) evaporated 3.87 ng (M_Cu 4.45 vs 2.60 ng here).
 - Even 10 nm droplets evaporate slowly: at 190 m/s they sit within 40 µm of the face up to 300 ns (lower plume edge), where the gas is coolest. The spatter-top check (d): the highest half-mass parcel keeps rising with the front (37 µm at 300 ns, 219 µm at 1300 ns); there is no evaporation-limited stop.
 - Imaging pending. Melt-depth members (a0 3–5 µm) are expected to evaporate far less (PREREG (b)).
+
+### 2026-11-25 12:10 — T030 low_a10n imaging; low_a30n production
+- low_a10n it1 (scan member, band b, sa, 250 µm): L715/L300 0.250, L1035/L300 0.134; σz/σx at 300 ns 74/81 (0.91); S1 median 125 µm, 8/11.
+- Same pipeline, same iteration: T026 v1n 0.219 / 0.141 / 0.72 / 8/11; T029 v1q 0.385 / 0.179 / 0.90; T023 v1k 0.303 / 0.121 / 0.69. Experiment: 0.163 / 0.027 / 0.94.
+- Reading (scan, not adoptable): with 10 nm droplets the location from flight and heat transfer gives v1q's aspect and a decay close to v1n. Only 17% of the droplet mass has evaporated by t_ref. This shows that the decay is set by where and when the vapour cools the core, not only by how much evaporates.
+- low_a30n production: evaporated 1.48 ng of 5.19 ng (29%) by 1300 ns; airborne 3.71 ng. Imaging pending.
