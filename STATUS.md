@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T15:01:31+08:00 (UTC+8)
+- T030 high RP imaging handed off at 3abaccb; report sync verified. All five stages returned 0, both band-b stacks cover 29 experimental times, 18 metric tables, and complete diagnostics/peak-lift delivery. Band-b P1 thin/SA 765.97/788.24 ns; no P2 in any scenario. High 30 nm imaging: STATE=finished  elapsed=0.00:58:29  pid=44548  commit=628aee3. Started low RP imaging at 2026-11-25T15:01:31 via job.ps1, PID 36152, eight workers. No new scan launch.
+- All four T031 ini files passed the card checks, including both melt-depth radii (c829a6e). Latest T031 budget times: high_v1rs 60.99786 ns, high_v1s 60.99786 ns, low_v1rs 212.4431 ns, low_v1s 557.9244 ns. T023 high G1 it0: 639.4962 ns. No incoming handoff or ready Codex card.
+
 ## 2026-11-25T14:37:35+08:00 (UTC+8)
 - T030 low_rp/it1 finished at 14:35:25, 1300 ns, rc 0. All eight production runs finished successfully. The residual at the endpoint was -1.13971e-7 J (0.56749%). Archived full droplets and solver evidence; handed off at fabb627 and verified report sync. Low RP imaging is pending; high RP and high 30 nm imaging were still running at 14:35. T023 high G1 it0: 635.4975 ns.
 - T031 claimed and release note processed. Built build_v1s and passed 15/15 tests. Started four 8-rank members with job.ps1 at 2026-11-25T14:36:56, PID 45300, commit fabb627, --max-cores 32. Generated inputs checked: 0/4; No generated ini yet; verify all four on the next pass. Progress: no budget samples yet. No unclaimed ready Codex card.
@@ -130,9 +134,4 @@
 - T026: all five production and postprocessing deliveries archived for review. T027 high G0 it1: 800 ns, rc 0; budget, checkpoints and rank evidence handed off. Both reports synced and both handoffs consumed.
 - At 00:07 UTC+8: T023 high G1 it0 360.4943 ns; T027 high G0 it2 53.99785 ns; T028 high/low G1 it0 50.99949/83.99603 ns. Queue 07 imaging T027 high G0 it0. T021/T025/T026 production finished.
 - T029 claimed; build and nine tests passed, both configurations verified in preview. Capacity at 00:06: 40 MPI ranks and 24 imaging workers on 64 physical cores; production awaits 16 free cores. No other ready card. ws at 8366ba7.
-
-## 2026-11-24T23:32:28+08:00 (UTC+8)
-- T026 high G0 it1: verified five successful commands, 29 times, six native frame archives, 18 metric tables, 29 peak rows and three diagnostics. Handoff pushed on ws at d07169b; synced report hash verified. Band-b P1 thin/sa 227.34284/194.63325 ns; P2 unavailable in all 18 cases. Queue 07 proceeded to T026 high G0 it2 imaging.
-- Both actual T028 G1 it0 ini files matched BACKP 1, BD_ON 0, DROP_TB 2835, VMOM 0. At 23:31:09, T028 high/low budget times were 36.49773/64.49728 ns; T023 high G1 it0 and T027 high G0 it1 were at 351.9926/275.9905 ns. The T025 production wrapper exited 0; its old PID was reused by a later Python process. No process stopped or relaunched.
-- Incoming handoff directory empty; no ready Codex card to claim. No new computation started.
 
