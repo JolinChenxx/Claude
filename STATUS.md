@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T13:36:09+08:00 (UTC+8)
+- T030: replied to the RP progress request at 7247b77. High RP finished at 800 ns, solver elapsed 3:23:25; low RP was running at 806.9862 ns at 13:31:43 and advanced to 814.9990 ns at 13:35:47. No process stopped.
+- At 8cd7fdc handed off three production members (high RP and high 30 nm at 800 ns; low 100 nm at 1300 ns) and high 10 nm imaging. All three original droplets files matched staged evidence; verified 30 imaging files, 29 band-b frames per mode, 18 metrics tables, diagnostics and peak lift. Band-b baseline P1 thin/SA 564.97/494.64 ns; all P2 unavailable. Report sync verified.
+- Started T030_high_rp_post at 2026-11-25T13:36:09 with eight workers (wrapper PID 22208, commit 8cd7fdc); the two completed scan members await imaging. T030 high 100 nm at 580.4776 ns and T023 high G1 it0 at 628.9967 ns sampled at 13:33. No ready Codex card or outstanding incoming handoff.
+
 ## 2026-11-25T13:01:04+08:00 (UTC+8)
 - T030 low_a30n imaging completed at 12:55:55. All five stages exited 0. Verified 30 archived files, both band-b stacks at 30 experimental times, 18 metric tables, peak lift and three diagnostics. Baseline band-b P1 thin/SA: 258.40/232.42 ns; P2: 637.88/556.35 ns. Imaging handoff pushed at 8f71c96; report sync verified.
 - T023 and T030 production still running. Latest budget times at 12:59 (ns): T023 high G1 it0 625.9979; T030 high RP/30/100 nm 791.9936 / 733.4824 / 168.4873; low RP/100 nm 738.4854 / 681.9764. High 10 nm imaging still running. Inbox empty; no ready Codex card or new production completion. No job started.
@@ -131,6 +136,3 @@
 ## 2026-11-24T22:40:16+08:00 (UTC+8)
 - Retry: T025 low it0 imaging delivered (dec331d); T027 high it0 production delivered (35783d0, 800 ns). Both reports synced and remote ws later consumed both handoffs.
 - At 22:39 the current T025 low it1 imaging was still running. T023 high G1 it0 last sampled 336.4925 ns, T027 high it1 44.49867 ns; eight MPI ranks each. Priority-3 successor not yet started. T028 ready/unclaimed at the check while the priority handoff is being handled. No process stopped.
-
-## 2026-11-24T22:27:03+08:00 (UTC+8, retrospective)
-- No workstation terminal at that heartbeat; no jobs or cards checked then.
