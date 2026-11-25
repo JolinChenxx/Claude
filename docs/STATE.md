@@ -599,3 +599,7 @@ Updated: 2026-11-15
 ### 2026-11-25 16:40 — T031 low_v1s imaging (first v1s reading)
 - low_v1s it1 vs T026 it1 (band b, sa, 250 µm): σz/σx at the t_ref frame (280 ns) 0.750 vs 0.721 (+4.0%); at 340 ns 0.747 vs 0.689 (+8%); at 500 ns 0.752 vs 0.690 (+9%). The core lifts: zc 150 vs 136 µm. S1 median 143 vs 125 µm, 10/11 vs 8/11 frames. L715/L300 0.204 vs 0.219; L1035/L300 0.156 vs 0.141.
 - PREREG v1s (b) at the declared time: +4% < 5%, not met. Later frames +8–9%, and the lift improves. The aspect gain comes from a narrower σx (88 vs 94 µm), not a taller σz. Recondensation helps the lift but does not make the plume round: 0.75 against the experiment's 0.94. high_v1rs production done (68% recondensed); high imaging pending.
+
+### 2026-11-25 17:50 — T031 high_v1s imaging: PREREG v1s (b) not met at either fluence
+- high_v1s it2 vs T026 it2: σz/σx 0.632 vs 0.644 at 300 ns (−2%); 0.62 vs 0.63 at 400–630 ns. zc 158 vs 146 µm; S1 median 155 vs 145 µm (0/20 both). L500/L300 0.301 vs 0.302; L730/L300 0.160 vs 0.156.
+- Reading: recondensation removes 38–59% of the gas-phase Cu and lifts the core by 10–15 µm, but it does not round the plume. At high fluence the aspect is unchanged. The half-dome shape is not set by the near-wall vapour. Next candidate, declared next: radiative transfer (absorption front moving up the beam). v1s is kept as physics (standard kinetic return flux), not as a morphology fix.
