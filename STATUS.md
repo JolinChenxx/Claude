@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T20:01:37+08:00 (UTC+8)
+- T033 blocked for clarification, handoff 6984a63 and report sync verified. Seven generated inputs matched overrides, table and source hashes; two high-rem members missed the literal net DROP_M ratios (0.2407855 and 3.2776434). Gross ratios including vapour match 1/3 and 3. Existing 56-core job PID 49952 left running. First-wave budget times in ns: high_rem_lo 61.49815, high_rem_hi 64.99772, high_A_lo 61.99884, high_A_hi 61.49821, high_ftc_lo 61.49781, high_ftc_hi 61.99744, high_sig_lo 60.9991. Eleven runs await generated inputs.
+- T030 high/low 100 nm imaging still in image_v2 (PIDs 48768/34664); no new completed imaging delivery. T031 is done on ws. Inbox empty; only ready T032 is assigned to codex-desk.
+
 ## 2026-11-25T19:31:26+08:00 (UTC+8)
 - T031 final low_v1rs imaging finished at 19:06:49, all five stages rc 0; verified 30 frames per mode, 18 scenario tables, 30 peak rows and 131/521/12 diagnostic rows. All four deliveries complete; status review and final handoff pushed, report sync hash verified. T030 low_a100n imaging preflight passed and job launched on the released node-1 slot; high_a100n imaging still active.
 - T033 three variant builders exited 0. Verified per-file and override registry hashes, EOS byte-identical to v1c and three distinct optical products. 18-member preflight passed; launched original batch at the card-approved 56-core cap since T031 imaging completed. Generated inputs and budgets not yet verified. ws head 9c6b07d. T033 STATE=running  elapsed=0.00:00:00  pid=49952  commit=9c6b07d; T030_low_a100n_post STATE=running  elapsed=0.00:00:00  pid=34664  commit=9c6b07d; T030_high_a100n_post STATE=running  elapsed=0.00:30:11  pid=48768  commit=134391f. Inbox empty; ready T032 is for desk node only.
@@ -125,7 +129,3 @@
 - T028 low G1 it0 (06:11:51) and T029 low G0 it0/it1 (06:27:04 / 06:28:21) completed imaging. All five stages per member returned zero. Three separate handoffs and 102 source/index hash-verified files pushed to ws at 7fd9fd8; T028/T029 report sync verified. Each member has six 30-frame archives, 18 metric tables, 30 peak rows, and core/shock/emission (131/521/12 rows).
 - Queue 08 is now imaging T029 high G0 it0. Authorized successor T029_T028_post_10 (wrapper PID 32484, commit 4f89088) started at 06:33:56 and is waiting for its five-stage, child-free idle boundary. It excludes both delivered low members; check its transition before consuming T029-queue-answer.md. Nothing was stopped this pass.
 - Production high G1 it0: T023 579.4863 ns, T028 601.4695 ns; T029 high G0 it1 759.4832 ns. No ready Codex card.
-
-## 2026-11-25T05:59:53+08:00 (UTC+8)
-- Work card: none. At 05:59, T023 high G1 it0 reached 569.4801 ns, T028 high G1 it0 reached 342.9556 ns and T029 high G0 it1 reached 666.4667 ns. All advanced since 05:29.
-- job.ps1 reports all six jobs running. T028 low G1 it0 and T029 low G0 it0/it1 remain in image_v2, with eight live image workers each. No new collection milestone. Inbox empty; no ready Codex card. No job started or stopped. Previous queue 08 handoff is awaiting a reply.
