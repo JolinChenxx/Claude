@@ -569,3 +569,7 @@ Updated: 2026-11-15
 
 ### 2026-11-25 12:35 — T030 high_a10n production
 - 800 ns rc 0. Launched 6.29 ng; evaporated 0.72 / 1.96 / 2.96 / 3.51 ng at 150 / 300 / 500 / 800 ns (56% at the end); airborne 2.78 ng. Energy residual 0.13% (v1n 0.03%); 3.5 M ConsToPrim lines. Half-mass spatter top 55 µm at 300 ns, 116 µm at 500 ns, 208 µm at 800 ns: it keeps rising, so no 500 ns plateau (PREREG (d) mismatch, as at low fluence). Imaging pending. high_rp/low_rp not finished yet.
+
+### 2026-11-25 13:00 — T030 low_a30n imaging
+- low_a30n it1 (scan): L715/L300 0.196, L1035/L300 0.052 (best late decay so far; exp 0.027, v1n 0.141); σz/σx 0.75; S1 116 µm, 8/11.
+- The scan is not monotonic in a: 10 nm aspect 0.91 / late 0.134; 30 nm aspect 0.75 / late 0.052. Scan only, not adoptable. Asked Codex for high_rp/low_rp progress (no rp member delivered after 3 h 20 min).
