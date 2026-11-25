@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T12:04:54+08:00 (UTC+8)
+- T030 low 10 nm imaging completed (five zero exits); 30 archived products verified. Band-b baseline thin/self-absorbed P1 296.06/295.41 ns, P2 893.83/833.06 ns. Low 30 nm production completed at 1300 ns (rc 0), 1.4814777421 ng evaporated, 3.7115445729 ng airborne; 1425510 ConsToPrim lines. Separate handoffs pushed at e8e928f; synced report verified. All eight production inputs now verified.
+- Started T030_low_a30n_post at 2026-11-25T12:04:54, wrapper PID 25692, eight workers, commit e8e928f. No incoming handoff or ready Codex card. Both RP members still in production.
+- Budgets near 12:01 UTC+8 (ns): T023 high G1 it0 618.9955; T030 high RP/10/30/100 nm 694.4780 / 786.4738 / 606.4771 / 27.48391; low RP/100 nm 661.4853 / 478.9872. Both production wrappers running.
+
 ## 2026-11-25T11:30:32+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 advanced to 615.9950 ns. T030 high RP/10/30 nm: 609.4813 / 732.4925 / 557.9885 ns; low RP/30/100 nm: 618.4809 / 873.4871 / 315.4333 ns. Both production wrappers are running; high 100 nm is queued.
 - T030 low 10 nm production handoff received upstream. Its separate job T030_low_a10n_post is running image_v2. No new completion, incoming handoff or ready Codex card. No job started.
@@ -127,7 +132,3 @@
 ## 2026-11-24T22:02:44+08:00 (UTC+8)
 - T027 low-thin G0 it1 completed at 1300 ns, rc0; production handoff pushed on ws at 8c90c98, report-only sync checked. Expectation (a) again missed: 8,593,382 versus 583,877 ConsToPrim warnings and 0.75807% versus 0.00971% endpoint closure error, matched to T026 it1. Imaging pending.
 - Priority-3 note open: queue06b was already imaging T023 low-trap it1; no mid-run interruption. T023 high G1 it0 326.4874 ns; T026 high G0 it2 437.3876 ns; T027 high G0 it0 103.9976 ns. T021/T025 production already finished. No ready Codex card, no production stopped or restarted.
-
-## 2026-11-24T21:48:02+08:00 (UTC+8)
-- T023 high-trap it2 postprocessing handed off at 3125eb6: 29 peak rows, 3 diagnostics, 18 metric tables and six locally retained frame archives verified. T027 low-thin it0 production handed off at c9a170a: rc0 to 1300 ns. Expectation (a) missed against T026 low it0 (8,594,711 vs 581,952 ConsToPrim lines; closure error 0.75835% vs 0.00873%). Both reports synced and verified.
-- Queue06b already entered T023 low-trap it1 imaging before the new order was received. The priority-3 note is open; T026 high it1 comes next after an authorized completed-run boundary. No process stopped. T023 G1 it0 323.4895 ns; T026 high it2 140.9712 ns; T027 high it0 78.99964 ns, low it1 257.9400 ns. No ready Codex card.
