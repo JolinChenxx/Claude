@@ -67,7 +67,7 @@ def droplet_params(case_cfg: dict, vaporised_mass_kg: float) -> list:
     iteration's target model. Released into the Cu core from the end of the pulse (t_peak + FWHM/2) to t_ref.
     Off by default (DROP_M = 0)."""
     from lipsim.target.model import Laser, Material
-    las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"])
+    las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"], case_cfg["laser"].get("waveform"))
     mat = Material()
     mode = (case_cfg.get("target") or {}).get("droplets", "off")
     m_d = 0.0
@@ -97,12 +97,22 @@ def droplet_radius(case_cfg: dict, melt_depth_m: float) -> float:
     return float(ds)
 
 
+def write_pulse_table(case_cfg: dict, path: Path):
+    """Measured-waveform scenario (PREREG 2026-11-26 'waveform'): P(t) in W on the solver's time base (t = 0 at the
+    10%-of-peak leading-edge crossing), 0.1 ns spacing, read by lip_glue.c when PULSE_TAB = 1."""
+    from lipsim.target.model import Laser
+    las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"], case_cfg["laser"]["waveform"])
+    t = np.arange(0.0, 400e-9, 0.1e-9)  # num
+    path.parent.mkdir(parents=True, exist_ok=True)
+    np.savetxt(path, np.column_stack([t, las.power(t)]), fmt="%.10e", header=f"{len(t)}", comments="")
+
+
 def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int, rmax_par: float | None = None,
              vaporised_mass_kg: float = 0.0, melt_depth_m: float = 0.0) -> str:
     """pluto.ini with every physical number taken from the registry via the resolved case config."""
     num = yaml.safe_load((REPO / "configs/grids/levels.yaml").read_text())["numerics"]
     from lipsim.target.model import Laser
-    las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"])
+    las = Laser(case_cfg["laser"]["energy"], case_cfg["laser"]["diameter_1e2"], case_cfg["laser"]["fwhm"], case_cfg["laser"].get("waveform"))
     params = [("E_PULSE", las.E), ("D_BEAM", las.D), ("FWHM", las.fwhm), ("T_PEAK", las.t_peak),
               ("NEC_LIMIT", NEC[nec]), ("P_AMB", P.get("p_ambient")), ("T_AMB", P.get("T_ambient")),
               ("SRC_ON", src_on), ("T_FLOOR", P.get("T_ambient"))] + droplet_params(case_cfg, vaporised_mass_kg) + \
@@ -115,7 +125,8 @@ def make_ini(case_cfg: dict, level: str, nec: str, tstop_ns: float, src_on: int,
               ("DROP_TPL", float((case_cfg.get("target") or {}).get("spatter_plateau", 0.0) or 0.0)),
               ("DROP_A0", droplet_radius(case_cfg, melt_depth_m)), ("DROP_RL", P.get("cu_rho_liquid")),
               ("COND_SIG", P.get("cu_condensation_coeff") if (case_cfg.get("target") or {}).get("recondensation", False) else 0.0),
-              ("COND_TB", P.get("cu_T_boil"))]
+              ("COND_TB", P.get("cu_T_boil")),
+              ("PULSE_TAB", 1 if las.waveform else 0)]
     L = ["[Grid]", "", *grid_lines(level), "", "[Chombo Refinement]", "", "Levels 4", "Ref_ratio 2 2 2 2 2",
          "Regrid_interval 2 2 2 2", "Refine_thresh 0.3", "Tag_buffer_size 3", "Block_factor 8", "Max_grid_size 64",
          "Fill_ratio 0.75", "", "[Time]", "", f"CFL {num['cfl']}", "CFL_max_var 1.1", f"tstop {tstop_ns}",
@@ -204,6 +215,8 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
                                                 spec.get("rmax_par"), mvap, hmelt))
         if ov:
             (rd / "overrides.json").write_text(json.dumps(ov, indent=1, sort_keys=True))
+        if case_cfg["laser"].get("waveform"):
+            write_pulse_table(case_cfg, rd / "lip_tables" / "pulse.txt")
         procs = int(spec.get("procs", 1))
         exe = str(Path(batch["pluto_exe"]).resolve())
         pcmd = ([batch["mpiexec"], "-n", str(procs), exe, "-dec", str(procs), "1"] if procs > 1 and batch.get("mpiexec")

@@ -1,0 +1,10 @@
+# T039: comparable-device measured waveform scenario on v1rs (PREREG 2026-11-26 'waveform'); seeded as T031.
+name: T039
+pluto_exe: D:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T039
+numerics:
+  runs:
+    - {id: high_wf, case: configs/cases/v1rswf_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_wf,  case: configs/cases/v1rswf_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}

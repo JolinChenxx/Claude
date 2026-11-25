@@ -32,7 +32,7 @@ def main(argv=None):
     a = ap.parse_args(argv)
     cfg = P.resolve(yaml.safe_load(a.case.read_text(encoding="utf-8")))
     num = cfg["numerics"]
-    las = tm.Laser(cfg["laser"]["energy"], cfg["laser"]["diameter_1e2"], cfg["laser"]["fwhm"])
+    las = tm.Laser(cfg["laser"]["energy"], cfg["laser"]["diameter_1e2"], cfg["laser"]["fwhm"], cfg["laser"].get("waveform"))
     r = np.linspace(0.0, num["r_max_over_w"] * las.w, num["rings"])
     it, shield, tau_grid = 0, None, None
     if a.shielding is not None:

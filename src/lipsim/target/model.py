@@ -16,6 +16,7 @@ A(T) = A_RT + A_D(ρ_e(T)) − A_D(ρ_e(293 K)), A_D from Fresnel with ε = 1 �
 """
 from __future__ import annotations
 
+from pathlib import Path
 from dataclasses import dataclass, field
 
 import numpy as np
@@ -65,6 +66,9 @@ def knight_bp(pr):
 def _tab(key, col):
     v = P.get(key)
     return np.asarray(v["T"], float), np.asarray(v[col], float)
+
+
+REPO_ROOT = Path(__file__).resolve().parents[3]
 
 
 @dataclass
@@ -159,6 +163,19 @@ class Laser:
     E: float
     D: float          # 1/e^2 diameter
     fwhm: float
+    waveform: str | None = None   # optional measured temporal shape (CSV t_ns,P_norm); scenario only (PREREG)
+
+    def __post_init__(self):
+        self._wf = None
+        if self.waveform:
+            import pandas as pd
+            w = pd.read_csv(REPO_ROOT / self.waveform if not Path(self.waveform).is_absolute() else self.waveform)
+            t, p = w.t_ns.to_numpy() * 1e-9, np.clip(w.P_norm.to_numpy(), 0.0, None)  # math (ns -> s)
+            i10 = int(np.argmax(p >= 0.1 * p.max()))
+            # t0 convention: shift so that the first 10%-of-peak crossing on the leading edge is t = 0
+            t10 = t[i10 - 1] + (0.1 * p.max() - p[i10 - 1]) / (p[i10] - p[i10 - 1]) * (t[i10] - t[i10 - 1]) if i10 > 0 else t[0]
+            t = t - t10
+            self._wf = (t, p / np.trapezoid(p, t))   # normalised to unit time integral (1/s)
 
     @property
     def w(self):
@@ -166,10 +183,16 @@ class Laser:
 
     @property
     def t_peak(self):
+        if getattr(self, "_wf", None) is not None:
+            t, p = self._wf
+            return float(t[int(np.argmax(p))])
         # t0 convention: P(0) = 10% of peak on the leading edge (registry t0_convention)
         return self.fwhm / 2 * np.sqrt(np.log(10.0) / np.log(2.0))  # math
 
     def power(self, t):
+        if getattr(self, "_wf", None) is not None:
+            tw, pw = self._wf
+            return self.E * np.interp(t, tw, pw, left=0.0, right=0.0)
         s = self.fwhm / (2 * np.sqrt(2 * np.log(2.0)))  # math
         return self.E / (s * np.sqrt(2 * np.pi)) * np.exp(-(t - self.t_peak) ** 2 / (2 * s * s))  # math
 

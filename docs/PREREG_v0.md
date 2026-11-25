@@ -245,3 +245,16 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - the shock radius against Fig. 3d with Δ = 28 ns;
   - σx and the L(t)/L(140) trend.
 - **Use of the results:** no member is adopted for being closer. An interpretation of 60 ns would be adopted only on documentary evidence, such as the laser datasheet's definition of pulse width.
+
+## Waveform scenario declared 2026-11-26 ~02:20 (UTC+8), before any waveform result
+- **Source:** T036 (data/exp/laser/waveform_ipg_ylp_hp_T3_fig6.csv/.json) is a measured oscilloscope trace of an IPG YLP-HP fiber laser (61.7 ns scope width, 22.5 ns rise), digitised point by point without fitting. It is a comparable device of the same family, not the paper's YLPN-1-30×240-100-R; no trace of that laser was found.
+- **Shape:** relative to a Gaussian of 60 ns FWHM (10%-point convention), 10% of the energy arrives at 13 ns instead of 22 ns, and 50% at 42 ns instead of 55 ns. The peak is at 40.5 ns instead of 54.7 ns.
+- **Use:** a scenario under PLAN's pulse-shape row ("MOPA waveform"). Because it is a comparable device, it is reported as a bracket and does not replace the Gaussian baseline.
+- **Implementation:** Laser(waveform=…) in the target model, plus PULSE_TAB with lip_tables/pulse.txt in the solver. The table is shifted so that t = 0 is the 10%-of-peak leading-edge crossing and is normalised to the pulse energy.
+- **Runs (T039, workstation):** v1rswf_high/low, seeded as T031, against T031 v1rs.
+- **Readings, declared:**
+  - the ignition time, meaning the first time E_gas_abs exceeds 1 µJ;
+  - E_gas_abs at 150 ns;
+  - the shock against Fig. 3d (Δ = 28 ns, and Δ refitted for this scenario reported separately);
+  - σx, σz/σx and the L(t)/L(150) trend.
+- **Expected:** ignition about 10 ns earlier. The low-fluence coupling deficit (about 3×) is not expected to close fully.

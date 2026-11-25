@@ -107,9 +107,27 @@ double lip_cu_vth_code(double *v)
   return sqrt(8.0 * kB * T / (CONST_PI * mCu)) / LIP_VEL_SI;
 }
 
+static int pulse_n = -1; static double *pulse_t = NULL, *pulse_P = NULL;
+static double pulse_power(double t)
+{
+  if (pulse_n < 0) {
+    FILE *fp = fopen("lip_tables/pulse.txt", "r");
+    if (!fp || fscanf(fp, "%d", &pulse_n) != 1 || pulse_n < 2) { printLog("! lip: PULSE_TAB=1 but lip_tables/pulse.txt unreadable\n"); QUIT_PLUTO(1); }
+    pulse_t = (double *)malloc(pulse_n * sizeof(double)); pulse_P = (double *)malloc(pulse_n * sizeof(double));
+    for (int n = 0; n < pulse_n; n++) if (fscanf(fp, "%lf %lf", &pulse_t[n], &pulse_P[n]) != 2) { printLog("! lip: pulse.txt short\n"); QUIT_PLUTO(1); }
+    fclose(fp);
+  }
+  if (t <= pulse_t[0] || t >= pulse_t[pulse_n - 1]) return 0.0;
+  double dt = pulse_t[1] - pulse_t[0];                       /* uniform spacing (written by lipsim.batch) */
+  int k = (int)((t - pulse_t[0]) / dt); if (k > pulse_n - 2) k = pulse_n - 2;
+  double f = (t - pulse_t[k]) / dt;
+  return (1.0 - f) * pulse_P[k] + f * pulse_P[k + 1];
+}
+
 static double laser_I(double r, double t)
 {
   double w = 0.5 * g_inputParam[D_BEAM];
+  if (g_inputParam[PULSE_TAB] > 0.5) return pulse_power(t) * 2.0 / (CONST_PI * w * w) * exp(-2.0 * r * r / (w * w));
   double s = g_inputParam[FWHM] / (2.0 * sqrt(2.0 * log(2.0)));
   double P = g_inputParam[E_PULSE] / (s * sqrt(2.0 * CONST_PI)) * exp(-0.5 * pow((t - g_inputParam[T_PEAK]) / s, 2));
   return P * 2.0 / (CONST_PI * w * w) * exp(-2.0 * r * r / (w * w));
