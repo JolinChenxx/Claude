@@ -84,3 +84,7 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 ## 2026-11-25 16:50 — Direct MCP channel to the workstation (user)
 - The user connected two MCP servers. "WorkStaion_SuperCalculator" is the 76-core workstation: T3 project "Claude" at D:\Codex\2026-11-11\wo\outputs\Claude, Codex thread import:codex:01a1ccf8… "执行 AGENTS.md 的 T001", heartbeat automation "claude-codex". "WorkStation" is the user's desk PC, with only a scratch project.
 - Use: task cards and reports stay in git as the record. The MCP thread is used for urgent instructions, status queries and stop orders (each also recorded in handoff/to_codex or DECISIONS). The thread is not restarted or interrupted while a heartbeat run is active.
+
+## 2026-11-25 17:15 — Desk PC as a second compute node (user)
+- User: use the desk PC too ("把工位电脑的计算算力也尽量用尽"). Approved: install git, Miniforge, MSYS2 gcc and MS-MPI on C:; at most 12 of its 20 cores at any time.
+- Cards for it have `owner: codex-desk`. It never touches the workstation. Results come back through git on branch ws, but run_registry.csv is not committed from it, to avoid conflicts. Its gcc differs from the workstation's, so cross-node A/B pairs are run on the same node.
