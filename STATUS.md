@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T12:33:02+08:00 (UTC+8)
+- T030 high_a10n it2 finished at 800 ns, rc 0. All 1590 budget rows finite. Droplets: 6.2942251010 ng launched, 3.5104148106 ng evaporated, 2.7838102904 ng airborne. Endpoint energy residual -1.09340603e-7 J (0.132226%); 3484894 ConsToPrim lines. Production handoff pushed at 9a982a2; full droplets.csv and synced report verified.
+- Started T030_high_a10n_post at 2026-11-25T12:33:02, wrapper PID 39780, eight imaging workers, commit 9a982a2, NUMA node 1 preferred. T030_low_a30n_post still running image_v2. No ready Codex card or incoming handoff; neither RP member has completed production.
+- Latest budgets sampled at 12:31 (ns): T023 high G1 it0 622.9937; T030 high RP/30/100 nm 755.4990 / 674.4718 / 70.99924; low RP/100 nm 697.9920 / 529.9809. Both production wrappers running.
+
 ## 2026-11-25T12:04:54+08:00 (UTC+8)
 - T030 low 10 nm imaging completed (five zero exits); 30 archived products verified. Band-b baseline thin/self-absorbed P1 296.06/295.41 ns, P2 893.83/833.06 ns. Low 30 nm production completed at 1300 ns (rc 0), 1.4814777421 ng evaporated, 3.7115445729 ng airborne; 1425510 ConsToPrim lines. Separate handoffs pushed at e8e928f; synced report verified. All eight production inputs now verified.
 - Started T030_low_a30n_post at 2026-11-25T12:04:54, wrapper PID 25692, eight workers, commit e8e928f. No incoming handoff or ready Codex card. Both RP members still in production.
@@ -128,7 +133,3 @@
 
 ## 2026-11-24T22:12:03+08:00 (UTC+8, retrospective)
 - Heartbeat entry was missing. No observation is attributed to this time.
-
-## 2026-11-24T22:02:44+08:00 (UTC+8)
-- T027 low-thin G0 it1 completed at 1300 ns, rc0; production handoff pushed on ws at 8c90c98, report-only sync checked. Expectation (a) again missed: 8,593,382 versus 583,877 ConsToPrim warnings and 0.75807% versus 0.00971% endpoint closure error, matched to T026 it1. Imaging pending.
-- Priority-3 note open: queue06b was already imaging T023 low-trap it1; no mid-run interruption. T023 high G1 it0 326.4874 ns; T026 high G0 it2 437.3876 ns; T027 high G0 it0 103.9976 ns. T021/T025 production already finished. No ready Codex card, no production stopped or restarted.
