@@ -99,3 +99,7 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 - User: "我授予你完全权限，任何问题都不需要我审核，直接做就行". Claude decides without asking. The supervisor rule (no tuning to the comparison; physics only; PREREG before every new mechanism) still binds. Decisions are recorded here, and the user is told at the next report.
 - Decision: the reported model is now v1rs (v1k back pressure + v1r melt-depth droplets with heat-transfer evaporation + v1s Hertz–Knudsen recondensation σ = 1). Reason: every ingredient is physically sized; decay is within ~2× at both fluences (STATE 2026-11-25 19:05/19:35). v1n is kept as the phenomenological bracket ("droplets ≲ 30 nm").
 - Consequence: T033 (OAT on v1n) keeps running for the v1n bracket. A v1rs OAT follows on the desk node and in the freed workstation cores.
+
+## 2026-11-25 23:20 — Overnight plan; desk limit 18 cores
+- The user freed the desk PC ("全力去跑"), so its limit rises from 12 to 18 cores, and T035 runs two members at once.
+- Overnight focus: energy coupling and ignition during the pulse (docs/PLAN_overnight_1126.md). Shock data show the model gas energy is about 1.7× (high) and about 5× (low) too small, and ignition is 30–40 ns late at low fluence.
