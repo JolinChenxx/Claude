@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T16:06:03+08:00 (UTC+8)
+- T031 high_v1s/it2 completed at 800 ns (2.731932 ng recondensed; energy residual 0.00762%); low_v1rs/it1 completed at 1300 ns (0.462868 ng; residual 0.00848%). Both rc 0. Verified full budgets, checkpoints, rank log counts and the low-v1rs droplet archive, then handed off at 410ad45. Three of four production members complete; high_v1rs at 445.9941 ns of 800. Started high_v1s imaging via job.ps1, PID 44644, at 2026-11-25T16:06:03, eight workers. Low v1s imaging status: STATE=running  elapsed=0.00:33:56  pid=17712  commit=6aa78ce.
+- T030 low RP imaging handed off at 037b786. Verified 30 frames per band-b mode, 18 scenario tables and diagnostics. Baseline P1 thin/SA 343.84/330.22 ns; P2 787.45/763.21 ns. Both T030 and T031 report syncs verified. T023 high G1 it0: 646.4952 ns. No incoming note or ready Codex card.
+
 ## 2026-11-25T15:32:07+08:00 (UTC+8)
 - T031 low_v1s/it1 finished at 15:08:44, 1300 ns, rc 0. Verified 2576 finite budget rows; M_recondensed 2.66751 ng, net M_src = M_Cu = 1.88828 ng, endpoint energy residual +1.77969e-9 J (0.01005%), 496979 ConsToPrim lines. Production handoff 6aa78ce. Started the first eligible T031 imaging member low_v1s (eight workers, PID 17712, 2026-11-25T15:32:07); both higher-priority high-fluence members are still in production. Latest budgets: high_v1rs 107.9941 ns, high_v1s 137.9956 ns, low_v1rs 814.994 ns, low_v1s 1300 ns.
 - T030 high 30 nm it2 imaging handed off at a98e477. Both band-b stacks verified (29 times), 18 metric tables; P1 baseline thin/SA 484.24/372.77 ns, P2 unavailable. Both T030 and T031 report syncs verified. T030 low RP imaging still running at status check. T023 high G1 it0: 642.9944 ns. No incoming note or ready Codex card.
@@ -128,9 +132,4 @@
 - T027 high G0 it2 production stopped on the authorized handoff at 01:00; the verified wrapper and eight ranks exited. Last complete budget row: 162.4732 ns. Original row and budget hash pushed at 0d9f8df; raw files retained. No other job stopped.
 - T027 low it0/it1 and high it1: five postprocessing stages per member verified. Four completed iterations delivered for review at 58eae9b; report sync hash checked. Low S1 dropped from 8/11 to 0/11 in both iterations. No low frame at 300 ns.
 - At 01:02 T023 high G1 it0 was at 380.4898 ns; T028 high/low G1 it0 were at 66.99812/493.4531 ns. Queue 07 was imaging T025 high G0 it2. At 01:03: 32 MPI ranks and 24 image workers on 64 physical cores left eight free. T029 requires 16; do not repeat the T027 stop. The pending handoff action is to launch T029 once capacity allows. No ready card and no new job started.
-
-## 2026-11-25T00:33:41+08:00 (UTC+8)
-- T027 high G0 it0: all five stages verified; six native frame archives, 18 metric tables, 29 peak rows and three diagnostics delivered at a8ab361. Matched 300 ns aspect ratio rose 3.81% thin and 1.46% self-absorbed; both S1 counts remain 0/20. Report synced.
-- At 00:29 UTC+8 the T023 high G1 it0, T027 high G0 it2, and T028 high/low G1 it0 budgets were at 365.4999, 77.49645, 57.99727 and 117.4736 ns, respectively. Queue 07 moved to T027 low G0 it0 imaging. T021 and T025 production finished; postprocessing is pending.
-- No incoming handoff or ready Codex card. T029 already claimed and built; 40 solver ranks plus 24 image workers occupy the 64 physical cores; the required 16 are unavailable. No new computation started.
 
