@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T05:01:50+08:00 (UTC+8)
+- ws push recovered: verified and committed one T039 high registry row, delivered the pending T037 (4/4, review) and T033 high_sig_hi (10/18 imaging) handoffs. T039 production rc 0 (high 800 ns, low 1300 ns); 1600 high budget/droplet rows matched, rank warnings preserved. Low nominal 30 band-b time labels, peaks and core/shock/emission verified and delivered; low shifted image running. Started priority high nominal/shifted imaging and diagnostics on freed node 0 (8 workers). All three report syncs hash verified; ws cabb438d. No workstation-ready card; T038 desk-owned. Remaining T033/T034 imaging queued behind T039.
+- Jobs: T039 STATE=finished  elapsed=0.02:28:59  pid=44548  commit=eedb525f; T039_high_wf_post STATE=running  elapsed=0.00:00:00  pid=35792  commit=cabb438d; T039_low_wf_post STATE=running  elapsed=0.01:29:03  pid=45376  commit=5df0b101.
+
 ## 2026-11-26T04:30:33+08:00 (UTC+8)
 - BLOCKED: ws pull/rebase succeeded onto 94fc9292; remote rejected the ws push with 'fatal error in commit_refs_rules'. Pending local T037/T033 handoffs: e5e66e7d [codex] T033: deliver high_sig_hi imaging and diagnostics; a7360d18 [codex] T037: verify four aligned image sets and hand off for review. No card claimed, report sync or job launch; do not use unsynced state. No new registry row at pass start. No settings changed or force push attempted.
 - Read-only job check for heartbeat: T039 STATE=running  elapsed=0.01:57:44  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:57:47  pid=45376  commit=5df0b101. T039 high_wf latest budget 6.459397e+002 ns; low_wf production complete (1300 ns), last low postprocessing stage logged: image_v2.
@@ -120,7 +124,3 @@
 ## 2026-11-25T17:07:35+08:00 (UTC+8)
 - T023 high G1 it0 interrupted without an exit code. No solver remained; last budget and dbl.out index 260 at 649.9982/800 ns. Last OS boot predates the run. Cause unknown. Raw data preserved, card blocked and question-T023 pushed at 0e8970c: choose a fresh G1-only rerun, a validated checkpoint recovery, or partial closure.
 - Both T031 high imaging attempts interrupted during image_v2 with zero completed stages and no output files. Ten original wrapper files hash-verified under D:/sim_runs/interrupted_jobs/20261125_1702/. No production restarted. Both imaging preflights passed. High v1s restarted at 2026-11-25T17:07:35, wrapper PID 47508, eight workers; high v1rs retry pending for next pass. Incident handed off at f31b599; both report syncs verified. No incoming note or ready Codex card.
-
-## 2026-11-25T16:36:46+08:00 (UTC+8)
-- T031 high_v1rs/it2 finished at 16:34:13, 800 ns, rc 0. All four production members returned 0. Recondensed 0.794074 ng of 1.169938 ng gross Cu input; endpoint energy residual 0.005252%; 1384301 ConsToPrim lines. The original 1590-row droplet archive and final airborne mass were verified.
-- Low v1s imaging finished at 16:13:11. Verified 30 band-b frames per mode, 18 metric tables and diagnostic/peak rows. P1 thin/SA 327.95/299.62 ns; all P2 unavailable. Both handoffs pushed at 7688660 and report sync verified. Started high v1rs imaging with eight workers at 2026-11-25T16:36:46, PID 45776. High v1s imaging: STATE=running  elapsed=0.00:30:43  pid=44644  commit=410ad45. Low v1rs imaging pending. T023 high G1 it0: 649.4999 ns. Inbox empty; no ready Codex card.
