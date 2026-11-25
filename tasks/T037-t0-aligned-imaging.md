@@ -2,7 +2,8 @@
 id: T037
 title: Re-image the reported members with the declared t0 alignment (Δ = 28 ns from the high-fluence shock); imaging only
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T00:00:44+08:00
 depends: []
 milestone: D2
 est_time: ~0.5–1 h per member (imaging); 4 members
