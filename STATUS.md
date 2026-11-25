@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T13:01:04+08:00 (UTC+8)
+- T030 low_a30n imaging completed at 12:55:55. All five stages exited 0. Verified 30 archived files, both band-b stacks at 30 experimental times, 18 metric tables, peak lift and three diagnostics. Baseline band-b P1 thin/SA: 258.40/232.42 ns; P2: 637.88/556.35 ns. Imaging handoff pushed at 8f71c96; report sync verified.
+- T023 and T030 production still running. Latest budget times at 12:59 (ns): T023 high G1 it0 625.9979; T030 high RP/30/100 nm 791.9936 / 733.4824 / 168.4873; low RP/100 nm 738.4854 / 681.9764. High 10 nm imaging still running. Inbox empty; no ready Codex card or new production completion. No job started.
+
 ## 2026-11-25T12:33:02+08:00 (UTC+8)
 - T030 high_a10n it2 finished at 800 ns, rc 0. All 1590 budget rows finite. Droplets: 6.2942251010 ng launched, 3.5104148106 ng evaporated, 2.7838102904 ng airborne. Endpoint energy residual -1.09340603e-7 J (0.132226%); 3484894 ConsToPrim lines. Production handoff pushed at 9a982a2; full droplets.csv and synced report verified.
 - Started T030_high_a10n_post at 2026-11-25T12:33:02, wrapper PID 39780, eight imaging workers, commit 9a982a2, NUMA node 1 preferred. T030_low_a30n_post still running image_v2. No ready Codex card or incoming handoff; neither RP member has completed production.
@@ -130,6 +134,3 @@
 
 ## 2026-11-24T22:27:03+08:00 (UTC+8, retrospective)
 - No workstation terminal at that heartbeat; no jobs or cards checked then.
-
-## 2026-11-24T22:12:03+08:00 (UTC+8, retrospective)
-- Heartbeat entry was missing. No observation is attributed to this time.
