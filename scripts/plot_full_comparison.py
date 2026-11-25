@@ -43,8 +43,8 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
 LOGFMT = FuncFormatter(lambda v, _: f"{v:g}")
 T_REF = 300.0  # num (registry t_ref_norm, ns)
 K = "#222222"
-COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b", "spatter": "#7f8c8d", "g1": "#000000", "flight": "#d4a017", "recond": "#16a085"}
-LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）", "recond": "v1r + 回凝 v1rs（T031）"}
+COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b", "spatter": "#7f8c8d", "g1": "#000000", "flight": "#d4a017", "recond": "#16a085", "wave": "#e84393"}
+LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）", "recond": "v1r + 回凝 v1rs（T031）", "wave": "v1rs + 同类激光实测波形（T039，情景）"}
 
 
 IMG = "image_v2"  # --image-dir image_v2_t28: t0-aligned imaging (PREREG t0 alignment)
@@ -59,6 +59,11 @@ def latest(base, its):
 
 
 def members():
+    if IMG != "image_v2":   # t0-aligned imaging (T037 holds the reported members; T039 its own)
+        return {"high": {"elim": latest("results/T037/high_thin_G0", ["."]), "recond": latest("results/T037/high_v1rs", ["."]),
+                         "wave": latest("results/T039/high_wf", ["it2"])},
+                "low": {"elim": latest("results/T037/low_thin_G0", ["."]), "recond": latest("results/T037/low_v1rs", ["."]),
+                        "wave": latest("results/T039/low_wf", ["it1"])}}
     return {
         "high": {"baseline": latest("results/T016e/high_thin_G0", ["it2"]),
                  "backpress": latest("results/T023/high_thin_G0", ["it2", "it1"]),
@@ -67,7 +72,8 @@ def members():
                  "spatter": latest("results/T029/high_thin_G0", ["it2", "it1", "it0"]),
                  "g1": latest("results/T028/high_thin_G1", ["it0"]),
                  "flight": latest("results/T030/high_rp", ["it2"]),
-                 "recond": latest("results/T031/high_v1rs", ["it2"])},
+                 "recond": latest("results/T031/high_v1rs", ["it2"]),
+                 "wave": latest("results/T039/high_wf", ["it2"])},
         "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
                 "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
                 "combo": latest("results/T025/low_thin_G0", ["it1", "it0"]),
@@ -75,7 +81,8 @@ def members():
                 "spatter": latest("results/T029/low_thin_G0", ["it1", "it0"]),
                 "g1": latest("results/T028/low_thin_G1", ["it0"]),
                 "flight": latest("results/T030/low_rp", ["it1"]),
-                "recond": latest("results/T031/low_v1rs", ["it1"])},
+                "recond": latest("results/T031/low_v1rs", ["it1"]),
+                "wave": latest("results/T039/low_wf", ["it1"])},
     }
 
 
@@ -175,7 +182,7 @@ def frames_figure(series, mode, srow):
                 a.set_ylabel(lab, fontsize=7.5, rotation=0, ha="right", va="center")
     src = "Fig. 2a 作者标注的 Air/Copper 线" if series == "low" else "由低通量标注线换算（仅供参考）"
     fig.suptitle(f"{'高' if series == 'high' else '低'}通量逐帧对照（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}，散焦 250 µm，"
-                 f"{'模型各行按自身最亮帧定增益（不饱和），实验为原 8 位' if GAIN_MODE == 'peak' else ('模型各行按 150 ns 帧最亮像素 = 255 定增益，实验为原 8 位' if GAIN_MODE == 'peak150' else '各行在 300 ns 单独定增益')}，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
+                 f"{'模型各行按自身最亮帧定增益（不饱和），实验为原 8 位' if GAIN_MODE == 'peak' else ('模型各行按 150 ns 帧最亮像素 = 255 定增益，实验为原 8 位' if GAIN_MODE == 'peak150' else '各行在 300 ns 单独定增益')}，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}{'；模型时间 = 实验标签 + 28 ns（t0 由激波确定）' if IMG != 'image_v2' else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
                  fontsize=10)
     fig.tight_layout(rect=(0.04, 0, 1, 0.92), h_pad=0.3, w_pad=0.2)
     out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}{'_unsat' if GAIN_MODE == 'peak' else ''}{'_g150' if GAIN_MODE == 'peak150' else ''}{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}.png"
@@ -350,7 +357,8 @@ def main(argv=None):
     for s in ("high", "low"):
         print(s, {k: (str(v.relative_to(ROOT)) if v else None) for k, v in MEMBERS[s].items()})
         print(frames_figure(s, a.mode, srows[s]))
-        print(geometry_figure(s, a.mode, srows[s]))
+        if IMG == "image_v2":
+            print(geometry_figure(s, a.mode, srows[s]))
     print(curves_figure(a.mode, srows))
     print(shock_figure())
 
