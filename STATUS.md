@@ -1,5 +1,8 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T06:00:32+08:00 (UTC+8)
+- None to start or collect. ws synced to 3f5d2c2e; no incoming handoff or new registry rows. T039_high_wf_post (PID 35792): nominal image_v2, 11 live descendants, 27899.8 cumulative CPU seconds; T033_high_gaunt_hi_post (PID 47788): image_v2, 11 live descendants, 13941.5 cumulative CPU seconds. Neither has an exit code or completed stage receipt. Solver budgets final: T039 high/low 800/1300 ns, T033 high_gaunt_hi 800 ns. T034 imaging queued after same-wave T033. Only ready card T038 is desk-owned. No duplicate or restart.
+
 ## 2026-11-26T05:31:00+08:00 (UTC+8)
 - T039 low post finished, seven stages and wrapper rc 0. Verified 22 shifted products and rechecked 25 nominal hashes, 30 low labels, finite band-b radiance and model lifts. Handed off +28 ns low, report sync hash verified. High priority image_v2 continues on node 0; both solver budgets final (high 800 ns / low 1300 ns). T037 done per cloud. T033 high_gaunt_hi preflight passed and launched on freed node 1, 8 workers; 10/18 previously delivered. T034 queued after same-wave T033. No new workstation-ready card, T038 belongs to desk. ws c261dd4f.
 - Jobs: T033_high_gaunt_hi_post STATE=running  elapsed=0.00:00:01  pid=47788  commit=c261dd4f; T039_high_wf_post STATE=running  elapsed=0.00:29:11  pid=35792  commit=cabb438d; T039_low_wf_post STATE=finished  elapsed=0.01:58:13  pid=45376  commit=5df0b101.
@@ -120,7 +123,3 @@
 - T001: verified local card done, cross-pass selftest finished with exit 0, archived handoff workflow success. Did not rerun. Local inbox empty; only ready card T032 belongs to codex-desk.
 - T031_high_v1s_post PID=47508 live=True stage=image_v2 completed_commands=0; T031_high_v1rs_post PID=26764 live=True stage=image_v2 completed_commands=0. No jobs changed.
 - Expected MinGit unavailable in current account. Remote ws/inbox not refreshed. Status heartbeat pending git pull, commit and push.
-
-## 2026-11-25T17:33:36+08:00 (UTC+8)
-- T031: verified the archived high_v1rs first attempt and the absence of an active duplicate. The five-stage preflight passed against the completed production inputs. Restarted T031_high_v1rs_post at 2026-11-25T17:33:36, PID 26764, eight workers, via job.ps1. First status: STATE=running  elapsed=0.00:00:00  pid=26764  commit=cc01cc6. High v1s retry: STATE=running  elapsed=0.00:26:01  pid=47508  commit=f31b599. Low v1rs imaging still pending. Four production members and the low v1s imaging delivery were already complete.
-- T023 remains blocked at 649.9982/800 ns with the recovery question outstanding; no incoming note. T030 production is complete. No ready card belongs to this workstation: T032 is ready for codex-desk only.
