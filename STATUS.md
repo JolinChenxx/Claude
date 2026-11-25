@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T05:31:00+08:00 (UTC+8)
+- T039 low post finished, seven stages and wrapper rc 0. Verified 22 shifted products and rechecked 25 nominal hashes, 30 low labels, finite band-b radiance and model lifts. Handed off +28 ns low, report sync hash verified. High priority image_v2 continues on node 0; both solver budgets final (high 800 ns / low 1300 ns). T037 done per cloud. T033 high_gaunt_hi preflight passed and launched on freed node 1, 8 workers; 10/18 previously delivered. T034 queued after same-wave T033. No new workstation-ready card, T038 belongs to desk. ws c261dd4f.
+- Jobs: T033_high_gaunt_hi_post STATE=running  elapsed=0.00:00:01  pid=47788  commit=c261dd4f; T039_high_wf_post STATE=running  elapsed=0.00:29:11  pid=35792  commit=cabb438d; T039_low_wf_post STATE=finished  elapsed=0.01:58:13  pid=45376  commit=5df0b101.
+
 ## 2026-11-26T05:01:50+08:00 (UTC+8)
 - ws push recovered: verified and committed one T039 high registry row, delivered the pending T037 (4/4, review) and T033 high_sig_hi (10/18 imaging) handoffs. T039 production rc 0 (high 800 ns, low 1300 ns); 1600 high budget/droplet rows matched, rank warnings preserved. Low nominal 30 band-b time labels, peaks and core/shock/emission verified and delivered; low shifted image running. Started priority high nominal/shifted imaging and diagnostics on freed node 0 (8 workers). All three report syncs hash verified; ws cabb438d. No workstation-ready card; T038 desk-owned. Remaining T033/T034 imaging queued behind T039.
 - Jobs: T039 STATE=finished  elapsed=0.02:28:59  pid=44548  commit=eedb525f; T039_high_wf_post STATE=running  elapsed=0.00:00:00  pid=35792  commit=cabb438d; T039_low_wf_post STATE=running  elapsed=0.01:29:03  pid=45376  commit=5df0b101.
@@ -120,7 +124,3 @@
 ## 2026-11-25T17:33:36+08:00 (UTC+8)
 - T031: verified the archived high_v1rs first attempt and the absence of an active duplicate. The five-stage preflight passed against the completed production inputs. Restarted T031_high_v1rs_post at 2026-11-25T17:33:36, PID 26764, eight workers, via job.ps1. First status: STATE=running  elapsed=0.00:00:00  pid=26764  commit=cc01cc6. High v1s retry: STATE=running  elapsed=0.00:26:01  pid=47508  commit=f31b599. Low v1rs imaging still pending. Four production members and the low v1s imaging delivery were already complete.
 - T023 remains blocked at 649.9982/800 ns with the recovery question outstanding; no incoming note. T030 production is complete. No ready card belongs to this workstation: T032 is ready for codex-desk only.
-
-## 2026-11-25T17:07:35+08:00 (UTC+8)
-- T023 high G1 it0 interrupted without an exit code. No solver remained; last budget and dbl.out index 260 at 649.9982/800 ns. Last OS boot predates the run. Cause unknown. Raw data preserved, card blocked and question-T023 pushed at 0e8970c: choose a fresh G1-only rerun, a validated checkpoint recovery, or partial closure.
-- Both T031 high imaging attempts interrupted during image_v2 with zero completed stages and no output files. Ten original wrapper files hash-verified under D:/sim_runs/interrupted_jobs/20261125_1702/. No production restarted. Both imaging preflights passed. High v1s restarted at 2026-11-25T17:07:35, wrapper PID 47508, eight workers; high v1rs retry pending for next pass. Incident handed off at f31b599; both report syncs verified. No incoming note or ready Codex card.
