@@ -242,17 +242,32 @@ def main(argv=None):
     import threading
     free = [a.max_cores]
     cv = threading.Condition()
+    # Explicit T034-only engineering option; every other batch retains its fixed limit.
+    read_capacity = None
+    if batch.get("name") == "T034" and __import__("os").environ.get("LIPSIM_T034_SHARED_CAP") == "1":
+        from lipsim.workstation_capacity import capacity_reader
+        assert a.max_cores == 16 and all(int(r['procs']) == 8 for r in runs)
+        read_capacity = capacity_reader(REPO)
+    used = [0]
 
     def gated(spec):
         need = min(int(spec.get("procs", 1)), a.max_cores)
         with cv:
-            cv.wait_for(lambda: free[0] >= need)
-            free[0] -= need
+            if read_capacity is None:
+                cv.wait_for(lambda: free[0] >= need)
+                free[0] -= need
+            else:
+                while used[0] + need > read_capacity():
+                    cv.wait(timeout=15)
+                used[0] += need
         try:
             return run_one(spec, batch, a.dry_run)
         finally:
             with cv:
-                free[0] += need
+                if read_capacity is None:
+                    free[0] += need
+                else:
+                    used[0] -= need
                 cv.notify_all()
 
     with ThreadPoolExecutor(max_workers=len(runs)) as ex:
