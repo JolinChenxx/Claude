@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T11:03:55+08:00 (UTC+8)
+- T030 low_a10n it1 production finished at 1300 ns (rc 0, 2576 finite budget rows). Launched/evaporated/airborne: 5.1930223150 / 2.1110136286 / 3.0820086864 ng. Endpoint residual -2.889637e-10 J; 698261 ConsToPrim lines. Full droplets.csv and production evidence handed off at be55f3f; report sync verified.
+- Started T030_low_a10n_post at 2026-11-25T11:03:55 (wrapper PID 28116, eight image workers, commit be55f3f); imaging deliverables pending. Only this scan had completed production. The low 100 nm input passed all required parameter checks; high 100 nm still queued.
+- Production still running. Latest budgets at 11:02 (ns): T023 high G1 it0 611.4934; T030 high RP/10/30 nm 375.4561 / 496.4146 / 500.9940; low RP/30/100 nm 570.4233 / 627.4762 / 65.99968. Inbox empty; no ready Codex cards.
+
 ## 2026-11-25T10:29:52+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 reached 607.9993 ns. T030 high RP/10/30 nm reached 94.49997 / 97.49879 / 99.49571 ns; low RP/10/30 nm reached 341.4757 / 1056.986 / 542.4950 ns. Both wrappers running; the two 100 nm members are queued.
 - No new production completion, incoming handoff or ready Codex card. No job started.
@@ -126,7 +131,3 @@
 ## 2026-11-24T21:28:36+08:00 (UTC+8)
 - Work card: none. ws pulled to 5c1ea46. No incoming handoff, eligible ready card or new postprocessing delivery. T021 and T025 production already finished; their pending postprocessing keeps the cards open.
 - job.ps1 status: T023, T026, T027 and queue06b running. Queue06b is imaging T023 high_trap_G0/it2. Latest budget times (ns): T023 high G1 it0 318.9923, T026 high G0 it2 85.99790, T027 high G0 it0 60.49956 and low G0 it0 1189.707. No job launched or stopped.
-
-## 2026-11-24T21:14:57+08:00 (UTC+8)
-- T027: previous pass claimed and launched at 21:04:08, PID 28444, commit 501c47b. Build and nine tests passed. Both it0 production ini files checked on this pass: VMOM=1, DROP_TB=2835, BACKP=1, BD_ON=0. No relaunch. Budgets: high 45.49954 ns, low 174.9559 ns.
-- ws pulled to 5f28023; no incoming handoff or ready Codex card. T023 G1 it0 314.9847 ns and T026 high it2 70.49977 ns; both production wrappers running. T021 and T025 production finished as previously reported. Queue06b imaging T023 high-trap it2; its four earlier milestones already delivered. No new job started or stopped.
