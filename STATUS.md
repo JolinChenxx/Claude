@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T09:43:19+08:00 (UTC+8)
+- T028 high G1 it0 imaging delivered with 34 verified files, completing both members. Grid comparison submitted at 5cef2af; T028 was subsequently marked done by Claude. T029 high G0 it2 reached 800 ns, then finished imaging at 09:40:25. All five T029 production and imaging deliveries verified; final member handed off at 84d4300; queue 10 exited 0.
+- T030: v1r built, 15 tests passed, four T026 seed hashes verified, and paper size notes delivered. After release and claim, job.ps1 launched production at 09:41:59 with --max-cores 48 (wrapper PID 5272, commit 84d4300). Running at 09:42:16 with six member directories; generated ini checks pending. Launch handoff pushed at 3644335. T023 high G1 it0 budget: 602.9986 ns. No further ready Codex card identified; no foreground wait.
+
 ## 2026-11-25T08:59:50+08:00 (UTC+8)
 - Work card: none. T023 high G1 it0 at 597.9961 ns and T029 high G0 it2 at 764.9889 ns. Both production wrappers are running; T028 production has finished.
 - Queue 10 is still imaging T028 high G1 it0. Its T029 high G0 it1 milestone was already delivered. Inbox empty, no ready Codex card and no new job started.
@@ -126,7 +130,3 @@
 - T023: all five iterations for the 21:00 comparison verified, deadline handoff closed at 5698cec. Latest low-thin it1 has 25 original image files, three diagnostic tables and 30 peak rows; no item missing.
 - T026: archived high-thin it1 production at 800 ns (rc 0) at c9bcad3; it1 imaging pending. Initial ws pull was blocked by its new validated registry append; committed it, rebased and pushed. Both handoffs and report-only syncs verified.
 - T023/T025/T026 production and queue06b running; queue imaging T026 high it0. T021 production finished, high it1 postprocessing pending. Latest budgets: T023 high G1 it0 296.9806 ns; T025 high G0 it2 451.8995 ns; T026 high G0 it2 40.99804 ns. No ready Codex card and no job started or stopped.
-
-## 2026-11-24T20:28:54+08:00 (UTC+8)
-- Work card: none. ws at f64f63f. No ready Codex card. The 21:00 handoff remains open for T023 low_thin_G0/it1 imaging and peak extraction. Queue06b is in image_v2; its three diagnostics returned zero, with no new completed milestone to collect.
-- job.ps1 status: T023, T025, T026 and queue06b running. Active budgets (ns): T023 high_thin_G1/it0 277.9973; T025 high_thin_G0/it2 102.9982; T026 high_thin_G0/it1 416.9510. T021 production finished successfully; its card still awaits high_thin_G0/it1 postprocessing. No jobs started or stopped.
