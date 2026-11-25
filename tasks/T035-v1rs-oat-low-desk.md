@@ -2,7 +2,7 @@
 id: T035
 title: (desk node) OAT of v1rs at low fluence, Picard it0, own baseline; 9 runs sequential at 8 ranks; after T032
 owner: codex-desk
-status: ready
+status: done
 depends: [T032]
 milestone: D2
 est_time: ~1.5–2.5 h per run on this node
