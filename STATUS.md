@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T07:00:44+08:00 (UTC+8)
+- None to start or collect. ws at 65b519f2, inbox empty, no registry additions. T039 high is on shifted +28 ns imaging; the five completed nominal/diagnostic stages were previously delivered, no shifted stage receipt yet. T034 high_A_lo nominal imaging continues. Final solver budgets: T039 high 8.000000e+002 ns, T034 high_A_lo 8.000000e+002 ns. T033 remaining low members queued; both imaging slots occupied. Only ready card T038 is desk-owned. No launch, restart or parameter changes.
+- Jobs: T039_high_wf_post: pid 35792, 11 live descendants, 23382 cumulative descendant CPU seconds; T034_high_A_lo_post: pid 50924, 11 live descendants, 13997 cumulative descendant CPU seconds.
+
 ## 2026-11-26T06:31:11+08:00 (UTC+8)
 - T039 high nominal five stages rc 0, archived 25 products, 29 band-b times; high shift +28 ns continues. Solver endpoints high 800 / low 1300 ns. T033 high_gaunt_hi five stages and wrapper rc 0; 9/9 high, 11/18 total imaging delivered, remaining seven low queued. T033 and T039 handoffs pushed and reports synced with matching hashes. With T033 high wave complete, launched first T034 high_A_lo/it2 imaging on freed node 1 (8 workers, production final 800 ns); no duplicate or restart. No workstation-ready card; T038 desk-owned. ws f0b7b859.
 - Jobs: T034_high_A_lo_post STATE=running  elapsed=0.00:00:00  pid=50924  commit=f0b7b859; T039_high_wf_post STATE=running  elapsed=0.01:29:22  pid=35792  commit=cabb438d; T033_high_gaunt_hi_post STATE=finished  elapsed=0.01:00:12  pid=47788  commit=c261dd4f.
@@ -118,7 +122,3 @@
 ## 2026-11-25T18:00:29+08:00 (UTC+8)
 - Checked T030 and T031 against ws 0934ccf. All finished wrappers already delivered. T031 high_v1rs (PID 26764, 26m43s) and low_v1rs (PID 45944, 9m48s) both running image_v2 with 0/5 stages completed. No new handoff or restart. The two T030 100 nm scans remain queued behind the occupied imaging slots.
 - Incoming handoff empty. Only ready card T032 belongs to codex-desk, not this workstation. No eligible new card.
-
-## 2026-11-25T17:50:31+08:00 (UTC+8)
-- Restored MinGit 2.56.1 and verified official SHA-256. Pulled ws. T023 closed as partial per Claude (649.9982/800 ns), no rerun. T031 high_v1s retry finished at 17:48:17, five stages rc 0; verified and handed off 29 frame times per band-b mode and 18 metric tables. ws pushed at 5c292a5, report syncs verified. No newly claimable card: T032 is codex-desk only.
-- Launched low_v1rs imaging after preflight on the freed NUMA 1 slot (8 workers). T031_low_v1rs_post : STATE=running  elapsed=0.00:00:00  pid=45944  commit=5c292a5; T031_high_v1rs_post : STATE=running  elapsed=0.00:16:55  pid=26764  commit=cc01cc6. T030 production and six imaging deliveries finished; remaining two scan images behind T031. No jobs stopped.
