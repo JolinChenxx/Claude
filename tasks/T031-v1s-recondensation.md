@@ -2,7 +2,7 @@
 id: T031
 title: v1s recondensation of Cu vapour on the target; v1s (on v1n) and v1rs (on v1r melt-depth) × high/low, one Picard iteration seeded from T026; 32 cores
 owner: codex
-status: running
+status: review
 started: 2026-11-25T14:32:11+08:00
 depends: []
 milestone: D2
