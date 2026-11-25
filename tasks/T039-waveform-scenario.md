@@ -2,7 +2,8 @@
 id: T039
 title: Measured comparable-device waveform scenario (IPG YLP-HP 61.7 ns trace from T036) on v1rs, high + low, seeded as T031; 16 cores; priority production
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T02:30:28+08:00
 depends: []
 milestone: D2
 est_time: ~3.5 h (high), ~2 h (low)
