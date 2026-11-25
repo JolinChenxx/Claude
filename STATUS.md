@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T10:01:59+08:00 (UTC+8)
+- T030: verified the six generated production inputs, including both melt-depth radii and the 10/30 nm scans. Report pushed to ws at 728f7d6. The two 100 nm inputs have not been generated. No T030 completion row or new member handoff.
+- T030 latest budgets at 10:00 UTC+8 (ns): high rp/10/30 nm 54.9974 each; low rp/10/30 nm 115.4461 / 118.4905 / 128.4762. T023 high G1 it0 604.9963 ns. Both job wrappers running. Inbox empty; no ready Codex card. No job launched.
+
 ## 2026-11-25T09:43:19+08:00 (UTC+8)
 - T028 high G1 it0 imaging delivered with 34 verified files, completing both members. Grid comparison submitted at 5cef2af; T028 was subsequently marked done by Claude. T029 high G0 it2 reached 800 ns, then finished imaging at 09:40:25. All five T029 production and imaging deliveries verified; final member handed off at 84d4300; queue 10 exited 0.
 - T030: v1r built, 15 tests passed, four T026 seed hashes verified, and paper size notes delivered. After release and claim, job.ps1 launched production at 09:41:59 with --max-cores 48 (wrapper PID 5272, commit 84d4300). Running at 09:42:16 with six member directories; generated ini checks pending. Launch handoff pushed at 3644335. T023 high G1 it0 budget: 602.9986 ns. No further ready Codex card identified; no foreground wait.
@@ -125,8 +129,3 @@
 
 ## 2026-11-24T21:04:08+08:00 (UTC+8; recorded on the following pass)
 - T025 production completed, T026 high-it0 imaging handed off; T027 claimed, build and nine tests passed and production launched in the background. Prior pass ended on launch. No other ready card at that point.
-
-## 2026-11-24T20:46:38+08:00 (UTC+8)
-- T023: all five iterations for the 21:00 comparison verified, deadline handoff closed at 5698cec. Latest low-thin it1 has 25 original image files, three diagnostic tables and 30 peak rows; no item missing.
-- T026: archived high-thin it1 production at 800 ns (rc 0) at c9bcad3; it1 imaging pending. Initial ws pull was blocked by its new validated registry append; committed it, rebased and pushed. Both handoffs and report-only syncs verified.
-- T023/T025/T026 production and queue06b running; queue imaging T026 high it0. T021 production finished, high it1 postprocessing pending. Latest budgets: T023 high G1 it0 296.9806 ns; T025 high G0 it2 451.8995 ns; T026 high G0 it2 40.99804 ns. No ready Codex card and no job started or stopped.
