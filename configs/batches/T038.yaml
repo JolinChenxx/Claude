@@ -1,7 +1,7 @@
 # T038 (desk node): low-fluence ignition sensitivity of v1rs, Picard it0, same node as T035 (baseline = T035 low_base).
 # PREREG 2026-11-26 'T038 ignition'. Sensitivity only.
 name: T038
-pluto_exe: C:/sim_tools/pluto_lip/build_v1s/mpi/pluto.exe
+pluto_exe: C:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
 mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
 tables: C:/sim_work/tables/v1c
 root: C:/sim_work/runs/T038
@@ -10,3 +10,4 @@ numerics:
     - {id: low_bd, case: configs/cases/v1rsbd_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000}
     - {id: low_tau35, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"tau_fwhm": 35.0e-9}}
     - {id: low_bd_tau35, case: configs/cases/v1rsbd_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"tau_fwhm": 35.0e-9}}
+    - {id: low_wf, case: configs/cases/v1rswf_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000}
