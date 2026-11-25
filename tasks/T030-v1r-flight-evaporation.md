@@ -2,7 +2,7 @@
 id: T030
 title: v1r droplets located by flight time and gas-heat-transfer evaporation; 8 members (melt-depth size + 10/30/100 nm scan) × high/low, one Picard iteration seeded from T026; up to 48 cores
 owner: codex
-status: review
+status: done
 started: 2026-11-25T09:39:54+08:00
 depends: []
 milestone: D2
