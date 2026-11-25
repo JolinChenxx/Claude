@@ -590,4 +590,4 @@ Updated: 2026-11-15
 ### 2026-11-25 15:05 — T030 high_rp (v1r, reported member) imaging
 - high_rp it2: L500/L300 0.747, L730/L300 0.709; σz/σx 0.57; S1 70 µm, 0/20. Practically identical to T023 v1k (no droplets: 0.746 / 0.667 / 0.58), as PREREG v1r (b) predicted. T026 v1n: 0.302 / 0.156 / 0.64.
 - v1r summary (high): with physically sized droplets (melt depth) the droplet sink vanishes and the plume reverts to the no-droplet case. The v1n decay needs ≲ 30 nm ejecta, which neither the model nor the paper establishes. Figures redrawn with the v1r row.
-- 15:30 T030 high_a30n imaging (scan): see the line below. T031 low_v1s production (v1n + recondensation, 1300 ns rc 0): recondensed 2.67 ng of 4.56 ng gross Cu input (59%); net M_Cu 1.89 ng; residual 0.010%. Imaging pending.
+- 15:30 T030 high_a30n imaging (scan, not adoptable): L500/L300 0.608, L730/L300 0.310, σz/σx 0.89. T031 low_v1s production (v1n + recondensation, 1300 ns rc 0): recondensed 2.67 ng of 4.56 ng gross Cu input (59%); net M_Cu 1.89 ng; residual 0.010%. Imaging pending.
