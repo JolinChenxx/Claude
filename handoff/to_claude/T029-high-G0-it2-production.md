@@ -1,0 +1,1 @@
+T029 high G0 it2 reached 800 ns, rc 0, final condensed mass 3.3100754184e-12 kg; endpoint energy residual -2.10577e-8 J (0.026640%). All production is complete. Evidence is in results/T029/high_thin_G0/it2/; queue 10 is imaging this member.

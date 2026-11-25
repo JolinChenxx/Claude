@@ -17,7 +17,7 @@ RUNTIME = Path('D:/sim_tools/postprocess-runtime-04')
 assert len(sys.argv) <= 3
 ITERATION = sys.argv[1] if len(sys.argv) >= 2 else 'it0'
 BATCH = sys.argv[2] if len(sys.argv) == 3 else 'T026'
-assert BATCH in ('T026', 'T027', 'T029') or (BATCH, ITERATION) in {('T025', 'it0'), ('T025', 'it2'), ('T021', 'it1')}
+assert BATCH in ('T026', 'T027', 'T029') or (BATCH, ITERATION) in {('T025', 'it0'), ('T025', 'it2'), ('T021', 'it1'), ('T028', 'it0')}
 assert ITERATION in ('it0', 'it1', 'it2')
 QUEUE06 = (BATCH, ITERATION) == ('T026', 'it0')
 JOB = Path('D:/sim_runs') / ('T023_T025_T026_post_06b' if QUEUE06 else 'T026_T027_post_07')
@@ -26,11 +26,12 @@ RUNNER_PATH = REPO / 'results/T021/postprocessing' / RUNNER
 if BATCH in ('T025', 'T029') and ITERATION == 'it0':
     JOB = JOB.with_name('T029_T028_post_08')
     RUNNER_PATH = REPO / 'results/T029/postprocessing/run_priority_08.py'
-elif BATCH == 'T029':
+elif BATCH in ('T028', 'T029'):
     JOB = JOB.with_name('T029_T028_post_10')
     RUNNER_PATH = REPO / 'results/T029/postprocessing/run_successor_10.py'
-RAW = Path('D:/sim_runs') / BATCH / 'high_thin_G0' / ITERATION
-OUT = REPO / 'results' / BATCH / 'high_thin_G0' / ITERATION
+MEMBER = 'high_thin_G1' if BATCH == 'T028' else 'high_thin_G0'
+RAW = Path('D:/sim_runs') / BATCH / MEMBER / ITERATION
+OUT = REPO / 'results' / BATCH / MEMBER / ITERATION
 
 
 def sha(path):
@@ -55,9 +56,9 @@ def copy(source, target):
 def main():
     assert not (OUT / 'priority_delivery.json').exists(), 'Milestone already collected'
     queue = json.loads((JOB / 'postprocess_summary.json').read_text())
-    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, 'high_thin_G0', ITERATION)
+    match = lambda r: (r['batch'], r['member'], r['iteration']) == (BATCH, MEMBER, ITERATION)
     milestone, = [r for r in queue['milestones_ready_for_collection'] if match(r)]
-    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == 'high_thin_G0' and r['registry_row']['picard_it'] == ITERATION[2:]]
+    run, = [r for r in queue['admissions'] if r['registry_row']['batch'] == BATCH and r['registry_row']['run'] == MEMBER and r['registry_row']['picard_it'] == ITERATION[2:]]
     commands = {r['name']: r for r in queue['commands'] if match(r)}
     commands.update({r['name']: r for r in run['reused_completed_commands']})
     assert set(commands) == {'image_v2', 'peak_lift', 'core_energy', 'shock_track', 'emission'}
