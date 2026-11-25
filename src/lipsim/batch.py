@@ -167,6 +167,15 @@ def registry_append(row: dict):
 
 def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
     root = Path(batch["root"])
+    ov = {k: (float(v) if isinstance(v, str) else v) for k, v in (spec.get("overrides") or {}).items()}
+    reg = P.registry()
+    for k in ov:
+        if k not in reg:
+            raise KeyError(f"{spec['id']}: override of unregistered parameter {k}")
+    P.set_thread_overrides(ov)   # in-process (make_ini, droplet mass); subprocesses get the env below
+    sub_env = {**__import__("os").environ, "PYTHONPATH": str(REPO / "src")}
+    if ov:
+        sub_env[P.ENV_OVERRIDES] = json.dumps(ov, sort_keys=True)
     case_cfg = P.resolve(yaml.safe_load((REPO / spec["case"]).read_text()))
     log = []
     # Picard continuation (STATE 2026-11-18): start at iteration `start_it` using the finished run `prev_run`
@@ -179,13 +188,13 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
         rd = root / spec["id"] / f"it{it}"
         (rd / "lip_tables").mkdir(parents=True, exist_ok=True)
         for f in ("eos.bin", "opt.bin"):
-            shutil.copy2(Path(batch["tables"]) / f, rd / "lip_tables" / f)
+            shutil.copy2(Path(spec.get("tables", batch["tables"])) / f, rd / "lip_tables" / f)
         src_out = rd / "source"
         cmd = [sys.executable, "-m", "lipsim.target.build", "--case", str(REPO / spec["case"]), "--out", str(src_out)]
         if prev is not None:
             cmd += ["--shielding", str(prev)]
         if not dry:
-            subprocess.run(cmd, check=True, cwd=REPO, env={**__import__("os").environ, "PYTHONPATH": str(REPO / "src")})
+            subprocess.run(cmd, check=True, cwd=REPO, env=sub_env)
             shutil.copy2(src_out / "target_source.bin", rd / "lip_tables/target_source.bin")
         mvap, hmelt = 0.0, 0.0
         if not dry and (src_out / "source_meta.json").exists():
@@ -193,6 +202,8 @@ def run_one(spec: dict, batch: dict, dry: bool = False) -> dict:
             mvap, hmelt = float(sm.get("vaporised_mass_kg", 0.0)), float(sm.get("melt_depth_mean_m", 0.0))
         (rd / "pluto.ini").write_text(make_ini(case_cfg, spec["grid"], spec["nec"], spec["tstop_ns"], spec.get("src_on", 1),
                                                 spec.get("rmax_par"), mvap, hmelt))
+        if ov:
+            (rd / "overrides.json").write_text(json.dumps(ov, indent=1, sort_keys=True))
         procs = int(spec.get("procs", 1))
         exe = str(Path(batch["pluto_exe"]).resolve())
         pcmd = ([batch["mpiexec"], "-n", str(procs), exe, "-dec", str(procs), "1"] if procs > 1 and batch.get("mpiexec")

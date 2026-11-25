@@ -192,3 +192,16 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - (b) σz/σx rises against the same-iteration base (T026 for v1s, T030 rp for v1rs), and S1 lift rises. A rise < 5% means recondensation does not detach the core.
   - (c) L ratios: direction not predicted. Removing Cu lowers late emission, but the near-wall gas was dim anyway.
   - (d) Report the recondensed mass against the evaporated mass.
+
+## T033 OAT declared 2026-11-25 ~18:30 (UTC+8), before any result: sensitivity of the reported model v1n over declared registry uncertainties
+- **Purpose:** an uncertainty band for the reported model, and a test of whether any input within its declared range can change the morphology (σz/σx). This is not a fit. No value from these runs will be adopted or reported as "best".
+- **Members, one input moved at a time.** Cases v1bpde_high and v1bpde_low, one Picard iteration seeded as in T030. Ranges are the registry's, except where stated:
+  - cu_removal_efficiency (droplet mass): ×1/3 and ×3. The registry says "order of magnitude"; half an order is declared.
+  - cu_A1064_RT: 0.015 and 0.05.
+  - f_Tcap: 0.85 and 0.95 (registry: scenario).
+  - sigma_en_Cu: 3e-20 and 3e-19 (variant tables).
+  - gaunt_ff: 1.5 (variant tables).
+- **Mechanism:** `overrides:` in the batch spec. The values are recorded in overrides.json next to pluto.ini, and the run's registry hash changes.
+- **Reading, declared:**
+  - For each member report the change against T026 at the same iteration in L500/L300, L730/L300 (high) or L715/L300, L1035/L300 (low), σz/σx at 300 ns, and S1.
+  - If no member moves σz/σx by more than 10%, the half-dome morphology is insensitive to the model's uncertain inputs, which points to missing physics (radiative transfer is declared next).
