@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-25T22:00:42+08:00 (UTC+8)
+- WS preflight blocked for second pass: rebase refused dirty results/run_registry.csv (8 append-only T033 rows, rc 0 locally). Did not use stale inbox/card state or accept/archive results. Registry untouched. Recovery: preserve and commit verified rows only, then repeat pull. No card claimed.
+- Read-only: T033 STATE=running  elapsed=0.02:29:15  pid=49952  commit=9c6b07d; both first imaging wrappers finished, 5 stages each, awaiting formal verification. T034 gate finished; production job PID 38616 running, high_A_hi and high_A_lo have budgets. Latest recorded times (ns): T033/high_A_hi 8.000000e+002, T033/high_A_lo 8.000000e+002, T033/high_ftc_hi 8.000000e+002, T033/high_ftc_lo 8.000000e+002, T033/high_gaunt_hi 6.299988e+001, T033/high_rem_hi 8.000000e+002, T033/high_rem_lo 7.609865e+002, T033/high_sig_hi 5.849894e+001, T033/high_sig_lo 8.000000e+002, T033/low_A_hi 1.300000e+003, T033/low_A_lo 1.300000e+003, T033/low_ftc_hi 1.300000e+003, T033/low_ftc_lo 1.300000e+003, T033/low_gaunt_hi 1.136929e+003, T033/low_rem_hi 1.300000e+003, T033/low_rem_lo 5.279810e+002, T033/low_sig_hi 1.300000e+003, T033/low_sig_lo 1.300000e+003, T034/high_A_hi 2.699755e+001, T034/high_A_lo 3.099999e+001.
+
 ## 2026-11-25T21:30:44+08:00 (UTC+8)
 - Sync blocked: git pull --rebase origin ws refused unstaged changes in results/run_registry.csv. Five new T033 rc=0 rows (low_ftc_lo, high_A_lo, low_sig_lo, low_sig_hi, low_ftc_hi) observed locally; no remote inbox or card state assumed, no acceptance or new claim. Left registry and running jobs intact. Next sync needs the append-only rows preserved before rebase.
 - Read-only status: T033 production PID 49952 active; imaging high_rem_hi/high_A_hi PIDs 25260/42828 active. T034 gate PID 49340 waiting; no T034 production job yet. Latest T033 budget times (ns): high_A_hi 8.000000e+002, high_A_lo 8.000000e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_gaunt_hi 2.799791e+001, high_rem_hi 8.000000e+002, high_rem_lo 7.239819e+002, high_sig_lo 8.000000e+002, low_A_hi 1.001991e+003, low_A_lo 2.657050e+002, low_ftc_hi 1.300000e+003, low_ftc_lo 1.300000e+003, low_gaunt_hi 5.449633e+001, low_rem_hi 4.997796e+001, low_rem_lo 5.749964e+001, low_sig_hi 1.300000e+003, low_sig_lo 1.300000e+003.
@@ -124,7 +128,3 @@
 ## 2026-11-25T09:43:19+08:00 (UTC+8)
 - T028 high G1 it0 imaging delivered with 34 verified files, completing both members. Grid comparison submitted at 5cef2af; T028 was subsequently marked done by Claude. T029 high G0 it2 reached 800 ns, then finished imaging at 09:40:25. All five T029 production and imaging deliveries verified; final member handed off at 84d4300; queue 10 exited 0.
 - T030: v1r built, 15 tests passed, four T026 seed hashes verified, and paper size notes delivered. After release and claim, job.ps1 launched production at 09:41:59 with --max-cores 48 (wrapper PID 5272, commit 84d4300). Running at 09:42:16 with six member directories; generated ini checks pending. Launch handoff pushed at 3644335. T023 high G1 it0 budget: 602.9986 ns. No further ready Codex card identified; no foreground wait.
-
-## 2026-11-25T08:59:50+08:00 (UTC+8)
-- Work card: none. T023 high G1 it0 at 597.9961 ns and T029 high G0 it2 at 764.9889 ns. Both production wrappers are running; T028 production has finished.
-- Queue 10 is still imaging T028 high G1 it0. Its T029 high G0 it1 milestone was already delivered. Inbox empty, no ready Codex card and no new job started.
