@@ -2,7 +2,7 @@
 id: T033
 title: One-at-a-time sensitivity of v1n over declared registry ranges; 9 inputs × high/low = 18 members, 3 variant tables; up to 48 cores
 owner: codex
-status: running
+status: blocked
 started: 2026-11-25T18:44:33+08:00
 depends: []
 milestone: D2
