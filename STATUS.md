@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T02:32:49+08:00 (UTC+8)
+- T039 claimed (ef0f8999), built v1w with unchanged T031 flags, 18 source hashes and executable verified, 21 tests passed and 19 shared-capacity checks passed. Started both original members as a single 16-core batch. Next pass check PULSE_TAB, pulse file length/integral, COND_SIG and radius. No jobs stopped. T037 retry: high_v1rs image+peak both rc 0; 29 frames/18 tables archived, 1/4; low_v1rs active. T033 high_sig_lo handed off; 9/18 images, approved report sync hash matched. T034 all eight production members finished, imaging pending. No other workstation-ready cards; T035/T038 desk-owned. ws eedb525f.
+- Jobs: T037_retry01 STATE=running  elapsed=0.01:31:22  pid=49872  commit=0683e9f; T039 STATE=running  elapsed=0.00:00:00  pid=44548  commit=eedb525f. T039 t_ns: no budget yet at launch.
+
 ## 2026-11-26T02:04:02+08:00 (UTC+8)
 - T034: verified final registry row before rebase; wrapper rc 0, all eight members reached 800 ns and have matched droplet ledgers. Production milestone pushed; imaging queued behind T037 and T033. T033 8/18 imaging delivered, high_sig_lo stage=image_v2. T037 retry: stage receipts=0, descendants=11; cumulative CPU seconds=29725.7. No duplicate or new job launched. T036 submitted for review with 748 measured points from IPG test p.6 Fig.6, uncertainty and checked overlay, source timing and copper reflectance limits; no exact YLPN waveform asserted. Approved sync files hash-verified. No workstation-ready cards; T035/T038 desk only. ws 5f99b2fc.
 - Jobs: T034 STATE=finished  elapsed=0.04:06:26  pid=38616  commit=a5f05ad; T033_high_sig_lo_post STATE=running  elapsed=0.00:28:31  pid=49208  commit=894c74e; T037_retry01 STATE=running  elapsed=0.01:02:34  pid=49872  commit=0683e9f.
@@ -120,8 +124,4 @@
 ## 2026-11-25T14:37:35+08:00 (UTC+8)
 - T030 low_rp/it1 finished at 14:35:25, 1300 ns, rc 0. All eight production runs finished successfully. The residual at the endpoint was -1.13971e-7 J (0.56749%). Archived full droplets and solver evidence; handed off at fabb627 and verified report sync. Low RP imaging is pending; high RP and high 30 nm imaging were still running at 14:35. T023 high G1 it0: 635.4975 ns.
 - T031 claimed and release note processed. Built build_v1s and passed 15/15 tests. Started four 8-rank members with job.ps1 at 2026-11-25T14:36:56, PID 45300, commit fabb627, --max-cores 32. Generated inputs checked: 0/4; No generated ini yet; verify all four on the next pass. Progress: no budget samples yet. No unclaimed ready Codex card.
-
-## 2026-11-25T14:03:23+08:00 (UTC+8)
-- T030 high_a100n/it2 reached 800 ns at 14:00:28, rc 0. All 1590 budget rows were finite. Of 6.2942251010 ng launched, 1.2090838567 ng evaporated and 5.0851412443 ng remained airborne. Endpoint residual -2.50968954e-8 J (0.032439%); 2363943 ConsToPrim lines. Production evidence and original droplets.csv handed off at 628aee3; synced report verified.
-- High RP imaging was running; low RP production advanced to 883.4920 ns at 14:01, and T023 high G1 it0 reached 631.9950 ns at 13:59. Started T030_high_a30n_post at 14:03:02, wrapper PID 44548, eight workers and NUMA node 0 preferred. Low/high 100 nm imaging remains pending. No incoming handoff or ready Codex card.
 
