@@ -43,8 +43,8 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
 LOGFMT = FuncFormatter(lambda v, _: f"{v:g}")
 T_REF = 300.0  # num (registry t_ref_norm, ns)
 K = "#222222"
-COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b", "spatter": "#7f8c8d", "g1": "#000000", "flight": "#d4a017"}
-LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）"}
+COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b", "spatter": "#7f8c8d", "g1": "#000000", "flight": "#d4a017", "recond": "#16a085"}
+LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）", "recond": "v1r + 回凝 v1rs（T031）"}
 
 
 def latest(base, its):
@@ -62,14 +62,16 @@ MEMBERS = {
              "elim": latest("results/T026/high_thin_G0", ["it2", "it1", "it0"]),
              "spatter": latest("results/T029/high_thin_G0", ["it2", "it1", "it0"]),
              "g1": latest("results/T028/high_thin_G1", ["it0"]),
-             "flight": latest("results/T030/high_rp", ["it2"])},
+             "flight": latest("results/T030/high_rp", ["it2"]),
+             "recond": latest("results/T031/high_v1rs", ["it2"])},
     "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
             "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
             "combo": latest("results/T025/low_thin_G0", ["it1", "it0"]),
             "elim": latest("results/T026/low_thin_G0", ["it1", "it0"]),
             "spatter": latest("results/T029/low_thin_G0", ["it1", "it0"]),
             "g1": latest("results/T028/low_thin_G1", ["it0"]),
-            "flight": latest("results/T030/low_rp", ["it1"])},
+            "flight": latest("results/T030/low_rp", ["it1"]),
+            "recond": latest("results/T031/low_v1rs", ["it1"])},
 }
 SHOCK = {"high": {"baseline": "results/T016e/high_thin_G0/it2/shock_track.csv"},
          "low": {"baseline": "results/T016e/low_thin_G0/it2/shock_track.csv"}}
