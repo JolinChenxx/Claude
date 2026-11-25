@@ -2,7 +2,7 @@
 id: T036
 title: Source check for the ignition inputs — paper timing (t = 0), the laser's temporal waveform, Cu absorptance at 1064 nm vs temperature; verbatim quotes only
 owner: codex
-status: running
+status: review
 started: 2026-11-25T23:31:16+08:00
 depends: []
 milestone: D2

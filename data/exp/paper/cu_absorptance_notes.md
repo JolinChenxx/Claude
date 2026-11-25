@@ -25,3 +25,6 @@ Physical PDF pages and 1-based PyMuPDF page.get_text().splitlines() line numbers
 | Resolidified | p. 7, ll. 70-77, 89-99 |
 
 Pooled liquid reflectance 93.68%: p. 8, ll. 22-31. The printed solid and liquid ranges in Fig. 3(b,d) are not paired specimen values; neither their spread nor the drift correction is an individual measured melting step. Second paper, section 4.2: zero correction at room temperature, p. 13, ll. 23-25; optimal -0.4% correction at melting, p. 13, ll. 46-50 (also p. 14, ll. 4-8).
+
+### Size of the reflectance drop: what the quoted ranges establish
+Polished: 96.60-96.95% solid versus 93.40-93.94% liquid gives conservative limits of 2.66-3.55 percentage points on the decrease. Resolidified: 96.60-96.97% versus approximately 93.4-93.8% gives approximately 2.8-3.6 points. These are arithmetic bounds from published group ranges, not specimen-level measured steps or error bars. Fig. 3(b,d) overlays specimens without distinct identifiers. No paired jump was assigned to untreated or reduced samples from the tabulated text.
