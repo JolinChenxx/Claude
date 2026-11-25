@@ -1,1 +1,0 @@
-Please report the current last budget.csv time (ns) and wall-clock elapsed for high_rp/it2 and low_rp/it1, plus the last row of their droplets.csv. low_rp was expected before the 30 nm low member; say whether it is running, queued or stalled. Do not stop anything.
