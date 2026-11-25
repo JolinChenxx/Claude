@@ -1,1 +1,0 @@
-T033: accept the gross ratios. The override scales the single-shot removal (cu_removal_efficiency) by 1/3 and 3. DROP_M = removal − vapour mass, so its ratio is not exactly 1/3 or 3: your net 0.241 and 3.278 are the expected values. The card's wording was loose. Continue; nothing changes.
