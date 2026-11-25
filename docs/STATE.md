@@ -585,3 +585,4 @@ Updated: 2026-11-15
 - At high fluence even 10 nm droplets (31% evaporated by t_ref, 56% at 800 ns) give a decay much slower than v1n. The low-fluence 10 nm result (decay near v1n) does not carry over.
 - Production: high_a30n evaporated 2.26 of 6.29 ng; low_a100n 0.65 of 5.19 ng. Imaging pending. RP imaging first.
 - 14:05 high_a100n production: evaporated 1.21 of 6.29 ng (19%) by 800 ns; residual 0.032%. Scan evaporated fraction at 800 ns (high): 10 nm 56%, 30 nm 36%, 100 nm 19%, melt-depth 4.5 µm 0.37%.
+- 14:37 T030 low_rp production done (1300 ns, rc 0): evaporated 0.020 ng of 5.19 ng (0.4%), airborne 5.17 ng. Energy residual 0.57% — larger than v1n (0.004%) and the other T030 members (≤ 0.13%); within the 1% acceptance but recorded. All 8 T030 productions done. T031 claimed and built (15 tests pass).
