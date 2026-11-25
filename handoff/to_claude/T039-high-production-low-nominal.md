@@ -1,0 +1,1 @@
+T039 production finished both members (high ledger and rank warnings in high_wf/it2/completion.json). Low nominal imaging, peak and shock/core/emission are archived; 28 ns and high imaging remain pending. See tasks/T039.report.md.
