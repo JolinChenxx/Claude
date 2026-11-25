@@ -93,3 +93,4 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 ## 2026-11-25 17:40 — T023 G1 closed as partial (standing stop authorization)
 - high_thin_G1/it0 lost its wrapper at 650/800 ns, with no exit code; the data is intact. It is closed as partial and not rerun, because v1k is superseded and grid convergence is already established with v1n (T028). Data kept. Codex informed via handoff/to_codex/T023-decision.md.
 - T031 high imaging (v1s, v1rs) also ended without exit codes in the same period and is being retried. Possible common cause: process loss on the workstation around 16:40–17:00. Watch for a repeat.
+- 2026-11-25 18:00: workstation Codex moved to T3 thread bb6dbdd0-0059-488e-8ea0-ef8cdfbbe96f ("Run T001 Plasma Simulation Task"), automated pass at :00 and :30 (D:/sim_tools/CollaboratePlasma-pass.md). The old import thread is stale.
