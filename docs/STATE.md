@@ -586,3 +586,7 @@ Updated: 2026-11-15
 - Production: high_a30n evaporated 2.26 of 6.29 ng; low_a100n 0.65 of 5.19 ng. Imaging pending. RP imaging first.
 - 14:05 high_a100n production: evaporated 1.21 of 6.29 ng (19%) by 800 ns; residual 0.032%. Scan evaporated fraction at 800 ns (high): 10 nm 56%, 30 nm 36%, 100 nm 19%, melt-depth 4.5 µm 0.37%.
 - 14:37 T030 low_rp production done (1300 ns, rc 0): evaporated 0.020 ng of 5.19 ng (0.4%), airborne 5.17 ng. Energy residual 0.57% — larger than v1n (0.004%) and the other T030 members (≤ 0.13%); within the 1% acceptance but recorded. All 8 T030 productions done. T031 claimed and built (15 tests pass).
+
+### 2026-11-25 15:05 — T030 high_rp (v1r, reported member) imaging
+- high_rp it2: L500/L300 0.747, L730/L300 0.709; σz/σx 0.57; S1 70 µm, 0/20. Practically identical to T023 v1k (no droplets: 0.746 / 0.667 / 0.58), as PREREG v1r (b) predicted. T026 v1n: 0.302 / 0.156 / 0.64.
+- v1r summary (high): with physically sized droplets (melt depth) the droplet sink vanishes and the plume reverts to the no-droplet case. The v1n decay needs ≲ 30 nm ejecta, which neither the model nor the paper establishes. Figures redrawn with the v1r row.
