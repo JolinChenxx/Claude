@@ -110,3 +110,5 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 ## 2026-11-26 10:50 — Focus: high fluence (user)
 - User: the targets are the high-fluence brightness trend and the plume size; low fluence is reference only. Low-fluence work (T038) finishes but gets no new cards. New physics is judged on the high-fluence metrics: L(t)/L(150) against the experiment, and σx, σz, zc against the experiment.
 - First step is a diagnostic, T041: the cloud smoke run puts 99.8% of the laser absorption in the Cu vapour within 4–8 µm of the face, while the experiment's luminous centroid is about 200 µm up at 50 ns. Hypothesis: the model lacks an absorption front that climbs the beam (laser-supported absorption in shock-heated air or in the expanding plume). The production-grid deposition profile decides it.
+
+- 2026-11-26 ~10:30 — High-fluence comparisons use the declared defocus scenario `high` (500 µm), selected by the instrument-only calibration on the 0–30 ns frames (PREREG_v0 "S4 defocus calibration"). Brightness trends at high fluence are normalised at 300 ns because the 50–160 ns experimental frames are saturated. (Claude, under full authority.)

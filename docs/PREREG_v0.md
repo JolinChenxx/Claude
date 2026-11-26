@@ -258,3 +258,10 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - the shock against Fig. 3d (Δ = 28 ns, and Δ refitted for this scenario reported separately);
   - σx, σz/σx and the L(t)/L(150) trend.
 - **Expected:** ignition about 10 ns earlier. The low-fluence coupling deficit (about 3×) is not expected to close fully.
+
+## S4 defocus calibration (high fluence), recorded 2026-11-26 ~10:30 (UTC+8)
+- **What:** the imaging defocus D is an instrument property, not a model parameter. It is fixed from the earliest high-fluence frames (0 / 20 / 30 ns, σx = 108 / 113 / 117 µm), where the emitting region is far smaller than the blur disc and the frame is PSF-dominated.
+- **Method:** re-blur the unblurred model frames for D = 250…600 µm and match σx of those three frames only. Result: D ≈ 475–500 µm for both T031 (v1rs, Δ = 28 ns) and T039 (waveform). That equals the declared `high` scenario (500 µm), so the declared value is used; no new value is introduced.
+- **Low fluence:** its 10 ns frame (σ = 33 µm) is consistent with the declared `low` scenario (0 µm). The two series use different settings, consistent with the two series being recorded separately.
+- **Transparency:** the d500 images and later-time metrics of T031/T039 had already been computed as part of the declared scenario bracket before this calibration. The calibration uses only the three earliest frames, and the later-time agreement is not used to choose D.
+- **Experimental saturation:** high-fluence frames at 50–160 ns are saturated (n_sat 17–139, peak 255); 180 ns onward is unsaturated. The experimental L at 50–160 ns is therefore a lower bound, and brightness-trend comparisons are normalised at 300 ns (L(t)/L(300)), not at 150 ns.

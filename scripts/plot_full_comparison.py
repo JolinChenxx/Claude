@@ -129,12 +129,21 @@ def occlude(img, srow):
 
 OCCLUDE = False
 GAIN_MODE = "tref"
+DEFOCUS = {"high": "baseline", "low": "baseline"}   # --defocus-high high: S4 instrument calibration (PREREG 2026-11-26)
+
+
+def _ser(path):
+    return "high" if "high" in str(path).replace("\\", "/").split("results/")[-1] else "low"
+
+
+def dfoc_of(path):
+    return P.get("defocus_um_scenarios")[DEFOCUS[_ser(path)]]
 
 
 def model_frames(path, mode, srow, L_ref):
     d = np.load(path / IMG / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
-    dfoc = P.get("defocus_um_scenarios")["baseline"]
+    dfoc = dfoc_of(path)
     fr = {int(t): (occlude(camera.blur(place(x, srow), um, dfoc), srow) if OCCLUDE else camera.blur(place(x, srow), um, dfoc)) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all()}
     if not fr:
         return {}, 0.0
@@ -181,11 +190,11 @@ def frames_figure(series, mode, srow):
             if c == 0:
                 a.set_ylabel(lab, fontsize=7.5, rotation=0, ha="right", va="center")
     src = "Fig. 2a 作者标注的 Air/Copper 线" if series == "low" else "由低通量标注线换算（仅供参考）"
-    fig.suptitle(f"{'高' if series == 'high' else '低'}通量逐帧对照（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}，散焦 250 µm，"
+    fig.suptitle(f"{'高' if series == 'high' else '低'}通量逐帧对照（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}，散焦 {P.get('defocus_um_scenarios')[DEFOCUS[series]]:g} µm，"
                  f"{'模型各行按自身最亮帧定增益（不饱和），实验为原 8 位' if GAIN_MODE == 'peak' else ('模型各行按 150 ns 帧最亮像素 = 255 定增益，实验为原 8 位' if GAIN_MODE == 'peak150' else '各行在 300 ns 单独定增益')}，同一 0–255 色标{'；靶面遮挡（刀口）已加' if OCCLUDE else ''}{'；模型时间 = 实验标签 + 28 ns（t0 由激波确定）' if IMG != 'image_v2' else ''}）\n虚线为靶面（{src}）；* 0–60 ns 不评判；比例 {um:.2f} µm/px",
                  fontsize=10)
     fig.tight_layout(rect=(0.04, 0, 1, 0.92), h_pad=0.3, w_pad=0.2)
-    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}{'_unsat' if GAIN_MODE == 'peak' else ''}{'_g150' if GAIN_MODE == 'peak150' else ''}{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}.png"
+    out = ROOT / f"results/figures/full_frames_{series}{'_occluded' if OCCLUDE else ''}{'_unsat' if GAIN_MODE == 'peak' else ''}{'_g150' if GAIN_MODE == 'peak150' else ''}{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}{'_d' + str(int(P.get('defocus_um_scenarios')[DEFOCUS[series]])) if DEFOCUS[series] != 'baseline' else ''}.png"
     fig.savefig(out, dpi=170)
     plt.close(fig)
     return out
@@ -236,7 +245,7 @@ def geometry_figure(series, mode, srow):
 def lift_curve(path, mode):
     d = np.load(path / IMG / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
-    dfoc = P.get("defocus_um_scenarios")["baseline"]
+    dfoc = dfoc_of(path)
     t_, l_ = [], []
     for t, x in zip(d["t_ns"], d["radiance"]):
         if np.isfinite(x).all() and x.max() > 0:
@@ -259,7 +268,7 @@ def curves_figure(mode, srows):
             if p is None:
                 continue
             for md, ls in ((mode, "-"), ("thin" if mode == "sa" else "sa", ":")):
-                f = p / IMG / f"metrics_b_{md}_baseline.csv"
+                f = p / IMG / f"metrics_b_{md}_{DEFOCUS[series]}.csv"
                 if f.exists():
                     m = pd.read_csv(f)
                     a.semilogy(m.t_ns, m.L_radiance / np.interp(T_REF, m.t_ns, m.L_radiance), ls, color=COL[key], lw=1.8 if ls == "-" else 1.1,
@@ -292,7 +301,7 @@ def curves_figure(mode, srows):
         for key, p in MEMBERS[series].items():
             if p is None:
                 continue
-            f = p / IMG / f"metrics_b_{mode}_baseline.csv"
+            f = p / IMG / f"metrics_b_{mode}_{DEFOCUS[series]}.csv"
             if f.exists():
                 m = pd.read_csv(f)
                 a.plot(m.t_ns, np.sqrt(m.sigma_x2_um2), "-", color=COL[key], lw=1.8, label=f"{LAB[key]} σx")
@@ -302,7 +311,7 @@ def curves_figure(mode, srows):
         a.legend(frameon=False, fontsize=6.5, ncol=2)
     fig.suptitle(f"全过程仿真与实验对照：亮度衰减、发光峰高度、发光区尺寸（波段 b，{'自吸收' if mode == 'sa' else '光学薄'}；实线为主模式）", fontsize=11)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
-    out = ROOT / f"results/figures/full_curves{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}.png"
+    out = ROOT / f"results/figures/full_curves{'_' + IMG.split('_')[-1] if IMG != 'image_v2' else ''}{'_dhigh' if DEFOCUS['high'] != 'baseline' else ''}.png"
     fig.savefig(out, dpi=160)
     plt.close(fig)
     return out
@@ -341,10 +350,12 @@ def main(argv=None):
     ap.add_argument("--mode", default="sa", choices=["sa", "thin"])
     ap.add_argument("--gain", default="tref", choices=["tref", "peak", "peak150"], help="display option: gain at t_ref (default) or no-saturation gain per row")
     ap.add_argument("--occlude", action="store_true", help="display option: knife-edge occlusion of the image below the face")
+    ap.add_argument("--defocus-high", default="baseline", choices=["baseline", "high", "low"], help="defocus scenario for the high series")
     ap.add_argument("--image-dir", default="image_v2", help="imaging subfolder, e.g. image_v2_t28 (t0-aligned)")
     a = ap.parse_args(argv)
     global OCCLUDE, GAIN_MODE, IMG, MEMBERS
     IMG = a.image_dir
+    DEFOCUS["high"] = a.defocus_high
     if IMG != "image_v2":
         MEMBERS = members()
     OCCLUDE = a.occlude
