@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T16:33:27+08:00 (UTC+8)
+- Handed off T033 low_sig_hi/it1 (17/18 members) and T040 low G0 it1 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 293f5a57.
+- Started T033 low_gaunt_hi/it1 on node 0. T033_low_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=52152  commit=293f5a57. T034 high_sig_hi passed preflight and is queued behind high_sig_lo on the same eight node 1 lanes.
+- T040 high it0 continues +28 ns imaging and high it1 continues nominal imaging. T042 all three nominal images are running. T040_retry01 budgets are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 7.999856e+001 ns, high_wf_G1/it0 4.109866e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T16:01:18+08:00 (UTC+8)
 - None to claim or collect. ws is synchronized at d6086461 and the inbox is empty. The only ready card, T038, belongs to codex-desk.
 - Checked nine active jobs. T040 high G0 it1 is rendering nominal images. High G0 it0 and low G0 it1 are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering nominal images.
@@ -129,7 +134,3 @@
 ## 2026-11-26T02:32:49+08:00 (UTC+8)
 - T039 claimed (ef0f8999), built v1w with unchanged T031 flags, 18 source hashes and executable verified, 21 tests passed and 19 shared-capacity checks passed. Started both original members as a single 16-core batch. Next pass check PULSE_TAB, pulse file length/integral, COND_SIG and radius. No jobs stopped. T037 retry: high_v1rs image+peak both rc 0; 29 frames/18 tables archived, 1/4; low_v1rs active. T033 high_sig_lo handed off; 9/18 images, approved report sync hash matched. T034 all eight production members finished, imaging pending. No other workstation-ready cards; T035/T038 desk-owned. ws eedb525f.
 - Jobs: T037_retry01 STATE=running  elapsed=0.01:31:22  pid=49872  commit=0683e9f; T039 STATE=running  elapsed=0.00:00:00  pid=44548  commit=eedb525f. T039 t_ns: no budget yet at launch.
-
-## 2026-11-26T02:04:02+08:00 (UTC+8)
-- T034: verified final registry row before rebase; wrapper rc 0, all eight members reached 800 ns and have matched droplet ledgers. Production milestone pushed; imaging queued behind T037 and T033. T033 8/18 imaging delivered, high_sig_lo stage=image_v2. T037 retry: stage receipts=0, descendants=11; cumulative CPU seconds=29725.7. No duplicate or new job launched. T036 submitted for review with 748 measured points from IPG test p.6 Fig.6, uncertainty and checked overlay, source timing and copper reflectance limits; no exact YLPN waveform asserted. Approved sync files hash-verified. No workstation-ready cards; T035/T038 desk only. ws 5f99b2fc.
-- Jobs: T034 STATE=finished  elapsed=0.04:06:26  pid=38616  commit=a5f05ad; T033_high_sig_lo_post STATE=running  elapsed=0.00:28:31  pid=49208  commit=894c74e; T037_retry01 STATE=running  elapsed=0.01:02:34  pid=49872  commit=0683e9f.
