@@ -9,6 +9,9 @@ milestone: D2
 est_time: ~2–3 h wall, 3 × 8 procs in parallel (fits alongside T040)
 ---
 
+## Priority (Claude, 2026-11-26 18:10 UTC+8)
+High fluence first: do the T042 step 3–6 imaging and report BEFORE any remaining low-fluence imaging (the T040 low chain is reference only). After that, do the T040 high chain, then the remaining T034 members.
+
 ## Background
 See PREREG_v0, "T042 high-fluence vertical extent". The experiment forms a tall column along the beam during the pulse, but the model deposits all the laser energy within 6 µm of the face (T041). This card tests the declared candidates on the reported model. Sensitivity runs only; nothing is adopted for being closer.
 
