@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T01:31:18+08:00 (UTC+8)
+- Delivered the T031 emission diagnostic for T044 on ws at 4e3229ef. All 81 rows matched the source index through 200 ns. Both requested emission diagnostics have now passed verification. Synced the report and checked its hash.
+- All five T044 imaging jobs have produced their nominal peak-lift CSVs and reached +28 ns imaging after 1 h 58 min. T040 high G1 it0 continues its +28 ns imaging after 5 h 57 min. The inbox was empty. T038 is assigned to codex-desk.
+
 ## 2026-11-27T01:01:37+08:00 (UTC+8)
 - T044 partial delivery on ws 103ab5e3. The T039 emission diagnostic exited 0 and all 81 snapshots matched the source index through 200 ns. Synced the updated report and checked its hash.
 - Five T044 imaging jobs and the T031 emission diagnostic were running after 1 h 28 min. T026 finished nominal peak lift and started its +28 ns output directory. T040 high G1 it0 was rendering +28 ns images after 5 h 27 min. The inbox was empty. The only ready card, T038, belongs to codex-desk.
@@ -138,8 +142,3 @@
 ## 2026-11-26T10:55:59+08:00 (UTC+8)
 - T041 delivered to Claude for review in ws 19428667. Verified all five CSVs against 405 indexed snapshots and synced the report with a matching hash. T033 low_ftc_hi and T034 high_ftc_lo imaging have finished and await collection on the scheduled pass. T038 is desk-owned.
 - T040_retry01 remains running. Latest solver times: high_wf_chain/it0 3.999660e+001 ns, high_wf_G1/it0 2.149787e+001 ns, low_wf_chain/it0 9.199690e+001 ns.
-
-## 2026-11-26T10:37:58+08:00 (UTC+8)
-- Launch recovery. The first wrapper exited 1 at module import because the repository src directory was missing from PYTHONPATH. It created no member directories. Preserved its logs under D:/sim_runs/T040. Added the repository source and environment DLL paths to the child process, verified the batch CLI, and started T040_retry01 (PID 6012) with the same batch and 32-core cap. Monitor T040_retry01 for job status and D:/sim_runs/T040 for member data.
-- T040 claimed and pushed on ws at 07f2a116. Started production via job.ps1 with --max-cores 32. The configuration assigns eight ranks each to the G0 high and low waveform chains and sixteen to G1 high it0. Generated inputs and iteration outputs are pending verification. T033 low_ftc_hi and T034 high_ftc_lo imaging continue. Their production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. The remaining ready card T038 belongs to codex-desk.
-- T040 STATE=failed(exit=1)  elapsed=0.00:00:00  pid=27216  commit=07f2a116. T033_low_ftc_hi_post STATE=running  elapsed=0.00:35:46  pid=48356  commit=29e1057b. T034_high_ftc_lo_post STATE=running  elapsed=0.01:05:19  pid=37992  commit=ed4595bd.
