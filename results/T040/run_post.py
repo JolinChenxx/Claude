@@ -1,4 +1,4 @@
-"""Run the T039 waveform imaging sequence against one completed T040 iteration."""
+"""Run the T039 waveform imaging sequence against one completed T040 or T042 iteration."""
 import argparse
 import csv
 import hashlib
@@ -17,15 +17,20 @@ STAGES = ['image_v2', 'peak_lift', 'shock_track', 'core_energy', 'emission', 'im
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('member', choices=['low_wf_chain', 'high_wf_chain', 'high_wf_G1'])
+    parser.add_argument('member')
+    parser.add_argument('--batch', choices=['T040', 'T042'], default='T040')
     parser.add_argument('iteration', choices=['it0', 'it1', 'it2'])
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
+    allowed = {'T040': ('low_wf_chain', 'high_wf_chain', 'high_wf_G1'),
+               'T042': ('high_bd', 'high_bdwf', 'high_tau35')}
+    if args.member not in allowed[args.batch]:
+        parser.error(f'Unknown member for {args.batch}: {args.member}')
     series = args.member.split('_')[0]
-    raw = RUNS / 'T040' / args.member / args.iteration
-    job = RUNS / f'T040_{args.member}_{args.iteration}_post'
+    raw = RUNS / args.batch / args.member / args.iteration
+    job = RUNS / f'{args.batch}_{args.member}_{args.iteration}_post'
     with (ROOT / 'results/run_registry.csv').open(newline='') as registry:
-        row, = [r for r in csv.DictReader(registry) if r['dir'] == str(raw) and r['batch'] == 'T040']
+        row, = [r for r in csv.DictReader(registry) if r['dir'] == str(raw) and r['batch'] == args.batch]
     assert row['returncode'] == '0' and not os.getenv('LIPSIM_OVERRIDES')
     assert hashlib.sha256((raw / 'pluto.ini').read_bytes()).hexdigest().startswith(row['ini_sha256'])
     end_time = float((raw / 'budget.csv').read_text().splitlines()[-1].split(',')[0])
