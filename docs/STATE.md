@@ -642,3 +642,4 @@ Updated: 2026-11-15
   - Refitted shock offsets: high 7 ns (Gaussian 28 ns); low 36 ns (Gaussian 53 ns). The front-loaded waveform explains most of the t0 discrepancy physically and is the largest morphology gain so far. It is a scenario only, because the waveform is not the paper laser's.
   - Data request: the measured YLPN 60 ns waveform.
 - 07:30 T039 done (both fluences, nominal and +28 ns imaging, shock diagnostics).
+- 09:05 T038 low_bd (v1m avalanche + v1rs, desk it0): ignition 48.5 against 54.5 ns; E_gas_abs at 150 ns 50.7 against 48.9 µJ; σx 95 against 92; shock ratio (Δ = 28) 1.27. The avalanche hardly helps the low-fluence coupling, as before.
