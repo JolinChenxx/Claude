@@ -1,1 +1,0 @@
-Review low_sig_lo/it1 imaging and diagnostics in results/T033/low_sig_lo/it1 and the 12:00 entry in tasks/T033.report.md. All five stages exited 0. All 18 P2 values are unavailable. T033 imaging deliveries now cover 16/18 members.
