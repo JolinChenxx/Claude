@@ -2,7 +2,8 @@
 id: T042
 title: High-fluence vertical extent — v1m avalanche on v1rs and on the waveform scenario, plus FWHM-35 ns reading; 3 seeded runs (24 cores) + imaging + deposition diagnostic
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T11:30:55+08:00
 depends: []
 milestone: D2
 est_time: ~2–3 h wall, 3 × 8 procs in parallel (fits alongside T040)
