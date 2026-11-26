@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T00:00:55+08:00 (UTC+8)
+- Card claimed: none. Synced ws at cd55086e. The inbox is empty. T038 is the only ready card and belongs to codex-desk.
+- T040 high G1 it0 (PID 39188) is rendering nominal images after 4 h 27 min. All seven T044 jobs are running after 28 min: imaging for T026, T031, T039, T040 and T042, and emission diagnostics for T031 and T039. All eight stderr logs were empty at inspection.
+
 ## 2026-11-26T23:32:36+08:00 (UTC+8)
 - T044 table build exited 0 in 792.8 s. Verified matching v1c and v1c2 hashes for eos.bin and opt.bin. Read nion_z4 and nion_z5 from pop.bin. Pushed the table report to ws at cd55086e.
 - Started paired nominal and +28 ns imaging with peak lift for T031, T039, T040, T042 and T026 (eight workers per run), and one emission diagnostic each for T031 and T039. All seven jobs use the source snapshot at a66bc00e and v1c2 tables.
@@ -137,7 +141,3 @@
 ## 2026-11-26T10:02:11+08:00 (UTC+8)
 - T033 low_A_hi passed all five stage checks. Verified 30 labels, recorded nine unavailable P2 estimates and compared with T026 low it1. Pushed handoff and verified report sync. T033 now has 14/18 imaging deliveries. Started low_ftc_hi on node 0 with eight workers (production 1.300000e+003 ns). T034 high_ftc_lo remains in image_v2 on node 1 (production 8.000000e+002 ns, 2/8 delivered). Only ready card T038 belongs to the desk. ws 29e1057b.
 - T033_low_ftc_hi_post STATE=running  elapsed=0.00:00:00  pid=48356  commit=29e1057b. T034_high_ftc_lo_post STATE=running  elapsed=0.00:29:33  pid=37992  commit=ed4595bd.
-
-## 2026-11-26T09:32:39+08:00 (UTC+8)
-- T034 high_A_hi accepted and handed off. Wrapper and five stages returned 0. Verified 29 frame labels and same-seed T031 comparison. All 18 unavailable P2 values preserved. Report sync hash matched. T034 imaging deliveries 2/8. Launched high_ftc_lo on node 1 with 8 workers (production final 8.000000e+002 ns). T033 low_A_hi continues on node 0 (production final 1.300000e+003 ns, 13/18 delivered). The only ready card T038 belongs to the desk. ws ed4595bd.
-- T034_high_ftc_lo_post STATE=running  elapsed=0.00:00:00  pid=37992  commit=ed4595bd. T033_low_A_hi_post STATE=running  elapsed=0.00:31:15  pid=35640  commit=7b2fe397.
