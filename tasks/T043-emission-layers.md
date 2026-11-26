@@ -2,7 +2,7 @@
 id: T043
 title: High-fluence emission-height decomposition (diagnostic) — scripts/emission_layers.py on three existing runs
 owner: codex
-status: review
+status: done
 started: 2026-11-26T21:30:52+08:00
 depends: []
 milestone: D2
