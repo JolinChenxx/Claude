@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T11:32:34+08:00 (UTC+8)
+- Claimed T042 on ws at 8bbc5264. The first wrapper exited 1 while reading the UTF-8 YAML with the Windows GBK default, before creating any member. Retained its logs, set PYTHONUTF8=1 and launched T042_retry01 with the same batch at 24 MPI ranks. STATE=running  elapsed=0.00:00:42  pid=50076  commit=8bbc5264. Generated inputs at this check: high_bd input pending / high_bdwf input pending / high_tau35 input pending.
+- T040_retry01 running. Latest budgets: high_wf_chain/it0 1.404865e+002 ns, high_wf_G1/it0 4.299896e+001 ns, low_wf_chain/it0 1.300000e+003 ns. The low it0 solver reached 1300 ns and its registry row arrived during this pass. The it1 directory exists. Low it0 imaging and the iteration handoff are pending.
+- T033 low_sig_lo/it1 and T034 high_ftc_hi/it2 are still running image_v2. T038 is ready on codex-desk.
+
 ## 2026-11-26T11:04:34+08:00 (UTC+8)
 - Delivered T033 low_ftc_hi/it1 (15/18) and T034 high_ftc_lo/it2 (3/8) on ws db16328b. Both members lack all 18 P2 estimates. Synced both reports and verified their SHA-256 hashes.
 - T034 high_ftc_hi/it2 (PID 40460) and T033 low_sig_lo/it1 (PID 48032) both started image_v2 in the background. The only ready card T038 belongs to codex-desk.
@@ -118,7 +123,3 @@
 ## 2026-11-25T22:00:42+08:00 (UTC+8)
 - WS preflight blocked for second pass: rebase refused dirty results/run_registry.csv (8 append-only T033 rows, rc 0 locally). Did not use stale inbox/card state or accept/archive results. Registry untouched. Recovery: preserve and commit verified rows only, then repeat pull. No card claimed.
 - Read-only: T033 STATE=running  elapsed=0.02:29:15  pid=49952  commit=9c6b07d; both first imaging wrappers finished, 5 stages each, awaiting formal verification. T034 gate finished; production job PID 38616 running, high_A_hi and high_A_lo have budgets. Latest recorded times (ns): T033/high_A_hi 8.000000e+002, T033/high_A_lo 8.000000e+002, T033/high_ftc_hi 8.000000e+002, T033/high_ftc_lo 8.000000e+002, T033/high_gaunt_hi 6.299988e+001, T033/high_rem_hi 8.000000e+002, T033/high_rem_lo 7.609865e+002, T033/high_sig_hi 5.849894e+001, T033/high_sig_lo 8.000000e+002, T033/low_A_hi 1.300000e+003, T033/low_A_lo 1.300000e+003, T033/low_ftc_hi 1.300000e+003, T033/low_ftc_lo 1.300000e+003, T033/low_gaunt_hi 1.136929e+003, T033/low_rem_hi 1.300000e+003, T033/low_rem_lo 5.279810e+002, T033/low_sig_hi 1.300000e+003, T033/low_sig_lo 1.300000e+003, T034/high_A_hi 2.699755e+001, T034/high_A_lo 3.099999e+001.
-
-## 2026-11-25T21:30:44+08:00 (UTC+8)
-- Sync blocked: git pull --rebase origin ws refused unstaged changes in results/run_registry.csv. Five new T033 rc=0 rows (low_ftc_lo, high_A_lo, low_sig_lo, low_sig_hi, low_ftc_hi) observed locally; no remote inbox or card state assumed, no acceptance or new claim. Left registry and running jobs intact. Next sync needs the append-only rows preserved before rebase.
-- Read-only status: T033 production PID 49952 active; imaging high_rem_hi/high_A_hi PIDs 25260/42828 active. T034 gate PID 49340 waiting; no T034 production job yet. Latest T033 budget times (ns): high_A_hi 8.000000e+002, high_A_lo 8.000000e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_gaunt_hi 2.799791e+001, high_rem_hi 8.000000e+002, high_rem_lo 7.239819e+002, high_sig_lo 8.000000e+002, low_A_hi 1.001991e+003, low_A_lo 2.657050e+002, low_ftc_hi 1.300000e+003, low_ftc_lo 1.300000e+003, low_gaunt_hi 5.449633e+001, low_rem_hi 4.997796e+001, low_rem_lo 5.749964e+001, low_sig_hi 1.300000e+003, low_sig_lo 1.300000e+003.
