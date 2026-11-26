@@ -127,6 +127,13 @@ def main(argv=None):
     ap.add_argument("--workers", type=int, default=1)
     a = ap.parse_args(argv)
     cfg = yaml.safe_load(a.config.read_text(encoding="utf-8"))
+    stages = (cfg.get("numerics") or {}).get("eos_stages")
+    if stages:  # v1u: extended charge ladder, seen by spawned workers through the environment
+        import os
+        os.environ["LIPSIM_EOS_STAGES"] = json.dumps(stages)
+        from lipsim.eos import mixture as mx
+        mx.STAGES.update(stages)
+        mx.species.cache_clear()
     a.out.mkdir(parents=True, exist_ok=True)
     repo = Path(__file__).resolve().parents[3]
     try:

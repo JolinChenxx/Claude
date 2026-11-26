@@ -1,0 +1,11 @@
+# Property-table configuration v1d (PREREG 2026-11-26 v1u): v0 grid with the same log10 T spacing extended to ~3e5 K,
+# and the Cu charge ladder extended to Cu IX with levels (bare Cu X top stage). Stages without a NIST levels file use
+# their ground level only (lower bound on Q).
+name: v1d
+eos:
+  species: [Cu, N, O, Ar]
+numerics:
+  eos_stages: {Cu: 9}                            # v1u: Cu I..IX with levels, bare Cu X top (charge-ladder completeness, not a fit)
+  log10_rho: {min: -5.0, max: 3.0, n: 81}       # kg/m^3
+  log10_T: {min: 2.30103, max: 5.475664, n: 160}  # 200 K .. 2.99e5 K, same node spacing as v0 (0.0199659)
+  Y_cu: [0.0, 0.001, 0.01, 0.03, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 0.9, 0.97, 0.99, 1.0]

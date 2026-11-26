@@ -308,3 +308,10 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
 - **Fix:** pop.bin carries nion_z1..5 (props.pop_fields), and band_image sums every nion_z it finds; old tables give the old result. The solver inputs (eos.bin, opt.bin) are unchanged, so no simulation is repeated, only re-imaged.
 - **Use:** this is a correctness fix, adopted whatever the outcome. All high-fluence production runs are re-imaged (image_v2c) and reported against the old images.
 - **Known companion defect, declared separately (v1u):** the Cu charge ladder stops at a bare Cu⁵⁺ (Q = 1), and the table ceiling is 150 kK. At 100–140 kK in the low-density plume, 15–69% of the Cu sits in that top stage, and the NIST IPs of Cu VI–IX (103–198 eV) are missing energy sinks. The plume temperature is therefore probably overestimated. v1u extends Cu to Cu IX (bare Cu X), with NIST levels where available and the ground level otherwise, and raises the table ceiling to 3×10⁵ K. It requires new tables and new simulations. It is declared now and run after the imaging fix.
+- **v1u implementation (2026-11-26 ~01:50 UTC+8 on 11-27, before any v1u run):**
+  - Table config configs/tables/v1d.yaml: numerics.eos_stages {Cu: 9}, with the log10 T spacing of v0 extended to 2.99×10⁵ K.
+  - mixture.species uses the NIST levels file of a stage when it exists, otherwise the ground level only (nist_io.read_ground_level, g = 2J+1), which is a lower bound on Q.
+  - scripts/fetch_nist.py now requests the Cu VI–IX levels.
+  - EOS check, Y = 1: e(0.02 kg/m³, 140 kK) goes from 4.3 to 8.0×10⁸ J/kg (Z̄ 4.69 → 6.58); e(0.2, 100 kK) rises 7%; at 1.5 kg/m³, 90 kK, and everywhere below 60 kK, it is unchanged. The change is therefore confined to the hot low-density plume.
+  - Runs (T045): v1rs high and the waveform scenario, seeded as T039, on tables v1d, imaged with v1d.
+  - Use: a completeness fix, adopted whatever the outcome.

@@ -1,0 +1,11 @@
+# T045: v1u (Cu charge ladder to Cu IX, table ceiling 3e5 K; PREREG 2026-11-26 v1u) on the reported model and the waveform scenario,
+# seeded as T039. Tables: D:/sim_runs/tables/v1d (configs/tables/v1d.yaml).
+name: T045
+pluto_exe: D:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1d
+root: D:/sim_runs/T045
+numerics:
+  runs:
+    - {id: high_v1rs_u, case: configs/cases/v1rs_high.yaml,  grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: high_wf_u,   case: configs/cases/v1rswf_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}

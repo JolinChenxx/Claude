@@ -11,6 +11,8 @@ atoms) have zero internal energy, so cold ambient air has e ≈ 5/2 R T and all 
 """
 from __future__ import annotations
 
+import json
+import os
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -20,15 +22,18 @@ from scipy.optimize import brentq
 
 from lipsim import params
 from lipsim.eos import saha
-from lipsim.eos.nist_io import read_ionization, read_levels
+from lipsim.eos.nist_io import read_ground_level, read_ionization, read_levels
 from lipsim.eos.saha import EV, H, K_B, M_E
 
 C_LIGHT = params.get("c")
 AMU = params.get("amu")
 NIST = Path(__file__).resolve().parents[3] / "data" / "atomic" / "nist"
-ROMAN = ["I", "II", "III", "IV", "V", "VI"]
+ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
 MASS_AMU = {"Cu": params.get("A_Cu"), **params.get("atomic_weights_air")}
 STAGES = {"Cu": 5, "N": 4, "O": 4, "Ar": 3}  # num: highest stage with NIST levels; the next one is a bare top stage
+# v1u (PREREG 2026-11-26): a table config may extend the ladder (eos.stages); passed to worker processes via the environment
+if os.environ.get("LIPSIM_EOS_STAGES"):
+    STAGES.update(json.loads(os.environ["LIPSIM_EOS_STAGES"]))
 CM1_TO_EV = H * C_LIGHT * 100 / EV  # math (cm^-1 -> eV)
 
 
@@ -37,7 +42,8 @@ def species(el: str, nist_dir: str = str(NIST)) -> saha.Species:
     d = Path(nist_dir)
     ie = read_ionization(d / f"{el}_ionization.csv")
     names = [f"{el} {ROMAN[k]}" for k in range(STAGES[el])]
-    lv = [read_levels(d / f"{n.replace(' ', '_')}_levels.csv", n) for n in names]
+    lv = [read_levels(d / f"{n.replace(' ', '_')}_levels.csv", n) if (d / f"{n.replace(' ', '_')}_levels.csv").exists()
+          else read_ground_level(d / f"{el}_ionization.csv", n) for n in names]
     return saha.Species(el, lv, [ie[n] for n in names], g_top=1.0)
 
 

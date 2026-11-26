@@ -114,6 +114,23 @@ def read_ionization(path: Path) -> dict[str, float]:
     return out
 
 
+def read_ground_level(path: Path, spectrum: str) -> Levels:
+    """Ground level only (E = 0, g = 2J+1 from the 'Ground Level' column of the ionisation table).
+    v1u fallback for a stage without a NIST levels file: a lower bound on its partition function."""
+    header, rows = read_rows(path)
+    iS, iG = _col(header, "Sp. Name"), _col(header, "Ground Level")
+    for r in rows:
+        if len(r) > max(iS, iG) and r[iS].strip() == spectrum:
+            j = r[iG].strip()
+            m = re.match(r"^\d+[SPDFGHIKLMN]\*?<?([0-9/]+)>?$", j)  # e.g. 5D<4>, 5D0, 2P*<3/2>
+            if m is None:
+                raise ValueError(f"{spectrum}: cannot parse ground level {j!r}")
+            jj = m.group(1)
+            g = float(2 * Fraction(jj) + 1)  # math
+            return Levels(spectrum, np.array([0.0]), np.array([g]), None, 1, 0)
+    raise KeyError(f"{spectrum}: no ground level in {path}")
+
+
 @dataclass
 class Lines:
     spectrum: str

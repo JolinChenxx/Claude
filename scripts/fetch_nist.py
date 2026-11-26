@@ -18,10 +18,10 @@ import urllib.request
 from pathlib import Path
 
 BASE = "https://physics.nist.gov/cgi-bin/ASD/"
-ROMAN = ["I", "II", "III", "IV", "V", "VI"]
+ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
 
 # element -> number of ionisation stages whose LEVELS are needed (neutral .. stage)
-LEVEL_STAGES = {"Cu": 5, "N": 4, "O": 4, "Ar": 3}
+LEVEL_STAGES = {"Cu": 9, "N": 4, "O": 4, "Ar": 3}  # v1u: Cu VI-IX added (PREREG 2026-11-26)
 # element -> stages whose LINES are needed for radiative cooling / in-band emission
 LINE_STAGES = {"Cu": 3, "N": 2, "O": 2, "Ar": 2}
 
