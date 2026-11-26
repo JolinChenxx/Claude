@@ -1,0 +1,1 @@
+T044 partial delivery. The corrected T039 emission diagnostic covers all 81 snapshots through 200 ns in results/T044/T039_high_wf_it2_emission.csv. Five imaging jobs and the T031 emission diagnostic were running at inspection.
