@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T19:33:28+08:00 (UTC+8)
+- T034 submitted for review on ws 9e660295. All eight solves and 40 postprocessing stages exited 0. Verified 224 archived products and 16 band-b frame hashes. All 144 P2 estimates were unavailable. The report includes comparisons against the same-seed T031 baseline.
+- T040 production finished with all six solves successful. The three high G0 iterations and high G1 it0 reached 800 ns, and both low G0 iterations reached 1300 ns. Delivered high G0 it1 imaging for both time offsets and verified all 47 archived files. Synced and hash-checked the T034 and T040 reports.
+- Started high G1 it0 imaging and diagnostics. T040_high_wf_G1_it0_post STATE=running  elapsed=0.00:00:00  pid=39188  commit=9e660295. High G0 it2 is rendering nominal images. The only ready card T038 belongs to codex-desk. Inbox empty.
+
 ## 2026-11-26T19:02:38+08:00 (UTC+8)
 - T042 submitted for review on ws 529bd7ee. All three members reached 800 ns. All 21 postprocessing stages passed and 141 archived files matched their source hashes. The final report includes the tau35 images and shock comparison over 21 observations within the simulated time span. Final report synced and hash-verified.
 - Started T040 high G0 it2 imaging and diagnostics. T040_high_wf_chain_it2_post STATE=running  elapsed=0.00:00:00  pid=40120  commit=529bd7ee. T040 high G0 it1 was rendering its +28 ns images. Both remaining T034 members were rendering nominal images.
@@ -133,7 +138,3 @@
 ## 2026-11-26T05:31:00+08:00 (UTC+8)
 - T039 low post finished, seven stages and wrapper rc 0. Verified 22 shifted products and rechecked 25 nominal hashes, 30 low labels, finite band-b radiance and model lifts. Handed off +28 ns low, report sync hash verified. High priority image_v2 continues on node 0; both solver budgets final (high 800 ns / low 1300 ns). T037 done per cloud. T033 high_gaunt_hi preflight passed and launched on freed node 1, 8 workers; 10/18 previously delivered. T034 queued after same-wave T033. No new workstation-ready card, T038 belongs to desk. ws c261dd4f.
 - Jobs: T033_high_gaunt_hi_post STATE=running  elapsed=0.00:00:01  pid=47788  commit=c261dd4f; T039_high_wf_post STATE=running  elapsed=0.00:29:11  pid=35792  commit=cabb438d; T039_low_wf_post STATE=finished  elapsed=0.01:58:13  pid=45376  commit=5df0b101.
-
-## 2026-11-26T05:01:50+08:00 (UTC+8)
-- ws push recovered: verified and committed one T039 high registry row, delivered the pending T037 (4/4, review) and T033 high_sig_hi (10/18 imaging) handoffs. T039 production rc 0 (high 800 ns, low 1300 ns); 1600 high budget/droplet rows matched, rank warnings preserved. Low nominal 30 band-b time labels, peaks and core/shock/emission verified and delivered; low shifted image running. Started priority high nominal/shifted imaging and diagnostics on freed node 0 (8 workers). All three report syncs hash verified; ws cabb438d. No workstation-ready card; T038 desk-owned. Remaining T033/T034 imaging queued behind T039.
-- Jobs: T039 STATE=finished  elapsed=0.02:28:59  pid=44548  commit=eedb525f; T039_high_wf_post STATE=running  elapsed=0.00:00:00  pid=35792  commit=cabb438d; T039_low_wf_post STATE=running  elapsed=0.01:29:03  pid=45376  commit=5df0b101.
