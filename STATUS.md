@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T09:01:23+08:00 (UTC+8)
+- T033 low_A_lo accepted: wrapper and five stages rc 0, 30 frame labels; 18 unavailable P2 and missing upper lift at 1120 ns retained. Same-iteration T026 comparison pushed, approved report sync hash verified. 13/18 delivered. Next T033 low_A_hi launched on freed node 0 (8 workers, production final 1.300000e+003 ns). T034 high_A_hi still imaging at inspection, previously delivered 1/8 (production endpoint 8.000000e+002 ns). No new workstation-ready card; T038 desk-owned. ws 7b2fe397.
+- Jobs: T033_low_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35640  commit=7b2fe397; T034_high_A_hi_post STATE=running  elapsed=0.01:00:15  pid=35768  commit=6b4c667b.
+
 ## 2026-11-26T08:30:49+08:00 (UTC+8)
 - None to start or collect. ws synchronized to 7c29f6bc; no registry changes or incoming handoff. T033_low_A_lo_post (PID 50104) and T034_high_A_hi_post (PID 35768) both running image_v2; zero completed stages at inspection. Production endpoints: T033 low_A_lo 1.300000e+003 ns; T034 high_A_hi 8.000000e+002 ns. Imaging deliveries remain 12/18 and 1/8 respectively. Both imaging slots occupied; only ready card T038 is desk-owned. No job launched or restarted.
 
@@ -117,7 +121,3 @@
 ## 2026-11-25T19:31:26+08:00 (UTC+8)
 - T031 final low_v1rs imaging finished at 19:06:49, all five stages rc 0; verified 30 frames per mode, 18 scenario tables, 30 peak rows and 131/521/12 diagnostic rows. All four deliveries complete; status review and final handoff pushed, report sync hash verified. T030 low_a100n imaging preflight passed and job launched on the released node-1 slot; high_a100n imaging still active.
 - T033 three variant builders exited 0. Verified per-file and override registry hashes, EOS byte-identical to v1c and three distinct optical products. 18-member preflight passed; launched original batch at the card-approved 56-core cap since T031 imaging completed. Generated inputs and budgets not yet verified. ws head 9c6b07d. T033 STATE=running  elapsed=0.00:00:00  pid=49952  commit=9c6b07d; T030_low_a100n_post STATE=running  elapsed=0.00:00:00  pid=34664  commit=9c6b07d; T030_high_a100n_post STATE=running  elapsed=0.00:30:11  pid=48768  commit=134391f. Inbox empty; ready T032 is for desk node only.
-
-## 2026-11-25T19:01:17+08:00 (UTC+8)
-- T031 high_v1rs/it2 imaging finished 18:48:21, wrapper and all five stages rc 0. Verified 29 frame times per band-b mode, 18 metric tables, 29 peak rows, diagnostics 81/321/12. Delivered on ws 134391f; synced report verified. Low_v1rs remains in image_v2. Launched T030 high_a100n on freed node-0 imaging slot after eight-worker preflight; first preflight shell lacked MinGit PATH; rerun with PATH succeeded. Low_a100n queued. Old T030 high_a30n wrapper PID reused by newer python; original rc=0 and delivery intact, no action.
-- T030_high_a100n_post STATE=running  elapsed=0.00:00:00  pid=48768  commit=134391f; T031_low_v1rs_post STATE=running  elapsed=0.01:10:44  pid=45944  commit=5c292a5; T033_v1c_sigen_lo STATE=running  elapsed=0.00:15:39  pid=49144  commit=311c388; T033_v1c_sigen_hi STATE=running  elapsed=0.00:15:38  pid=48468  commit=311c388; T033_v1c_gaunt15 STATE=running  elapsed=0.00:15:38  pid=26896  commit=311c388. All three T033 variant output folders still empty at initial check; no production launch before table validation. Inbox empty; T032 ready for desk node only.
