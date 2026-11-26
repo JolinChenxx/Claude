@@ -2,7 +2,8 @@
 id: T043
 title: High-fluence emission-height decomposition (diagnostic) — scripts/emission_layers.py on three existing runs
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T21:30:52+08:00
 depends: []
 milestone: D2
 est_time: ~5–15 min per run (single core each; run the three in parallel)
