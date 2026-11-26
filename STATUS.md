@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T09:32:39+08:00 (UTC+8)
+- T034 high_A_hi accepted and handed off. Wrapper and five stages returned 0. Verified 29 frame labels and same-seed T031 comparison. All 18 unavailable P2 values preserved. Report sync hash matched. T034 imaging deliveries 2/8. Launched high_ftc_lo on node 1 with 8 workers (production final 8.000000e+002 ns). T033 low_A_hi continues on node 0 (production final 1.300000e+003 ns, 13/18 delivered). The only ready card T038 belongs to the desk. ws ed4595bd.
+- T034_high_ftc_lo_post STATE=running  elapsed=0.00:00:00  pid=37992  commit=ed4595bd. T033_low_A_hi_post STATE=running  elapsed=0.00:31:15  pid=35640  commit=7b2fe397.
+
 ## 2026-11-26T09:01:23+08:00 (UTC+8)
 - T033 low_A_lo accepted: wrapper and five stages rc 0, 30 frame labels; 18 unavailable P2 and missing upper lift at 1120 ns retained. Same-iteration T026 comparison pushed, approved report sync hash verified. 13/18 delivered. Next T033 low_A_hi launched on freed node 0 (8 workers, production final 1.300000e+003 ns). T034 high_A_hi still imaging at inspection, previously delivered 1/8 (production endpoint 8.000000e+002 ns). No new workstation-ready card; T038 desk-owned. ws 7b2fe397.
 - Jobs: T033_low_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35640  commit=7b2fe397; T034_high_A_hi_post STATE=running  elapsed=0.01:00:15  pid=35768  commit=6b4c667b.
@@ -117,7 +121,3 @@
 ## 2026-11-25T20:01:37+08:00 (UTC+8)
 - T033 blocked for clarification, handoff 6984a63 and report sync verified. Seven generated inputs matched overrides, table and source hashes; two high-rem members missed the literal net DROP_M ratios (0.2407855 and 3.2776434). Gross ratios including vapour match 1/3 and 3. Existing 56-core job PID 49952 left running. First-wave budget times in ns: high_rem_lo 61.49815, high_rem_hi 64.99772, high_A_lo 61.99884, high_A_hi 61.49821, high_ftc_lo 61.49781, high_ftc_hi 61.99744, high_sig_lo 60.9991. Eleven runs await generated inputs.
 - T030 high/low 100 nm imaging still in image_v2 (PIDs 48768/34664); no new completed imaging delivery. T031 is done on ws. Inbox empty; only ready T032 is assigned to codex-desk.
-
-## 2026-11-25T19:31:26+08:00 (UTC+8)
-- T031 final low_v1rs imaging finished at 19:06:49, all five stages rc 0; verified 30 frames per mode, 18 scenario tables, 30 peak rows and 131/521/12 diagnostic rows. All four deliveries complete; status review and final handoff pushed, report sync hash verified. T030 low_a100n imaging preflight passed and job launched on the released node-1 slot; high_a100n imaging still active.
-- T033 three variant builders exited 0. Verified per-file and override registry hashes, EOS byte-identical to v1c and three distinct optical products. 18-member preflight passed; launched original batch at the card-approved 56-core cap since T031 imaging completed. Generated inputs and budgets not yet verified. ws head 9c6b07d. T033 STATE=running  elapsed=0.00:00:00  pid=49952  commit=9c6b07d; T030_low_a100n_post STATE=running  elapsed=0.00:00:00  pid=34664  commit=9c6b07d; T030_high_a100n_post STATE=running  elapsed=0.00:30:11  pid=48768  commit=134391f. Inbox empty; ready T032 is for desk node only.
