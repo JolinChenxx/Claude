@@ -2,7 +2,8 @@
 id: T044
 title: Imaging fix v2.1 (continuum from all ion charges) — rebuild tables as v1c2, verify solver tables unchanged, re-image the high-fluence production runs, rerun T043 diagnostic
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T23:00:46+08:00
 depends: []
 milestone: D2
 est_time: table build ~1 h (parallel), then imaging ~15 min per run
