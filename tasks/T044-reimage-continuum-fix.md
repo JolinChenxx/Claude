@@ -2,7 +2,7 @@
 id: T044
 title: Imaging fix v2.1 (continuum from all ion charges) — rebuild tables as v1c2, verify solver tables unchanged, re-image the high-fluence production runs, rerun T043 diagnostic
 owner: codex
-status: review
+status: done
 started: 2026-11-26T23:00:46+08:00
 depends: []
 milestone: D2
