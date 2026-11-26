@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T05:01:54+08:00 (UTC+8)
+- T045 high_v1rs_u and high_wf_u both reached 800 ns with solver and batch exit codes 0. Verified the v1d solver table hashes for both members. Pushed the two registry rows at b7e59d46 and the production report at d9c382a0.
+- Started four T045 background jobs. The two imaging jobs cover nominal and +28 ns images and peak lifts. The two diagnostic jobs cover shock tracking, laser deposition and emission layers. T040 high G1 it0 was rendering +28 ns images after 9 h 27 min. The inbox was empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-27T04:30:46+08:00 (UTC+8)
 - Card claimed this pass: none. Synced ws at 39c14654. The inbox was empty. The only ready card, T038, belongs to codex-desk.
 - Both T045 runs advanced. The latest budget times were 558.4456 ns for high_v1rs_u and 432.9882 ns for high_wf_u, each targeting 800 ns. T040 high G1 it0 was rendering +28 ns images after 8 h 57 min. Both jobs reported running with empty stderr logs.
@@ -131,8 +135,3 @@
 - None to claim or collect. The ws branch is synchronized at 69ab0297. The inbox is empty and the only ready card, T038, belongs to codex-desk.
 - Checked all six active jobs. T040 low G0 it0 is rendering the +28 ns images. T040 high G0 it0, low G0 it1 and T034 high_cond_lo/it2 are rendering their nominal images. T033 has delivered 16/18 members and T034 has delivered 4/8.
 - T040_retry01 and T042_retry01 continue production. The active solver budgets advanced since the 13:30 pass. Latest recorded times are T040/high_wf_chain/it0 8.000000e+002 ns, T040/high_wf_chain/it1 1.359720e+002 ns, T040/high_wf_G1/it0 1.644975e+002 ns, T040/low_wf_chain/it0 1.300000e+003 ns, T040/low_wf_chain/it1 1.300000e+003 ns, T042/high_bd/it2 7.254800e+002 ns, T042/high_bdwf/it2 5.514939e+002 ns, T042/high_tau35/it2 7.399839e+002 ns.
-
-## 2026-11-26T13:31:06+08:00 (UTC+8)
-- None to claim or collect. The ws branch is synchronized at 69ab0297 and the inbox is empty. The only ready card, T038, belongs to codex-desk.
-- Checked all six active wrappers. T040 low G0 it0 completed 5/7 postprocessing stages with exit code 0 and is rendering the +28 ns images. T040 high G0 it0, low G0 it1 and T034 high_cond_lo/it2 are rendering their nominal images. T033 has 16/18 imaging deliveries and T034 has 4/8.
-- T040_retry01 and T042_retry01 continue solving. Latest budget times are T040/high_wf_chain/it0 8.000000e+002 ns, T040/high_wf_chain/it1 7.299872e+001 ns, T040/high_wf_G1/it0 1.159880e+002 ns, T040/low_wf_chain/it0 1.300000e+003 ns, T040/low_wf_chain/it1 1.300000e+003 ns, T042/high_bd/it2 4.154715e+002 ns, T042/high_bdwf/it2 3.409521e+002 ns, T042/high_tau35/it2 5.589524e+002 ns.
