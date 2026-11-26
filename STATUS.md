@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T15:00:56+08:00 (UTC+8)
+- No workstation card to claim or completed job to collect. ws synchronized at c6fef67b. The inbox is empty. T038 belongs to codex-desk.
+- Checked eight running jobs. T040 high G0 it0 and low G0 it1 are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering their nominal images. T033 has delivered 16/18 members and T034 has delivered 5/8.
+- T040_retry01 continues production. Latest solver times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 6.805000e+002 ns, high_wf_G1/it0 2.814803e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns.
+
 ## 2026-11-26T14:34:45+08:00 (UTC+8)
 - T034 high_cond_lo/it2 delivered (5/8). All five stages passed. All 18 P2 estimates are missing. T040 low G0 it0 delivered with all seven stages done and both time conventions verified. Both reports synced with SHA-256 checks. T033 stands at 16/18.
 - T042 production finished. Three registry rows verified, all rc 0 at 800 ns. Archived budgets, inputs and deposition CSVs. The report contains ignition, gas absorption, half-peak z90 range and integrated Cu fraction. Imaging is pending. ws at 66dd1b9d.
@@ -126,7 +131,3 @@
 ## 2026-11-26T01:01:48+08:00 (UTC+8)
 - T034 verified and committed the new high_cond_lo registry row before rebase; archived production and 1590 matching budget/droplet rows at 800 ns (4/8 production). T037 incoming approval followed: original failure preserved, known empty output and all four original commands preflighted; launched T037_retry01 on node 0, no other job restarted. Four-worker fallback only if BrokenProcessPool recurs. T033 low_rem_lo imaging on node 1 continues (7/18 delivered). T036 not advanced in this pass ending after priority launch. No workstation-ready card; T035 and T038 belong to desk. ws ff549c7.
 - Jobs: T033_low_rem_lo_post STATE=running  elapsed=0.00:28:35  pid=44424  commit=fa3e899; T034 STATE=running  elapsed=0.03:04:13  pid=38616  commit=a5f05ad; T037_retry01 STATE=running  elapsed=0.00:00:21  pid=49872  commit=0683e9f. T034 latest t_ns: high_A_hi=8.000000e+002, high_A_lo=8.000000e+002, high_cond_lo=8.000000e+002, high_ftc_hi=1.254925e+002, high_ftc_lo=6.334624e+002, high_gaunt_hi=5.654398e+002, high_sig_hi=5.989362e+002, high_sig_lo=8.000000e+002.
-
-## 2026-11-26T00:33:13+08:00 (UTC+8)
-- T033 delivered high_ftc_hi, report sync hash verified (7/18 images), launched low_rem_lo on its freed node 1. Node 0 reserved for T037: first attempt rc 1 before first frame, original evidence preserved; fixed child DLL PATH, real table/grid 8-worker spawn probe passed. Asked Claude for fresh retry authorization, no stop/restart. T034 all 8 inputs checked and 3 production ledgers archived; both launch and completion registry hashes verified independently. T036 comparable waveform identified as different duration, local download 403; digitization pending. No new workstation-ready cards; T035 desk-only. ws fa3e899.
-- Jobs: T033_low_rem_lo_post STATE=running  elapsed=0.00:00:00  pid=44424  commit=fa3e899; T034 STATE=running  elapsed=0.02:35:38  pid=38616  commit=a5f05ad; T037 STATE=failed(exit=1)  elapsed=0.00:30:37  pid=39268  commit=46419db. T034 latest t_ns: high_A_hi=8.000000e+002, high_A_lo=8.000000e+002, high_cond_lo=6.909473e+002, high_ftc_hi=6.649865e+001, high_ftc_lo=2.934974e+002, high_gaunt_hi=2.369952e+002, high_sig_hi=2.209761e+002, high_sig_lo=8.000000e+002.
