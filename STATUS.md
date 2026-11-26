@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T19:02:38+08:00 (UTC+8)
+- T042 submitted for review on ws 529bd7ee. All three members reached 800 ns. All 21 postprocessing stages passed and 141 archived files matched their source hashes. The final report includes the tau35 images and shock comparison over 21 observations within the simulated time span. Final report synced and hash-verified.
+- Started T040 high G0 it2 imaging and diagnostics. T040_high_wf_chain_it2_post STATE=running  elapsed=0.00:00:00  pid=40120  commit=529bd7ee. T040 high G0 it1 was rendering its +28 ns images. Both remaining T034 members were rendering nominal images.
+- T040_retry01 solver times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 8.000000e+002 ns, high_wf_G1/it0 7.809641e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T18:47:12+08:00 (UTC+8)
 - Retried the pass and synchronized ws. Delivered T042 high_bd and high_bdwf. Each passed seven stages, covered 29 frame times at both offsets and had 47 archived files verified. The updated report was synced and hash-checked. High_tau35 was still rendering its +28 ns images at inspection.
 - T040 high G0 it2 reached 800 ns with solver exit code 0. Committed its registry row and passed preflight for imaging. Queued it after the T042 report per the 18:10 priority change. High G0 it1 was rendering +28 ns images. T034 high_sig_hi and high_gaunt_hi were rendering nominal images.
@@ -132,7 +137,3 @@
 ## 2026-11-26T05:01:50+08:00 (UTC+8)
 - ws push recovered: verified and committed one T039 high registry row, delivered the pending T037 (4/4, review) and T033 high_sig_hi (10/18 imaging) handoffs. T039 production rc 0 (high 800 ns, low 1300 ns); 1600 high budget/droplet rows matched, rank warnings preserved. Low nominal 30 band-b time labels, peaks and core/shock/emission verified and delivered; low shifted image running. Started priority high nominal/shifted imaging and diagnostics on freed node 0 (8 workers). All three report syncs hash verified; ws cabb438d. No workstation-ready card; T038 desk-owned. Remaining T033/T034 imaging queued behind T039.
 - Jobs: T039 STATE=finished  elapsed=0.02:28:59  pid=44548  commit=eedb525f; T039_high_wf_post STATE=running  elapsed=0.00:00:00  pid=35792  commit=cabb438d; T039_low_wf_post STATE=running  elapsed=0.01:29:03  pid=45376  commit=5df0b101.
-
-## 2026-11-26T04:30:33+08:00 (UTC+8)
-- BLOCKED: ws pull/rebase succeeded onto 94fc9292; remote rejected the ws push with 'fatal error in commit_refs_rules'. Pending local T037/T033 handoffs: e5e66e7d [codex] T033: deliver high_sig_hi imaging and diagnostics; a7360d18 [codex] T037: verify four aligned image sets and hand off for review. No card claimed, report sync or job launch; do not use unsynced state. No new registry row at pass start. No settings changed or force push attempted.
-- Read-only job check for heartbeat: T039 STATE=running  elapsed=0.01:57:44  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:57:47  pid=45376  commit=5df0b101. T039 high_wf latest budget 6.459397e+002 ns; low_wf production complete (1300 ns), last low postprocessing stage logged: image_v2.
