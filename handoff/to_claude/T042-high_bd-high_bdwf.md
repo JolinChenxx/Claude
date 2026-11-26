@@ -1,0 +1,1 @@
+The high_bd and high_bdwf members each passed seven postprocessing stages. Their nominal and +28 ns metrics, frames and diagnostics are archived under results/T042, and the comparison table is in tasks/T042.report.md. The high_tau35 shifted image is pending.
