@@ -1,1 +1,0 @@
-T040 high G0 it2 imaging and diagnostics are ready for review in results/T040/high_wf_chain/it2. Both time conventions cover 29 experimental times. All 47 archived files passed hash verification. High G1 it0 imaging continues.
