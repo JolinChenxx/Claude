@@ -291,3 +291,13 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - Partial vignetting lies between the two.
 - **Calibration:** use only the earliest frames (0 / 20 / 30 ns, unsaturated, PSF-dominated) with D = 500 µm and Δ = 28 ns, for the T031 and T039 unblurred frames. Readings: σz/σx, and the fraction of light below the face row, compared with the experiment. The option (or the O1–O2 interval) consistent with those frames is used for all later frames.
 - **Use:** later-time σz is reported under the selected convention and under both bracket ends. Later-time agreement is not used to choose.
+
+## T043 emission-height decomposition declared 2026-11-26 ~20:20 (UTC+8), diagnostic only, before any result
+- **Question:** why the model's band-b emission sits in the first ~10 µm above the face until about 50 ns, while the experiment's lifts about 100 µm within 30 ns. Is the near-wall dense layer too bright, or the lifted plume too dim?
+- **Tool:** scripts/emission_layers.py, which uses the imaging's native-cell transfer with self-absorption. Outputs, per snapshot ≤ 200 ns:
+  - emission height percentiles;
+  - the fractions from z < 10, 10–50 and > 50 µm;
+  - the line/continuum split in the near-wall layer;
+  - axial T, ρ, Y, n_e profiles.
+- **Runs:** T031 high_v1rs/it2, T039 high_wf/it2, T026 high_thin_G0/it2.
+- **Use:** the result only identifies the layer and the emission channel. Any physics change it suggests is declared separately, before implementation.
