@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T00:30:51+08:00 (UTC+8)
+- No card claimed. The inbox was empty at ws cd55086e. The only ready card, T038, belongs to codex-desk.
+- T040 high G1 it0 (PID 39188) advanced to +28 ns imaging after nominal imaging and diagnostics. Elapsed time was 4 h 57 min.
+- All seven T044 jobs were running after 58 min. These cover five re-imaging runs and the T031 and T039 emission diagnostics. All eight job stderr logs were empty at inspection.
+
 ## 2026-11-27T00:00:55+08:00 (UTC+8)
 - Card claimed: none. Synced ws at cd55086e. The inbox is empty. T038 is the only ready card and belongs to codex-desk.
 - T040 high G1 it0 (PID 39188) is rendering nominal images after 4 h 27 min. All seven T044 jobs are running after 28 min: imaging for T026, T031, T039, T040 and T042, and emission diagnostics for T031 and T039. All eight stderr logs were empty at inspection.
@@ -137,7 +142,3 @@
 
 ## 2026-11-26T10:30:46+08:00 (UTC+8)
 - None to start or collect. ws synchronized to 126bb960. Inbox empty. T033_low_ftc_hi_post (PID 48356) and T034_high_ftc_lo_post (PID 37992) are running image_v2, each with zero completed stages. Their final production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. T033 has delivered 14/18 members and T034 has delivered 2/8. The only ready card, T038, belongs to codex-desk.
-
-## 2026-11-26T10:02:11+08:00 (UTC+8)
-- T033 low_A_hi passed all five stage checks. Verified 30 labels, recorded nine unavailable P2 estimates and compared with T026 low it1. Pushed handoff and verified report sync. T033 now has 14/18 imaging deliveries. Started low_ftc_hi on node 0 with eight workers (production 1.300000e+003 ns). T034 high_ftc_lo remains in image_v2 on node 1 (production 8.000000e+002 ns, 2/8 delivered). Only ready card T038 belongs to the desk. ws 29e1057b.
-- T033_low_ftc_hi_post STATE=running  elapsed=0.00:00:00  pid=48356  commit=29e1057b. T034_high_ftc_lo_post STATE=running  elapsed=0.00:29:33  pid=37992  commit=ed4595bd.
