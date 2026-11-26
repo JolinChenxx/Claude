@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T18:47:12+08:00 (UTC+8)
+- Retried the pass and synchronized ws. Delivered T042 high_bd and high_bdwf. Each passed seven stages, covered 29 frame times at both offsets and had 47 archived files verified. The updated report was synced and hash-checked. High_tau35 was still rendering its +28 ns images at inspection.
+- T040 high G0 it2 reached 800 ns with solver exit code 0. Committed its registry row and passed preflight for imaging. Queued it after the T042 report per the 18:10 priority change. High G0 it1 was rendering +28 ns images. T034 high_sig_hi and high_gaunt_hi were rendering nominal images.
+- T040_retry01 solver times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 8.000000e+002 ns, high_wf_G1/it0 7.024669e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. ws at 3973aa07. Inbox empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T18:03:39+08:00 (UTC+8)
 - Submitted T033 for review on ws 3236d597 after delivering low_gaunt_hi/it1. All 18 members reached their target times. All 90 stages exited 0. Verified 510 archived products and the frame hashes for all 18 members. P2 was unavailable for 300 of 324 scenarios. Synced the final report and verified its hash.
 - Assigned the eight workers freed on node 0 to T034 high_gaunt_hi/it2. T034_high_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=39372  commit=3236d597. T034 high_sig_hi continues nominal imaging on node 1. T040 high G0 it1 and all three T042 members are rendering +28 ns images.
@@ -131,7 +136,3 @@
 ## 2026-11-26T04:30:33+08:00 (UTC+8)
 - BLOCKED: ws pull/rebase succeeded onto 94fc9292; remote rejected the ws push with 'fatal error in commit_refs_rules'. Pending local T037/T033 handoffs: e5e66e7d [codex] T033: deliver high_sig_hi imaging and diagnostics; a7360d18 [codex] T037: verify four aligned image sets and hand off for review. No card claimed, report sync or job launch; do not use unsynced state. No new registry row at pass start. No settings changed or force push attempted.
 - Read-only job check for heartbeat: T039 STATE=running  elapsed=0.01:57:44  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:57:47  pid=45376  commit=5df0b101. T039 high_wf latest budget 6.459397e+002 ns; low_wf production complete (1300 ns), last low postprocessing stage logged: image_v2.
-
-## 2026-11-26T04:03:07+08:00 (UTC+8)
-- BLOCKED on ws push: initial and pre-push pulls succeeded, but schannel TLS handshake failed on git push origin ws. Two local commits, head 319d8776, not confirmed on remote. Next pass pull/rebase and push both pending commits, then sync reports for T037/T033 and verify hashes. No new job started or card claimed. T035/T038 are desk-owned.
-- T037_retry01 rc 0; verified 4/4 shifted images and peaks, 84 archived hashes; local review and handoff ready. T033_high_sig_hi_post rc 0; local 10th imaging milestone verified, high_gaunt_hi preflight only. T034 imaging queued. T039 production still running (high_wf 3.514741e+002 ns, low_wf complete 1300 ns), T039_low_wf_post on nominal image_v2. No jobs stopped or restarted.
