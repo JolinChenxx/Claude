@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T22:31:52+08:00 (UTC+8)
+- Submitted T043 for review at ws 78531af9. All three diagnostics exited 0. Verified all 81 indexed snapshots per run through 200 ns and all 18 selected report rows. Synced the report and verified its hash.
+- T040 high G1 it0 (PID 39188) was running nominal imaging after 2 h 57 min. The inbox was empty. T038 is the only ready card and belongs to codex-desk.
+
 ## 2026-11-26T22:02:35+08:00 (UTC+8)
 - T040 high G0 it2 delivered at ws f95bbab9. All seven stages exited 0. Verified 47 file hashes and 29 experimental times per offset. Synced the report and verified its hash. High G1 it0 (PID 39188) was rendering nominal images after 2 h 27 min with eight active worker processes.
 - T043 diagnostics on T031, T039 and T026 were running after 29 min, each with a live Python worker. The inbox was empty. The only ready card T038 belongs to codex-desk.
@@ -135,7 +139,3 @@
 
 ## 2026-11-26T08:30:49+08:00 (UTC+8)
 - None to start or collect. ws synchronized to 7c29f6bc; no registry changes or incoming handoff. T033_low_A_lo_post (PID 50104) and T034_high_A_hi_post (PID 35768) both running image_v2; zero completed stages at inspection. Production endpoints: T033 low_A_lo 1.300000e+003 ns; T034 high_A_hi 8.000000e+002 ns. Imaging deliveries remain 12/18 and 1/8 respectively. Both imaging slots occupied; only ready card T038 is desk-owned. No job launched or restarted.
-
-## 2026-11-26T08:01:08+08:00 (UTC+8)
-- T033 low_rem_hi and T034 high_A_lo wrappers and ten stages rc 0; 30/29 frame labels verified respectively, baseline comparisons and missing estimates reported. Imaging delivered T033 12/18, T034 1/8. Reports synced with matching hashes. T039 done per cloud. Started T033 low_A_lo (node 0, production final 1.300000e+003 ns) and T034 high_A_hi (node 1, production final 8.000000e+002 ns), 8 workers each. No new workstation-ready card; T038 desk-owned. ws 6b4c667b.
-- Jobs: T033_low_A_lo_post STATE=running  elapsed=0.00:00:00  pid=50104  commit=6b4c667b; T034_high_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35768  commit=6b4c667b.
