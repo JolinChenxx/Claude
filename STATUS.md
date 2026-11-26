@@ -1,5 +1,8 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T17:01:10+08:00 (UTC+8)
+- Card: none. The ws pull from origin failed during the Schannel TLS handshake. Local ws was one commit behind the cached origin/ws. The pass stopped before card selection and job inspection. Current job progress is unverified.
+
 ## 2026-11-26T16:33:27+08:00 (UTC+8)
 - Handed off T033 low_sig_hi/it1 (17/18 members) and T040 low G0 it1 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 293f5a57.
 - Started T033 low_gaunt_hi/it1 on node 0. T033_low_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=52152  commit=293f5a57. T034 high_sig_hi passed preflight and is queued behind high_sig_lo on the same eight node 1 lanes.
@@ -130,7 +133,3 @@
 ## 2026-11-26T03:01:47+08:00 (UTC+8)
 - T039 blocked and handed off (ws 19f3cfb9): both 4000-row solver pulse tables are 0.317971% below case/ini energy (limit 0.1%). PULSE_TAB, COND_SIG and radii passed. Complete trace includes 0.317918% before t=0. Production left running without modifications or new imaging; synced report hash verified. T037 on low_v1rs, high_v1rs alone archived (1/4); no restart. T033 high_sig_hi preflight passed and started on available node 1; 9/18 imaging deliveries. No workstation-ready cards; T035/T038 desk-owned.
 - Jobs: T033_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=44452  commit=19f3cfb9; T037_retry01 STATE=running  elapsed=0.02:00:20  pid=49872  commit=0683e9f; T039 STATE=running  elapsed=0.00:28:58  pid=44548  commit=eedb525f. T039 latest budget t_ns: high_wf=5.199932e+001, low_wf=2.684195e+002.
-
-## 2026-11-26T02:32:49+08:00 (UTC+8)
-- T039 claimed (ef0f8999), built v1w with unchanged T031 flags, 18 source hashes and executable verified, 21 tests passed and 19 shared-capacity checks passed. Started both original members as a single 16-core batch. Next pass check PULSE_TAB, pulse file length/integral, COND_SIG and radius. No jobs stopped. T037 retry: high_v1rs image+peak both rc 0; 29 frames/18 tables archived, 1/4; low_v1rs active. T033 high_sig_lo handed off; 9/18 images, approved report sync hash matched. T034 all eight production members finished, imaging pending. No other workstation-ready cards; T035/T038 desk-owned. ws eedb525f.
-- Jobs: T037_retry01 STATE=running  elapsed=0.01:31:22  pid=49872  commit=0683e9f; T039 STATE=running  elapsed=0.00:00:00  pid=44548  commit=eedb525f. T039 t_ns: no budget yet at launch.
