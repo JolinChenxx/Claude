@@ -2,7 +2,8 @@
 id: T045
 title: v1u — fetch NIST Cu VI–IX levels, build tables v1d (Cu to IX, T to 3e5 K), run v1rs and waveform high (seeded) and image with v1d
 owner: codex
-status: ready
+status: running
+started: 2026-11-27T02:30:47+08:00
 depends: []
 milestone: D2
 est_time: NIST fetch ~5 min; table build ~15–20 min (32 workers); 2 runs × 8 procs ~2 h; imaging ~30 min
