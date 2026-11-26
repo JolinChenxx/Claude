@@ -171,9 +171,9 @@ class Laser:
             import pandas as pd
             w = pd.read_csv(REPO_ROOT / self.waveform if not Path(self.waveform).is_absolute() else self.waveform)
             t, p = w.t_ns.to_numpy() * 1e-9, np.clip(w.P_norm.to_numpy(), 0.0, None)  # math (ns -> s)
-            i10 = int(np.argmax(p >= 0.1 * p.max()))
+            i10 = int(np.argmax(p >= 0.1 * p.max()))  # num (10%-of-peak t0 convention, PREREG waveform)
             # t0 convention: shift so that the first 10%-of-peak crossing on the leading edge is t = 0
-            t10 = t[i10 - 1] + (0.1 * p.max() - p[i10 - 1]) / (p[i10] - p[i10 - 1]) * (t[i10] - t[i10 - 1]) if i10 > 0 else t[0]
+            t10 = t[i10 - 1] + (0.1 * p.max() - p[i10 - 1]) / (p[i10] - p[i10 - 1]) * (t[i10] - t[i10 - 1]) if i10 > 0 else t[0]  # num (same convention)
             t = t - t10
             self._wf = (t, p / np.trapezoid(p, t))   # normalised to unit time integral (1/s)
 

@@ -301,3 +301,10 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - axial T, ρ, Y, n_e profiles.
 - **Runs:** T031 high_v1rs/it2, T039 high_wf/it2, T026 high_thin_G0/it2.
 - **Use:** the result only identifies the layer and the emission channel. Any physics change it suggests is declared separately, before implementation.
+
+## Continuum charge states in the imaging (v2.1 imaging fix) declared 2026-11-26 ~22:50 (UTC+8), before any re-imaged result
+- **Defect:** forward.band_image builds the continuum (Kramers ff+bf, ∝ z² n_e n_z) from the ions with z = 1–3 only, through the pop-table fields nion_z1..3. The EOS carries Cu up to z = 5 and N/O up to z = 4. The laser absorption (props.alpha_at) and the radiative loss (NEC) already sum over every charge.
+- **Size, from the EOS (Y = 1):** the continuum is understated by ×17 000 at (0.02 kg/m³, 140 kK), ×56 at (0.2, 100 kK) and ×4.9 at (1.5, 90 kK); the error is ≤ 1.1 below 60 kK. T043 shows the plume above the face at 50–135 kK during and just after the pulse, so the lifted hot plume has been rendered too dark.
+- **Fix:** pop.bin carries nion_z1..5 (props.pop_fields), and band_image sums every nion_z it finds; old tables give the old result. The solver inputs (eos.bin, opt.bin) are unchanged, so no simulation is repeated, only re-imaged.
+- **Use:** this is a correctness fix, adopted whatever the outcome. All high-fluence production runs are re-imaged (image_v2c) and reported against the old images.
+- **Known companion defect, declared separately (v1u):** the Cu charge ladder stops at a bare Cu⁵⁺ (Q = 1), and the table ceiling is 150 kK. At 100–140 kK in the low-density plume, 15–69% of the Cu sits in that top stage, and the NIST IPs of Cu VI–IX (103–198 eV) are missing energy sinks. The plume temperature is therefore probably overestimated. v1u extends Cu to Cu IX (bare Cu X), with NIST levels where available and the ground level otherwise, and raises the table ceiling to 3×10⁵ K. It requires new tables and new simulations. It is declared now and run after the imaging fix.

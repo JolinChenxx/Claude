@@ -77,6 +77,9 @@ class Tables:
             self.f[k] = RegularGridInterpolator(self.axes, np.log10(np.maximum(v, 1e-300)),  # num (log floor)
                                                 bounds_error=False, fill_value=None)
 
+    def ion_charges(self):
+        return sorted(int(k[6:]) for k in self.f if k.startswith("nion_z"))  # num (len("nion_z"))
+
     def __call__(self, name, rho, T, Y):
         pts = np.stack([np.log10(rho), np.log10(T), Y], -1)
         lo = [a[0] for a in self.axes]
@@ -147,11 +150,12 @@ def band_image(r_edges, z_c, rho, T, Y, tables: Tables, filt, x, self_absorption
         for z in (0, 1):
             nQ[(el, z)] = tables(f"nQ_{el}{z}", rho, T, Y)
     ne = tables("ne", rho, T, Y)
-    nion = {k: tables(f"nion_z{k}", rho, T, Y) for k in (1, 2, 3)}
+    zs = tables.ion_charges()                            # every nion_z<k> in the tables (old tables: 1..3)
+    nion = {k: tables(f"nion_z{k}", rho, T, Y) for k in zs}
     kT = K_B * T
     # continuum at band centre (slowly varying across ≤ 40 nm)
     nu_c = C / lam_c
-    kc = sum(_K(nu_c, T, k) * ne * nion[k] for k in (1, 2, 3)) * np.expm1(H * nu_c / kT)   # [nz, nr]
+    kc = sum(_K(nu_c, T, k) * ne * nion[k] for k in zs) * np.expm1(H * nu_c / kT)   # [nz, nr]
     Bc = planck_lambda(lam_c, T)
     # thin line emissivities
     jl = np.zeros((len(bl.wl),) + T.shape)

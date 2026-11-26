@@ -111,7 +111,8 @@ def pop_fields(state: mx.State) -> dict:
             out[f"nQ_{el}{z}"] = nz / q
             out[f"n_{el}{z}"] = nz
     # all ions by charge (continuum emission/absorption needs Σ z² n_z, Σ n_z(z≥1) and the recombination energy)
-    zsum = {1: 0.0, 2: 0.0, 3: 0.0}
+    # v2.1 imaging (PREREG 2026-11-26 'continuum charge states'): every ion charge the EOS carries, not only z <= 3
+    zsum = {z: 0.0 for z in range(1, max(mx.STAGES.values()) + 1)}
     for key, n in state.n.items():
         if "+" in key:
             z = int(key.split("+")[1])
