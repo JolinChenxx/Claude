@@ -103,3 +103,6 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 ## 2026-11-25 23:20 — Overnight plan; desk limit 18 cores
 - The user freed the desk PC ("全力去跑"), so its limit rises from 12 to 18 cores, and T035 runs two members at once.
 - Overnight focus: energy coupling and ignition during the pulse (docs/PLAN_overnight_1126.md). Shock data show the model gas energy is about 1.7× (high) and about 5× (low) too small, and ignition is 30–40 ns late at low fluence.
+
+## 2026-11-26 10:30 — The paper's laser is unavailable (user)
+- User: the YLPN unit no longer exists, so its waveform cannot be measured. The IPG YLP-HP measured trace stays a declared comparable-device scenario. It is not the baseline input, and it is reported as a bracket. A further literature search for a published YLPN-1-30×240 trace may be done later.
