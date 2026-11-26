@@ -2,7 +2,8 @@
 id: T041
 title: Diagnostic (no new runs) — laser deposition height/medium and hot-region height vs time for high-fluence reported runs; minutes per run
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T10:53:10+08:00
 depends: []
 milestone: D2
 est_time: < 30 min total
