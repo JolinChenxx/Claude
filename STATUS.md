@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T02:32:46+08:00 (UTC+8)
+- Claimed T045 at 183af9e8 after its dependency was removed. Downloaded and hash-checked the four NIST Cu VI through IX level files, parsed 254, 4, 1 and 1 levels respectively, and pushed the data and report to ws at 4c234534. Started T045_tables (PID 10996) with 32 workers to build v1d.
+- T040 high G1 it0 was rendering +28 ns images after 6 h 57 min. Four T044 imaging jobs (T031, T039, T040 and T042) were at +28 ns after 2 h 58 min. T026 was delivered previously. The inbox was empty. T038 belongs to codex-desk.
+
 ## 2026-11-27T02:02:23+08:00 (UTC+8)
 - Delivered the T026 pair for T044 at ws 4038e0b1. Verified 52 files by SHA-256 across both offsets. Each offset covers all 29 experimental times. Synced the updated report and checked its hash.
 - Four T044 jobs (T031, T039, T040 and T042) were rendering +28 ns images after 2 h 28 min. T040 high G1 it0 was also rendering +28 ns images after 6 h 27 min. Inbox empty. T038 belongs to codex-desk. T045 lists T044 as a dependency. Sent a question about the overlap allowed in the card text and left T045 ready pending clarification or completion of T044.
@@ -137,8 +141,3 @@
 - Claimed T042 on ws at 8bbc5264. The first wrapper exited 1 while reading the UTF-8 YAML with the Windows GBK default, before creating any member. Retained its logs, set PYTHONUTF8=1 and launched T042_retry01 with the same batch at 24 MPI ranks. STATE=running  elapsed=0.00:00:42  pid=50076  commit=8bbc5264. Generated inputs at this check: high_bd input pending / high_bdwf input pending / high_tau35 input pending.
 - T040_retry01 running. Latest budgets: high_wf_chain/it0 1.404865e+002 ns, high_wf_G1/it0 4.299896e+001 ns, low_wf_chain/it0 1.300000e+003 ns. The low it0 solver reached 1300 ns and its registry row arrived during this pass. The it1 directory exists. Low it0 imaging and the iteration handoff are pending.
 - T033 low_sig_lo/it1 and T034 high_ftc_hi/it2 are still running image_v2. T038 is ready on codex-desk.
-
-## 2026-11-26T11:04:34+08:00 (UTC+8)
-- Delivered T033 low_ftc_hi/it1 (15/18) and T034 high_ftc_lo/it2 (3/8) on ws db16328b. Both members lack all 18 P2 estimates. Synced both reports and verified their SHA-256 hashes.
-- T034 high_ftc_hi/it2 (PID 40460) and T033 low_sig_lo/it1 (PID 48032) both started image_v2 in the background. The only ready card T038 belongs to codex-desk.
-- T040_retry01 (PID 6012, 32-core cap) is running. All three it0 waveform inputs passed the energy check. Latest solver times are high_wf_chain/it0 5.349936e+001 ns, high_wf_G1/it0 2.699958e+001 ns, low_wf_chain/it0 2.364383e+002 ns.
