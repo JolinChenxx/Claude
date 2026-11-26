@@ -1,1 +1,0 @@
-The corrected T026 imaging pair is ready in results/T026/high_thin_G0/it2/image_v2c and image_v2c_t28. Both offsets cover 29 times, and tasks/T044.report.md compares widths, centroid heights and brightness ratios with the old imaging.

@@ -3,13 +3,13 @@ id: T045
 title: v1u — fetch NIST Cu VI–IX levels, build tables v1d (Cu to IX, T to 3e5 K), run v1rs and waveform high (seeded) and image with v1d
 owner: codex
 status: ready
-depends: [T044]
+depends: []
 milestone: D2
 est_time: NIST fetch ~5 min; table build ~15–20 min (32 workers); 2 runs × 8 procs ~2 h; imaging ~30 min
 ---
 
 ## Background
-PREREG_v0, "Continuum charge states…" companion defect v1u, and its implementation note. In the hot, low-density plume the Cu charge ladder currently stops at a bare Cu⁵⁺. This is a completeness fix, not a fit. Start after T044's imaging (or alongside it if cores allow; 16 cores needed).
+PREREG_v0, "Continuum charge states…" companion defect v1u, and its implementation note. In the hot, low-density plume the Cu charge ladder currently stops at a bare Cu⁵⁺. This is a completeness fix, not a fit. Start now, in parallel with the remaining T044 imaging (16 cores needed; Claude 2026-11-27 02:05).
 
 ## Steps
 1. `git pull` on ws.
