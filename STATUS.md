@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T04:00:52+08:00 (UTC+8)
+- Card claimed this pass: none. Synced ws at 39c14654. The inbox was empty. The only ready card, T038, belongs to codex-desk.
+- T045 high_v1rs_u reached 184.4767 ns and high_wf_u reached 121.9665 ns of 800 ns. T040 high G1 it0 was rendering +28 ns images after 8 h 27 min. Both jobs reported running with empty stderr logs.
+
 ## 2026-11-27T03:32:21+08:00 (UTC+8)
 - Submitted T044 for review on ws at ac3f3490. All five imaging jobs exited 0. Both offsets cover 29 experimental times for each run. Verified the remaining 176 archived products and synced the final report. The report includes both emission diagnostics and comparisons for all five runs.
 - T045 high_v1rs_u reached 68.49816 ns and high_wf_u reached 54.49993 ns of 800 ns. T040 high G1 it0 was rendering +28 ns images after 7 h 57 min. The inbox was empty. T038 belongs to codex-desk.
@@ -133,8 +137,3 @@
 - T040 high G0 it0 reached 800 ns and low G0 it1 reached 1300 ns. Both exited 0. Committed their registry rows and verified the high G0 it1 input against the accepted 0.318% pulse-energy shortfall. Reports pushed through ws 69ab0297.
 - Started high it0 and low it1 imaging and diagnostics as separate eight-worker jobs on nodes 1 and 0. Job statuses: T040_high_wf_chain_it0_post STATE=running  elapsed=0.00:00:00  pid=46196  commit=69ab0297. T040_low_wf_chain_it1_post STATE=running  elapsed=0.00:00:00  pid=49564  commit=69ab0297. T040_low_wf_chain_it0_post STATE=running  elapsed=0.00:58:26  pid=34636  commit=39cfae3a. T034_high_cond_lo_post STATE=running  elapsed=0.00:30:00  pid=45976  commit=e051d477. T040_retry01 STATE=running  elapsed=0.02:23:51  pid=6012  commit=07f2a116. T042_retry01 STATE=running  elapsed=0.01:30:29  pid=50076  commit=8bbc5264. T033 and T034 imaging deliveries stand at 16/18 and 4/8.
 - Latest solver budgets: T040/high_wf_chain/it0 8.000000e+002 ns, T040/high_wf_chain/it1 4.149813e+001 ns, T040/high_wf_G1/it0 9.649783e+001 ns, T040/low_wf_chain/it0 1.300000e+003 ns, T040/low_wf_chain/it1 1.300000e+003 ns, T042/high_bd/it2 1.464993e+002 ns, T042/high_bdwf/it2 1.454861e+002 ns, T042/high_tau35/it2 3.759620e+002 ns. Inbox empty. T038 is ready on codex-desk.
-
-## 2026-11-26T12:32:21+08:00 (UTC+8)
-- Delivered T034 high_ftc_hi/it2 on ws e051d477. All five stages passed at 29 frame times. All 18 P2 estimates are missing. Synced and hash-verified the report. T034 imaging now covers 4/8. Started T034_high_cond_lo_post on node 1 with eight workers. STATE=running  elapsed=0.00:00:00  pid=45976  commit=e051d477.
-- T040 low it0 nominal imaging continues on node 0. T040_retry01 and T042_retry01 continue production. Latest solver times: T040/high_wf_chain/it0 7.239485e+002 ns, T040/high_wf_G1/it0 7.749745e+001 ns, T040/low_wf_chain/it0 1.300000e+003 ns, T040/low_wf_chain/it1 1.268992e+003 ns, T042/high_bd/it2 9.499975e+001 ns, T042/high_bdwf/it2 7.649886e+001 ns, T042/high_tau35/it2 1.569731e+002 ns.
-- T033 imaging stands at 16/18. The two current imaging slots hold the T040 iteration and the high-fluence T034 member. The only ready card T038 belongs to codex-desk. Inbox empty.
