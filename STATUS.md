@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T08:01:08+08:00 (UTC+8)
+- T033 low_rem_hi and T034 high_A_lo wrappers and ten stages rc 0; 30/29 frame labels verified respectively, baseline comparisons and missing estimates reported. Imaging delivered T033 12/18, T034 1/8. Reports synced with matching hashes. T039 done per cloud. Started T033 low_A_lo (node 0, production final 1.300000e+003 ns) and T034 high_A_hi (node 1, production final 8.000000e+002 ns), 8 workers each. No new workstation-ready card; T038 desk-owned. ws 6b4c667b.
+- Jobs: T033_low_A_lo_post STATE=running  elapsed=0.00:00:00  pid=50104  commit=6b4c667b; T034_high_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35768  commit=6b4c667b.
+
 ## 2026-11-26T07:31:01+08:00 (UTC+8)
 - T039 submitted for review: high shifted image and peak finished 07:14; all 14 stages rc 0, all 94 archived nominal/shifted products match raw hashes. High/low solver endpoints 800/1300 ns. Report sync hash verified. T034 high_A_lo nominal imaging was still active at inspection (production 800 ns). Started T033 low_rem_hi imaging on freed node 0, 8 workers (production 1300 ns, 11/18 delivered). No new workstation-ready card; T038 desk-owned. ws dff23b83.
 - Jobs: T033_low_rem_hi_post STATE=running  elapsed=0.00:00:00  pid=49260  commit=dff23b83; T034_high_A_lo_post STATE=running  elapsed=0.00:59:50  pid=50924  commit=f0b7b859; T039_high_wf_post STATE=finished  elapsed=0.02:29:12  pid=35792  commit=cabb438d.
@@ -118,7 +122,3 @@
 ## 2026-11-25T18:46:12+08:00 (UTC+8)
 - T033 locked on ws (311c388); both requested test modules passed all 10 tests with GCC. Verified existing build_v1s and baseline EOS. Started three isolated variant table builds, 32 workers each; 18 MPI members await table hash/identity checks. No split batch while 96 table workers and T031 imaging are active. Evidence at b805efc.
 - T033_v1c_sigen_lo STATE=running  elapsed=0.00:00:36  pid=49144  commit=311c388; T033_v1c_sigen_hi STATE=running  elapsed=0.00:00:35  pid=48468  commit=311c388; T033_v1c_gaunt15 STATE=running  elapsed=0.00:00:35  pid=26896  commit=311c388; T031_high_v1rs_post STATE=running  elapsed=0.01:12:36  pid=26764  commit=cc01cc6; T031_low_v1rs_post STATE=running  elapsed=0.00:55:41  pid=45944  commit=5c292a5. T030 scan imaging remains behind T031. T032 is owned by codex-desk; no other ready workstation card.
-
-## 2026-11-25T18:30:42+08:00 (UTC+8)
-- T031 high_v1rs and low_v1rs imaging: job.ps1 reports both running (PIDs 26764 and 45944; elapsed 56m48s and 39m53s). Both at image_v2, 0/5 stages complete. Eight live worker processes each; cumulative worker CPU 27124s and 19056s respectively. No ready products to collect; no solver or imaging job restarted.
-- T030 production and six imaging deliveries already complete. Its high/low 100 nm scans remain queued behind the two T031 imaging jobs. ws synchronized at 0934ccf, incoming handoff empty, no ready workstation card; T032 belongs to codex-desk.
