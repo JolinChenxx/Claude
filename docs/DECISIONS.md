@@ -106,3 +106,7 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 
 ## 2026-11-26 10:30 — The paper's laser is unavailable (user)
 - User: the YLPN unit no longer exists, so its waveform cannot be measured. The IPG YLP-HP measured trace stays a declared comparable-device scenario. It is not the baseline input, and it is reported as a bracket. A further literature search for a published YLPN-1-30×240 trace may be done later.
+
+## 2026-11-26 10:50 — Focus: high fluence (user)
+- User: the targets are the high-fluence brightness trend and the plume size; low fluence is reference only. Low-fluence work (T038) finishes but gets no new cards. New physics is judged on the high-fluence metrics: L(t)/L(150) against the experiment, and σx, σz, zc against the experiment.
+- First step is a diagnostic, T041: the cloud smoke run puts 99.8% of the laser absorption in the Cu vapour within 4–8 µm of the face, while the experiment's luminous centroid is about 200 µm up at 50 ns. Hypothesis: the model lacks an absorption front that climbs the beam (laser-supported absorption in shock-heated air or in the expanding plume). The production-grid deposition profile decides it.
