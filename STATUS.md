@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T06:03:07+08:00 (UTC+8)
+- T040 submitted for review at ws b90eba2c. The final G1 job exited 0. All six iteration receipts cover 42 successful postprocessing stages and 282 verified products. Synced the final report and checked its hash.
+- T045 high_v1rs_u diagnostics delivered at b53aa61c. Verified 321 shock snapshots and 81 snapshots each for laser deposition and emission layers. Synced the report and checked its hash. Both T045 imaging jobs and the high_wf_u diagnostic were running at inspection. The inbox was empty. T038 belongs to codex-desk.
+
 ## 2026-11-27T05:30:49+08:00 (UTC+8)
 - Card claimed this pass: none. Synced ws at d9c382a0. The inbox was empty. T038 belongs to codex-desk.
 - T040 high G1 it0 was rendering +28 ns images after 9 h 57 min. Both T045 imaging jobs and both diagnostic jobs were running after 29 min. Both members had written shock_track.csv and laser_deposition.csv. All five job stderr logs were empty at inspection.
@@ -129,8 +133,3 @@
 - No workstation card to claim or completed job to collect. ws synchronized at c6fef67b. The inbox is empty. T038 belongs to codex-desk.
 - Checked eight running jobs. T040 high G0 it0 and low G0 it1 are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering their nominal images. T033 has delivered 16/18 members and T034 has delivered 5/8.
 - T040_retry01 continues production. Latest solver times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 6.805000e+002 ns, high_wf_G1/it0 2.814803e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns.
-
-## 2026-11-26T14:34:45+08:00 (UTC+8)
-- T034 high_cond_lo/it2 delivered (5/8). All five stages passed. All 18 P2 estimates are missing. T040 low G0 it0 delivered with all seven stages done and both time conventions verified. Both reports synced with SHA-256 checks. T033 stands at 16/18.
-- T042 production finished. Three registry rows verified, all rc 0 at 800 ns. Archived budgets, inputs and deposition CSVs. The report contains ignition, gas absorption, half-peak z90 range and integrated Cu fraction. Imaging is pending. ws at 66dd1b9d.
-- Started five imaging jobs. T042_high_bd_it2_post STATE=running  elapsed=0.00:00:01  pid=21844  commit=66dd1b9d. T042_high_bdwf_it2_post STATE=running  elapsed=0.00:00:01  pid=18232  commit=66dd1b9d. T042_high_tau35_it2_post STATE=running  elapsed=0.00:00:01  pid=46112  commit=66dd1b9d. T033_low_sig_hi_post STATE=running  elapsed=0.00:00:01  pid=45372  commit=66dd1b9d. T034_high_sig_lo_post STATE=running  elapsed=0.00:00:00  pid=13928  commit=66dd1b9d. T040 G0 high it0 and low it1 imaging also continue. T040_retry01 solver budgets: high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 4.734937e+002 ns, high_wf_G1/it0 2.429852e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. No new ready workstation card. T038 belongs to codex-desk.
