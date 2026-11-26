@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T20:01:37+08:00 (UTC+8)
+- Card claimed: none. Synced ws to c3f1ffbc. T034 review is complete. The inbox is empty. T038 is the only ready card and belongs to codex-desk.
+- T040_high_wf_chain_it2_post (PID 40120, about 58 min) and T040_high_wf_G1_it0_post (PID 39188, about 27 min) are rendering nominal image_v2 frames. Both solver runs reached 800 ns.
+
 ## 2026-11-26T19:33:28+08:00 (UTC+8)
 - T034 submitted for review on ws 9e660295. All eight solves and 40 postprocessing stages exited 0. Verified 224 archived products and 16 band-b frame hashes. All 144 P2 estimates were unavailable. The report includes comparisons against the same-seed T031 baseline.
 - T040 production finished with all six solves successful. The three high G0 iterations and high G1 it0 reached 800 ns, and both low G0 iterations reached 1300 ns. Delivered high G0 it1 imaging for both time offsets and verified all 47 archived files. Synced and hash-checked the T034 and T040 reports.
@@ -134,7 +138,3 @@
 
 ## 2026-11-26T06:00:32+08:00 (UTC+8)
 - None to start or collect. ws synced to 3f5d2c2e; no incoming handoff or new registry rows. T039_high_wf_post (PID 35792): nominal image_v2, 11 live descendants, 27899.8 cumulative CPU seconds; T033_high_gaunt_hi_post (PID 47788): image_v2, 11 live descendants, 13941.5 cumulative CPU seconds. Neither has an exit code or completed stage receipt. Solver budgets final: T039 high/low 800/1300 ns, T033 high_gaunt_hi 800 ns. T034 imaging queued after same-wave T033. Only ready card T038 is desk-owned. No duplicate or restart.
-
-## 2026-11-26T05:31:00+08:00 (UTC+8)
-- T039 low post finished, seven stages and wrapper rc 0. Verified 22 shifted products and rechecked 25 nominal hashes, 30 low labels, finite band-b radiance and model lifts. Handed off +28 ns low, report sync hash verified. High priority image_v2 continues on node 0; both solver budgets final (high 800 ns / low 1300 ns). T037 done per cloud. T033 high_gaunt_hi preflight passed and launched on freed node 1, 8 workers; 10/18 previously delivered. T034 queued after same-wave T033. No new workstation-ready card, T038 belongs to desk. ws c261dd4f.
-- Jobs: T033_high_gaunt_hi_post STATE=running  elapsed=0.00:00:01  pid=47788  commit=c261dd4f; T039_high_wf_post STATE=running  elapsed=0.00:29:11  pid=35792  commit=cabb438d; T039_low_wf_post STATE=finished  elapsed=0.01:58:13  pid=45376  commit=5df0b101.
