@@ -1,0 +1,12 @@
+# T040: self-consistent Picard chains for the waveform scenario (v1rswf), replacing the T026 Gaussian-shielding seed
+# used in T039 (PREREG 2026-11-26 'waveform': the shielding must come from the same pulse). Plus a G1 check at high it0.
+name: T040
+pluto_exe: D:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T040
+numerics:
+  runs:
+    - {id: high_wf_chain, case: configs/cases/v1rswf_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8,  picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_wf_chain,  case: configs/cases/v1rswf_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8,  picard: 1, src_on: 1, rmax_par: 1000}
+    - {id: high_wf_G1,    case: configs/cases/v1rswf_high.yaml, grid: G1, nec: thin, tstop_ns: 800,  procs: 16, picard: 0, src_on: 1, rmax_par: 1000}
