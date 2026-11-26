@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T01:01:37+08:00 (UTC+8)
+- T044 partial delivery on ws 103ab5e3. The T039 emission diagnostic exited 0 and all 81 snapshots matched the source index through 200 ns. Synced the updated report and checked its hash.
+- Five T044 imaging jobs and the T031 emission diagnostic were running after 1 h 28 min. T026 finished nominal peak lift and started its +28 ns output directory. T040 high G1 it0 was rendering +28 ns images after 5 h 27 min. The inbox was empty. The only ready card, T038, belongs to codex-desk.
+
 ## 2026-11-27T00:30:51+08:00 (UTC+8)
 - No card claimed. The inbox was empty at ws cd55086e. The only ready card, T038, belongs to codex-desk.
 - T040 high G1 it0 (PID 39188) advanced to +28 ns imaging after nominal imaging and diagnostics. Elapsed time was 4 h 57 min.
@@ -139,6 +143,3 @@
 - Launch recovery. The first wrapper exited 1 at module import because the repository src directory was missing from PYTHONPATH. It created no member directories. Preserved its logs under D:/sim_runs/T040. Added the repository source and environment DLL paths to the child process, verified the batch CLI, and started T040_retry01 (PID 6012) with the same batch and 32-core cap. Monitor T040_retry01 for job status and D:/sim_runs/T040 for member data.
 - T040 claimed and pushed on ws at 07f2a116. Started production via job.ps1 with --max-cores 32. The configuration assigns eight ranks each to the G0 high and low waveform chains and sixteen to G1 high it0. Generated inputs and iteration outputs are pending verification. T033 low_ftc_hi and T034 high_ftc_lo imaging continue. Their production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. The remaining ready card T038 belongs to codex-desk.
 - T040 STATE=failed(exit=1)  elapsed=0.00:00:00  pid=27216  commit=07f2a116. T033_low_ftc_hi_post STATE=running  elapsed=0.00:35:46  pid=48356  commit=29e1057b. T034_high_ftc_lo_post STATE=running  elapsed=0.01:05:19  pid=37992  commit=ed4595bd.
-
-## 2026-11-26T10:30:46+08:00 (UTC+8)
-- None to start or collect. ws synchronized to 126bb960. Inbox empty. T033_low_ftc_hi_post (PID 48356) and T034_high_ftc_lo_post (PID 37992) are running image_v2, each with zero completed stages. Their final production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. T033 has delivered 14/18 members and T034 has delivered 2/8. The only ready card, T038, belongs to codex-desk.
