@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T20:30:52+08:00 (UTC+8)
+- Card claimed: none. The inbox is empty at ws c3f1ffbc. The only ready card, T038, belongs to codex-desk.
+- T040 high G0 it2 (PID 40120) advanced to image_v2_t28 after the nominal rendering and diagnostics. High G1 it0 (PID 39188) continues nominal image_v2. Elapsed times were 1 h 28 min and 57 min respectively.
+
 ## 2026-11-26T20:01:37+08:00 (UTC+8)
 - Card claimed: none. Synced ws to c3f1ffbc. T034 review is complete. The inbox is empty. T038 is the only ready card and belongs to codex-desk.
 - T040_high_wf_chain_it2_post (PID 40120, about 58 min) and T040_high_wf_G1_it0_post (PID 39188, about 27 min) are rendering nominal image_v2 frames. Both solver runs reached 800 ns.
@@ -135,6 +139,3 @@
 ## 2026-11-26T06:31:11+08:00 (UTC+8)
 - T039 high nominal five stages rc 0, archived 25 products, 29 band-b times; high shift +28 ns continues. Solver endpoints high 800 / low 1300 ns. T033 high_gaunt_hi five stages and wrapper rc 0; 9/9 high, 11/18 total imaging delivered, remaining seven low queued. T033 and T039 handoffs pushed and reports synced with matching hashes. With T033 high wave complete, launched first T034 high_A_lo/it2 imaging on freed node 1 (8 workers, production final 800 ns); no duplicate or restart. No workstation-ready card; T038 desk-owned. ws f0b7b859.
 - Jobs: T034_high_A_lo_post STATE=running  elapsed=0.00:00:00  pid=50924  commit=f0b7b859; T039_high_wf_post STATE=running  elapsed=0.01:29:22  pid=35792  commit=cabb438d; T033_high_gaunt_hi_post STATE=finished  elapsed=0.01:00:12  pid=47788  commit=c261dd4f.
-
-## 2026-11-26T06:00:32+08:00 (UTC+8)
-- None to start or collect. ws synced to 3f5d2c2e; no incoming handoff or new registry rows. T039_high_wf_post (PID 35792): nominal image_v2, 11 live descendants, 27899.8 cumulative CPU seconds; T033_high_gaunt_hi_post (PID 47788): image_v2, 11 live descendants, 13941.5 cumulative CPU seconds. Neither has an exit code or completed stage receipt. Solver budgets final: T039 high/low 800/1300 ns, T033 high_gaunt_hi 800 ns. T034 imaging queued after same-wave T033. Only ready card T038 is desk-owned. No duplicate or restart.
