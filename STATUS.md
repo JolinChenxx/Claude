@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T18:03:39+08:00 (UTC+8)
+- Submitted T033 for review on ws 3236d597 after delivering low_gaunt_hi/it1. All 18 members reached their target times. All 90 stages exited 0. Verified 510 archived products and the frame hashes for all 18 members. P2 was unavailable for 300 of 324 scenarios. Synced the final report and verified its hash.
+- Assigned the eight workers freed on node 0 to T034 high_gaunt_hi/it2. T034_high_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=39372  commit=3236d597. T034 high_sig_hi continues nominal imaging on node 1. T040 high G0 it1 and all three T042 members are rendering +28 ns images.
+- T040_retry01 solver budget times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 6.704982e+002 ns, high_wf_G1/it0 5.664740e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T17:32:45+08:00 (UTC+8)
 - ws sync recovered. Delivered T034 high_sig_lo/it2 (6/8 members, all 18 P2 estimates unavailable) and T040 high G0 it0 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 81902f22.
 - Started T034 high_sig_hi/it2 on node 1. T034_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=49856  commit=81902f22. T033 low_gaunt_hi and T040 high G0 it1 continue nominal imaging. All three T042 members are rendering the +28 ns images.
@@ -130,7 +135,3 @@
 ## 2026-11-26T04:03:07+08:00 (UTC+8)
 - BLOCKED on ws push: initial and pre-push pulls succeeded, but schannel TLS handshake failed on git push origin ws. Two local commits, head 319d8776, not confirmed on remote. Next pass pull/rebase and push both pending commits, then sync reports for T037/T033 and verify hashes. No new job started or card claimed. T035/T038 are desk-owned.
 - T037_retry01 rc 0; verified 4/4 shifted images and peaks, 84 archived hashes; local review and handoff ready. T033_high_sig_hi_post rc 0; local 10th imaging milestone verified, high_gaunt_hi preflight only. T034 imaging queued. T039 production still running (high_wf 3.514741e+002 ns, low_wf complete 1300 ns), T039_low_wf_post on nominal image_v2. No jobs stopped or restarted.
-
-## 2026-11-26T03:32:46+08:00 (UTC+8)
-- T039: committed one verified low registry row; cloud approved the pre-t0 tail criterion (0.318%), both original inputs untouched. Low finished at 1300 ns, rc 0; 2591 matching finite ledger rows, rank warning counts reported. Pushed low milestone and hash-verified report sync. Started T039_low_wf_post (8 imaging workers; nominal/28 ns, both peaks, diagnostics including shock). High production t_ns=1.029941e+002. T037 low v1rs shifted frames verified; 2/4 archived, T026 high in progress. T033 high_sig_hi still in image_v2 (9/18 delivered); T034 imaging queued behind priority work. No workstation-ready card; T035/T038 desk-owned. ws 5df0b101.
-- Jobs: T039 STATE=running  elapsed=0.00:59:57  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:00:00  pid=45376  commit=5df0b101; T037_retry01 STATE=running  elapsed=0.02:31:19  pid=49872  commit=0683e9f; T033_high_sig_hi_post STATE=running  elapsed=0.00:30:59  pid=44452  commit=19f3cfb9.
