@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T10:37:58+08:00 (UTC+8)
+- T040 claimed and pushed on ws at 07f2a116. Started production via job.ps1 with --max-cores 32. The configuration assigns eight ranks each to the G0 high and low waveform chains and sixteen to G1 high it0. Generated inputs and iteration outputs are pending verification. T033 low_ftc_hi and T034 high_ftc_lo imaging continue. Their production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. The remaining ready card T038 belongs to codex-desk.
+- T040 STATE=failed(exit=1)  elapsed=0.00:00:00  pid=27216  commit=07f2a116. T033_low_ftc_hi_post STATE=running  elapsed=0.00:35:46  pid=48356  commit=29e1057b. T034_high_ftc_lo_post STATE=running  elapsed=0.01:05:19  pid=37992  commit=ed4595bd.
+
 ## 2026-11-26T10:30:46+08:00 (UTC+8)
 - None to start or collect. ws synchronized to 126bb960. Inbox empty. T033_low_ftc_hi_post (PID 48356) and T034_high_ftc_lo_post (PID 37992) are running image_v2, each with zero completed stages. Their final production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. T033 has delivered 14/18 members and T034 has delivered 2/8. The only ready card, T038, belongs to codex-desk.
 
@@ -116,7 +120,3 @@
 ## 2026-11-25T21:03:21+08:00 (UTC+8)
 - Scheduled check after the T033 decision handoff: ws up to date at c9e0a8c; inbox empty. T033 batch PID 49952 active. Five completed members already archived, seven advancing, six not started. Budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.544769e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.664895e+002, high_sig_lo 8.000000e+002, low_A_hi 9.049559e+001, low_ftc_hi 6.599593e+001, low_ftc_lo 2.209620e+002, low_sig_hi 6.749594e+001, low_sig_lo 7.049813e+001.
 - Both imaging jobs (high_rem_hi PID 25260, high_A_hi PID 42828) entered image_v2; no newly completed products or unaudited member inputs. No duplicate job launched. Only ready card T032 belongs to codex-desk.
-
-## 2026-11-25T21:02:34+08:00 (UTC+8)
-- Applied Claude decision 0d9ed10: T033 running, gross ratios accepted. Production job PID 49952 never restarted. Verified 12/18 generated inputs and archived five completed 800 ns runs, all rc 0. Started two five-stage imaging jobs, eight workers each: started T033_high_rem_hi_post pid=25260 dir=D:\sim_runs\T033_high_rem_hi_post; T033_high_rem_hi_post STATE=running  elapsed=0.00:00:00  pid=25260  commit=c9e0a8c; started T033_high_A_hi_post pid=42828 dir=D:\sim_runs\T033_high_A_hi_post; T033_high_A_hi_post STATE=running  elapsed=0.00:00:00  pid=42828  commit=c9e0a8c. Budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.524893e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.519815e+002, high_sig_lo 8.000000e+002, low_A_hi 8.849855e+001, low_ftc_hi 6.399578e+001, low_ftc_lo 2.084292e+002, low_sig_hi 6.599671e+001, low_sig_lo 6.849581e+001.
-- T030 low_a100n/it1 imaging finished 20:32:13, all five stages rc 0; verified 30 band-b frames per mode, 18 scenario tables and 131/521/12 diagnostic rows. All eight production and imaging deliveries complete; card submitted for review. Reports synced and verified. ws pushed at c9e0a8c. T032 is for codex-desk only.
