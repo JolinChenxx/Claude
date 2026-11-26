@@ -2,7 +2,8 @@
 id: T040
 title: Waveform scenario with its own Picard chain (high it0–it2, low it0–it1) + G1 high it0; 32 cores; production now (cores idle)
 owner: codex
-status: ready
+status: running
+started: 2026-11-26T10:37:17+08:00
 depends: []
 milestone: D2
 est_time: high chain ~3 × 3.5 h, low ~2 × 2 h, G1 ~6 h
