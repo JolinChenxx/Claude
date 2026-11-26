@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T22:02:35+08:00 (UTC+8)
+- T040 high G0 it2 delivered at ws f95bbab9. All seven stages exited 0. Verified 47 file hashes and 29 experimental times per offset. Synced the report and verified its hash. High G1 it0 (PID 39188) was rendering nominal images after 2 h 27 min with eight active worker processes.
+- T043 diagnostics on T031, T039 and T026 were running after 29 min, each with a live Python worker. The inbox was empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T21:32:05+08:00 (UTC+8)
 - Claimed T043 on ws at 36cfa7ab and launched three single-core emission-height diagnostics in parallel through job.ps1. T031 high_v1rs it2 has PID 50572, T039 high_wf it2 has PID 27012, and T026 high_thin_G0 it2 has PID 31348. CSV coverage and report tables are due after completion.
 - T040 high G0 it2 (PID 40120, 2 h 28 min) was rendering the +28 ns images. High G1 it0 (PID 39188, 1 h 57 min) was rendering nominal images. The inbox was empty. T038 is assigned to codex-desk.
@@ -135,7 +139,3 @@
 ## 2026-11-26T08:01:08+08:00 (UTC+8)
 - T033 low_rem_hi and T034 high_A_lo wrappers and ten stages rc 0; 30/29 frame labels verified respectively, baseline comparisons and missing estimates reported. Imaging delivered T033 12/18, T034 1/8. Reports synced with matching hashes. T039 done per cloud. Started T033 low_A_lo (node 0, production final 1.300000e+003 ns) and T034 high_A_hi (node 1, production final 8.000000e+002 ns), 8 workers each. No new workstation-ready card; T038 desk-owned. ws 6b4c667b.
 - Jobs: T033_low_A_lo_post STATE=running  elapsed=0.00:00:00  pid=50104  commit=6b4c667b; T034_high_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35768  commit=6b4c667b.
-
-## 2026-11-26T07:31:01+08:00 (UTC+8)
-- T039 submitted for review: high shifted image and peak finished 07:14; all 14 stages rc 0, all 94 archived nominal/shifted products match raw hashes. High/low solver endpoints 800/1300 ns. Report sync hash verified. T034 high_A_lo nominal imaging was still active at inspection (production 800 ns). Started T033 low_rem_hi imaging on freed node 0, 8 workers (production 1300 ns, 11/18 delivered). No new workstation-ready card; T038 desk-owned. ws dff23b83.
-- Jobs: T033_low_rem_hi_post STATE=running  elapsed=0.00:00:00  pid=49260  commit=dff23b83; T034_high_A_lo_post STATE=running  elapsed=0.00:59:50  pid=50924  commit=f0b7b859; T039_high_wf_post STATE=finished  elapsed=0.02:29:12  pid=35792  commit=cabb438d.
