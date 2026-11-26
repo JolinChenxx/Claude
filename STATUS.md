@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T17:32:45+08:00 (UTC+8)
+- ws sync recovered. Delivered T034 high_sig_lo/it2 (6/8 members, all 18 P2 estimates unavailable) and T040 high G0 it0 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 81902f22.
+- Started T034 high_sig_hi/it2 on node 1. T034_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=49856  commit=81902f22. T033 low_gaunt_hi and T040 high G0 it1 continue nominal imaging. All three T042 members are rendering the +28 ns images.
+- T040_retry01 solver budget times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 4.244787e+002 ns, high_wf_G1/it0 5.089764e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T17:01:10+08:00 (UTC+8)
 - Card: none. The ws pull from origin failed during the Schannel TLS handshake. Local ws was one commit behind the cached origin/ws. The pass stopped before card selection and job inspection. Current job progress is unverified.
 
@@ -129,7 +134,3 @@
 ## 2026-11-26T03:32:46+08:00 (UTC+8)
 - T039: committed one verified low registry row; cloud approved the pre-t0 tail criterion (0.318%), both original inputs untouched. Low finished at 1300 ns, rc 0; 2591 matching finite ledger rows, rank warning counts reported. Pushed low milestone and hash-verified report sync. Started T039_low_wf_post (8 imaging workers; nominal/28 ns, both peaks, diagnostics including shock). High production t_ns=1.029941e+002. T037 low v1rs shifted frames verified; 2/4 archived, T026 high in progress. T033 high_sig_hi still in image_v2 (9/18 delivered); T034 imaging queued behind priority work. No workstation-ready card; T035/T038 desk-owned. ws 5df0b101.
 - Jobs: T039 STATE=running  elapsed=0.00:59:57  pid=44548  commit=eedb525f; T039_low_wf_post STATE=running  elapsed=0.00:00:00  pid=45376  commit=5df0b101; T037_retry01 STATE=running  elapsed=0.02:31:19  pid=49872  commit=0683e9f; T033_high_sig_hi_post STATE=running  elapsed=0.00:30:59  pid=44452  commit=19f3cfb9.
-
-## 2026-11-26T03:01:47+08:00 (UTC+8)
-- T039 blocked and handed off (ws 19f3cfb9): both 4000-row solver pulse tables are 0.317971% below case/ini energy (limit 0.1%). PULSE_TAB, COND_SIG and radii passed. Complete trace includes 0.317918% before t=0. Production left running without modifications or new imaging; synced report hash verified. T037 on low_v1rs, high_v1rs alone archived (1/4); no restart. T033 high_sig_hi preflight passed and started on available node 1; 9/18 imaging deliveries. No workstation-ready cards; T035/T038 desk-owned.
-- Jobs: T033_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=44452  commit=19f3cfb9; T037_retry01 STATE=running  elapsed=0.02:00:20  pid=49872  commit=0683e9f; T039 STATE=running  elapsed=0.00:28:58  pid=44548  commit=eedb525f. T039 latest budget t_ns: high_wf=5.199932e+001, low_wf=2.684195e+002.
