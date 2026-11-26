@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T16:01:18+08:00 (UTC+8)
+- None to claim or collect. ws is synchronized at d6086461 and the inbox is empty. The only ready card, T038, belongs to codex-desk.
+- Checked nine active jobs. T040 high G0 it1 is rendering nominal images. High G0 it0 and low G0 it1 are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering nominal images.
+- T040_retry01 continues solving. Latest recorded times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 5.199868e+001 ns, high_wf_G1/it0 3.699846e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns.
+
 ## 2026-11-26T15:32:36+08:00 (UTC+8)
 - T040 high G0 it1 reached 800 ns and exited 0. Verified and pushed its registry entry. High G0 it2 passed the pulse and conductivity input checks. The 0.317971% energy shortfall meets the approved tail criterion. The ws report is at d6086461.
 - Started nominal and +28 ns imaging with diagnostics for high G0 it1. T040_high_wf_chain_it1_post STATE=running  elapsed=0.00:00:00  pid=50696  commit=d6086461. The high G0 it0 and low G0 it1 jobs are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering nominal images.
@@ -128,7 +133,3 @@
 ## 2026-11-26T02:04:02+08:00 (UTC+8)
 - T034: verified final registry row before rebase; wrapper rc 0, all eight members reached 800 ns and have matched droplet ledgers. Production milestone pushed; imaging queued behind T037 and T033. T033 8/18 imaging delivered, high_sig_lo stage=image_v2. T037 retry: stage receipts=0, descendants=11; cumulative CPU seconds=29725.7. No duplicate or new job launched. T036 submitted for review with 748 measured points from IPG test p.6 Fig.6, uncertainty and checked overlay, source timing and copper reflectance limits; no exact YLPN waveform asserted. Approved sync files hash-verified. No workstation-ready cards; T035/T038 desk only. ws 5f99b2fc.
 - Jobs: T034 STATE=finished  elapsed=0.04:06:26  pid=38616  commit=a5f05ad; T033_high_sig_lo_post STATE=running  elapsed=0.00:28:31  pid=49208  commit=894c74e; T037_retry01 STATE=running  elapsed=0.01:02:34  pid=49872  commit=0683e9f.
-
-## 2026-11-26T01:35:30+08:00 (UTC+8)
-- T034 verified three appended registry rows before rebase; high_sig_hi, high_ftc_lo, high_gaunt_hi reached 800 ns with fully matching droplet ledgers, 7/8 production archived. T033 low_rem_lo imaging verified and handed off (8/18); report sync hash matches. Started high_sig_lo on freed node 1. T037_retry01 running on high_v1rs image, no finished stage recorded, no fallback or restart. T036 both Mattern PDFs retrieved and page/line references verified, waveform and paired jump pending. No workstation-ready cards; T035/T038 desk-owned. ws 894c74e.
-- Jobs: T033_high_sig_lo_post STATE=running  elapsed=0.00:00:00  pid=49208  commit=894c74e; T034 STATE=running  elapsed=0.03:37:55  pid=38616  commit=a5f05ad; T037_retry01 STATE=running  elapsed=0.00:34:03  pid=49872  commit=0683e9f. T034 latest t_ns: high_A_hi=8.000000e+002, high_A_lo=8.000000e+002, high_cond_lo=8.000000e+002, high_ftc_hi=5.009474e+002, high_ftc_lo=8.000000e+002, high_gaunt_hi=8.000000e+002, high_sig_hi=8.000000e+002, high_sig_lo=8.000000e+002.
