@@ -265,3 +265,20 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
 - **Low fluence:** its 10 ns frame (σ = 33 µm) is consistent with the declared `low` scenario (0 µm). The two series use different settings, consistent with the two series being recorded separately.
 - **Transparency:** the d500 images and later-time metrics of T031/T039 had already been computed as part of the declared scenario bracket before this calibration. The calibration uses only the three earliest frames, and the later-time agreement is not used to choose D.
 - **Experimental saturation:** high-fluence frames at 50–160 ns are saturated (n_sat 17–139, peak 255); 180 ns onward is unsaturated. The experimental L at 50–160 ns is therefore a lower bound, and brightness-trend comparisons are normalised at 300 ns (L(t)/L(300)), not at 150 ns.
+
+## T042 high-fluence vertical extent declared 2026-11-26 ~11:40 (UTC+8), before any result
+- **Observation that motivates it (experiment only):** at high fluence the experimental emission grows vertically while it is still PSF-limited sideways. At 0 / 20 / 30 ns, σz = 78 / 92 / 146 µm and σx = 108 / 113 / 117 µm, and the frames are unsaturated. A narrow, tall luminous column forms along the beam during the pulse.
+- **Model fact (T041):** ≥ 99% of the laser energy is deposited within 3.5–6 µm of the face, and the gas above is transparent. With D = 500 µm, the model σz (100–111 µm) is close to the occluded PSF alone, so its intrinsic vertical extent is small.
+- **Members (workstation, seeded and with Picard iteration as in T039):**
+  - (1) v1m two-temperature avalanche on v1rs (v1rsbd_high). Non-equilibrium ionization is the declared candidate for absorption in the plume above the dense layer.
+  - (2) The same on the waveform scenario (v1rsbdwf_high).
+  - (3) The alternative pulse-width reading, FWHM 35 ns (as T038), at high fluence.
+- **Readings, declared:**
+  - the absorbed-power height z90_abs and the Cu fraction (scripts/laser_deposition.py);
+  - σx and σz at D = 500 µm;
+  - L(t)/L(300) from 300 to 730 ns;
+  - the shock against Fig. 3d with Δ = 28 ns, plus a refitted Δ reported separately.
+- **Use:** v1m is adopted into the reported model only if it is physically active (it raises z90_abs above 20 µm during the half-peak window), not because σz moves closer. Member (3) is adopted only on documentary evidence about the pulse-width convention. Otherwise all three are reported as sensitivity.
+- **Ruled out before running (estimate, not implemented):**
+  - Thermal emission from droplets: the v1r droplets stay below z ≈ 225 µm, which is below the emission centroid, so they cannot raise the plume.
+  - A missing wall conduction sink: it is already in the model and removes about 35% of the absorbed energy.
