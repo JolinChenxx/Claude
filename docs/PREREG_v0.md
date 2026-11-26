@@ -282,3 +282,12 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
 - **Ruled out before running (estimate, not implemented):**
   - Thermal emission from droplets: the v1r droplets stay below z ≈ 225 µm, which is below the emission centroid, so they cannot raise the plume.
   - A missing wall conduction sink: it is already in the model and removes about 35% of the absorbed energy.
+
+## Occlusion geometry of the synthetic image declared 2026-11-26 ~19:45 (UTC+8), before computing it
+- **Motivation (experiment only):** in every high-fluence frame from 0 to 160 ns the experimental emission reaches 40–60 µm *below* the transferred face row (thr_bottom 97–107 µm above the crop bottom; face row 68, bracket 60.4–69.3). The imaging pipeline instead zero-pads below the face before blurring: no light at all can appear below the face (option O1, a hard cut). O1 is a convention and was never calibrated.
+- **Options:**
+  - O1, hard cut at the face (current).
+  - O2, no cut: light blurred below the face reaches the sensor, as when the target's extent along the line of sight is too short to vignette the cone.
+  - Partial vignetting lies between the two.
+- **Calibration:** use only the earliest frames (0 / 20 / 30 ns, unsaturated, PSF-dominated) with D = 500 µm and Δ = 28 ns, for the T031 and T039 unblurred frames. Readings: σz/σx, and the fraction of light below the face row, compared with the experiment. The option (or the O1–O2 interval) consistent with those frames is used for all later frames.
+- **Use:** later-time σz is reported under the selected convention and under both bracket ends. Later-time agreement is not used to choose.
