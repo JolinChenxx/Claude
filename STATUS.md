@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T07:32:01+08:00 (UTC+8)
+- T045 nominal-time image comparisons for both members were pushed to ws at 1641a233. The synchronized report matches its source hash.
+- Both +28 ns imaging jobs were running at 2 h 29 min. The inbox was empty. T038 is assigned to codex-desk.
+
 ## 2026-11-27T07:01:37+08:00 (UTC+8)
 - Updated T045 at ws 4fb15f94 with the axial shock error at +28 ns and the best fitted offset for each run and baseline. The calculation reproduced the T042 reference result. Synced the report and verified its hash.
 - Both T045 jobs were rendering +28 ns images after 1 h 59 min. The inbox was empty. The only ready card, T038, belongs to codex-desk.
@@ -127,7 +131,3 @@
 - Started T033 low_gaunt_hi/it1 on node 0. T033_low_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=52152  commit=293f5a57. T034 high_sig_hi passed preflight and is queued behind high_sig_lo on the same eight node 1 lanes.
 - T040 high it0 continues +28 ns imaging and high it1 continues nominal imaging. T042 all three nominal images are running. T040_retry01 budgets are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 7.999856e+001 ns, high_wf_G1/it0 4.109866e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
 
-## 2026-11-26T16:01:18+08:00 (UTC+8)
-- None to claim or collect. ws is synchronized at d6086461 and the inbox is empty. The only ready card, T038, belongs to codex-desk.
-- Checked nine active jobs. T040 high G0 it1 is rendering nominal images. High G0 it0 and low G0 it1 are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering nominal images.
-- T040_retry01 continues solving. Latest recorded times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 5.199868e+001 ns, high_wf_G1/it0 3.699846e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns.
