@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T10:55:59+08:00 (UTC+8)
+- T041 delivered to Claude for review in ws 19428667. Verified all five CSVs against 405 indexed snapshots and synced the report with a matching hash. T033 low_ftc_hi and T034 high_ftc_lo imaging have finished and await collection on the scheduled pass. T038 is desk-owned.
+- T040_retry01 remains running. Latest solver times: high_wf_chain/it0 3.999660e+001 ns, high_wf_G1/it0 2.149787e+001 ns, low_wf_chain/it0 9.199690e+001 ns.
+
 ## 2026-11-26T10:37:58+08:00 (UTC+8)
 - Launch recovery. The first wrapper exited 1 at module import because the repository src directory was missing from PYTHONPATH. It created no member directories. Preserved its logs under D:/sim_runs/T040. Added the repository source and environment DLL paths to the child process, verified the batch CLI, and started T040_retry01 (PID 6012) with the same batch and 32-core cap. Monitor T040_retry01 for job status and D:/sim_runs/T040 for member data.
 - T040 claimed and pushed on ws at 07f2a116. Started production via job.ps1 with --max-cores 32. The configuration assigns eight ranks each to the G0 high and low waveform chains and sixteen to G1 high it0. Generated inputs and iteration outputs are pending verification. T033 low_ftc_hi and T034 high_ftc_lo imaging continue. Their production budgets reached 1.300000e+003 and 8.000000e+002 ns respectively. The remaining ready card T038 belongs to codex-desk.
@@ -117,7 +121,3 @@
 ## 2026-11-25T21:08:49+08:00 (UTC+8)
 - T034 claimed (6f2c362), preflight passed for eight high-fluence v1rs members, existing executable, seeds and table hashes. T033 currently occupies 56 ranks; 56+16 > 60, so no T034 MPI job yet. Started T034_gate via job.ps1: it will start T034 when the combined limit permits 16 and then let it expand in eight-rank groups. Engineering/checks reported in ws a5f05ad. T032/T035 are desk-only, not claimed.
 - T034_gate STATE=running  elapsed=0.00:00:00  pid=49340  commit=a5f05ad; T033 STATE=running  elapsed=0.01:37:23  pid=49952  commit=9c6b07d; T033_high_rem_hi_post STATE=running  elapsed=0.00:06:15  pid=25260  commit=c9e0a8c; T033_high_A_hi_post STATE=running  elapsed=0.00:06:15  pid=42828  commit=c9e0a8c. Latest T033 budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.649883e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.944960e+002, high_sig_lo 8.000000e+002, low_A_hi 1.384544e+002, low_ftc_hi 8.049524e+001, low_ftc_lo 9.378132e+002, low_sig_hi 8.099996e+001, low_sig_lo 8.449594e+001. No existing job stopped/restarted.
-
-## 2026-11-25T21:03:21+08:00 (UTC+8)
-- Scheduled check after the T033 decision handoff: ws up to date at c9e0a8c; inbox empty. T033 batch PID 49952 active. Five completed members already archived, seven advancing, six not started. Budget times (ns): high_A_hi 8.000000e+002, high_A_lo 7.544769e+002, high_ftc_hi 8.000000e+002, high_ftc_lo 8.000000e+002, high_rem_hi 8.000000e+002, high_rem_lo 6.664895e+002, high_sig_lo 8.000000e+002, low_A_hi 9.049559e+001, low_ftc_hi 6.599593e+001, low_ftc_lo 2.209620e+002, low_sig_hi 6.749594e+001, low_sig_lo 7.049813e+001.
-- Both imaging jobs (high_rem_hi PID 25260, high_A_hi PID 42828) entered image_v2; no newly completed products or unaudited member inputs. No duplicate job launched. Only ready card T032 belongs to codex-desk.
