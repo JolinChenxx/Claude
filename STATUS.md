@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T03:02:45+08:00 (UTC+8)
+- T045 v1d build exited 0. Verified all table hashes, nine copper ion fields and a temperature ceiling of 298995 K. Generated both solver inputs using matching source metadata for the input-only check. The report records the dry-run melt-depth error and the successful preflight. Started the production batch (PID 25456) at ws 26d930f8 with two eight-rank members targeting 800 ns.
+- Four T044 jobs (T031, T039, T040 and T042) continued +28 ns imaging after 3 h 28 min. T040 high G1 it0 was also rendering +28 ns images after 7 h 27 min. The inbox was empty. The only ready card T038 belongs to codex-desk.
+
 ## 2026-11-27T02:32:46+08:00 (UTC+8)
 - Claimed T045 at 183af9e8 after its dependency was removed. Downloaded and hash-checked the four NIST Cu VI through IX level files, parsed 254, 4, 1 and 1 levels respectively, and pushed the data and report to ws at 4c234534. Started T045_tables (PID 10996) with 32 workers to build v1d.
 - T040 high G1 it0 was rendering +28 ns images after 6 h 57 min. Four T044 imaging jobs (T031, T039, T040 and T042) were at +28 ns after 2 h 58 min. T026 was delivered previously. The inbox was empty. T038 belongs to codex-desk.
@@ -136,8 +140,3 @@
 - T040 low_wf_chain/it0 returned 0 at 1300 ns. Registered it on ws, verified the it1 waveform energy and both switches, and launched the it0 nominal and +28 ns imaging sequence with diagnostics. T040_low_wf_chain_it0_post STATE=running  elapsed=0.00:00:19  pid=34636  commit=39cfae3a. T040_retry01 continues production.
 - T042_retry01 continues three solves. All three generated ini files passed the specified input checks. Latest budgets for both batches: T040/high_wf_chain/it0 4.519779e+002 ns, T040/high_wf_G1/it0 5.999868e+001 ns, T040/low_wf_chain/it0 1.300000e+003 ns, T040/low_wf_chain/it1 2.914207e+002 ns, T042/high_bd/it2 6.299882e+001 ns, T042/high_bdwf/it2 4.799739e+001 ns, T042/high_tau35/it2 4.949767e+001 ns.
 - ws deliveries pushed through 39cfae3a. Inbox empty. The only ready card T038 belongs to codex-desk.
-
-## 2026-11-26T11:32:34+08:00 (UTC+8)
-- Claimed T042 on ws at 8bbc5264. The first wrapper exited 1 while reading the UTF-8 YAML with the Windows GBK default, before creating any member. Retained its logs, set PYTHONUTF8=1 and launched T042_retry01 with the same batch at 24 MPI ranks. STATE=running  elapsed=0.00:00:42  pid=50076  commit=8bbc5264. Generated inputs at this check: high_bd input pending / high_bdwf input pending / high_tau35 input pending.
-- T040_retry01 running. Latest budgets: high_wf_chain/it0 1.404865e+002 ns, high_wf_G1/it0 4.299896e+001 ns, low_wf_chain/it0 1.300000e+003 ns. The low it0 solver reached 1300 ns and its registry row arrived during this pass. The it1 directory exists. Low it0 imaging and the iteration handoff are pending.
-- T033 low_sig_lo/it1 and T034 high_ftc_hi/it2 are still running image_v2. T038 is ready on codex-desk.
