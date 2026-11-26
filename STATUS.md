@@ -1,5 +1,10 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T23:32:36+08:00 (UTC+8)
+- T044 table build exited 0 in 792.8 s. Verified matching v1c and v1c2 hashes for eos.bin and opt.bin. Read nion_z4 and nion_z5 from pop.bin. Pushed the table report to ws at cd55086e.
+- Started paired nominal and +28 ns imaging with peak lift for T031, T039, T040, T042 and T026 (eight workers per run), and one emission diagnostic each for T031 and T039. All seven jobs use the source snapshot at a66bc00e and v1c2 tables.
+- T040 high G1 it0 (PID 39188) was rendering nominal images after 3 h 57 min. The inbox was empty. T038 is assigned to codex-desk.
+
 ## 2026-11-26T23:01:54+08:00 (UTC+8)
 - Claimed T044 at ws 22b9680a. Started T044_tables (PID 45016) to build v1c2 with the original v1c config and 32 workers. Verify eos.bin and opt.bin against v1c and check pop.bin for nion_z4 and nion_z5 before re-imaging.
 - T040 high G1 it0 (PID 39188) was rendering nominal images after 3 h 27 min. The inbox was empty. The remaining ready card T038 belongs to codex-desk.
@@ -136,7 +141,3 @@
 ## 2026-11-26T09:32:39+08:00 (UTC+8)
 - T034 high_A_hi accepted and handed off. Wrapper and five stages returned 0. Verified 29 frame labels and same-seed T031 comparison. All 18 unavailable P2 values preserved. Report sync hash matched. T034 imaging deliveries 2/8. Launched high_ftc_lo on node 1 with 8 workers (production final 8.000000e+002 ns). T033 low_A_hi continues on node 0 (production final 1.300000e+003 ns, 13/18 delivered). The only ready card T038 belongs to the desk. ws ed4595bd.
 - T034_high_ftc_lo_post STATE=running  elapsed=0.00:00:00  pid=37992  commit=ed4595bd. T033_low_A_hi_post STATE=running  elapsed=0.00:31:15  pid=35640  commit=7b2fe397.
-
-## 2026-11-26T09:01:23+08:00 (UTC+8)
-- T033 low_A_lo accepted: wrapper and five stages rc 0, 30 frame labels; 18 unavailable P2 and missing upper lift at 1120 ns retained. Same-iteration T026 comparison pushed, approved report sync hash verified. 13/18 delivered. Next T033 low_A_hi launched on freed node 0 (8 workers, production final 1.300000e+003 ns). T034 high_A_hi still imaging at inspection, previously delivered 1/8 (production endpoint 8.000000e+002 ns). No new workstation-ready card; T038 desk-owned. ws 7b2fe397.
-- Jobs: T033_low_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35640  commit=7b2fe397; T034_high_A_hi_post STATE=running  elapsed=0.01:00:15  pid=35768  commit=6b4c667b.
