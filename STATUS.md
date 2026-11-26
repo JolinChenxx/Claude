@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-26T23:01:54+08:00 (UTC+8)
+- Claimed T044 at ws 22b9680a. Started T044_tables (PID 45016) to build v1c2 with the original v1c config and 32 workers. Verify eos.bin and opt.bin against v1c and check pop.bin for nion_z4 and nion_z5 before re-imaging.
+- T040 high G1 it0 (PID 39188) was rendering nominal images after 3 h 27 min. The inbox was empty. The remaining ready card T038 belongs to codex-desk.
+
 ## 2026-11-26T22:31:52+08:00 (UTC+8)
 - Submitted T043 for review at ws 78531af9. All three diagnostics exited 0. Verified all 81 indexed snapshots per run through 200 ns and all 18 selected report rows. Synced the report and verified its hash.
 - T040 high G1 it0 (PID 39188) was running nominal imaging after 2 h 57 min. The inbox was empty. T038 is the only ready card and belongs to codex-desk.
@@ -136,6 +140,3 @@
 ## 2026-11-26T09:01:23+08:00 (UTC+8)
 - T033 low_A_lo accepted: wrapper and five stages rc 0, 30 frame labels; 18 unavailable P2 and missing upper lift at 1120 ns retained. Same-iteration T026 comparison pushed, approved report sync hash verified. 13/18 delivered. Next T033 low_A_hi launched on freed node 0 (8 workers, production final 1.300000e+003 ns). T034 high_A_hi still imaging at inspection, previously delivered 1/8 (production endpoint 8.000000e+002 ns). No new workstation-ready card; T038 desk-owned. ws 7b2fe397.
 - Jobs: T033_low_A_hi_post STATE=running  elapsed=0.00:00:00  pid=35640  commit=7b2fe397; T034_high_A_hi_post STATE=running  elapsed=0.01:00:15  pid=35768  commit=6b4c667b.
-
-## 2026-11-26T08:30:49+08:00 (UTC+8)
-- None to start or collect. ws synchronized to 7c29f6bc; no registry changes or incoming handoff. T033_low_A_lo_post (PID 50104) and T034_high_A_hi_post (PID 35768) both running image_v2; zero completed stages at inspection. Production endpoints: T033 low_A_lo 1.300000e+003 ns; T034 high_A_hi 8.000000e+002 ns. Imaging deliveries remain 12/18 and 1/8 respectively. Both imaging slots occupied; only ready card T038 is desk-owned. No job launched or restarted.
