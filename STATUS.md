@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T06:31:44+08:00 (UTC+8)
+- Delivered the T045 high_wf_u diagnostics on ws at b9a2f335. Verified all 321 shock snapshots and 81 snapshots each for laser deposition and emission layers. Both diagnostic jobs have finished. The synced report includes comparisons with T031 and T039 for gas absorption and axial temperatures.
+- Both imaging jobs completed nominal peak lift and reached +28 ns imaging after 1 h 29 min. The inbox was empty. T038 belongs to codex-desk.
+
 ## 2026-11-27T06:03:07+08:00 (UTC+8)
 - T040 submitted for review at ws b90eba2c. The final G1 job exited 0. All six iteration receipts cover 42 successful postprocessing stages and 282 verified products. Synced the final report and checked its hash.
 - T045 high_v1rs_u diagnostics delivered at b53aa61c. Verified 321 shock snapshots and 81 snapshots each for laser deposition and emission layers. Synced the report and checked its hash. Both T045 imaging jobs and the high_wf_u diagnostic were running at inspection. The inbox was empty. T038 belongs to codex-desk.
@@ -128,8 +132,3 @@
 - T040 high G0 it1 reached 800 ns and exited 0. Verified and pushed its registry entry. High G0 it2 passed the pulse and conductivity input checks. The 0.317971% energy shortfall meets the approved tail criterion. The ws report is at d6086461.
 - Started nominal and +28 ns imaging with diagnostics for high G0 it1. T040_high_wf_chain_it1_post STATE=running  elapsed=0.00:00:00  pid=50696  commit=d6086461. The high G0 it0 and low G0 it1 jobs are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering nominal images.
 - T040_retry01 continues production. Latest solver times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 2.799996e+001 ns, high_wf_G1/it0 3.299893e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
-
-## 2026-11-26T15:00:56+08:00 (UTC+8)
-- No workstation card to claim or completed job to collect. ws synchronized at c6fef67b. The inbox is empty. T038 belongs to codex-desk.
-- Checked eight running jobs. T040 high G0 it0 and low G0 it1 are rendering their +28 ns images. T033 low_sig_hi, T034 high_sig_lo and all three T042 members are rendering their nominal images. T033 has delivered 16/18 members and T034 has delivered 5/8.
-- T040_retry01 continues production. Latest solver times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 6.805000e+002 ns, high_wf_G1/it0 2.814803e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns.
