@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T02:02:23+08:00 (UTC+8)
+- Delivered the T026 pair for T044 at ws 4038e0b1. Verified 52 files by SHA-256 across both offsets. Each offset covers all 29 experimental times. Synced the updated report and checked its hash.
+- Four T044 jobs (T031, T039, T040 and T042) were rendering +28 ns images after 2 h 28 min. T040 high G1 it0 was also rendering +28 ns images after 6 h 27 min. Inbox empty. T038 belongs to codex-desk. T045 lists T044 as a dependency. Sent a question about the overlap allowed in the card text and left T045 ready pending clarification or completion of T044.
+
 ## 2026-11-27T01:31:18+08:00 (UTC+8)
 - Delivered the T031 emission diagnostic for T044 on ws at 4e3229ef. All 81 rows matched the source index through 200 ns. Both requested emission diagnostics have now passed verification. Synced the report and checked its hash.
 - All five T044 imaging jobs have produced their nominal peak-lift CSVs and reached +28 ns imaging after 1 h 58 min. T040 high G1 it0 continues its +28 ns imaging after 5 h 57 min. The inbox was empty. T038 is assigned to codex-desk.
@@ -138,7 +142,3 @@
 - Delivered T033 low_ftc_hi/it1 (15/18) and T034 high_ftc_lo/it2 (3/8) on ws db16328b. Both members lack all 18 P2 estimates. Synced both reports and verified their SHA-256 hashes.
 - T034 high_ftc_hi/it2 (PID 40460) and T033 low_sig_lo/it1 (PID 48032) both started image_v2 in the background. The only ready card T038 belongs to codex-desk.
 - T040_retry01 (PID 6012, 32-core cap) is running. All three it0 waveform inputs passed the energy check. Latest solver times are high_wf_chain/it0 5.349936e+001 ns, high_wf_G1/it0 2.699958e+001 ns, low_wf_chain/it0 2.364383e+002 ns.
-
-## 2026-11-26T10:55:59+08:00 (UTC+8)
-- T041 delivered to Claude for review in ws 19428667. Verified all five CSVs against 405 indexed snapshots and synced the report with a matching hash. T033 low_ftc_hi and T034 high_ftc_lo imaging have finished and await collection on the scheduled pass. T038 is desk-owned.
-- T040_retry01 remains running. Latest solver times: high_wf_chain/it0 3.999660e+001 ns, high_wf_G1/it0 2.149787e+001 ns, low_wf_chain/it0 9.199690e+001 ns.
