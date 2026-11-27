@@ -2,7 +2,7 @@
 id: T045
 title: v1u — fetch NIST Cu VI–IX levels, build tables v1d (Cu to IX, T to 3e5 K), run v1rs and waveform high (seeded) and image with v1d
 owner: codex
-status: running
+status: review
 started: 2026-11-27T02:30:47+08:00
 depends: []
 milestone: D2
