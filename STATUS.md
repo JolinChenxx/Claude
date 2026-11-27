@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T08:02:55+08:00 (UTC+8)
+- T045 is in review on ws at 9ef176ed. Both imaging jobs exited 0. Validated all four image sets and 88 archived files, completed the report and handoff, and verified the synchronized report hash.
+- No T045 jobs remain. The inbox was empty. The only ready card, T038, belongs to codex-desk.
+
 ## 2026-11-27T07:32:01+08:00 (UTC+8)
 - T045 nominal-time image comparisons for both members were pushed to ws at 1641a233. The synchronized report matches its source hash.
 - Both +28 ns imaging jobs were running at 2 h 29 min. The inbox was empty. T038 is assigned to codex-desk.
@@ -125,9 +129,4 @@
 
 ## 2026-11-26T17:01:10+08:00 (UTC+8)
 - Card: none. The ws pull from origin failed during the Schannel TLS handshake. Local ws was one commit behind the cached origin/ws. The pass stopped before card selection and job inspection. Current job progress is unverified.
-
-## 2026-11-26T16:33:27+08:00 (UTC+8)
-- Handed off T033 low_sig_hi/it1 (17/18 members) and T040 low G0 it1 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 293f5a57.
-- Started T033 low_gaunt_hi/it1 on node 0. T033_low_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=52152  commit=293f5a57. T034 high_sig_hi passed preflight and is queued behind high_sig_lo on the same eight node 1 lanes.
-- T040 high it0 continues +28 ns imaging and high it1 continues nominal imaging. T042 all three nominal images are running. T040_retry01 budgets are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 7.999856e+001 ns, high_wf_G1/it0 4.109866e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
 
