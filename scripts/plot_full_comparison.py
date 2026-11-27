@@ -43,17 +43,22 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
 LOGFMT = FuncFormatter(lambda v, _: f"{v:g}")
 T_REF = 300.0  # num (registry t_ref_norm, ns)
 K = "#222222"
-COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b", "spatter": "#7f8c8d", "g1": "#000000", "flight": "#d4a017", "recond": "#16a085", "wave": "#e84393"}
-LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）", "recond": "v1r + 回凝 v1rs（T031）", "wave": "v1rs + 同类激光实测波形（T039，情景）"}
+COL = {"baseline": "#2a78d6", "droplets": "#eb6834", "backpress": "#1baf7a", "combo": "#8e44ad", "elim": "#c0392b", "spatter": "#7f8c8d", "g1": "#000000", "flight": "#d4a017", "recond": "#16a085", "wave": "#e84393", "v1u": "#0b3d91"}
+LAB = {"baseline": "基线（声速蒸发）", "droplets": "液滴上界 v1j", "backpress": "带背压 v1k", "combo": "背压+液滴（T025）", "elim": "能量受限液滴 v1n（T026）", "spatter": "飞溅前沿液滴 v1q（T029）", "g1": "v1n 细网格 G1（T028）", "flight": "飞行+传热蒸发 v1r（T030，熔深液滴）", "recond": "v1r + 回凝 v1rs（T031）", "wave": "v1rs + 同类激光实测波形（T039，情景）", "v1u": "v1rs + 铜高价电离 v1u（T045，现报告模型）"}
 
 
 IMG = "image_v2"  # --image-dir image_v2_t28: t0-aligned imaging (PREREG t0 alignment)
 
 
+def img_of(p):
+    """Imaging subfolder of a member: the v1u runs (T045, tables v1d) were imaged into image_v2u[_t28]."""
+    return IMG.replace("image_v2", "image_v2u") if "T045" in str(p) else IMG
+
+
 def latest(base, its):
     for it in its:
         p = ROOT / base / it
-        if (p / IMG / "frames_b_sa.npz").exists():
+        if (p / img_of(p) / "frames_b_sa.npz").exists():
             return p
     return None
 
@@ -61,7 +66,8 @@ def latest(base, its):
 def members():
     if IMG != "image_v2":   # t0-aligned imaging (T037 holds the reported members; T039 its own)
         return {"high": {"elim": latest("results/T037/high_thin_G0", ["."]), "recond": latest("results/T037/high_v1rs", ["."]),
-                         "wave": latest("results/T039/high_wf", ["it2"])},
+                         "wave": latest("results/T039/high_wf", ["it2"]),
+                         "v1u": latest("results/T045/high_v1rs_u", ["it2"])},
                 "low": {"elim": latest("results/T037/low_thin_G0", ["."]), "recond": latest("results/T037/low_v1rs", ["."]),
                         "wave": latest("results/T039/low_wf", ["it1"])}}
     return {
@@ -73,7 +79,8 @@ def members():
                  "g1": latest("results/T028/high_thin_G1", ["it0"]),
                  "flight": latest("results/T030/high_rp", ["it2"]),
                  "recond": latest("results/T031/high_v1rs", ["it2"]),
-                 "wave": latest("results/T039/high_wf", ["it2"])},
+                 "wave": latest("results/T039/high_wf", ["it2"]),
+                 "v1u": latest("results/T045/high_v1rs_u", ["it2"])},
         "low": {"baseline": latest("results/T016e/low_thin_G0", ["it1"]),
                 "backpress": latest("results/T023/low_thin_G0", ["it1", "it0"]),
                 "combo": latest("results/T025/low_thin_G0", ["it1", "it0"]),
@@ -141,7 +148,7 @@ def dfoc_of(path):
 
 
 def model_frames(path, mode, srow, L_ref):
-    d = np.load(path / IMG / f"frames_b_{mode}.npz")
+    d = np.load(path / img_of(path) / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
     dfoc = dfoc_of(path)
     fr = {int(t): (occlude(camera.blur(place(x, srow), um, dfoc), srow) if OCCLUDE else camera.blur(place(x, srow), um, dfoc)) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all()}
@@ -209,7 +216,7 @@ def geometry_figure(series, mode, srow):
     for key, p in MEMBERS[series].items():
         if p is None:
             continue
-        d = np.load(p / IMG / f"frames_b_{mode}.npz")
+        d = np.load(p / img_of(p) / f"frames_b_{mode}.npz")
         rows.append((f"{LAB[key]}\n{p.parent.parent.name} {p.name}",
                      {int(t): place(x, srow) for t, x in zip(d["t_ns"], d["radiance"]) if np.isfinite(x).all() and x.max() > 0}))
     times = FRAME_T[series]
@@ -243,7 +250,7 @@ def geometry_figure(series, mode, srow):
 
 
 def lift_curve(path, mode):
-    d = np.load(path / IMG / f"frames_b_{mode}.npz")
+    d = np.load(path / img_of(path) / f"frames_b_{mode}.npz")
     um = float(d["um_per_px"])
     dfoc = dfoc_of(path)
     t_, l_ = [], []
@@ -268,7 +275,7 @@ def curves_figure(mode, srows):
             if p is None:
                 continue
             for md, ls in ((mode, "-"), ("thin" if mode == "sa" else "sa", ":")):
-                f = p / IMG / f"metrics_b_{md}_{DEFOCUS[series]}.csv"
+                f = p / img_of(p) / f"metrics_b_{md}_{DEFOCUS[series]}.csv"
                 if f.exists():
                     m = pd.read_csv(f)
                     a.semilogy(m.t_ns, m.L_radiance / np.interp(T_REF, m.t_ns, m.L_radiance), ls, color=COL[key], lw=1.8 if ls == "-" else 1.1,
@@ -301,7 +308,7 @@ def curves_figure(mode, srows):
         for key, p in MEMBERS[series].items():
             if p is None:
                 continue
-            f = p / IMG / f"metrics_b_{mode}_{DEFOCUS[series]}.csv"
+            f = p / img_of(p) / f"metrics_b_{mode}_{DEFOCUS[series]}.csv"
             if f.exists():
                 m = pd.read_csv(f)
                 a.plot(m.t_ns, np.sqrt(m.sigma_x2_um2), "-", color=COL[key], lw=1.8, label=f"{LAB[key]} σx")

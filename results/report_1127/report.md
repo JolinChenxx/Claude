@@ -60,9 +60,9 @@
 
 ## 三、各工况逐一讲解
 
-每个工况都是在上一个基础上增加一项物理。下图是所有工况的逐帧图（高通量，**散焦 250 µm、未做时间平移**，是较早的版本，仅用于看各工况的形态差别；最新对比图见第四节）。
+每个工况都是在上一个基础上增加一项物理。下图是所有工况的逐帧图（高通量，**散焦按标定取 500 µm，未做时间平移**；最后一行为现报告模型 v1rs+v1u）。各算例在 T044 中已确认成像修正对 150 ns 以后无影响。时间对齐（Δ = 28 ns）的版本见第四节。
 
-![全部工况逐帧图（历史版，散焦 250 µm，未平移）](figs/full_frames_high_occluded_g150.png)
+![全部工况逐帧图（散焦 500 µm，未平移，含 v1rs+v1u）](figs/full_frames_high_occluded_g150_d500.png)
 
 **小结表（高通量，300 ns；实验 σx 141、σz 151、纵横比 1.07、L730/L300 = 0.107）：**
 
@@ -263,7 +263,8 @@
 | flow.png | 仿真链示意（新） |
 | focus_exp_v1rs_wave.png | 实验 vs v1rs vs 波形情景，Δ=28 ns，500 µm，遮挡（新，本报告生成） |
 | bars_sigmaz_decay.png | 各工况 σz 与 L730/L300（新；T040 取自任务报告） |
-| full_frames_high_occluded_g150_t28_d500.png | 高通量逐帧图，Δ=28 ns，500 µm（含 v1n、v1rs、波形三行模型） |
+| full_frames_high_occluded_g150_t28_d500.png | 高通量逐帧图，Δ=28 ns，500 µm（v1n、v1rs、波形、v1rs+v1u 四行模型） |
+| full_frames_high_occluded_g150_d500.png | 全部工况逐帧图，500 µm，未平移（含 v1rs+v1u） |
 | full_frames_high_occluded_g150_t28.png | 同上，250 µm（历史） |
 | full_frames_high_occluded_g150.png | 全部工况逐帧图，250 µm，未平移（历史） |
 | full_frames_low_occluded_g150_t28.png | 低通量（仅参考） |
