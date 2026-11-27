@@ -120,3 +120,8 @@ PREREG v1p (b), matched high it0 against T026 it0: σ_z/σ_x at 300 ns moves by 
 - 2026-11-26 ~22:05 — T040 high G0 waveform chain, self-consistent it2 (vs T039 seeded): σx 147 / σz 106 µm, aspect 0.72, L500/L300 0.41, L730/L300 0.215. The seeded T039 gave aspect 0.77 and 0.19, so the self-consistent chain moves the waveform scenario back towards v1rs (0.68, 0.22). The waveform's shape gain is mostly a seeding effect. The scenario stays a bracket. The G1 check is pending.
 
 - 2026-11-27 ~03:35 — T044 reviewed: the v2.1 continuum fix changes the high-fluence metrics at ≥ 150 ns by < 0.3% in all five runs (σx, σz, zc, L500/L300, L730/L300). Its only effect is during the pulse (T039 emission z50 +5…13 µm, band power +20% at 30–60 ns). The pre-fix figures and the report stand for t ≥ 150 ns. The vertical-extent gap is not an imaging artefact.
+
+- 2026-11-27 ~08:10 — T045 reviewed. v1u (Cu I–IX with NIST levels, tables v1d to 3×10⁵ K) is adopted into the reported model, as pre-registered (a completeness fix). High fluence, Δ = 28 ns, D = 500 µm, band b sa, compared with the v1c2-imaged baselines:
+  - v1rs: σx/σz at 300 ns 148/102 → 140/104 µm, aspect 0.69 → 0.74; L500/L300 0.41 → 0.48; L730/L300 0.225 → 0.231; zc 162 → 171 µm; shock log-RMSE 0.086 → 0.087 (best Δ is still 28 ns).
+  - Waveform: aspect 0.76 → 0.77; L730/L300 0.216 → 0.203.
+  - The reported model is now v1rs + v1u (T045 high_v1rs_u). The vertical gap remains (σz 104–110 vs 151 µm).
