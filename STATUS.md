@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T09:00:47+08:00 (UTC+8)
+- Card: none. Synced ws at 776bd193. The inbox was empty. T038, the only ready card, belongs to codex-desk.
+- No active workstation jobs. Checked both historical PID matches. The T016h PID was reused and T016i_catchup_01 has a recorded exit code of 0.
+
 ## 2026-11-27T08:31:17+08:00 (UTC+8)
 - Card: none. Synced ws to 776bd193. T045 is done and both imaging jobs have finished. The inbox is empty. The only ready card, T038, belongs to codex-desk.
 - Checked two historical job PID matches. The process using the T016h PID started six days after the recorded launch. T016i_catchup_01 has exit code 0. There are no active workstation cards.
@@ -125,9 +129,4 @@
 - Submitted T033 for review on ws 3236d597 after delivering low_gaunt_hi/it1. All 18 members reached their target times. All 90 stages exited 0. Verified 510 archived products and the frame hashes for all 18 members. P2 was unavailable for 300 of 324 scenarios. Synced the final report and verified its hash.
 - Assigned the eight workers freed on node 0 to T034 high_gaunt_hi/it2. T034_high_gaunt_hi_post STATE=running  elapsed=0.00:00:00  pid=39372  commit=3236d597. T034 high_sig_hi continues nominal imaging on node 1. T040 high G0 it1 and all three T042 members are rendering +28 ns images.
 - T040_retry01 solver budget times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 6.704982e+002 ns, high_wf_G1/it0 5.664740e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
-
-## 2026-11-26T17:32:45+08:00 (UTC+8)
-- ws sync recovered. Delivered T034 high_sig_lo/it2 (6/8 members, all 18 P2 estimates unavailable) and T040 high G0 it0 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 81902f22.
-- Started T034 high_sig_hi/it2 on node 1. T034_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=49856  commit=81902f22. T033 low_gaunt_hi and T040 high G0 it1 continue nominal imaging. All three T042 members are rendering the +28 ns images.
-- T040_retry01 solver budget times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 4.244787e+002 ns, high_wf_G1/it0 5.089764e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
 
