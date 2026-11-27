@@ -1,5 +1,9 @@
 # Codex pass log (latest first)
 
+## 2026-11-27T08:31:17+08:00 (UTC+8)
+- Card: none. Synced ws to 776bd193. T045 is done and both imaging jobs have finished. The inbox is empty. The only ready card, T038, belongs to codex-desk.
+- Checked two historical job PID matches. The process using the T016h PID started six days after the recorded launch. T016i_catchup_01 has exit code 0. There are no active workstation cards.
+
 ## 2026-11-27T08:02:55+08:00 (UTC+8)
 - T045 is in review on ws at 9ef176ed. Both imaging jobs exited 0. Validated all four image sets and 88 archived files, completed the report and handoff, and verified the synchronized report hash.
 - No T045 jobs remain. The inbox was empty. The only ready card, T038, belongs to codex-desk.
@@ -126,7 +130,4 @@
 - ws sync recovered. Delivered T034 high_sig_lo/it2 (6/8 members, all 18 P2 estimates unavailable) and T040 high G0 it0 (all seven stages passed, 47 archived products hash-verified). Both reports synced. ws at 81902f22.
 - Started T034 high_sig_hi/it2 on node 1. T034_high_sig_hi_post STATE=running  elapsed=0.00:00:00  pid=49856  commit=81902f22. T033 low_gaunt_hi and T040 high G0 it1 continue nominal imaging. All three T042 members are rendering the +28 ns images.
 - T040_retry01 solver budget times are high_wf_chain/it0 8.000000e+002 ns, high_wf_chain/it1 8.000000e+002 ns, high_wf_chain/it2 4.244787e+002 ns, high_wf_G1/it0 5.089764e+002 ns, low_wf_chain/it0 1.300000e+003 ns, low_wf_chain/it1 1.300000e+003 ns. Inbox empty. The only ready card T038 belongs to codex-desk.
-
-## 2026-11-26T17:01:10+08:00 (UTC+8)
-- Card: none. The ws pull from origin failed during the Schannel TLS handshake. Local ws was one commit behind the cached origin/ws. The pass stopped before card selection and job inspection. Current job progress is unverified.
 
