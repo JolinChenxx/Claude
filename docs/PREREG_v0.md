@@ -315,3 +315,22 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - EOS check, Y = 1: e(0.02 kg/m³, 140 kK) goes from 4.3 to 8.0×10⁸ J/kg (Z̄ 4.69 → 6.58); e(0.2, 100 kK) rises 7%; at 1.5 kg/m³, 90 kK, and everywhere below 60 kK, it is unchanged. The change is therefore confined to the hot low-density plume.
   - Runs (T045): v1rs high and the waveform scenario, seeded as T039, on tables v1d, imaged with v1d.
   - Use: a completeness fix, adopted whatever the outcome.
+
+## Supervisor feedback 2026-11-27 and T046 near-wall resolution test, declared 2026-11-28 (UTC+8), before any result
+- **Feedback:** the morphology after 150 ns is good. The remaining problem is the early (0–150 ns) plume, which hugs the wall and is too low. The supervisor's hypothesis is that the splashed molten Cu is not coupled to the plume (paper Fig. 4: the spatter top coincides with the plume bottom).
+- **Pre-computed checks (no run):**
+  - Fig. 4e1, high fluence: the spatter top is ≤ 5 µm until 100 ns and 20 µm at 150 ns. The plume bottom is already 25–35 µm at 50–80 ns. The coincidence holds from about 150 ns to 450 ns.
+  - With the model melt mass (≈ 12 ng; ≈ 100 ng if the crown is wide), the kinetic energy at 344 m/s is 0.7–6 µJ, against ≈ 190 µJ absorbed in the gas, and the melt moves at 344 m/s while the plume moves at km/s. The melt cannot lift the plume.
+  - Treating everything below the measured spatter top as opaque, in object space before the blur, on T045 v1rs+v1u: no change at 0–80 ns (the spatter top is < 1 px). At 150–500 ns the centroid rises by 5–42 µm and σz by 2–4 µm, and L falls by 11–49%.
+  - So the spatter can shape the plume bottom after 150 ns (a candidate improvement there), but it cannot produce the early lifted emission. This conclusion is shared by an independent analysis (desk assistant).
+- **T046 (desk; the workstation is off over the weekend):**
+  - The model's brightest early emitter is a 60–100 kK dense layer within about 10 µm of the face, which receives ≥ 99% of the laser energy within 3.5–6 µm, i.e. 3–6 cells of G0 (1 µm).
+  - Test: a paired run of v1rs+v1u at Picard it0, G0 against G0w (0.25 µm cells in the first 20 µm, otherwise G0), to 320 ns.
+  - Readings:
+    - z50, f_lt10 and the near-wall T_5 and Tmax (emission_layers);
+    - z90_abs (laser_deposition);
+    - band-b L(t)/L(300) at 0–80 ns, σz and zc at 0–150 ns (D = 500 µm, Δ = 28 ns);
+    - E_gas_abs(150 ns).
+  - Decision rule:
+    - If G0w moves the 0–80 ns readings by more than 20% (z50, f_lt10, L(t)/L(300)), the early discrepancy is at least partly numerical. Production then moves to near-wall-refined grids.
+    - Otherwise the near-wall layer is resolved and physics must be added. The first candidate is the melt-surface-coupled vapour source (the vapour source rides on the deforming/rising melt, using the measured spatter-height curve as the only input), declared separately.
