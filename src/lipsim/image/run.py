@@ -133,6 +133,9 @@ def _native_images(grid, rho, T, Y, filters, sa_opts, num, px, row_edges, w):
             img_n = forward.band_image(re, zc, rho[:, :nr], Tn, np.clip(Y[:, :nr], 0.0, 1.0), _W["tab"], (c, hwid), x,
                                        self_absorption=sa, stark=bool(num.get("stark", False)),
                                        components=num.get("components", "all"))
+            hide = num.get("rim_hide_m")  # v2r (PREREG 2026-11-28 'rim occlusion'): crater + melt-crown line-of-sight shield
+            if hide is not None and hide[0] > 0:
+                img_n[np.ix_(zc < hide[0], np.abs(x) < hide[1])] = 0.0
             img, cov = rebin_z(z_edges, img_n, row_edges)
             img[~cov] = 0.0
             out[(fname, sa)] = img[::-1]
@@ -168,7 +171,18 @@ def main(argv=None):
     off = a.t_offset_ns * 1e-9  # math (ns -> s)
     need = sorted({k for t in times for k, ts in enumerate(snap_t) if t * 1e-9 + off - 1e-12 <= ts <= t * 1e-9 + off + gate + 1e-12})  # math/num
     a.out.mkdir(parents=True, exist_ok=True)
-    jobs = [(idx[k][0], sc["filters"], tuple(num["self_absorption"]), num, um, (h, w)) for k in need]
+    rim = num.get("rim_occlusion")
+    if rim:
+        # side-view shield height = crater depth (model melt depth, source_meta) + measured spatter-top height
+        # (paper Fig. 4e1, labels on the plume-image clock: model time - offset); shield half-width = melt radius
+        meta = json.loads((a.run_dir / "source" / "source_meta.json").read_text())
+        sp = pd.read_csv(REPO / rim["spatter_csv"], comment="#")
+        d_m = float(meta[rim.get("crater_depth_key", "melt_depth_mean_m")])
+        r_m = float(rim["half_width_um"]) * 1e-6 if rim.get("half_width_um") else float(meta["melt_radius_m"])  # math
+        def _hide(ts):
+            return (d_m + 1e-6 * float(np.interp(ts * 1e9 - a.t_offset_ns, sp.t_ns, sp.h_um, left=0.0)), r_m)  # math
+    jobs = [(idx[k][0], sc["filters"], tuple(num["self_absorption"]), dict(num, rim_hide_m=_hide(snap_t[k])) if rim else num, um, (h, w))
+            for k in need]
     workers = int(num.get("workers", 1))
     imgs = {}
     if workers > 1:

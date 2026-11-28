@@ -26,6 +26,7 @@ PREREG_v0, "Supervisor feedback 2026-11-27 and T046". The workstation is off fro
    - `scripts/laser_deposition.py <run> --out results/T046/<id>_deposition.csv --tmax 200`.
    - `scripts/emission_layers.py <run> --tables C:/sim_work/tables/v1d --out results/T046/<id>_emission.csv --tmax 200`.
    - `scripts/shock_track.py`.
+5b. Also image both runs with `--scenarios configs/imaging/v2_rim.yaml` and with `configs/imaging/v2_rimw.yaml`, both `--t-offset-ns 28` and `--tables C:/sim_work/tables/v1d`, into `image_v2r_t28` and `image_v2rw_t28`. This is the rim-occlusion bracket (PREREG "Rim occlusion"). Add their L(t)/L(300), σz and zc to the report table.
 6. Archive the small files to results/T046/<id>/: budget, pluto.ini, the metrics CSVs and the frames npz of both image folders, and diagnostics.
 7. Write tasks/T046.report.md with a G0 vs G0w table:
    - at 30, 50, 80, 110 and 150 ns (model time): z50, z90, f_lt10, T_5, Tmax_axis, z90_abs;

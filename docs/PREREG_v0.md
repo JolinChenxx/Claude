@@ -334,3 +334,13 @@ As specified, the extension injects up to 21× the choked Knight-layer flux ρ_v
   - Decision rule:
     - If G0w moves the 0–80 ns readings by more than 20% (z50, f_lt10, L(t)/L(300)), the early discrepancy is at least partly numerical. Production then moves to near-wall-refined grids.
     - Otherwise the near-wall layer is resolved and physics must be added. The first candidate is the melt-surface-coupled vapour source (the vapour source rides on the deforming/rising melt, using the measured spatter-height curve as the only input), declared separately.
+
+## Rim occlusion (crater + melt crown line-of-sight shield, imaging v2r) declared 2026-11-28 (UTC+8), before any production result
+- **Physics:** the recoil pressure depresses the melt in the irradiated spot (a crater, as in the paper's "milk crown") and pushes a liquid crown up at its circumference. Seen from the side, the dense hot vapour layer inside the crater, below the crown top, is hidden by the liquid ring. The model starts its gas at a flat face (z = 0) and therefore shows that layer.
+- **Inputs, none fitted to plume images:**
+  - Shield height = crater depth + crown height. The crater depth is the model melt depth (source_meta melt_depth_mean_m, an upper bound on the depth of liquid that can be displaced). The crown height is the measured spatter-top height of paper Fig. 4e1 (shadowgraphy; data/exp/paper/spatter_top_fig4e1.csv, read visually, ±5 µm), on the plume-image clock.
+  - Shield half-width: bracket between the model melt radius (configs/imaging/v2_rim.yaml) and 60 µm, a wide crown (v2_rimw.yaml).
+- **Implementation:** native-grid transfer. Pixels with z < shield height and |x| < half-width are set to zero in object space, before the defocus blur.
+- **Pre-computed bracket (T045 pixel frames, hiding the bottom 10.7 µm row over the full width):** L(t)/L(300) at 0–50 ns falls by 2.0–3.5× (at 30 ns: 4.61 → 1.93, exp 1.00), and the centroid rises by 5–17 µm.
+- **Use:** a geometric completeness fix bracketed by its two ends; reported at both ends. It is not tuned. If adopted, v2r applies to all frames.
+- **Also noted:** the independent analysis (desk assistant) ranks absorption-front detachment (laser-supported detonation) and delayed recombination (non-LTE, over-ionization during the pulse) as the leading physical candidates for the early height and brightness. T042 found no detachment with the avalanche model; T046 tests whether the 1 µm grid anchors the absorption front.
