@@ -1,0 +1,1447 @@
+{
+  "species": [
+    {
+      "name": "N2",
+      "M": 0.0280134,
+      "energy_eV": 0,
+      "g": 1,
+      "charge": 0,
+      "preset": "N2",
+      "kmom": "10^lr_N2_0(log10(TeV/1[V]))"
+    },
+    {
+      "name": "O2",
+      "M": 0.0319988,
+      "energy_eV": 0,
+      "g": 3,
+      "charge": 0,
+      "preset": "O2",
+      "kmom": "10^lr_O2_2(log10(TeV/1[V]))"
+    },
+    {
+      "name": "N",
+      "M": 0.0140067,
+      "energy_eV": 4.88,
+      "g": 4,
+      "charge": 0,
+      "preset": "N"
+    },
+    {
+      "name": "O",
+      "M": 0.0159994,
+      "energy_eV": 2.58,
+      "g": 9,
+      "charge": 0,
+      "preset": "O"
+    },
+    {
+      "name": "N2_1p",
+      "M": 0.0280134,
+      "energy_eV": 15.58,
+      "g": 2,
+      "charge": 1,
+      "preset": "N2"
+    },
+    {
+      "name": "O2_1p",
+      "M": 0.0319988,
+      "energy_eV": 12.06,
+      "g": 4,
+      "charge": 1,
+      "preset": "O2"
+    },
+    {
+      "name": "N_1p",
+      "M": 0.0140067,
+      "energy_eV": 19.414,
+      "g": 9,
+      "charge": 1,
+      "preset": "N"
+    },
+    {
+      "name": "O_1p",
+      "M": 0.0159994,
+      "energy_eV": 16.198,
+      "g": 4,
+      "charge": 1,
+      "preset": "O"
+    },
+    {
+      "name": "O_1m",
+      "M": 0.0159994,
+      "energy_eV": 1.119,
+      "g": 4,
+      "charge": -1,
+      "preset": "O"
+    },
+    {
+      "name": "O2_1m",
+      "M": 0.0319988,
+      "energy_eV": -0.45,
+      "g": 2,
+      "charge": -1,
+      "preset": "O2"
+    },
+    {
+      "name": "Cu",
+      "M": 0.063546,
+      "energy_eV": 0,
+      "g": 2,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "CuD5",
+      "M": 0.063546,
+      "energy_eV": 1.388948,
+      "g": 6,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "CuD3",
+      "M": 0.063546,
+      "energy_eV": 1.6422256,
+      "g": 4,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "CuP1",
+      "M": 0.063546,
+      "energy_eV": 3.7858977,
+      "g": 2,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "CuP3",
+      "M": 0.063546,
+      "energy_eV": 3.816692,
+      "g": 4,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "CuH3",
+      "M": 0.063546,
+      "energy_eV": 6.1911751,
+      "g": 4,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "CuH5",
+      "M": 0.063546,
+      "energy_eV": 6.1920252,
+      "g": 6,
+      "charge": 0,
+      "preset": "UserDefined"
+    },
+    {
+      "name": "Cu_1p",
+      "M": 0.063546,
+      "energy_eV": 7.72638,
+      "g": 1,
+      "charge": 1,
+      "preset": "UserDefined"
+    }
+  ],
+  "reactions": [
+    {
+      "name": "N2_0",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_0(log10(TeV/1[V]))",
+      "kind": "Elastic",
+      "de": 1.95e-05,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "N2_1",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_1(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.02,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_2",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_2(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.29,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_3",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_3(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.29,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_4",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_4(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.59,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_5",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_5(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.88,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_6",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_6(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 1.17,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_7",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_7(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 1.47,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_8",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_8(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 1.76,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_9",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_9(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.06,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_10",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_10(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.35,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_11",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_11(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 6.17,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_12",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_12(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 7.0,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_13",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_13(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 7.35,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_14",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_14(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 7.36,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_15",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_15(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 7.8,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_16",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_16(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 8.16,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_17",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_17(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 8.4,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_18",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_18(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 8.55,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_19",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_19(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 8.89,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_20",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_20(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 11.03,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_21",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_21(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 11.87,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_22",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_22(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 12.25,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_23",
+      "formula": "e+N2=>e+N2",
+      "k": "10^lr_N2_23(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 13.0,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "N2_24",
+      "formula": "e+N2=>2e+N2+",
+      "k": "10^lr_N2_24(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 15.6,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "N2_25",
+      "formula": "e+N2=>2e+N2+",
+      "k": "10^lr_N2_25(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 18.8,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "O2_0",
+      "formula": "e+O2=>O+O-",
+      "k": "10^lr_O2_0(log10(TeV/1[V]))",
+      "kind": "Attachment",
+      "de": 0,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "O2_1",
+      "formula": "e+O2=>O+O-",
+      "k": "10^lr_O2_1(log10(TeV/1[V]))",
+      "kind": "Attachment",
+      "de": 0,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "O2_2",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_2(log10(TeV/1[V]))",
+      "kind": "Elastic",
+      "de": 1.71e-05,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "O2_3",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_3(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.02,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_4",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_4(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.19,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_5",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_5(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.19,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_6",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_6(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.38,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_7",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_7(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.38,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_8",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_8(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.57,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_9",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_9(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.75,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_10",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_10(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 0.977,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_11",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_11(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 1.627,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_12",
+      "formula": "e+O2=>e+O2",
+      "k": "10^lr_O2_12(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 4.5,
+      "source": "Phelps; unresolved-state fast relaxation",
+      "order": 2
+    },
+    {
+      "name": "O2_13",
+      "formula": "e+O2=>e+2O",
+      "k": "10^lr_O2_13(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 6.0,
+      "source": "Phelps dissociative electronic excitation approximation",
+      "order": 2
+    },
+    {
+      "name": "O2_14",
+      "formula": "e+O2=>e+2O",
+      "k": "10^lr_O2_14(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 8.4,
+      "source": "Phelps dissociative electronic excitation approximation",
+      "order": 2
+    },
+    {
+      "name": "O2_15",
+      "formula": "e+O2=>e+2O",
+      "k": "10^lr_O2_15(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 9.97,
+      "source": "Phelps dissociative electronic excitation approximation",
+      "order": 2
+    },
+    {
+      "name": "O2_16",
+      "formula": "e+O2=>2e+O2+",
+      "k": "10^lr_O2_16(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 12.06,
+      "source": "COMSOL/Phelps",
+      "order": 2
+    },
+    {
+      "name": "CuD5up",
+      "formula": "e+Cu=>e+CuD5",
+      "k": "10^lr_CuD5_up(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 1.388948,
+      "source": "Winter-Hazi 1982, threshold interpolation",
+      "order": 2
+    },
+    {
+      "name": "CuD5down",
+      "formula": "e+CuD5=>e+Cu",
+      "k": "10^lr_CuD5_down(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -1.388948,
+      "source": "Microscopic detailed balance",
+      "order": 2
+    },
+    {
+      "name": "CuD3up",
+      "formula": "e+Cu=>e+CuD3",
+      "k": "10^lr_CuD3_up(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 1.6422256,
+      "source": "Winter-Hazi 1982, threshold interpolation",
+      "order": 2
+    },
+    {
+      "name": "CuD3down",
+      "formula": "e+CuD3=>e+Cu",
+      "k": "10^lr_CuD3_down(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -1.6422256,
+      "source": "Microscopic detailed balance",
+      "order": 2
+    },
+    {
+      "name": "CuP1up",
+      "formula": "e+Cu=>e+CuP1",
+      "k": "10^lr_CuP1_up(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 3.7858977,
+      "source": "Winter-Hazi 1982, threshold interpolation",
+      "order": 2
+    },
+    {
+      "name": "CuP1down",
+      "formula": "e+CuP1=>e+Cu",
+      "k": "10^lr_CuP1_down(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -3.7858977,
+      "source": "Microscopic detailed balance",
+      "order": 2
+    },
+    {
+      "name": "CuP3up",
+      "formula": "e+Cu=>e+CuP3",
+      "k": "10^lr_CuP3_up(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 3.816692,
+      "source": "Winter-Hazi 1982, threshold interpolation",
+      "order": 2
+    },
+    {
+      "name": "CuP3down",
+      "formula": "e+CuP3=>e+Cu",
+      "k": "10^lr_CuP3_down(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -3.816692,
+      "source": "Microscopic detailed balance",
+      "order": 2
+    },
+    {
+      "name": "rad1",
+      "formula": "CuP3=>Cu",
+      "k": "139500000.0[1/s]*beta1",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "rad2",
+      "formula": "CuP1=>Cu",
+      "k": "137600000.0[1/s]*beta2",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "rad3",
+      "formula": "CuP3=>CuD5",
+      "k": "2000000.0[1/s]*beta3",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "lineup3",
+      "formula": "e+CuD5=>e+CuP3",
+      "k": "10^lr_lineup3(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.427744,
+      "source": "van Regemorter 1962, gbar=0.2",
+      "order": 2
+    },
+    {
+      "name": "linedn3",
+      "formula": "e+CuP3=>e+CuD5",
+      "k": "10^lr_linedn3(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -2.427744,
+      "source": "Detailed balance",
+      "order": 2
+    },
+    {
+      "name": "rad4",
+      "formula": "CuH3=>CuP1",
+      "k": "60000000.0[1/s]*beta4",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "lineup4",
+      "formula": "e+CuP1=>e+CuH3",
+      "k": "10^lr_lineup4(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.4052773999999997,
+      "source": "van Regemorter 1962, gbar=0.2",
+      "order": 2
+    },
+    {
+      "name": "linedn4",
+      "formula": "e+CuH3=>e+CuP1",
+      "k": "10^lr_linedn4(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -2.4052773999999997,
+      "source": "Detailed balance",
+      "order": 2
+    },
+    {
+      "name": "rad5",
+      "formula": "CuH5=>CuP3",
+      "k": "75000000.0[1/s]*beta5",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "lineup5",
+      "formula": "e+CuP3=>e+CuH5",
+      "k": "10^lr_lineup5(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.3753331999999996,
+      "source": "van Regemorter 1962, gbar=0.2",
+      "order": 2
+    },
+    {
+      "name": "linedn5",
+      "formula": "e+CuH5=>e+CuP3",
+      "k": "10^lr_linedn5(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -2.3753331999999996,
+      "source": "Detailed balance",
+      "order": 2
+    },
+    {
+      "name": "rad6",
+      "formula": "CuH3=>CuP3",
+      "k": "15000000.0[1/s]*beta6",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "lineup6",
+      "formula": "e+CuP3=>e+CuH3",
+      "k": "10^lr_lineup6(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.3744830999999995,
+      "source": "van Regemorter 1962, gbar=0.2",
+      "order": 2
+    },
+    {
+      "name": "linedn6",
+      "formula": "e+CuH3=>e+CuP3",
+      "k": "10^lr_linedn6(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -2.3744830999999995,
+      "source": "Detailed balance",
+      "order": 2
+    },
+    {
+      "name": "rad7",
+      "formula": "CuP3=>CuD3",
+      "k": "240000.0[1/s]*beta7",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "lineup7",
+      "formula": "e+CuD3=>e+CuP3",
+      "k": "10^lr_lineup7(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.1744664,
+      "source": "van Regemorter 1962, gbar=0.2",
+      "order": 2
+    },
+    {
+      "name": "linedn7",
+      "formula": "e+CuP3=>e+CuD3",
+      "k": "10^lr_linedn7(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -2.1744664,
+      "source": "Detailed balance",
+      "order": 2
+    },
+    {
+      "name": "rad8",
+      "formula": "CuP1=>CuD3",
+      "k": "1650000.0[1/s]*beta8",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "NIST ASD; local escape probability",
+      "order": 1
+    },
+    {
+      "name": "lineup8",
+      "formula": "e+CuD3=>e+CuP1",
+      "k": "10^lr_lineup8(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": 2.1436721,
+      "source": "van Regemorter 1962, gbar=0.2",
+      "order": 2
+    },
+    {
+      "name": "linedn8",
+      "formula": "e+CuP1=>e+CuD3",
+      "k": "10^lr_linedn8(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -2.1436721,
+      "source": "Detailed balance",
+      "order": 2
+    },
+    {
+      "name": "Cuion",
+      "formula": "e+Cu=>2e+Cu+",
+      "k": "10^lr_Cu_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 7.72638,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "Cu3rec",
+      "formula": "2e+Cu+=>e+Cu",
+      "k": "10^lr_Cu_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -7.72638,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "Curr",
+      "formula": "e+Cu+=>Cu",
+      "k": "10^lr_Cu_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 7.72638,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "Nion",
+      "formula": "e+N=>2e+N+",
+      "k": "10^lr_N_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 14.534,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "N3rec",
+      "formula": "2e+N+=>e+N",
+      "k": "10^lr_N_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -14.534,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "Nrr",
+      "formula": "e+N+=>N",
+      "k": "10^lr_N_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 14.534,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "Oion",
+      "formula": "e+O=>2e+O+",
+      "k": "10^lr_O_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 13.618,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "O3rec",
+      "formula": "2e+O+=>e+O",
+      "k": "10^lr_O_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -13.618,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "Orr",
+      "formula": "e+O+=>O",
+      "k": "10^lr_O_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 13.618,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "CuD5ion",
+      "formula": "e+CuD5=>2e+Cu+",
+      "k": "10^lr_CuD5_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 6.337432,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "CuD53rec",
+      "formula": "2e+Cu+=>e+CuD5",
+      "k": "10^lr_CuD5_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -6.337432,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "CuD5rr",
+      "formula": "e+Cu+=>CuD5",
+      "k": "10^lr_CuD5_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 6.337432,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "CuD3ion",
+      "formula": "e+CuD3=>2e+Cu+",
+      "k": "10^lr_CuD3_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 6.0841544,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "CuD33rec",
+      "formula": "2e+Cu+=>e+CuD3",
+      "k": "10^lr_CuD3_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -6.0841544,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "CuD3rr",
+      "formula": "e+Cu+=>CuD3",
+      "k": "10^lr_CuD3_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 6.0841544,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "CuP1ion",
+      "formula": "e+CuP1=>2e+Cu+",
+      "k": "10^lr_CuP1_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 3.9404822999999998,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "CuP13rec",
+      "formula": "2e+Cu+=>e+CuP1",
+      "k": "10^lr_CuP1_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -3.9404822999999998,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "CuP1rr",
+      "formula": "e+Cu+=>CuP1",
+      "k": "10^lr_CuP1_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 3.9404822999999998,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "CuP3ion",
+      "formula": "e+CuP3=>2e+Cu+",
+      "k": "10^lr_CuP3_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 3.9096879999999996,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "CuP33rec",
+      "formula": "2e+Cu+=>e+CuP3",
+      "k": "10^lr_CuP3_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -3.9096879999999996,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "CuP3rr",
+      "formula": "e+Cu+=>CuP3",
+      "k": "10^lr_CuP3_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 3.9096879999999996,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "CuH3ion",
+      "formula": "e+CuH3=>2e+Cu+",
+      "k": "10^lr_CuH3_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 1.5352049,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "CuH33rec",
+      "formula": "2e+Cu+=>e+CuH3",
+      "k": "10^lr_CuH3_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -1.5352049,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "CuH3rr",
+      "formula": "e+Cu+=>CuH3",
+      "k": "10^lr_CuH3_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 1.5352049,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "CuH5ion",
+      "formula": "e+CuH5=>2e+Cu+",
+      "k": "10^lr_CuH5_ion(log10(TeV/1[V]))",
+      "kind": "Ionization",
+      "de": 1.5343548,
+      "source": "Lotz 1967/1969 valence approximation",
+      "order": 2
+    },
+    {
+      "name": "CuH53rec",
+      "formula": "2e+Cu+=>e+CuH5",
+      "k": "10^lr_CuH5_3rec(log10(TeV/1[V]))",
+      "kind": "Excitation",
+      "de": -1.5343548,
+      "source": "Detailed balance with Lotz",
+      "order": 3
+    },
+    {
+      "name": "CuH5rr",
+      "formula": "e+Cu+=>CuH5",
+      "k": "10^lr_CuH5_rr(log10(TeV/1[V]))",
+      "kind": "Reaction",
+      "de": 1.5343548,
+      "source": "Hydrogenic Kramers-Milne approximation, not measured Cu rate",
+      "order": 2
+    },
+    {
+      "name": "recN2",
+      "formula": "e+N2+=>2N",
+      "k": "2.8e-13[m^3/s]*(300[K]/TeK)^0.5",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Kossyi 1992",
+      "order": 2
+    },
+    {
+      "name": "recO2",
+      "formula": "e+O2+=>2O",
+      "k": "2e-13[m^3/s]*(300[K]/TeK)^0.7",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Kossyi 1992",
+      "order": 2
+    },
+    {
+      "name": "att3",
+      "formula": "e+O2+O2=>O2-+O2",
+      "k": "1.4e-41[m^6/s]*(300[K]/TeK)*exp(-600[K]/Tg+700[K]*(TeK-Tg)/(TeK*Tg))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Kossyi 1992",
+      "order": 3
+    },
+    {
+      "name": "detach",
+      "formula": "O-+O=>O2+e",
+      "k": "3e-16[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL O chemistry",
+      "order": 2
+    },
+    {
+      "name": "detach2",
+      "formula": "O2-+O=>O2+O+e",
+      "k": "3.3e-16[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Kossyi 1992",
+      "order": 2
+    },
+    {
+      "name": "neutral103",
+      "formula": "Cu++O-=>Cu+O",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral104",
+      "formula": "Cu++O2-=>Cu+O2",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral105",
+      "formula": "N2++O-=>N2+O",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral106",
+      "formula": "N2++O2-=>N2+O2",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral107",
+      "formula": "O2++O-=>O2+O",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral108",
+      "formula": "O2++O2-=>O2+O2",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral109",
+      "formula": "N++O-=>N+O",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral110",
+      "formula": "N++O2-=>N+O2",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral111",
+      "formula": "O++O-=>O+O",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "neutral112",
+      "formula": "O++O2-=>O+O2",
+      "k": "1.5e-13[m^3/s]",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "COMSOL oxygen ion-ion recombination approximation",
+      "order": 2
+    },
+    {
+      "name": "N2dN2",
+      "formula": "N2+N2=>2N+N2",
+      "k": "7000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.6)*exp(-113200[K]/Tg)/N_A_const",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Park thermal dissociation",
+      "order": 2
+    },
+    {
+      "name": "N2rN2",
+      "formula": "2N+N2=>N2+N2",
+      "k": "7000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.6)*exp((-113200[K]+9.76[eV]/k_B_const)/Tg)/N_A_const/((2*pi*1.162933627609196e-26[kg]*k_B_const*Tg/h_const^2)^1.5*16/1/(Tg/(2*2.88[K]))*(1-exp(-3390[K]/Tg)))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Thermal detailed balance; ground-state partition functions",
+      "order": 3
+    },
+    {
+      "name": "N2dO2",
+      "formula": "N2+O2=>2N+O2",
+      "k": "7000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.6)*exp(-113200[K]/Tg)/N_A_const",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Park thermal dissociation",
+      "order": 2
+    },
+    {
+      "name": "N2rO2",
+      "formula": "2N+O2=>N2+O2",
+      "k": "7000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.6)*exp((-113200[K]+9.76[eV]/k_B_const)/Tg)/N_A_const/((2*pi*1.162933627609196e-26[kg]*k_B_const*Tg/h_const^2)^1.5*16/1/(Tg/(2*2.88[K]))*(1-exp(-3390[K]/Tg)))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Thermal detailed balance; ground-state partition functions",
+      "order": 3
+    },
+    {
+      "name": "N2dCu",
+      "formula": "N2+Cu=>2N+Cu",
+      "k": "7000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.6)*exp(-113200[K]/Tg)/N_A_const",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Park thermal dissociation",
+      "order": 2
+    },
+    {
+      "name": "N2rCu",
+      "formula": "2N+Cu=>N2+Cu",
+      "k": "7000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.6)*exp((-113200[K]+9.76[eV]/k_B_const)/Tg)/N_A_const/((2*pi*1.162933627609196e-26[kg]*k_B_const*Tg/h_const^2)^1.5*16/1/(Tg/(2*2.88[K]))*(1-exp(-3390[K]/Tg)))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Thermal detailed balance; ground-state partition functions",
+      "order": 3
+    },
+    {
+      "name": "O2dN2",
+      "formula": "O2+N2=>2O+N2",
+      "k": "2000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.5)*exp(-59500[K]/Tg)/N_A_const",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Park thermal dissociation",
+      "order": 2
+    },
+    {
+      "name": "O2rN2",
+      "formula": "2O+N2=>O2+N2",
+      "k": "2000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.5)*exp((-59500[K]+5.16[eV]/k_B_const)/Tg)/N_A_const/((2*pi*1.3283814375670623e-26[kg]*k_B_const*Tg/h_const^2)^1.5*81/3/(Tg/(2*2.07[K]))*(1-exp(-2270[K]/Tg)))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Thermal detailed balance; ground-state partition functions",
+      "order": 3
+    },
+    {
+      "name": "O2dO2",
+      "formula": "O2+O2=>2O+O2",
+      "k": "2000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.5)*exp(-59500[K]/Tg)/N_A_const",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Park thermal dissociation",
+      "order": 2
+    },
+    {
+      "name": "O2rO2",
+      "formula": "2O+O2=>O2+O2",
+      "k": "2000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.5)*exp((-59500[K]+5.16[eV]/k_B_const)/Tg)/N_A_const/((2*pi*1.3283814375670623e-26[kg]*k_B_const*Tg/h_const^2)^1.5*81/3/(Tg/(2*2.07[K]))*(1-exp(-2270[K]/Tg)))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Thermal detailed balance; ground-state partition functions",
+      "order": 3
+    },
+    {
+      "name": "O2dCu",
+      "formula": "O2+Cu=>2O+Cu",
+      "k": "2000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.5)*exp(-59500[K]/Tg)/N_A_const",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Park thermal dissociation",
+      "order": 2
+    },
+    {
+      "name": "O2rCu",
+      "formula": "2O+Cu=>O2+Cu",
+      "k": "2000000000000000.0[m^3/(mol*s)]*(Tg/1[K])^(-1.5)*exp((-59500[K]+5.16[eV]/k_B_const)/Tg)/N_A_const/((2*pi*1.3283814375670623e-26[kg]*k_B_const*Tg/h_const^2)^1.5*81/3/(Tg/(2*2.07[K]))*(1-exp(-2270[K]/Tg)))",
+      "kind": "Reaction",
+      "de": 0,
+      "source": "Thermal detailed balance; ground-state partition functions",
+      "order": 3
+    }
+  ],
+  "lines": [
+    {
+      "lower": "Cu",
+      "upper": "CuP3",
+      "A": 139500000.0,
+      "lambda_nm": 324.7536,
+      "delta_eV": 3.816692,
+      "f": 0.44113338749349373,
+      "accuracy": "AA"
+    },
+    {
+      "lower": "Cu",
+      "upper": "CuP1",
+      "A": 137600000.0,
+      "lambda_nm": 327.3952,
+      "delta_eV": 3.7858977,
+      "f": 0.2211163348852216,
+      "accuracy": "AA"
+    },
+    {
+      "lower": "CuD5",
+      "upper": "CuP3",
+      "A": 2000000.0,
+      "lambda_nm": 510.5548,
+      "delta_eV": 2.427744,
+      "f": 0.0052105220881473865,
+      "accuracy": "C+"
+    },
+    {
+      "lower": "CuP1",
+      "upper": "CuH3",
+      "A": 60000000.0,
+      "lambda_nm": 515.3238,
+      "delta_eV": 2.4052773999999997,
+      "f": 0.4777486018933752,
+      "accuracy": "C+"
+    },
+    {
+      "lower": "CuP3",
+      "upper": "CuH5",
+      "A": 75000000.0,
+      "lambda_nm": 521.8202,
+      "delta_eV": 2.3753331999999996,
+      "f": 0.4592530759477124,
+      "accuracy": "C+"
+    },
+    {
+      "lower": "CuP3",
+      "upper": "CuH3",
+      "A": 15000000.0,
+      "lambda_nm": 522.007,
+      "delta_eV": 2.3744830999999995,
+      "f": 0.06127759193714263,
+      "accuracy": "C+"
+    },
+    {
+      "lower": "CuD3",
+      "upper": "CuP3",
+      "A": 240000.0,
+      "lambda_nm": 570.024,
+      "delta_eV": 2.1744664,
+      "f": 0.0011691098026221686,
+      "accuracy": "C+"
+    },
+    {
+      "lower": "CuD3",
+      "upper": "CuP1",
+      "A": 1650000.0,
+      "lambda_nm": 578.2126,
+      "delta_eV": 2.1436721,
+      "f": 0.0041351077309135596,
+      "accuracy": "C+"
+    }
+  ],
+  "rate_columns": [
+    "N2_0",
+    "N2_1",
+    "N2_2",
+    "N2_3",
+    "N2_4",
+    "N2_5",
+    "N2_6",
+    "N2_7",
+    "N2_8",
+    "N2_9",
+    "N2_10",
+    "N2_11",
+    "N2_12",
+    "N2_13",
+    "N2_14",
+    "N2_15",
+    "N2_16",
+    "N2_17",
+    "N2_18",
+    "N2_19",
+    "N2_20",
+    "N2_21",
+    "N2_22",
+    "N2_23",
+    "N2_24",
+    "N2_25",
+    "O2_0",
+    "O2_1",
+    "O2_2",
+    "O2_3",
+    "O2_4",
+    "O2_5",
+    "O2_6",
+    "O2_7",
+    "O2_8",
+    "O2_9",
+    "O2_10",
+    "O2_11",
+    "O2_12",
+    "O2_13",
+    "O2_14",
+    "O2_15",
+    "O2_16",
+    "CuD5_up",
+    "CuD5_down",
+    "CuD3_up",
+    "CuD3_down",
+    "CuP1_up",
+    "CuP1_down",
+    "CuP3_up",
+    "CuP3_down",
+    "lineup3",
+    "linedn3",
+    "lineup4",
+    "linedn4",
+    "lineup5",
+    "linedn5",
+    "lineup6",
+    "linedn6",
+    "lineup7",
+    "linedn7",
+    "lineup8",
+    "linedn8",
+    "Cu_ion",
+    "Cu_3rec",
+    "Cu_rr",
+    "N_ion",
+    "N_3rec",
+    "N_rr",
+    "O_ion",
+    "O_3rec",
+    "O_rr",
+    "CuD5_ion",
+    "CuD5_3rec",
+    "CuD5_rr",
+    "CuD3_ion",
+    "CuD3_3rec",
+    "CuD3_rr",
+    "CuP1_ion",
+    "CuP1_3rec",
+    "CuP1_rr",
+    "CuP3_ion",
+    "CuP3_3rec",
+    "CuP3_rr",
+    "CuH3_ion",
+    "CuH3_3rec",
+    "CuH3_rr",
+    "CuH5_ion",
+    "CuH5_3rec",
+    "CuH5_rr"
+  ],
+  "Te_eV_range": [
+    0.015,
+    100.0
+  ]
+}

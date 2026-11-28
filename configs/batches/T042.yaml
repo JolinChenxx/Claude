@@ -1,0 +1,12 @@
+# T042: high-fluence vertical extent — v1m non-equilibrium ionization retest on v1rs and on the waveform scenario, plus the
+# declared alternative pulse-width reading (FWHM 35 ns). PREREG 2026-11-26 'T042'. Seeded as T039 (same prev_run).
+name: T042
+pluto_exe: D:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T042
+numerics:
+  runs:
+    - {id: high_bd,    case: configs/cases/v1rsbd_high.yaml,   grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: high_bdwf,  case: configs/cases/v1rsbdwf_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: high_tau35, case: configs/cases/v1rs_high.yaml,     grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"tau_fwhm": 35.0e-9}}

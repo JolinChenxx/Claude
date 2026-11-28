@@ -1,0 +1,20 @@
+# Build artifacts
+build/
+out/
+*.obj
+*.o
+*.exe
+*.pdb
+__pycache__/
+*.pyc
+.venv/
+# Large raw data never goes into the repository (workstation: D:\sim_runs\)
+runs/
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.vtk
+*.vtu
+*.bin
+!results/**/*.npz

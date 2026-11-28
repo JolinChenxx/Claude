@@ -1,0 +1,215 @@
+{
+  "verified_at": "2026-11-20T03:27:20+08:00",
+  "job": {
+    "id": "T019_split_01",
+    "pid": 53740,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\run_split.py",
+    "threads": 1,
+    "commit": "533c8be",
+    "started": "2026-11-20T03:26:38",
+    "dir": "D:\\sim_runs\\T019_split_01"
+  },
+  "wrapper_identity": {
+    "pid": 53740,
+    "created": 1795116398.0373397,
+    "command": [
+      "C:\\Windows\\system32\\cmd.exe",
+      "/v:on",
+      "/c",
+      "set",
+      "OMP_NUM_THREADS=1&&",
+      "set",
+      "SIM_OUT_DIR=D:\\sim_runs\\T019_split_01&&",
+      "cd",
+      "/d",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "&&",
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\run_split.py",
+      "&",
+      "echo",
+      "!ERRORLEVEL!",
+      ">",
+      "D:\\sim_runs\\T019_split_01\\exitcode.txt"
+    ]
+  },
+  "runner_identity": {
+    "pid": 46136,
+    "created": 1795116398.2630055,
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\run_split.py"
+    ],
+    "priority": 16384
+  },
+  "active_images": [
+    {
+      "pid": 42352,
+      "created": 1795116409.2230985,
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+        "--series",
+        "high",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_continuum",
+        "--workers",
+        "16"
+      ],
+      "workers": 16
+    },
+    {
+      "pid": 9044,
+      "created": 1795116409.7429667,
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+        "--series",
+        "high",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_lines",
+        "--workers",
+        "16"
+      ],
+      "workers": 16
+    }
+  ],
+  "summary": {
+    "job_id": "T019_split_01",
+    "started": "2026-11-20T03:26:48.883444+08:00",
+    "state": "running",
+    "runner_sha256": "e3a6165c85b77328a5b79af1fe9cc0a4afdf1918078ac31b5bbdbc62e6509a67",
+    "plan_sha256": "c54ec290f66f665e781662e7a3fb95b6792b07fe25578fbc5454a7373183326c",
+    "initial_capacity": {
+      "checked": "2026-11-20T03:26:48.874886+08:00",
+      "reservations": {
+        "T016i_native_01": 16,
+        "T018c_post_it1_thin_v2_01": 16
+      },
+      "wrapper_identities": [
+        {
+          "job": "T016i_native_01",
+          "pid": 38032,
+          "created": 1795026177.8378432,
+          "children": [
+            46020,
+            10720,
+            20504,
+            24172,
+            9012,
+            4636,
+            52692,
+            42972,
+            31392,
+            32640,
+            32428,
+            43432,
+            49788,
+            14288,
+            52636,
+            33116,
+            46956,
+            45756,
+            22788,
+            49672
+          ],
+          "cores": 16
+        },
+        {
+          "job": "T018c_post_it1_thin_v2_01",
+          "pid": 51676,
+          "created": 1795115545.0127707,
+          "children": [
+            16008,
+            44872,
+            13004,
+            29332,
+            34960,
+            3868,
+            53784,
+            8864,
+            42840,
+            44216,
+            46152,
+            41624,
+            43932,
+            31420,
+            40196,
+            10152,
+            43852,
+            10860,
+            3524
+          ],
+          "cores": 16
+        }
+      ],
+      "pluto_ranks": 0,
+      "reserved_other_cores": 32,
+      "requested_cores": 32,
+      "including_own_reservation": 64,
+      "free_before": 32,
+      "can_start": true
+    },
+    "reserved_cores": 32,
+    "parallel_slots": 2,
+    "commands": [
+      {
+        "name": "high_thin_G0_it2_continuum",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+          "--series",
+          "high",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_continuum",
+          "--workers",
+          "16"
+        ],
+        "started": "2026-11-20T03:26:49.213258+08:00",
+        "log": "D:\\sim_runs\\T019_split_01\\high_thin_G0_it2_continuum.log",
+        "execution": "computed_by_owner"
+      },
+      {
+        "name": "high_thin_G0_it2_lines",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+          "--series",
+          "high",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_lines",
+          "--workers",
+          "16"
+        ],
+        "started": "2026-11-20T03:26:49.735401+08:00",
+        "log": "D:\\sim_runs\\T019_split_01\\high_thin_G0_it2_lines.log",
+        "execution": "computed_by_owner"
+      }
+    ]
+  },
+  "note": "Startup verification only; no computation completion wait or result collection after launch."
+}

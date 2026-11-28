@@ -1,0 +1,15 @@
+# T016e (v1e): build v1d with tables v1c (Cu-air diffusion v2: Coulomb ion-ion and polarisation ion-neutral collisions,
+# registry diff_cuair_model_v2), rmax_par 1000. Replaces T016h/T016r2 (hard-sphere D, kept as a D upper-bound sensitivity).
+name: T016e
+pluto_exe: D:/sim_tools/pluto_lip/build_v1d/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T016e
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8,  picard: 4, src_on: 1, rmax_par: 1000}
+    - {id: high_trap_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: trap, tstop_ns: 800,  procs: 8,  picard: 4, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_trap_G0,  case: configs/cases/v0_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 8,  picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: high_thin_G1, case: configs/cases/v0_high.yaml, grid: G1, nec: thin, tstop_ns: 800,  procs: 16, picard: 0, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G1,  case: configs/cases/v0_low.yaml,  grid: G1, nec: thin, tstop_ns: 1300, procs: 16, picard: 0, src_on: 1, rmax_par: 1000}

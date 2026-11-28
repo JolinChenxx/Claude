@@ -1,0 +1,1248 @@
+{
+  "checked": "2026-11-19T16:50:33+08:00",
+  "authority": "tasks/T018c-high-v1i.md step1 and docs/DECISIONS.md entry labelled2026-11-19 17:00; actual action time recorded separately",
+  "job": {
+    "id": "T018",
+    "pid": 8480,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T018.yaml --max-cores 32",
+    "threads": 1,
+    "commit": "fb8bbbc",
+    "started": "2026-11-19T14:51:00",
+    "dir": "D:\\sim_runs\\T018"
+  },
+  "target_tree": [
+    {
+      "pid": 8480,
+      "name": "cmd.exe",
+      "created": 1795071060.3764744,
+      "cmd": [
+        "C:\\Windows\\system32\\cmd.exe",
+        "/v:on",
+        "/c",
+        "set",
+        "OMP_NUM_THREADS=1&&",
+        "set",
+        "SIM_OUT_DIR=D:\\sim_runs\\T018&&",
+        "cd",
+        "/d",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+        "&&",
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.batch",
+        "configs/batches/T018.yaml",
+        "--max-cores",
+        "32",
+        "&",
+        "echo",
+        "!ERRORLEVEL!",
+        ">",
+        "D:\\sim_runs\\T018\\exitcode.txt"
+      ],
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 27528,
+      "name": "conhost.exe",
+      "created": 1795071060.4516454,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 40800,
+      "name": "python.exe",
+      "created": 1795071060.5970836,
+      "cmd": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.batch",
+        "configs/batches/T018.yaml",
+        "--max-cores",
+        "32"
+      ],
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 15664,
+      "name": "mpiexec.exe",
+      "created": 1795071091.3784523,
+      "cmd": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "8",
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 36472,
+      "name": "mpiexec.exe",
+      "created": 1795071091.37846,
+      "cmd": [
+        "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+        "-n",
+        "8",
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 18368,
+      "name": "smpd.exe",
+      "created": 1795071091.39859,
+      "cmd": [
+        "C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe",
+        "-p",
+        "8677",
+        "-d",
+        "0",
+        "-mgr",
+        "380",
+        "job",
+        "-localonly"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 38396,
+      "name": "pluto.exe",
+      "created": 1795071091.4270537,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 15004,
+      "name": "pluto.exe",
+      "created": 1795071091.642171,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 41216,
+      "name": "pluto.exe",
+      "created": 1795071091.6453383,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 26744,
+      "name": "pluto.exe",
+      "created": 1795071091.6489668,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 24112,
+      "name": "pluto.exe",
+      "created": 1795071091.6523156,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 50764,
+      "name": "pluto.exe",
+      "created": 1795071091.6559892,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 49788,
+      "name": "pluto.exe",
+      "created": 1795071091.66092,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 47812,
+      "name": "pluto.exe",
+      "created": 1795071091.6670573,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 26732,
+      "name": "conhost.exe",
+      "created": 1795071091.6771443,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 50900,
+      "name": "conhost.exe",
+      "created": 1795071091.6696014,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 45536,
+      "name": "conhost.exe",
+      "created": 1795071091.6646383,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 48644,
+      "name": "conhost.exe",
+      "created": 1795071091.6589541,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 18812,
+      "name": "conhost.exe",
+      "created": 1795071091.6549666,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 46988,
+      "name": "conhost.exe",
+      "created": 1795071091.6511035,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 44740,
+      "name": "conhost.exe",
+      "created": 1795071091.6484013,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 26620,
+      "name": "conhost.exe",
+      "created": 1795071091.644539,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 25616,
+      "name": "smpd.exe",
+      "created": 1795071091.3985357,
+      "cmd": [
+        "C:\\Program Files\\Microsoft MPI\\Bin\\smpd.exe",
+        "-p",
+        "8677",
+        "-d",
+        "0",
+        "-mgr",
+        "372",
+        "job",
+        "-localonly"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 14344,
+      "name": "pluto.exe",
+      "created": 1795071091.4270484,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 53372,
+      "name": "pluto.exe",
+      "created": 1795071091.6601532,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 23760,
+      "name": "pluto.exe",
+      "created": 1795071091.6655605,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 20888,
+      "name": "pluto.exe",
+      "created": 1795071091.6716244,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 46132,
+      "name": "pluto.exe",
+      "created": 1795071091.6781478,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 21252,
+      "name": "pluto.exe",
+      "created": 1795071091.684204,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 27704,
+      "name": "pluto.exe",
+      "created": 1795071091.6903567,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 45472,
+      "name": "pluto.exe",
+      "created": 1795071091.6968365,
+      "cmd": [
+        "D:\\sim_tools\\pluto_lip\\build_v1h\\mpi\\pluto.exe",
+        "-dec",
+        "8",
+        "1"
+      ],
+      "cwd": "D:\\sim_runs\\T018\\high_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 21464,
+      "name": "conhost.exe",
+      "created": 1795071091.7073565,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 19640,
+      "name": "conhost.exe",
+      "created": 1795071091.7001777,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 17892,
+      "name": "conhost.exe",
+      "created": 1795071091.6942658,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 32556,
+      "name": "conhost.exe",
+      "created": 1795071091.6871092,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 43500,
+      "name": "conhost.exe",
+      "created": 1795071091.6823297,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 26648,
+      "name": "conhost.exe",
+      "created": 1795071091.674717,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 12616,
+      "name": "conhost.exe",
+      "created": 1795071091.6679375,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 40120,
+      "name": "conhost.exe",
+      "created": 1795071091.6634169,
+      "cmd": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "status": "running"
+    }
+  ],
+  "protected_processes": [
+    {
+      "pid": 42332,
+      "name": "cmd.exe",
+      "created": 1794993817.7168818,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "stopped"
+    },
+    {
+      "pid": 29608,
+      "name": "conhost.exe",
+      "created": 1794993817.742754,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 31276,
+      "name": "python.exe",
+      "created": 1794993817.7781816,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 20656,
+      "name": "mpiexec.exe",
+      "created": 1795058246.6751673,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 4488,
+      "name": "mpiexec.exe",
+      "created": 1795060472.3457968,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 27024,
+      "name": "smpd.exe",
+      "created": 1795060472.361339,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 23324,
+      "name": "pluto.exe",
+      "created": 1795060472.3936436,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 43396,
+      "name": "pluto.exe",
+      "created": 1795060472.400864,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 47980,
+      "name": "pluto.exe",
+      "created": 1795060472.4040508,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 36788,
+      "name": "pluto.exe",
+      "created": 1795060472.40694,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 32716,
+      "name": "pluto.exe",
+      "created": 1795060472.4101932,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 1508,
+      "name": "pluto.exe",
+      "created": 1795060472.4132264,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 47816,
+      "name": "pluto.exe",
+      "created": 1795060472.415496,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 10860,
+      "name": "pluto.exe",
+      "created": 1795060472.418837,
+      "cwd": "D:\\sim_runs\\T016e\\low_trap_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 48008,
+      "name": "conhost.exe",
+      "created": 1795060472.424935,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 10664,
+      "name": "conhost.exe",
+      "created": 1795060472.4209552,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 45420,
+      "name": "conhost.exe",
+      "created": 1795060472.4179077,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 44452,
+      "name": "conhost.exe",
+      "created": 1795060472.415452,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 23908,
+      "name": "conhost.exe",
+      "created": 1795060472.4126716,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 22772,
+      "name": "conhost.exe",
+      "created": 1795060472.4098363,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 31880,
+      "name": "conhost.exe",
+      "created": 1795060472.4067118,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 19992,
+      "name": "conhost.exe",
+      "created": 1795060472.407855,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 4588,
+      "name": "smpd.exe",
+      "created": 1795058246.6937177,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 45480,
+      "name": "pluto.exe",
+      "created": 1795058246.7693405,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 24116,
+      "name": "pluto.exe",
+      "created": 1795058246.8390355,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 44720,
+      "name": "pluto.exe",
+      "created": 1795058246.84223,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 28300,
+      "name": "pluto.exe",
+      "created": 1795058246.845254,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 18996,
+      "name": "pluto.exe",
+      "created": 1795058246.848199,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 4900,
+      "name": "pluto.exe",
+      "created": 1795058246.85107,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 32400,
+      "name": "pluto.exe",
+      "created": 1795058246.853657,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 37076,
+      "name": "pluto.exe",
+      "created": 1795058246.8561969,
+      "cwd": "D:\\sim_runs\\T016e\\low_thin_G0\\it2",
+      "status": "running"
+    },
+    {
+      "pid": 37796,
+      "name": "conhost.exe",
+      "created": 1795058246.8615792,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 46060,
+      "name": "conhost.exe",
+      "created": 1795058246.8585413,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 40964,
+      "name": "conhost.exe",
+      "created": 1795058246.8561478,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 16764,
+      "name": "conhost.exe",
+      "created": 1795058246.8536177,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 25384,
+      "name": "conhost.exe",
+      "created": 1795058246.850178,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 45100,
+      "name": "conhost.exe",
+      "created": 1795058246.8482428,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 26212,
+      "name": "conhost.exe",
+      "created": 1795058246.845744,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 36800,
+      "name": "conhost.exe",
+      "created": 1795058246.84425,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 39900,
+      "name": "cmd.exe",
+      "created": 1795076807.0788577,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 27056,
+      "name": "conhost.exe",
+      "created": 1795076807.1609545,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 33360,
+      "name": "python.exe",
+      "created": 1795076807.2547889,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 39112,
+      "name": "mpiexec.exe",
+      "created": 1795076841.728344,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 48700,
+      "name": "mpiexec.exe",
+      "created": 1795076842.0309167,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 20088,
+      "name": "smpd.exe",
+      "created": 1795076842.0463736,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 7768,
+      "name": "pluto.exe",
+      "created": 1795076844.5685086,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 45308,
+      "name": "pluto.exe",
+      "created": 1795076844.7626307,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 43976,
+      "name": "pluto.exe",
+      "created": 1795076844.7657576,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 44500,
+      "name": "pluto.exe",
+      "created": 1795076844.7686286,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 33180,
+      "name": "pluto.exe",
+      "created": 1795076844.771454,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 1504,
+      "name": "pluto.exe",
+      "created": 1795076844.7760737,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 13176,
+      "name": "pluto.exe",
+      "created": 1795076844.7784011,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 39168,
+      "name": "pluto.exe",
+      "created": 1795076844.781191,
+      "cwd": "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 20300,
+      "name": "conhost.exe",
+      "created": 1795076844.7858417,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 44396,
+      "name": "conhost.exe",
+      "created": 1795076844.7830374,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 41284,
+      "name": "conhost.exe",
+      "created": 1795076844.7803056,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 50856,
+      "name": "conhost.exe",
+      "created": 1795076844.7791283,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 27900,
+      "name": "conhost.exe",
+      "created": 1795076844.7818885,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 18944,
+      "name": "conhost.exe",
+      "created": 1795076844.7704837,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 43480,
+      "name": "conhost.exe",
+      "created": 1795076844.7685835,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 15636,
+      "name": "conhost.exe",
+      "created": 1795076844.7650235,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 14100,
+      "name": "smpd.exe",
+      "created": 1795076841.74539,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 53912,
+      "name": "pluto.exe",
+      "created": 1795076844.5684094,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 49676,
+      "name": "pluto.exe",
+      "created": 1795076844.7916043,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 51648,
+      "name": "pluto.exe",
+      "created": 1795076844.7947016,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 11992,
+      "name": "pluto.exe",
+      "created": 1795076844.7982757,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 30848,
+      "name": "pluto.exe",
+      "created": 1795076844.8019843,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 4760,
+      "name": "pluto.exe",
+      "created": 1795076844.806382,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 54028,
+      "name": "pluto.exe",
+      "created": 1795076844.8098373,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 54176,
+      "name": "pluto.exe",
+      "created": 1795076844.813228,
+      "cwd": "D:\\sim_runs\\T018b\\low_trap_G0\\it0",
+      "status": "running"
+    },
+    {
+      "pid": 17824,
+      "name": "conhost.exe",
+      "created": 1795076844.8205128,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 30976,
+      "name": "conhost.exe",
+      "created": 1795076844.815614,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 51428,
+      "name": "conhost.exe",
+      "created": 1795076844.8143811,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 18576,
+      "name": "conhost.exe",
+      "created": 1795076844.8091595,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 32236,
+      "name": "conhost.exe",
+      "created": 1795076844.8067667,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 53752,
+      "name": "conhost.exe",
+      "created": 1795076844.8018873,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 29264,
+      "name": "conhost.exe",
+      "created": 1795076844.7985384,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 28816,
+      "name": "conhost.exe",
+      "created": 1795076844.7943492,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 46228,
+      "name": "cmd.exe",
+      "created": 1795063848.4831195,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "stopped"
+    },
+    {
+      "pid": 38640,
+      "name": "conhost.exe",
+      "created": 1795063848.5285256,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 25868,
+      "name": "python.exe",
+      "created": 1795063848.577654,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 41556,
+      "name": "python.exe",
+      "created": 1795063848.8141325,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 24040,
+      "name": "python.exe",
+      "created": 1795067589.6210315,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 29436,
+      "name": "python.exe",
+      "created": 1795067591.7307217,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 51680,
+      "name": "python.exe",
+      "created": 1795067591.7402155,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 22488,
+      "name": "python.exe",
+      "created": 1795067591.746858,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 23344,
+      "name": "python.exe",
+      "created": 1795067591.7531853,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 49960,
+      "name": "python.exe",
+      "created": 1795067591.760195,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 26940,
+      "name": "python.exe",
+      "created": 1795067591.766704,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 9072,
+      "name": "python.exe",
+      "created": 1795067591.7737842,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 41248,
+      "name": "python.exe",
+      "created": 1795067591.7799551,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 43280,
+      "name": "python.exe",
+      "created": 1795067591.786858,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 52552,
+      "name": "python.exe",
+      "created": 1795067591.7934556,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 26820,
+      "name": "python.exe",
+      "created": 1795067591.8007302,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 18396,
+      "name": "python.exe",
+      "created": 1795067591.8082242,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 39216,
+      "name": "python.exe",
+      "created": 1795067591.8155844,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 27824,
+      "name": "python.exe",
+      "created": 1795067591.8232868,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 31316,
+      "name": "python.exe",
+      "created": 1795067591.8310144,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 51712,
+      "name": "python.exe",
+      "created": 1795067591.8384354,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 38032,
+      "name": "cmd.exe",
+      "created": 1795026177.8378432,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "stopped"
+    },
+    {
+      "pid": 46020,
+      "name": "conhost.exe",
+      "created": 1795026177.8712463,
+      "cwd": "C:\\Windows",
+      "status": "running"
+    },
+    {
+      "pid": 10720,
+      "name": "python.exe",
+      "created": 1795026177.9123795,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "running"
+    },
+    {
+      "pid": 39740,
+      "name": "python.exe",
+      "created": 1795063781.6827476,
+      "cwd": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude",
+      "status": "stopped"
+    }
+  ],
+  "v1i_executable_sha256": "487decf2ef2383fd2442252ea6fcb0c9ae4d0a8106c849c5edfafcb8205f0169"
+}

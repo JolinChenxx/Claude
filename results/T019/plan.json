@@ -1,0 +1,3502 @@
+{
+  "prepared": "2026-11-20T03:25:20.310202+08:00",
+  "job_id": "T019_split_01",
+  "authority": "tasks/T019-emission-split.md, instruction c5c469f, claim dfe0bb4",
+  "runner": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T019\\run_split.py",
+  "runner_sha256": "e3a6165c85b77328a5b79af1fe9cc0a4afdf1918078ac31b5bbdbc62e6509a67",
+  "parallel_slots": 2,
+  "workers_per_image": 16,
+  "reserved_cores": 32,
+  "reason": "Native T016i and previously running thin it1/v2 reserve32 of64physical cores; use the remaining32, within the card maximum3images.",
+  "diagnostic_only": true,
+  "inputs": [
+    {
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "series": "high",
+      "run": "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+      "registry_row": {
+        "time": "2026-11-19T01:54:33",
+        "batch": "T016e",
+        "run": "high_thin_G0",
+        "picard_it": "2",
+        "grid": "G0",
+        "nec": "thin",
+        "case": "configs/cases/v0_high.yaml",
+        "procs": "8",
+        "returncode": "0",
+        "seconds": "26064.2",
+        "commit": "cf93793",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "935a249ba47435cf",
+        "dir": "D:\\sim_runs\\T016e\\high_thin_G0\\it2"
+      },
+      "source_meta_sha256": "99ae551f3f5bf8a8bee61269cc906baecd6296e2497fab7f63d7acd022ff6985",
+      "baseline": {
+        "thin": {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_thin_baseline.csv",
+          "archive": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_thin_baseline.csv",
+          "sha256": "b876b6d0fdcc69bc48945f564b8ea85c1f61787b2fae978c63b6527b8301bfe6",
+          "times": [
+            0.0,
+            20.0,
+            30.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            150.0,
+            160.0,
+            180.0,
+            200.0,
+            250.0,
+            260.0,
+            300.0,
+            310.0,
+            330.0,
+            350.0,
+            360.0,
+            400.0,
+            420.0,
+            450.0,
+            500.0,
+            510.0,
+            530.0,
+            580.0,
+            610.0,
+            630.0,
+            730.0,
+            740.0
+          ]
+        },
+        "sa": {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_sa_baseline.csv",
+          "archive": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_sa_baseline.csv",
+          "sha256": "03c20f617d35e7302c0a1068abbe922d44f2f9e5c3bb721c2606d8e3acb1498a",
+          "times": [
+            0.0,
+            20.0,
+            30.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            150.0,
+            160.0,
+            180.0,
+            200.0,
+            250.0,
+            260.0,
+            300.0,
+            310.0,
+            330.0,
+            350.0,
+            360.0,
+            400.0,
+            420.0,
+            450.0,
+            500.0,
+            510.0,
+            530.0,
+            580.0,
+            610.0,
+            630.0,
+            730.0,
+            740.0
+          ]
+        }
+      },
+      "frame_gates": [
+        {
+          "t_ns": 0,
+          "snapshots": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "t_ns": 20,
+          "snapshots": [
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "t_ns": 30,
+          "snapshots": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "t_ns": 50,
+          "snapshots": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "t_ns": 60,
+          "snapshots": [
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "t_ns": 70,
+          "snapshots": [
+            28,
+            29,
+            30,
+            31,
+            32
+          ]
+        },
+        {
+          "t_ns": 80,
+          "snapshots": [
+            33,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "t_ns": 150,
+          "snapshots": [
+            61,
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "t_ns": 160,
+          "snapshots": [
+            65,
+            66,
+            67,
+            68
+          ]
+        },
+        {
+          "t_ns": 180,
+          "snapshots": [
+            73,
+            74,
+            75,
+            76
+          ]
+        },
+        {
+          "t_ns": 200,
+          "snapshots": [
+            81,
+            82,
+            83,
+            84
+          ]
+        },
+        {
+          "t_ns": 250,
+          "snapshots": [
+            101,
+            102,
+            103,
+            104
+          ]
+        },
+        {
+          "t_ns": 260,
+          "snapshots": [
+            105,
+            106,
+            107,
+            108
+          ]
+        },
+        {
+          "t_ns": 300,
+          "snapshots": [
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "t_ns": 310,
+          "snapshots": [
+            125,
+            126,
+            127,
+            128
+          ]
+        },
+        {
+          "t_ns": 330,
+          "snapshots": [
+            133,
+            134,
+            135,
+            136
+          ]
+        },
+        {
+          "t_ns": 350,
+          "snapshots": [
+            141,
+            142,
+            143,
+            144
+          ]
+        },
+        {
+          "t_ns": 360,
+          "snapshots": [
+            145,
+            146,
+            147,
+            148
+          ]
+        },
+        {
+          "t_ns": 400,
+          "snapshots": [
+            161,
+            162,
+            163,
+            164
+          ]
+        },
+        {
+          "t_ns": 420,
+          "snapshots": [
+            169,
+            170,
+            171,
+            172
+          ]
+        },
+        {
+          "t_ns": 450,
+          "snapshots": [
+            181,
+            182,
+            183,
+            184
+          ]
+        },
+        {
+          "t_ns": 500,
+          "snapshots": [
+            201,
+            202,
+            203,
+            204
+          ]
+        },
+        {
+          "t_ns": 510,
+          "snapshots": [
+            205,
+            206,
+            207,
+            208
+          ]
+        },
+        {
+          "t_ns": 530,
+          "snapshots": [
+            212,
+            213,
+            214,
+            215,
+            216
+          ]
+        },
+        {
+          "t_ns": 580,
+          "snapshots": [
+            233,
+            234,
+            235,
+            236
+          ]
+        },
+        {
+          "t_ns": 610,
+          "snapshots": [
+            245,
+            246,
+            247,
+            248
+          ]
+        },
+        {
+          "t_ns": 630,
+          "snapshots": [
+            252,
+            253,
+            254,
+            255,
+            256
+          ]
+        },
+        {
+          "t_ns": 730,
+          "snapshots": [
+            293,
+            294,
+            295,
+            296
+          ]
+        },
+        {
+          "t_ns": 740,
+          "snapshots": [
+            297,
+            298,
+            299,
+            300
+          ]
+        }
+      ],
+      "snapshot_fingerprint": "Existence, length and mtime_ns; full raw-field SHA256 not recomputed."
+    },
+    {
+      "member": "low_thin_G0",
+      "iteration": "it1",
+      "series": "low",
+      "run": "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+      "registry_row": {
+        "time": "2026-11-19T01:50:25",
+        "batch": "T016e",
+        "run": "low_thin_G0",
+        "picard_it": "1",
+        "grid": "G0",
+        "nec": "thin",
+        "case": "configs/cases/v0_low.yaml",
+        "procs": "8",
+        "returncode": "0",
+        "seconds": "33989.1",
+        "commit": "8425f71",
+        "registry_sha256": "34e7b0d3c4ca3e43",
+        "ini_sha256": "90edecdb91817d3f",
+        "dir": "D:\\sim_runs\\T016e\\low_thin_G0\\it1"
+      },
+      "source_meta_sha256": "2e173d350e18ae9d96efd1be51434db90b208cdc0f74df421553af54ea242482",
+      "baseline": {
+        "thin": {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_thin_baseline.csv",
+          "archive": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_thin_baseline.csv",
+          "sha256": "1eb71d0085fc2d66dc0fc9f3d668bd9c68accdb909ad41f77ffec4c8b3a00bb7",
+          "times": [
+            10.0,
+            15.0,
+            30.0,
+            35.0,
+            60.0,
+            90.0,
+            130.0,
+            140.0,
+            210.0,
+            220.0,
+            240.0,
+            280.0,
+            340.0,
+            380.0,
+            405.0,
+            480.0,
+            500.0,
+            565.0,
+            630.0,
+            680.0,
+            715.0,
+            750.0,
+            825.0,
+            880.0,
+            900.0,
+            935.0,
+            960.0,
+            1035.0,
+            1120.0,
+            1230.0
+          ]
+        },
+        "sa": {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_sa_baseline.csv",
+          "archive": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_sa_baseline.csv",
+          "sha256": "4d15a69d95ec9580a03742d6654b2bb13f630a603587c3f4f803e847c6a2ccd0",
+          "times": [
+            10.0,
+            15.0,
+            30.0,
+            35.0,
+            60.0,
+            90.0,
+            130.0,
+            140.0,
+            210.0,
+            220.0,
+            240.0,
+            280.0,
+            340.0,
+            380.0,
+            405.0,
+            480.0,
+            500.0,
+            565.0,
+            630.0,
+            680.0,
+            715.0,
+            750.0,
+            825.0,
+            880.0,
+            900.0,
+            935.0,
+            960.0,
+            1035.0,
+            1120.0,
+            1230.0
+          ]
+        }
+      },
+      "frame_gates": [
+        {
+          "t_ns": 10,
+          "snapshots": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "t_ns": 15,
+          "snapshots": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "t_ns": 30,
+          "snapshots": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "t_ns": 35,
+          "snapshots": [
+            15,
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "t_ns": 60,
+          "snapshots": [
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "t_ns": 90,
+          "snapshots": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ]
+        },
+        {
+          "t_ns": 130,
+          "snapshots": [
+            53,
+            54,
+            55,
+            56
+          ]
+        },
+        {
+          "t_ns": 140,
+          "snapshots": [
+            57,
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "t_ns": 210,
+          "snapshots": [
+            85,
+            86,
+            87,
+            88
+          ]
+        },
+        {
+          "t_ns": 220,
+          "snapshots": [
+            89,
+            90,
+            91,
+            92
+          ]
+        },
+        {
+          "t_ns": 240,
+          "snapshots": [
+            97,
+            98,
+            99,
+            100
+          ]
+        },
+        {
+          "t_ns": 280,
+          "snapshots": [
+            113,
+            114,
+            115,
+            116
+          ]
+        },
+        {
+          "t_ns": 340,
+          "snapshots": [
+            137,
+            138,
+            139,
+            140
+          ]
+        },
+        {
+          "t_ns": 380,
+          "snapshots": [
+            153,
+            154,
+            155,
+            156
+          ]
+        },
+        {
+          "t_ns": 405,
+          "snapshots": [
+            163,
+            164,
+            165,
+            166
+          ]
+        },
+        {
+          "t_ns": 480,
+          "snapshots": [
+            193,
+            194,
+            195,
+            196
+          ]
+        },
+        {
+          "t_ns": 500,
+          "snapshots": [
+            201,
+            202,
+            203,
+            204
+          ]
+        },
+        {
+          "t_ns": 565,
+          "snapshots": [
+            227,
+            228,
+            229,
+            230
+          ]
+        },
+        {
+          "t_ns": 630,
+          "snapshots": [
+            253,
+            254,
+            255,
+            256
+          ]
+        },
+        {
+          "t_ns": 680,
+          "snapshots": [
+            273,
+            274,
+            275,
+            276
+          ]
+        },
+        {
+          "t_ns": 715,
+          "snapshots": [
+            287,
+            288,
+            289,
+            290
+          ]
+        },
+        {
+          "t_ns": 750,
+          "snapshots": [
+            301,
+            302,
+            303,
+            304
+          ]
+        },
+        {
+          "t_ns": 825,
+          "snapshots": [
+            331,
+            332,
+            333,
+            334
+          ]
+        },
+        {
+          "t_ns": 880,
+          "snapshots": [
+            353,
+            354,
+            355,
+            356
+          ]
+        },
+        {
+          "t_ns": 900,
+          "snapshots": [
+            361,
+            362,
+            363,
+            364
+          ]
+        },
+        {
+          "t_ns": 935,
+          "snapshots": [
+            375,
+            376,
+            377,
+            378
+          ]
+        },
+        {
+          "t_ns": 960,
+          "snapshots": [
+            385,
+            386,
+            387,
+            388
+          ]
+        },
+        {
+          "t_ns": 1035,
+          "snapshots": [
+            415,
+            416,
+            417,
+            418
+          ]
+        },
+        {
+          "t_ns": 1120,
+          "snapshots": [
+            449,
+            450,
+            451,
+            452
+          ]
+        },
+        {
+          "t_ns": 1230,
+          "snapshots": [
+            492,
+            493,
+            494,
+            495,
+            496
+          ]
+        }
+      ],
+      "snapshot_fingerprint": "Existence, length and mtime_ns; full raw-field SHA256 not recomputed."
+    }
+  ],
+  "commands": [
+    {
+      "name": "high_thin_G0_it2_continuum",
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "series": "high",
+      "component": "continuum",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+        "--series",
+        "high",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_continuum",
+        "--workers",
+        "16"
+      ],
+      "snapshot_files": [
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0000.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024473370931700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0001.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024483503296500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0002.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024484306276100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0003.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024484907518800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0004.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024485578820000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0009.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024503372331100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0010.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024512767854600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0011.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024520447125300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0012.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024590729565200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0013.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024661434928800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0014.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024737407960900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0015.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024811274620100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0016.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024896587025800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0021.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025426163743000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0022.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025581224985300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0023.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025758162323900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0024.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025918389532800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0025.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026061168500800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0026.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026204915328400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0027.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026360223345900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0028.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026506220516400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0029.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026651673729400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0030.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026795421280300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0031.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026938055406600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0032.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027080111276300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0033.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027210965805800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0034.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027332945910100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0035.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027442271632500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0036.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027565531381500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0061.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032077356187300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0062.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032155325269700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0063.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032212858271200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0064.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032265086614600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0065.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032317517509800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0066.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032368641264000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0067.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032418007429900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0068.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032469499510200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0073.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032848586262400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0074.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032956792875400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0075.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033055645369800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0076.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033140557141800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0081.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033422722679400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0082.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033484618093300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0083.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033544862707000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0084.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033601441773500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0101.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034357496995300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0102.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034397664407700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0103.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034437244411600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0104.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034478091456900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0105.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034518013225600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0106.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034557966298100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0107.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034598054556500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0108.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034638080088900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0121.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035412205139700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0122.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035495170973900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0123.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035575298541800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0124.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035655470873000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0125.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035746659237100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0126.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035839787191900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0127.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035932500652500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0128.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036028251325500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0133.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036521360497900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0134.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036622559454800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0135.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036725740770900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0136.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036827764790900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0141.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037270430949900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0142.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037359092125100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0143.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037443367784700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0144.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037520583304700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0145.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037594053910500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0146.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037664453280800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0147.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037733324344900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0148.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037798457453800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0161.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038438941108900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0162.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038478384006700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0163.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038518286511100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0164.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038559069250400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0169.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038758002284600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0170.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038797563597900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0171.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038836389634300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0172.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038875066040600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0181.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039268693221500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0182.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039321061511300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0183.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039375861976900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0184.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039440895304000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0201.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040847636807700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0202.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040937673261500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0203.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041027545514900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0204.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041116571850300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0205.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041205164238900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0206.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041293636742900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0207.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041381983707100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0208.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041469494250700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0212.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041804069963900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0213.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041885766050500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0214.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041967524672300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0215.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795042048911809600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0216.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795042128430120800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0233.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043348189903400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0234.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043418360713200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0235.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043486521193100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0236.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043552140073600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0245.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044113379712400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0246.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044174828769700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0247.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044236846925900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0248.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044300273633400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0252.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044574289159600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0253.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044637163506400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0254.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044700544128600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0255.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044763787136800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0256.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044825580562900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0293.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048863838666900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0294.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048998692387900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0295.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049129518086600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0296.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049240663943600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0297.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049308898302300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0298.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049367998129000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0299.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049422567101000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0300.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049471508023800
+        }
+      ]
+    },
+    {
+      "name": "high_thin_G0_it2_lines",
+      "member": "high_thin_G0",
+      "iteration": "it2",
+      "series": "high",
+      "component": "lines",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+        "--series",
+        "high",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2_lines",
+        "--workers",
+        "16"
+      ],
+      "snapshot_files": [
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0000.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024473370931700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0001.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024483503296500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0002.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024484306276100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0003.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024484907518800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0004.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024485578820000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0009.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024503372331100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0010.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024512767854600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0011.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024520447125300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0012.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024590729565200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0013.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024661434928800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0014.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024737407960900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0015.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024811274620100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0016.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024896587025800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0021.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025426163743000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0022.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025581224985300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0023.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025758162323900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0024.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025918389532800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0025.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026061168500800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0026.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026204915328400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0027.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026360223345900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0028.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026506220516400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0029.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026651673729400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0030.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026795421280300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0031.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026938055406600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0032.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027080111276300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0033.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027210965805800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0034.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027332945910100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0035.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027442271632500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0036.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027565531381500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0061.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032077356187300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0062.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032155325269700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0063.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032212858271200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0064.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032265086614600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0065.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032317517509800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0066.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032368641264000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0067.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032418007429900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0068.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032469499510200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0073.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032848586262400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0074.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795032956792875400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0075.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033055645369800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0076.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033140557141800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0081.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033422722679400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0082.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033484618093300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0083.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033544862707000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0084.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033601441773500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0101.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034357496995300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0102.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034397664407700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0103.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034437244411600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0104.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034478091456900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0105.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034518013225600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0106.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034557966298100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0107.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034598054556500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0108.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795034638080088900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0121.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035412205139700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0122.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035495170973900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0123.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035575298541800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0124.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035655470873000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0125.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035746659237100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0126.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035839787191900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0127.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035932500652500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0128.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036028251325500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0133.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036521360497900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0134.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036622559454800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0135.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036725740770900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0136.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036827764790900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0141.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037270430949900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0142.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037359092125100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0143.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037443367784700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0144.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037520583304700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0145.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037594053910500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0146.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037664453280800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0147.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037733324344900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0148.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795037798457453800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0161.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038438941108900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0162.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038478384006700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0163.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038518286511100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0164.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038559069250400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0169.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038758002284600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0170.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038797563597900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0171.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038836389634300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0172.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038875066040600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0181.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039268693221500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0182.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039321061511300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0183.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039375861976900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0184.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795039440895304000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0201.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040847636807700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0202.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040937673261500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0203.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041027545514900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0204.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041116571850300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0205.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041205164238900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0206.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041293636742900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0207.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041381983707100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0208.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041469494250700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0212.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041804069963900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0213.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041885766050500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0214.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795041967524672300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0215.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795042048911809600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0216.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795042128430120800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0233.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043348189903400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0234.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043418360713200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0235.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043486521193100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0236.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795043552140073600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0245.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044113379712400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0246.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044174828769700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0247.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044236846925900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0248.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044300273633400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0252.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044574289159600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0253.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044637163506400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0254.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044700544128600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0255.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044763787136800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0256.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044825580562900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0293.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048863838666900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0294.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048998692387900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0295.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049129518086600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0296.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049240663943600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0297.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049308898302300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0298.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049367998129000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0299.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049422567101000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\data.0300.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049471508023800
+        }
+      ]
+    },
+    {
+      "name": "low_thin_G0_it1_continuum",
+      "member": "low_thin_G0",
+      "iteration": "it1",
+      "series": "low",
+      "component": "continuum",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+        "--series",
+        "low",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2_continuum",
+        "--workers",
+        "16"
+      ],
+      "snapshot_files": [
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0005.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024236595905800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0006.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024236941722100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0007.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024237494637200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0008.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024238134513800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0009.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024238929144700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0010.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024240167926000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0013.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024244762780100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0014.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024247996786500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0015.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024253410073100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0016.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024261611469300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0017.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024269425213600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0018.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024276477787500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0025.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024468202802800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0026.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024526824366900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0027.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024586773756900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0028.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024646218092200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0036.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025118246196900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0037.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025184327141400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0038.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025254869751300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0039.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025331788892400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0040.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025480034269400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0053.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026161025422900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0054.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026188697393600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0055.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026221116857300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0056.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026254087980400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0057.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026286184393300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0058.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026314173507100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0059.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026339963037800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0060.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026366213529400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0085.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027272341373200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0086.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027303111362600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0087.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027327532425700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0088.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027347511537900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0089.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027366653208100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0090.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027385334414600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0091.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027403664333700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0092.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027423295398400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0097.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027583546563600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0098.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027650702505300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0099.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027678924297400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0100.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027707804504600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0113.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028789079458600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0114.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028820501887900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0115.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028856400729400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0116.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028934516161600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0137.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029879515706900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0138.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029902930463700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0139.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029941963554200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0140.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029987785562500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0153.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030324338279900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0154.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030345226456600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0155.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030366331104400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0156.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030386508310000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0163.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030524443035200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0164.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030543744496200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0165.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030562896483300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0166.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030581687602900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0193.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031072406063500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0194.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031089849276800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0195.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031106934322800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0196.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031124543278000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0201.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031319568550100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0202.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031406562185100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0203.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031424014143000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0204.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031442078329400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0227.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033022669125500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0228.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033041979048900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0229.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033061579118500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0230.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033084895505100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0253.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035002276341200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0254.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035016888659700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0255.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035032258983500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0256.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035049380544900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0273.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036198370004900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0274.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036317493547800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0275.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036420618206500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0276.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036568979400700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0287.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038159866903100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0288.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038319851303800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0289.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038472895344100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0290.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038621498817000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0301.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040163590347300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0302.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040295532105600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0303.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040427750830200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0304.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040577729790300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0331.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044887504963300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0332.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795045066057749500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0333.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795045245451687900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0334.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795045411086503900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0353.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048243143737300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0354.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048408567177500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0355.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048439148009100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0356.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048470469353900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0361.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048752737867700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0362.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048811351432800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0363.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048898979468800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0364.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049047560473300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0375.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051057605553900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0376.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051068011455200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0377.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051078446420400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0378.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051089004306700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0385.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051463688408800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0386.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051610283233400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0387.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051792998909400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0388.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051977419582600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0415.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055190977621000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0416.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055306185409700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0417.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055411915715300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0418.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055506501989800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0449.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057147408694200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0450.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057164226701400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0451.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057180809155400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0452.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057199147427700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0492.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057906351718400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0493.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057920583683900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0494.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057934870403400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0495.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057949008036700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0496.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057962981369700
+        }
+      ]
+    },
+    {
+      "name": "low_thin_G0_it1_lines",
+      "member": "low_thin_G0",
+      "iteration": "it1",
+      "series": "low",
+      "component": "lines",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T016e\\low_thin_G0\\it1",
+        "--series",
+        "low",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2_lines",
+        "--workers",
+        "16"
+      ],
+      "snapshot_files": [
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0005.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024236595905800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0006.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024236941722100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0007.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024237494637200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0008.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024238134513800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0009.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024238929144700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0010.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024240167926000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0013.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024244762780100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0014.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024247996786500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0015.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024253410073100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0016.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024261611469300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0017.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024269425213600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0018.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024276477787500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0025.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024468202802800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0026.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024526824366900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0027.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024586773756900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0028.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795024646218092200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0036.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025118246196900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0037.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025184327141400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0038.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025254869751300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0039.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025331788892400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0040.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795025480034269400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0053.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026161025422900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0054.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026188697393600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0055.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026221116857300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0056.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026254087980400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0057.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026286184393300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0058.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026314173507100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0059.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026339963037800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0060.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795026366213529400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0085.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027272341373200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0086.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027303111362600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0087.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027327532425700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0088.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027347511537900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0089.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027366653208100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0090.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027385334414600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0091.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027403664333700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0092.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027423295398400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0097.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027583546563600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0098.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027650702505300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0099.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027678924297400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0100.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795027707804504600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0113.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028789079458600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0114.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028820501887900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0115.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028856400729400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0116.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795028934516161600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0137.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029879515706900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0138.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029902930463700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0139.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029941963554200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0140.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795029987785562500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0153.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030324338279900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0154.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030345226456600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0155.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030366331104400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0156.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030386508310000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0163.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030524443035200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0164.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030543744496200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0165.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030562896483300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0166.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795030581687602900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0193.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031072406063500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0194.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031089849276800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0195.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031106934322800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0196.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031124543278000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0201.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031319568550100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0202.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031406562185100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0203.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031424014143000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0204.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795031442078329400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0227.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033022669125500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0228.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033041979048900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0229.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033061579118500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0230.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795033084895505100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0253.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035002276341200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0254.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035016888659700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0255.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035032258983500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0256.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795035049380544900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0273.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036198370004900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0274.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036317493547800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0275.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036420618206500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0276.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795036568979400700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0287.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038159866903100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0288.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038319851303800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0289.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038472895344100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0290.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795038621498817000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0301.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040163590347300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0302.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040295532105600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0303.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040427750830200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0304.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795040577729790300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0331.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795044887504963300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0332.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795045066057749500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0333.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795045245451687900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0334.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795045411086503900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0353.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048243143737300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0354.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048408567177500
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0355.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048439148009100
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0356.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048470469353900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0361.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048752737867700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0362.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048811351432800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0363.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795048898979468800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0364.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795049047560473300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0375.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051057605553900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0376.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051068011455200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0377.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051078446420400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0378.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051089004306700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0385.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051463688408800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0386.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051610283233400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0387.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051792998909400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0388.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795051977419582600
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0415.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055190977621000
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0416.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055306185409700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0417.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055411915715300
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0418.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795055506501989800
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0449.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057147408694200
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0450.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057164226701400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0451.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057180809155400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0452.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057199147427700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0492.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057906351718400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0493.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057920583683900
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0494.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057934870403400
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0495.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057949008036700
+        },
+        {
+          "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\data.0496.dbl",
+          "bytes": 2116800,
+          "mtime_ns": 1795057962981369700
+        }
+      ]
+    }
+  ],
+  "frozen_files": [
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml",
+      "bytes": 782,
+      "sha256": "24a63bdd39f3a50cdf86d96e634faf5c5113e5ca72de2236fe53ce50662b89c6"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_continuum.yaml",
+      "bytes": 764,
+      "sha256": "3503f50457017bd24d237afeb87b330f73b47850ba0ae183f4cf837fb01cc10f"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2_lines.yaml",
+      "bytes": 756,
+      "sha256": "d02e64be3535572da935d46ee9fdc1d40a08043bc7f8104e8ff796c2bfcf2310"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\data\\exp\\meta.yaml",
+      "bytes": 8438,
+      "sha256": "69aefd2865dc87cdc359919a12a1b7f54e5ba3ca10dbdc3ee1ba63c41fdd3820"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\data\\exp\\metrics_high.csv",
+      "bytes": 4043,
+      "sha256": "3d5edfccf3b29b7e8c1d09defefeb7589bc3628ed297f6870e416e59ed7aea4c"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\data\\exp\\metrics_low.csv",
+      "bytes": 4086,
+      "sha256": "9b227533947619a0767a2a62082d548cf8a08b8b46d19915712a8e08aa5dfd24"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\data\\params\\registry.yaml",
+      "bytes": 19934,
+      "sha256": "7c65e7c8bad63ce01c858e51715b7562411f7f0a2a587fce0d114371027989e9"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_sa_baseline.csv",
+      "bytes": 3836,
+      "sha256": "03c20f617d35e7302c0a1068abbe922d44f2f9e5c3bb721c2606d8e3acb1498a"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_thin_baseline.csv",
+      "bytes": 3844,
+      "sha256": "b876b6d0fdcc69bc48945f564b8ea85c1f61787b2fae978c63b6527b8301bfe6"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_sa_baseline.csv",
+      "bytes": 3734,
+      "sha256": "4d15a69d95ec9580a03742d6654b2bb13f630a603587c3f4f803e847c6a2ccd0"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_thin_baseline.csv",
+      "bytes": 3738,
+      "sha256": "1eb71d0085fc2d66dc0fc9f3d668bd9c68accdb909ad41f77ffec4c8b3a00bb7"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\batch.py",
+      "bytes": 8936,
+      "sha256": "840b254402f9e4c952c6f8b7840b13212b7181eadb816073c6f84381a2f605ef"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\mixture.py",
+      "bytes": 10174,
+      "sha256": "56934447fcf8dc227d3c2e8b6e5b1a225439c5094f140443227052b4de004b1e"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\nist_io.py",
+      "bytes": 5540,
+      "sha256": "1aa6573dc427e2e64fef953f336c884eae38962f74caf9e6e2b2e4812acc4918"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\saha.py",
+      "bytes": 4726,
+      "sha256": "def50734a6934545a8dad68c4fc380c88d7e506ebab5dc4bbce9ab1b08978d30"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\eos\\thermo.py",
+      "bytes": 1714,
+      "sha256": "850b327e1d3f9c6a94fa3bbb8ca88575f87686a8cdcc031b25a90a5cca5cafc2"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\__main__.py",
+      "bytes": 376,
+      "sha256": "f55e9b4028342fa8faf599e0da3128c37dc67f782dab716d8c8e6be011e06449"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\camera.py",
+      "bytes": 2894,
+      "sha256": "cdd7815e03566e986f0d8ee5e8089cb1832dfdf4042b65a4ffbb616829bcaa24"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\dispatch.py",
+      "bytes": 4891,
+      "sha256": "e08a9bc3edb8aff521c193d3f97cd8c6d70d0f747dc04c476499793b7545953e"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\forward.py",
+      "bytes": 9863,
+      "sha256": "f64b066f0f757429bb330c9129021e6cded49dce8ccd1992dbfc8dd84c327e96"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\image\\run.py",
+      "bytes": 10432,
+      "sha256": "591d787e663bb6e4ddf45e9ce9c20a45ce4f67a5a5b4afe824bc31dec3ef13e1"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\io\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\io\\pluto.py",
+      "bytes": 2303,
+      "sha256": "63e3a735d1acbc3b7f5811637c28873b338294aa898b01c0c02ae7ff1b3b737f"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\optics\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\optics\\props.py",
+      "bytes": 5137,
+      "sha256": "b83c3362dd555ae0f01005e2ec534b23cab853832ff2a67205b735d26291cb8b"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\params.py",
+      "bytes": 1409,
+      "sha256": "225ef24ac814eab94a53f0a6bd8cf5cb6d5afd3665b57df176fd19cd3cb216ac"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\pipeline\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\pipeline\\expframes.py",
+      "bytes": 7482,
+      "sha256": "4fd70b7e5178ebb44d1500d7c6d9e9d3d253269710b630c8545000e4b790c15d"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\pipeline\\metrics.py",
+      "bytes": 5769,
+      "sha256": "e45efb3ce530fd3963d315dbf2444d5c29068cf367c24648feac1787217d2be5"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\tables\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\tables\\build.py",
+      "bytes": 6420,
+      "sha256": "aa3beb0a1fd0c85417834cdbd7c5be57c45bed1563bcbb7126b13ae57eab2a40"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\target\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\target\\build.py",
+      "bytes": 4026,
+      "sha256": "44fcca62ab2985c9e36a2da13d2133b0fc8317167506917ec6ca857a44ac4fd8"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\target\\model.py",
+      "bytes": 11371,
+      "sha256": "bf1facb8d201e7c004bf15a450838ee6947273c6befe3c0f0ef7652c8db8721f"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\transport\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\transport\\diffusion.py",
+      "bytes": 5583,
+      "sha256": "7edacfab2f6735a516989b9f63f55d91b2cf89f3fcfc8635b1943227de88d389"
+    },
+    {
+      "path": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src\\lipsim\\transport\\kappa.py",
+      "bytes": 2343,
+      "sha256": "8c3efe2cd9605074e733fd6cf992da80aaec24b9c14518e2b445f2e9f9efa347"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\dbl.out",
+      "bytes": 30411,
+      "sha256": "dd7efea2c9bc5d939237c6f626e01c6cff00312c889f23fba015da2d1d999099"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\grid.out",
+      "bytes": 18060,
+      "sha256": "65cfc38f569beb6f5a551521117068b0dc5e409e300174a6f1ef99fa1e732157"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_sa_baseline.csv",
+      "bytes": 3836,
+      "sha256": "03c20f617d35e7302c0a1068abbe922d44f2f9e5c3bb721c2606d8e3acb1498a"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2\\metrics_b_thin_baseline.csv",
+      "bytes": 3844,
+      "sha256": "b876b6d0fdcc69bc48945f564b8ea85c1f61787b2fae978c63b6527b8301bfe6"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\pluto.ini",
+      "bytes": 1055,
+      "sha256": "935a249ba47435cfe05e9eee325557184675ee29cf1fc4adba44e03eab635ad2"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\source\\source_meta.json",
+      "bytes": 690,
+      "sha256": "99ae551f3f5bf8a8bee61269cc906baecd6296e2497fab7f63d7acd022ff6985"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\dbl.out",
+      "bytes": 49322,
+      "sha256": "fbaa9584b5fd093c89996010fd58aea048be333279c322188970a35692485467"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\grid.out",
+      "bytes": 18060,
+      "sha256": "b4bafc64b8fa79007a40e8517f813321c0c3cc56b792e2a455eb11621f3f067c"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_sa_baseline.csv",
+      "bytes": 3734,
+      "sha256": "4d15a69d95ec9580a03742d6654b2bb13f630a603587c3f4f803e847c6a2ccd0"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2\\metrics_b_thin_baseline.csv",
+      "bytes": 3738,
+      "sha256": "1eb71d0085fc2d66dc0fc9f3d668bd9c68accdb909ad41f77ffec4c8b3a00bb7"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\pluto.ini",
+      "bytes": 1057,
+      "sha256": "90edecdb91817d3f7e44fc1cf690f88a7ddf94d1dac38272870f3c3eee698e66"
+    },
+    {
+      "path": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\source\\source_meta.json",
+      "bytes": 688,
+      "sha256": "2e173d350e18ae9d96efd1be51434db90b208cdc0f74df421553af54ea242482"
+    },
+    {
+      "path": "D:\\sim_runs\\tables\\v1c\\eos.bin",
+      "bytes": 5263820,
+      "sha256": "8b700ab167f533387a1242a98f35463ab7701cb1474854885bc4a2ae7dd3073b"
+    },
+    {
+      "path": "D:\\sim_runs\\tables\\v1c\\opt.bin",
+      "bytes": 7894732,
+      "sha256": "6e5c5232a139e95590ea7776c7312631aae4ec18685bc7262be5aeac054ea127"
+    },
+    {
+      "path": "D:\\sim_runs\\tables\\v1c\\pop.bin",
+      "bytes": 27626572,
+      "sha256": "16d7b530a64427c4a65c412745258b289417bcc3a08896fbd90409d85a3c4b7e"
+    }
+  ]
+}

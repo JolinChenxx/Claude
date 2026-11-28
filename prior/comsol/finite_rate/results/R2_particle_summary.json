@@ -1,0 +1,25 @@
+{
+  "status": "conditional_feasibility_bound",
+  "mass_cap_kg": 1.871e-12,
+  "formation_experiment_ns": 150,
+  "initial_temperatures_K": [
+    1800,
+    2800
+  ],
+  "radii_nm": [
+    10,
+    30,
+    100
+  ],
+  "optical_model": "Mie spheres, Johnson-Christy 1972 room-temperature Cu; matched Drude continuation beyond 1.937 um",
+  "heat_model": "independent temperature; gas-collision/conduction resistances; radiation; evaporation; melting enthalpy",
+  "largest_energy_balance_relative_residual": 0.0028884524057970784,
+  "limitations": [
+    "Particle formation and initial temperature are conditional, not predicted.",
+    "Gas-peak bath is a favorable bound, not a spatial particle trajectory.",
+    "Room-temperature optical constants approximate hot liquid particles.",
+    "Mass cap is existing vapor-model Cu, not a bound on unmodeled molten spatter.",
+    "2500 photons is a diagnostic image occupancy scale, not calibrated camera detection."
+  ],
+  "scattering": "No persistent 515 nm probe illumination is established for S4 plume-emission frames; scattering excluded from the emission prediction."
+}

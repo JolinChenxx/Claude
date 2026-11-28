@@ -1,0 +1,350 @@
+{
+  "collected": "2026-11-19T18:25:22.134585+08:00",
+  "completion_evidence": {
+    "name": "low_thin_G0_image_v2",
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "-m",
+      "lipsim.image",
+      "D:\\sim_runs\\T018b\\low_thin_G0\\it0",
+      "--series",
+      "low",
+      "--tables",
+      "D:\\sim_runs\\tables\\v1c",
+      "--out",
+      "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2",
+      "--workers",
+      "16",
+      "--scenarios",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+    ],
+    "started": "2026-11-19T17:50:19.969877+08:00",
+    "attempt": 1,
+    "returncode": 0,
+    "ended": "2026-11-19T18:21:10.506080+08:00",
+    "log": "D:\\sim_runs\\T018b_post_it0_01\\low_thin_G0_image_v2.attempt1.log"
+  },
+  "job": {
+    "id": "T018b_post_it0_01",
+    "pid": 13064,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018b\\postprocessing\\run_it0.py",
+    "threads": 1,
+    "commit": "928df27",
+    "started": "2026-11-19T17:37:15",
+    "dir": "D:\\sim_runs\\T018b_post_it0_01"
+  },
+  "files": [
+    {
+      "file": "frames_a_sa.npz",
+      "bytes": 474409,
+      "sha256": "aa9900efdf7f365044ef8b10148c8bd75c097ba3b5f6bc4443401838520ba7dc",
+      "raw_path": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2\\frames_a_sa.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_a_thin.npz",
+      "bytes": 456531,
+      "sha256": "4fb0c9a9060e0fa63d8a7bf68dfc8923a1b7c42d59bc088a63b4dfe6220569a2",
+      "raw_path": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2\\frames_a_thin.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_b_sa.npz",
+      "bytes": 472034,
+      "sha256": "f02fc5e946ad29f2265a08603681f3488bc54fcb7caf3e3c682174daee56e7ba",
+      "raw_path": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2\\frames_b_sa.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_b_thin.npz",
+      "bytes": 457763,
+      "sha256": "4a31013472c02d8717799568a14c7ea810abd59e32bd7a1aae5ae4e1b5eafad7",
+      "raw_path": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2\\frames_b_thin.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_c_sa.npz",
+      "bytes": 474404,
+      "sha256": "41a0b03661c373820a7d0548c8718a94b9be1e02655dce2db210ee2d031bcc82",
+      "raw_path": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2\\frames_c_sa.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "frames_c_thin.npz",
+      "bytes": 456529,
+      "sha256": "0e6e0bee631dd511a094970056449634a4b1b6082efd7c4872bda44868659a04",
+      "raw_path": "D:\\sim_runs\\T018b\\low_thin_G0\\it0\\image_v2\\frames_c_thin.npz",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "finite": true
+        }
+      }
+    },
+    {
+      "file": "image_summary.json",
+      "bytes": 2688,
+      "sha256": "0f797aef1ad08140e4912bc4e7271bc33011bb0cd1628bd8a3244a8be5b51820"
+    },
+    {
+      "file": "metrics_a_sa_baseline.csv",
+      "bytes": 3534,
+      "sha256": "af6249f049ca82a4589c5aba2bd7dcde5016f5471415b1c40f46efbf93bbd613",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_sa_high.csv",
+      "bytes": 3136,
+      "sha256": "c8092f449d3948513d14740d4f2cc4d1a8932831e545788715d34367400a2774",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_sa_low.csv",
+      "bytes": 3381,
+      "sha256": "2147444f3f18211e3140e7507f12aa45f259022b68797e6f9c58329129deac6f",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_thin_baseline.csv",
+      "bytes": 3580,
+      "sha256": "44586db8c63c09c6a4657c24fc43af42930713398f5f5f7843869a8bba45b6a7",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_thin_high.csv",
+      "bytes": 3391,
+      "sha256": "54e38cd87f70ac905d16cfe668900661bd1d64aadcc8ed1a3ad34b646b35cdaf",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_a_thin_low.csv",
+      "bytes": 3419,
+      "sha256": "43cfc2a81f9cb76a98a8ade6735d5dd1b5f29e87e82802a7d1dad31bb8884725",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_sa_baseline.csv",
+      "bytes": 3462,
+      "sha256": "0e1c31560872938f0a359a1186dee76928aa55ab9503b3c8f4191de1f4894fbc",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_sa_high.csv",
+      "bytes": 3102,
+      "sha256": "25bf1a608ed8c2ab3e5382ebeacaaa5a95ea513744eb8efce5fb4a872c4fd1cf",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_sa_low.csv",
+      "bytes": 3321,
+      "sha256": "dcc67faa37680ce06677c12f28ffb17bbf9638a81e6f4d1ef57cc4758c48a1ad",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_thin_baseline.csv",
+      "bytes": 3576,
+      "sha256": "0b548d96c12650ed0f52da244f5956afa008b881253dfab93c9432e882d7fdf4",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_thin_high.csv",
+      "bytes": 3325,
+      "sha256": "fdfa741c5b9612807467918a92c10e406f250ca03ac085a7b77b4432b9e9a8eb",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_b_thin_low.csv",
+      "bytes": 3420,
+      "sha256": "ca0d401f641bef5460d97fdefa0bd021f025ccc6e45acae47cc71ac3f55c3d3f",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_sa_baseline.csv",
+      "bytes": 3531,
+      "sha256": "8a4b0d743d6abdd6c3975efeb2f5bf21a908677c473a9b004590fa6de4ea671c",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_sa_high.csv",
+      "bytes": 3134,
+      "sha256": "53e2fd99292eadc235b0d484599aa4ab42b42e208c2f36f56c38524ff00f8067",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_sa_low.csv",
+      "bytes": 3390,
+      "sha256": "bc1cb2232f65c83e02b907f1e689e308652e9eb2f5bdba9f9d922b95fc4670e0",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_thin_baseline.csv",
+      "bytes": 3584,
+      "sha256": "6f22dcf2178bf0dbd73925d7d3d179e85673f02c8533a9814a05ba7eaf26a4c5",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_thin_high.csv",
+      "bytes": 3395,
+      "sha256": "1187e4846ced762b02bcbbe8b66f7242dfa948170ce0fc636164b7b48bb9a81b",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    },
+    {
+      "file": "metrics_c_thin_low.csv",
+      "bytes": 3422,
+      "sha256": "375071d5bace95df1d422db82bf6a6429fd3334fa49a470184c78901ea1dac2d",
+      "rows": 30,
+      "first_t_ns": 10.0,
+      "last_t_ns": 1230.0
+    }
+  ],
+  "frame_policy": "Validated frame arrays retained in sim_runs to respect 20 MB/card limit",
+  "P2_unavailable": [
+    "a_thin_baseline",
+    "a_thin_high",
+    "c_thin_baseline",
+    "c_thin_high"
+  ]
+}

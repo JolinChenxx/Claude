@@ -1,0 +1,1600 @@
+{
+  "recorded": "2026-11-25T01:02:02.413157+08:00",
+  "milestone": {
+    "batch": "T027",
+    "member": "high_thin_G0",
+    "iteration": "it1",
+    "finished": "2026-11-25T00:54:35.749311+08:00"
+  },
+  "commands": {
+    "core_energy": {
+      "batch": "T027",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-25T00:31:39.012576+08:00",
+      "log": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_core_energy.log",
+      "returncode": 0,
+      "seconds": 2.194072199999937,
+      "finished": "2026-11-25T00:31:41.207279+08:00"
+    },
+    "shock_track": {
+      "batch": "T027",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1",
+        "--out",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-25T00:31:41.288264+08:00",
+      "log": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_shock_track.log",
+      "returncode": 0,
+      "seconds": 1.2393486000000848,
+      "finished": "2026-11-25T00:31:42.527304+08:00"
+    },
+    "emission": {
+      "batch": "T027",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-25T00:31:42.608781+08:00",
+      "log": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_emission.log",
+      "returncode": 0,
+      "seconds": 3.7745900000008987,
+      "finished": "2026-11-25T00:31:46.383503+08:00"
+    },
+    "image_v2": {
+      "batch": "T027",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2",
+        "--workers",
+        "24",
+        "--scenarios",
+        "D:\\sim_tools\\postprocess-runtime-04\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-25T00:31:46.464327+08:00",
+      "log": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_image_v2.log",
+      "returncode": 0,
+      "seconds": 1367.9322829000012,
+      "finished": "2026-11-25T00:54:34.396244+08:00"
+    },
+    "peak_lift": {
+      "batch": "T027",
+      "member": "high_thin_G0",
+      "iteration": "it1",
+      "name": "peak_lift",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\postprocess-runtime-04\\scripts\\peak_lift.py",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2",
+        "--series",
+        "high",
+        "--out",
+        "D:\\sim_runs\\T027\\high_thin_G0\\it1\\peak_lift.csv"
+      ],
+      "started": "2026-11-25T00:54:34.478369+08:00",
+      "log": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_peak_lift.log",
+      "returncode": 0,
+      "seconds": 1.2678731999985757,
+      "finished": "2026-11-25T00:54:35.745807+08:00"
+    }
+  },
+  "files": [
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\frames_a_sa.npz",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/frames_a_sa.npz",
+      "bytes": 452742,
+      "sha256": "2e599415f1d80b4a22eb0be154252be86bda6b609a0eb8a72eef72266ea8c2e9",
+      "radiance_shape": [
+        29,
+        81,
+        84
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\frames_a_thin.npz",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/frames_a_thin.npz",
+      "bytes": 438036,
+      "sha256": "091d1bce5abaf845d7e2f4e16c06dc6443c60b0bf017a1759672add48f81fb92",
+      "radiance_shape": [
+        29,
+        81,
+        84
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\frames_b_sa.npz",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/frames_b_sa.npz",
+      "bytes": 448537,
+      "sha256": "372d65d5a93fbe307236b22a63d16202c1fb09d7610a17c532c91727b6f830e2",
+      "radiance_shape": [
+        29,
+        81,
+        84
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\frames_b_thin.npz",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/frames_b_thin.npz",
+      "bytes": 447984,
+      "sha256": "7a25eb19813437f22af4f34030d6735800872ce53c983f5ffef70ad1f7271fa0",
+      "radiance_shape": [
+        29,
+        81,
+        84
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\frames_c_sa.npz",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/frames_c_sa.npz",
+      "bytes": 452102,
+      "sha256": "a1be1651b1d6a904058c265fbe9e56d0f27b77a7ef56b6e2f4f8e821d6f857c0",
+      "radiance_shape": [
+        29,
+        81,
+        84
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\frames_c_thin.npz",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/frames_c_thin.npz",
+      "bytes": 437970,
+      "sha256": "58f218096f21745dd38b4cbb545f0a5c017569fa21dfb0312a1d9e0bb1059b07",
+      "radiance_shape": [
+        29,
+        81,
+        84
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\image_summary.json",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/image_summary.json",
+      "bytes": 2549,
+      "sha256": "720f2a653ff60c3051393eed7cfad842d6a4b5590a55253185d011515141493a"
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_a_sa_baseline.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_a_sa_baseline.csv",
+      "bytes": 3764,
+      "sha256": "330f8792425a38efe449dbd7a03da6b5309c230a6d9a29a2c9174d5558a5293d",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_a_sa_high.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_a_sa_high.csv",
+      "bytes": 3732,
+      "sha256": "e242b57079b9b8c6bdf6d00fab53f804838842d92204f568ef84166c98b107d1",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_a_sa_low.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_a_sa_low.csv",
+      "bytes": 3777,
+      "sha256": "0c1afe9a915575daf6514e6e1cfcdb2aa3204d589d3f3e95a56bb3bd89809e44",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_a_thin_baseline.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_a_thin_baseline.csv",
+      "bytes": 3761,
+      "sha256": "8efc8d1de64af1eb732ce4123dafeb2c7ac53e17d92e3ea296681cac96ab635c",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_a_thin_high.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_a_thin_high.csv",
+      "bytes": 3805,
+      "sha256": "06b1d8bb3dd584dcfabcde7f58bf1036597f778db84d81645de95b704c22f40b",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_a_thin_low.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_a_thin_low.csv",
+      "bytes": 3773,
+      "sha256": "c0b45997d10cffd77518526b3f1c1973306e79637b14624d1dba30d122570e75",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_b_sa_baseline.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_b_sa_baseline.csv",
+      "bytes": 3750,
+      "sha256": "a8e8b975b9360ed0165521548ece374eb84f90c244159542344240979f74d802",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_b_sa_high.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_b_sa_high.csv",
+      "bytes": 3718,
+      "sha256": "6e63d134a30a5571216a286d143cb68f17389c1f6b4ad1cffe3fbe6dc9877cff",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_b_sa_low.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_b_sa_low.csv",
+      "bytes": 3784,
+      "sha256": "ed4a9903806a9ae03fe2c452ec4a63a7e8d5570e1f155509068967ca6c5ba83c",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_b_thin_baseline.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_b_thin_baseline.csv",
+      "bytes": 3751,
+      "sha256": "8c715bb982ede32356ab15ec720df868144136832e0be9861461e8928e5b6ffb",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_b_thin_high.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_b_thin_high.csv",
+      "bytes": 3824,
+      "sha256": "fc0411becc148092324812c624f65f817ac217f38767ebf6473da0405440d652",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_b_thin_low.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_b_thin_low.csv",
+      "bytes": 3760,
+      "sha256": "a52ebc83bdcdd706b5a10ba04f49a2e29871adb34b269d5a2b6858ec3cdd93f2",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_c_sa_baseline.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_c_sa_baseline.csv",
+      "bytes": 3758,
+      "sha256": "e19daf2c0a00b291becf1688aaf2dbc6c3b98976550f068f9877f541d6fe1948",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_c_sa_high.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_c_sa_high.csv",
+      "bytes": 3758,
+      "sha256": "578836740c43616d48fec52752f1a16d10e6ea10aa99c0755d82af01d6c3f907",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 730.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 740.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_c_sa_low.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_c_sa_low.csv",
+      "bytes": 3791,
+      "sha256": "0dc63429d8f4bd272d50743b35407002cfac325edd90fe6a364bcf925a107b1a",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_c_thin_baseline.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_c_thin_baseline.csv",
+      "bytes": 3759,
+      "sha256": "d3f872748754abbbaf6f40df4dedcf0ed1ec5e88e5ccd0a5044d0709c2182253",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_c_thin_high.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_c_thin_high.csv",
+      "bytes": 3831,
+      "sha256": "dc187fa302cac3bbae48b6a15c094e55883bf66f30e0d527c4c10f619cede0e1",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\image_v2\\metrics_c_thin_low.csv",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/metrics_c_thin_low.csv",
+      "bytes": 3774,
+      "sha256": "0f419c79447a243e99a6cdb637f1af077d25620de3cb7b5e8161a33430c11735",
+      "original_missing_values": [
+        {
+          "t_ns": 0.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 0.0,
+          "field": "thr_bottom_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "xc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "zc_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_x2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "sigma_z2_um2"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_mean_gray"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_top_um"
+        },
+        {
+          "t_ns": 20.0,
+          "field": "thr_bottom_um"
+        }
+      ]
+    },
+    {
+      "source": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_image_v2.log",
+      "archive": "results/T027/high_thin_G0/it1/image_v2/image_v2.log",
+      "bytes": 2551,
+      "sha256": "b05a2419f0190bd5d22bf8c005709be8b5c650d6706ce4b58c00bb007d512acd"
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\peak_lift.csv",
+      "archive": "results/T027/high_thin_G0/it1/peak_lift.csv",
+      "bytes": 885,
+      "sha256": "d0678302ff5000bdd8184aaba3fa6cdf7bbdd310ae53eb1b330a3c6aa7b4f1ea"
+    },
+    {
+      "source": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_peak_lift.log",
+      "archive": "results/T027/high_thin_G0/it1/peak_lift.log",
+      "bytes": 190,
+      "sha256": "4e74880282f7e6e3073dbe77d17f523dcccf0f01ec322bdd9592ea4fcecde18b"
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\diagnostics\\core_energy.csv",
+      "archive": "results/T027/high_thin_G0/it1/diagnostics/core_energy.csv",
+      "bytes": 13617,
+      "sha256": "213072d41700ba46f276e446bb837d550e736589244ab0e28e2d91ecc77ed474"
+    },
+    {
+      "source": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_core_energy.log",
+      "archive": "results/T027/high_thin_G0/it1/diagnostics/T027_high_thin_G0_it1_core_energy.log",
+      "bytes": 1395,
+      "sha256": "7152fdf2ef9b5d27009fc1d9e7dfad42675f2439134266f71349136ef4d66c5a"
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\diagnostics\\shock_track.csv",
+      "archive": "results/T027/high_thin_G0/it1/diagnostics/shock_track.csv",
+      "bytes": 13087,
+      "sha256": "e05bc8f0d36cc5506363912a2ad3ee82e20fae5f96954c78bb97e4ba9c8cac65"
+    },
+    {
+      "source": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_shock_track.log",
+      "archive": "results/T027/high_thin_G0/it1/diagnostics/T027_high_thin_G0_it1_shock_track.log",
+      "bytes": 594,
+      "sha256": "3fbda7ca08c448d0a8f95c332e54caac9773148f420b149ed70c73ffc0d41d49"
+    },
+    {
+      "source": "D:\\sim_runs\\T027\\high_thin_G0\\it1\\diagnostics\\diag_emission.csv",
+      "archive": "results/T027/high_thin_G0/it1/diagnostics/diag_emission.csv",
+      "bytes": 6227,
+      "sha256": "c3bc97f8f6a0833697e698963d396c1f18e9c3b70f1e1b734c99682d09296a4a"
+    },
+    {
+      "source": "D:\\sim_runs\\T026_T027_post_07\\T027_high_thin_G0_it1_emission.log",
+      "archive": "results/T027/high_thin_G0/it1/diagnostics/T027_high_thin_G0_it1_emission.log",
+      "bytes": 1366,
+      "sha256": "3e568017e6f848290de78ebded6f224ae2e5a28ef0c47999312d884a40249325"
+    }
+  ],
+  "diagnostic_checks": {
+    "core_energy": {
+      "rows": 81,
+      "missing_row_indices_zero_based": {
+        "E_int": [
+          0,
+          1,
+          2
+        ],
+        "E_kin": [
+          0,
+          1,
+          2
+        ],
+        "T_mw": [
+          0,
+          1,
+          2
+        ],
+        "P_rad": [
+          0,
+          1,
+          2
+        ],
+        "V": [
+          0,
+          1,
+          2
+        ],
+        "dEdt": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "P_other": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "shock_track": {
+      "rows": 321,
+      "missing_row_indices_zero_based": {
+        "R_axis_um": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "R_surf_um": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "emission": {
+      "rows": 12,
+      "missing_row_indices_zero_based": {}
+    }
+  },
+  "frame_count": 29,
+  "peak_rows": 29,
+  "peak_original_missing_t_ns": {},
+  "P2_unavailable": [
+    "a_thin_baseline",
+    "a_thin_low",
+    "a_thin_high",
+    "a_sa_baseline",
+    "a_sa_low",
+    "a_sa_high",
+    "b_thin_baseline",
+    "b_thin_low",
+    "b_thin_high",
+    "b_sa_baseline",
+    "b_sa_low",
+    "b_sa_high",
+    "c_thin_baseline",
+    "c_thin_low",
+    "c_thin_high",
+    "c_sa_baseline",
+    "c_sa_low",
+    "c_sa_high"
+  ],
+  "baseline_b": {
+    "b_thin_baseline": {
+      "gain": 0.0007110526167345434,
+      "t_ref_used_ns": 300.0,
+      "P1_tau_ns": 233.62003432629504,
+      "P2_dt10_ns": NaN
+    },
+    "b_sa_baseline": {
+      "gain": 0.001353072320054572,
+      "t_ref_used_ns": 300.0,
+      "P1_tau_ns": 201.57616325191083,
+      "P2_dt10_ns": NaN
+    }
+  },
+  "input_sha256": {
+    "D:\\sim_runs\\T027\\high_thin_G0\\it1\\budget.csv": "d8ee34678df2050d49c40e03d8024ed113a07d31cd1dbc0cb6e7fa9c1baebcc7",
+    "D:\\sim_runs\\T027\\high_thin_G0\\it1\\source\\source_meta.json": "b7a4ea5e5b4f2a2f1e27ee87707daacbf5feb3c91fb9afd8ed6df140c5f2c209",
+    "D:\\sim_runs\\T027\\high_thin_G0\\it1\\pluto.ini": "5b9a2619a32a092f71b829a1d74abc1ff1181c01c50fd25d9ba8c401918b86c4",
+    "D:\\sim_runs\\T027\\high_thin_G0\\it1\\grid.out": "6be2a09fd0afaa4f0f261d08aeed007404871bfb73dd2dc6720e65d3af364b6f",
+    "D:\\sim_runs\\T027\\high_thin_G0\\it1\\dbl.out": "c0892c1803317e74235b9ad712bf7640719137a69e6140a61b4b8bfe589eb3e5"
+  },
+  "policy": "Full original image_v2, diagnostics, peak and logs. No calculation rerun, value adjustment or interpolation. Original no-core/no-front and experimental-bracket missing values and any unavailable P2 retained."
+}

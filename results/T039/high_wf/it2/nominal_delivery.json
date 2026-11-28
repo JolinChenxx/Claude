@@ -1,0 +1,156 @@
+{
+  "stages": [
+    {
+      "stage": "image_v2",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T039\\high_wf\\it2",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\image_v2",
+        "--workers",
+        "8",
+        "--scenarios",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\configs\\imaging\\v2.yaml"
+      ],
+      "started": "2026-11-26T05:01:48.954961+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T06:11:29.462589+08:00"
+    },
+    {
+      "stage": "peak_lift",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\scripts\\peak_lift.py",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\image_v2",
+        "--series",
+        "high",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\peak_lift.csv"
+      ],
+      "started": "2026-11-26T06:11:29.462589+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T06:11:30.740878+08:00"
+    },
+    {
+      "stage": "shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T039\\high_wf\\it2",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-26T06:11:30.741873+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T06:11:32.028394+08:00"
+    },
+    {
+      "stage": "core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T039\\high_wf\\it2",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-26T06:11:32.028394+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T06:11:34.442691+08:00"
+    },
+    {
+      "stage": "emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T039\\high_wf\\it2",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "1000",
+        "1200",
+        "--filter",
+        "510",
+        "12",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-26T06:11:34.442691+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T06:11:38.042762+08:00"
+    }
+  ],
+  "sha256": {
+    "image_v2/image_summary.json": "051c557bdc08dc9ea6860522fa0486fae0b2f4d24282e93ebc6e2f20fbf0c95d",
+    "image_v2/metrics_a_sa_baseline.csv": "e9210b1fd5f5223fda422b534a60ed6b12addedb84365362f5047ce081b58894",
+    "image_v2/metrics_a_sa_high.csv": "179d4a8b08874612895bf6ecf4ec930798d6f77491773d2680689ae4b574e740",
+    "image_v2/metrics_a_sa_low.csv": "d9682e0ffbcfea728e8e8189de6c3e820b98e88b9aeb263ae8c70d1b8f28dbd2",
+    "image_v2/metrics_a_thin_baseline.csv": "ab42e8e89417fbca311b161cb417bf8c372274c50442fb6bcf064b0b1b21f20b",
+    "image_v2/metrics_a_thin_high.csv": "e9d0353c8cce608d70f32a8aa0f809d371f24226fa5e8cbf9de7e62353e47709",
+    "image_v2/metrics_a_thin_low.csv": "e51d51fdc6e1f928d531103899fdc4c12cad15cf1853ec7106a456a3fb063ef3",
+    "image_v2/metrics_b_sa_baseline.csv": "5783325a306a841d7ac61c5168a55ba0e85142cd013d420e00ed6068d9b2a0e9",
+    "image_v2/metrics_b_sa_high.csv": "a60c88fd5ae216f7380f230e515d66d22b7b54617191a69b3ed08d51dd042608",
+    "image_v2/metrics_b_sa_low.csv": "af611e57191afa0eaa37c372bf4cbf1e6f2fa2c3bf0a8f387a07b6a94a931c88",
+    "image_v2/metrics_b_thin_baseline.csv": "ca8fa2dc8e05353718db23b12580a32ec6872fb87348132244a5264128b7dc7d",
+    "image_v2/metrics_b_thin_high.csv": "a0bc555df14410e3d792a2928f2d27587bc84042ccee06c18d88a79632301b61",
+    "image_v2/metrics_b_thin_low.csv": "a65682067e911b8bf915f807ead92d232616645b1a84cc0341cbd2ab0d4ef5b7",
+    "image_v2/metrics_c_sa_baseline.csv": "6fe8443e148a968fdfc8bc9ea0e185b5565a86d1dee19af2481dfc10ff7a98d8",
+    "image_v2/metrics_c_sa_high.csv": "b2387a8ade2f8b449d79df71890aab96e285cdcae3001e7da2db38041190781b",
+    "image_v2/metrics_c_sa_low.csv": "73b2d18d2f1000187967499e42fc8b6524c623655d5f0e73fb60f4007e497d3d",
+    "image_v2/metrics_c_thin_baseline.csv": "c40bd5c4ee1540c5b27831f82784e3a09587703199a80ab507b3dbdab10f1800",
+    "image_v2/metrics_c_thin_high.csv": "339465f7089cab97c09874e08ba2c22917a02437dc6ca2f604edd89919442352",
+    "image_v2/metrics_c_thin_low.csv": "a555514a21a5e7126aeb5ccd1e72a882a779f001ac87f5d4a58a738265adf7b2",
+    "image_v2/frames_b_thin.npz": "5ccf859cb528f06dd79303f60e2e5c7995f620ef76eb50480684fb2c813d78e4",
+    "image_v2/frames_b_sa.npz": "183dda77c7d32de38c8d5d52e0c0449de8a802a5e4a08db20d6a31354723c439",
+    "peak_lift.csv": "a25cee47a11c561eda5b88375e5444bd892725508bbe5613c347ddfee2ae1393",
+    "diagnostics/core_energy.csv": "4b71fd45072f03bd344fe9e41b8df6132f98073fc1009906734e736eadb2751e",
+    "diagnostics/shock_track.csv": "926298d4adea0d4e8db671b70944b24165eaae41fbc9c901c9ef81c30c8264d5",
+    "diagnostics/diag_emission.csv": "ceb5a37bada84ad124354ace550b477c05eb10c96772f5e1b1964adcf81766b4"
+  },
+  "diagnostics": {
+    "core_energy": {
+      "rows": 81,
+      "missing_by_column": {
+        "E_int": 1,
+        "E_kin": 1,
+        "T_mw": 1,
+        "P_rad": 1,
+        "V": 1,
+        "dEdt": 2,
+        "P_other": 2
+      }
+    },
+    "shock_track": {
+      "rows": 321,
+      "missing_by_column": {
+        "R_axis_um": 3,
+        "R_surf_um": 3
+      }
+    },
+    "diag_emission": {
+      "rows": 12,
+      "missing_by_column": {}
+    }
+  },
+  "frames": 29,
+  "offset_ns": 0
+}

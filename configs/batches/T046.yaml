@@ -1,0 +1,11 @@
+# T046 (desk node, weekend; workstation off): near-wall resolution test of the reported model v1rs+v1u at high fluence.
+# PREREG 2026-11-28 'T046'. Paired G0 vs G0w (0.25 um in the first 20 um), Picard it0 (unseeded: the desk has no seed run), tables v1d.
+name: T046
+pluto_exe: C:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: C:/sim_work/tables/v1d
+root: C:/sim_work/runs/T046
+numerics:
+  runs:
+    - {id: high_u_G0,  case: configs/cases/v1rs_high.yaml, grid: G0,  nec: thin, tstop_ns: 320, procs: 6,  picard: 0, src_on: 1, rmax_par: 1000}
+    - {id: high_u_G0w, case: configs/cases/v1rs_high.yaml, grid: G0w, nec: thin, tstop_ns: 320, procs: 12, picard: 0, src_on: 1, rmax_par: 1000}

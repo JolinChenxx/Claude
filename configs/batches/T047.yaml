@@ -1,0 +1,11 @@
+# T047 (desk node, weekend): self-consistent Picard chains it1-it2 for the T046 pair (G0 vs G0w, v1rs+v1u, tables v1d),
+# seeded from the T046 it0 runs on the desk (PREREG 2026-11-28 'T046': grid test at converged shielding, per the independent review).
+name: T047
+pluto_exe: C:/sim_tools/pluto_lip/build_v1w/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: C:/sim_work/tables/v1d
+root: C:/sim_work/runs/T047
+numerics:
+  runs:
+    - {id: high_u_G0,  case: configs/cases/v1rs_high.yaml, grid: G0,  nec: thin, tstop_ns: 320, procs: 6,  picard: 2, start_it: 1, prev_run: C:/sim_work/runs/T046/high_u_G0/it0,  src_on: 1, rmax_par: 1000}
+    - {id: high_u_G0w, case: configs/cases/v1rs_high.yaml, grid: G0w, nec: thin, tstop_ns: 320, procs: 12, picard: 2, start_it: 1, prev_run: C:/sim_work/runs/T046/high_u_G0w/it0, src_on: 1, rmax_par: 1000}

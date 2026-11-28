@@ -1,0 +1,46 @@
+{
+  "closure": "Saha-Langmuir thermal ion emission plus Boltzmann neutral internal-state partition",
+  "weights": "neutral g_j exp(-E_j/kBTs); Cu+ g+ exp((W-I)/kBTs); normalize over all eight states",
+  "scope": "Only the outgoing Cu boundary flux; gas remains native time-dependent non-LTE Plasma",
+  "total_Cu_flux": "Existing mdotEvap divided among states, unchanged in total before thermal feedback",
+  "energy": "Add sum_j Gamma_j E_j to Qmass; full I for Cu+; QworkWall=W*Iwall includes all returning/emitted charges",
+  "charge": "Iwall receives -e*Gamma_Cu+; no extra emitted-electron source; native thermionic wall and explicit sheath retained",
+  "sources": [
+    {
+      "source": "NIST Atomic Spectra Database; existing chemistry.json",
+      "use": "Eight-state energies and statistical weights; Cu I threshold 7.72638 eV"
+    },
+    {
+      "source": "Saha-Langmuir detailed-balance relation",
+      "use": "Ion/neutral emission partition from surface electron chemical potential -W, no adjusted rate"
+    },
+    {
+      "source": "Kools et al., Appl. Phys. B 53, 125-130 (1991)",
+      "doi": "10.1007/BF00330226",
+      "local": "round2_references/Cu_surface_ionization_1988.pdf",
+      "use": "Context for thermally ionized Cu laser ablation; abstract calls Saha-Langmuir, body discusses gas Saha. It is not direct validation of this boundary closure."
+    },
+    {
+      "source": "Inherited copper thermionic boundary",
+      "use": "W=4.65 eV shared with electron emission; no new work-function fit"
+    }
+  ],
+  "limitations": [
+    "Assumes electronic state equilibration at the emitting surface; actual rapidly heated surface may deviate.",
+    "Available reference experiment used UV nanosecond pulses in vacuum at lower fluence; it does not validate atmospheric 1064 nm behavior.",
+    "Eight-state partition truncates higher Cu levels; ion excited levels are omitted.",
+    "Inherited high-temperature condensed Cu and vapor-pressure extrapolations remain unresolved.",
+    "Surface charge/field effects are resolved by the inherited sheath; no added Schottky correction."
+  ],
+  "at_8500_K": {
+    "Cu": 0.5923987284790444,
+    "CuD5": 0.2668131050498731,
+    "CuD3": 0.12587624797647054,
+    "CuP1": 0.0033720831699560775,
+    "CuP3": 0.00646650873318897,
+    "CuH3": 0.0002528151116807068,
+    "CuH5": 0.00037878280141753545,
+    "Cu_1p": 0.004441728678368717,
+    "mean_internal_eV": 0.6529828984609768
+  }
+}

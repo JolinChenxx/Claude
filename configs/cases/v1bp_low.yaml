@@ -1,0 +1,15 @@
+# v1k back-pressure case (low fluence): v0_low + target.back_pressure = true (PREREG 2026-11-24, Knight subsonic layer).
+name: v1bp_low
+laser:
+  energy: '@E_pulse_low'
+  diameter_1e2: '@D_beam_low'
+  fwhm: '@tau_fwhm'
+target:
+  model: knight_backpressure_v1k
+  back_pressure: true      # v1k: PLAN v3 §3.2 v1 item (Knight with back pressure; no recondensation)
+numerics:
+  rings: 24
+  r_max_over_w: 2.5
+  t_end_ns: 400
+  dt_ns: 0.05
+  picard_relax: 0.5

@@ -1,0 +1,43 @@
+[
+  {
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+      "D:\\sim_runs\\T016e\\high_thin_G0\\it0",
+      "--tables",
+      "D:/sim_runs/tables/v1c",
+      "--times",
+      "200",
+      "300",
+      "500",
+      "700",
+      "--filter",
+      "510",
+      "12",
+      "--out",
+      "D:\\sim_runs\\T016e_post_high_thin_01\\high_thin_G0_it0_emission.csv"
+    ],
+    "started": "2026-11-18T22:36:06.156184+08:00",
+    "returncode": 0,
+    "finished": "2026-11-18T22:36:08.638773+08:00"
+  },
+  {
+    "command": [
+      "D:\\sim_tools\\envs\\lipsim\\python.exe",
+      "-m",
+      "lipsim.image",
+      "D:\\sim_runs\\T016e\\high_thin_G0\\it0",
+      "--series",
+      "high",
+      "--tables",
+      "D:/sim_runs/tables/v1c",
+      "--out",
+      "D:\\sim_runs\\T016e\\high_thin_G0\\it0\\image",
+      "--workers",
+      "8"
+    ],
+    "started": "2026-11-18T22:36:08.641277+08:00",
+    "returncode": 0,
+    "finished": "2026-11-18T22:47:17.075098+08:00"
+  }
+]

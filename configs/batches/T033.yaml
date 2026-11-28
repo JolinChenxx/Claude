@@ -1,0 +1,27 @@
+# T033: one-at-a-time sensitivity of the reported model v1n (cases v1bpde_*) over the registry's declared uncertainty
+# ranges (PREREG 2026-11-25 'T033 OAT'). Sensitivity only: no value is adopted from these runs. Seeded as T030/T031.
+name: T033
+pluto_exe: D:/sim_tools/pluto_lip/build_v1s/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T033
+numerics:
+  runs:
+    - {id: high_rem_lo, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_removal_efficiency": 6.666666666666667e-13}}
+    - {id: high_rem_hi, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_removal_efficiency": 6.0e-12}}
+    - {id: high_A_lo, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.015}}
+    - {id: high_A_hi, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.05}}
+    - {id: high_ftc_lo, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.85}}
+    - {id: high_ftc_hi, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.95}}
+    - {id: high_sig_lo, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3.0e-20}, tables: D:/sim_runs/tables/v1c_sigen_lo}
+    - {id: high_sig_hi, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3.0e-19}, tables: D:/sim_runs/tables/v1c_sigen_hi}
+    - {id: high_gaunt_hi, case: configs/cases/v1bpde_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"gaunt_ff": 1.5}, tables: D:/sim_runs/tables/v1c_gaunt15}
+    - {id: low_rem_lo, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"cu_removal_efficiency": 6.666666666666667e-13}}
+    - {id: low_rem_hi, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"cu_removal_efficiency": 6.0e-12}}
+    - {id: low_A_lo, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.015}}
+    - {id: low_A_hi, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.05}}
+    - {id: low_ftc_lo, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.85}}
+    - {id: low_ftc_hi, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.95}}
+    - {id: low_sig_lo, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3.0e-20}, tables: D:/sim_runs/tables/v1c_sigen_lo}
+    - {id: low_sig_hi, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3.0e-19}, tables: D:/sim_runs/tables/v1c_sigen_hi}
+    - {id: low_gaunt_hi, case: configs/cases/v1bpde_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0, src_on: 1, rmax_par: 1000, overrides: {"gaunt_ff": 1.5}, tables: D:/sim_runs/tables/v1c_gaunt15}

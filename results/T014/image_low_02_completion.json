@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-17T02:48:16.455994+08:00",
+  "job": {
+    "id": "T014_image_low_02",
+    "pid": 47724,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16",
+    "threads": 1,
+    "commit": "11cad2a",
+    "started": "2026-11-17T02:33:36",
+    "dir": "D:\\sim_runs\\T014_image_low_02"
+  },
+  "exitcode": 0,
+  "exitcode_file_modified": "2026-11-17T02:41:11.121103+08:00",
+  "stderr_bytes": 0,
+  "run_lines": [
+    "imaging D:\\sim_runs\\T014\\low_thin_G0\\it1",
+    "rc 0 D:\\sim_runs\\T014\\low_thin_G0\\it1",
+    "imaging D:\\sim_runs\\T014\\low_trap_G0\\it1",
+    "rc 0 D:\\sim_runs\\T014\\low_trap_G0\\it1"
+  ],
+  "runs": [
+    {
+      "run": "low_thin_G0/it1",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "5cd0e005c653283f40d8f70b11e4b7325f5e80fe484773d06577f5d77d35b13f"
+    },
+    {
+      "run": "low_trap_G0/it1",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "58ab6cd065d17a914c5d37b99d11c41ef5805d3c5eb84d5c31d5f5745a24a104"
+    }
+  ],
+  "verification_scope": "Completed job and per-run exit codes; JSON parses, expected output counts and nonempty files. Full scientific collection and final checks remain pending."
+}

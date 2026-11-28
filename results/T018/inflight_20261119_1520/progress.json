@@ -1,0 +1,153 @@
+{
+  "checked": "2026-11-19T15:20:32+08:00",
+  "progress": [
+    {
+      "run": "T018/high_thin_G0/it0",
+      "budget_t_ns": "5.899658e+001",
+      "log_bytes": 2503425,
+      "step": null,
+      "rank0_tail": [
+        "! lip vmax: step 8000 [i,j=3,96] |v|=2.938e+004 m/s vr=5.301e+002 vz=2.937e+004 rho=2.048e-002 T=5.533e+004",
+        "! lip dt-limit: step 8000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=4,6] rho=4.876e+001 T=4.919e+004 rhoe=2.995e+009 q=1.414e+019 dt_src=4.237e-011 s",
+        "           [Mach = 9.138283, Nrkl = 5]"
+      ],
+      "last_snapshot": "23 5.749660e+001 3.898680e-003 7566 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+      "latest_logged_step": "step:8000; t = 5.9184e+001; dt = 4.1931e-003; 7.4 %",
+      "latest_logged_mach": "[Mach = 9.138283, Nrkl = 5]",
+      "rank_log_sizes": {
+        "pluto.0.log": 2503425,
+        "pluto.1.log": 6675,
+        "pluto.2.log": 6680,
+        "pluto.3.log": 6678,
+        "pluto.4.log": 6676,
+        "pluto.5.log": 6676,
+        "pluto.6.log": 6684,
+        "pluto.7.log": 6685
+      },
+      "observation_note": "Live files: sizes/tails sampled at different instants; no final all-rank warning count or stable whole-log hash claimed."
+    },
+    {
+      "run": "T018/high_trap_G0/it0",
+      "budget_t_ns": "6.249866e+001",
+      "log_bytes": 2461852,
+      "step": null,
+      "rank0_tail": [
+        "! lip vmax: step 9000 [i,j=3,105] |v|=3.040e+004 m/s vr=5.065e+002 vz=3.039e+004 rho=1.434e-002 T=5.209e+004",
+        "! lip dt-limit: step 9000 kind 2 (1 wall 2 heat/rad 3 mass 4 vapour) [i,j=3,6] rho=6.980e+001 T=4.555e+004 rhoe=3.594e+009 q=1.842e+019 dt_src=3.903e-011 s",
+        "           [Mach = 10.098893, Nrkl = 4]"
+      ],
+      "last_snapshot": "25 6.249866e+001 3.702215e-003 9081 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+      "latest_logged_step": "step:9000; t = 6.2193e+001; dt = 3.8599e-003; 7.8 %",
+      "latest_logged_mach": "[Mach = 10.098893, Nrkl = 4]",
+      "rank_log_sizes": {
+        "pluto.0.log": 2461852,
+        "pluto.1.log": 6916,
+        "pluto.2.log": 6921,
+        "pluto.3.log": 6919,
+        "pluto.4.log": 6916,
+        "pluto.5.log": 6915,
+        "pluto.6.log": 6923,
+        "pluto.7.log": 6925
+      },
+      "observation_note": "Live files: sizes/tails sampled at different instants; no final all-rank warning count or stable whole-log hash claimed."
+    },
+    {
+      "run": "T018/low_thin_G0/it0",
+      "budget_t_ns": "1.799993e+002",
+      "log_bytes": 3423306997,
+      "step": null,
+      "rank0_tail": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 11370 (stage = 2); [i,j = 4, 87], [x1,x2 =  3.750000, 84.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 11370 (stage = 2); [i,j = 6, 87], [x1,x2 =  8.750000, 84.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_"
+      ],
+      "last_snapshot": "72 1.799993e+002 1.505505e-003 11297 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+      "latest_logged_step": "step:11000; t = 1.7950e+002; dt = 2.0501e-003; 13.8 %",
+      "latest_logged_mach": "[Mach = 8.457592, Nrkl = 2]",
+      "rank_log_sizes": {
+        "pluto.0.log": 3532185869,
+        "pluto.1.log": 1562352303,
+        "pluto.2.log": 10506,
+        "pluto.3.log": 9069,
+        "pluto.4.log": 9073,
+        "pluto.5.log": 9069,
+        "pluto.6.log": 9079,
+        "pluto.7.log": 9082
+      },
+      "observation_note": "Live files: sizes/tails sampled at different instants; no final all-rank warning count or stable whole-log hash claimed."
+    },
+    {
+      "run": "T018/low_trap_G0/it0",
+      "budget_t_ns": "1.794986e+002",
+      "log_bytes": 3403039095,
+      "step": null,
+      "rank0_tail": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 11287 (stage = 1); [i,j = 7, 84], [x1,x2 =  11.250000, 81.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 11287 (stage = 1); [i,j = 9, 84], [x1,x2 =  16.250000, 81.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = "
+      ],
+      "last_snapshot": "71 1.774992e+002 2.087574e-003 10289 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+      "latest_logged_step": "step:11000; t = 1.7949e+002; dt = 2.0637e-003; 13.8 %",
+      "latest_logged_mach": "[Mach = 8.457588, Nrkl = 2]",
+      "rank_log_sizes": {
+        "pluto.0.log": 3512781259,
+        "pluto.1.log": 1555338197,
+        "pluto.2.log": 10505,
+        "pluto.3.log": 9070,
+        "pluto.4.log": 9071,
+        "pluto.5.log": 9069,
+        "pluto.6.log": 9079,
+        "pluto.7.log": 9082
+      },
+      "observation_note": "Live files: sizes/tails sampled at different instants; no final all-rank warning count or stable whole-log hash claimed."
+    },
+    {
+      "run": "T016e/low_thin_G0/it2",
+      "budget_t_ns": "7.504909e+002",
+      "log_bytes": 222579328,
+      "step": "step:38000; t = 7.4525e+002; dt = 2.0908e-002; 57.3 %\r\n            [Mach = 1.839017, Nrkl = 49]",
+      "rank0_tail": [
+        "  [ 0.00 sec ]",
+        "step:38000; t = 7.4525e+002; dt = 2.0908e-002; 57.3 %",
+        "            [Mach = 1.839017, Nrkl = 49]"
+      ],
+      "last_snapshot": "300 7.499923e+002 4.001767e-002 38194 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+      "latest_logged_step": "step:38000; t = 7.4525e+002; dt = 2.0908e-002; 57.3 %",
+      "latest_logged_mach": "[Mach = 1.839017, Nrkl = 49]",
+      "rank_log_sizes": {
+        "pluto.0.log": 222579328,
+        "pluto.1.log": 39441459,
+        "pluto.2.log": 18963,
+        "pluto.3.log": 18963,
+        "pluto.4.log": 18963,
+        "pluto.5.log": 18963,
+        "pluto.6.log": 18963,
+        "pluto.7.log": 18964
+      }
+    },
+    {
+      "run": "T016e/low_trap_G0/it2",
+      "budget_t_ns": "6.779909e+002",
+      "log_bytes": 218678649,
+      "step": "step:35000; t = 6.3311e+002; dt = 2.1100e-002; 48.7 %\r\n            [Mach = 2.036742, Nrkl = 62]",
+      "rank0_tail": [
+        "> Writing file #262 (dbl) to disk...",
+        "  [ 1.00 sec ]",
+        "            [Mach = 1.977926, Nrkl = 6]"
+      ],
+      "last_snapshot": "271 6.774996e+002 2.717695e-002 36767 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad ",
+      "latest_logged_step": "step:36000; t = 6.5499e+002; dt = 3.7095e-002; 50.4 %",
+      "latest_logged_mach": "[Mach = 1.977926, Nrkl = 6]",
+      "rank_log_sizes": {
+        "pluto.0.log": 218678649,
+        "pluto.1.log": 38320199,
+        "pluto.2.log": 17396,
+        "pluto.3.log": 17396,
+        "pluto.4.log": 17396,
+        "pluto.5.log": 17396,
+        "pluto.6.log": 17396,
+        "pluto.7.log": 17397
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "job": {
+    "id": "T018c_post_it1_trap_v2_01",
+    "pid": 52000,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it1_trap_v2.py",
+    "threads": 1,
+    "commit": "9b5a698",
+    "started": "2026-11-20T01:25:44",
+    "dir": "D:\\sim_runs\\T018c_post_it1_trap_v2_01"
+  },
+  "exitcode": 0,
+  "summary": {
+    "commands": [
+      {
+        "name": "high_trap_G0_image_v2",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it1",
+          "--series",
+          "high",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it1\\image_v2",
+          "--workers",
+          "16",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+        ],
+        "started": "2026-11-20T01:25:51.985510+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it1_trap_v2_01\\high_trap_G0_image_v2.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-20T03:14:49.155190+08:00"
+      }
+    ],
+    "state": "completed",
+    "job_id": "T018c_post_it1_trap_v2_01",
+    "runner_sha256": "bc6f3415f5a4fe305166a5bb03ded4b0177de8380292b5fe8aa0b9de7505fe85",
+    "initial_capacity": {
+      "checked": "2026-11-20T01:25:51.852882+08:00",
+      "reservations": {
+        "T016i_native_01": 16,
+        "T018c": 16,
+        "T018c_post_it1_trap_01": 16
+      },
+      "wrapper_identities": [
+        {
+          "job": "T016i_native_01",
+          "pid": 38032,
+          "created": 1795026177.8378432,
+          "children": [
+            46020,
+            10720,
+            20504,
+            9456,
+            45256,
+            29512,
+            39664,
+            14296,
+            38372,
+            53040,
+            31876,
+            48496,
+            8604,
+            54144,
+            52088,
+            9072,
+            4820,
+            33424,
+            50200,
+            39776
+          ],
+          "cores": 16
+        },
+        {
+          "job": "T018c",
+          "pid": 19644,
+          "created": 1795078391.7728488,
+          "children": [
+            40572,
+            40888,
+            26104,
+            50372,
+            41184,
+            12528,
+            43844,
+            26224,
+            16112,
+            52340,
+            39816,
+            19396,
+            12504,
+            48552,
+            24000,
+            49236,
+            25332,
+            27984,
+            42420,
+            20144,
+            44636,
+            31828,
+            21828,
+            44700,
+            44808,
+            23696,
+            39048,
+            49328,
+            52264,
+            53056,
+            25896,
+            5376,
+            32436,
+            51752,
+            45440,
+            35116,
+            43240,
+            45908
+          ],
+          "cores": 16
+        },
+        {
+          "job": "T018c_post_it1_trap_01",
+          "pid": 49800,
+          "created": 1795109143.93311,
+          "children": [
+            25936,
+            43332
+          ],
+          "cores": 16
+        }
+      ],
+      "pluto_ranks": 16,
+      "reserved_physical_cores": 48,
+      "free_physical_cores": 16,
+      "requested_cores": 16,
+      "can_start": true,
+      "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics."
+    },
+    "started": "2026-11-20T01:25:51.854872+08:00",
+    "completed": "2026-11-20T03:14:49.159169+08:00"
+  },
+  "validated_at": "2026-11-20T03:22:26+08:00"
+}

@@ -1,0 +1,4 @@
+T021 low_thin_G0/it1: accepted with a documented correction (Claude, 2026-11-24). Card back to running.
+- The +1.74 µJ residual builds up only inside the droplet window: it is 0.15 µJ at 200 ns, 0.64 at 250, 1.71 at 300, and flat after that. It is not a solver drift. The likely cause is the energy floor: late in the window the cooled core cannot pay L_v for the time-uniform droplet release, so cells are clamped at T_floor. The realised droplet cooling is therefore 1.7 µJ smaller than booked. Claude records this in STATE; no rerun.
+- Continue T021 unchanged (high it1, then high it2) and the queued diagnostics/images. Escalation rule for the remaining iterations: report the residual at 200/250/300/400 ns in the handoff; stop only on a stall (time box). No 2% block for T021 droplet runs.
+- Delete this note once followed.

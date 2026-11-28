@@ -1,0 +1,163 @@
+{
+  "member": "B",
+  "rmax_par": 1000,
+  "returncode": 1,
+  "termination": "authorized 2400-second limit",
+  "started": "2026-11-18T08:08:23.341147+08:00",
+  "ended": "2026-11-18T08:48:23.654274+08:00",
+  "seconds": 2400.312,
+  "restart_time_ns": 689.9991199983814,
+  "last_budget": {
+    "t_ns": "7.844803e+002",
+    "E_internal": "1.7561326679e-003",
+    "E_kinetic": "5.1620826744e-006",
+    "M_Cu": "1.0157026400e-012",
+    "M_total": "8.1705838896e-009",
+    "E_inc": "5.1199742250e-141",
+    "E_gas_abs": "3.8708625905e-145",
+    "E_targ_abs": "3.0071293087e-142",
+    "E_esc": "4.8188742079e-141",
+    "E_rad": "3.6837419788e-007",
+    "E_rad_limited": "8.1862429250e-075",
+    "M_src": "8.6543951421e-018",
+    "E_src": "5.3046788622e-012",
+    "E_wall": "4.7267791005e-007"
+  },
+  "elapsed_simulation_ns": 94.48118000161867,
+  "budget_rows_after_restart": 189,
+  "budget_has_header": false,
+  "raw_budget_sha256": "f2115c76d64751f8b70537430366b98a305893b11762eae2288f952bd7c280be",
+  "copied_budget_sha256": "f2115c76d64751f8b70537430366b98a305893b11762eae2288f952bd7c280be",
+  "incomplete_budget_trailing_bytes": 0,
+  "requested_step_pairs": 30,
+  "available_step_pairs": 3,
+  "collected_step_pairs": 3,
+  "last_logged_pair": "step:56000; t = 7.6107e+002; dt = 2.0608e-002; 58.5 %\r\n            [Mach = 2.583260, Nrkl = 63]",
+  "latest_complete_output": {
+    "index": 313,
+    "t_ns": 782.4825,
+    "step": 56742,
+    "variables": [
+      "rho",
+      "vx1",
+      "vx2",
+      "vx3",
+      "prs",
+      "tr1",
+      "T",
+      "qlas",
+      "qrad"
+    ],
+    "record": "313 7.824825e+002 4.023558e-002 56742 single_file little rho vx1 vx2 vx3 prs tr1 T qlas qrad "
+  },
+  "all_rank_warning_counts": {
+    "ConsToPrim": 0,
+    "negative_E": 0,
+    "other_bang": 0,
+    "all_bang": 0
+  },
+  "rank_logs": [
+    {
+      "file": "pluto.0.log",
+      "bytes": 5836,
+      "sha256": "6679a65813108c3409b1ceeff68cddda904bbaeb00ef6e6a9dccae05ff286209",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.1.log",
+      "bytes": 5388,
+      "sha256": "4863e02043ca5b67bf5d10e0872bebb4236c4018a961948bf78a33b79e8db166",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.2.log",
+      "bytes": 5388,
+      "sha256": "747b637204cf8ae62bc0398e2dfb2e4d53bcc0def8e59d1c9790b60c661d2051",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.3.log",
+      "bytes": 5388,
+      "sha256": "118587689581e1159f3dbeeb0d163aa166b027dfbe23771e69437ac4ad77e046",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.4.log",
+      "bytes": 5388,
+      "sha256": "68476517fa7a1ff4aba74184ef27c1eaecc2447bc4b9b60a6bde5119fa2f5e18",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.5.log",
+      "bytes": 5388,
+      "sha256": "4a14c57d6514cf4d43ef3e97c074b03a6c4de1e112ed37d778e949dc623a2e0e",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.6.log",
+      "bytes": 5388,
+      "sha256": "de2cd4acde68022f436d24fc7ddc990c2595eb190af12f144a141f5517e606cc",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    },
+    {
+      "file": "pluto.7.log",
+      "bytes": 5389,
+      "sha256": "fd3165ea92e03eb944be2f16c3a4ba8bfb97c0188ecf34bbc5f431d53b0273dd",
+      "counts": {
+        "ConsToPrim": 0,
+        "negative_E": 0,
+        "other_bang": 0,
+        "all_bang": 0
+      }
+    }
+  ],
+  "immutable_inputs_verified": {
+    "pluto.ini": true,
+    "data.0276.dbl": true,
+    "lip_tables/eos.bin": true,
+    "lip_tables/opt.bin": true,
+    "lip_tables/target_source.bin": true
+  },
+  "copied_sha256": {
+    "diagnostic_run.json": "dcfae59898386558bec3c2785ba4fa39bb0562d567021dc624c906fd35af7227",
+    "mpi_output.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dbl.out": "68bba7f8ffa5ecc8578195ca1834efd0353935f56f2fb5d3295a9867b3c9b44e",
+    "grid.out": "581f4b9bfe758d218e8ba0341e1c635f40d577d21655e86468671685cc7ea1ac",
+    "pluto.ini": "21200de2778487a7817b2cb46454a17be3c8e72ddcef9c6034c5a6e13dd85ff2"
+  }
+}

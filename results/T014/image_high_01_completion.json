@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-17T02:33:19.429446+08:00",
+  "job": {
+    "id": "T014_image_high_01",
+    "pid": 36568,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+    "threads": 1,
+    "commit": "c12dbc2",
+    "started": "2026-11-17T02:18:55",
+    "dir": "D:\\sim_runs\\T014_image_high_01"
+  },
+  "exitcode": 0,
+  "exitcode_file_modified": "2026-11-17T02:30:34.719043+08:00",
+  "stderr_bytes": 0,
+  "run_lines": [
+    "imaging D:\\sim_runs\\T014\\high_thin_G0\\it0",
+    "rc 0 D:\\sim_runs\\T014\\high_thin_G0\\it0",
+    "imaging D:\\sim_runs\\T014\\high_trap_G0\\it0",
+    "rc 0 D:\\sim_runs\\T014\\high_trap_G0\\it0"
+  ],
+  "runs": [
+    {
+      "run": "high_thin_G0/it0",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "098c5119215614d331459ca6d04d35ebc21f4aa7b3d1b84fac0594eaa4c38a58"
+    },
+    {
+      "run": "high_trap_G0/it0",
+      "returncode": 0,
+      "summary_scenarios": 18,
+      "metrics_csvs": 18,
+      "frame_archives": 6,
+      "files_nonempty": true,
+      "summary_sha256": "cbfb377225797be2eaa502290c96f8f26ce47ada9161c7919f59994a83c440f8"
+    }
+  ],
+  "verification_scope": "Job and per-run exit codes, parseable summaries, expected counts and nonempty files; full scientific collection and final checks pending. P2 no-crossing NaNs are retained unchanged."
+}

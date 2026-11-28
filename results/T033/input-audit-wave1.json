@@ -1,0 +1,221 @@
+{
+  "time": "2026-11-25T20:00:58.473241+08:00",
+  "members": [
+    {
+      "member": "high_rem_lo",
+      "overrides": {
+        "cu_removal_efficiency": 6.666666666666667e-13
+      },
+      "ini_sha256": "48e79e48f035dcf9c78469913c8a3fe2b2d5761277fd3992c2caafac68626ce3",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "literal_net_scaling": false,
+        "gross_scaling": true
+      },
+      "budget_t_ns": 61.49815,
+      "DROP_M_kg": 1.515558435e-12,
+      "T026_DROP_M_kg": 6.294225101e-12,
+      "net_ratio": 0.24078554717708053,
+      "vaporised_kg": 8.737748987976334e-13,
+      "reconstructed_gross_ratio": 0.333333333407518,
+      "requested_ratio": 0.3333333333333333
+    },
+    {
+      "member": "high_rem_hi",
+      "overrides": {
+        "cu_removal_efficiency": 6e-12
+      },
+      "ini_sha256": "f3a8652b014c84c3ba6b06437f927354b8e129bc3672cf2f11197ec5a193c818",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "literal_net_scaling": false,
+        "gross_scaling": true
+      },
+      "budget_t_ns": 64.99772,
+      "DROP_M_kg": 2.06302251e-11,
+      "T026_DROP_M_kg": 6.294225101e-12,
+      "net_ratio": 3.277643358627634,
+      "vaporised_kg": 8.737748987976334e-13,
+      "reconstructed_gross_ratio": 2.999999999916955,
+      "requested_ratio": 3.0
+    },
+    {
+      "member": "high_A_lo",
+      "overrides": {
+        "cu_A1064_RT": 0.015
+      },
+      "ini_sha256": "07701ad395acdfe8ff07aac75c0a1bbdc77c1ef8cb2554b8d60d58a011fe369b",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "target_budget_changed": true
+      },
+      "budget_t_ns": 61.99884,
+      "budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.053829553955779e-05,
+        "vap_latent": 3.0994706394075186e-06,
+        "overcap": 8.15477660397769e-06,
+        "mass": 6.552792049487347e-13,
+        "pe_mass": 0.0,
+        "stored": 1.928404829616141e-05
+      },
+      "T026_budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.4980071197448104e-05,
+        "vap_latent": 4.132955271312812e-06,
+        "overcap": 9.455332696168031e-06,
+        "mass": 8.737748987976334e-13,
+        "pe_mass": 0.0,
+        "stored": 2.1391783229955863e-05
+      }
+    },
+    {
+      "member": "high_A_hi",
+      "overrides": {
+        "cu_A1064_RT": 0.05
+      },
+      "ini_sha256": "25155b41b863c9ee549a1718a8675fce62fb113fd15e24e3173bbbea3af49037",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "target_budget_changed": true
+      },
+      "budget_t_ns": 61.49821,
+      "budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 5.050229096392824e-05,
+        "vap_latent": 7.891204196503903e-06,
+        "overcap": 1.427116412252386e-05,
+        "mass": 1.668330696935283e-12,
+        "pe_mass": 0.0,
+        "stored": 2.833992264488785e-05
+      },
+      "T026_budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.4980071197448104e-05,
+        "vap_latent": 4.132955271312812e-06,
+        "overcap": 9.455332696168031e-06,
+        "mass": 8.737748987976334e-13,
+        "pe_mass": 0.0,
+        "stored": 2.1391783229955863e-05
+      }
+    },
+    {
+      "member": "high_ftc_lo",
+      "overrides": {
+        "f_Tcap": 0.85
+      },
+      "ini_sha256": "55961631547e3f9ac3aea32ce0536c8bfabc93d7e640b5006c75dff878dd3be9",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "target_budget_changed": true
+      },
+      "budget_t_ns": 61.49781,
+      "budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.4428184907872505e-05,
+        "vap_latent": 2.7602332651797867e-06,
+        "overcap": 1.0681037987487198e-05,
+        "mass": 5.835588298477347e-13,
+        "pe_mass": 0.0,
+        "stored": 2.0986913655193225e-05
+      },
+      "T026_budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.4980071197448104e-05,
+        "vap_latent": 4.132955271312812e-06,
+        "overcap": 9.455332696168031e-06,
+        "mass": 8.737748987976334e-13,
+        "pe_mass": 0.0,
+        "stored": 2.1391783229955863e-05
+      }
+    },
+    {
+      "member": "high_ftc_hi",
+      "overrides": {
+        "f_Tcap": 0.95
+      },
+      "ini_sha256": "58d95fbbbddc061bdc435b002af76e48cfaf07da4b00359094679f6a2a591878",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "target_budget_changed": true
+      },
+      "budget_t_ns": 61.99744,
+      "budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.5440159408120194e-05,
+        "vap_latent": 5.4922451392981e-06,
+        "overcap": 8.232741765418022e-06,
+        "mass": 1.1611511922406141e-12,
+        "pe_mass": 0.0,
+        "stored": 2.1715172503391798e-05
+      },
+      "T026_budget_J": {
+        "inc": 0.00039437976941255487,
+        "abs": 3.4980071197448104e-05,
+        "vap_latent": 4.132955271312812e-06,
+        "overcap": 9.455332696168031e-06,
+        "mass": 8.737748987976334e-13,
+        "pe_mass": 0.0,
+        "stored": 2.1391783229955863e-05
+      }
+    },
+    {
+      "member": "high_sig_lo",
+      "overrides": {
+        "sigma_en_Cu": 3e-20
+      },
+      "ini_sha256": "3ab89ee3aeb813bccf17a5c1da7b71210988b130114ae83798a3f3eb8aee2136",
+      "checks": {
+        "overrides_match": true,
+        "registry_hash_match": true,
+        "tables_match": true,
+        "target_bin_match": true,
+        "base_controls": true,
+        "sig_match": true
+      },
+      "budget_t_ns": 60.9991,
+      "SIG_EN": 3e-20
+    }
+  ],
+  "pending": [
+    "high_sig_hi",
+    "high_gaunt_hi",
+    "low_rem_lo",
+    "low_rem_hi",
+    "low_A_lo",
+    "low_A_hi",
+    "low_ftc_lo",
+    "low_ftc_hi",
+    "low_sig_lo",
+    "low_sig_hi",
+    "low_gaunt_hi"
+  ],
+  "failed_checks": [
+    "high_rem_lo:literal_net_scaling",
+    "high_rem_hi:literal_net_scaling"
+  ]
+}

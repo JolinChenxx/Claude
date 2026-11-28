@@ -1,0 +1,71 @@
+{
+  "stages": [
+    {
+      "stage": "image_v2_t28",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T039\\high_wf\\it2",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\image_v2_t28",
+        "--workers",
+        "8",
+        "--scenarios",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\configs\\imaging\\v2.yaml",
+        "--t-offset-ns",
+        "28"
+      ],
+      "started": "2026-11-26T06:11:38.042762+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T07:14:38.911265+08:00"
+    },
+    {
+      "stage": "peak_lift_t28",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\sim_tools\\T039-runtime-f90a4fa9\\scripts\\peak_lift.py",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\image_v2_t28",
+        "--series",
+        "high",
+        "--out",
+        "D:\\sim_runs\\T039\\high_wf\\it2\\image_v2_t28\\peak_lift.csv"
+      ],
+      "started": "2026-11-26T07:14:38.911265+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T07:14:40.167957+08:00"
+    }
+  ],
+  "wrapper_rc": 0,
+  "sha256": {
+    "image_summary.json": "e485611bbd820af20928917e61328a6fba9667d8676e1c2b40cffc6d9ac76d2c",
+    "peak_lift.csv": "08b6dbaf606f04ba982f4d04525df5662d595907a8d539e0cc9e7afc2012df1d",
+    "metrics_a_sa_baseline.csv": "e835ab70275bd6745d3f5bc904c10248ecaa7dcee665f521c4a99e267aea2fe6",
+    "metrics_a_sa_high.csv": "2fec5c338ff494a4202c3503d349212edaac20690e7a6c0b66241d92cb022c93",
+    "metrics_a_sa_low.csv": "cd0e0c3c88eca818346f73fd62b1184c3e62833f39c10dcd393e42fd39d9bb12",
+    "metrics_a_thin_baseline.csv": "7ea1189394ef90a0351c29da575a10206a79fcc7a1f5f354d5bd3e03e551696e",
+    "metrics_a_thin_high.csv": "4b9ecf235360422189a018e59ea29e8f6859801bc574817255b975416d66b64f",
+    "metrics_a_thin_low.csv": "1cb71312725b4ae15175f148b94e942aee6ea12b835ec84ff7bbb366b379fcf7",
+    "metrics_b_sa_baseline.csv": "39855407761e2730fd2fdde7d63b8450cc4f428935bcbb27d7fa719c17825e87",
+    "metrics_b_sa_high.csv": "16afb80295c75d975087b3c0d7321781cc78c8919923d86b7f2e4e348ef85ff8",
+    "metrics_b_sa_low.csv": "eacec7f298037095dc27debd1a92cae50bee4f3d4bd58a0077588d32e656dc42",
+    "metrics_b_thin_baseline.csv": "e6f015957c4a7bc0316f2f79560090a42ad47b22e7b5d95a92dbcdfb86c9fb18",
+    "metrics_b_thin_high.csv": "5655322c7d3713bab8d03e65721db7f993c23d4f04032b16ce039783131f9aef",
+    "metrics_b_thin_low.csv": "ead7a1c5899d6f82587b9297ce6e4d7370ebeac9e29c89c1f0b6ff6953281fa4",
+    "metrics_c_sa_baseline.csv": "4f76854fb6979ecb8c2ff3ef6eb9ec8e64a64e08b08a678cbb36585a6b824e3f",
+    "metrics_c_sa_high.csv": "dc07476967f4cc319055a7ae9a6bae67b20528d59e33262ca43231ebbda230b0",
+    "metrics_c_sa_low.csv": "96d48b8148764a2a0c613148a336d16c3aa1c69d4e951f329b70c5cebafe3219",
+    "metrics_c_thin_baseline.csv": "c8340a5819dfa7c4a41edad235d802b066ebb0666895a9f819bb05be2b60727c",
+    "metrics_c_thin_high.csv": "7a5267d1ba8e4251424d287a4702b7ac33c02c27d5baa5cf513195624d4ce819",
+    "metrics_c_thin_low.csv": "844b88da7c2872e86b26af468136a886ded13d478f98fecc7f9d241e0f6787b3",
+    "frames_b_thin.npz": "d7ba1a329917819492f274630d3d3952ff18f2a5ffc3327339260c894e99a26f",
+    "frames_b_sa.npz": "fb28fd46149d3177afc88cb4fc84d7143b03bf5f5410e3abbed7404e84c7e4ed"
+  },
+  "frames": 29,
+  "offset_ns": 28,
+  "missing_experimental_upper_lift_ns": []
+}

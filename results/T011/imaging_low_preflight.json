@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-11-16T22:04:46+08:00",
+  "base_commit": "167f6c452f7432b682c17819b63f01038a3b8d1e",
+  "job_id": "T011img_low",
+  "workers": 16,
+  "series": "low",
+  "runs": [
+    {
+      "run": "D:\\sim_runs\\T011\\low_thin_G0\\it0",
+      "returncode": 0,
+      "solver_log": "D:\\sim_runs\\T011\\low_thin_G0\\it0\\pluto.0.log",
+      "solver_log_bytes": 464663432,
+      "done_marker": true,
+      "solver_wall_seconds": 1317.2
+    },
+    {
+      "run": "D:\\sim_runs\\T011\\low_thin_G0\\it1",
+      "returncode": 0,
+      "solver_log": "D:\\sim_runs\\T011\\low_thin_G0\\it1\\pluto.0.log",
+      "solver_log_bytes": 464658825,
+      "done_marker": true,
+      "solver_wall_seconds": 1305.6
+    },
+    {
+      "run": "D:\\sim_runs\\T011\\low_thin_G0\\it2",
+      "returncode": 0,
+      "solver_log": "D:\\sim_runs\\T011\\low_thin_G0\\it2\\pluto.0.log",
+      "solver_log_bytes": 464655745,
+      "done_marker": true,
+      "solver_wall_seconds": 1317.8
+    },
+    {
+      "run": "D:\\sim_runs\\T011\\low_trap_G0\\it0",
+      "returncode": 0,
+      "solver_log": "D:\\sim_runs\\T011\\low_trap_G0\\it0\\pluto.0.log",
+      "solver_log_bytes": 464436303,
+      "done_marker": true,
+      "solver_wall_seconds": 1321.7
+    },
+    {
+      "run": "D:\\sim_runs\\T011\\low_trap_G0\\it1",
+      "returncode": 0,
+      "solver_log": "D:\\sim_runs\\T011\\low_trap_G0\\it1\\pluto.0.log",
+      "solver_log_bytes": 464432285,
+      "done_marker": true,
+      "solver_wall_seconds": 1316.2
+    },
+    {
+      "run": "D:\\sim_runs\\T011\\low_trap_G0\\it2",
+      "returncode": 0,
+      "solver_log": "D:\\sim_runs\\T011\\low_trap_G0\\it2\\pluto.0.log",
+      "solver_log_bytes": 464430156,
+      "done_marker": true,
+      "solver_wall_seconds": 1325.6
+    }
+  ],
+  "tables": "D:/sim_runs/tables/v0",
+  "T011_completed_runs": 12,
+  "T011_active_MPI_ranks_observed": 32,
+  "T013a_action": "defer this pass because early-imaging handoff takes priority; 32 solver ranks + 16 image workers leave fewer than the requested 32 G2 cores"
+}

@@ -1,0 +1,18 @@
+# T030: v1r droplets located by flight time and evaporation time (PREREG 2026-11-25 v1r; user decision 2026-11-25).
+# One Picard iteration per member, seeded with the T026 (v1n) shielding of the same fluence, so that each member and
+# T026 at that iteration differ only in the droplet location rule. Reported member: v1r_* (melt_rp); 10/30/100 nm = scan.
+name: T030
+pluto_exe: D:/sim_tools/pluto_lip/build_v1r/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T030
+numerics:
+  runs:
+    - {id: high_rp,    case: configs/cases/v1r_high.yaml,     grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_rp,     case: configs/cases/v1r_low.yaml,      grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}
+    - {id: high_a10n,  case: configs/cases/v1r10n_high.yaml,  grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_a10n,   case: configs/cases/v1r10n_low.yaml,   grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}
+    - {id: high_a30n,  case: configs/cases/v1r30n_high.yaml,  grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_a30n,   case: configs/cases/v1r30n_low.yaml,   grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}
+    - {id: high_a100n, case: configs/cases/v1r100n_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000}
+    - {id: low_a100n,  case: configs/cases/v1r100n_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, start_it: 1, prev_run: D:/sim_runs/T026/low_thin_G0/it0,  src_on: 1, rmax_par: 1000}

@@ -1,0 +1,10 @@
+# T018c: T018 high members with build v1i (backward-Euler wall exchange; STATE 2026-11-19 16:40). High G0 it0-it2.
+name: T018c
+pluto_exe: D:/sim_tools/pluto_lip/build_v1i/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T018c
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v1pe_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: high_trap_G0, case: configs/cases/v1pe_high.yaml, grid: G0, nec: trap, tstop_ns: 800,  procs: 8, picard: 2, src_on: 1, rmax_par: 1000}

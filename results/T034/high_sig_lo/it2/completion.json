@@ -1,0 +1,217 @@
+{
+  "recorded": "2026-11-26T00:32:09.908229+08:00",
+  "registry_row": {
+    "time": "2026-11-25T22:03:41",
+    "batch": "T034",
+    "run": "high_sig_lo",
+    "picard_it": "2",
+    "grid": "G0",
+    "nec": "thin",
+    "case": "configs/cases/v1rs_high.yaml",
+    "procs": "8",
+    "returncode": "0",
+    "seconds": "7663.2",
+    "commit": "46419db",
+    "registry_sha256": "691a406242fa5b81",
+    "ini_sha256": "b0fbc1eb6bc119b8",
+    "dir": "D:\\sim_runs\\T034\\high_sig_lo\\it2"
+  },
+  "launch_job": {
+    "id": "T034",
+    "pid": 38616,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -B -m lipsim.batch configs/batches/T034.yaml --max-cores 16",
+    "threads": 1,
+    "commit": "a5f05ad",
+    "started": "2026-11-25T21:57:35",
+    "dir": "D:\\sim_runs\\T034"
+  },
+  "initial_budget": {
+    "t_ns": 0.0,
+    "E_internal": 0.001713056739,
+    "E_kinetic": 0.0,
+    "M_Cu": 0.0,
+    "M_total": 8.1695681869e-09,
+    "E_inc": 0.0,
+    "E_gas_abs": 0.0,
+    "E_targ_abs": 0.0,
+    "E_esc": 0.0,
+    "E_rad": 0.0,
+    "E_rad_limited": 0.0,
+    "M_src": 0.0,
+    "E_src": 0.0,
+    "E_wall": 0.0,
+    "M_bp_suppressed": 0.0,
+    "E_bd_transfer": 0.0,
+    "E_bd_store": 0.0,
+    "M_drop_condensed": 0.0,
+    "P_vap_mom": 0.0,
+    "M_drop_airborne": 0.0,
+    "M_recondensed": 0.0
+  },
+  "final_budget": {
+    "t_ns": 800.0,
+    "E_internal": 0.00177274635,
+    "E_kinetic": 7.1424018522e-06,
+    "M_Cu": 3.7496789173e-13,
+    "M_total": 8.1699431548e-09,
+    "E_inc": 0.00039637870092,
+    "E_gas_abs": 0.00015837646456,
+    "E_targ_abs": 3.3211007705e-05,
+    "E_esc": 0.00020479122866,
+    "E_rad": 2.6150983725e-05,
+    "E_rad_limited": 1.2542832677e-72,
+    "M_src": 3.7496789173e-13,
+    "E_src": -7.2371751743e-06,
+    "E_wall": 5.8159833968e-05,
+    "M_bp_suppressed": 1.0187627276e-12,
+    "E_bd_transfer": 0.0,
+    "E_bd_store": 0.0,
+    "M_drop_condensed": 0.0,
+    "P_vap_mom": 0.0,
+    "M_drop_airborne": 6.2624160875e-12,
+    "M_recondensed": 7.9729225923e-13
+  },
+  "budget_rows": 1590,
+  "nonfinite_budget_values": [],
+  "files": {
+    "budget.csv": {
+      "source": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\budget.csv",
+      "bytes": 598047,
+      "sha256": "78dcc6f848e6a4d1acd452241e6c8a7cdf6244a4857593fd6effd381533a2f8e"
+    },
+    "source_meta.json": {
+      "source": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\source\\source_meta.json",
+      "bytes": 961,
+      "sha256": "8f94e4f8ce6919c2e14c2d5ab37888695fbcab68354022da9eb641a7f0467443"
+    },
+    "pluto.ini": {
+      "source": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.ini",
+      "bytes": 1401,
+      "sha256": "b0fbc1eb6bc119b85b72afd9a99a2d2ceb866c840edbac28fb7a146694123f33"
+    },
+    "droplets.csv": {
+      "source": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\droplets.csv",
+      "bytes": 160134,
+      "sha256": "f65843ecec8dc1122b319aabddfad52d40ae6df829bc7291027012285927c550"
+    },
+    "overrides.json": {
+      "source": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\overrides.json",
+      "bytes": 27,
+      "sha256": "32c31d91824e4756aea33a0391e152943f985b950ead21ffcb4faedb683d414b"
+    }
+  },
+  "rank_logs": [
+    {
+      "rank": 0,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.0.log",
+      "bytes": 121740745,
+      "sha256": "d50e547c85b5bca9c5599dead049f8217f2ee73c751750cf7dbeaed8eccd5db4",
+      "ConsToPrim_lines": 1022262,
+      "first_examples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 25128 (stage = 1); [i,j = 10, 4], [x1,x2 =  18.750000, 1.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 25128 (stage = 1); [i,j = 11, 4], [x1,x2 =  21.250000, 1.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 25128 (stage = 2); [i,j = 10, 4], [x1,x2 =  18.750000, 1.500000]"
+      ],
+      "tail_archive": "pluto.0.tail.log",
+      "tail_sha256": "b2c0cb0a6521fbb0086919cc87bfc9feb40c0e23e01ff8daf032513d748a0678"
+    },
+    {
+      "rank": 1,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.1.log",
+      "bytes": 41556877,
+      "sha256": "43ef27bf76f2c229fb28a54f6f53e11a20e51267f3465449bea4be06f4a5dce1",
+      "ConsToPrim_lines": 352133,
+      "first_examples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 25227 (stage = 1); [i,j = 3, 5], [x1,x2 =  46.250000, 2.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 25227 (stage = 2); [i,j = 3, 5], [x1,x2 =  46.250000, 2.500000]",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 25228 (stage = 1); [i,j = 3, 5], [x1,x2 =  46.250000, 2.500000]"
+      ],
+      "tail_archive": "pluto.1.tail.log",
+      "tail_sha256": "6874fb88d7bfcbac13e27aba521c52a1657e7f980cb7f738da3ae866ff4d547c"
+    },
+    {
+      "rank": 2,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.2.log",
+      "bytes": 24832,
+      "sha256": "1729bce632b11b7855cf5a16445ca7a4f7ceb01f164fa15e976781ad5ee416f2",
+      "ConsToPrim_lines": 0,
+      "first_examples": [],
+      "tail_archive": "pluto.2.tail.log",
+      "tail_sha256": "91d0d5e7b8d42ee2e06da0df5e70c642156c1fe64586dafb6e5eab01f5a9deaf"
+    },
+    {
+      "rank": 3,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.3.log",
+      "bytes": 25012,
+      "sha256": "36d5eeac74093e8ed0e1f9ab77051c42bf6fd577587c6e4c2e37089e28652fa4",
+      "ConsToPrim_lines": 0,
+      "first_examples": [],
+      "tail_archive": "pluto.3.tail.log",
+      "tail_sha256": "7ea755c57e09634c4097780eeb8ea0d95ac721a5241cfbc72f516134ff4d0359"
+    },
+    {
+      "rank": 4,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.4.log",
+      "bytes": 24665,
+      "sha256": "132ed970cad13ca652b0b93b3a20fa2e5093545fc58b9843a1388e2f12b8190c",
+      "ConsToPrim_lines": 0,
+      "first_examples": [],
+      "tail_archive": "pluto.4.tail.log",
+      "tail_sha256": "29e27eac2f80e488c7e612ca5741289fb80fde70074a3644ba058020312c2d1a"
+    },
+    {
+      "rank": 5,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.5.log",
+      "bytes": 25926,
+      "sha256": "33dba922bd67ccf93e886de9256bc0901691f1ea142d8b385261f9c7ee9c82ef",
+      "ConsToPrim_lines": 0,
+      "first_examples": [],
+      "tail_archive": "pluto.5.tail.log",
+      "tail_sha256": "c7ea0a3434f9058664fbdeecefb03c63ac1f453dd4fa8514b505fd60c6368e7e"
+    },
+    {
+      "rank": 6,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.6.log",
+      "bytes": 24502,
+      "sha256": "d2f9805657541116f4e9bc0191ada91002dac384725d7d0e6610edc7c4762c77",
+      "ConsToPrim_lines": 0,
+      "first_examples": [],
+      "tail_archive": "pluto.6.tail.log",
+      "tail_sha256": "e8af70f727d86c2ebb5fbee6d7d2df4e1c4400b46461fd7772008f7f45d04371"
+    },
+    {
+      "rank": 7,
+      "raw_path": "D:\\sim_runs\\T034\\high_sig_lo\\it2\\pluto.7.log",
+      "bytes": 24523,
+      "sha256": "24083264647ab75eb2f1145e3a36f7693cfc05428c0cd30666acd5869339afb9",
+      "ConsToPrim_lines": 0,
+      "first_examples": [],
+      "tail_archive": "pluto.7.tail.log",
+      "tail_sha256": "951a0a7e70f96c56cf9b85d8315c76c66194fea94bdeea65f809984f6aceae95"
+    }
+  ],
+  "ConsToPrim_total": 1374395,
+  "energy_closure": {
+    "formula": "Delta(E_internal+E_kinetic) - Delta(E_gas_abs+E_src-E_rad-E_wall); no correction or unrecorded boundary-flux estimate",
+    "delta_gas_energy_J": 6.683201285220017e-05,
+    "net_recorded_sources_J": 6.68284716927e-05,
+    "residual_J": 3.541159500166139e-09,
+    "relative_to_abs_net_sources_pct": 0.005298878472710842
+  },
+  "mass_Cu_minus_source_kg": 0.0,
+  "wall_pressure_from_previous_run": true,
+  "postprocessing": "Pending serialized background queue; raw production already complete.",
+  "droplet_checks": {
+    "rows": 1590,
+    "airborne_budget_match": "all rows",
+    "final": {
+      "t_ns": "8.000000e+002",
+      "n_parcels": "216",
+      "M_launched": "6.2942251010e-012",
+      "M_evaporated": "3.1809013454e-014",
+      "M_airborne": "6.2624160875e-012",
+      "z_top_half_um": "2.458986e+002",
+      "z_front_um": "2.458986e+002"
+    }
+  }
+}

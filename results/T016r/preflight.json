@@ -1,0 +1,46 @@
+{
+  "source_commit": "a243c22",
+  "claim_commit": "c2368d0",
+  "executable_sha256": "0f9e454c13685412da7fce91c104789caf76f002e7685dd17e6fcd8d088481ca",
+  "table_sha256": {
+    "eos.bin": "8b700ab167f533387a1242a98f35463ab7701cb1474854885bc4a2ae7dd3073b",
+    "opt.bin": "a846c3e17da7bf60288b31a610f6bd5ed27a3aee8bb02533b4d90e3458be9862",
+    "pop.bin": "16d7b530a64427c4a65c412745258b289417bcc3a08896fbd90409d85a3c4b7e"
+  },
+  "manifest_sha256": "7cfef507c5c42aa0d3b39fd7c7d2355c5125911e83607720125475c3fb7a1d01",
+  "batch_sha256": "b296be8ca212ef2dd523af4f842e86ec2b77ac14c5a4a1012ecf037efbe8ed17",
+  "runs": [
+    {
+      "id": "low_thin_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "low_trap_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "trap",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "low_thin_G1",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G1",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    }
+  ],
+  "max_cores": 32,
+  "existing_T016": "three high-fluence members continue unchanged"
+}

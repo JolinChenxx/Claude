@@ -1,0 +1,58 @@
+{
+  "recorded": "2026-11-24T17:16:08+08:00",
+  "members": [
+    {
+      "batch": "T023",
+      "member": "high_thin_G0",
+      "final_iteration": 2,
+      "final_rc0_registered": true,
+      "reserved_cores": 0
+    },
+    {
+      "batch": "T023",
+      "member": "high_trap_G0",
+      "final_iteration": 2,
+      "final_rc0_registered": false,
+      "reserved_cores": 10
+    },
+    {
+      "batch": "T023",
+      "member": "low_thin_G0",
+      "final_iteration": 1,
+      "final_rc0_registered": false,
+      "reserved_cores": 10
+    },
+    {
+      "batch": "T023",
+      "member": "low_trap_G0",
+      "final_iteration": 1,
+      "final_rc0_registered": false,
+      "reserved_cores": 10
+    },
+    {
+      "batch": "T023",
+      "member": "high_thin_G1",
+      "final_iteration": 0,
+      "final_rc0_registered": false,
+      "reserved_cores": 8
+    },
+    {
+      "batch": "T025",
+      "member": "high_thin_G0",
+      "final_iteration": 2,
+      "final_rc0_registered": false,
+      "reserved_cores": 8
+    },
+    {
+      "batch": "T025",
+      "member": "low_thin_G0",
+      "final_iteration": 1,
+      "final_rc0_registered": false,
+      "reserved_cores": 8
+    }
+  ],
+  "reserved_production_cores": 54,
+  "free_production_core_slots": 10,
+  "launch_allowed": false,
+  "rule": "Retain each member reservation through its final Picard iteration, including gaps for source generation. Do not treat a temporary absence of pluto.exe ranks as free cores. At launch recheck both live ranks/unknown jobs and unfinished production reservations; require at least16 physical slots."
+}

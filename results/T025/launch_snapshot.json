@@ -1,0 +1,85 @@
+{
+  "recorded": "2026-11-24T16:18:22.607674+08:00",
+  "job": {
+    "id": "T025",
+    "pid": 5984,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T025.yaml --max-cores 16",
+    "threads": 1,
+    "commit": "69d9598",
+    "started": "2026-11-24T16:17:44",
+    "dir": "D:\\sim_runs\\T025"
+  },
+  "wrapper_creation_epoch": 1795508264.593215,
+  "state": "running",
+  "stderr_bytes": 0,
+  "exitcode_exists": false,
+  "actual_ini_checks": [
+    {
+      "member": "high_thin_G0",
+      "ini_exists": true,
+      "values": {
+        "BD_ON": 0.0,
+        "BACKP": 1.0,
+        "DROP_M": 3.966007941e-12,
+        "rmax_par": 1000.0
+      },
+      "checks_passed": true,
+      "ini_sha256": "4fa0f2bb4bdf7c0ef49a21205cb6eff9b8c3c36cbd83970ca007138cdd2c2c0f"
+    },
+    {
+      "member": "low_thin_G0",
+      "ini_exists": true,
+      "values": {
+        "BD_ON": 0.0,
+        "BACKP": 1.0,
+        "DROP_M": 4.738439308e-12,
+        "rmax_par": 1000.0
+      },
+      "checks_passed": true,
+      "ini_sha256": "0622e83e0947d570a50129b3e6aaa3086c39fcee80cf8ef06725cd76ea9cd0e7"
+    }
+  ],
+  "existing_jobs": {
+    "T023": {
+      "pid": 14496,
+      "identity_matches": true
+    },
+    "T021_T023_post_05": {
+      "pid": 32784,
+      "identity_matches": true
+    }
+  },
+  "progress": {
+    "T023": {
+      "high_thin_G0/it0": 800.0,
+      "high_thin_G0/it1": 800.0,
+      "high_thin_G0/it2": 726.9795,
+      "high_thin_G1/it0": 182.4889,
+      "high_trap_G0/it0": 800.0,
+      "high_trap_G0/it1": 800.0,
+      "high_trap_G0/it2": 613.9946,
+      "low_thin_G0/it0": 1300.0,
+      "low_thin_G0/it1": 644.4828,
+      "low_trap_G0/it0": 1300.0,
+      "low_trap_G0/it1": 669.4925
+    },
+    "T025": {
+      "high_thin_G0/it0": 0.0,
+      "low_thin_G0/it0": 0.0
+    }
+  },
+  "post_queue": {
+    "state": "running",
+    "completed_commands": 5,
+    "milestones": [
+      {
+        "batch": "T021",
+        "member": "high_thin_G0",
+        "iteration": "it2",
+        "finished": "2026-11-24T15:48:56.258715+08:00",
+        "next_action": "Collect full image directory and diagnostics/peak; push priority handoff without waiting for remaining queue."
+      }
+    ]
+  },
+  "policy": "Immediate launch bookkeeping;no production wait or additional calculation this pass."
+}

@@ -1,0 +1,186 @@
+{
+  "recorded": "2026-11-24T17:47:02.866988+08:00",
+  "job": {
+    "id": "T026",
+    "pid": 1700,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T026.yaml --max-cores 16",
+    "threads": 1,
+    "commit": "eb95e43",
+    "started": "2026-11-24T17:46:01",
+    "dir": "D:\\sim_runs\\T026"
+  },
+  "wrapper_creation_epoch": 1795513561.8282216,
+  "stderr_bytes": 0,
+  "exitcode": null,
+  "runtime_checks": [
+    {
+      "member": "high_thin_G0",
+      "ini_exists": true,
+      "values": {
+        "rmax_par": 1000.0,
+        "DROP_M": 3.966007941e-12,
+        "BACKP": 1.0,
+        "BD_ON": 0.0,
+        "DROP_TB": 2835.0
+      },
+      "vaporised_mass_kg": 3.2019920591426675e-12,
+      "full_ini_matches_renderer": true,
+      "source_binary_hash_matches_metadata": true,
+      "files": [
+        {
+          "source": "D:\\sim_runs\\T026\\high_thin_G0\\it0\\pluto.ini",
+          "archive": "results/T026/runtime_check/high_thin_G0/pluto.ini",
+          "sha256": "3e9e77e84fcb96310d746cb63c8d21aaf32347a3901be2b330a882c5d8e65be9"
+        },
+        {
+          "source": "D:\\sim_runs\\T026\\high_thin_G0\\it0\\source\\source_meta.json",
+          "archive": "results/T026/runtime_check/high_thin_G0/source_meta.json",
+          "sha256": "cd311d1e7d6b0b3f0bc4ef3065365914e231f6065ce1146e2ad4d1e30d284fde"
+        }
+      ],
+      "budget_header_has_M_drop_condensed": true
+    },
+    {
+      "member": "low_thin_G0",
+      "ini_exists": true,
+      "values": {
+        "rmax_par": 1000.0,
+        "DROP_M": 4.738439308e-12,
+        "BACKP": 1.0,
+        "BD_ON": 0.0,
+        "DROP_TB": 2835.0
+      },
+      "vaporised_mass_kg": 9.95960691983496e-13,
+      "full_ini_matches_renderer": true,
+      "source_binary_hash_matches_metadata": true,
+      "files": [
+        {
+          "source": "D:\\sim_runs\\T026\\low_thin_G0\\it0\\pluto.ini",
+          "archive": "results/T026/runtime_check/low_thin_G0/pluto.ini",
+          "sha256": "5dfc640681c4c59091313d105dacfe0108a24d08674f56b068d1a5af2deeccb1"
+        },
+        {
+          "source": "D:\\sim_runs\\T026\\low_thin_G0\\it0\\source\\source_meta.json",
+          "archive": "results/T026/runtime_check/low_thin_G0/source_meta.json",
+          "sha256": "4829eb69d82bd4d3493ac3a02a54079119be9b236cba97b59c413ec07ae7ecd7"
+        }
+      ],
+      "budget_header_has_M_drop_condensed": true
+    }
+  ],
+  "jobs": {
+    "T023": {
+      "pid": 14496,
+      "creation_epoch": 1795484727.6840496,
+      "identity_ok": true,
+      "stderr_bytes": 0,
+      "exitcode": null
+    },
+    "T025": {
+      "pid": 5984,
+      "creation_epoch": 1795508264.593215,
+      "identity_ok": true,
+      "stderr_bytes": 0,
+      "exitcode": null
+    },
+    "T021_T023_post_05": {
+      "pid": 32784,
+      "creation_epoch": 1795505005.892073,
+      "identity_ok": true,
+      "stderr_bytes": 0,
+      "exitcode": null
+    },
+    "T026": {
+      "pid": 1700,
+      "creation_epoch": 1795513561.8282216,
+      "identity_ok": true,
+      "stderr_bytes": 0,
+      "exitcode": null
+    }
+  },
+  "budgets": {
+    "T023": {
+      "high_thin_G0/it0": 800.0,
+      "high_thin_G0/it1": 800.0,
+      "high_thin_G0/it2": 800.0,
+      "high_thin_G1/it0": 200.9862,
+      "high_trap_G0/it0": 800.0,
+      "high_trap_G0/it1": 800.0,
+      "high_trap_G0/it2": 793.4815,
+      "low_thin_G0/it0": 1300.0,
+      "low_thin_G0/it1": 772.4917,
+      "low_trap_G0/it0": 1300.0,
+      "low_trap_G0/it1": 801.9915
+    },
+    "T025": {
+      "high_thin_G0/it0": 800.0,
+      "high_thin_G0/it1": 0.0,
+      "low_thin_G0/it0": 1300.0,
+      "low_thin_G0/it1": 1300.0
+    },
+    "T026": {
+      "high_thin_G0/it0": 20.97958,
+      "low_thin_G0/it0": 36.98303
+    }
+  },
+  "queue": {
+    "completed_commands": 15,
+    "milestones": 3
+  },
+  "cards": [
+    {
+      "id": "T012",
+      "owner": "codex",
+      "status": "draft",
+      "depends": "[]"
+    },
+    {
+      "id": "T013",
+      "owner": "codex",
+      "status": "draft",
+      "depends": "[T011]"
+    },
+    {
+      "id": "T021",
+      "owner": "codex",
+      "status": "running",
+      "depends": "[]"
+    },
+    {
+      "id": "T023",
+      "owner": "codex",
+      "status": "running",
+      "depends": "[]"
+    },
+    {
+      "id": "T025",
+      "owner": "codex",
+      "status": "blocked",
+      "depends": "[]"
+    },
+    {
+      "id": "T026",
+      "owner": "codex",
+      "status": "running",
+      "depends": "[]"
+    }
+  ],
+  "new_registry_rows_deferred_to_next_pass": [
+    {
+      "time": "2026-11-24T16:18:14",
+      "batch": "T025",
+      "run": "high_thin_G0",
+      "picard_it": "0",
+      "grid": "G0",
+      "nec": "thin",
+      "case": "configs/cases/v1bpdr_high.yaml",
+      "procs": "8",
+      "returncode": "0",
+      "seconds": "5256.0",
+      "commit": "eb95e43",
+      "registry_sha256": "88c891ab23985a84",
+      "ini_sha256": "4fa0f2bb4bdf7c0e",
+      "dir": "D:\\sim_runs\\T025\\high_thin_G0\\it0"
+    }
+  ]
+}

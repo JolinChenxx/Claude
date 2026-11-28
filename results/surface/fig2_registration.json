@@ -1,0 +1,19 @@
+{
+ "source": "data/exp/paper/fig2.png (main PDF p.3, native 2050x1084), Fig. 2a yellow dashed Air/Copper line (authors' marking, low fluence)",
+ "same_crops_as_S3": "Fig. 2a panels vs data/exp/frames/low at 60/140/280/380 ns: pixel correlation 0.98/0.97/0.94/0.88 after resizing to 113x58; column peaks within 1 px, row peaks within 0-4 px; aspect 1.92-2.00 vs 1.95",
+ "line_fraction_of_panel_height_above_bottom": [0.197, 0.211],
+ "low_surface_row": 45.7,
+ "low_surface_row_range": [45.3, 46.1],
+ "low_surface_row_bracket_from_frames": [35.9, 49.7],
+ "inside_bracket": true,
+ "low_surface_height_above_crop_bottom_um": 109,
+ "low_peak_lift_um_t_ge_150": {"median": 200, "min": 163, "max": 247},
+ "high_transfer_auxiliary": {
+  "rule": "row-sum level at the marked low-fluence surface, relative to the peak (t >= 150 ns): median 0.187 (0.146-0.462); the same level applied below the peak of each S4 frame",
+  "high_surface_row": 68.0, "high_surface_row_range": [60.4, 69.3], "bracket_from_frames": [59.4, 70.8],
+  "high_peak_lift_um": {"median": 269, "min": 187, "max": 320},
+  "status": "descriptive only; S4 has no marking"
+ },
+ "scale_bar_note": "Fig. 2a '100 um' bar is 103 px of a 239 px panel; with the S3 scale (9.244 um/px, consistent with Fig. 2c radii) it spans 231 um. The bar disagrees with S3 and Fig. 2c by 2.3x; S3 scale kept (QUESTIONS_FOR_AUTHORS).",
+ "metric_S1": "unchanged (PREREG v1k): the marked surface lies inside the pre-declared bracket, so lift_min stays the conservative pass threshold"
+}

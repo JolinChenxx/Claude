@@ -1,0 +1,39 @@
+﻿{
+    "checked_at":  "2026-11-17T03:03:53.5061763+08:00",
+    "job":  {
+                "id":  "T014_image_low_high_03",
+                "pid":  47052,
+                "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16",
+                "threads":  1,
+                "commit":  "4f43748",
+                "started":  "2026-11-17T03:03:41",
+                "dir":  "D:\\sim_runs\\T014_image_low_high_03"
+            },
+    "wrapper":  {
+                    "ProcessId":  47052,
+                    "ParentProcessId":  46008,
+                    "Name":  "cmd.exe",
+                    "CommandLine":  "\"C:\\Windows\\system32\\cmd.exe\" /v:on /c set OMP_NUM_THREADS=1\u0026\u0026 set SIM_OUT_DIR=D:\\sim_runs\\T014_image_low_high_03\u0026\u0026 cd /d \"D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\" \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe scripts/image_members.py D:\\sim_runs\\T014 --series high --tables D:\\sim_runs\\tables\\v0 --workers 16 \u0026 echo !ERRORLEVEL! \u003e \"D:\\sim_runs\\T014_image_low_high_03\\exitcode.txt\" "
+                },
+    "children":  [
+                     {
+                         "ProcessId":  33428,
+                         "ParentProcessId":  47052,
+                         "Name":  "conhost.exe",
+                         "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                     },
+                     {
+                         "ProcessId":  38328,
+                         "ParentProcessId":  47052,
+                         "Name":  "python.exe",
+                         "CommandLine":  "D:\\sim_tools\\envs\\lipsim\\python.exe  scripts/image_members.py D:\\sim_runs\\T014 --series low --tables D:\\sim_runs\\tables\\v0 --workers 16 "
+                     }
+                 ],
+    "status":  [
+                   "STATE=running  elapsed=0.00:00:12  pid=47052  commit=4f43748",
+                   "--- stdout (last 3) ---",
+                   "imaging D:\\sim_runs\\T014\\low_thin_G0\\it2",
+                   "--- stderr (last 3) ---"
+               ],
+    "exitcode_present":  false
+}

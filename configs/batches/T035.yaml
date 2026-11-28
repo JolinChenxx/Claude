@@ -1,0 +1,18 @@
+# T035 (desk node): OAT of v1rs at low fluence, Picard it0 only, with its own baseline on the same node/compiler
+# (PREREG 2026-11-25 'T034/T035 v1rs OAT'); sensitivity only. Sequential: 8 ranks at a time (node limit 12).
+name: T035
+pluto_exe: C:/sim_tools/pluto_lip/build_v1s/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: C:/sim_work/tables/v1c
+root: C:/sim_work/runs/T035
+numerics:
+  runs:
+    - {id: low_base, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000}
+    - {id: low_A_lo, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.015}}
+    - {id: low_A_hi, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.05}}
+    - {id: low_ftc_lo, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.85}}
+    - {id: low_ftc_hi, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.95}}
+    - {id: low_cond_lo, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"cu_condensation_coeff": 0.3}}
+    - {id: low_sig_lo, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3e-20}, tables: C:/sim_work/tables/v1c_sigen_lo}
+    - {id: low_sig_hi, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3e-19}, tables: C:/sim_work/tables/v1c_sigen_hi}
+    - {id: low_gaunt_hi, case: configs/cases/v1rs_low.yaml, grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 0, src_on: 1, rmax_par: 1000, overrides: {"gaunt_ff": 1.5}, tables: C:/sim_work/tables/v1c_gaunt15}

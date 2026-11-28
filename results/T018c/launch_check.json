@@ -1,0 +1,35 @@
+{
+  "checked": "2026-11-19T16:53:49+08:00",
+  "job": {
+    "id": "T018c",
+    "pid": 19644,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T018c.yaml --max-cores 16",
+    "threads": 1,
+    "commit": "824614e",
+    "started": "2026-11-19T16:53:11",
+    "dir": "D:\\sim_runs\\T018c"
+  },
+  "inputs": [
+    {
+      "member": "high_thin_G0",
+      "source_meta_exists": true,
+      "pluto_ini_exists": true,
+      "phase_explosion": true,
+      "rmax_par": "1000"
+    },
+    {
+      "member": "high_trap_G0",
+      "source_meta_exists": false,
+      "pluto_ini_exists": false
+    }
+  ],
+  "executable_sha256": "487decf2ef2383fd2442252ea6fcb0c9ae4d0a8106c849c5edfafcb8205f0169",
+  "runtime": {
+    "PYTHONPATH": "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\src",
+    "PYTHONUTF8": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "max_cores": 16
+}

@@ -1,0 +1,29 @@
+{
+  "source": "D:\\sim_runs\\T015\\high_thin_G0\\it0\\pluto.0.log",
+  "source_bytes": 1413924706,
+  "source_sha256": "12dc0430cceefea9046ffcf27a95cf700cb7f39269ebf0d070ae06b9dbd9f968",
+  "warning_lines": 11853003,
+  "located_warning_lines": 11853003,
+  "total_log_lines": 11853948,
+  "distinct_normalized_messages": 1,
+  "first_warning": {
+    "line": 300,
+    "warning_ordinal": 1,
+    "step": 19037,
+    "i": 10,
+    "j": 4,
+    "text": "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 19037 (stage = 1); [i,j = 10, 4], [x1,x2 =  18.750000, 1.500000]"
+  },
+  "last_warning": {
+    "line": 11853376,
+    "warning_ordinal": 11853003,
+    "step": 31425,
+    "i": 11,
+    "j": 5,
+    "text": "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 31425 (stage = 1); [i,j = 11, 5], [x1,x2 =  21.250000, 2.500000]"
+  },
+  "sample_count": 40,
+  "sampling": "40 evenly spaced warning ordinals including first and last; two log lines before and after each",
+  "location_scope": "rank-zero log indices as printed; no conversion to global coordinates",
+  "time_scope": "first/last exact warning steps are recorded; simulation times are not inferred"
+}

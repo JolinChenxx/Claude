@@ -1,0 +1,13 @@
+# T023: v1k back pressure (PREREG 2026-11-24 v1k): cases v1bp_*, build v1k, tables v1c, rmax_par 1000. Full machine (user 2026-11-24).
+name: T023
+pluto_exe: D:/sim_tools/pluto_lip/build_v1k/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T023
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v1bp_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 10, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: high_trap_G0, case: configs/cases/v1bp_high.yaml, grid: G0, nec: trap, tstop_ns: 800,  procs: 10, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G0,  case: configs/cases/v1bp_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 10, picard: 1, src_on: 1, rmax_par: 1000}
+    - {id: low_trap_G0,  case: configs/cases/v1bp_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 10, picard: 1, src_on: 1, rmax_par: 1000}
+    - {id: high_thin_G1, case: configs/cases/v1bp_high.yaml, grid: G1, nec: thin, tstop_ns: 800,  procs: 8,  picard: 0, src_on: 1, rmax_par: 1000}

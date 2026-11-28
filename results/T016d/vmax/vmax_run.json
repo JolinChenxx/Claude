@@ -1,0 +1,71 @@
+{
+  "command": [
+    "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+    "-n",
+    "8",
+    "D:\\sim_tools\\pluto_lip\\build_v1g\\mpi\\pluto.exe",
+    "-restart",
+    "33",
+    "-dec",
+    "8",
+    "1"
+  ],
+  "started": "2026-11-19T11:07:49.644332+08:00",
+  "limit_seconds": 600,
+  "state": "time_limit",
+  "execution_commit": "52ec9cb",
+  "restart_index": 33,
+  "restart_time_ns": 82.49905550587303,
+  "pid": 6476,
+  "timed_out": true,
+  "stop_targets": [
+    [
+      6476,
+      1795057669.6468148,
+      "mpiexec.exe"
+    ],
+    [
+      25024,
+      1795057671.9940763,
+      "pluto.exe"
+    ],
+    [
+      25412,
+      1795057671.9135294,
+      "pluto.exe"
+    ],
+    [
+      26416,
+      1795057671.9974918,
+      "pluto.exe"
+    ],
+    [
+      32604,
+      1795057671.9910798,
+      "pluto.exe"
+    ],
+    [
+      40156,
+      1795057672.0010948,
+      "pluto.exe"
+    ],
+    [
+      40444,
+      1795057671.985813,
+      "pluto.exe"
+    ],
+    [
+      40800,
+      1795057671.9883952,
+      "pluto.exe"
+    ],
+    [
+      44676,
+      1795057671.982813,
+      "pluto.exe"
+    ]
+  ],
+  "returncode": 15,
+  "seconds": 603.0940000000119,
+  "finished": "2026-11-19T11:17:52.743001+08:00"
+}

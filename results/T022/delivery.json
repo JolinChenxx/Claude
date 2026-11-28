@@ -1,0 +1,199 @@
+{
+  "recorded": "2026-11-24T08:56:55.737502+08:00",
+  "commit": "52b92505939ae3bbee20848d6e8367248e7fb865",
+  "shocks": [
+    {
+      "member": "high_thin_G0",
+      "command": [
+        "D:/sim_tools/envs/lipsim/python.exe",
+        "scripts/shock_track.py",
+        "D:\\sim_runs\\T016e\\high_thin_G0\\it2",
+        "--out",
+        "results\\T016e\\high_thin_G0\\it2\\shock_track.csv"
+      ],
+      "started": "2026-11-24T08:54:57.015039+08:00",
+      "finished": "2026-11-24T08:56:54.970950+08:00",
+      "returncode": 0,
+      "wall_seconds": 117.95567989999972,
+      "log": "results\\T022\\high_thin_G0_shock.console.log",
+      "rows": 321,
+      "t_min_ns": 0.0,
+      "t_max_ns": 800.0,
+      "nan_counts": {
+        "t_ns": 0,
+        "R_axis_um": 6,
+        "R_surf_um": 6
+      },
+      "timestamps_match_index": true,
+      "csv_line_endings": "LF; numeric text unchanged",
+      "original_crlf_sha256": "f2cb6e47217e5e149239d69b8a6c3c064d0533add1141a93090da1a9eb02550b",
+      "output": "results\\T016e\\high_thin_G0\\it2\\shock_track.csv",
+      "bytes": 12790,
+      "sha256": "fc569e1bb1ee2802fd3fbbf8972eb85a5a44ea57f6517d10b3d721396342248c"
+    },
+    {
+      "member": "high_trap_G0",
+      "command": [
+        "D:/sim_tools/envs/lipsim/python.exe",
+        "scripts/shock_track.py",
+        "D:\\sim_runs\\T016e\\high_trap_G0\\it2",
+        "--out",
+        "results\\T016e\\high_trap_G0\\it2\\shock_track.csv"
+      ],
+      "started": "2026-11-24T08:54:57.016036+08:00",
+      "finished": "2026-11-24T08:56:54.972941+08:00",
+      "returncode": 0,
+      "wall_seconds": 117.95691259999967,
+      "log": "results\\T022\\high_trap_G0_shock.console.log",
+      "rows": 321,
+      "t_min_ns": 0.0,
+      "t_max_ns": 800.0,
+      "nan_counts": {
+        "t_ns": 0,
+        "R_axis_um": 6,
+        "R_surf_um": 6
+      },
+      "timestamps_match_index": true,
+      "csv_line_endings": "LF; numeric text unchanged",
+      "original_crlf_sha256": "05348188ef656305341642fcafa94ddb10496e383679b0e2059b2fcc8279ad53",
+      "output": "results\\T016e\\high_trap_G0\\it2\\shock_track.csv",
+      "bytes": 12787,
+      "sha256": "4102c7cef8e4b91284ef812e94d490cb8ad0cf83b12bc9560c2cb94812481592"
+    }
+  ],
+  "frames": [
+    {
+      "source": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2\\frames_b_thin.npz",
+      "destination": "results\\T016e\\high_thin_G0\\it2\\image_v2\\frames_b_thin.npz",
+      "bytes": 462644,
+      "sha256": "3092a2607080bad6788e24acf1e8b92637731ffd3bc1eefc1f95a3e0015a4b1b",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            29
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "dtype": "float64",
+          "finite": true
+        }
+      },
+      "copied_byte_identical": true
+    },
+    {
+      "source": "D:\\sim_runs\\T016e\\high_thin_G0\\it2\\image_v2\\frames_b_sa.npz",
+      "destination": "results\\T016e\\high_thin_G0\\it2\\image_v2\\frames_b_sa.npz",
+      "bytes": 462950,
+      "sha256": "4e644801fde77a85e5d166dae34a564dc43b23e6aa9421ddfb86a1814ddce459",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            29
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            29,
+            81,
+            84
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "dtype": "float64",
+          "finite": true
+        }
+      },
+      "copied_byte_identical": true
+    },
+    {
+      "source": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2\\frames_b_thin.npz",
+      "destination": "results\\T016e\\low_thin_G0\\it1\\image_v2\\frames_b_thin.npz",
+      "bytes": 574889,
+      "sha256": "b99f9414acb0d1c9892aa45607f596da06b46ea134257c9eb702e6cf01d7ff86",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "dtype": "float64",
+          "finite": true
+        }
+      },
+      "copied_byte_identical": true
+    },
+    {
+      "source": "D:\\sim_runs\\T016e\\low_thin_G0\\it1\\image_v2\\frames_b_sa.npz",
+      "destination": "results\\T016e\\low_thin_G0\\it1\\image_v2\\frames_b_sa.npz",
+      "bytes": 584942,
+      "sha256": "d978eed9dab2b364fd11d9db02bf3c5e28270e0afd44282526f17773d8ff4189",
+      "arrays": {
+        "t_ns": {
+          "shape": [
+            30
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "radiance": {
+          "shape": [
+            30,
+            58,
+            113
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "um_per_px": {
+          "shape": [],
+          "dtype": "float64",
+          "finite": true
+        }
+      },
+      "copied_byte_identical": true
+    }
+  ],
+  "four_frame_bytes": 2085425,
+  "historical_shock": {
+    "path": "results/shock/T015_high_trap_G0_it2.csv",
+    "raw_run": "D:/sim_runs/T015/high_trap_G0/it2",
+    "evidence": "docs/STATE.md:179-184 and results/shock/T015_high_trap_G0_it2.console.log",
+    "already_on_origin_ws": true,
+    "local_bytes": 13094,
+    "local_sha256": "87f179e3bec4da6615d01eb64e645297ea7d7d19c4b4ca3daac6862393133370",
+    "git_bytes": 12772,
+    "git_sha256": "db342ee47c7a21ffbeba58730eb33d3539156bcdcd6f76f92a268d3ae632c777",
+    "last_file_commit": "6efe7401f75688473d44858a2c819564c07cacf4"
+  },
+  "results_T016e_total_bytes": 19178454
+}

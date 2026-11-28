@@ -1,0 +1,16 @@
+# T034: OAT of the reported model v1rs at high fluence (PREREG 2026-11-25 'T034/T035 v1rs OAT'); sensitivity only.
+name: T034
+pluto_exe: D:/sim_tools/pluto_lip/build_v1s/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T034
+numerics:
+  runs:
+    - {id: high_A_lo, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.015}}
+    - {id: high_A_hi, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_A1064_RT": 0.05}}
+    - {id: high_ftc_lo, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.85}}
+    - {id: high_ftc_hi, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"f_Tcap": 0.95}}
+    - {id: high_cond_lo, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"cu_condensation_coeff": 0.3}}
+    - {id: high_sig_lo, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3e-20}, tables: D:/sim_runs/tables/v1c_sigen_lo}
+    - {id: high_sig_hi, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"sigma_en_Cu": 3e-19}, tables: D:/sim_runs/tables/v1c_sigen_hi}
+    - {id: high_gaunt_hi, case: configs/cases/v1rs_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 2, start_it: 2, prev_run: D:/sim_runs/T026/high_thin_G0/it1, src_on: 1, rmax_par: 1000, overrides: {"gaunt_ff": 1.5}, tables: D:/sim_runs/tables/v1c_gaunt15}

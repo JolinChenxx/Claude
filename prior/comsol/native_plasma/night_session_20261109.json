@@ -1,0 +1,152 @@
+{
+  "started_beijing": "2026-11-09T21:07:00+08:00",
+  "status": "implementing and executing partitioned copper plus spatial native Plasma",
+  "hourly_text_reports": "each Beijing clock hour while active",
+  "pdf_due_beijing": [
+    "2026-11-09T23:00:00+08:00",
+    "2026-11-10T07:00:00+08:00"
+  ],
+  "work_end": "user requested ongoing work; 07:00 is a report checkpoint, not automatic termination",
+  "physics_plan": "docs/COMSOL三项目标实施方案_20261109.md",
+  "compute": "32 threads per NUMA job; prioritize two physically distinct useful tasks",
+  "cases": {
+    "C201": "actual copper melt and ALE predictor, initial ambient gas feedback",
+    "S201": "Builtandrepaired80nativecells; solverinitializing",
+    "P201": "saved0-86 ns, actual moving copper source C201",
+    "P202": "saved86-95 ns; first camera gate now complete",
+    "P204": "saved95-113ns; stopped113.78ns severe timestepcollapse",
+    "P203": "Saved0-95ns; completefirstgate differs<0.1% from baseline",
+    "CuSUPG": "actual exported chain C205+C208 to141ns; no standalone MPH; local kinematic residual still large",
+    "C210": "Saved0-143ns; radialrefinementdoesnotresolvekinematicresidual; stopfurthermeshscan",
+    "P205": "saved95-110ns; stopped110.38ns timestepcollapse",
+    "C211": "Saved0-95ns; netfeed13%lower,peakT156KhigherthanC201; sourcehistoryexportnowusesgross evaporation",
+    "P206": "saved0-83ns thermalstate/moving; collapse83.33ns",
+    "S201b": "Same80cells,duplicatepPlremoved; verified24GBJavaheap; initializing",
+    "P207": "everyNewton25iterdidnotrestoreprogress; saved110nsonly; stopped",
+    "P208": "Saved0-109ns,flatbasealso stalls109.7ns; firstgate+0.46%brightnessvsmoving; nosecondgate",
+    "P209": "saved0-82ns,flatthermalstatecasealsofailedtoprogressefficiently82.8ns; stopped",
+    "S201c": "Initialfirststep0.001ns onlyaftermanyminutesperJacobian; stoppedwithoutusefulsavedtransient",
+    "P210": "Saved0-95ns; firstgatepeak35.47,idealphotons141.71; sizeunchanged",
+    "S202": "Same80cellnativeFVdirectheatfeedback; Newtonjtechminimal,rtolunchanged;started04:28,assemblingfirstmatrix",
+    "C212": "Saved0-95ns,thirdcopperiterate; netloss0.031766ng,peak7112.9K; deltafromC211~0.97%mass,23K",
+    "P211": "ThirdgasiterateusingC212; runningNUMA0/32threads from0to95ns"
+  },
+  "interpretation": "No S4 match claimed. Copper predictor is not two-way converged. Inherited high-temperature material closure remains under review.",
+  "reports_completed": [
+    {
+      "beijing": "2026-11-09T22:00:00+08:00",
+      "kind": "text",
+      "saved_copper_end_ns": 143,
+      "running_spatial_plasma_ns": 23.805
+    },
+    {
+      "beijing": "2026-11-09T23:00:00+08:00",
+      "kind": "text and 6-page PDF",
+      "pdf": "output/pdf/route1_progress_20261109_2300.pdf"
+    },
+    {
+      "beijing": "2026-11-10T00:00:00+08:00",
+      "kind": "text",
+      "first_gate_complete": true,
+      "running_model_ns": {
+        "P204": 97.048,
+        "P203": 82.327,
+        "C210": 85.242
+      },
+      "S201_built_cells": 79
+    },
+    {
+      "beijing": "2026-11-10T01:00:00+08:00",
+      "kind": "text",
+      "running_model_ns": {
+        "P204": 104.6,
+        "P205": 95.768,
+        "C211": 73.521
+      },
+      "saved_C210_end_ns": 143,
+      "first_gate_photo_change_percent": 0.035
+    },
+    {
+      "beijing": "2026-11-10T02:00:00+08:00",
+      "kind": "text",
+      "running_model_ns": {
+        "P204": 113.66,
+        "P205": 110.38,
+        "P206": 75.962
+      },
+      "C211_saved_end_ns": 95
+    },
+    {
+      "beijing": "2026-11-10T03:00:00+08:00",
+      "kind": "text",
+      "running_model_ns": {
+        "P208": 80.634,
+        "P209": 35.649
+      },
+      "saved": {
+        "P204": 113,
+        "P205": 110,
+        "P206": 83
+      }
+    },
+    {
+      "beijing": "2026-11-10T04:00:00+08:00",
+      "kind": "text",
+      "running_model_ns": {
+        "P208": 102.95,
+        "P210": 31.649
+      },
+      "P209_saved_end_ns": 82
+    },
+    {
+      "beijing": "2026-11-10T05:00:00+08:00",
+      "kind": "text",
+      "running_model_ns": {
+        "P210": 92.456
+      },
+      "P208_saved_end_ns": 109
+    },
+    {
+      "beijing": "2026-11-10T06:00:00+08:00",
+      "kind": "text",
+      "P210_saved_end_ns": 95,
+      "C212_saved_end_ns": 95,
+      "feedback_gate_peak_W_m2_sr": 35.4707475,
+      "running_model_ns": {
+        "P211": 0.015379,
+        "S202": 0.004002
+      }
+    },
+    {
+      "beijing": "2026-11-10T07:00:00+08:00",
+      "kind": "text_and_pdf",
+      "pdf": "output/pdf/route1_progress_20261110_0700.pdf",
+      "saved_spatial_end_ns": 115.4640020000002,
+      "complete_experiment_gates_ns": [
+        0,
+        20
+      ],
+      "running_model_ns": {
+        "P211": 90.333,
+        "P213": 116.89
+      },
+      "S203": "native FV partitioned predictor initializing"
+    }
+  ],
+  "checkpoint_beijing": "2026-11-10T07:00:00+08:00",
+  "latest_findings": [
+    "First complete85-95ns exposure generated at23:42 in figures/P201chainmapped/S4_first_frame_physical.png; mismatch remains large",
+    "Ideal gate photons total108.5, peak46.1/pixel,6pixels>=1; no camera gain",
+    "P201chain nearwall optical audit has2invalid samples at95ns; excluded<0.1um emission not fully audited",
+    "Copper CuSUPG whole mass residual0.011% of1.44ng evaporation, but local normal kinematic residual100-235m/s at140-141ns; not accepted moving prediction",
+    "P201 at86ns integrated gasCu0.00145ng, plasma absorbed2.16e-14J cumulative; mass source residual0.46% at available quadrature",
+    "Cu5d completegatepeak+0.035%,totalphotons-0.002%; cumulativeplasmaabsorption3.50pJ vs6.53uJtargetat95ns",
+    "C211 actualgasfeedbackcompleted95ns; netculoss0.03208ng vs0.03688ng; Tmax7090K vs6934K",
+    "S201 default2GBheap causedfullGC; comsolinifileoptionignored. Explicit --launcher.appendVmargs -vmargs -Xmx24g verifiedviaJMX. S201 failedduplicatec.pPl; repairedinS201b",
+    "ExportMelt nowexportsseparategrossevap/return; prepare_copper_history preventsnetfeedbeingusedasgrossevapforfeedbackcases",
+    "Pbase133/Pphoto133 join/posthelpers waitingP204/P205stage; exports-only chains, noMPH",
+    "Pbase133 andPphoto133 areexportchainnamesonly! Actualends113and110ns; onlyfirstcamera0gatecomplete",
+    "Instantaneousradianceevolutionfigcreated,notexposures. Shapeusesideal>=1photon/pixel/constant10ns and>=3pixels toexcludeundetectableuniformbackground; notpapergraythreshold",
+    "C211transfertablecorrectlyusesgrossmdotEvap,separatelyexportedfromsavedMPH"
+  ]
+}

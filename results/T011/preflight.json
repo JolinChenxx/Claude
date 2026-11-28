@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-11-16T20:06:14+08:00",
+  "source_commit": "84a7cf94abcd64fd4f21aabdcf298d161d6f7e5b",
+  "task_dependency": "T010 done",
+  "previous_job": "none",
+  "command": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T011.yaml --max-cores 64",
+  "executable": "D:\\sim_tools\\pluto_lip\\build\\mpi\\pluto.exe",
+  "executable_sha256": "71e8512c7849bddd19c1f99c959f2464857a28c00cd10027c154c62fe95bd9bf",
+  "mpiexec": "C:\\Program Files\\Microsoft MPI\\Bin\\mpiexec.exe",
+  "tables": {
+    "eos.bin": {
+      "sha256": "90e73817c0ece2611683a32e94cf468ed4738e9aae674d92efec20b8c71167e0",
+      "bytes": 5263820,
+      "shape": [
+        81,
+        145,
+        14
+      ]
+    },
+    "opt.bin": {
+      "sha256": "2400f5b1fb0aecdc3c360d198429408de9241f8faf24accba2bbebfbb7492391",
+      "bytes": 3948364,
+      "shape": [
+        81,
+        145,
+        14
+      ]
+    },
+    "pop.bin": {
+      "sha256": "02c6fb4691425b9effd5a38b353a9bd096ebb6ecb4b5748206247035dd6fe725",
+      "bytes": 27626572,
+      "shape": [
+        81,
+        145,
+        14
+      ]
+    }
+  },
+  "batch_sha256": "11f5323dd6648d3839b466e5a55484bd3ac17dacb8894c90e22430ec810d632e",
+  "members": [
+    {
+      "id": "high_thin_G0",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G0",
+      "nec": "thin",
+      "tstop_ns": 800,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "high_trap_G0",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G0",
+      "nec": "trap",
+      "tstop_ns": 800,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "low_thin_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "low_trap_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "trap",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "high_thin_G1",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G1",
+      "nec": "thin",
+      "tstop_ns": 800,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    },
+    {
+      "id": "high_trap_G1",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G1",
+      "nec": "trap",
+      "tstop_ns": 800,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    }
+  ],
+  "max_cores": 64,
+  "total_runs": 14,
+  "table_rebuild": false
+}

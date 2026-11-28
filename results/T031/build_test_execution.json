@@ -1,0 +1,62 @@
+{
+  "source_commit": "eaf14e60afb77c1053d8f08bbe7e91e509fe86bc",
+  "commands": [
+    {
+      "name": "build",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "scripts/build_pluto.py",
+        "--problem",
+        "pluto/lip",
+        "--out",
+        "D:\\sim_tools\\pluto_lip\\build_v1s\\mpi",
+        "--platform",
+        "windows",
+        "--mpi",
+        "--eos",
+        "pvte",
+        "--tc",
+        "--extra-obj",
+        "lip_tables.o",
+        "lip_physics.o",
+        "lip_glue.o",
+        "--jobs",
+        "8"
+      ],
+      "started": "2026-11-25T14:32:47.658218+08:00",
+      "returncode": 0,
+      "finished": "2026-11-25T14:32:56.213776+08:00",
+      "seconds": 8.555325200009975,
+      "log": "results/T031/build_driver.log",
+      "log_sha256": "13d8d38520e2f14f4f3098f88a736d30c4c9ec39711f59d8b82be30c69e7f597"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_droplet_v1r.py",
+        "tests/test_breakdown.py",
+        "tests/test_knight_bp.py",
+        "--basetemp",
+        "D:\\sim_tools\\T031_build_tmp\\pytest"
+      ],
+      "started": "2026-11-25T14:32:56.220864+08:00",
+      "returncode": 0,
+      "finished": "2026-11-25T14:33:03.138452+08:00",
+      "seconds": 6.916864700004226,
+      "log": "results/T031/tests.log",
+      "log_sha256": "a5617dc28027b7e6fe43e944d36eb91c8af75a0c900bdde8896e0fb80a4bf0ec"
+    }
+  ],
+  "executable": "D:\\sim_tools\\pluto_lip\\build_v1s\\mpi\\pluto.exe",
+  "executable_sha256": "a64349504f713c1d0373f69bf3f2908e6fdfde406c11f06ab671af4ea2404fe6",
+  "replaced_count": 7,
+  "verified_problem_files": 18,
+  "test_output": "...............                                                          [100%]\n15 passed in 6.14s\n",
+  "compiler_log": "results/T031/build.log",
+  "compiler_warning_count": 1,
+  "environment_policy": "Process-only PATH/PYTHONPATH and single-thread BLAS/OMP. TEMP/TMP and pytest scratch under D:/sim_tools. No execution policy/system settings/physics changes."
+}

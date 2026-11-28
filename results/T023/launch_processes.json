@@ -1,0 +1,16 @@
+﻿[
+    {
+        "ProcessId":  14496,
+        "ParentProcessId":  1568,
+        "Name":  "cmd.exe",
+        "CreationDate":  "\/Date(1795484727684)\/",
+        "CommandLine":  "\"C:\\Windows\\system32\\cmd.exe\" /v:on /c set OMP_NUM_THREADS=1\u0026\u0026 set SIM_OUT_DIR=D:\\sim_runs\\T023\u0026\u0026 cd /d \"D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\" \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T023.yaml --max-cores 48 \u0026 echo !ERRORLEVEL! \u003e \"D:\\sim_runs\\T023\\exitcode.txt\" "
+    },
+    {
+        "ProcessId":  10588,
+        "ParentProcessId":  1568,
+        "Name":  "cmd.exe",
+        "CreationDate":  "\/Date(1795484727808)\/",
+        "CommandLine":  "\"C:\\Windows\\system32\\cmd.exe\" /v:on /c set OMP_NUM_THREADS=1\u0026\u0026 set SIM_OUT_DIR=D:\\sim_runs\\T021_post_low_it0_01\u0026\u0026 cd /d \"D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\" \u0026\u0026 D:\\sim_tools\\envs\\lipsim\\python.exe results/T021/postprocessing/run_low_it0.py \u0026 echo !ERRORLEVEL! \u003e \"D:\\sim_runs\\T021_post_low_it0_01\\exitcode.txt\" "
+    }
+]

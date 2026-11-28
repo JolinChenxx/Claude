@@ -1,0 +1,64 @@
+{
+  "source_commit": "ef0f89996043fb33e99b1e52979d9c5642198fe7",
+  "commands": [
+    {
+      "name": "build",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "scripts/build_pluto.py",
+        "--problem",
+        "pluto/lip",
+        "--out",
+        "D:\\sim_tools\\pluto_lip\\build_v1w\\mpi",
+        "--platform",
+        "windows",
+        "--mpi",
+        "--eos",
+        "pvte",
+        "--tc",
+        "--extra-obj",
+        "lip_tables.o",
+        "lip_physics.o",
+        "lip_glue.o",
+        "--jobs",
+        "8"
+      ],
+      "started": "2026-11-26T02:31:11.043615+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T02:31:17.857975+08:00",
+      "seconds": 6.814870600006543,
+      "log": "results/T039/build_driver.log",
+      "log_sha256": "13d8d38520e2f14f4f3098f88a736d30c4c9ec39711f59d8b82be30c69e7f597"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_overrides.py",
+        "tests/test_target.py",
+        "tests/test_droplet_v1r.py",
+        "tests/test_breakdown.py",
+        "tests/test_knight_bp.py",
+        "--basetemp",
+        "D:\\sim_tools\\T039_build_tmp\\pytest"
+      ],
+      "started": "2026-11-26T02:31:17.865468+08:00",
+      "returncode": 0,
+      "finished": "2026-11-26T02:31:27.649637+08:00",
+      "seconds": 9.784276400023373,
+      "log": "results/T039/tests.log",
+      "log_sha256": "9f08c790698a8ef6a40938e37b61e5f29afe75d4cf8c62a016c08c898e4e8539"
+    }
+  ],
+  "executable": "D:\\sim_tools\\pluto_lip\\build_v1w\\mpi\\pluto.exe",
+  "executable_sha256": "b3b2ecb5830500b39abc7f244cbf2eb09320a0a0bbfc8bab1ece2b246e3be26e",
+  "replaced_count": 7,
+  "verified_problem_files": 18,
+  "test_output": ".....................                                                    [100%]\n21 passed in 9.21s\n",
+  "compiler_log": "results/T039/build.log",
+  "compiler_warning_count": 1,
+  "environment_policy": "Process-only PATH/PYTHONPATH and single-thread BLAS/OMP. TEMP/TMP and pytest scratch under D:/sim_tools. No execution policy/system settings/physics changes."
+}

@@ -1,0 +1,1578 @@
+{
+  "checked": "2026-11-20T09:23:09.830944+08:00",
+  "card": "T016i",
+  "card_complete": true,
+  "scope": "Original 37 sets plus five prescribed T016e catch-up sets; stopped high it3 excluded",
+  "job": {
+    "id": "T016i_catchup_01",
+    "pid": 27348,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T016i\\catchup\\run_native_imaging.py",
+    "threads": 1,
+    "commit": "7ff09dc",
+    "started": "2026-11-20T04:54:22",
+    "dir": "D:\\sim_runs\\T016i_catchup_01"
+  },
+  "execution": {
+    "job_id": "T016i_catchup_01",
+    "started": "2026-11-20T04:54:32.671932+08:00",
+    "runner_sha256": "34aae8c3890104c0e346ffc4c6ddf384d575da477d37e128ecd4dbf6de66909d",
+    "plan_sha256": "e13d2fb51c328567a9eff5ef76b29fec580abc6c7b1f7edeb5cb31b59544ffc8",
+    "capacity": {
+      "checked": "2026-11-20T04:54:32.664327+08:00",
+      "reservations": {
+        "T018c_post_it1_thin_v2_01": 16,
+        "T019_split_01": 32
+      },
+      "wrapper_identities": [
+        {
+          "job": "T018c_post_it1_thin_v2_01",
+          "pid": 51676,
+          "created": 1795115545.0127707,
+          "children": [
+            16008,
+            44872,
+            13004,
+            29332,
+            34960,
+            3868,
+            53784,
+            8864,
+            42840,
+            44216,
+            46152,
+            41624,
+            43932,
+            31420,
+            40196,
+            10152,
+            43852,
+            10860,
+            3524
+          ],
+          "cores": 16
+        },
+        {
+          "job": "T019_split_01",
+          "pid": 53740,
+          "created": 1795116398.0373397,
+          "children": [
+            25920,
+            46136,
+            42352,
+            9044,
+            46996,
+            49420,
+            43672,
+            15596,
+            53768,
+            48528,
+            23900,
+            45248,
+            6552,
+            25344,
+            44004,
+            25512,
+            51216,
+            15660,
+            52964,
+            48680,
+            25168,
+            33184,
+            16756,
+            41052,
+            36788,
+            14356,
+            31552,
+            23272,
+            27404,
+            37848,
+            42796,
+            32992,
+            15632,
+            41808,
+            27736,
+            29104
+          ],
+          "cores": 32
+        }
+      ],
+      "pluto_ranks": 0,
+      "reserved_other_cores": 48,
+      "requested_cores": 16,
+      "including_own_reservation": 64,
+      "free_before": 16,
+      "can_start": true
+    }
+  },
+  "exitcode": 0,
+  "stderr_bytes": 0,
+  "batches": [
+    {
+      "batch": "T016e",
+      "series": "high",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+        "D:/sim_runs/T016e",
+        "--series",
+        "high",
+        "--tables",
+        "D:/sim_runs/tables/v1c",
+        "--workers",
+        "16",
+        "--scenarios",
+        "configs/imaging/v1.yaml",
+        "--outname",
+        "image_v1"
+      ],
+      "started": "2026-11-20T04:54:33.246411+08:00",
+      "finished": "2026-11-20T08:27:27.352932+08:00",
+      "returncode": 0
+    },
+    {
+      "batch": "T016e",
+      "series": "low",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\image_members.py",
+        "D:/sim_runs/T016e",
+        "--series",
+        "low",
+        "--tables",
+        "D:/sim_runs/tables/v1c",
+        "--workers",
+        "16",
+        "--scenarios",
+        "configs/imaging/v1.yaml",
+        "--outname",
+        "image_v1"
+      ],
+      "started": "2026-11-20T08:27:27.947304+08:00",
+      "finished": "2026-11-20T09:13:44.890614+08:00",
+      "returncode": 0
+    }
+  ],
+  "finished": "2026-11-20T09:13:44.890614+08:00",
+  "catchup_wall_seconds": 15552.218682,
+  "original_wall_seconds": 94813.139952,
+  "wrapper_alive": false,
+  "active_native_images": [],
+  "original_completion": {
+    "path": "results/T016i/native_01_completion.json",
+    "sha256": "021513d28cf79991a155e722f4f7f69e0098e8c006c89978965646ff750b4968",
+    "exitcode": 0,
+    "series_commands": 10,
+    "sets": 37
+  },
+  "frozen_files_verified": 71,
+  "snapshot_fingerprints_verified": 2005,
+  "runner_sha256": "34aae8c3890104c0e346ffc4c6ddf384d575da477d37e128ecd4dbf6de66909d",
+  "plan_sha256": "e13d2fb51c328567a9eff5ef76b29fec580abc6c7b1f7edeb5cb31b59544ffc8",
+  "archive_counts": {
+    "T016e": 11,
+    "T015": 14,
+    "T016r2": 2,
+    "T016h": 1,
+    "T014": 14
+  },
+  "total_sets": 42,
+  "total_metrics": 756,
+  "total_local_frame_archives": 252,
+  "results_bytes": {
+    "T016e": 17067452,
+    "T015": 16227179,
+    "T016r2": 9541203,
+    "T016h": 4563778,
+    "T014": 15820920
+  },
+  "all_source_archive_hashes_verified": true,
+  "completed_runs_without_archive": [],
+  "aggregate": {
+    "negative_P1_count": 29,
+    "nonfinite_P1_count": 0,
+    "unavailable_P2_count": 660
+  },
+  "last_set": {
+    "P1_finite": 18,
+    "P1_positive": 18,
+    "P2_unavailable": [
+      "a_thin_baseline",
+      "a_thin_low",
+      "a_thin_high",
+      "a_sa_baseline",
+      "a_sa_low",
+      "a_sa_high"
+    ],
+    "baseline": {
+      "a_thin_baseline": {
+        "gain": 0.039752227165564445,
+        "t_ref_used_ns": 280.0,
+        "P1_tau_ns": 475.0748521264798,
+        "P2_dt10_ns": NaN
+      },
+      "a_sa_baseline": {
+        "gain": 0.14971846140277434,
+        "t_ref_used_ns": 280.0,
+        "P1_tau_ns": 484.0183297168885,
+        "P2_dt10_ns": NaN
+      },
+      "b_thin_baseline": {
+        "gain": 0.01252169673299417,
+        "t_ref_used_ns": 280.0,
+        "P1_tau_ns": 357.8573643883728,
+        "P2_dt10_ns": 885.1846441001976
+      },
+      "b_sa_baseline": {
+        "gain": 0.030607913802291966,
+        "t_ref_used_ns": 280.0,
+        "P1_tau_ns": 244.41431133881085,
+        "P2_dt10_ns": 717.3055555210393
+      },
+      "c_thin_baseline": {
+        "gain": 0.011378029985996478,
+        "t_ref_used_ns": 280.0,
+        "P1_tau_ns": 231.83847650599418,
+        "P2_dt10_ns": 578.3226911306479
+      },
+      "c_sa_baseline": {
+        "gain": 0.015951610121367966,
+        "t_ref_used_ns": 280.0,
+        "P1_tau_ns": 168.88437330530118,
+        "P2_dt10_ns": 378.8253693805483
+      }
+    }
+  },
+  "sets": [
+    {
+      "path": "T016e/high_thin_G0/it0/image_v1",
+      "validation_sha256": "4471e8d2a06ce5b29a875827360e506dbeddcd104c0b7e3a808c930fd79bb31d",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/high_thin_G0/it1/image_v1",
+      "validation_sha256": "9126edf47973718977f47d80ab3279769e215e5348d3317b4fbc4523bd81f037",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/high_thin_G0/it2/image_v1",
+      "validation_sha256": "dd0cd512c1dba6f1d452e175265b06e21d90b8a4f2a4fc1d2381c1e0512e1b07",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -1123.6240981046094,
+        "a_thin_low": -1150.5320175351903,
+        "a_thin_high": -1264.9025619388167
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/high_thin_G1/it0/image_v1",
+      "validation_sha256": "ad072ca4b0f2c31e2b897d98eff074b0628539d985afd786256e29cd70a4beac",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/high_trap_G0/it0/image_v1",
+      "validation_sha256": "a50d7a7f937211fa8e04915940c61881098cc05b3bddc43923399deec7b86e36",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/high_trap_G0/it1/image_v1",
+      "validation_sha256": "63bb1bbd584507ce64f182596b16f62e16b709679699278abc1673b4469b71f0",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/high_trap_G0/it2/image_v1",
+      "validation_sha256": "fb488d82ead5df0bc00f3f459169894377e7758e9d19914d3ac0584269ee5513",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -1268.8418393997904,
+        "a_thin_low": -1171.8046800728005,
+        "a_thin_high": -1416.9762806020804
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T016e/low_thin_G0/it0/image_v1",
+      "validation_sha256": "15767816ccdd30a2b78cb25d32b0cc633e6f6100832667cfec7a97de3b78e12e",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T016e/low_thin_G0/it1/image_v1",
+      "validation_sha256": "2374e4e407e395502f13ba9e7fc4f53a1b324c192bdcce990c1d4a21c88e3b26",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T016e/low_trap_G0/it0/image_v1",
+      "validation_sha256": "e466300c8695f82587e4d8434ced47763bbc2ce5d2f205b8b12c61cb75bcdfc1",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T016e/low_trap_G0/it1/image_v1",
+      "validation_sha256": "ee3fa812bef294ecf76518e9414eb9d207aa3faf15dd8f2aa20f8eaf5f4c9129",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/high_thin_G0/it0/image_v1",
+      "validation_sha256": "f52c2a9c92cf6e77cf320ba3c2ab2d75a7ca853fbb18e32ba673e99e14355624",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/high_thin_G0/it1/image_v1",
+      "validation_sha256": "d6d23b1ac61e0ea1c14e69699361ef192cbe5e76e9d0508bf7fa77c966c730eb",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -2773.6201155747553,
+        "a_thin_high": -1836.688571279451
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/high_thin_G0/it2/image_v1",
+      "validation_sha256": "20691551e9b364c153099b579b1be73cdf0d61391d5e6ca55c24981004fa9aee",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/high_thin_G1/it0/image_v1",
+      "validation_sha256": "ce28f9bf05c992d03b6532e712b8edca4f4bd26f2dd9540b50d56dd3e382f9cc",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/high_trap_G0/it0/image_v1",
+      "validation_sha256": "76a618e474393b251ad9c9824f42668f4a85d6a025047436d3a06693734b92ac",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/high_trap_G0/it1/image_v1",
+      "validation_sha256": "bf7a0bd40cdccb85c0dfc99d6262d53295fc84aedbddb16132cc8fa6e98cac5e",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -3210.2657364447873,
+        "a_thin_high": -2103.8584923735652
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/high_trap_G0/it2/image_v1",
+      "validation_sha256": "feff0a58b24f9df2c230632a42f7f66902ca52973f13a92086d61d5f0c1cd3f7",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T015/low_thin_G0/it0/image_v1",
+      "validation_sha256": "96f7d79b91b74814304c02bba55c1c2df30157cb6227c0780c032362638e443f",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/low_thin_G0/it1/image_v1",
+      "validation_sha256": "3be63d9f0f69d41051b5e93a366900524d0e0bd1d8fdd1720bdeeae8d44570c2",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -56118.858602287495,
+        "a_thin_high": -861581.7952144513
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/low_thin_G0/it2/image_v1",
+      "validation_sha256": "3f215ba83a965f0d4b7e1cf0ef367dca57903e2fd6f0d37e63e020d7aee709c3",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/low_thin_G1/it0/image_v1",
+      "validation_sha256": "355e079eb2c0f7493fb116a290ae5a9cee74cd6377e95d4576cfa55a168bdff2",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/low_trap_G0/it0/image_v1",
+      "validation_sha256": "f724078f0b465653bc199199760b2b0d8da0d00c07efe361e1e0b1cd89eff88b",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -16198.109754019046,
+        "a_thin_high": -6107.629342662557
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/low_trap_G0/it1/image_v1",
+      "validation_sha256": "b2d77aa6c8a61be6ec48e61345c120caf03ca6d66652925a7e6c53c003dc3060",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -5952.882849606243,
+        "a_thin_high": -6798.867557829265
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T015/low_trap_G0/it2/image_v1",
+      "validation_sha256": "097691553ffb75da8546e9c8954ee952e934cdb9a3288724c11ceb6c2b45b658",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T016r2/low_thin_G0/it0/image_v1",
+      "validation_sha256": "94e047923b26513b7aa088071e5f1656a0ec6b804432f0446903be75d95b9531",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T016r2/low_trap_G0/it0/image_v1",
+      "validation_sha256": "1efbe501fee178cc2e9b3d0cc2dea091f249b1109c56da923f08b556de2db8cf",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T016h/high_trap_G0/it0/image_v1",
+      "validation_sha256": "bb7631068a3ebcc894bfbf4773eb32c998c58af536da35a03ef35b768b89e3d7",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_thin_G0/it0/image_v1",
+      "validation_sha256": "5dd9232cc86d2aec2df345095d5cc4795a506c6588891b284cf45f5aa86b7924",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_thin_G0/it1/image_v1",
+      "validation_sha256": "52ff7350a43487681699ee5aa0ce164027141cdec40520682c45029e7c8a5d19",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -3230.247001240517,
+        "a_thin_low": -2677.8905698872604,
+        "a_thin_high": -2649.903497682951
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_thin_G0/it2/image_v1",
+      "validation_sha256": "5d3a2f87e44cce2ca98b5bb9399ae5dda05ffdb25e7f01fe6cb9c7fcafd1c963",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -7738.680694358409,
+        "a_thin_high": -11409.06591885983
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_thin_G1/it0/image_v1",
+      "validation_sha256": "ab12aa19a220dc32e39859a4e8f886bcb1cc30d0f464916f38a1253375970cee",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_trap_G0/it0/image_v1",
+      "validation_sha256": "d0353db44cd915cd8ed54618d490c0be343805f4cb532dbd6eaf97f24f139d80",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_trap_G0/it1/image_v1",
+      "validation_sha256": "0d3b04a0a95d521c63066e254dc33ffbee818980c5bbd37aced4ce96d65c3cab",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -2245.197932240629,
+        "a_thin_low": -2090.8132785891103,
+        "a_thin_high": -2050.175353623291
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/high_trap_G0/it2/image_v1",
+      "validation_sha256": "b47ab35cdc519ec3037cb24429bea37279850b334a9f89cfeecda691c8f7a441",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -5017.460260423446,
+        "a_thin_low": -7030.829397009675,
+        "a_thin_high": -5197.515001153646
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_baseline",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        300.0
+      ]
+    },
+    {
+      "path": "T014/low_thin_G0/it0/image_v1",
+      "validation_sha256": "aecf3cba59047cf3c11e227c62860413de0c0aba0d1131ca92487b7cca2a13cc",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T014/low_thin_G0/it1/image_v1",
+      "validation_sha256": "26df3e8c1c55aa62cad9999f03105be9c60d69eefc94dd63d877472aa4e619f8",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T014/low_thin_G0/it2/image_v1",
+      "validation_sha256": "9c57b030910ddff4a46712f286c2319d9464a3756ad8e2ff96893957d19b5c7e",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T014/low_thin_G1/it0/image_v1",
+      "validation_sha256": "1dab08725b03596770b502816a0bf722c5d4eab4d77e9609970692c29c76de97",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T014/low_trap_G0/it0/image_v1",
+      "validation_sha256": "1db161e3a585557a1f8b8cd6d148e3a3d95087e6c44add2b308efcab874e6f34",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T014/low_trap_G0/it1/image_v1",
+      "validation_sha256": "dab4ba5fc0bb050cfa41b30fc141e586baf8d502d0d6de1f7cdf5faaf8029c5f",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {
+        "a_thin_baseline": -6571.906633449153,
+        "a_thin_high": -8033.983075745017
+      },
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    },
+    {
+      "path": "T014/low_trap_G0/it2/image_v1",
+      "validation_sha256": "b4b83abde49cbe72e18ba3d1bd0eb5d79ebb17ef0e5e53cf1d9ad4691997d432",
+      "metrics": 18,
+      "local_frame_archives": 6,
+      "frame_finiteness": "Existing collection validation verified against unchanged raw archive SHA256",
+      "per_run_rc0_in_final_stdout": true,
+      "negative_P1": {},
+      "nonfinite_P1": [],
+      "P2_unavailable": [
+        "a_thin_baseline",
+        "a_thin_low",
+        "a_thin_high",
+        "a_sa_baseline",
+        "a_sa_low",
+        "a_sa_high",
+        "b_thin_baseline",
+        "b_thin_low",
+        "b_thin_high",
+        "b_sa_baseline",
+        "b_sa_low",
+        "b_sa_high",
+        "c_thin_baseline",
+        "c_thin_low",
+        "c_thin_high",
+        "c_sa_low",
+        "c_sa_high"
+      ],
+      "t_ref_used_ns": [
+        280.0
+      ]
+    }
+  ]
+}

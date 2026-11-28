@@ -1,0 +1,27 @@
+{
+  "prepared": "2026-11-19T22:10:39.752750+08:00",
+  "authorization": "handoff/to_codex/T018c-use-free-cores.md at 2473d51",
+  "delegations": [
+    {
+      "name": "high_trap_G0_image_v2",
+      "output": "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+      "argv": [
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\image_v2",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v2.yaml"
+      ],
+      "owner_job_dir": "D:/sim_runs/T018c_post_it0_trap_v2_01",
+      "original_job_dir": "D:/sim_runs/T018c_post_it0_01",
+      "owner_runner": "results/T018c/postprocessing/run_it0_trap_v2.py"
+    }
+  ],
+  "policy": "Whenever 16 physical cores are free, dispatch the next queued T018c item in parallel before T016i; delegate ownership first. Pending owner returns75 without duplicate computation; collect only actual owner evidence."
+}

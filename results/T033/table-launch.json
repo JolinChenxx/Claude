@@ -1,0 +1,58 @@
+{
+    "baseline_eos_sha256":  "8b700ab167f533387a1242a98f35463ab7701cb1474854885bc4a2ae7dd3073b",
+    "executable_sha256":  "a64349504f713c1d0373f69bf3f2908e6fdfde406c11f06ab671af4ea2404fe6",
+    "ambient_override_after":  false,
+    "jobs":  [
+                 {
+                     "table":  "v1c_sigen_lo",
+                     "override":  {
+                                      "sigma_en_Cu":  3E-20
+                                  },
+                     "registry_sha256":  "0b7c547c0297f453a5a08b70cdd76d00b51850eafa1e003475ad98a0eff6025d",
+                     "job":  {
+                                 "id":  "T033_v1c_sigen_lo",
+                                 "pid":  49144,
+                                 "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe -B -m lipsim.tables.build --config configs/tables/v0.yaml --out D:\\sim_runs\\tables\\v1c_sigen_lo --workers 32",
+                                 "threads":  1,
+                                 "commit":  "311c388",
+                                 "started":  "2026-11-25T18:45:36",
+                                 "dir":  "D:\\sim_runs\\T033_v1c_sigen_lo"
+                             },
+                     "initial_status":  "STATE=running  elapsed=0.00:00:01  pid=49144  commit=311c388"
+                 },
+                 {
+                     "table":  "v1c_sigen_hi",
+                     "override":  {
+                                      "sigma_en_Cu":  3E-19
+                                  },
+                     "registry_sha256":  "d5e82c719ac164e23318d57c52c0111b19033c192e26a4488faff829c9ab4cab",
+                     "job":  {
+                                 "id":  "T033_v1c_sigen_hi",
+                                 "pid":  48468,
+                                 "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe -B -m lipsim.tables.build --config configs/tables/v0.yaml --out D:\\sim_runs\\tables\\v1c_sigen_hi --workers 32",
+                                 "threads":  1,
+                                 "commit":  "311c388",
+                                 "started":  "2026-11-25T18:45:37",
+                                 "dir":  "D:\\sim_runs\\T033_v1c_sigen_hi"
+                             },
+                     "initial_status":  "STATE=running  elapsed=0.00:00:00  pid=48468  commit=311c388"
+                 },
+                 {
+                     "table":  "v1c_gaunt15",
+                     "override":  {
+                                      "gaunt_ff":  1.5
+                                  },
+                     "registry_sha256":  "f594e789505e56a8740fc9a6cec7d3be05446057472bb048508e7d907c6710ae",
+                     "job":  {
+                                 "id":  "T033_v1c_gaunt15",
+                                 "pid":  26896,
+                                 "cmd":  "D:\\sim_tools\\envs\\lipsim\\python.exe -B -m lipsim.tables.build --config configs/tables/v0.yaml --out D:\\sim_runs\\tables\\v1c_gaunt15 --workers 32",
+                                 "threads":  1,
+                                 "commit":  "311c388",
+                                 "started":  "2026-11-25T18:45:37",
+                                 "dir":  "D:\\sim_runs\\T033_v1c_gaunt15"
+                             },
+                     "initial_status":  "STATE=running  elapsed=0.00:00:00  pid=26896  commit=311c388"
+                 }
+             ]
+}

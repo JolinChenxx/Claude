@@ -1,0 +1,107 @@
+{
+  "collected": "2026-11-19T12:05:05.316772+08:00",
+  "run": "D:\\sim_runs\\T016e\\low_trap_G0\\it1",
+  "registry_record": {
+    "time": "2026-11-19T01:48:56",
+    "batch": "T016e",
+    "run": "low_trap_G0",
+    "picard_it": "1",
+    "grid": "G0",
+    "nec": "trap",
+    "case": "configs/cases/v0_low.yaml",
+    "procs": "8",
+    "returncode": "0",
+    "seconds": "36302.5",
+    "commit": "f05c9ff",
+    "registry_sha256": "34e7b0d3c4ca3e43",
+    "ini_sha256": "8d7ccfa5b78e07c7",
+    "dir": "D:\\sim_runs\\T016e\\low_trap_G0\\it1"
+  },
+  "final_budget": {
+    "t_ns": 1300.0,
+    "E_internal": 0.0017311106675,
+    "E_kinetic": 1.4700320392e-06,
+    "M_Cu": 5.2022995457e-13,
+    "M_total": 8.1700884168e-09,
+    "E_inc": 0.00031566306933,
+    "E_gas_abs": 4.3883576804e-05,
+    "E_targ_abs": 2.1600448307e-05,
+    "E_esc": 0.00025017904422,
+    "E_rad": 7.7498402422e-06,
+    "E_rad_limited": 1.6906587947e-73,
+    "M_src": 5.2022995457e-13,
+    "E_src": 1.0729725644e-06,
+    "E_wall": 1.7543736701e-05
+  },
+  "target_model_abs_J": 2.09694606306014e-05,
+  "PLUTO_E_targ_abs_J": 2.1600448307e-05,
+  "absorption_relative_difference": -0.02921178613659222,
+  "M_Cu_relative_to_M_src": 0.0,
+  "total_ConsToPrim_lines": 1115969,
+  "all_rank_logs": [
+    {
+      "rank": 0,
+      "bytes": 118552205,
+      "sha256": "246fe74ee6e198875a07d035c7d178863ad506b4c88be3cb47b48150000c68ab",
+      "ConsToPrim_lines": 1000455,
+      "first_samples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 742 (stage = 1); [i,j = 7, 4], [x1,x2 =  11.250000, 1.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 742 (stage = 2); [i,j = 7, 4], [x1,x2 =  11.250000, 1.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 743 (stage = 1); [i,j = 7, 4], [x1,x2 =  11.250000, 1.500000]\r"
+      ]
+    },
+    {
+      "rank": 1,
+      "bytes": 13551489,
+      "sha256": "3becaa15b0994cf59601fc47541a391a6d18fbf4157169bd3201823b50bc3348",
+      "ConsToPrim_lines": 115514,
+      "first_samples": [
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 13827 (stage = 1); [i,j = 3, 5], [x1,x2 =  46.250000, 2.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 13827 (stage = 2); [i,j = 3, 5], [x1,x2 =  46.250000, 2.500000]\r",
+        "! ConsToPrim: rhoe < 0 or T < T_CUT_RHOE;   @step = 13828 (stage = 1); [i,j = 3, 5], [x1,x2 =  46.250000, 2.500000]\r"
+      ]
+    },
+    {
+      "rank": 2,
+      "bytes": 30395,
+      "sha256": "5d79c1433ec133a92dcac5bc733f1dfc9d91ee090f02416f1048115f0f2ab0f5",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 3,
+      "bytes": 30395,
+      "sha256": "5b10ddccb9c1e229a1bc513236de3346f479d040ed00ab3e3fea8954587c14c1",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 4,
+      "bytes": 30395,
+      "sha256": "878f427ce5d8d60a2cb40369a2107de13980eca785cbba8e2d049d535fa18d9f",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 5,
+      "bytes": 30395,
+      "sha256": "f6ed53af0812e2801bd55d55ede04b180f1fb030c4a99ef17a4cc8356a437dee",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 6,
+      "bytes": 30395,
+      "sha256": "0c68f09bb96802412d8721b13cc7c59accab7d4c05cf7e6e6327b88addcba630",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    },
+    {
+      "rank": 7,
+      "bytes": 30396,
+      "sha256": "843f7e89418033783d07624bbe57f8e4a0a6ae2598b3e8cea6e10b18114f25ae",
+      "ConsToPrim_lines": 0,
+      "first_samples": []
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+
+   ___  __   __  ____________   
+  / _ \/ /  / / / /_  __/ __ \ 
+ / ___/ /__/ /_/ / / / / /_/ /  
+/_/  /____/\____/ /_/  \____/   
+=============================    v. 4.4-patch4 (Jun 2026)  
+
+> System:
+
+  sysconf.out file not found... 
+
+  - Basic data type size (Bytes):
+    o sizeof (char)     = 1
+    o sizeof (uchar)    = 1
+    o sizeof (uint16_t) = 2
+    o sizeof (short)    = 2
+    o sizeof (ushort)   = 2
+    o sizeof (int)      = 4
+    o sizeof (long)     = 4
+    o sizeof (*int)     = 8
+    o sizeof (float)    = 4
+    o sizeof (double)   = 8
+    o sizeof (*double)  = 8
+
+  - Structure data type (Bytes):
+    o sizeof (cmdLine)    = 64
+    o sizeof (Data)       = 272
+    o sizeof (Grid)       = 1024
+    o sizeof (Float_Vect) = 12
+    o sizeof (Image)      = 856
+    o sizeof (Output)     = 1768
+    o sizeof (RGB)        = 3
+    o sizeof (Runtime)    = 47008
+    o sizeof (Restart)    = 128
+    o sizeof (timeStep)   = 144
+    o sizeof (RBox)       = 112
+    o sizeof (State)      = 128
+    o sizeof (Sweep)      = 568
+
+> Local time:       Mon Nov 16 10:25:20 2026
+
+> Cmd line args:    
+
+> Header configuration:
+
+  PHYSICS:          HD
+  DIMENSIONS:       2
+  GEOMETRY:         Cylindrical
+  BODY_FORCE:       NO
+  RECONSTRUCTION:   Linear  (Primitive lim)
+  TIME STEPPING:    Runge-Kutta II
+  TRACERS:          1
+  VARIABLES:        6
+  ENTROPY_SWITCH:   NO
+  LOADED MODULES:
+
+  ROTATION:         NO
+  EOS:              PVTE_LAW
+
+> Runtime configuration (pluto.ini):
+
+  +----------------------------------------------------------
+  | [Grid]
+  | 
+  | X1-grid    1  0.0  60  u  300.0
+  | X2-grid    1  0.0  80  u  400.0
+  | X3-grid    1  0.0  1  u  1.0
+  | 
+  | [Chombo Refinement]
+  | 
+  | Levels 4
+  | Ref_ratio 2 2 2 2 2
+  | Regrid_interval 2 2 2 2
+  | Refine_thresh 0.3
+  | Tag_buffer_size 3
+  | Block_factor 8
+  | Max_grid_size 64
+  | Fill_ratio 0.75
+  | 
+  | [Time]
+  | 
+  | CFL 0.3
+  | CFL_max_var 1.1
+  | tstop 50
+  | first_dt 1.e-5
+  | 
+  | [Solver]
+  | 
+  | Solver hllc
+  | 
+  | [Boundary]
+  | 
+  | X1-beg axisymmetric
+  | X1-end outflow
+  | X2-beg reflective
+  | X2-end outflow
+  | X3-beg outflow
+  | X3-end outflow
+  | 
+  | [Static Grid Output]
+  | 
+  | uservar 3 T qlas qrad
+  | dbl 2.5 -1 single_file
+  | flt -1.0 -1 single_file
+  | vtk -1.0 -1 single_file
+  | tab -1.0 -1
+  | ppm -1.0 -1
+  | png -1.0 -1
+  | log 1000
+  | analysis 0.5 -1
+  | 
+  | [Particles]
+  | 
+  | Nparticles 0 -1
+  | particles_dbl 1.0 -1
+  | particles_flt -1.0 -1
+  | particles_vtk -1.0 -1
+  | particles_tab -1.0 -1
+  | 
+  | [Parameters]
+  | 
+  | E_PULSE      0.0004
+  | D_BEAM       2.2e-05
+  | FWHM         6e-08
+  | T_PEAK       5.467847186e-08
+  | NEC_LIMIT    0
+  | P_AMB        101325
+  | T_AMB        293.15
+  | SRC_ON       1
+  | T_FLOOR      293.15
+  +---------------------------------------------------------
+
+> Generating grid...
+
+  Global grid:
+  X1: [   0.0000, 300.0000],     60 point(s), 3 ghosts
+  X2: [   0.0000, 400.0000],     80 point(s), 3 ghosts
+
+  Local grid:
+  X1: [   0.0000, 300.0000],     60 point(s); 3 ghosts; Active zones = [3, 62]
+  X2: [   0.0000, 400.0000],     80 point(s); 3 ghosts; Active zones = [3, 82]
+
+> Memory allocation
+> Assigning initial conditions (Startup) ...
+> Normalization Units:
+
+  [Density]:      1.000e-003 (gr/cm^3), 5.979e+020 (1/cm^3)
+  [Pressure]:     1.000e+007 (dyne/cm^2)
+  [Velocity]:     1.000e+005 (cm/s)
+  [Length]:       1.000e-004 (cm)
+  [Temperature]:  1.203e+002 X (p/rho*mu) (K)
+  [Time]:         1.000e-009 (sec), 3.171e-017 (yrs) 
+ 
+> Number of processors: 1
+> Proc size:            60 X 80
+> Writing file #0 (dbl) to disk...
+> Starting computation... 
+
+step:0; t = 0.0000e+000; dt = 1.0000e-005; 0.0 %
+        [Mach = 0.000000]
+> Writing file #1 (dbl) to disk...
+> Writing file #2 (dbl) to disk...
+> Writing file #3 (dbl) to disk...
+> Writing file #4 (dbl) to disk...
+> Writing file #5 (dbl) to disk...
+> Writing file #6 (dbl) to disk...
+> Writing file #7 (dbl) to disk...
+> Writing file #8 (dbl) to disk...
+> Writing file #9 (dbl) to disk...
+> Writing file #10 (dbl) to disk...
+> Writing file #11 (dbl) to disk...
+> Writing file #12 (dbl) to disk...
+> Writing file #13 (dbl) to disk...
+> Writing file #14 (dbl) to disk...
+> Writing file #15 (dbl) to disk...
+step:1000; t = 3.9713e+001; dt = 8.5204e-003; 79.4 %
+           [Mach = 2.321710]
+> Writing file #16 (dbl) to disk...
+> Writing file #17 (dbl) to disk...
+> Writing file #18 (dbl) to disk...
+> Writing file #19 (dbl) to disk...
+step:2000; t = 4.7850e+001; dt = 8.8317e-003; 95.7 %
+           [Mach = 3.968550]
+> Writing file #20 (dbl) to disk...
+
+> Total allocated memory    5.90 Mb
+> Elapsed time              0d:0h:2m:27s
+> Average time/step        6.53e-002  (sec)  
+> Local time                Mon Nov 16 10:27:47 2026
+> Done

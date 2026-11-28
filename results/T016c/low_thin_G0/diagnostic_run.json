@@ -1,0 +1,26 @@
+{
+  "member": "low_thin_G0",
+  "restart": 141,
+  "command": [
+    "C:/Program Files/Microsoft MPI/Bin/mpiexec.exe",
+    "-n",
+    "8",
+    "D:/sim_tools/pluto_lip/build_v1d/mpi/pluto.exe",
+    "-restart",
+    "141",
+    "-dec",
+    "8",
+    "1"
+  ],
+  "started": "2026-11-18T03:05:21.874362+08:00",
+  "limit_seconds": 2400,
+  "state": "time_limit",
+  "pid": 11132,
+  "timed_out": true,
+  "taskkill_returncode": 0,
+  "taskkill_stdout": null,
+  "taskkill_stderr": "",
+  "returncode": 1,
+  "seconds": 2400.594,
+  "ended": "2026-11-18T03:45:22.457699+08:00"
+}

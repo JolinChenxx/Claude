@@ -1,0 +1,465 @@
+{
+  "checked": "2026-11-19T20:59:56.522811+08:00",
+  "job": {
+    "id": "T018c_post_it0_01",
+    "pid": 41356,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it0.py",
+    "threads": 1,
+    "commit": "6fb0c2b",
+    "started": "2026-11-19T20:59:03",
+    "dir": "D:\\sim_runs\\T018c_post_it0_01"
+  },
+  "state": "running",
+  "stderr_bytes": 0,
+  "runner_sha256": "da137b15ef4f4234fbed176a9e68ec7d85c95119ff110e2bc45d55bfc4848d00",
+  "children": [
+    {
+      "pid": 44576,
+      "name": "conhost.exe",
+      "priority": "64",
+      "command": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 47844,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\results\\T018c\\postprocessing\\run_it0.py"
+      ]
+    },
+    {
+      "pid": 8460,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "lipsim.image",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--series",
+        "high",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\image_v1",
+        "--workers",
+        "16",
+        "--scenarios",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+      ]
+    },
+    {
+      "pid": 32108,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=400)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 31892,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1176)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 51964,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1272)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 50700,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1292)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 28572,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=668)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 42788,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1336)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 53188,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1340)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 15792,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1400)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 27416,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1412)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 44152,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1416)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 28856,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1248)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 39128,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=732)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 17124,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1244)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 13672,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1120)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 40372,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1204)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 26772,
+      "name": "python.exe",
+      "priority": "16384",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=8460, pipe_handle=1432)",
+        "--multiprocessing-fork"
+      ]
+    }
+  ],
+  "postprocess_summary": {
+    "commands": [
+      {
+        "name": "high_thin_G0_emission",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--times",
+          "300",
+          "500",
+          "700",
+          "1000",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\diag_emission.csv"
+        ],
+        "started": "2026-11-19T20:59:11.279438+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_emission.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T20:59:14.260330+08:00"
+      },
+      {
+        "name": "high_thin_G0_core_energy",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--nec",
+          "thin",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\core_energy.csv"
+        ],
+        "started": "2026-11-19T20:59:14.415653+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_core_energy.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T20:59:23.208651+08:00"
+      },
+      {
+        "name": "high_thin_G0_shock_track",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\shock_track.csv"
+        ],
+        "started": "2026-11-19T20:59:23.359162+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_shock_track.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T20:59:25.873724+08:00"
+      },
+      {
+        "name": "high_trap_G0_emission",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--times",
+          "300",
+          "500",
+          "700",
+          "1000",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\diag_emission.csv"
+        ],
+        "started": "2026-11-19T20:59:26.020485+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_emission.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T20:59:32.570244+08:00"
+      },
+      {
+        "name": "high_trap_G0_core_energy",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--nec",
+          "trap",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\core_energy.csv"
+        ],
+        "started": "2026-11-19T20:59:32.722268+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_core_energy.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T20:59:36.053720+08:00"
+      },
+      {
+        "name": "high_trap_G0_shock_track",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\shock_track.csv"
+        ],
+        "started": "2026-11-19T20:59:36.284452+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_shock_track.attempt1.log",
+        "returncode": 0,
+        "ended": "2026-11-19T20:59:41.352706+08:00"
+      },
+      {
+        "name": "high_thin_G0_image_v1",
+        "command": [
+          "D:\\sim_tools\\envs\\lipsim\\python.exe",
+          "-m",
+          "lipsim.image",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+          "--series",
+          "high",
+          "--tables",
+          "D:\\sim_runs\\tables\\v1c",
+          "--out",
+          "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\image_v1",
+          "--workers",
+          "16",
+          "--scenarios",
+          "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\configs\\imaging\\v1.yaml"
+        ],
+        "started": "2026-11-19T20:59:41.514049+08:00",
+        "attempt": 1,
+        "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_image_v1.attempt1.log"
+      }
+    ],
+    "state": "running",
+    "job_id": "T018c_post_it0_01",
+    "runner_sha256": "da137b15ef4f4234fbed176a9e68ec7d85c95119ff110e2bc45d55bfc4848d00",
+    "initial_capacity": {
+      "checked": "2026-11-19T20:59:10.989908+08:00",
+      "reservations": {
+        "T016i_native_01": 16,
+        "T018c": 16
+      },
+      "wrapper_identities": [
+        {
+          "job": "T016i_native_01",
+          "pid": 38032,
+          "created": 1795026177.8378432,
+          "children": [
+            46020,
+            10720,
+            39740,
+            20320,
+            38052,
+            6104,
+            53684,
+            52788,
+            54020,
+            19360,
+            22608,
+            19268,
+            13060,
+            4928,
+            17716,
+            40420,
+            11064,
+            50500,
+            4372,
+            32500
+          ],
+          "cores": 16
+        },
+        {
+          "job": "T018c",
+          "pid": 19644,
+          "created": 1795078391.7728488,
+          "children": [
+            40572,
+            40888,
+            46148,
+            26104,
+            31828,
+            21828,
+            44700,
+            44808,
+            23696,
+            39048,
+            49328,
+            52264,
+            53056,
+            25896,
+            5376,
+            32436,
+            51752,
+            45440,
+            35116,
+            43240,
+            45908,
+            49344,
+            52540,
+            41764,
+            17396,
+            18368,
+            23168,
+            42060,
+            9376,
+            24944,
+            28304,
+            42256,
+            4900,
+            52988,
+            49008,
+            15400,
+            28560,
+            53788
+          ],
+          "cores": 16
+        }
+      ],
+      "pluto_ranks": 16,
+      "reserved_physical_cores": 32,
+      "free_physical_cores": 32,
+      "requested_cores": 16,
+      "can_start": true,
+      "note": "Excludes this runner; whole other queues retain their reservation during serial diagnostics."
+    },
+    "started": "2026-11-19T20:59:10.994916+08:00"
+  },
+  "reserved_physical_cores_after_launch": 48,
+  "note": "Startup evidence only; no foreground computation wait or output collection."
+}

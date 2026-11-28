@@ -1,0 +1,11 @@
+# T016e high-fluence Picard continuation it3-it4 with build v1h (Gamma1 bound in the table sound speed, T016d),
+# from the finished T016e it2 runs (batch start_it/prev_run). rmax_par 1000, tables v1c, as T016e.
+name: T016e_hc
+pluto_exe: D:/sim_tools/pluto_lip/build_v1h/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T016e_hc
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: thin, tstop_ns: 800, procs: 8, picard: 4, start_it: 3, prev_run: "D:/sim_runs/T016e/high_thin_G0/it2", src_on: 1, rmax_par: 1000}
+    - {id: high_trap_G0, case: configs/cases/v0_high.yaml, grid: G0, nec: trap, tstop_ns: 800, procs: 8, picard: 4, start_it: 3, prev_run: "D:/sim_runs/T016e/high_trap_G0/it2", src_on: 1, rmax_par: 1000}

@@ -1,0 +1,11 @@
+# T013a: G2 grid-convergence members for high fluence (PLAN v3 §6/§7: G0/G1/G2 convergence; numerical, grade N).
+# Uses the it0 (unshielded) target source like the G1 members of T011, so G0/G1/G2 it0 are directly comparable.
+name: T013a
+pluto_exe: D:/sim_tools/pluto_lip/build/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v0
+root: D:/sim_runs/T013a
+numerics:
+  runs:
+    - {id: high_thin_G2, case: configs/cases/v0_high.yaml, grid: G2, nec: thin, tstop_ns: 800, procs: 16, picard: 0, src_on: 1}
+    - {id: high_trap_G2, case: configs/cases/v0_high.yaml, grid: G2, nec: trap, tstop_ns: 800, procs: 16, picard: 0, src_on: 1}

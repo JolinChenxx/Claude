@@ -1,0 +1,16 @@
+# Imaging scenarios v2r: v2 + crater/melt-crown line-of-sight shield (PREREG 2026-11-28 'rim occlusion'). Bracket member:
+# shield height = model melt depth (crater-depth upper bound) + measured spatter-top height; half-width = model melt radius.
+filters: '@filter_scenarios_nm'
+defocus_um: '@defocus_um_scenarios'
+t_ref: '@t_ref_norm'
+series:
+  high: {um_per_px: '@um_per_px_S4', frames: data/exp/meta.yaml}
+  low:  {um_per_px: '@um_per_px_S3', frames: data/exp/meta.yaml}
+numerics:
+  r_bin_um: 5.0
+  r_max_um: 700.0
+  workers: 1
+  self_absorption: [false, true]
+  transfer_grid: native
+  stark: true
+  rim_occlusion: {spatter_csv: data/exp/paper/spatter_top_fig4e1.csv, crater_depth_key: melt_depth_mean_m}

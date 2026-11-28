@@ -1,0 +1,62 @@
+{
+  "registry_row": {
+    "time": "2026-11-26T02:33:56",
+    "batch": "T039",
+    "run": "low_wf",
+    "picard_it": "1",
+    "grid": "G0",
+    "nec": "thin",
+    "case": "configs/cases/v1rswf_low.yaml",
+    "procs": "8",
+    "returncode": "0",
+    "seconds": "3060.4",
+    "commit": "19f3cfb9",
+    "registry_sha256": "0150f85b8cbeac2f",
+    "ini_sha256": "618a97fe4ec08c8c",
+    "dir": "D:\\sim_runs\\T039\\low_wf\\it1"
+  },
+  "final_budget": {
+    "t_ns": 1300.0,
+    "E_internal": 0.0017319925883,
+    "E_kinetic": 1.4931956384e-06,
+    "M_Cu": 2.3093859186e-13,
+    "M_total": 8.1697991255e-09,
+    "E_inc": 0.00031935014757,
+    "E_gas_abs": 4.8429676202e-05,
+    "E_targ_abs": 2.3847315751e-05,
+    "E_esc": 0.00024707315562,
+    "E_rad": 8.8647344722e-06,
+    "E_rad_limited": 4.9935177862e-73,
+    "M_src": 2.3093859186e-13,
+    "E_src": -1.1758792675e-06,
+    "E_wall": 1.7962748594e-05,
+    "M_bp_suppressed": 4.2829134773e-13,
+    "E_bd_transfer": 0.0,
+    "E_bd_store": 0.0,
+    "M_drop_condensed": 0.0,
+    "P_vap_mom": 0.0,
+    "M_drop_airborne": 5.0667293192e-12,
+    "M_recondensed": 5.1934526889e-13
+  },
+  "rows": 2591,
+  "sha256": {
+    "budget.csv": "a868913badd500130c2d0a07d1f71e59800467a7194881e599543d42f0dc85be",
+    "droplets.csv": "7382c6b5452a8129e3c3ecba719117852c5a1a5f37829c1687c67e0c619433dc",
+    "source/source_meta.json": "bed5a8d236cd344225e666f4fb54d00487253ce16464963fbe4ec3cf1e472754",
+    "pluto.ini": "618a97fe4ec08c8c3822851ffc8f095b33ba7795db195baaeab94756f5b30d62"
+  },
+  "all_finite": true,
+  "max_droplet_residual_kg": 9.670016010557655e-23,
+  "airborne_matches_every_row": true,
+  "energy_closure_residual_J": 2.731070099986564e-09,
+  "ConsToPrim_occurrences_by_rank": [
+    843185,
+    147402,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}

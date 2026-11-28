@@ -1,0 +1,61 @@
+{
+  "source_commit": "501c47beacfea25cabe6ee2645dc9965fc9d1c09",
+  "commands": [
+    {
+      "name": "build",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "scripts/build_pluto.py",
+        "--problem",
+        "pluto/lip",
+        "--out",
+        "D:\\sim_tools\\pluto_lip\\build_v1p\\mpi",
+        "--platform",
+        "windows",
+        "--mpi",
+        "--eos",
+        "pvte",
+        "--tc",
+        "--extra-obj",
+        "lip_tables.o",
+        "lip_physics.o",
+        "lip_glue.o",
+        "--jobs",
+        "8"
+      ],
+      "started": "2026-11-24T21:02:57.484072+08:00",
+      "returncode": 0,
+      "finished": "2026-11-24T21:03:05.688238+08:00",
+      "seconds": 8.204227599999285,
+      "log": "results/T027/build_driver.log",
+      "log_sha256": "13d8d38520e2f14f4f3098f88a736d30c4c9ec39711f59d8b82be30c69e7f597"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_breakdown.py",
+        "tests/test_knight_bp.py",
+        "--basetemp",
+        "D:\\sim_tools\\T027_build_tmp\\pytest"
+      ],
+      "started": "2026-11-24T21:03:05.693731+08:00",
+      "returncode": 0,
+      "finished": "2026-11-24T21:03:13.713196+08:00",
+      "seconds": 8.019175900000846,
+      "log": "results/T027/tests.log",
+      "log_sha256": "072039cf18b966f7fcaab7fbcae03a6ace91cb372d7c3ecbc4278e720ba2077f"
+    }
+  ],
+  "executable": "D:\\sim_tools\\pluto_lip\\build_v1p\\mpi\\pluto.exe",
+  "executable_sha256": "fa3e5f7486c864501f1e16acbe6f5953dbe75c1f5aa2315cc40293dbb924e49d",
+  "replaced_count": 7,
+  "verified_problem_files": 18,
+  "test_output": ".........                                                                [100%]\n9 passed in 7.58s\n",
+  "compiler_log": "results/T027/build.log",
+  "compiler_warning_count": 1,
+  "environment_policy": "Process-only PATH/PYTHONPATH and single-thread BLAS/OMP. TEMP/TMP and pytest scratch under D:/sim_tools. No execution policy/system settings/physics changes."
+}

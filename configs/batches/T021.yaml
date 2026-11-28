@@ -1,0 +1,10 @@
+# T021: v1j droplet upper bound (PREREG 2026-11-24): cases v1dr_*, build v1j, tables v1c, rmax_par 1000.
+name: T021
+pluto_exe: D:/sim_tools/pluto_lip/build_v1j/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T021
+numerics:
+  runs:
+    - {id: high_thin_G0, case: configs/cases/v1dr_high.yaml, grid: G0, nec: thin, tstop_ns: 800,  procs: 8, picard: 2, src_on: 1, rmax_par: 1000}
+    - {id: low_thin_G0,  case: configs/cases/v1dr_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, src_on: 1, rmax_par: 1000}

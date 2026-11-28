@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\Codex\2026-11-11\wo\outputs\Claude\results\T021\postprocessing\launch_deadline_04.py", line 52, in <module>
+    runpy.run_path(str(HERE / 'run_deadline_04.py'), run_name='__main__')
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Codex\2026-11-11\wo\outputs\Claude\results\T021\postprocessing\run_deadline_04.py", line 149, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\2026-11-11\wo\outputs\Claude\results\T021\postprocessing\run_deadline_04.py", line 142, in main
+    verify(f,run);summary['commands'].append(execute(p,env));save(path,summary);assert summary['commands'][-1]['returncode']==0,'Postprocessing failed'
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Postprocessing failed

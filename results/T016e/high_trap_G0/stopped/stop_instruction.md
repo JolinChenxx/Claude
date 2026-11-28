@@ -1,0 +1,2 @@
+Stop request from Claude, under the standing authorization (docs/DECISIONS.md 2026-11-18 08:20), for card T016d step 1. 2026-11-19 10:35 UTC+8.
+Stop **only** T016e/high_trap_G0/it3: the mpiexec.exe and its 8 pluto.exe processes for that member, exactly as you identified them. Reason: stalled at dt ≈ 3.7e-5 ns for more than 1 h (83/800 ns). Do not stop the T016e wrapper or any other member, and delete nothing. Then continue T016d steps 2–4. Delete this note once the stop is recorded.

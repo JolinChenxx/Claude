@@ -1,0 +1,131 @@
+{
+  "recorded": "2026-11-24T16:00:11.723401+08:00",
+  "authority": "tasks/T024-breakdown-2t.md step 3",
+  "member": "high_thin_G0",
+  "iteration": 0,
+  "reference_script": "results/T018c/extract_it2_fields.py",
+  "field_order": "[j,i]",
+  "fields": [
+    "rho",
+    "T",
+    "prs",
+    "tr1",
+    "tr2",
+    "vx1",
+    "vx2",
+    "qlas",
+    "qrad"
+  ],
+  "index_convention": "Zero-based physical cells, inclusive i=0..30,j=0..40; no ghost cells",
+  "units": "Original PLUTO output/code values unchanged; x1/x2 in um, time in ns",
+  "reader_sha256": "63e3a735d1acbc3b7f5811637c28873b338294aa898b01c0c02ae7ff1b3b737f",
+  "snapshots": [
+    {
+      "requested_t_ns": 30,
+      "actual_t_ns": 29.99792,
+      "snapshot_number": 12,
+      "index_line": "12 2.999792e+001 3.207897e-003 2428 single_file little rho vx1 vx2 vx3 prs tr1 tr2 T qlas qrad ",
+      "source_path": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\data.0012.dbl",
+      "source_bytes": 2352000,
+      "source_sha256": "907e8163587e08bdfdc3282a1a637cb9f04d571e2ce489fdc5cfb59c4c47840a",
+      "grid_sha256": "9f944dd76ce01d0b6ebcbb98e234fbd11c311c06ac8716f43eb3aa919021be96",
+      "archive": "it0_high_thin_G0_29.997920ns.npz",
+      "archive_sha256": "a1c3b212fadd70740d06c04d9ce7f94508b1460fec5d3f75c4c459d43e4fe3ce",
+      "shape": [
+        41,
+        31
+      ],
+      "all_finite": true,
+      "tr2_min": -3.709181090280844e-17,
+      "tr2_max": 0.1860434831199266
+    },
+    {
+      "requested_t_ns": 40,
+      "actual_t_ns": 39.9991,
+      "snapshot_number": 16,
+      "index_line": "16 3.999910e+001 3.520988e-003 5411 single_file little rho vx1 vx2 vx3 prs tr1 tr2 T qlas qrad ",
+      "source_path": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\data.0016.dbl",
+      "source_bytes": 2352000,
+      "source_sha256": "55ecb798f2c86563941c8a3c93b3c56c152607182eaf1d6d746bfee5da7f6f06",
+      "grid_sha256": "9f944dd76ce01d0b6ebcbb98e234fbd11c311c06ac8716f43eb3aa919021be96",
+      "archive": "it0_high_thin_G0_39.999100ns.npz",
+      "archive_sha256": "1e1ff3a48a040880fef6e8cb9c2dae3c1d22a048ad01290524861555a680530e",
+      "shape": [
+        41,
+        31
+      ],
+      "all_finite": true,
+      "tr2_min": -3.709181090280844e-17,
+      "tr2_max": 0.2807196283078122
+    },
+    {
+      "requested_t_ns": 60,
+      "actual_t_ns": 59.99947,
+      "snapshot_number": 24,
+      "index_line": "24 5.999947e+001 4.083720e-003 10756 single_file little rho vx1 vx2 vx3 prs tr1 tr2 T qlas qrad ",
+      "source_path": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\data.0024.dbl",
+      "source_bytes": 2352000,
+      "source_sha256": "a04524845cf57f97d8ef0d8c3fc64b3408ac59469603d694c9c49fd96a38e238",
+      "grid_sha256": "9f944dd76ce01d0b6ebcbb98e234fbd11c311c06ac8716f43eb3aa919021be96",
+      "archive": "it0_high_thin_G0_59.999470ns.npz",
+      "archive_sha256": "f931f7aba92f4574f19f5dafe0f3d501709481d4f572fda27b0c6f44e850be6f",
+      "shape": [
+        41,
+        31
+      ],
+      "all_finite": true,
+      "tr2_min": 0.0,
+      "tr2_max": 0.1220780811507204
+    },
+    {
+      "requested_t_ns": 80,
+      "actual_t_ns": 79.99517,
+      "snapshot_number": 32,
+      "index_line": "32 7.999517e+001 4.900751e-003 15337 single_file little rho vx1 vx2 vx3 prs tr1 tr2 T qlas qrad ",
+      "source_path": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\data.0032.dbl",
+      "source_bytes": 2352000,
+      "source_sha256": "684e40a0ef81d4f05cb0879d7630449ffd4988dcba6e9e71378bec3da416f03b",
+      "grid_sha256": "9f944dd76ce01d0b6ebcbb98e234fbd11c311c06ac8716f43eb3aa919021be96",
+      "archive": "it0_high_thin_G0_79.995170ns.npz",
+      "archive_sha256": "0267c12ae195ce84f09cd46e907a2231cf4d44644e74cc1f9d3f8fe463b2301b",
+      "shape": [
+        41,
+        31
+      ],
+      "all_finite": true,
+      "tr2_min": 0.0,
+      "tr2_max": 0.1070252888925194
+    }
+  ],
+  "budget": {
+    "source": "D:\\sim_runs\\T024\\high_thin_G0\\it0\\budget.csv",
+    "archive": "budget_through_80ns.csv",
+    "rows": 149,
+    "columns": [
+      "t_ns",
+      "E_internal",
+      "E_kinetic",
+      "M_Cu",
+      "M_total",
+      "E_inc",
+      "E_gas_abs",
+      "E_targ_abs",
+      "E_esc",
+      "E_rad",
+      "E_rad_limited",
+      "M_src",
+      "E_src",
+      "E_wall",
+      "M_bp_suppressed",
+      "E_bd_transfer",
+      "E_bd_store"
+    ],
+    "first_t_ns": 0.0,
+    "last_t_ns": 79.99517,
+    "live_capture_last_t_ns": 96.99631,
+    "source_capture_sha256": "f1358c62876bd75fe6c1952413432ca6febfe4b080c745fd8e55371cfe703c5c",
+    "archive_sha256": "d4d699e4bade3cd02bb0dd55449a987bc656f65d1f7940da9a593cc4ff32ed7c",
+    "all_finite": true,
+    "policy": "Original header and complete rows <=80 ns copied byte-for-byte; no interpolation or extrapolation"
+  }
+}

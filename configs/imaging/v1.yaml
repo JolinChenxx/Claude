@@ -1,0 +1,13 @@
+# Imaging scenarios v1: as v0, but radiative transfer on the native PLUTO cells, then intensities averaged over pixel rows (STATE 2026-11-19 02:15).
+filters: '@filter_scenarios_nm'          # a: 515±5, b: 510±12, c: 500±20 (rectangular)
+defocus_um: '@defocus_um_scenarios'      # baseline 250, low 0, high 500
+t_ref: '@t_ref_norm'
+series:
+  high: {um_per_px: '@um_per_px_S4', frames: data/exp/meta.yaml}
+  low:  {um_per_px: '@um_per_px_S3', frames: data/exp/meta.yaml}
+numerics:
+  r_bin_um: 5.0          # used only by transfer_grid: rebinned
+  r_max_um: 700.0        # shells beyond are dropped (plume < 400 um); checked by the emission fraction outside
+  workers: 1             # snapshot-parallel processes
+  self_absorption: [false, true]
+  transfer_grid: native

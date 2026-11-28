@@ -1,0 +1,39 @@
+{
+  "only_server_copy_modified": true,
+  "source_project_untouched": true,
+  "physical_equations_changed": false,
+  "source_code_originals": "migration_originals/code",
+  "changes": [
+    {
+      "path": "work/run_standalone.py",
+      "original_sha256": "f2627e879d4df5a576cadd5d4dc3b443728f5656775d5297eb84ec9e144a76a8",
+      "portable_sha256": "f450c71fc161e2e6afdb45a0fe79a690f0ad96acd26b8e8a9de8daac3ac3e61d",
+      "reason": "Portable COMSOL Java and native-library discovery via server_tools/server_runtime.py; original launcher retained."
+    },
+    {
+      "path": "work/campaign.py",
+      "original_sha256": "c05319f2f1cafbc29c100bef5dcaf29e6afc25ab106c67b22745b5767507e364",
+      "portable_sha256": "c10059b0bb6973e11c1ec2afb71974e921dbda88c714bff5885b14bc8b2dbecf",
+      "reason": "Portable batch launcher/process discovery and explicit user-pause guard. Budget, equations and stop policy unchanged."
+    },
+    {
+      "path": "work/BuildS4.java",
+      "original_sha256": "8f2a0bbbf5cbdc219edb655546e043bb3340518bcb54756e93f6e5fbc9d4e045",
+      "portable_sha256": "890d76207b4c3674f34bef6d06abc3f20a87c768c21c94e17c104fbc50fffe37",
+      "reason": "Rebuild uses the transferred byte-identical LTE table and the output project directory, avoiding source-machine drive letters. Requires compilation on server."
+    },
+    {
+      "path": "work/run_figure_qa.py",
+      "original_sha256": "fc38876495b7a21cbfd2227419731b7cfb7fde4839ccb852f09459b9c17b6fd0",
+      "portable_sha256": "35015ee29612fd687ab6c515788e0c0ffc6fe1231ac1055cf387b90da7beff61",
+      "reason": "Bundle figure QA dependencies; remove external CodexHome dependency."
+    },
+    {
+      "path": "work/finish_campaign.py",
+      "original_sha256": "c8e269ae837c4725651e55abd3a5627f3971fd768cc2563cf663a1248d8d312d",
+      "portable_sha256": "3a8d2d945475145a78853bb5bb49162b8af1394f9fa7459b20925167c0dab80a",
+      "reason": "Explicit pause guard and server S4_THREADS selection, default remains eight. Serial scheduling and cumulative budget unchanged."
+    }
+  ],
+  "compiled_classes_require_server_rebuild": true
+}

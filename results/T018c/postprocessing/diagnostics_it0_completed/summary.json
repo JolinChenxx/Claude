@@ -1,0 +1,117 @@
+{
+  "collected": "2026-11-19T21:05:03.801285+08:00",
+  "commands": [
+    {
+      "name": "high_thin_G0_emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "300",
+        "500",
+        "700",
+        "1000",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-19T20:59:11.279438+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_emission.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:14.260330+08:00"
+    },
+    {
+      "name": "high_thin_G0_core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "thin",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-19T20:59:14.415653+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_core_energy.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:23.208651+08:00"
+    },
+    {
+      "name": "high_thin_G0_shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_thin_G0\\it0\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-19T20:59:23.359162+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_thin_G0_shock_track.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:25.873724+08:00"
+    },
+    {
+      "name": "high_trap_G0_emission",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--times",
+        "300",
+        "500",
+        "700",
+        "1000",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\diag_emission.csv"
+      ],
+      "started": "2026-11-19T20:59:26.020485+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_emission.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:32.570244+08:00"
+    },
+    {
+      "name": "high_trap_G0_core_energy",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--tables",
+        "D:\\sim_runs\\tables\\v1c",
+        "--nec",
+        "trap",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\core_energy.csv"
+      ],
+      "started": "2026-11-19T20:59:32.722268+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_core_energy.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:36.053720+08:00"
+    },
+    {
+      "name": "high_trap_G0_shock_track",
+      "command": [
+        "D:\\sim_tools\\envs\\lipsim\\python.exe",
+        "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0",
+        "--out",
+        "D:\\sim_runs\\T018c\\high_trap_G0\\it0\\diagnostics\\shock_track.csv"
+      ],
+      "started": "2026-11-19T20:59:36.284452+08:00",
+      "attempt": 1,
+      "log": "D:\\sim_runs\\T018c_post_it0_01\\high_trap_G0_shock_track.attempt1.log",
+      "returncode": 0,
+      "ended": "2026-11-19T20:59:41.352706+08:00"
+    }
+  ]
+}

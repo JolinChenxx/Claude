@@ -1,0 +1,10 @@
+# T018b: as T018 low members, with build v1i (backward-Euler wall exchange; STATE 2026-11-19 16:40). Low G0 it0-it1.
+name: T018b
+pluto_exe: D:/sim_tools/pluto_lip/build_v1i/mpi/pluto.exe
+mpiexec: C:/Program Files/Microsoft MPI/Bin/mpiexec.exe
+tables: D:/sim_runs/tables/v1c
+root: D:/sim_runs/T018b
+numerics:
+  runs:
+    - {id: low_thin_G0,  case: configs/cases/v1pe_low.yaml,  grid: G0, nec: thin, tstop_ns: 1300, procs: 8, picard: 1, src_on: 1, rmax_par: 1000}
+    - {id: low_trap_G0,  case: configs/cases/v1pe_low.yaml,  grid: G0, nec: trap, tstop_ns: 1300, procs: 8, picard: 1, src_on: 1, rmax_par: 1000}

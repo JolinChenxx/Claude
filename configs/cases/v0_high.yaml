@@ -1,0 +1,14 @@
+# v0 case: high fluence (PLAN v3 §3.2). Physical inputs only by registry reference; numerics are grade N.
+name: v0_high
+laser:
+  energy: '@E_pulse_high'
+  diameter_1e2: '@D_beam_high'
+  fwhm: '@tau_fwhm'
+target:
+  model: knight_sonic_v0
+numerics:
+  rings: 24
+  r_max_over_w: 2.5
+  t_end_ns: 400
+  dt_ns: 0.05
+  picard_relax: 0.5

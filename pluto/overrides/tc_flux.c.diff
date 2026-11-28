@@ -1,0 +1,64 @@
+--- Src/Thermal_Conduction/tc_flux.c
++++ tc_flux.c
+@@ -40,6 +40,7 @@
+ */
+ /* ///////////////////////////////////////////////////////////////////// */
+ #include "pluto.h"
++#include "lip_glue.h"
+ 
+ #ifndef TC_SATURATED_FLUX
+ /*! When set to YES (default), include saturation effects when
+@@ -67,7 +68,7 @@
+ {
+   int  i, j, k, nv;
+   double bgradT, Bmag, Fc_mag, dT_mag;
+-  double Fc, Fsat, g1 = g_gamma - 1.0;
++  double Fc, Fsat, g1 = 0.0;  /* lipsim: g_gamma does not exist with PVTE; unused below */
+   double x1, x2, x3;
+   double dvp, dvm, dvl;
+   double alpha, uL, uR, bn;
+@@ -150,7 +151,43 @@
+ 
+     Fc        = kpar*gradT[i][g_dir];  /* Classical thermal conduction flux */
+     Fc_mag    = kpar*dT_mag;          /* Flux magnitude (include all dirs) */
+-    dcoeff[i] = fabs(kpar/vi[RHO])*g1; /* Diffusion coefficient */
++    /* lipsim v1: diffusion coefficient kappa/(rho c_v) with the table heat capacity (T in K); upstream
++       uses (gamma-1) kappa/rho, valid only for an ideal gas with T = p/rho. Only change to the file. */
++    dcoeff[i] = fabs(kpar/(vi[RHO]*lip_cv_code(vi)));
++    (void)g1;
++#if NTRACER > 0
++    /* lipsim v1 step 2: Cu–air binary interdiffusion carried by the same parabolic (RKL) update.
++       Flux convention of this file (F = coefficient x gradient, rhs += div F): mass flux of Cu
++       F_Y = rho D dY/dx on the conserved tracer rho*Y, plus the interdiffusion enthalpy flux
++       (h_Cu - h_air) F_Y on the energy. D and h_Cu - h_air are table fields (registry diff_cuair_model).
++       The RKL stage count uses max(kappa/(rho c_v), D). */
++    {
++      double Dm, dh;
++      double dxc = grid->x[g_dir][i+1] - grid->x[g_dir][i];
++      lip_diff_code(vi, &Dm, &dh);
++      double FY = vi[RHO]*Dm*(vc[i+1][TRC] - vc[i][TRC])/dxc;   /* Fick (continuum) */
++      /* Kinetic limit (registry diff_cuair_limiter): the net Cu mass flux cannot exceed the one-way
++         Maxwellian flux of the Cu on the upwind side, rho Y v_th/4 with v_th = sqrt(8kT/(pi m_Cu)).
++         Harmonic limiting J = J_F/(1+|J_F|/J_max): Fick where the mean free path is short, free streaming
++         in rarefied cells (T016 aborts: rho ~ 7e-4 kg/m^3 next to the target, lambda ~ 0.4 mm >> dz). */
++      {
++        int up = (FY > 0.0) ? i+1 : i;   /* F > 0: Y increases with x, Cu moves towards -x from cell i+1 */
++        double Yup = vc[up][TRC] < 0.0 ? 0.0 : (vc[up][TRC] > 1.0 ? 1.0 : vc[up][TRC]);
++        double Jmax = 0.25*vc[up][RHO]*Yup*lip_cu_vth_code(vc[up]);
++        double lim = (Jmax > 0.0) ? 1.0/(1.0 + fabs(FY)/Jmax) : 0.0;
++        FY *= lim;
++        Dm *= lim;                        /* effective coefficient for the RKL stage count */
++      }
++      if (!isfinite(FY) || !isfinite(dh*FY) || !isfinite(Fc)) {
++        printLog("! lip tc_flux: non-finite flux dir=%d i=%d [g_i,g_j=%d,%d] rho=%g prs=%g Y=%g/%g D=%g dh=%g FY=%g Fc=%g kpar=%g\n",
++                 g_dir, i, g_i, g_j, vi[RHO], vi[PRS], vc[i][TRC], vc[i+1][TRC], Dm, dh, FY, Fc, kpar);
++        QUIT_PLUTO(1);
++      }
++      sweep->tc_flux[i][TRC] = FY;
++      Fc += dh*FY;
++      dcoeff[i] = MAX(dcoeff[i], Dm);
++    }
++#endif
+ 
+ #elif PHYSICS == MHD
+ 

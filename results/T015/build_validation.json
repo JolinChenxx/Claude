@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-11-17T15:20:28.812661+08:00",
+  "returncode": 0,
+  "executable": "D:\\sim_tools\\pluto_lip\\build_v1\\mpi\\pluto.exe",
+  "executable_sha256": "813671831eb702e7d41bbaec0c8401a277d2fdf0385664de1e4b1c7d806aac7e",
+  "replacements": [
+    "internal_energy.c",
+    "parabolic_update.c",
+    "split_source.c",
+    "tc_flux.c",
+    "thermal_eos.c"
+  ],
+  "replacement_hashes_match": true,
+  "thermal_conduction_objects_present": true,
+  "old_tables_and_executables_unchanged": true,
+  "warnings": [
+    "D:/sim_tools/pluto_lip/build_v1/_pluto_src/PLUTO/Src/HD/mappers_loc.c:203:10: warning: passing argument 1 of 'Show' from incompatible pointer type [-Wincompatible-pointer-types]"
+  ],
+  "members": [
+    {
+      "id": "high_thin_G0",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G0",
+      "nec": "thin",
+      "tstop_ns": 800,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "high_trap_G0",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G0",
+      "nec": "trap",
+      "tstop_ns": 800,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "low_thin_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "low_trap_G0",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G0",
+      "nec": "trap",
+      "tstop_ns": 1300,
+      "procs": 8,
+      "picard": 2,
+      "src_on": 1
+    },
+    {
+      "id": "high_thin_G1",
+      "case": "configs/cases/v0_high.yaml",
+      "grid": "G1",
+      "nec": "thin",
+      "tstop_ns": 800,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    },
+    {
+      "id": "low_thin_G1",
+      "case": "configs/cases/v0_low.yaml",
+      "grid": "G1",
+      "nec": "thin",
+      "tstop_ns": 1300,
+      "procs": 16,
+      "picard": 0,
+      "src_on": 1
+    }
+  ],
+  "max_cores": 64,
+  "expected_solver_runs": 14
+}

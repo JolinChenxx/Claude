@@ -1,0 +1,65 @@
+{
+  "recorded": "2026-11-24T09:46:01+08:00",
+  "job": {
+    "id": "T023",
+    "pid": 14496,
+    "cmd": "D:\\sim_tools\\envs\\lipsim\\python.exe -m lipsim.batch configs/batches/T023.yaml --max-cores 48",
+    "threads": 1,
+    "commit": "cc35b3b",
+    "started": "2026-11-24T09:45:27",
+    "dir": "D:\\sim_runs\\T023"
+  },
+  "exitcode_exists": false,
+  "runtime_inputs": [
+    {
+      "member": "high_thin_G0",
+      "ini_exists": true,
+      "parameters": {
+        "BACKP": 1.0,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true
+    },
+    {
+      "member": "high_trap_G0",
+      "ini_exists": true,
+      "parameters": {
+        "BACKP": 1.0,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true
+    },
+    {
+      "member": "low_thin_G0",
+      "ini_exists": true,
+      "parameters": {
+        "BACKP": 1.0,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true
+    },
+    {
+      "member": "low_trap_G0",
+      "ini_exists": true,
+      "parameters": {
+        "BACKP": 1.0,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true
+    },
+    {
+      "member": "high_thin_G1",
+      "ini_exists": true,
+      "parameters": {
+        "BACKP": 1.0,
+        "DROP_M": 0.0,
+        "rmax_par": 1000.0
+      },
+      "pass": true
+    }
+  ]
+}

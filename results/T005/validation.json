@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "Sod_serial",
+      "build_exit": 0,
+      "run_exit": 0,
+      "t_final": 0.2,
+      "n_snapshots": 2,
+      "n_cells": 400,
+      "build_seconds": 6.384185600007186,
+      "run_seconds": 1.2225198000087403,
+      "exact": {
+        "p_star": 0.30313017805065323,
+        "u_star": 0.9274526200489523,
+        "shock_speed": 1.7521557320301953,
+        "shock_position": 0.850431146406039
+      },
+      "measured_shock": 0.8525,
+      "shock_error_cells": 0.8275414375843924,
+      "passed": true
+    },
+    {
+      "case": "Sod_mpi8",
+      "build_exit": 0,
+      "run_exit": 0,
+      "t_final": 0.2,
+      "n_snapshots": 2,
+      "n_cells": 400,
+      "build_seconds": 6.3863718000066,
+      "run_seconds": 1.4198066999961156,
+      "exact": {
+        "p_star": 0.30313017805065323,
+        "u_star": 0.9274526200489523,
+        "shock_speed": 1.7521557320301953,
+        "shock_position": 0.850431146406039
+      },
+      "measured_shock": 0.8525,
+      "shock_error_cells": 0.8275414375843924,
+      "passed": true
+    },
+    {
+      "case": "Sedov_serial",
+      "build_exit": 0,
+      "run_exit": 0,
+      "t_final": 0.5,
+      "n_snapshots": 21,
+      "n_cells": 400,
+      "build_seconds": 2.9318332000111695,
+      "run_seconds": 4.577318900002865,
+      "radius_power_exponent": 0.39646362644193495,
+      "endpoint_exponent": 0.39552986665955053,
+      "fit_time_range": [
+        0.02499095,
+        0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "Sedov_mpi8",
+      "build_exit": 0,
+      "run_exit": 0,
+      "t_final": 0.5,
+      "n_snapshots": 21,
+      "n_cells": 400,
+      "build_seconds": 3.908801899990067,
+      "run_seconds": 3.031611600003089,
+      "radius_power_exponent": 0.3962408920125532,
+      "endpoint_exponent": 0.3954854910236087,
+      "fit_time_range": [
+        0.02498255,
+        0.5
+      ],
+      "passed": true
+    }
+  ],
+  "serial_mpi_comparison": {
+    "Sod": {
+      "max_abs_density_difference": 0.0,
+      "relative_L1_density_difference": 0.0
+    },
+    "Sedov": {
+      "max_abs_density_difference": 0.04749654627468658,
+      "relative_L1_density_difference": 0.0024996893391862106
+    }
+  },
+  "definitions": {
+    "Sod": "Shock at largest falling pressure jump face; analytical Riemann root and Rankine-Hugoniot shock speed; uncertainty roughly half a cell.",
+    "Sedov": "Shock at largest falling density jump face; log-log regression of ALL saved t>0 outputs (no time-window optimization); endpoint exponent also reported.",
+    "scope": "Unpatched ideal-gas reference tests, not validation of historical Cu source/EOS/radiation or new production plume."
+  }
+}

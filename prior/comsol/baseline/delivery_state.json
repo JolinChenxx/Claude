@@ -1,0 +1,61 @@
+{
+  "phase": "ready_for_final_review",
+  "error": null,
+  "main_case": "B64A",
+  "grid_case": "G64AC2",
+  "time_case": "T64AC2",
+  "updated_beijing": "2026-11-06T05:10:07.983690+08:00",
+  "active_case": null,
+  "last_audited_case": "G264R1C5",
+  "last_audit": {
+    "complete": true,
+    "mass": true,
+    "energy": true,
+    "optical": true,
+    "positive_density": true,
+    "positive_raw_thermal": true,
+    "bounded_Y": true,
+    "EOS": true,
+    "moving_surface_if_needed": true,
+    "outer": true,
+    "optical_bounds": true,
+    "net_evap_if_needed": true,
+    "EOS_energy_vertex_upper_bound": true,
+    "energy_time_resolved": true,
+    "mass_time_resolved": true,
+    "ALE_J_positive": true,
+    "ALE_GCL_volume": true,
+    "total_mass": true
+  },
+  "visible_energy": {
+    "case": "G264R1C5",
+    "wavelength_nm": [
+      380,
+      780
+    ],
+    "time_range_s": [
+      0.0,
+      2.1200000000000005e-06
+    ],
+    "line_emitted_energy_J": 1.365520434428216e-10,
+    "free_free_emitted_energy_J": 1.1603414176571763e-14,
+    "existing_all_frequency_ff_loss_J": 2.3693668212392465e-13,
+    "visible_upper_bound_to_absorbed_ratio": 3.4127874726298012e-06,
+    "feedback_threshold": 0.05,
+    "upper_bound_below_feedback_threshold": true,
+    "full_FE_domain_with_ALE_J": true,
+    "caveat": "Bound covers the specified atomic-line and free-free closure; omitted free-bound/molecular/higher-ion contributions are not estimated."
+  },
+  "main_post_pid": null,
+  "state": "final_review_complete",
+  "paused_beijing": null,
+  "pause_reason": null,
+  "solver_pid": null,
+  "worker_pid": null,
+  "all_flow_cases_complete": true,
+  "extra_grid_initial": "G264",
+  "extra_grid_case": "G264R1C5",
+  "extra_grid_status": "passed",
+  "extra_grid_adjacent_converged": false,
+  "final_review_beijing": "2026-11-06T05:16:22.938674+08:00"
+}

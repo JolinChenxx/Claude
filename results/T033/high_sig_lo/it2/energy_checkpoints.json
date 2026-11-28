@@ -1,0 +1,37 @@
+{
+  "method": "Delta(E_internal+E_kinetic) - Delta(E_gas_abs+E_src-E_rad-E_wall); no correction or unrecorded boundary-flux estimate",
+  "checkpoints": [
+    {
+      "requested_t_ns": 200,
+      "actual_t_ns": 199.9683,
+      "delta_gas_energy_J": 8.915599110600005e-05,
+      "net_recorded_sources_J": 8.91497436914e-05,
+      "residual_J": 6.247414600051146e-09,
+      "relative_to_abs_net_sources_pct": 0.007007776288933755
+    },
+    {
+      "requested_t_ns": 250,
+      "actual_t_ns": 249.9884,
+      "delta_gas_energy_J": 8.353377336199987e-05,
+      "net_recorded_sources_J": 8.35275259456e-05,
+      "residual_J": 6.247416399880962e-09,
+      "relative_to_abs_net_sources_pct": 0.007479470185612578
+    },
+    {
+      "requested_t_ns": 300,
+      "actual_t_ns": 299.9316,
+      "delta_gas_energy_J": 7.928851721600012e-05,
+      "net_recorded_sources_J": 7.92822698615e-05,
+      "residual_J": 6.2473545001226396e-09,
+      "relative_to_abs_net_sources_pct": 0.007879888543852598
+    },
+    {
+      "requested_t_ns": 400,
+      "actual_t_ns": 399.9462,
+      "delta_gas_energy_J": 7.719753593199994e-05,
+      "net_recorded_sources_J": 7.719128849830001e-05,
+      "residual_J": 6.247433699925822e-09,
+      "relative_to_abs_net_sources_pct": 0.008093443990202872
+    }
+  ]
+}

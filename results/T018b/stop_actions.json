@@ -1,0 +1,107 @@
+{
+  "authority": "tasks/T018b-wall-implicit.md step2; docs/DECISIONS.md entry 2026-11-19 16:40; superseded by v1i",
+  "targets": [
+    {
+      "member": "low_thin_G0",
+      "mpiexec": 8788,
+      "create_time": 1795071091.378515,
+      "requested_stop": "2026-11-19T16:22:00+08:00",
+      "taskkill_returncode": 0,
+      "taskkill_stdout": "SUCCESS: The process with PID 7696 (child process of PID 33060) has been terminated.\nSUCCESS: The process with PID 50048 (child process of PID 28280) has been terminated.\nSUCCESS: The process with PID 52000 (child process of PID 49684) has been terminated.\nSUCCESS: The process with PID 32520 (child process of PID 54268) has been terminated.\nSUCCESS: The process with PID 13980 (child process of PID 44960) has been terminated.\nSUCCESS: The process with PID 53948 (child process of PID 27220) has been terminated.\nSUCCESS: The process with PID 39764 (child process of PID 12980) has been terminated.\nSUCCESS: The process with PID 53056 (child process of PID 25404) has been terminated.\nSUCCESS: The process with PID 28280 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 33060 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 49684 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 54268 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 44960 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 27220 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 12980 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 25404 (child process of PID 30956) has been terminated.\nSUCCESS: The process with PID 30956 (child process of PID 8788) has been terminated.\nSUCCESS: The process with PID 8788 (child process of PID 40800) has been terminated.\n",
+      "taskkill_stderr": "",
+      "ranks": [
+        {
+          "pid": 28280,
+          "created": 1795071091.4270625,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 33060,
+          "created": 1795071091.6076124,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 49684,
+          "created": 1795071091.610524,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 54268,
+          "created": 1795071091.6129024,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 44960,
+          "created": 1795071091.615186,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 27220,
+          "created": 1795071091.6192613,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 12980,
+          "created": 1795071091.6219184,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        },
+        {
+          "pid": 25404,
+          "created": 1795071091.6242802,
+          "cwd": "D:\\sim_runs\\T018\\low_thin_G0\\it0"
+        }
+      ]
+    },
+    {
+      "member": "low_trap_G0",
+      "mpiexec": 26548,
+      "create_time": 1795071097.0168288,
+      "requested_stop": "2026-11-19T16:22:01+08:00",
+      "taskkill_returncode": 0,
+      "taskkill_stdout": "SUCCESS: The process with PID 11224 (child process of PID 51704) has been terminated.\nSUCCESS: The process with PID 9560 (child process of PID 11144) has been terminated.\nSUCCESS: The process with PID 50452 (child process of PID 20216) has been terminated.\nSUCCESS: The process with PID 50064 (child process of PID 52188) has been terminated.\nSUCCESS: The process with PID 52936 (child process of PID 20652) has been terminated.\nSUCCESS: The process with PID 18344 (child process of PID 34784) has been terminated.\nSUCCESS: The process with PID 48768 (child process of PID 49872) has been terminated.\nSUCCESS: The process with PID 49312 (child process of PID 17384) has been terminated.\nSUCCESS: The process with PID 51704 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 11144 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 20216 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 52188 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 20652 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 34784 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 49872 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 17384 (child process of PID 27268) has been terminated.\nSUCCESS: The process with PID 27268 (child process of PID 26548) has been terminated.\nSUCCESS: The process with PID 26548 (child process of PID 40800) has been terminated.\n",
+      "taskkill_stderr": "",
+      "ranks": [
+        {
+          "pid": 51704,
+          "created": 1795071097.0735896,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 11144,
+          "created": 1795071097.0828457,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 20216,
+          "created": 1795071097.0864437,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 52188,
+          "created": 1795071097.0900936,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 20652,
+          "created": 1795071097.0927436,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 34784,
+          "created": 1795071097.0957172,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 49872,
+          "created": 1795071097.0986145,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        },
+        {
+          "pid": 17384,
+          "created": 1795071097.1014762,
+          "cwd": "D:\\sim_runs\\T018\\low_trap_G0\\it0"
+        }
+      ]
+    }
+  ]
+}

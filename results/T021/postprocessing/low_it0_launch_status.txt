@@ -1,0 +1,9 @@
+﻿STATE=running  elapsed=0.00:00:33  pid=10588  commit=cc35b3b
+--- stdout (last 6) ---
+
+
+{"name": "shock_track", "command": ["D:\\sim_tools\\envs\\lipsim\\python.exe", "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\shock_track.py", "D:\\sim_runs\\T021\\low_thin_G0\\it0", "--out", "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\shock_track.csv"], "started": "2026-11-24T09:45:28.026964+08:00", "log": "D:\\sim_runs\\T021_post_low_it0_01\\shock_track.log", "returncode": 0, "finished": "2026-11-24T09:45:30.671569+08:00", "seconds": 2.644905199999812}
+{"name": "core_energy", "command": ["D:\\sim_tools\\envs\\lipsim\\python.exe", "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\core_energy.py", "D:\\sim_runs\\T021\\low_thin_G0\\it0", "--tables", "D:\\sim_runs\\tables\\v1c", "--nec", "thin", "--out", "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\core_energy.csv"], "started": "2026-11-24T09:45:28.026964+08:00", "log": "D:\\sim_runs\\T021_post_low_it0_01\\core_energy.log", "returncode": 0, "finished": "2026-11-24T09:45:36.615370+08:00", "seconds": 8.588644899999963}
+{"name": "emission", "command": ["D:\\sim_tools\\envs\\lipsim\\python.exe", "D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py", "D:\\sim_runs\\T021\\low_thin_G0\\it0", "--tables", "D:\\sim_runs\\tables\\v1c", "--times", "100", "150", "200", "250", "300", "400", "500", "600", "700", "800", "1000", "1200", "--filter", "510", "12", "--out", "D:\\sim_runs\\T021\\low_thin_G0\\it0\\diagnostics\\diag_emission.csv"], "started": "2026-11-24T09:45:28.025968+08:00", "log": "D:\\sim_runs\\T021_post_low_it0_01\\emission.log", "returncode": 0, "finished": "2026-11-24T09:45:37.751372+08:00", "seconds": 9.724756600000546}
+start image_v2
+--- stderr (last 6) ---

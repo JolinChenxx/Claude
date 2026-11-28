@@ -1,0 +1,120 @@
+Running: ['D:\\sim_tools\\envs\\lipsim\\python.exe', 'D:\\Codex\\2026-11-11\\wo\\outputs\\Claude\\scripts\\diag_emission.py', 'D:\\sim_runs\\T016r2\\low_thin_G0\\it0', '--tables', 'D:/sim_runs/tables/v1b', '--times', '200', '300', '500', '700', '1000', '1200', '--filter', '510', '12', '--out', 'D:\\sim_runs\\T016r2_post_low_01\\low_thin_G0_it0_emission.csv']
+t=200 ns  P=6.433e-03 W/sr  T_emw=16017 K  Y_emw=0.80  Cu I:0.62  Cu II:0.29  continuum:0.05  N II:0.05  N I:0.00
+t=300 ns  P=3.833e-03 W/sr  T_emw=13161 K  Y_emw=0.78  Cu I:0.81  Cu II:0.14  continuum:0.04  N II:0.02  N I:0.00
+t=500 ns  P=1.970e-03 W/sr  T_emw=11091 K  Y_emw=0.72  Cu I:0.93  Cu II:0.05  continuum:0.03  N I:0.00  N II:0.00
+t=700 ns  P=1.201e-03 W/sr  T_emw=10560 K  Y_emw=0.63  Cu I:0.95  Cu II:0.03  continuum:0.02  N II:0.00  N I:0.00
+t=1000 ns  P=6.601e-04 W/sr  T_emw=10222 K  Y_emw=0.50  Cu I:0.97  continuum:0.02  Cu II:0.01  N II:0.00  N I:0.00
+t=1200 ns  P=4.721e-04 W/sr  T_emw=9912 K  Y_emw=0.43  Cu I:0.97  continuum:0.02  Cu II:0.01  N II:0.00  N I:0.00
+Return code: 0
+Running: ['D:\\sim_tools\\envs\\lipsim\\python.exe', '-m', 'lipsim.image', 'D:\\sim_runs\\T016r2\\low_thin_G0\\it0', '--series', 'low', '--tables', 'D:/sim_runs/tables/v1b', '--out', 'D:\\sim_runs\\T016r2\\low_thin_G0\\it0\\image', '--workers', '16']
+{
+ "a_thin_baseline": {
+  "gain": 0.012265651258144033,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 607.5512397673346,
+  "P2_dt10_ns": NaN
+ },
+ "a_thin_low": {
+  "gain": 0.008259577527049136,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 621.9477795300547,
+  "P2_dt10_ns": NaN
+ },
+ "a_thin_high": {
+  "gain": 0.013780301516811694,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 632.4842961313313,
+  "P2_dt10_ns": NaN
+ },
+ "a_sa_baseline": {
+  "gain": 0.08170620997994235,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 949.532680862522,
+  "P2_dt10_ns": NaN
+ },
+ "a_sa_low": {
+  "gain": 0.06776822021547928,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 1200.9924063290346,
+  "P2_dt10_ns": NaN
+ },
+ "a_sa_high": {
+  "gain": 0.09596277159203039,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 1021.1285750364297,
+  "P2_dt10_ns": NaN
+ },
+ "b_thin_baseline": {
+  "gain": 0.0045967882891146655,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 543.3754459163351,
+  "P2_dt10_ns": NaN
+ },
+ "b_thin_low": {
+  "gain": 0.0032273821671808247,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 607.561936989784,
+  "P2_dt10_ns": NaN
+ },
+ "b_thin_high": {
+  "gain": 0.005209068401549247,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 571.6859394824625,
+  "P2_dt10_ns": NaN
+ },
+ "b_sa_baseline": {
+  "gain": 0.018834987787917028,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 441.06504410044494,
+  "P2_dt10_ns": NaN
+ },
+ "b_sa_low": {
+  "gain": 0.016479283861227913,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 602.4652139275992,
+  "P2_dt10_ns": NaN
+ },
+ "b_sa_high": {
+  "gain": 0.022134090579476778,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 461.1032793623431,
+  "P2_dt10_ns": NaN
+ },
+ "c_thin_baseline": {
+  "gain": 0.0056964420628936975,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 434.96578989271876,
+  "P2_dt10_ns": 928.1234511773687
+ },
+ "c_thin_low": {
+  "gain": 0.004424375108621753,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 585.828498178451,
+  "P2_dt10_ns": NaN
+ },
+ "c_thin_high": {
+  "gain": 0.006567863229002563,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 462.93701270884503,
+  "P2_dt10_ns": NaN
+ },
+ "c_sa_baseline": {
+  "gain": 0.010303312551747934,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 281.5136162990454,
+  "P2_dt10_ns": 909.4920505513294
+ },
+ "c_sa_low": {
+  "gain": 0.009122580360402447,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 393.0292954950051,
+  "P2_dt10_ns": 925.0367964418067
+ },
+ "c_sa_high": {
+  "gain": 0.012128446633800567,
+  "t_ref_used_ns": 280.0,
+  "P1_tau_ns": 294.27554728837083,
+  "P2_dt10_ns": 912.6878477116186
+ }
+}
+Return code: 0

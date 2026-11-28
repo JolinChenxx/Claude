@@ -1,0 +1,13 @@
+{
+  "status": "conditional_spatial_envelope",
+  "Cu_condensed_fraction": 0.1,
+  "mass_bookkeeping": "Gas Cu is reduced by current particle mass in every saved split. The atomic emission must be rerendered from these depleted fields before a combined prediction.",
+  "energy_bookkeeping": "Particle internal energy is debited from removed Cu vapor latent+sensible energy; unused phase-change heat is saved explicitly and is not assigned to visible emission.",
+  "limitations": [
+    "Entrainment envelope follows gas Cu distribution; no predicted nucleation or finite-drag particle transport.",
+    "The budget residual is not a solved condensation heat-release process.",
+    "Images show particles alone, so no undiminished atomic light is double counted.",
+    "Gas Cu column is held at gate center; particle cooling and formation boundary are integrated over the gate.",
+    "Room-temperature optical constants and formation timing remain approximate."
+  ]
+}
